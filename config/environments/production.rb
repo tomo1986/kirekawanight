@@ -17,14 +17,13 @@ Rails.application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
 
   # Compress JavaScripts and CSS
-  config.assets.compress = true
+  config.assets.compress = false
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
-  config.public_file_server.enabled = false
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
