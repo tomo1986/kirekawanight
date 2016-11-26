@@ -10,23 +10,12 @@ development:
   port: 3306
   collation: utf8_general_ci
 
-staging:
-  adapter: mysql2
-  database: bisyoujo_zukan_night_staging
-  host: 10.132.31.7
-  username: base
-  password: "cinqviet"
-  pool: 5
-  timeout: 5000
-  encoding: utf8mb4
-  port: 3306
-  collation: utf8mb4_general_ci
 
 production:
   adapter: mysql2
   database: bisyoujo_zukan_night_production
-  host: 10.132.31.7
-  username: base
+  host: localhost
+  username: root
   password: "kirekawa2016"
   pool: 5
   timeout: 5000
