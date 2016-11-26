@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require bower_components/jquery/dist/jquery
 //= require bower_components/jquery-ui/jquery-ui
 //= require bower_components/jquery-bridget/jquery-bridget

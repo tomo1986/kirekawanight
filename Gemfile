@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'whenever'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'ckeditor'
+gem "non-stupid-digest-assets"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
