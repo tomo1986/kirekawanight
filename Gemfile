@@ -71,7 +71,6 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'unicorn'
 gem 'acts-as-taggable-on'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -79,10 +78,6 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'mina'
-  gem 'mina-multistage', require: false
-  gem 'mina-sidekiq'
-  gem 'mina-unicorn', :require => false
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -91,6 +86,18 @@ group :development do
   gem "better_errors"
   gem 'meta_request'
   gem 'rubocop', require: false
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
+  gem 'pry-rails' # replace irb to pry
+  gem 'pry-doc' # enable show-doc command in pry ex. show-doc some.method
+  gem 'pry-byebug' # enable debug by using binding.pry to source code.
+  gem 'annotate' # bundle exec annotate command writes schema difinition to models
+  gem 'bullet'
+  # you can export ER diagram pdf by bundle exec rake erd require install graphviz
+  # gem 'rails-erd', github: 'paulwittmann/rails-erd', branch: 'mavericks'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
