@@ -1,0 +1,26 @@
+.main-content.container group-bar-index-directive=""
+  main#main.group-page
+    breadcrumb-directive data="vm.breadcrumb"
+    .rank-box
+      ul.genre-tag
+        li
+          a.active href="/groups/karaoke"
+            | SHOP
+        li
+          a href="/casts/karaoke"
+            | CAST
+    .rank-box ng-if="vm.groups.length > 0"
+      .page-title
+        h2.title
+          | TODAY'S POWER PUSH
+      .group-list.clearfix
+        li ng-repeat="group in vm.groups"
+          a href="/groups/bar/{{group.id}}"
+            img ng-src="{{group.images[0].url}}" alt="{{group.name}}の画像"
+          .group-info
+            h3.name
+              | {{group.name}}
+              span
+                i.fa.fa-heart ng-class="{'active': vm.favorites[group.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(group.id)"
+            p.cast-count
+              | 52 people

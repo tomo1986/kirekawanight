@@ -1,0 +1,87 @@
+.main-content.group-detail-page.clearfix customer-mypage-directive=""
+  .container
+    breadcrumb-directive data="vm.breadcrumb"
+  .container
+    main#main
+      .top-box
+        .page-title
+          h2.title
+            | YOUR FAVORITE KARAOKE GIRLS
+        .queen-list.clearfix
+          li ng-repeat="cast in vm.karaokeUsers"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/karaoke/{{cast.id}}"
+                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            .profile
+              .name
+                | {{cast.nick_name}}({{cast.age}})
+                span
+                  i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
+              .body
+                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+      .top-box style="margin: 3rem 0;"
+        .page-title
+          h2.title
+            | YOUR FAVORITE BAR GIRLS
+        .queen-list.clearfix
+          li ng-repeat="cast in vm.barUsers"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/bar/{{cast.id}}"
+                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            .profile
+              .name
+                | {{cast.nick_name}}({{cast.age}})
+                span
+                  i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
+              .body
+                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+
+      .top-box style="margin: 3rem 0;"
+        .page-title
+          h2.title
+            | YOUR FAVORITE MASSAGE GIRLS
+        .queen-list.clearfix
+          li ng-repeat="cast in vm.massageUsers"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/massage/{{cast.id}}"
+                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            .profile
+              .name
+                | {{cast.nick_name}}({{cast.age}})
+                span
+                  i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
+              .body
+                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+      .top-box style="margin: 3rem 0;"
+        .page-title
+          h2.title
+            | YOUR FAVORITE SEXY GIRLS
+        .queen-list.clearfix
+          li ng-repeat="cast in vm.sexyUsers"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/sexy/{{cast.id}}"
+                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            .profile
+              .name
+                | {{cast.nick_name}}({{cast.age}})
+                span
+                  i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
+              .body
+                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+

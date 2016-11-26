@@ -1,0 +1,28 @@
+.modal-header
+  button.close aria-label="Close" data-dismiss="modal" type="button" ng-click="close()"
+    span aria-hidden="true"  &times;
+  h2.modal-title
+    span デザイン選択
+.modal-body
+  .title
+    | カプセルのデザインを選択してください。
+  .data-table-box.clearfix
+    .col-xs-12.icons-box
+      .row
+        ul.icons-list
+          li.icon-item  ng-repeat="icon in icons" ng-click="selectedIcon(icon)" ng-class="{'active': icon_id == icon.id}"
+            img ng-src="{{icon.url}}"
+    .col-xs-12
+      .slide-user
+        #owl-demo.owl-carousel.owl-theme
+          .item ng-repeat="style in styles" repeat-finished="carouselInitializer" ng-class="{'active': style_id == style.id}"
+            a.item-link href="javascript:void(0);" ng-click="changeIcon(style.id)"
+              img ng-src="{{style.primary_icon_url}}"
+
+        /.col-xs-2 ng-repeat="style in styles"
+        /  .icon-box ng-click="changeIcon(style.id)" ng-class="{'active': style_id == style.id}"
+        /    img ng-src="{{style.primary_icon_url}}"
+
+    .button-center
+      button.btn.main-btn type="button" ng-disabled="!icon" ng-click="decideIcon()"
+        span 決定する

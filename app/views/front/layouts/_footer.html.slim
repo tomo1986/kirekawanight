@@ -1,0 +1,50 @@
+footer#footer.clearfix
+  .container.clearfix
+    .clearfix
+      aside.aside-box.col-md-7.clearfix
+        ul.aside--list.clearfix
+          li
+            dl.clearfix
+              dt CAST
+              dd
+                a href="/casts/karaoke" KARAOKE
+              dd
+                a href="/casts/bar" BAR
+              dd
+                a href="/casts/massage" MASSAGE
+              dd
+                a href="/casts/sexy" SEXY
+          li
+            dl.clearfix
+              dt SHOP
+              dd
+                a href="/groups/karaoke" KARAOKE
+              dd
+                a href="/groups/bar" BAR
+              dd
+                a href="/groups/massage" MASSAGE
+          li
+            dl.clearfix
+              dt CONTACT
+              dd
+                a href="/contact?type=tie-up" TIE UP
+              dd
+                a href="/contact?type=contact" CONTACT
+              dd
+                a href="/contact?type=post" POST
+      .aside-box.col-md-5
+        ul.site--list.clearfix
+          li
+            a href="/comsept" kirekawa collectioとは
+          li
+            a href="/blogs" BLOG
+
+          -if customer_signed_in?
+            li
+              a href="javascript:void(0)" ng-click="vm.onClickedLogout()"  Log out
+          - else
+            li
+              a href="/login" ログイン & new
+        .footer-logo
+          = image_tag 'front/logo.png', alt: "kirekawa collection"
+    p.copyright Copyright © 2016 KIREKAWA COLLECTION. ALL RIGHTS RESERVED.

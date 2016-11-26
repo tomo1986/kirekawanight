@@ -1,0 +1,35 @@
+.contact-page {
+  margin-bottom: $row-space-biger;
+  .contact-box {
+    margin-bottom: $row-space-bigest;
+    .contact-box--detail {
+      margin-bottom: $row-space-biger;
+      .res-form-table {
+        th {
+          width:30%;
+        }
+        td {
+        }
+      }
+    }
+    .notes {
+      margin-top: $row-space-half-half;
+      color: $_sub_text;
+    }
+    .attention{
+
+    }
+    .center-button {
+      width: 3rem;
+      margin: 2rem auto;
+    }
+    .btn-submit {
+      background-color: $_sub_text;
+      color: $_em_text_hover;
+      font-weight: bold;
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+}

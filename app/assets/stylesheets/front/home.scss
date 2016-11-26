@@ -1,0 +1,58 @@
+.home-page {
+  .slider-link {
+    .img-box{
+      overflow: hidden;
+      img{
+        -webkit-transition: opacity 0.4s, transform 0.4s;
+        transition: opacity 0.4s, transform 0.4s;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    .cover {
+      padding:$row-space $row-space $row-space-bog;
+      background-color: #fff;
+      h2{
+        float:left;
+        font-size: 1.2rem;
+        color: $_em_text_hover;
+        text-decoration: none;
+        line-height: 1.6rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      p{
+        float:right;
+        margin-top: $row-space 0 0;
+        font-size:1rem;
+        line-height:1.5rem;
+        color:$gray-dark;
+
+      }
+    }
+    &:hover, &:focus{
+      text-decoration: none;
+      img{
+        opacity: 0.3;
+        -webkit-transform: scale3d(1.2, 1.2, 1);
+        transform: scale3d(1.2, 1.2, 1);
+      }
+
+    }
+  }
+  .top-box {
+  }
+  .slick-dots li button:before{
+    height:30px;
+    width:30px;
+    opacity: 1;
+    color:#fff;
+  }
+  .slick-dots li.slick-active button:before
+  {
+    color: $_brand-basic;
+  }
+  .slick-dots li button:before{
+    font-size: 8px;
+  }
+}

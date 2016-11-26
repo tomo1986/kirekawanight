@@ -1,0 +1,276 @@
+
+.main-content.group-detail-page.clearfix group-massage-detail-directive=""
+  .container
+    breadcrumb-directive data="vm.breadcrumb"
+    .rank-box
+      ul.genre-tag
+        li
+          a href="/groups/bar"
+            | SHOP
+        li
+          a.active href="/casts/bar"
+            | CAST
+  .top-view-box
+    .shop-cover-wrap style="background-image:url({{vm.groupMainImg}});"
+      .shopCover
+      .container
+        img src="{{vm.groupMainImg}}"
+  .container
+    main#main
+      ul.group-nav--list
+        li
+          a href="#intoroduction"
+            h3 INTORODUCTION
+        li
+          a href="#cast"
+            h3 CAST
+        li
+          a href="#system"
+            h3 SYSTEM
+        li
+          a href="#map"
+            h3 MAP
+        li
+          a href="#contact"
+            h3 CONTACT
+        li
+          a href="#review"
+            h3 REVIEW
+      .rank-box.shop-top-box
+        h2.shop-name
+          | {{vm.group.name}}
+        p.shop-copy
+          | 2015年9月歌舞伎町に『Noir Luxaxe』が遂にOPEN！
+          br
+          | 高級感溢れる内装、ハイレベルなキャスト、洗練されたスタッフが貴方のお越しをお待ちしております！
+        #intoroduction.shop-button-box.clearfix
+          .favorite
+            a.btn ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()" お気に入り登録
+          .support
+            a.btn  href="javascript:void(0)" ng-click="vm.onClickedSupport()" 応援する
+      .rank-box.shop-new-face
+        .page-title
+          h2.title
+            | INTORODUCTION
+        div ng-bind-html="vm.group.interview_ja"
+      #cast.rank-box.shop-new-face
+        .page-title
+          h2.title
+            | NEW FACE
+        .queen-list.clearfix
+          li ng-repeat="cast in vm.casts"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/massage/{{cast.id}}"
+                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            .profile
+              .name
+                | {{cast.nick_name}}({{cast.age}})
+              .body
+                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+
+
+      .rank-box.shop-cast
+        .page-title
+          h2.title
+            | CAST
+        .queen-list.clearfix
+          li ng-repeat="cast in vm.casts"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/massage/{{cast.id}}"
+                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            .profile
+              .name
+                | {{cast.nick_name}}({{cast.age}})
+              .body
+                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+      #system.rank-box.shop-system
+        .page-title
+          h2.title
+            | SYSTEM
+        table.res-form-table
+          tr
+            th name
+            td ○
+          tr
+            th tel
+            td ○
+          tr
+            th email
+            td ○
+          tr
+            th lungerge
+            td
+              | {{vm.group.is_japanese}}
+      #map.rank-box.shop-map.clearfix
+        .page-title
+          h2.title
+            | ADDRESS & INFOMATION
+        .col-md-12
+          .row
+            .col-md-6
+              ng-map zoom="14" default-style="true" center="{{vm.group.lon}},{{vm.group.lat}}" styles="[{stylers:[{hue:'#ad9a58'},{visibility:'simplified'},{gamma:0.5},{weight:0.5}]},{elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
+                marker id='{{vm.group.id}} ' title="{{vm.group.address}}" position=" {{vm.group.lon}}, {{vm.group.lat}}"
+            .col-md-6
+              .shop-map--info-box
+                .shop-map--info-wrap
+                  .shop-name-titlt
+                    .shop-map--info-name
+                      | {{vm.group.name}}
+                  dl.profile.clearfix
+                    dt TEL
+                    dd
+                      | {{vm.group.tel}}
+                    dt EMAIL
+                    dd
+                      | {{vm.group.email}}
+                    dt ADDRESS
+                    dd
+                      | {{vm.group.address}}
+      #contact.rank-box.shop-map.clearfix
+        .page-title
+          h2.title
+            | CONTACT
+        .contact
+          form role="form" ng-submit='vm.contactSubmit()' name="contactForm" novalidate=''
+            table.res-form-table
+              table.res-form-table
+
+                tr ng-if="!vm.contact.name"
+                  th.clearfix
+                    span.title 氏名
+                    span.btn.required 必須
+                  td
+                    input.form-control type="text" name="name" required='' placeholder="info@first-class.vn" ng-model="vm.contact.name"
+                tr
+                  th.clearfix
+                    span.title 折り返し連絡手段選択
+                    span.btn.required 必須
+                  td
+                    .form-group
+                      .col-xs-12
+                        label.radio-inline
+                          input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
+                        label.radio-inline
+                          input name="return_way" type="radio" value="tel" ng-model="vm.contact.return_way" 電話
+                        label.radio-inline
+                          input name="return_way" type="radio" value="sns" ng-model="vm.contact.return_way" sns
+                tr ng-if="vm.contact.return_way == 'tel'"
+                  th.clearfix
+                    span.title Tel
+                    span.btn.required 必須
+                  td
+                    input.form-control type="text" name="tel" required='' placeholder="例)090123412345" ng-model="vm.contact.tel"
+                    span.is-text-danger ng-if="vm.contactErrors.tel"
+                      | {{vm.contactErrors.tel}}
+                tr ng-if="vm.contact.return_way == 'email'"
+                  th.clearfix
+                    span.title emailアドレス
+                    span.btn.required 必須
+                  td
+                    input.form-control type="email" name="email" required='' placeholder="例)info@kire-kawa.com" ng-model="vm.contact.email"
+                    span.is-text-danger ng-if="vm.contactErrors.email"
+                      | {{vm.contactErrors.email}}
+                tr ng-if="vm.contact.return_way == 'sns'"
+                  th.clearfix
+                    span.title SNSアカウント
+                    span.btn.required どれか一つ必須
+                  td
+                    dl
+                      dt
+                        label.radio-inline
+                          input name="select_sns" type="radio" value="zalo" ng-model="vm.selectSns" Zalo
+                      dt
+                        label.radio-inline
+                          input name="select_sns" type="radio" value="wechat" ng-model="vm.selectSns" WeChat
+                      dt
+                        label.radio-inline
+                          input name="select_sns" type="radio" value="line" ng-model="vm.selectSns" Line
+                      dd
+                        input.form-control type="text" name="zalo" placeholder="例)kirekawa111" ng-model="vm.contact.sns_zalo" ng-if="vm.selectSns == 'zalo'"
+                        input.form-control type="text" name="wechat" placeholder="例)kirekawa111" ng-model="vm.contact.sns_wechat" ng-if="vm.selectSns == 'wechat'"
+                        input.form-control type="text" name="line" placeholder="例)kirekawa111" ng-model="vm.contact.sns_line" ng-if="vm.selectSns == 'line'"
+                    span.is-text-danger ng-if="vm.contactErrors.sns"
+                      | {{vm.contactErrors.sns}}
+                tr
+                  th.clearfix
+                    span.title 内容
+                    span.btn.required 必須
+                  td
+                    textarea.form-control rows="8" name="message" required='' placeholder="いつ、何時ごろ、料金について" ng-model="vm.contact.message"
+
+            .center-button style="text-align:center;" ng-show="vm.canContactSubmited"
+              button.btn.btn-submit type="submit"  問合わせる
+            .center-button style="text-align:center;" ng-hide="vm.canContactSubmited"
+              loading-directive size="125"
+
+      #review.rank-box.shop-map.clearfix
+        .page-title
+          h2.title
+            | REVIEW
+        -if customer_signed_in?
+          .contact
+            form role="form" ng-submit='vm.reviewSubmit()' name="contactForm" novalidate=''
+              p 1：不満、２：やや不満、３：普通、４：やや満足、５：満足
+              table.res-form-table
+                tr
+                  th.clearfix
+                    span.title サービスはどうでしたか？
+                    span.btn.required 必須
+                  td
+                    rzslider rz-slider-model="vm.review.service_score" rz-slider-options="vm.serviceScoreAange.options"
+                tr
+                  th.clearfix
+                    span.title 接客はどうでしたか？
+                    span.btn.required 必須
+                  td
+                    rzslider rz-slider-model="vm.review.serving_score" rz-slider-options="vm.servingScoreAange.options"
+                tr
+                  th.clearfix
+                    span.title 女の子はどうでしたか？
+                    span.btn.required 必須
+                  td
+                    rzslider rz-slider-model="vm.review.girl_score" rz-slider-options="vm.girlScoreAange.options"
+                tr
+                  th.clearfix
+                    span.title お店の雰囲気はどうでしたか？
+                    span.btn.required 必須
+                  td
+                    rzslider rz-slider-model="vm.review.ambience_score" rz-slider-options="vm.ambienceScoreAange.options"
+                tr
+                  th.clearfix
+                    span.title また来たいと思いますか？
+                    span.btn.required 必須
+                  td
+                    rzslider rz-slider-model="vm.review.again_score" rz-slider-options="vm.againScoreAange.options"
+                tr
+                  th.clearfix
+                    span.title 内容
+                    span.btn.required 必須
+                  td
+                    textarea.form-control rows="4" name="comment" required='' placeholder="" ng-model="vm.review.comment"
+                    .error
+                      span.is-text-danger ng-if="vm.reviewErrors.comment"
+                        | {{vm.reviewErrors.comment}}
+              .center-button  ng-show="vm.canReviewSubmited"
+                button.btn.btn-submit type="submit" レビューする
+              .center-button ng-hide="vm.canReviewSubmited"
+                loading-directive size="125"
+        - else
+          p REVIEWを書くにはログインが必要です。
+          .center-button style="text-align:center;"
+            a.btn.btn-submit href="/login" ログインする
+
+        .profile-box.clearfix
+          ul.profile-list masonry=""
+            li.masonry-brick ng-repeat="review in vm.reviews"
+              h3
+                | {{review.sender.name}}さんのレビュー
+              p ng-bind-html="review.comment"

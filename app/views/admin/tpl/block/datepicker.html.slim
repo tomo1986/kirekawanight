@@ -1,0 +1,7 @@
+.input-group
+  input.form-control type="text" name="vm.inputName" required='' placeholder="{{vm.options.placeholder}}" disabled="true" datetime-picker="{{vm.options.format}}" ng-model="vm.data[vm.inputName]" is-open="vm.picker.open" enable-time="vm.options.enable_time" datepicker-options="vm.picker.datepickerOptions" ng-if="vm.options.is_required && vm.options.used != 'timePicker'"
+  input.form-control type="text" name="vm.inputName" placeholder="{{vm.options.placeholder}}" disabled="true" datetime-picker="{{vm.options.format}}" ng-model="vm.data[vm.inputName]" is-open="vm.picker.open" enable-time="vm.options.enable_time" datepicker-options="vm.picker.datepickerOptions" ng-if="!vm.options.is_required && vm.options.used != 'timePicker'"
+  input.form-control type="text" name="vm.inputName" placeholder="{{vm.options.placeholder}}" disabled="true" datetime-picker="{{vm.options.format}}" ng-model="vm.data[vm.inputName]" is-open="vm.picker.open"  timepicker-options="vm.picker.timepickerOptions" enable-date="false" ng-if="vm.options.is_required && vm.options.used == 'timePicker'"
+  span.input-group-btn
+    button.btn.btn-default.main-btn-color ng-click="vm.openCalendar($event, 'picker')" type="button"
+      i.fa.fa-calendar

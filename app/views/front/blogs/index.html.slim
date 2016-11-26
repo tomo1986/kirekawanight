@@ -1,0 +1,26 @@
+.move-menu
+  = render partial: 'front/layouts/header'
+  = render partial: 'front/layouts/nav'
+.main-content.container
+  main#main.blog-page
+    .profile-box.clearfix
+      ul.profile-list
+        - @blogs.each do |blog|
+          li
+            = blog.title_ja.html_safe
+            .article
+              = blog.article_ja.html_safe
+              .more
+                = link_to "/blogs/#{blog.id}"
+                  | 続きを読む
+            .article-footer.clearfix
+              .tags
+                | dfads
+              .date
+                = blog.created_at.strftime('%Y/%m/%d')
+                | 更新
+
+= render partial: 'front/layouts/footer'
+
+
+

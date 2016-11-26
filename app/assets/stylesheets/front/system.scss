@@ -1,0 +1,16 @@
+.system-page {
+  margin-bottom: $row-space-biger;
+  .system-box {
+    margin-bottom: $row-space-bigest;
+    .system-box--detail {
+      margin-bottom: $row-space-biger;
+    }
+    .notes {
+      margin-top: $row-space-half-half;
+      color: $_sub_text;
+    }
+    .attention{
+
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.container cast-index-directive=""
+  main#main.cast-page
+    breadcrumb-directive data="vm.breadcrumb"
+    .rank-box
+      .page-title
+        h2.title
+          | NEW FACE
+      .queen-list.clearfix
+        li ng-repeat="cast in vm.casts"
+          .fream
+            .fream--basic.fream--top-left
+            .fream--basic.fream--top-right
+            .fream--basic.fream--bottom-left
+            .fream--basic.fream--bottom-right
+            a href="/casts/{{cast.id}}"
+              img ng-src="{{cast.image_url}}" alt="{{cast.name}}の画像"
+          .profile
+            .name
+              | {{cast.name}}
+              | ({{cast.age}})
+            .body
+              | T{{cast.body.height}} B{{cast.body.bust}}({{cast.body.bust_size}}) W{{cast.body.waist}} H{{cast.body.hip}}
+            .rank
+              | {{cast.rank}}クラス
+    .rank-box
+      .page-title
+        h2.title
+          | FIRST CLASS
+      .queen-soon
+        | FIRST CLASS に属している女性はいません。今しばらくお待ち下さい。
+    .rank-box
+      .page-title
+        h2.title
+          | DIAMOND CLASS
+      .queen-list.clearfix
+        li ng-repeat="cast in vm.casts"
+          .fream
+            .fream--basic.fream--top-left
+            .fream--basic.fream--top-right
+            .fream--basic.fream--bottom-left
+            .fream--basic.fream--bottom-right
+            a href="/casts/{{cast.id}}"
+              img ng-src="{{cast.image_url}}" alt="{{cast.name}}の画像"
+          .profile
+            .name
+              | {{cast.name}}
+              | ({{cast.age}})
+            .body
+              | T{{cast.body.height}} B{{cast.body.bust}}({{cast.body.bust_size}}) W{{cast.body.waist}} H{{cast.body.hip}}
+            .rank
+              | {{cast.rank}}クラス
+    .rank-box
+      .page-title
+        h2.title
+          | PLATINUM CLASS
+      .queen-list.clearfix
+        li ng-repeat="cast in vm.casts"
+          .fream
+            .fream--basic.fream--top-left
+            .fream--basic.fream--top-right
+            .fream--basic.fream--bottom-left
+            .fream--basic.fream--bottom-right
+            a href="/casts/{{cast.id}}"
+              img ng-src="{{cast.image_url}}" alt="{{cast.name}}の画像"
+          .profile
+            .name
+              | {{cast.name}}
+              | ({{cast.age}})
+            .body
+              | T{{cast.body.height}} B{{cast.body.bust}}({{cast.body.bust_size}}) W{{cast.body.waist}} H{{cast.body.hip}}
+            .rank
+              | {{cast.rank}}クラス
+    .rank-box
+      .page-title
+        h2.title
+          | GOLD CLASS
+      .queen-list.clearfix
+        li ng-repeat="cast in vm.casts"
+          .fream
+            .fream--basic.fream--top-left
+            .fream--basic.fream--top-right
+            .fream--basic.fream--bottom-left
+            .fream--basic.fream--bottom-right
+            a href="/casts/{{cast.id}}"
+              img ng-src="{{cast.image_url}}" alt="{{cast.name}}の画像"
+          .profile
+            .name
+              | {{cast.name}}
+              | ({{cast.age}})
+            .body
+              | T{{cast.body.height}} B{{cast.body.bust}}({{cast.body.bust_size}}) W{{cast.body.waist}} H{{cast.body.hip}}
+            .rank
+              | {{cast.rank}}クラス

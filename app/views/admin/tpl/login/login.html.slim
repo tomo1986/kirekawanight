@@ -1,0 +1,27 @@
+#main login-directive="" style="height:{{vm.height}}px;"
+  .login-page
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.col-xs-12
+        .login-page-box.clearfix
+          div
+            form role="form" ng-submit='vm.submit()' name="loginForm" novalidate=''
+              .form-content
+                .form-group.clearfix
+                  label.input-label for="email" 登録メールアドレス
+                  input#email.form-control type="text" name="email" ng-model="vm.user.email" required='' placeholder="ご登録のメールアドレス"
+                  .error
+                    span.is-text-danger ng-if="vm.errors.email"
+                      | {{vm.errors.email}}
+                .form-group
+                  label.input-label for="password" パスワード
+                  input#password.form-control type="password" name="password" ng-model="vm.user.password" required='' placeholder="半角英数字8文字以上"
+                  .error
+                    span.is-text-danger ng-if="vm.errors.password"
+                      | {{vm.errors.password}}
+
+                .control-checkbox.clearfix
+                  input.checkbox id="remember_me" type="checkbox" name="remember_me" ng-model='vm.user.remember_me' /
+                  label.label-checkbox for="remember_me" 次回から自動的にログインする
+                button.btn.rounded-btn type="submit" ng-disabled="loginForm.$invalid" ログイン
+                .reset-password-text
+                  a href="/business/login/reset_password" パスワードをわすれた方はこちら

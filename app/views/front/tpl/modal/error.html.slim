@@ -1,0 +1,12 @@
+.modal-header
+  button.close aria-label="Close" data-dismiss="modal" type="button" ng-click="close()"
+    span aria-hidden="true"  &times;
+  h4 ng-if="title"
+    | {{title}}
+.modal-body
+  .modal--error
+    p ng-if="message"
+      | {{message}}
+    .button-center
+      button.btn.main-btn type="button" ng-click="close()"
+        span 閉じる

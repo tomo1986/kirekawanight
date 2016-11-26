@@ -1,0 +1,55 @@
+.main-content.group-detail-page.clearfix customer-directive=""
+  .container
+    breadcrumb-directive data="vm.breadcrumb"
+  .container
+    main#main
+      .schedule
+        .page-title
+          h2.title
+            |  編集
+        form role="form" ng-submit='vm.submit()' name="loginForm" novalidate=''
+          table.res-form-table style="margin-bottom: 4rem;"
+            tr
+              th.res-form-table__th.title-box.clearfix
+                span.title ng-class="{'is-text-danger': vm.errors.name}" name(nick name ok)
+              td.res-form-table__td.input-box
+                input#email.form-control type="text" name="name" ng-model="vm.customer.name" required='' placeholder="切川"
+                .error
+                  span.is-text-danger ng-if="vm.errors.name"
+                    | {{vm.errors.name}}
+            tr
+              th.res-form-table__th.title-box.clearfix
+                span.title ng-class="{'is-text-danger': vm.errors.name}" TEL
+              td.res-form-table__td.input-box
+                input#email.form-control type="text" name="name" ng-model="vm.customer.tel" required='' placeholder="012212341234"
+                .error
+                  span.is-text-danger ng-if="vm.errors.tel"
+                    | {{vm.errors.tel}}
+            tr
+              th.res-form-table__th.title-box.clearfix
+                span.title ng-class="{'is-text-danger': vm.errors.name}" Email
+              td.res-form-table__td.input-box
+              input#email.form-control type="text" name="email" ng-model="vm.customer.email" required='' placeholder="ご登録のメールアドレス"
+              .error
+                span.is-text-danger ng-if="vm.errors.email"
+                  | {{vm.errors.email}}
+            tr
+              th.res-form-table__th.title-box.clearfix
+                span.title ng-class="{'is-text-danger': vm.errors.name}" SNS
+              td.res-form-table__td.input-box
+                dl
+                  dt
+                    | Zalo
+                  dd
+                    input.form-control type="text" name="zalo" placeholder="aiueo" ng-model="vm.customer.sns_zalo"
+                  dt
+                    | WeChat
+                  dd
+                    input.form-control type="text" name="wechat" placeholder="aiueo" ng-model="vm.customer.sns_wechat"
+                  dt
+                    | LINE
+                  dd
+                    input.form-control type="text" name="line" placeholder="aiueo" ng-model="vm.customer.sns_line"
+
+          div style="width:5rem; margin: 0 auto;"
+            button.btn.rounded-btn type="submit" SUBMIT

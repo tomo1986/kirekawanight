@@ -1,0 +1,128 @@
+.blog-page {
+  .profile-box{
+    .profile-list{
+      li{
+        h2 {
+          padding: 0.75rem;
+          color: $_brand-basic;
+          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#720e0a+0,020202+100,020202+100,f4f4f4+100 */
+          background: #720e0a; /* Old browsers */
+          background: -moz-linear-gradient(left,  #720e0a 0%, #020202 100%, #020202 100%, #f4f4f4 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(left,  #720e0a 0%,#020202 100%,#020202 100%,#f4f4f4 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to right,  #720e0a 0%,#020202 100%,#020202 100%,#f4f4f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#720e0a', endColorstr='#f4f4f4',GradientType=1 ); /* IE6-9 */
+          margin-bottom: $row-space-half;
+          border-left: 3px solid $_brand-basic;
+          font-size: 1rem;
+          font-weight: 600;
+          letter-spacing: .3px;
+          line-height: normal;
+        }
+        .article{
+          padding: $row-space;
+          .more{
+            text-align: right;
+            a{
+              color: $_em_text_hover;
+
+            }
+          }
+        }
+        .article-footer {
+          border-top: 1px solid $gray-lighter;
+          padding: $row-space;
+          .tags{
+            float:left;
+            width:80%;
+          }
+          .date{
+            float: right;
+            width:20%;
+            text-align: right;
+
+          }
+        }
+      }
+    }
+
+  }
+  .sidebar-box{
+    padding: $row-space;
+    background-color: #222;
+    .footer-share__btns {
+      list-style: none;
+      padding: 0;
+      margin-top: -5px;
+      width: 100%;
+      text-align: center;
+      li {
+        display: inline-block;
+        .btn--share {
+          width: 32px;
+          height: 32px;
+          background-color: #444;
+          margin: 0 0 0 10px;
+          svg {
+            display: block;
+            fill: #fff;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .btn--share {
+          display: block;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          color: #fff;
+          text-decoration: none;
+          -webkit-transition: background-color 0.15s;
+          transition: background-color 0.15s;
+        }
+      }
+      .footer-share__btns:before, .footer-share__btns:after {
+        content: " ";
+        display: table;
+      }
+      .btn--share--facebook:hover {
+        background-color: #3b5998 !important; }
+
+      .btn--share--twitter:hover {
+        background-color: #55acee !important; }
+
+      .btn--share--line:hover {
+        background-color: #1dcd00 !important; }
+
+      .btn--share--google_plus:hover {
+        background-color: #dd4b39 !important; }
+
+      .btn--share--linkedin:hover {
+        background-color: #0e76a8 !important; }
+      svg use {
+        pointer-events: none;
+      }
+    }
+
+  }
+  .article{
+    h2 {
+      padding: 0.75rem;
+      color: $_brand-basic;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#720e0a+0,020202+100,020202+100,f4f4f4+100 */
+      background: #720e0a; /* Old browsers */
+      background: -moz-linear-gradient(left,  #720e0a 0%, #020202 100%, #020202 100%, #f4f4f4 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left,  #720e0a 0%,#020202 100%,#020202 100%,#f4f4f4 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right,  #720e0a 0%,#020202 100%,#020202 100%,#f4f4f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#720e0a', endColorstr='#f4f4f4',GradientType=1 ); /* IE6-9 */
+      margin-bottom: $row-space-half;
+      border-left: 3px solid $_brand-basic;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: .3px;
+      line-height: normal;
+    }
+
+  }
+
+
+}

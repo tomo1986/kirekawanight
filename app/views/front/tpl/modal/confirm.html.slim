@@ -1,0 +1,41 @@
+.modal-header
+  button.close aria-label="Close" data-dismiss="modal" type="button" ng-click="close()"
+    i.fa.fa-times aria-hidden="true"
+  h2.modal-title
+    span
+      | {{title}}
+.modal-body
+  .data-table-box
+    table.data-table
+      tr ng-repeat="data in datas"
+        th
+          span.title
+            | {{data.name}}
+        td.clearfix.input-box ng-if="data.kind == 'string'"
+          span ng-if="data.val"
+            | {{data.val}}
+
+        td.clearfix.input-box ng-if="data.kind == 'text'"
+          div ng-bind-html="data.val" ng-if="data.val"
+
+        td.clearfix.input-box ng-if="data.kind == 'number'"
+          span ng-if="data.val"
+            | {{data.val | number}}
+        td.clearfix.input-box ng-if="data.kind == 'date'"
+          span ng-if="data.val"
+            | {{data.val | date: 'yyyy年M月d日 HH:mm' }}
+
+        td.clearfix.input-box ng-if="data.kind == 'image'"
+          .row ng-if="data.val"
+            .col-md-12
+              .pic
+                image-directive parent-class="pic" img-url="{{data.val}}"
+
+  .clearfix style="margin:1rem 0;" ng-if="buttons"
+    p.col-xs-12.col-sm-6 ng-repeat="button in buttons"
+      a.btn.main-btn href="javascript:void(0)" ng-href="{{button.link}}" ng-click="onCallback(button.callbackFunc)" ng-if="button.callbackFunc"
+        span
+          | {{button.name}}
+      a.btn.main-btn href="javascript:void(0)" ng-href="{{button.link}}" ng-click="onChangePage()"  ng-if="!button.callbackFunc"
+        span
+          | {{button.name}}

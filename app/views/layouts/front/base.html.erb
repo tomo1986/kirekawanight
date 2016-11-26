@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="bisyoujoZukanNight">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title><%= @head_title%></title>
+    <meta name="keywords" content="<%= @head_keyword %>" />
+    <meta name="description" content="<%= @head_description %>" />
+    <meta name="fragment" content="!">
+    <%= stylesheet_link_tag    'front/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyB5VIiNS21Yo2PgdpW2bWKGqelRB-GeZZU"></script>
+    <%= javascript_include_tag 'front/application', 'data-turbolinks-track': 'reload' %>
+
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body class="fadebody">
+  <%= yield %>
+  </body>
+</html>

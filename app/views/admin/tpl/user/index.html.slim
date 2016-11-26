@@ -1,0 +1,128 @@
+section.main-container.notification-index-page user-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | プッシュ通知
+    .row
+      .page-detail
+        | プッシュ通知一覧です。
+        br
+        | お客様のスマートフォンに通知することができます。
+      .make-new-map
+        a.btn.make-btn href="/admin/users/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      form role="form" ng-submit='vm.submit()' name="filterForm" novalidate=''
+        .account-filters.clearfix
+          .col-md-12
+            .row
+              .form-group.clearfix
+                label.col-xs-12.col-md-2 for="inputPassword"  KeyWord
+                .col-xs-12.col-md-10
+                  input#inputPassword.form-control type="text" ng-model="vm.filters.keywords"
+          .col-md-12
+            .row
+              .col-md-6
+                .row
+                  .form-group.clearfix
+                    label.col-xs-12.col-md-4 for="inputPassword"  Group
+                    .col-xs-12.col-md-8
+                      select.form-control.form-control-ls
+                        option value=""  -- 選択してください --
+                        option ng-repeat="group in vm.groups" ng-value="group.id"
+                          | {{group.name}}
+
+              .col-md-6
+                .row
+                  .form-group.clearfix
+                    label.col-xs-12.col-md-4 for="inputPassword" SEX
+                    .col-xs-12.col-md-8
+                      select.form-control.form-control-ls
+                        option value=""  -- 選択してください --
+                        option value="0" Boy
+                        option value="1" girl
+
+          .col-md-12
+            .row
+              .col-md-6
+                .row
+                  .form-group.clearfix
+                    label.col-xs-12.col-md-4 for="inputPassword" 担当者
+                    .col-xs-12.col-md-8
+                      select.form-control.form-control-ls
+                        option value=""  -- 選択してください --
+                        option value="0" ng-selected="vm.parentCtrl.capsule.quiz_result == 0"  A
+                        option value="1" ng-selected="vm.parentCtrl.capsule.quiz_result == 1"  B
+                        option value="2" ng-selected="vm.parentCtrl.capsule.quiz_result == 2"  C
+              .col-md-6
+                .row
+                  .form-group.clearfix
+                    label.col-xs-12.col-md-4 for="inputPassword" 担当者
+                    .col-xs-12.col-md-8
+                      select.form-control.form-control-ls
+                        option value=""  -- 選択してください --
+                        option value="0" ng-selected="vm.parentCtrl.capsule.quiz_result == 0"  A
+                        option value="1" ng-selected="vm.parentCtrl.capsule.quiz_result == 1"  B
+                        option value="2" ng-selected="vm.parentCtrl.capsule.quiz_result == 2"  C
+          .col-md-12
+            .row
+              .form-group.clearfix
+                label.col-xs-12.col-md-2 for="inputPassword"  都道府県
+                #js-check-prefecture.col-xs-12.col-md-10
+                  label.checkbox-space ng-repeat="prefecture in vm.prefectures"
+                    input id="{{prefecture.en}}" type="checkbox" name="prefectures" value="{{prefecture.name}}"
+                    span
+                      | {{prefecture.name}}
+
+          .col-md-12
+            .btn-center
+              button.btn.rounded-btn type="submit" 検索
+              button.btn.rounded-btn type="button" ng-click="vm.resetFilter()" 条件クリア
+
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th
+              | id
+              i.fa ng-class="{'fa-arrow-down': vm.filters.ordered == '-id', 'fa-arrow-up': vm.filters.ordered == 'id'}"
+            th name
+            th image
+            th belong
+            th dayly PV
+            th weekly PV
+            th monthly PV
+            th support count
+            th favorite count
+            th contact count
+            th edit
+            th delete
+        tbody
+          tr(dir-paginate="user in vm.users | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="id"  {{user.id}}
+            td.clearfix data-label="name"
+              a href="/admin/users/{{user.id}}/detail"
+                | {{user.name}}
+            td.clearfix data-label="image"
+              img ng-src="{{user.images[0].url}}" style="width:50px;" ng-if="user.images &&  user.images[0]"
+            td.clearfix data-label="belong"
+              a href="/admin/groups/{{user.group.id}}/detail"
+                | {{user.group.name}}
+            td.clearfix data-label="dayly PV"  {{user.dayly_count}}
+            td.clearfix data-label="weekly PV"  {{user.weekly_count}}
+            td.clearfix data-label="monthly PV"  {{user.monthly_count}}
+            td.clearfix data-label="support count"  {{user.support_count}}
+            td.clearfix data-label="favorite count"  {{user.favorite_count}}
+            td.clearfix data-label="contact count"  {{user.contact_count}}
+            td.clearfix data-label="編集"
+              a.btn.action-btn href="/admin/users/{{user.id}}/edit" 編集
+            td.clearfix data-label="削除"
+              a.btn.action-btn ng-click="vm.onCancelButtonClicked(item)" 削除
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/admin/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+
+
+

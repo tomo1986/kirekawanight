@@ -1,0 +1,40 @@
+/- if admin_user_signed_in?
+button#toggle-sidebar.btn.btn-default type="button" ng-click="vm.eventCalled()"
+  | ☰
+nav.sidebar ng-class="{'sidebarPushRight': vm.isActive}"
+  ul.list-group
+    li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'dashboard'}" href="/admin" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-dashboard
+        span.menu-text Dashboard
+    li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'group'}" href="/admin/groups" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-building
+        span.menu-text Groups
+    li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'user'}" href="/admin/users" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-users
+        span.menu-text Users
+    li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'bannar'}" href="/admin/banners" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-newspaper-o
+        span.menu-text Banners
+    li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'pickup'}" href="/admin/pickups" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-envelope
+        span.menu-text Pickups
+    li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'contact'}" href="/admin/contacts" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-envelope
+        span.menu-text Contacts
+    li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'blog'}" href="/admin/blogs" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-envelope
+        span.menu-text Blogs

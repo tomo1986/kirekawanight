@@ -1,0 +1,30 @@
+.modal-header ng-init="init()"
+  button.close aria-label="Close" data-dismiss="modal" type="button" ng-click="close()"
+    span aria-hidden="true"  &times;
+  h2.modal-title
+    span 住所選択
+.modal-body
+  .title マップをクリックまたは検索ボックスから住所を選択することができます。
+  .data-table-box
+    table.map-form-table.map-display--table
+      tr
+        td.clearfix.input-box
+          p.input-group.clearfix
+            input.form-control type="text" name="address" placeholder="東京スカイツリー"  ng-model="search_address"
+            span.input-group-btn
+              button.btn.btn-default.main-btn-color ng-disabled="!search_address" ng-click="getAddress()" type="button"
+                i.fa.fa-search
+          .displayed-address-box.clearfix
+            .title
+              | 住所:
+            .address
+              span#id_address
+                | {{address || '住所選択されていません'}}
+          .map-display-box
+            #map_canvas.clearfix
+            #loading-box
+              loading-directive size="125"
+
+    .button-center
+      button.btn.main-btn type="button" ng-disabled="!address" ng-click="getLocation()"
+        span 決定する

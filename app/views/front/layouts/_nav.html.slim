@@ -1,0 +1,46 @@
+div
+  button#toggle-sidebar.btn.btn-default ng-click="vm.eventCalled()" type="button"  ☰
+  nav#nav ng-class="{'sidebarPushRight': vm.isActive}"
+    .container
+      ul.nav--list.clearfix
+        li
+          a href="/" ng-class="{'active': vm.active == 'home'}" ng-click="vm.eventCalled()"
+            h2.main トップ
+            span.sub TOP
+        li
+          a href="/casts/karaoke?page=1" ng-class="{'active': vm.active == 'karaoke'}" ng-click="vm.eventCalled()"
+            h2.main カラオケ美女
+            span.sub KARAOKE GIRL
+        li
+          a href="/casts/bar?page=1" ng-class="{'active': vm.active == 'bar'}" ng-click="vm.eventCalled()"
+            h2.main バー美女
+            span.sub BAR GIRL
+        li
+          a href="/casts/massage?page=1" ng-class="{'active': vm.active == 'massage'}" ng-click="vm.eventCalled()"
+            h2.main マッサー美女
+            span.sub MASSAGE GIRL
+        li
+          a href="/casts/sexy?page=1" ng-class="{'active': vm.active == 'sexy'}" ng-click="vm.eventCalled()"
+            h2.main SEXY美女
+            span.sub SEXY GIRL
+        li
+          a href="/comsept" ng-class="{'active': vm.active == 'comsept'}" ng-click="vm.eventCalled()"
+            h2.main kirekawa??
+            span.sub COMSEPT
+        li
+          a href="/contact" ng-class="{'active': vm.active == 'contact'}" ng-click="vm.eventCalled()"
+            h2.main お問合せ
+            span.sub CONTACT
+        -if customer_signed_in?
+          li
+            a href="javascript:void(0)" ng-click="vm.onClickedLogout()"
+              h2.main ログアウト
+              span.sub LOGOUT
+        - else
+          li
+            a href="/login" ng-click="vm.eventCalled()"
+              h2.main ログイン/登録
+              span.sub LOGIN/NEW
+
+      button.close type="button" ng-click="vm.onClosed()"
+        i.fa.fa-times aria-hidden="true"

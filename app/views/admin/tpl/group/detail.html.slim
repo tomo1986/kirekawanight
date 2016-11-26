@@ -1,0 +1,128 @@
+section.main-container.map-form-page group-detail-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | 会社新規登録
+    .row
+      .col-xs-12
+        .row
+          .col-md-3.col-sm-4
+            .card
+              .inner
+                h6 monthly page view count
+                p
+                  | {{vm.monthly_pv_count}}
+          .col-md-3.col-sm-4
+            .card
+              .inner
+                h6 monthly support count
+                p
+                  | {{vm.monthly_support_count}}
+          .col-md-3.col-sm-4
+            .card
+              .inner
+                h6 monthly favorite count
+                p
+                  | {{vm.monthly_favorite_count}}
+          .col-md-3.col-sm-4
+            .card
+              .inner
+                h6 monthly contact count
+                p
+                  | {{vm.monthly_contact_count}}
+          .col-md-3.col-sm-4
+            .card
+              .inner
+                h6 monthly review count
+                p
+                  | {{vm.monthly_review_count}}
+
+          .col-md-3.col-sm-4
+            .card
+              .inner
+                h6 Total Score
+                p
+                  | {{vm.user.score || 0}}
+    .row
+      chart-line-directive options="vm.chartLineOptions" date="vm.chartLine1" id="chartLine1"
+    .row
+      table.res-form-table style="margin-bottom: 4rem;"
+        caption aaaaaa
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 住所
+          td.res-form-table__td.input-box
+            | {{vm.group.address}}
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title ng-class="{'is-text-danger': vm.errors.name}" name
+          td.res-form-table__td.input-box
+            | {{vm.group.name}}
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title ng-class="{'is-text-danger': vm.errors.name}" tel
+          td.res-form-table__td.input-box
+            | {{vm.group.tel}}
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title email
+          td.res-form-table__td.input-box
+            | {{vm.group.email}}
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 言語
+          td.res-form-table__td.input-box
+            label.form-check-inline ng-if="vm.group.is_napanese"
+              | japanese
+            label.form-check-inline ng-if="vm.group.is_english"
+              | english
+            label.form-check-inline ng-if="vm.group.is_chinese"
+              | chinese
+            label.form-check-inline ng-if="vm.group.is_korean"
+              | korean
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title sns
+          td.res-form-table__td.input-box
+            dl
+              dt
+                | Zalo
+              dd
+                | {{vm.group.sns_zalo}}
+              dt
+                | WeChat
+              dd
+                | {{vm.group.sns_wechat}}
+              dt
+                | Line
+              dd
+                | {{vm.group.sns_line}}
+
+
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title ng-class="{'is-text-danger': vm.errors.image_url}" MAP画像
+            td.res-form-table__td.input-box.image-box--arry
+              .row
+                .col-md-4 style="margin-bottom:1rem;" ng-repeat="image in vm.images track by $index"
+                  .pic
+                    image-directive parent-class="pic" img-url="{{vm.images[$index].url}}"
+
+
+
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title Interview 日本語
+          td.res-form-table__td.input-box
+            p ng-bind-html="vm.group.interview_ja | noHTML | newlines"
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title Interview vietnamese
+          td.res-form-table__td.input-box
+            p ng-bind-html="vm.group.interview_vn | noHTML | newlines"
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title Interview english
+          td.res-form-table__td.input-box
+            p ng-bind-html="vm.group.interview_en | noHTML | newlines"

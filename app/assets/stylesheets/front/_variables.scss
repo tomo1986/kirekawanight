@@ -1,0 +1,27 @@
+$gray-dark:                 #373a3c !default;
+$gray:                      #55595c !default;
+$gray-light:                #818a91 !default;
+$gray-lighter:              #cdcdcd !default;
+$gray-lightest:             #f7f7f9 !default;
+$white:                     #fff    !default;
+
+$_brand-basic:              #ad9a58 !default;
+
+$_basic_background:         #000 !default;
+$_basic_text:               #fff !default;
+$_em_text:                  #E2D39F !default;
+$_em_text_hover:            #ad9a58 !default;
+$_sub_text:                 #720e0a !default;
+
+
+$_basic-border:             #999 !default;
+$_basic-shadow:             inset 0 0 0 1px #eee !default;
+$_basic-radius:             2px !default;
+$_basic-title:              #a5a7aa !default;
+
+$row-space: 0.9375rem;
+$row-space-bog: $row-space + $row-space;
+$row-space-biger: $row-space + $row-space + $row-space;
+$row-space-bigest: $row-space + $row-space + $row-space + $row-space;
+$row-space-half: 0.46875rem;
+$row-space-half-half: 0.234375rem;

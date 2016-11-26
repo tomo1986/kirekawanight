@@ -1,0 +1,40 @@
+.modal-header
+  button.close aria-label="Close" data-dismiss="modal" type="button" ng-click="close()"
+    i.fa.fa-times aria-hidden="true"
+  h2.modal-title
+    span 新規会員登録
+.modal-body
+  .data-table-box
+    table.data-table ng-if="isCreateFormDisplayed || isLoginFormDisplayed"
+      tr ng-if="isCreateFormDisplayed"
+        th.res-form-table__th.title-box.clearfix
+          span.title ng-class="{'is-text-danger': vm.errors.name}" name
+        td.res-form-table__td.input-box
+          input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="customer.name"
+      tr
+        th.res-form-table__th.title-box.clearfix
+          span.title email
+        td.res-form-table__td.input-box
+          input.form-control type="email" name="email" required='' placeholder="aiueo" ng-model="customer.email"
+      tr
+        th.res-form-table__th.title-box.clearfix
+          span.title password
+        td.res-form-table__td.input-box
+          input.form-control type="password" name="password" required='' placeholder="aiueo" ng-model="customer.password"
+
+    div.col-6-btn ng-if="isCreateFormDisplayed || isLoginFormDisplayed" style="margin-top:1rem;"
+      a.btn.main-btn href="javascript:void(0)" ng-click="onSubmited()"
+        span 送信
+
+    .clearfix ng-if="!isCreateFormDisplayed && !isLoginFormDisplayed"
+      .col-xs-12 style="margin-bottom:1rem;"
+        .row
+          .login-customer-left
+            a.btn.main-btn href="javascript:void(0)" ng-click="onLogined()"  ng-if="!button.callbackFunc"
+              span ログイン
+          .login-customer-right
+            a.btn.main-btn href="javascript:void(0)" ng-click="onCreated()"  ng-if="!button.callbackFunc"
+              span 新規登録
+      div.col-12-btn
+        a.btn.main-btn href="javascript:void(0)" ng-click="close()"
+          span 閉じる

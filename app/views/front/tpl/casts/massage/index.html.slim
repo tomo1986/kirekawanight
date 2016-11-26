@@ -1,0 +1,91 @@
+.main-content.container cast-massage-index-directive=""
+  main#main.cast-page
+    breadcrumb-directive data="vm.breadcrumb"
+    .rank-box
+      ul.genre-tag
+        li
+          a href="/groups/massage"
+            | SHOP
+        li
+          a.active href="/casts/massage"
+            | CAST
+    .rank-box ng-if="vm.push_casts.length > 0 && vm.filters.page == 1"
+      .page-title
+        h2.title
+          | TODAY'S POWER PUSH
+      .queen-list.clearfix
+        li ng-repeat="cast in vm.push_casts"
+          .fream
+            .fream--basic.fream--top-left
+            .fream--basic.fream--top-right
+            .fream--basic.fream--bottom-left
+            .fream--basic.fream--bottom-right
+            a href="/casts/karaoke/{{cast.id}}"
+              img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+          .profile
+            .name
+              | {{cast.nick_name}}({{cast.age}})
+              span
+                i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
+            .body
+              | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+              br
+              .support.clearfix
+                h5.title
+                  | 応援数
+                p.count
+                  | {{cast.support_count | number}}
+              .favorid.clearfix
+                h5.title
+                  | お気に入り登録数
+                p.count
+                  |  {{cast.favorite_count | number}}
+    .rank-box
+      .page-title
+        h2.title
+          | CAST
+      .filter-box.clearfix
+        .total-count-box
+          span
+            | {{vm.total | number}}
+          | 件の女の子がいます。
+
+        ul.filter-list
+          li.sort
+            select.form-control name="constellation" ng-model="vm.filters.sort"
+              option value="new" ng-selected="vm.filters.sort == 'new'" 新着順
+              option value="support" ng-selected="vm.filters.sort == 'support'" 応援されている順
+              option value="favorite" ng-selected="vm.filters.sort == 'favorite'" お気に入り登録されている順
+              option value="review" ng-selected="vm.filters.sort == 'review'" スコアが高い順
+          li.order
+            select.form-control name="constellation" ng-model="vm.filters.order"
+              option value="asc" ng-selected="vm.filters.order == 'asc'" 昇順
+              option value="desc" ng-selected="vm.filters.order == 'desc'" 降順
+      .queen-list.clearfix ng-if="vm.casts"
+        li dir-paginate="cast in vm.casts | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page"
+          .fream
+            .fream--basic.fream--top-left
+            .fream--basic.fream--top-right
+            .fream--basic.fream--bottom-left
+            .fream--basic.fream--bottom-right
+            a href="/casts/karaoke/{{cast.id}}"
+              img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+          .profile
+            .name
+              | {{cast.nick_name}}({{cast.age}})
+              span
+                i.fa.fa-heart aria-hidden="true"  ng-class="{'active': vm.favorites[cast.id]}" ng-click="vm.onClickedFavorite(cast.id)"
+            .body
+              | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+              br
+              .support.clearfix
+                h5.title
+                  | 応援数
+                p.count
+                  | {{cast.support_count | number}}
+              .favorid.clearfix
+                h5.title
+                  | お気に入り登録数
+                p.count
+                  |  {{cast.favorite_count | number}}
+      dir-pagination-controls boundary-links="true" template-url="/front/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"

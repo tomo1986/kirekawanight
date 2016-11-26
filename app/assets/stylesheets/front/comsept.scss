@@ -1,0 +1,38 @@
+.comsept-page {
+  margin-bottom: $row-space-biger;
+  .comsept-box {
+    margin-bottom: $row-space-bigest;
+    .comsept-box--detail {
+      margin-bottom: $row-space-biger;
+      .sub-title {
+        padding: 0.75rem;
+        color: $_brand-basic;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#720e0a+0,020202+100,020202+100,f4f4f4+100 */
+        background: #720e0a; /* Old browsers */
+        background: -moz-linear-gradient(left,  #720e0a 0%, #020202 100%, #020202 100%, #f4f4f4 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  #720e0a 0%,#020202 100%,#020202 100%,#f4f4f4 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  #720e0a 0%,#020202 100%,#020202 100%,#f4f4f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#720e0a', endColorstr='#f4f4f4',GradientType=1 ); /* IE6-9 */
+        margin-bottom: $row-space-half;
+        border-left: 3px solid $_brand-basic;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: .3px;
+        line-height: normal;
+      }
+    }
+    .notes {
+      margin-top: $row-space-half-half;
+      color: $_sub_text;
+    }
+    .attention{
+      font-size: 2rem;
+      color: $_brand-basic;
+    }
+    p{
+      font-size: 1.2rem;
+      line-height: 2rem;
+      color: #ddd;
+    }
+  }
+}
