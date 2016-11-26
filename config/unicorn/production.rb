@@ -1,4 +1,4 @@
-DEPLOY_PATH ='/home/ubuntu/kanri'
+DEPLOY_PATH ='/home/ubuntu/kirekawanight'
 # Sample verbose configuration file for Unicorn (not Rack)
 #
 # This configuration file documents many features of Unicorn
