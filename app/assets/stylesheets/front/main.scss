@@ -496,6 +496,11 @@ a, button {
     .header-top {
       background-color: rgba(114,14,10,0.7);
       padding: 0 0 $row-space-half-half;
+      @media screen and (min-width: 320px) and (max-width: 767px){
+        display:none;
+      }
+
+
       .top-list {
         float:right;
         li{
@@ -607,7 +612,12 @@ a, button {
     @media screen and (min-width: 320px) and (max-width: 767px){
       margin: 0 -0.9375rem;
     }
-
+    .display-mobile{
+      display: block;
+      @media screen and (min-width: 768px){
+        display: none;
+      }
+    }
     li {
       float:left;
       text-align: center;
