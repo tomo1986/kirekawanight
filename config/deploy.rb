@@ -19,13 +19,12 @@ set :deploy_tag, "deploy-#{Time.now.strftime('%Y%m%d-%H%M-%S')}"
 set :rbenv_roles, :all # default value
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system}
 set :delayed_job_server_role, :delayed_job
-after 'deploy:publishing', 'deploy:restart'
+after 'deploy:publishing'
 
 
 namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
-    invoke 'delayed_job:restart'
   end
 end
 
