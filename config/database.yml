@@ -13,7 +13,7 @@ development:
 
 production:
   adapter: mysql2
-  database: bisyoujo_zukan_night_production
+  database: kirekawa_night_production
   host: localhost
   username: root
   password: "kirekawa2016"
