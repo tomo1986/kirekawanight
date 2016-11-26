@@ -19,7 +19,6 @@ set :deploy_tag, "deploy-#{Time.now.strftime('%Y%m%d-%H%M-%S')}"
 set :rbenv_roles, :all # default value
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system}
 set :delayed_job_server_role
-after 'deploy:publishing'
 
 
 namespace :deploy do

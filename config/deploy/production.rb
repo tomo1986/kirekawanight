@@ -7,7 +7,7 @@
 
 set :rails_env, 'production'
 set :deploy_to, '/home/ubuntu/kirekawanight'
-server '153.120.171.71', user: 'ubuntu', roles: %w{app db web delayed_job}, ssh_options: {port: 22}
+server '153.120.171.71', user: 'ubuntu', roles: %w{app db web}, ssh_options: {port: 22}
 
 
 # role :app, %w{deploy@example.com}
