@@ -1,0 +1,36 @@
+section.main-container.notification-index-page blog-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | Blog List
+    .row
+      .make-new-map
+        a.btn.make-btn href="/group/blogs/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th ID
+            th head_title_ja
+            th head_keyword_ja
+            th head_description_ja
+            th title_ja
+            th edit
+        tbody
+          tr(dir-paginate="blog in vm.blogs | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="ID"  {{blog.id}}
+            td.clearfix data-label="head_title_ja"  {{blog.head_title_ja}}
+            td.clearfix data-label="head_keyword_ja" {{blog.head_keyword_ja}}
+            td.clearfix data-label="head_description_ja" {{blog.head_description_ja}}
+            td.clearfix data-label="title_ja" {{blog.title_ja}}
+            td.clearfix data-label="edit"
+              a.btn.action-btn href="/group/blogs/{{blog.id}}/edit" 編集
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/group/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+
+
+

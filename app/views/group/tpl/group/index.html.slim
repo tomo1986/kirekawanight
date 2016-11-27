@@ -1,0 +1,40 @@
+section.main-container.notification-index-page group-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | Group List
+    .row
+      .make-new-map
+        a.btn.make-btn href="/group/groups/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th ID
+            th image
+            th name
+            th member_count
+            th edit
+            th delete
+        tbody
+          tr(dir-paginate="group in vm.groups | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="ID"  {{group.id}}
+            td.clearfix data-label="image"
+              img src="{{group.images[0].url}}" style="width:50px;"
+            td.clearfix data-label="name"
+              a.btn.action-btn href="/group/groups/{{group.id}}/detail"
+                | {{group.name}}
+            td.clearfix data-label="member_count" {{group.user_count}}
+            td.clearfix data-label="edit"
+              a.btn.action-btn href="/group/groups/{{group.id}}/edit" 編集
+            td.clearfix data-label="delete"
+              a.btn.action-btn ng-click="vm.onCancelButtonClicked(item)" 削除
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/group/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+
+
+

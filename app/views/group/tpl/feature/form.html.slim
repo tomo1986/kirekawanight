@@ -1,0 +1,180 @@
+section.main-container.map-form-page user-form-directive=""
+  .container-fluid
+    form role="form" ng-submit='vm.submit()' name="mapForm" novalidate=''
+      .row
+        breadcrumb-directive data="vm.breadcrumb"
+        h2.page-header
+          | MAP新規登録
+      .row
+        table.res-form-table style="margin-bottom: 4rem;"
+          caption aaaaaa
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" name
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.user.name"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" nick name
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.user.nick_name"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" birthplace
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="birthplace"  placeholder="aiueo" ng-model="vm.user.birthplace"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" residence
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="residence" placeholder="aiueo" ng-model="vm.user.residence"
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" birthday
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="birthday" data="vm.user" options="vm.birthday_options" ng-model="vm.user.birthday"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" constellation
+            td.res-form-table__td.input-box
+              select.form-control name="constellation" ng-model="vm.user.constellation"
+                option value=""  -- Please select --
+                option value="Aries" Aries 21/3 - 19/4
+                option value="Taurus" Taurus 20/4 - 20/5
+                option value="Gemini" Gemini 21/5 - 21/6
+                option value="Cancer" Gemini 22/6 - 22/7
+                option value="Leo" Leo 23/7 - 22/8
+                option value="Virgo" Virgo 23/8 - 22/9
+                option value="Libra" Libra 23/9 - 23/10
+                option value="Scorpio" Scorpio 24/10 - 22/11
+                option value="Sagittarius" Sagittarius 23/11 - 21/12
+                option value="Capricorn" Capricorn 22/12 - 19/1
+                option value="Aquarius" Aquarius 20/1 - 18/2
+                option value="Pisces" Pisces 19/2 - 20/3
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" sex
+            td.res-form-table__td.input-box
+              select.form-control name="business_type" ng-model="vm.user.sex"
+                option value=""  -- Please select --
+                option value="1" girl
+                option value="2" boy
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" blood_type
+            td.res-form-table__td.input-box
+              select.form-control name="blood_type" ng-model="vm.user.blood_type"
+                option value=""  -- Please select --
+                option value="A" A
+                option value="B" B
+                option value="O" O
+                option value="AB" AB
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" Job type
+            td.res-form-table__td.input-box
+              select.form-control name="business_type" ng-model="vm.user.job_type"
+                option value=""  -- Please select --
+                option value="1" KARAOKE
+                option value="2" GIRLS BAR
+                option value="3" MASSAGE
+                option value="4" SEX
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" SNS
+            td.res-form-table__td.input-box
+              dl
+                dt
+                  | Zalo
+                dd
+                  input.form-control type="text" name="zalo" placeholder="aiueo" ng-model="vm.user.sns.zalo"
+                dt
+                  | WeChat
+                dd
+                  input.form-control type="text" name="wechat" placeholder="aiueo" ng-model="vm.user.sns.wechat"
+                dt
+                  | Line
+                dd
+                  input.form-control type="text" name="line" placeholder="aiueo" ng-model="vm.user.sns.line"
+
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" body
+            td.res-form-table__td.input-box
+              dl
+                dt
+                  | height
+                dd
+                  input.form-control type="text" name="height" placeholder="aiueo" ng-model="vm.user.height"
+                dt
+                  | weight
+                dd
+                  input.form-control type="text" name="weight" placeholder="aiueo" ng-model="vm.user.weight"
+
+                dt
+                  | bust
+                dd
+                  input.form-control type="text" name="bust" placeholder="aiueo" ng-model="vm.user.bust"
+                dt
+                  | bust_size
+                dd
+                  input.form-control type="text" name="bust_size" placeholder="aiueo" ng-model="vm.user.bust_size"
+                dt
+                  | waist
+                dd
+                  input.form-control type="text" name="waist" placeholder="aiueo" ng-model="vm.user.waist"
+                dt
+                  | hip
+                dd
+                  input.form-control type="text" name="hip" placeholder="aiueo" ng-model="vm.user.hip"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.image_url}" MAP画像
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              .row
+                .col-md-4
+                  .pic
+                    image-directive parent-class="pic" img-url="{{vm.map.image_url}}" ng-class="{'is-input-danger': vm.errors.image_url}"
+                    .hover-img
+                      input#fileInput.change-img-file type="file" name="image_url" required='' ng-model="vm.map.image_url" options="vm.imageCropOptions" image-cropper=""
+                      span
+                        | 画像選択
+
+
+        ul.nav.nav-justified.nav-tabs style="margin-bottom: 1rem;"
+          li.nav-item ng-class="{'active':vm.active_tab == 'ja'}"
+            a.nav-link href="javascript:void(0)" ng-class="{'active':vm.active_tab == 'ja'}" ng-click="vm.onChangeTab('ja')"
+              span 日本語
+          li.nav-item ng-class="{'active':vm.active_tab == 'vn'}"
+            a.nav-link href="javascript:void(0)" ng-class="{'active':vm.active_tab == 'vn'}" ng-click="vm.onChangeTab('vn')"
+              span Vietnam
+          li.nav-item ng-class="{'active':vm.active_tab == 'en'}"
+            a.nav-link href="javascript:void(0)" ng-class="{'active':vm.active_tab == 'en'}" ng-click="vm.onChangeTab('en')"
+              span English
+
+
+        table.res-form-table
+          caption aaaaaa
+          tr ng-repeat="(key,val) in vm.profile[vm.active_tab]"
+            th.res-form-table__th.title-box.clearfix
+              span.title
+                | {{val.name}}
+            td.res-form-table__td.input-box
+              textarea.form-control row="2" placeholder="{{val.placeholder}}" ng-model="vm.user[vm.active_tab][key]"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" Interview
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control ckeditor="vm.options" ng-model="vm.content"
+
+
+        .button-center ng-show="vm.canSubmit"
+          button.btn.main-btn type="submit" ng-disabled="mapForm.$invalid" 登録する
+        .button-center ng-hide="vm.canSubmit"
+          loading-directive size="125"

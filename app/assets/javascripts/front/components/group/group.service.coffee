@@ -1,6 +1,7 @@
 angular.module 'bisyoujoZukanNight'
 .factory 'groupService', (api) ->
   sm = this
+
   sm.getGroupList = (opt_jobType) ->
     api.getPromise('/api/front/api12',opt_jobType).then((res) ->
       return res

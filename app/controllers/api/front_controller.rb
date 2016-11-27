@@ -396,5 +396,13 @@ class Api::FrontController < ApiController
     end
     render json: builder.target!
   end
+
+  def api20
+    builder = Jbuilder.new do |json|
+      json.user_count User.count
+      json.group_count Group.count
+    end
+    render json: builder.target!
+  end
 end
 

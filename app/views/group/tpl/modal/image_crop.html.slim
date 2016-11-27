@@ -1,0 +1,12 @@
+.modal-header
+  button.close aria-label="Close" data-dismiss="modal" type="button" ng-click="close()"
+    span aria-hidden="true"  &times;
+  h2.modal-title
+    span 画像を変更する
+.modal-body
+  .cropArea
+    .img-container ng-if="myImage"
+      img ng-cropper="" ng-cropper-hide="hideEvent" ng-cropper-options="options" ng-cropper-proxy="cropperProxy" ng-cropper-show="showEvent" ng-if="myImage" ng-src="{{myImage}}" width="100%"
+  .button-center
+      a.btn.main-btn href="javascript:void(0)" ng-click="commit()"
+        span 切取り

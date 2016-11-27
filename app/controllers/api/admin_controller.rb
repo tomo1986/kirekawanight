@@ -516,6 +516,16 @@ class Api::AdminController < ApiController
         image.image = image[:url] and image.save! if image[:url] != 'null'
       end
     end
+    p "========================"
+    p params[:tags]
+    p "========================"
+
+
+    if params[:tags]
+      params[:tags].each do |key,val|
+        user.tag_list.add(val["text"])
+      end
+    end
 
     if user.save!
       builder = Jbuilder.new do |json|

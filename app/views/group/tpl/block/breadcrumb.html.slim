@@ -1,0 +1,5 @@
+ol.breadcrumb
+  li ng-repeat="item in vm.list track by $index"
+    a ng-href="{{item.link}}"
+      span
+        | {{item.name}}

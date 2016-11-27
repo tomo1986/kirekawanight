@@ -1,0 +1,26 @@
+.user-index-page {
+  .btn-operate {
+    background-color: $gray-lightest;
+    color: $_basic_text;
+  }
+  .btn-operate.space {
+    margin-right: $row-space;
+  }
+  .make-new-user {
+    text-align: right;
+    margin-bottom: $row-space;
+    .btn-make {
+      background-color: $_brand-basic;
+      color: $white;
+    }
+  }
+  .btn-center {
+    width: 8rem;
+    text-align: center;
+    margin: 1rem auto;
+    .btn-submit {
+      background-color: $_brand-basic;
+      color: $white;
+    }
+  }
+}

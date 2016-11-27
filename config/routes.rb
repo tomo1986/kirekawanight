@@ -6,6 +6,26 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'front/home#index'
 
+  namespace :group do
+    root to: 'pages#index', via: :get
+    devise_for :groups, path_prefix: '/group',controllers: {},:skip => [:sessions,:passwords]
+    as :group do
+      match '/sign_out' => 'sessions#destroy', :as => :destroy_group_session,
+            :via => Devise.mappings[:group].sign_out_via
+    end
+    get 'login',to: 'pages#login'
+    get 'users',to: 'pages#index'
+    get 'users/:id/detail',to: 'pages#index'
+    get 'users/:id/edit',to: 'pages#index'
+    get 'users/new',to: 'pages#index'
+    get 'groups',to: 'pages#index'
+    get 'groups/:id/detail',to: 'pages#index'
+    get 'groups/:id/edit',to: 'pages#index'
+    get 'groups/new',to: 'pages#index'
+    get 'tpl/:name.html' => 'pages#templates'
+    get 'tpl/:path1/:name.html' => 'pages#templates'
+    get 'tpl/:path1/:path2/:name.html' => 'pages#templates'
+  end
 
   namespace :admin do
     root to: 'pages#index', via: :get
@@ -116,6 +136,7 @@ Rails.application.routes.draw do
       post :api13
       post :api14
       post :api15
+      get :api20
     end
 
     scope :admin, module: 'admin' do
@@ -160,6 +181,49 @@ Rails.application.routes.draw do
       get :api44
       get :api45
     end
+    scope :group, module: 'group' do
+      post :api1
+      get :api2
+      get :api3
+      post :api4
+      get :api5
+      post :api6
+      get :api7
+      get :api8
+      get :api9
+      get :api10
+      post :api11
+      get :api12
+      post :api13
+      get :api14
+      get :api15
+      get :api16
+      post :api17
+      get :api18
+      get :api19
+      post :api20
+      get :api21
+      post :api22
+      get :api23
+      post :api24
+      get :api25
+      get :api26
+      get :api27
+      post :api28
+      post :api29
+      get :api30
+      get :api31
+      get :api32
+      post :api33
+      post :api34
+      get :api40
+      get :api41
+      get :api42
+      get :api43
+      get :api44
+      get :api45
+    end
+
   end
 
 end

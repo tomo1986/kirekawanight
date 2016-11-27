@@ -1,0 +1,23 @@
+nav.navbar.navbar-dark.bg-inverse.navbar-fixed-top.topnav
+  .collapse.navbar-toggleable-xs.clearfix.text-center
+    a.navbar-brand href="/group"
+      = image_tag 'group/kirekawa-group.png', class:"logo"
+    /- if business_user_signed_in?
+    button#toggle-accordion.btn.btn-default type="button" ng-click="vm.eventOpenParent()"
+      i.fa.fa-home
+    ul.nav.navbar-nav.top-nav.navbar-right.pull-xs-right.top-right-nav.header-accordion ng-class="{'accordionPushDown': vm.isParentActive}"
+      li.dropdown.nav-item ng-click="vm.eventOpenchild()"  style="line-height:23px;width:20rem;text-align:right;"
+        a#single-button.nav-link.dropdown-toggle href="javascript:void(0);"
+          i.fa.fa-user
+          /= current_business_user.company.name
+          b.caret
+        ul.header-dropdown-menu ng-class="{'accordionPushDown': vm.isParentChild}"
+          li
+            a href="/business/settings/account" ng-click="vm.eventOpenParent()"
+              | アカウント編集
+          li
+            a href="/business/settings/company" ng-click="vm.eventOpenParent()"
+              | 会社情報編集
+          li
+            a href="javascript:void(0);" ng-click="vm.onLogout()"
+              | ログアウト

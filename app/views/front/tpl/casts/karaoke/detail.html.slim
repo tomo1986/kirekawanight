@@ -10,15 +10,18 @@
         .profile-area
           .name-area
             h3
-              | {{vm.cast.nick_name}}({{vm.cast.age}})
+              | {{vm.cast.name}}({{vm.cast.age}})
             p
-              | {{vm.cast.name}} T{{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
+              | {{vm.cast.nick_name}} T{{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
             .feature
               a.btn.btn-feature  ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()"
                 | お気入り登録
             .feature
               a.btn.btn-feature href="javascript:void(0)" ng-click="vm.onClickedSupport()"
                 | 応援する
+            .shop-tags
+              a.btn ng-repeat="tag in vm.cast.tags"
+                | {{tag}}
           .thumbnail
             ul.thumbnail--list
               li ng-repeat="image in vm.cast.images track by $index"
@@ -131,6 +134,12 @@
                 dt residence
                 dd
                   | {{vm.cast.residence}}
+                dt お気に入り登録数
+                dd
+                  | {{vm.cast.favorite_count}}
+                dt お気に入り数
+                dd
+                  | {{vm.cast.support_count}}
       .col-md-12.detail.clearfix
         .row
           .page-title
@@ -273,30 +282,30 @@
             .center-button style="text-align:center;"
               a.btn.btn-submit href="/login" ログインする
 
-      .some-cast ng-if="vm.casts"
-        .page-title
-          h2.title
-            | SOME SHOP GIRLS
-        .queen-list.clearfix
-          li ng-repeat="cast in vm.casts"
-            .fream
-              .fream--basic.fream--top-left
-              .fream--basic.fream--top-right
-              .fream--basic.fream--bottom-left
-              .fream--basic.fream--bottom-right
-              a href="/casts/karaoke/{{cast.id}}"
-                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-            .profile
-              .name
-                | {{cast.nick_name}}({{cast.age}})
-              .body
-                .favorid.clearfix
-                  h5.title
-                    | お気入り登録数
-                  p.count
-                    |  {{cast.favorite_count | number}}
-                .support.clearfix
-                  h5.title
-                    | 応援数
-                  p.count
-                    | {{cast.support_count | number}}
+    .some-cast ng-if="vm.casts"
+      .page-title
+        h2.title
+          | SOME SHOP GIRLS
+      .queen-list.clearfix
+        li ng-repeat="cast in vm.casts"
+          .fream
+            .fream--basic.fream--top-left
+            .fream--basic.fream--top-right
+            .fream--basic.fream--bottom-left
+            .fream--basic.fream--bottom-right
+            a href="/casts/karaoke/{{cast.id}}"
+              img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+          .profile
+            .name
+              | {{cast.nick_name}}({{cast.age}})
+            .body
+              .favorid.clearfix
+                h5.title
+                  | お気入り登録数
+                p.count
+                  |  {{cast.favorite_count | number}}
+              .support.clearfix
+                h5.title
+                  | 応援数
+                p.count
+                  | {{cast.support_count | number}}

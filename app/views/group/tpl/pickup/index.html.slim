@@ -1,0 +1,47 @@
+section.main-container.notification-index-page pickup-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | プッシュ通知
+    .row
+      .page-detail
+        | プッシュ通知一覧です。
+        br
+        | お客様のスマートフォンに通知することができます。
+      .make-new-map
+        a.btn.make-btn href="/group/pickups/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th type
+            th subject_type
+            th subject_id
+            th price
+            th start_at
+            th end_at
+            th 編集
+            th 削除
+        tbody
+          tr(dir-paginate="item in vm.pickups | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="type"  {{item.type}}
+            td.clearfix data-label="subject_type"  {{item.subject_type}}
+            td.clearfix data-label="subject_id"
+              a href="/group/groups/{{item.subject.id}}/detail" ng-if="item.subject_type == 'Group'"  {{item.subject.name}}
+              a href="/group/users/{{item.subject.id}}/detail" ng-if="item.subject_type == 'User'"  {{item.subject.name}}
+            td.clearfix data-label="price"  {{item.price}}
+            td.clearfix data-label="start_at"  {{item.start_at | date: 'yyyy年M月d日 HH:mm'}}
+            td.clearfix data-label="end_at"  {{item.end_at | date: 'yyyy年M月d日 HH:mm'}}
+            td.clearfix data-label="編集"
+              a.btn.action-btn href="/group/pickups/{{item.id}}/edit" 編集
+            td.clearfix data-label="削除"
+              a.btn.action-btn href="/group/pickups/{{item.id}}/delete" 削除
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/group/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+
+
+
