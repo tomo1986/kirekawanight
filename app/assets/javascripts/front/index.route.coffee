@@ -130,6 +130,11 @@ angular.module 'bisyoujoZukanNight'
         active_menu: 'reserve'
         templateUrl: '/front/tpl/reserve/index.html'
 
+      .state '/sitemap',
+        url: '/sitemap'
+        templateUrl: '/front/tpl/sitemap/index_jp.html'
+
+
       .state '/mypage',
         url: '/mypage'
         templateUrl: '/front/tpl/customer/detail.html'

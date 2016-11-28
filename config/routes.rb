@@ -109,6 +109,7 @@ Rails.application.routes.draw do
     get 'visitor', to: 'home#index'
     get 'contact', to: 'home#index'
     get 'reserve', to: 'home#index'
+    get 'sitemap', to: 'home#index'
     get 'blogs/', to: 'blogs#index'
     get 'blogs/:id', to: 'blogs#show'
   end

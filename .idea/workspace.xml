@@ -37,18 +37,63 @@
             <entry file="file://$PROJECT_DIR$/app/controllers/front/home_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="83" column="76" selection-start-line="83" selection-start-column="76" selection-end-line="83" selection-end-column="76" />
+                  <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/blogs/index.html.slim">
+          <file leaf-file-name="index.route.coffee" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/index.route.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-16.25">
-                  <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+                <state vertical-scroll-proportion="-6.9583335">
+                  <caret line="133" column="23" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index_jp.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/sitemap/index_jp.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.91354465">
+                  <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+                  <folding>
+                    <marker date="1480339083000" expanded="true" signature="0:1516" placeholder=".main-content.container comsept-directive=&quot;&quot;" />
+                    <marker date="1480339083000" expanded="true" signature="143:1516" placeholder=".comsept-page" />
+                    <marker date="1480339083000" expanded="true" signature="163:1516" placeholder=".comsept-box" />
+                    <marker date="1480339083000" expanded="true" signature="184:237" placeholder=".page-title" />
+                    <marker date="1480339083000" expanded="true" signature="246:657" placeholder=".comsept-box--detail" />
+                    <marker date="1480339083000" expanded="true" signature="305:657" placeholder=".col-md-12" />
+                    <marker date="1480339083000" expanded="true" signature="328:404" placeholder=".col-md-3" />
+                    <marker date="1480339083000" expanded="true" signature="352:404" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="417:485" placeholder=".col-md-3" />
+                    <marker date="1480339083000" expanded="true" signature="441:485" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="498:574" placeholder=".col-md-3" />
+                    <marker date="1480339083000" expanded="true" signature="522:574" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="587:657" placeholder=".col-md-3" />
+                    <marker date="1480339083000" expanded="true" signature="611:657" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="666:997" placeholder=".comsept-box--detail" />
+                    <marker date="1480339083000" expanded="true" signature="725:997" placeholder=".col-md-12" />
+                    <marker date="1480339083000" expanded="true" signature="748:825" placeholder=".col-md-4" />
+                    <marker date="1480339083000" expanded="true" signature="772:825" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="838:907" placeholder=".col-md-4" />
+                    <marker date="1480339083000" expanded="true" signature="862:907" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="920:997" placeholder=".col-md-4" />
+                    <marker date="1480339083000" expanded="true" signature="944:997" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="1006:1516" placeholder=".comsept-box--detail" />
+                    <marker date="1480339083000" expanded="true" signature="1068:1516" placeholder=".col-md-12" />
+                    <marker date="1480339083000" expanded="true" signature="1091:1174" placeholder=".col-md-3" />
+                    <marker date="1480339083000" expanded="true" signature="1115:1174" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="1187:1256" placeholder=".col-md-3" />
+                    <marker date="1480339083000" expanded="true" signature="1211:1256" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="1269:1339" placeholder=".col-md-3" />
+                    <marker date="1480339083000" expanded="true" signature="1293:1339" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="1352:1433" placeholder=".col-md-3" />
+                    <marker date="1480339083000" expanded="true" signature="1376:1433" placeholder=".row" />
+                    <marker date="1480339083000" expanded="true" signature="1446:1516" placeholder=".col-md-3" />
+                    <marker date="1480339083000" expanded="true" signature="1470:1516" placeholder=".row" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -66,17 +111,17 @@
           <file leaf-file-name="header.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/block/header.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.5">
-                  <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+                <state vertical-scroll-proportion="-6.25">
+                  <caret line="10" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cast.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cast.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2651297">
+                <state vertical-scroll-proportion="-3.8333333">
                   <caret line="665" column="27" selection-start-line="665" selection-start-column="27" selection-end-line="665" selection-end-column="27" />
                   <folding />
                 </state>
@@ -87,11 +132,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/groups/karaoke/detail.html.slim">
+          <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/routes.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="81.56863">
-                  <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="111" column="16" selection-start-line="111" selection-start-column="16" selection-end-line="111" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
@@ -121,152 +166,18 @@
             <entry file="file://$PROJECT_DIR$/app/models/blog.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+                  <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="form.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/group/form.html.slim">
+          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/front/home/index.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.75">
-                  <caret line="198" column="71" selection-start-line="198" selection-start-column="71" selection-end-line="198" selection-end-column="71" />
+                <state vertical-scroll-proportion="0.2159091">
+                  <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="48" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.916667">
-                  <caret line="314" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.916667">
-                  <caret line="247" column="38" selection-start-line="245" selection-start-column="0" selection-end-line="247" selection-end-column="38" />
-                  <folding>
-                    <marker date="1480337240000" expanded="true" signature="0:11582" placeholder=".main-content.container cast-bar-detail-directive=&quot;&quot;" />
-                    <marker date="1480337240000" expanded="true" signature="115:10571" placeholder=".cast-detail-page.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="148:1311" placeholder=".cast-detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="178:400" placeholder=".photo-area" />
-                    <marker date="1480337240000" expanded="true" signature="200:400" placeholder=".fream" />
-                    <marker date="1480337240000" expanded="true" signature="409:1311" placeholder=".profile-area" />
-                    <marker date="1480337240000" expanded="true" signature="433:988" placeholder=".name-area" />
-                    <marker date="1480337240000" expanded="true" signature="689:853" placeholder=".feature" />
-                    <marker date="1480337240000" expanded="true" signature="866:988" placeholder=".feature" />
-                    <marker date="1480337240000" expanded="true" signature="999:1311" placeholder=".thumbnail" />
-                    <marker date="1480337240000" expanded="true" signature="1318:1443" placeholder=".comment" />
-                    <marker date="1480337240000" expanded="true" signature="1335:1392" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="1451:5307" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="1486:5307" placeholder=".row" />
-                    <marker date="1480337240000" expanded="true" signature="1501:1557" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="1568:5307" placeholder=".contact" />
-                    <marker date="1480337240000" expanded="true" signature="2178:2690" placeholder=".form-group" />
-                    <marker date="1480337240000" expanded="true" signature="2212:2690" placeholder=".col-xs-12" />
-                    <marker date="1480337240000" expanded="true" signature="5194:5307" placeholder=".center-button" />
-                    <marker date="1480337240000" expanded="true" signature="5314:6288" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="5349:6288" placeholder=".row" />
-                    <marker date="1480337240000" expanded="true" signature="5364:5420" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="5431:5630" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
-                    <marker date="1480337240000" expanded="true" signature="5554:5630" placeholder=".col-row-left.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="5641:6288" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
-                    <marker date="1480337240000" expanded="true" signature="5702:6288" placeholder=".col-row-right.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="6295:6709" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="6330:6709" placeholder=".row" />
-                    <marker date="1480337240000" expanded="true" signature="6345:6407" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="6418:6709" placeholder=".profile-box.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="6716:10571" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="6751:10571" placeholder=".row" />
-                    <marker date="1480337240000" expanded="true" signature="6766:6822" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="6833:10571" placeholder=".contact" />
-                    <marker date="1480337240000" expanded="true" signature="7443:7955" placeholder=".form-group" />
-                    <marker date="1480337240000" expanded="true" signature="7477:7955" placeholder=".col-xs-12" />
-                    <marker date="1480337240000" expanded="true" signature="10459:10571" placeholder=".center-button" />
-                    <marker date="1480337240000" expanded="true" signature="10576:11471" placeholder=".some-cast ng-if=&quot;vm.casts&quot;" />
-                    <marker date="1480337240000" expanded="true" signature="10610:10666" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="10673:11471" placeholder=".queen-list.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="10744:11047" placeholder=".fream" />
-                    <marker date="1480337240000" expanded="true" signature="10763:10792" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1480337240000" expanded="true" signature="10805:10835" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1480337240000" expanded="true" signature="10848:10880" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1480337240000" expanded="true" signature="10893:10926" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1480337240000" expanded="true" signature="11058:11471" placeholder=".profile" />
-                    <marker date="1480337240000" expanded="true" signature="11079:11133" placeholder=".name" />
-                    <marker date="1480337240000" expanded="true" signature="11146:11471" placeholder=".body" />
-                    <marker date="1480337240000" expanded="true" signature="11166:11314" placeholder=".favorid.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="11329:11471" placeholder=".support.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="11474:11582" placeholder=".cast-page--service" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.48863637">
-                  <caret line="241" column="8" selection-start-line="241" selection-start-column="8" selection-end-line="241" selection-end-column="8" />
-                  <folding>
-                    <marker date="1480337240000" expanded="true" signature="0:11586" placeholder=".main-content.container cast-massage-detail-directive=&quot;&quot;" />
-                    <marker date="1480337240000" expanded="true" signature="119:10575" placeholder=".cast-detail-page.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="152:1315" placeholder=".cast-detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="182:404" placeholder=".photo-area" />
-                    <marker date="1480337240000" expanded="true" signature="204:404" placeholder=".fream" />
-                    <marker date="1480337240000" expanded="true" signature="413:1315" placeholder=".profile-area" />
-                    <marker date="1480337240000" expanded="true" signature="437:992" placeholder=".name-area" />
-                    <marker date="1480337240000" expanded="true" signature="693:857" placeholder=".feature" />
-                    <marker date="1480337240000" expanded="true" signature="870:992" placeholder=".feature" />
-                    <marker date="1480337240000" expanded="true" signature="1003:1315" placeholder=".thumbnail" />
-                    <marker date="1480337240000" expanded="true" signature="1322:1447" placeholder=".comment" />
-                    <marker date="1480337240000" expanded="true" signature="1339:1396" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="1455:5311" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="1490:5311" placeholder=".row" />
-                    <marker date="1480337240000" expanded="true" signature="1505:1561" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="1572:5311" placeholder=".contact" />
-                    <marker date="1480337240000" expanded="true" signature="2182:2694" placeholder=".form-group" />
-                    <marker date="1480337240000" expanded="true" signature="2216:2694" placeholder=".col-xs-12" />
-                    <marker date="1480337240000" expanded="true" signature="5198:5311" placeholder=".center-button" />
-                    <marker date="1480337240000" expanded="true" signature="5318:6292" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="5353:6292" placeholder=".row" />
-                    <marker date="1480337240000" expanded="true" signature="5368:5424" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="5435:5634" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
-                    <marker date="1480337240000" expanded="true" signature="5558:5634" placeholder=".col-row-left.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="5645:6292" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
-                    <marker date="1480337240000" expanded="true" signature="5706:6292" placeholder=".col-row-right.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="6299:6713" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="6334:6713" placeholder=".row" />
-                    <marker date="1480337240000" expanded="true" signature="6349:6411" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="6422:6713" placeholder=".profile-box.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="6720:10575" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="6755:10575" placeholder=".row" />
-                    <marker date="1480337240000" expanded="true" signature="6770:6826" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="6837:10575" placeholder=".contact" />
-                    <marker date="1480337240000" expanded="true" signature="7447:7959" placeholder=".form-group" />
-                    <marker date="1480337240000" expanded="true" signature="7481:7959" placeholder=".col-xs-12" />
-                    <marker date="1480337240000" expanded="true" signature="10463:10575" placeholder=".center-button" />
-                    <marker date="1480337240000" expanded="true" signature="10580:11475" placeholder=".some-cast ng-if=&quot;vm.casts&quot;" />
-                    <marker date="1480337240000" expanded="true" signature="10614:10670" placeholder=".page-title" />
-                    <marker date="1480337240000" expanded="true" signature="10677:11475" placeholder=".queen-list.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="10748:11051" placeholder=".fream" />
-                    <marker date="1480337240000" expanded="true" signature="10767:10796" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1480337240000" expanded="true" signature="10809:10839" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1480337240000" expanded="true" signature="10852:10884" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1480337240000" expanded="true" signature="10897:10930" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1480337240000" expanded="true" signature="11062:11475" placeholder=".profile" />
-                    <marker date="1480337240000" expanded="true" signature="11083:11137" placeholder=".name" />
-                    <marker date="1480337240000" expanded="true" signature="11150:11475" placeholder=".body" />
-                    <marker date="1480337240000" expanded="true" signature="11170:11318" placeholder=".favorid.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="11333:11475" placeholder=".support.clearfix" />
-                    <marker date="1480337240000" expanded="true" signature="11478:11586" placeholder=".cast-page--service" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -278,9 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/group/base_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/admin/base.html.erb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/application.js" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/group/components/banner/banner.service.coffee" />
@@ -301,7 +209,6 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/block/nav.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/main.scss" />
         <option value="$PROJECT_DIR$/app/controllers/api/front_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/header/header.directive.coffee" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/block/header.html.slim" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
@@ -314,7 +221,6 @@
         <option value="$PROJECT_DIR$/app/controllers/front/blogs_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/question/index_jp.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/comsept/index_jp.html.slim" />
-        <option value="$PROJECT_DIR$/app/controllers/front/home_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20161128103916_add_service_groups.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20161128104141_create_information.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20161128112624_create_guides.rb" />
@@ -327,8 +233,13 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/group.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/controllers/front/home_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/front/home/index.html.slim" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/front/index.route.coffee" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/sitemap/index_jp.html.slim" />
       </list>
     </option>
   </component>
@@ -399,6 +310,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -459,7 +406,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="casts" />
+              <option name="myItemId" value="sitemap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -485,71 +454,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="casts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="massage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="casts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
+              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -585,6 +490,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -597,11 +550,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/front/tpl" />
       <recent name="$PROJECT_DIR$/app/assets/images/front" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
       <recent name="$PROJECT_DIR$/app/views" />
       <recent name="$PROJECT_DIR$/app/assets/javascripts" />
-      <recent name="$PROJECT_DIR$/app/views/layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/assets/images/front" />
@@ -841,28 +794,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/visitor/index_jp.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.125">
-          <caret line="41" column="32" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/front/blog.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/front/base.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.0">
@@ -882,14 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.5882354">
           <caret line="559" column="24" selection-start-line="559" selection-start-column="24" selection-end-line="559" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7421875">
-          <caret line="138" column="16" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -996,14 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.916667">
           <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/block/header.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1144,22 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/group/form.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="198" column="71" selection-start-line="198" selection-start-column="71" selection-end-line="198" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/blog.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/group/index.filter.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5">
@@ -1200,146 +1099,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/front/home_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="76" selection-start-line="83" selection-start-column="76" selection-end-line="83" selection-end-column="76" />
+        <state vertical-scroll-proportion="-3.8333333">
+          <caret line="665" column="27" selection-start-line="665" selection-start-column="27" selection-end-line="665" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2651297">
-          <caret line="665" column="27" selection-start-line="665" selection-start-column="27" selection-end-line="665" selection-end-column="27" />
+        <state vertical-scroll-proportion="-10.291667">
+          <caret line="246" column="27" selection-start-line="246" selection-start-column="27" selection-end-line="246" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.916667">
+        <state vertical-scroll-proportion="0.7443182">
           <caret line="314" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/group/form.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59659094">
+          <caret line="198" column="71" selection-start-line="198" selection-start-column="71" selection-end-line="198" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.916667">
-          <caret line="247" column="38" selection-start-line="245" selection-start-column="0" selection-end-line="247" selection-end-column="38" />
-          <folding>
-            <marker date="1480337240000" expanded="true" signature="0:11582" placeholder=".main-content.container cast-bar-detail-directive=&quot;&quot;" />
-            <marker date="1480337240000" expanded="true" signature="115:10571" placeholder=".cast-detail-page.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="148:1311" placeholder=".cast-detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="178:400" placeholder=".photo-area" />
-            <marker date="1480337240000" expanded="true" signature="200:400" placeholder=".fream" />
-            <marker date="1480337240000" expanded="true" signature="409:1311" placeholder=".profile-area" />
-            <marker date="1480337240000" expanded="true" signature="433:988" placeholder=".name-area" />
-            <marker date="1480337240000" expanded="true" signature="689:853" placeholder=".feature" />
-            <marker date="1480337240000" expanded="true" signature="866:988" placeholder=".feature" />
-            <marker date="1480337240000" expanded="true" signature="999:1311" placeholder=".thumbnail" />
-            <marker date="1480337240000" expanded="true" signature="1318:1443" placeholder=".comment" />
-            <marker date="1480337240000" expanded="true" signature="1335:1392" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="1451:5307" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="1486:5307" placeholder=".row" />
-            <marker date="1480337240000" expanded="true" signature="1501:1557" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="1568:5307" placeholder=".contact" />
-            <marker date="1480337240000" expanded="true" signature="2178:2690" placeholder=".form-group" />
-            <marker date="1480337240000" expanded="true" signature="2212:2690" placeholder=".col-xs-12" />
-            <marker date="1480337240000" expanded="true" signature="5194:5307" placeholder=".center-button" />
-            <marker date="1480337240000" expanded="true" signature="5314:6288" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="5349:6288" placeholder=".row" />
-            <marker date="1480337240000" expanded="true" signature="5364:5420" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="5431:5630" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
-            <marker date="1480337240000" expanded="true" signature="5554:5630" placeholder=".col-row-left.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="5641:6288" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
-            <marker date="1480337240000" expanded="true" signature="5702:6288" placeholder=".col-row-right.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="6295:6709" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="6330:6709" placeholder=".row" />
-            <marker date="1480337240000" expanded="true" signature="6345:6407" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="6418:6709" placeholder=".profile-box.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="6716:10571" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="6751:10571" placeholder=".row" />
-            <marker date="1480337240000" expanded="true" signature="6766:6822" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="6833:10571" placeholder=".contact" />
-            <marker date="1480337240000" expanded="true" signature="7443:7955" placeholder=".form-group" />
-            <marker date="1480337240000" expanded="true" signature="7477:7955" placeholder=".col-xs-12" />
-            <marker date="1480337240000" expanded="true" signature="10459:10571" placeholder=".center-button" />
-            <marker date="1480337240000" expanded="true" signature="10576:11471" placeholder=".some-cast ng-if=&quot;vm.casts&quot;" />
-            <marker date="1480337240000" expanded="true" signature="10610:10666" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="10673:11471" placeholder=".queen-list.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="10744:11047" placeholder=".fream" />
-            <marker date="1480337240000" expanded="true" signature="10763:10792" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1480337240000" expanded="true" signature="10805:10835" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1480337240000" expanded="true" signature="10848:10880" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1480337240000" expanded="true" signature="10893:10926" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1480337240000" expanded="true" signature="11058:11471" placeholder=".profile" />
-            <marker date="1480337240000" expanded="true" signature="11079:11133" placeholder=".name" />
-            <marker date="1480337240000" expanded="true" signature="11146:11471" placeholder=".body" />
-            <marker date="1480337240000" expanded="true" signature="11166:11314" placeholder=".favorid.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="11329:11471" placeholder=".support.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="11474:11582" placeholder=".cast-page--service" />
-          </folding>
+        <state vertical-scroll-proportion="0.10511363">
+          <caret line="232" column="17" selection-start-line="232" selection-start-column="17" selection-end-line="232" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/block/header.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48863637">
-          <caret line="241" column="8" selection-start-line="241" selection-start-column="8" selection-end-line="241" selection-end-column="8" />
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="10" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/blog.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/front/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="16" selection-start-line="111" selection-start-column="16" selection-end-line="111" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/index.route.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.9583335">
+          <caret line="133" column="23" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/home/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2159091">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/sitemap/index_jp.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.91354465">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
           <folding>
-            <marker date="1480337240000" expanded="true" signature="0:11586" placeholder=".main-content.container cast-massage-detail-directive=&quot;&quot;" />
-            <marker date="1480337240000" expanded="true" signature="119:10575" placeholder=".cast-detail-page.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="152:1315" placeholder=".cast-detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="182:404" placeholder=".photo-area" />
-            <marker date="1480337240000" expanded="true" signature="204:404" placeholder=".fream" />
-            <marker date="1480337240000" expanded="true" signature="413:1315" placeholder=".profile-area" />
-            <marker date="1480337240000" expanded="true" signature="437:992" placeholder=".name-area" />
-            <marker date="1480337240000" expanded="true" signature="693:857" placeholder=".feature" />
-            <marker date="1480337240000" expanded="true" signature="870:992" placeholder=".feature" />
-            <marker date="1480337240000" expanded="true" signature="1003:1315" placeholder=".thumbnail" />
-            <marker date="1480337240000" expanded="true" signature="1322:1447" placeholder=".comment" />
-            <marker date="1480337240000" expanded="true" signature="1339:1396" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="1455:5311" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="1490:5311" placeholder=".row" />
-            <marker date="1480337240000" expanded="true" signature="1505:1561" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="1572:5311" placeholder=".contact" />
-            <marker date="1480337240000" expanded="true" signature="2182:2694" placeholder=".form-group" />
-            <marker date="1480337240000" expanded="true" signature="2216:2694" placeholder=".col-xs-12" />
-            <marker date="1480337240000" expanded="true" signature="5198:5311" placeholder=".center-button" />
-            <marker date="1480337240000" expanded="true" signature="5318:6292" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="5353:6292" placeholder=".row" />
-            <marker date="1480337240000" expanded="true" signature="5368:5424" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="5435:5634" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
-            <marker date="1480337240000" expanded="true" signature="5558:5634" placeholder=".col-row-left.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="5645:6292" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
-            <marker date="1480337240000" expanded="true" signature="5706:6292" placeholder=".col-row-right.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="6299:6713" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="6334:6713" placeholder=".row" />
-            <marker date="1480337240000" expanded="true" signature="6349:6411" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="6422:6713" placeholder=".profile-box.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="6720:10575" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="6755:10575" placeholder=".row" />
-            <marker date="1480337240000" expanded="true" signature="6770:6826" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="6837:10575" placeholder=".contact" />
-            <marker date="1480337240000" expanded="true" signature="7447:7959" placeholder=".form-group" />
-            <marker date="1480337240000" expanded="true" signature="7481:7959" placeholder=".col-xs-12" />
-            <marker date="1480337240000" expanded="true" signature="10463:10575" placeholder=".center-button" />
-            <marker date="1480337240000" expanded="true" signature="10580:11475" placeholder=".some-cast ng-if=&quot;vm.casts&quot;" />
-            <marker date="1480337240000" expanded="true" signature="10614:10670" placeholder=".page-title" />
-            <marker date="1480337240000" expanded="true" signature="10677:11475" placeholder=".queen-list.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="10748:11051" placeholder=".fream" />
-            <marker date="1480337240000" expanded="true" signature="10767:10796" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1480337240000" expanded="true" signature="10809:10839" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1480337240000" expanded="true" signature="10852:10884" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1480337240000" expanded="true" signature="10897:10930" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1480337240000" expanded="true" signature="11062:11475" placeholder=".profile" />
-            <marker date="1480337240000" expanded="true" signature="11083:11137" placeholder=".name" />
-            <marker date="1480337240000" expanded="true" signature="11150:11475" placeholder=".body" />
-            <marker date="1480337240000" expanded="true" signature="11170:11318" placeholder=".favorid.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="11333:11475" placeholder=".support.clearfix" />
-            <marker date="1480337240000" expanded="true" signature="11478:11586" placeholder=".cast-page--service" />
+            <marker date="1480339083000" expanded="true" signature="0:1516" placeholder=".main-content.container comsept-directive=&quot;&quot;" />
+            <marker date="1480339083000" expanded="true" signature="143:1516" placeholder=".comsept-page" />
+            <marker date="1480339083000" expanded="true" signature="163:1516" placeholder=".comsept-box" />
+            <marker date="1480339083000" expanded="true" signature="184:237" placeholder=".page-title" />
+            <marker date="1480339083000" expanded="true" signature="246:657" placeholder=".comsept-box--detail" />
+            <marker date="1480339083000" expanded="true" signature="305:657" placeholder=".col-md-12" />
+            <marker date="1480339083000" expanded="true" signature="328:404" placeholder=".col-md-3" />
+            <marker date="1480339083000" expanded="true" signature="352:404" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="417:485" placeholder=".col-md-3" />
+            <marker date="1480339083000" expanded="true" signature="441:485" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="498:574" placeholder=".col-md-3" />
+            <marker date="1480339083000" expanded="true" signature="522:574" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="587:657" placeholder=".col-md-3" />
+            <marker date="1480339083000" expanded="true" signature="611:657" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="666:997" placeholder=".comsept-box--detail" />
+            <marker date="1480339083000" expanded="true" signature="725:997" placeholder=".col-md-12" />
+            <marker date="1480339083000" expanded="true" signature="748:825" placeholder=".col-md-4" />
+            <marker date="1480339083000" expanded="true" signature="772:825" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="838:907" placeholder=".col-md-4" />
+            <marker date="1480339083000" expanded="true" signature="862:907" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="920:997" placeholder=".col-md-4" />
+            <marker date="1480339083000" expanded="true" signature="944:997" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="1006:1516" placeholder=".comsept-box--detail" />
+            <marker date="1480339083000" expanded="true" signature="1068:1516" placeholder=".col-md-12" />
+            <marker date="1480339083000" expanded="true" signature="1091:1174" placeholder=".col-md-3" />
+            <marker date="1480339083000" expanded="true" signature="1115:1174" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="1187:1256" placeholder=".col-md-3" />
+            <marker date="1480339083000" expanded="true" signature="1211:1256" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="1269:1339" placeholder=".col-md-3" />
+            <marker date="1480339083000" expanded="true" signature="1293:1339" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="1352:1433" placeholder=".col-md-3" />
+            <marker date="1480339083000" expanded="true" signature="1376:1433" placeholder=".row" />
+            <marker date="1480339083000" expanded="true" signature="1446:1516" placeholder=".col-md-3" />
+            <marker date="1480339083000" expanded="true" signature="1470:1516" placeholder=".row" />
           </folding>
         </state>
       </provider>

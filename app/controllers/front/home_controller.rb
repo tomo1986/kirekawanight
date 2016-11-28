@@ -69,8 +69,8 @@ class Front::HomeController < ApplicationController
 
   def cast_karaoke
     @head_title = "ベトナム・ホーチミン/ハノイでカラオケで働くお気に入りの子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
-    @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイのカラオケで働く#{User.where(job_type: "karaoke").count}人の可愛い女の子の中から、あなたのお気に入りの美女が見つけて夜遊びしませんか？カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
+    @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、観光、キレカワ、kirekawa"
+    @head_description = "ベトナム、ホーチミン/ハノイのカラオケで働く#{User.where(job_type: "karaoke").count}人の可愛い女の子の中から、あなたのお気に入りの美女を見つけて夜遊びしませんか？カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
@@ -80,8 +80,8 @@ class Front::HomeController < ApplicationController
 
   def cast_bar
     @head_title = "ベトナム・ホーチミン/ハノイでガールズバーで働くお気に入りの子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
-    @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイのガールズバーで働く#{User.where(job_type: "bar").count}人の可愛い女の子の中から、あなたのお気に入りの美女が見つけて夜遊びしませんか？カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
+    @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、バー、観光、キレカワ、kirekawa"
+    @head_description = "ベトナム、ホーチミン/ハノイのガールズバーで働く#{User.where(job_type: "bar").count}人の可愛い女の子の中から、あなたのお気に入りの美女を見つけて夜遊びしませんか？カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
@@ -91,8 +91,8 @@ class Front::HomeController < ApplicationController
 
   def cast_massage
     @head_title = "ベトナム・ホーチミン/ハノイでマッサージで働くお気に入りの子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
-    @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイのマッサージで働く綺麗、可愛いお気に入りの子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
+    @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、マッサージ、観光、キレカワ、kirekawa"
+    @head_description = "ベトナム、ホーチミン/ハノイのマッサージで働く#{User.where(job_type: "massage").count}人の可愛い女の子の中から、あなたのお気に入りの美女を見つけて夜遊びしませんか？カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
@@ -103,7 +103,7 @@ class Front::HomeController < ApplicationController
   def cast_sexy
     @head_title = "ベトナム・ホーチミン/ハノイでセクシーな子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイのセクシーな子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
+    @head_description = "ベトナム、ホーチミン/ハノイの#{User.where(job_type: "sexy").count}人の可愛い女の子の中から、あなたのお気に入りの美女を見つけて夜遊びしませんか？カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
