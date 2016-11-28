@@ -137,12 +137,136 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.65909094">
-                  <caret line="312" column="44" selection-start-line="312" selection-start-column="44" selection-end-line="312" selection-end-column="44" />
+                <state vertical-scroll-proportion="-10.916667">
+                  <caret line="314" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-10.916667">
+                  <caret line="247" column="38" selection-start-line="245" selection-start-column="0" selection-end-line="247" selection-end-column="38" />
+                  <folding>
+                    <marker date="1480337240000" expanded="true" signature="0:11582" placeholder=".main-content.container cast-bar-detail-directive=&quot;&quot;" />
+                    <marker date="1480337240000" expanded="true" signature="115:10571" placeholder=".cast-detail-page.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="148:1311" placeholder=".cast-detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="178:400" placeholder=".photo-area" />
+                    <marker date="1480337240000" expanded="true" signature="200:400" placeholder=".fream" />
+                    <marker date="1480337240000" expanded="true" signature="409:1311" placeholder=".profile-area" />
+                    <marker date="1480337240000" expanded="true" signature="433:988" placeholder=".name-area" />
+                    <marker date="1480337240000" expanded="true" signature="689:853" placeholder=".feature" />
+                    <marker date="1480337240000" expanded="true" signature="866:988" placeholder=".feature" />
+                    <marker date="1480337240000" expanded="true" signature="999:1311" placeholder=".thumbnail" />
+                    <marker date="1480337240000" expanded="true" signature="1318:1443" placeholder=".comment" />
+                    <marker date="1480337240000" expanded="true" signature="1335:1392" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="1451:5307" placeholder=".col-md-12.detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="1486:5307" placeholder=".row" />
+                    <marker date="1480337240000" expanded="true" signature="1501:1557" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="1568:5307" placeholder=".contact" />
+                    <marker date="1480337240000" expanded="true" signature="2178:2690" placeholder=".form-group" />
+                    <marker date="1480337240000" expanded="true" signature="2212:2690" placeholder=".col-xs-12" />
+                    <marker date="1480337240000" expanded="true" signature="5194:5307" placeholder=".center-button" />
+                    <marker date="1480337240000" expanded="true" signature="5314:6288" placeholder=".col-md-12.detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="5349:6288" placeholder=".row" />
+                    <marker date="1480337240000" expanded="true" signature="5364:5420" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="5431:5630" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
+                    <marker date="1480337240000" expanded="true" signature="5554:5630" placeholder=".col-row-left.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="5641:6288" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
+                    <marker date="1480337240000" expanded="true" signature="5702:6288" placeholder=".col-row-right.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="6295:6709" placeholder=".col-md-12.detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="6330:6709" placeholder=".row" />
+                    <marker date="1480337240000" expanded="true" signature="6345:6407" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="6418:6709" placeholder=".profile-box.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="6716:10571" placeholder=".col-md-12.detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="6751:10571" placeholder=".row" />
+                    <marker date="1480337240000" expanded="true" signature="6766:6822" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="6833:10571" placeholder=".contact" />
+                    <marker date="1480337240000" expanded="true" signature="7443:7955" placeholder=".form-group" />
+                    <marker date="1480337240000" expanded="true" signature="7477:7955" placeholder=".col-xs-12" />
+                    <marker date="1480337240000" expanded="true" signature="10459:10571" placeholder=".center-button" />
+                    <marker date="1480337240000" expanded="true" signature="10576:11471" placeholder=".some-cast ng-if=&quot;vm.casts&quot;" />
+                    <marker date="1480337240000" expanded="true" signature="10610:10666" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="10673:11471" placeholder=".queen-list.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="10744:11047" placeholder=".fream" />
+                    <marker date="1480337240000" expanded="true" signature="10763:10792" placeholder=".fream--basic.fream--top-left" />
+                    <marker date="1480337240000" expanded="true" signature="10805:10835" placeholder=".fream--basic.fream--top-right" />
+                    <marker date="1480337240000" expanded="true" signature="10848:10880" placeholder=".fream--basic.fream--bottom-left" />
+                    <marker date="1480337240000" expanded="true" signature="10893:10926" placeholder=".fream--basic.fream--bottom-right" />
+                    <marker date="1480337240000" expanded="true" signature="11058:11471" placeholder=".profile" />
+                    <marker date="1480337240000" expanded="true" signature="11079:11133" placeholder=".name" />
+                    <marker date="1480337240000" expanded="true" signature="11146:11471" placeholder=".body" />
+                    <marker date="1480337240000" expanded="true" signature="11166:11314" placeholder=".favorid.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="11329:11471" placeholder=".support.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="11474:11582" placeholder=".cast-page--service" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.48863637">
+                  <caret line="241" column="8" selection-start-line="241" selection-start-column="8" selection-end-line="241" selection-end-column="8" />
+                  <folding>
+                    <marker date="1480337240000" expanded="true" signature="0:11586" placeholder=".main-content.container cast-massage-detail-directive=&quot;&quot;" />
+                    <marker date="1480337240000" expanded="true" signature="119:10575" placeholder=".cast-detail-page.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="152:1315" placeholder=".cast-detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="182:404" placeholder=".photo-area" />
+                    <marker date="1480337240000" expanded="true" signature="204:404" placeholder=".fream" />
+                    <marker date="1480337240000" expanded="true" signature="413:1315" placeholder=".profile-area" />
+                    <marker date="1480337240000" expanded="true" signature="437:992" placeholder=".name-area" />
+                    <marker date="1480337240000" expanded="true" signature="693:857" placeholder=".feature" />
+                    <marker date="1480337240000" expanded="true" signature="870:992" placeholder=".feature" />
+                    <marker date="1480337240000" expanded="true" signature="1003:1315" placeholder=".thumbnail" />
+                    <marker date="1480337240000" expanded="true" signature="1322:1447" placeholder=".comment" />
+                    <marker date="1480337240000" expanded="true" signature="1339:1396" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="1455:5311" placeholder=".col-md-12.detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="1490:5311" placeholder=".row" />
+                    <marker date="1480337240000" expanded="true" signature="1505:1561" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="1572:5311" placeholder=".contact" />
+                    <marker date="1480337240000" expanded="true" signature="2182:2694" placeholder=".form-group" />
+                    <marker date="1480337240000" expanded="true" signature="2216:2694" placeholder=".col-xs-12" />
+                    <marker date="1480337240000" expanded="true" signature="5198:5311" placeholder=".center-button" />
+                    <marker date="1480337240000" expanded="true" signature="5318:6292" placeholder=".col-md-12.detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="5353:6292" placeholder=".row" />
+                    <marker date="1480337240000" expanded="true" signature="5368:5424" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="5435:5634" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
+                    <marker date="1480337240000" expanded="true" signature="5558:5634" placeholder=".col-row-left.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="5645:6292" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
+                    <marker date="1480337240000" expanded="true" signature="5706:6292" placeholder=".col-row-right.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="6299:6713" placeholder=".col-md-12.detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="6334:6713" placeholder=".row" />
+                    <marker date="1480337240000" expanded="true" signature="6349:6411" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="6422:6713" placeholder=".profile-box.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="6720:10575" placeholder=".col-md-12.detail.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="6755:10575" placeholder=".row" />
+                    <marker date="1480337240000" expanded="true" signature="6770:6826" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="6837:10575" placeholder=".contact" />
+                    <marker date="1480337240000" expanded="true" signature="7447:7959" placeholder=".form-group" />
+                    <marker date="1480337240000" expanded="true" signature="7481:7959" placeholder=".col-xs-12" />
+                    <marker date="1480337240000" expanded="true" signature="10463:10575" placeholder=".center-button" />
+                    <marker date="1480337240000" expanded="true" signature="10580:11475" placeholder=".some-cast ng-if=&quot;vm.casts&quot;" />
+                    <marker date="1480337240000" expanded="true" signature="10614:10670" placeholder=".page-title" />
+                    <marker date="1480337240000" expanded="true" signature="10677:11475" placeholder=".queen-list.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="10748:11051" placeholder=".fream" />
+                    <marker date="1480337240000" expanded="true" signature="10767:10796" placeholder=".fream--basic.fream--top-left" />
+                    <marker date="1480337240000" expanded="true" signature="10809:10839" placeholder=".fream--basic.fream--top-right" />
+                    <marker date="1480337240000" expanded="true" signature="10852:10884" placeholder=".fream--basic.fream--bottom-left" />
+                    <marker date="1480337240000" expanded="true" signature="10897:10930" placeholder=".fream--basic.fream--bottom-right" />
+                    <marker date="1480337240000" expanded="true" signature="11062:11475" placeholder=".profile" />
+                    <marker date="1480337240000" expanded="true" signature="11083:11137" placeholder=".name" />
+                    <marker date="1480337240000" expanded="true" signature="11150:11475" placeholder=".body" />
+                    <marker date="1480337240000" expanded="true" signature="11170:11318" placeholder=".favorid.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="11333:11475" placeholder=".support.clearfix" />
+                    <marker date="1480337240000" expanded="true" signature="11478:11586" placeholder=".cast-page--service" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -154,8 +278,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/secrets.yml" />
-        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/group/base_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/admin/base.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
@@ -205,6 +327,8 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/group.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim" />
       </list>
     </option>
   </component>
@@ -369,7 +493,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="karaoke" />
+              <option name="myItemId" value="massage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -406,102 +564,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="group" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -779,21 +841,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/rubymine.jar!/resources/html5-schema/html5/phrase.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="326" column="16" selection-start-line="326" selection-start-column="16" selection-end-line="326" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/admin/base.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39285713">
-          <caret line="11" column="67" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/visitor/index_jp.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.125">
@@ -1171,9 +1218,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65909094">
-          <caret line="312" column="44" selection-start-line="312" selection-start-column="44" selection-end-line="312" selection-end-column="44" />
+        <state vertical-scroll-proportion="-10.916667">
+          <caret line="314" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.916667">
+          <caret line="247" column="38" selection-start-line="245" selection-start-column="0" selection-end-line="247" selection-end-column="38" />
+          <folding>
+            <marker date="1480337240000" expanded="true" signature="0:11582" placeholder=".main-content.container cast-bar-detail-directive=&quot;&quot;" />
+            <marker date="1480337240000" expanded="true" signature="115:10571" placeholder=".cast-detail-page.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="148:1311" placeholder=".cast-detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="178:400" placeholder=".photo-area" />
+            <marker date="1480337240000" expanded="true" signature="200:400" placeholder=".fream" />
+            <marker date="1480337240000" expanded="true" signature="409:1311" placeholder=".profile-area" />
+            <marker date="1480337240000" expanded="true" signature="433:988" placeholder=".name-area" />
+            <marker date="1480337240000" expanded="true" signature="689:853" placeholder=".feature" />
+            <marker date="1480337240000" expanded="true" signature="866:988" placeholder=".feature" />
+            <marker date="1480337240000" expanded="true" signature="999:1311" placeholder=".thumbnail" />
+            <marker date="1480337240000" expanded="true" signature="1318:1443" placeholder=".comment" />
+            <marker date="1480337240000" expanded="true" signature="1335:1392" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="1451:5307" placeholder=".col-md-12.detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="1486:5307" placeholder=".row" />
+            <marker date="1480337240000" expanded="true" signature="1501:1557" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="1568:5307" placeholder=".contact" />
+            <marker date="1480337240000" expanded="true" signature="2178:2690" placeholder=".form-group" />
+            <marker date="1480337240000" expanded="true" signature="2212:2690" placeholder=".col-xs-12" />
+            <marker date="1480337240000" expanded="true" signature="5194:5307" placeholder=".center-button" />
+            <marker date="1480337240000" expanded="true" signature="5314:6288" placeholder=".col-md-12.detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="5349:6288" placeholder=".row" />
+            <marker date="1480337240000" expanded="true" signature="5364:5420" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="5431:5630" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
+            <marker date="1480337240000" expanded="true" signature="5554:5630" placeholder=".col-row-left.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="5641:6288" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
+            <marker date="1480337240000" expanded="true" signature="5702:6288" placeholder=".col-row-right.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="6295:6709" placeholder=".col-md-12.detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="6330:6709" placeholder=".row" />
+            <marker date="1480337240000" expanded="true" signature="6345:6407" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="6418:6709" placeholder=".profile-box.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="6716:10571" placeholder=".col-md-12.detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="6751:10571" placeholder=".row" />
+            <marker date="1480337240000" expanded="true" signature="6766:6822" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="6833:10571" placeholder=".contact" />
+            <marker date="1480337240000" expanded="true" signature="7443:7955" placeholder=".form-group" />
+            <marker date="1480337240000" expanded="true" signature="7477:7955" placeholder=".col-xs-12" />
+            <marker date="1480337240000" expanded="true" signature="10459:10571" placeholder=".center-button" />
+            <marker date="1480337240000" expanded="true" signature="10576:11471" placeholder=".some-cast ng-if=&quot;vm.casts&quot;" />
+            <marker date="1480337240000" expanded="true" signature="10610:10666" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="10673:11471" placeholder=".queen-list.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="10744:11047" placeholder=".fream" />
+            <marker date="1480337240000" expanded="true" signature="10763:10792" placeholder=".fream--basic.fream--top-left" />
+            <marker date="1480337240000" expanded="true" signature="10805:10835" placeholder=".fream--basic.fream--top-right" />
+            <marker date="1480337240000" expanded="true" signature="10848:10880" placeholder=".fream--basic.fream--bottom-left" />
+            <marker date="1480337240000" expanded="true" signature="10893:10926" placeholder=".fream--basic.fream--bottom-right" />
+            <marker date="1480337240000" expanded="true" signature="11058:11471" placeholder=".profile" />
+            <marker date="1480337240000" expanded="true" signature="11079:11133" placeholder=".name" />
+            <marker date="1480337240000" expanded="true" signature="11146:11471" placeholder=".body" />
+            <marker date="1480337240000" expanded="true" signature="11166:11314" placeholder=".favorid.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="11329:11471" placeholder=".support.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="11474:11582" placeholder=".cast-page--service" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48863637">
+          <caret line="241" column="8" selection-start-line="241" selection-start-column="8" selection-end-line="241" selection-end-column="8" />
+          <folding>
+            <marker date="1480337240000" expanded="true" signature="0:11586" placeholder=".main-content.container cast-massage-detail-directive=&quot;&quot;" />
+            <marker date="1480337240000" expanded="true" signature="119:10575" placeholder=".cast-detail-page.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="152:1315" placeholder=".cast-detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="182:404" placeholder=".photo-area" />
+            <marker date="1480337240000" expanded="true" signature="204:404" placeholder=".fream" />
+            <marker date="1480337240000" expanded="true" signature="413:1315" placeholder=".profile-area" />
+            <marker date="1480337240000" expanded="true" signature="437:992" placeholder=".name-area" />
+            <marker date="1480337240000" expanded="true" signature="693:857" placeholder=".feature" />
+            <marker date="1480337240000" expanded="true" signature="870:992" placeholder=".feature" />
+            <marker date="1480337240000" expanded="true" signature="1003:1315" placeholder=".thumbnail" />
+            <marker date="1480337240000" expanded="true" signature="1322:1447" placeholder=".comment" />
+            <marker date="1480337240000" expanded="true" signature="1339:1396" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="1455:5311" placeholder=".col-md-12.detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="1490:5311" placeholder=".row" />
+            <marker date="1480337240000" expanded="true" signature="1505:1561" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="1572:5311" placeholder=".contact" />
+            <marker date="1480337240000" expanded="true" signature="2182:2694" placeholder=".form-group" />
+            <marker date="1480337240000" expanded="true" signature="2216:2694" placeholder=".col-xs-12" />
+            <marker date="1480337240000" expanded="true" signature="5198:5311" placeholder=".center-button" />
+            <marker date="1480337240000" expanded="true" signature="5318:6292" placeholder=".col-md-12.detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="5353:6292" placeholder=".row" />
+            <marker date="1480337240000" expanded="true" signature="5368:5424" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="5435:5634" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
+            <marker date="1480337240000" expanded="true" signature="5558:5634" placeholder=".col-row-left.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="5645:6292" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
+            <marker date="1480337240000" expanded="true" signature="5706:6292" placeholder=".col-row-right.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="6299:6713" placeholder=".col-md-12.detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="6334:6713" placeholder=".row" />
+            <marker date="1480337240000" expanded="true" signature="6349:6411" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="6422:6713" placeholder=".profile-box.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="6720:10575" placeholder=".col-md-12.detail.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="6755:10575" placeholder=".row" />
+            <marker date="1480337240000" expanded="true" signature="6770:6826" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="6837:10575" placeholder=".contact" />
+            <marker date="1480337240000" expanded="true" signature="7447:7959" placeholder=".form-group" />
+            <marker date="1480337240000" expanded="true" signature="7481:7959" placeholder=".col-xs-12" />
+            <marker date="1480337240000" expanded="true" signature="10463:10575" placeholder=".center-button" />
+            <marker date="1480337240000" expanded="true" signature="10580:11475" placeholder=".some-cast ng-if=&quot;vm.casts&quot;" />
+            <marker date="1480337240000" expanded="true" signature="10614:10670" placeholder=".page-title" />
+            <marker date="1480337240000" expanded="true" signature="10677:11475" placeholder=".queen-list.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="10748:11051" placeholder=".fream" />
+            <marker date="1480337240000" expanded="true" signature="10767:10796" placeholder=".fream--basic.fream--top-left" />
+            <marker date="1480337240000" expanded="true" signature="10809:10839" placeholder=".fream--basic.fream--top-right" />
+            <marker date="1480337240000" expanded="true" signature="10852:10884" placeholder=".fream--basic.fream--bottom-left" />
+            <marker date="1480337240000" expanded="true" signature="10897:10930" placeholder=".fream--basic.fream--bottom-right" />
+            <marker date="1480337240000" expanded="true" signature="11062:11475" placeholder=".profile" />
+            <marker date="1480337240000" expanded="true" signature="11083:11137" placeholder=".name" />
+            <marker date="1480337240000" expanded="true" signature="11150:11475" placeholder=".body" />
+            <marker date="1480337240000" expanded="true" signature="11170:11318" placeholder=".favorid.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="11333:11475" placeholder=".support.clearfix" />
+            <marker date="1480337240000" expanded="true" signature="11478:11586" placeholder=".cast-page--service" />
+          </folding>
         </state>
       </provider>
     </entry>
