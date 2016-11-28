@@ -20,7 +20,7 @@ class Front::HomeController < ApplicationController
   def index
     @head_title = "ベトナム・ホーチミン/ハノイで夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛い女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バーの女の子を探すなら、キレカワ"
+    @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛い女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
   end
   def login
     if customer_signed_in?
@@ -37,7 +37,7 @@ class Front::HomeController < ApplicationController
     p "soeya"
     @head_title = "ベトナム・ホーチミン/ハノイでカラオケの女の子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛いカラオケの女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バーの女の子を探すなら、キレカワ"
+    @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛いカラオケの女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
@@ -48,7 +48,7 @@ class Front::HomeController < ApplicationController
   def group_bar
     @head_title = "ベトナム・ホーチミン/ハノイでガールズバーの女の子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛いガールズバーの女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バーの女の子を探すなら、キレカワ"
+    @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛いガールズバーの女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
@@ -59,7 +59,7 @@ class Front::HomeController < ApplicationController
   def group_massage
     @head_title = "ベトナム・ホーチミン/ハノイでマッサージの女の子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛いマッサージの女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バーの女の子を探すなら、キレカワ"
+    @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛いマッサージの女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
@@ -70,7 +70,7 @@ class Front::HomeController < ApplicationController
   def cast_karaoke
     @head_title = "ベトナム・ホーチミン/ハノイでカラオケで働くお気に入りの子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイのカラオケで働く綺麗、可愛いあの子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バーの女の子を探すなら、キレカワ"
+    @head_description = "ベトナム、ホーチミン/ハノイのカラオケで働く#{User.where(job_type: "karaoke").count}人の可愛い女の子の中から、あなたのお気に入りの美女が見つけて夜遊びしませんか？カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
@@ -81,7 +81,7 @@ class Front::HomeController < ApplicationController
   def cast_bar
     @head_title = "ベトナム・ホーチミン/ハノイでガールズバーで働くお気に入りの子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイのガールズバーで働く綺麗、可愛いあの子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バーの女の子を探すなら、キレカワ"
+    @head_description = "ベトナム、ホーチミン/ハノイのガールズバーで働く#{User.where(job_type: "bar").count}人の可愛い女の子の中から、あなたのお気に入りの美女が見つけて夜遊びしませんか？カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
@@ -92,7 +92,7 @@ class Front::HomeController < ApplicationController
   def cast_massage
     @head_title = "ベトナム・ホーチミン/ハノイでマッサージで働くお気に入りの子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイのマッサージで働く綺麗、可愛いお気に入りの子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バーの女の子を探すなら、キレカワ"
+    @head_description = "ベトナム、ホーチミン/ハノイのマッサージで働く綺麗、可愛いお気に入りの子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
@@ -103,7 +103,7 @@ class Front::HomeController < ApplicationController
   def cast_sexy
     @head_title = "ベトナム・ホーチミン/ハノイでセクシーな子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイのセクシーな子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バーの女の子を探すなら、キレカワ"
+    @head_description = "ベトナム、ホーチミン/ハノイのセクシーな子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 

@@ -61,6 +61,12 @@ class User < ApplicationRecord
     (Date.today.strftime(date_format).to_i - self.birthday.strftime(date_format).to_i) / 10000
   end
 
+  def change_lang_job_type_at_ja
+    return 'カラオケ' if self.job_type == "karaoke"
+    return 'ガールズバー' if self.job_type == "bar"
+    return 'マッサージ' if self.job_type == "massage"
+    return 'xxx' if self.job_type == "sexy"
+  end
   def self.to_jbuilders(users)
     Jbuilder.new do |json|
       json.array! users do |user|

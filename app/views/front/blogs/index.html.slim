@@ -9,7 +9,7 @@
           li
             = blog.title_ja.html_safe
             .article
-              = blog.article_ja.html_safe
+              = blog.article_ja.truncate(200).html_safe
               .more
                 = link_to "/blogs/#{blog.id}"
                   | 続きを読む
@@ -19,7 +19,7 @@
               .date
                 = blog.created_at.strftime('%Y/%m/%d')
                 | 更新
-
+    = paginate @blogs
 = render partial: 'front/layouts/footer'
 
 

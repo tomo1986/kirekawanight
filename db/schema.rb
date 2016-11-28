@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124143928) do
+ActiveRecord::Schema.define(version: 20161128112624) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -151,6 +151,7 @@ ActiveRecord::Schema.define(version: 20161124143928) do
     t.integer  "budget_usd"
     t.string   "opened_at"
     t.string   "closed_at"
+    t.text     "service",                limit: 65535
     t.index ["email"], name: "index_groups_on_email", unique: true, using: :btree
     t.index ["is_chinese"], name: "index_groups_on_is_chinese", using: :btree
     t.index ["is_credit"], name: "index_groups_on_is_credit", using: :btree
@@ -158,6 +159,15 @@ ActiveRecord::Schema.define(version: 20161124143928) do
     t.index ["is_japanese"], name: "index_groups_on_is_japanese", using: :btree
     t.index ["is_korean"], name: "index_groups_on_is_korean", using: :btree
     t.index ["reset_password_token"], name: "index_groups_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "guides", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "users_id"
+    t.text     "message",    limit: 65535
+    t.integer  "price"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["users_id"], name: "index_guides_on_users_id", using: :btree
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -175,6 +185,18 @@ ActiveRecord::Schema.define(version: 20161124143928) do
     t.index ["subject_id"], name: "index_images_on_subject_id", using: :btree
     t.index ["type", "subject_id", "subject_type"], name: "index_images_on_type_and_subject_id_and_subject_type", using: :btree
     t.index ["type"], name: "index_images_on_type", using: :btree
+  end
+
+  create_table "information", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "group_id"
+    t.string   "content"
+    t.string   "watchword"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.boolean  "is_displayed"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["group_id"], name: "index_information_on_group_id", using: :btree
   end
 
   create_table "introductions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

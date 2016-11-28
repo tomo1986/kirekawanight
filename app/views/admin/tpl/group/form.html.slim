@@ -191,6 +191,12 @@ section.main-container.map-form-page group-form-directive=""
                   | Line
                 dd
                   input.form-control type="text" name="line" placeholder="aiueo" ng-model="vm.group.sns_line"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.service}" service
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control row="6" ng-model="vm.group.service"
 
           tr
             th.res-form-table__th.title-box.clearfix

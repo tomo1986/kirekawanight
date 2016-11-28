@@ -1,7 +1,7 @@
 class Blog < ApplicationRecord
 
   def previous
-    Blog.where("id < ?", self.id).first
+    Blog.where("id < ?", self.id).last
   end
 
   def next
@@ -11,22 +11,112 @@ class Blog < ApplicationRecord
       self.subject_id = user.id
       self.article_ja = Blog.make_article_ja_for_user(user)
       self.title_ja = Blog.make_title_ja_for_user(user)
+      self.head_title_ja = Blog.make_head_title_ja_for_user(user)
+      self.head_keyword_ja = Blog.make_head_keyword_ja_for_user(user)
+      self.head_description_ja = Blog.make_head_description_ja_for_user(user)
       self.save!
 
   end
 
   def self.make_title_ja_for_user(user)
-    return "<h2>ベトナムホーチミンの#{user.job_type}の女の子紹介</h2>"
+    return "<h2>ベトナムのホーチミン/ハノイの美女を紹介！今回は#{user.change_lang_job_type_at_ja}で働く#{user.nick_name}さんの紹介</h2>"
+  end
+
+  def self.make_head_title_ja_for_user(user)
+    return "ベトナムのホーチミン/ハノイで美女発見！#{user.change_lang_job_type_at_ja}で働く#{user.nick_name}さんを紹介 |  見つかる出会える女の子数No.1「キレカワ」"
+  end
+
+  def self.make_head_keyword_ja_for_user(user)
+    return "ベトナム、ホーチミン、ハノイ、夜遊び、#{user.change_lang_job_type_at_ja}、ブログ、キレカワ、kirekawa"
+  end
+
+  def self.make_head_description_ja_for_user(user)
+    return "ベトナムのホーチミン/ハノイで美女発見！#{user.change_lang_job_type_at_ja}で働く#{user.nick_name}さんを紹介。#{user.nick_name}さんに会いたくなったらキレカワで！カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
   end
 
   def self.make_article_ja_for_user(user)
-    article = "<p>こんにちわ　kirekaw事務局の鈴木です。\n"
-    article = article + "今日もベトナムのホーチミンの夜事情(カラオケ、バー、セクシーな女の子)、夜遊びについて書きます。\n"
-    article = article + " 本日ご紹介する女の子は、ベトナムのホーチミンで#{user.job_type}の仕事をしている。#{user.name}さんを紹介します\n\n</p>"
-    article = article + "<p>#{user.name}さん今#{user.age}歳でとても可愛い子です。\n"
-    article = article + "あなたのチャームポイントはなんですか?と聞くと、\n"
+    article = "<p>こんにちわ、キレカワ事務局の鈴木です。<br>"
+    article = article + "キレカワブログはベトナムの夜遊び(カラオケ、バー、マッサージ、セクシー女性)ベトナムの美女の紹介や出会い方などについて書きます。<br>"
+    article = article + " 今日ブログは#{user.change_lang_job_type_at_ja}の仕事をしている、#{user.nick_name}さんを紹介します<br><br></p>"
+    article = article + "<p>#{user.nick_name}さんは今#{user.age}歳で#{user.group.address}にある#{user.group.name}というお店で働いています<br>"
+    article = article + "そんな#{user.nick_name}さんにアンケートに答えてくれましましたので、ぜひお読みください！！<br><br></p>"
+
+    article = article + "<div class='col-md-12 detail clearfix'><div class='row'>"
+    article = article+ "<div class='col-xs-12 col-sm-4 col-sm-offset-0 col-md-4 col-md-offset-0 col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0'>"
+    article = article+ "<div class='col-row-left clearfix'>"
+    article = article + "<img class='img' src='#{user.images[0].image.url}'>"
+    article = article+"</div>"
+    article = article+"</div>"
+    article = article + "<div class='col-xs-12 col-sm-8 col-md-8 col-lg-10 col-xl-10'>"
+    article = article + "<div class='col-row-right clearfix'>"
+    article = article + "<dl class='profile clearfix'>"
+    article = article + "<dt> 名前 </dt>"
+    article = article + "<dd> #{user.name}(#{user.nick_name}) </dd>"
+    article = article + "<dt> 誕生日 </dt>"
+    article = article + "<dd> #{user.birthday.strftime('%Y年%m月%d日')}</dd>"
+    article = article + "<dt> 血液型 </dt>"
+    article = article + "<dd> #{user.blood_type}型</dd>"
+    article = article + "<dt> 生まれた場所 </dt>"
+    article = article + "<dd> #{user.birthplace}</dd>"
+    article = article + "</dl>"
+    article = article + "</div>"
+    article = article + "</div>"
+    article = article + "</div></div>"
+
+    article = article + "<p>"
+    article = article + "Q:#{user.nick_name}さんの性格を教えてください<br>"
+    article = article + "A:#{user.ja_profile.character}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんの趣味は?<br>"
+    article = article + "A:#{user.ja_profile.hobby}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんの特技は?<br>"
+    article = article + "A:#{user.ja_profile.skill}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんの休日の過ごし方は?<br>"
+    article = article + "A:#{user.ja_profile.how_to_holiday}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんの好きな映画は?<br>"
+    article = article + "A:#{user.ja_profile.like_movie}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんの好きな料理は?<br>"
+    article = article + "A:#{user.ja_profile.like_food}<br><br>"
+
+
+    article = article + "Q:#{user.nick_name}さんのチャームポイントは?<br>"
+    article = article + "A:#{user.ja_profile.best_feature}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんの「ドキッ」とする異性の仕草はなんですか?<br>"
+    article = article + "A:#{user.ja_profile.gesture}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんがもし一目惚れしたらどうアプローチする?<br>"
+    article = article + "A:#{user.ja_profile.how_to_approach}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんはこんな異性に惹かれる?<br>"
+    article = article + "A:#{user.ja_profile.attracted}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんの今一番欲しいものは?<br>"
+    article = article + "A:#{user.ja_profile.want}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんの今行きたいところは？<br>"
+    article = article + "A:#{user.ja_profile.go}<br><br>"
+
+    article = article + "Q:#{user.nick_name}さんの夢は？<br>"
+    article = article + "A:#{user.ja_profile.dream}<br><br>"
+
+    article = article + "Q:ここだけの話を教えてください<br>"
+    article = article + "A:#{user.ja_profile.secret_talk}<br><br>"
+
+    article = article + "キレカワ事務局:#{user.nick_name}さんありがとうございました。<br><br>"
+
+    article = article + "#{user.nick_name}さんにインタビューした内容です。<br>"
+    article = article + "#{user.ja_profile.interview}<br><br>"
+    article = article + "</p>"
+    article = article + "<p>#{user.nick_name}さんをもっと知りたい方は「<a href='/casts/#{user.job_type}/#{user.id}'>こちら</a>」</p>"
+    article = article + "<p>他の#{user.change_lang_job_type_at_ja}で働く美女を見たい方は「<a href='/casts/#{user.job_type}'>こちら</a>」</p>"
     return article
   end
+
   def to_jbuilder
     Jbuilder.new do |json|
       json.id self.id

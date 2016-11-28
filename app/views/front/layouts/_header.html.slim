@@ -1,7 +1,25 @@
 header#header
   .header--main
+    .header-top.clearfix
+      .container
+        h1.site-title ベトナム・ホーチミン/ハノイで夜遊び！！見つかる出会える女の子数No.1「キレカワ」
+        ul.top-list
+          li
+            a href="/visitor" 初めての方へ
+          li
+            a href="/question" よくある質問
     .container
       .site.clearfix
         .site--logo
           a href="/"
             = image_tag 'front/logo.png', alt:"kirekawa collection"
+        .site--count
+          ul.site--count-list
+            li
+              span.count--title 登録店舗数：
+              span.count--count = Group.count
+              | 件
+            li
+              span.count--title 登録女性数：
+              span.count--count = User.count
+              | 件

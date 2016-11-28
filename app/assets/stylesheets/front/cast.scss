@@ -630,6 +630,7 @@
     }
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 991px){
   .cast-detail-page .cast-detail .profile-area .thumbnail{
     text-align: left;
@@ -646,4 +647,35 @@
     height: 481px;
   }
 
+}
+.cast-page--service{
+  position: fixed;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 1rem;
+  background: rgba(0,0,0, .7);
+  bottom: 0;
+  left:0;
+  text-align: center;
+  a {
+    color: #E2D39F;
+    text-shadow: 2px 2px 10px #f7cb47;
+  }
+}
+.blinking{
+  -webkit-animation:blink 1s ease-in-out infinite alternate;
+  -moz-animation:blink 1s ease-in-out infinite alternate;
+  animation:blink 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@-moz-keyframes blink{
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes blink{
+  0% {opacity:0;}
+  100% {opacity:1;}
 }

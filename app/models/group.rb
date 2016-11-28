@@ -57,6 +57,7 @@ class Group < ApplicationRecord
         json.budget_yen group.budget_yen
         json.budget_vnd group.budget_vnd
         json.budget_usd group.budget_usd
+        json.service group.service
         json.note group.note
         json.images group.abc
         json.tags group.tag_list ? group.tag_list : nil
@@ -96,6 +97,7 @@ class Group < ApplicationRecord
       json.budget_yen self.budget_yen
       json.budget_vnd self.budget_vnd
       json.budget_usd self.budget_usd
+      json.service self.service
       json.note self.note
       json.images self.abc
       json.tags self.tags ? Tag.to_jbuilders(self.tags) : nil

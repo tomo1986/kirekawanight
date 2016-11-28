@@ -68,6 +68,7 @@ class Api::AdminController < ApiController
       budget_yen: params[:budget_yen],
       budget_vnd: params[:budget_vnd],
       budget_usd: params[:budget_usd],
+      service: params[:service],
       images: params[:images]
     }
     params[:tags].each do |key,val|
@@ -129,7 +130,8 @@ class Api::AdminController < ApiController
         closed_at: params[:closed_at],
         budget_yen: params[:budget_yen],
         budget_vnd: params[:budget_vnd],
-        budget_usd: params[:budget_usd]
+        budget_usd: params[:budget_usd],
+        service: params[:service]
 
     }
     if params[:images].present?

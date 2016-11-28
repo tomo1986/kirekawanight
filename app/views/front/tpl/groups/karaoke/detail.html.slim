@@ -40,10 +40,7 @@
         span#map
         span#contact
         span#review
-        p.shop-copy
-          | 2015年9月歌舞伎町に『Noir Luxaxe』が遂にOPEN！
-          br
-          | 高級感溢れる内装、ハイレベルなキャスト、洗練されたスタッフが貴方のお越しをお待ちしております！
+        p.shop-copy ng-bind-html="vm.group.service | noHTML | newlines"
         .shop-button-box.clearfix
           .favorite
             a.btn ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()" お気に入り登録
@@ -127,6 +124,7 @@
               | {{vm.group.budget_vnd}}VND
               br
               | {{vm.group.budget_usd}}USD
+
           tr
             th chip有無
             td
