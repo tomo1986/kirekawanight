@@ -6,11 +6,11 @@ class Discount < ApplicationRecord
       type = "タイムセール"
     end
     content = ""
-    content = content + "#{type}!!\n"
-    content = content + "#{self.groups}組限定!!#{self.peoples}以上のお客様で\n"
+    content = content + "#{type}!!<br>"
+    content = content + "#{self.groups}組様限定!!#{self.peoples}名以上のお客様で<br>"
     content = content + "#{self.start_at.strftime('%Y年%m月%d日%H時%M分')}〜#{self.end_at.strftime('%Y年%m月%d日%H時%M分')}の間に"
-    content = content + "ご予約いただくと、お一人様#{self.price}USDで遊べます。\n"
-    content = content + "今すぐ#{self.tel}にお電話ください！！合言葉は「キレカワ見ました！！」"
+    content = content + "ご予約いただくと、お一人様#{self.price}USDで遊べます。<br>"
+    content = content + "今すぐ<a href='tel:#{self.tel}'>#{self.tel}</a>にお電話ください！！合言葉は「キレカワ見ました！！」"
     return content
   end
 

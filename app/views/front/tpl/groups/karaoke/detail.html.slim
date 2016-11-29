@@ -29,12 +29,7 @@
         table
           tr ng-repeat="discount in vm.discounts"
             td
-             | {{discount.content}}
-             | 電話の際に合言葉を行ってくださいね！！
-          tr
-            td
-              | タイムサービス！！本日21:00〜22:00の間に3人以上で電話予約された方限定！！なんと一人65万！！合言葉は「ママさんかわいい」です
-              | 電話の際に合言葉を行ってくださいね！！
+             p ng-bind-html="discount.content"
 
       .rank-box.shop-new-face
         .page-title
