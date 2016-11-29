@@ -7,11 +7,9 @@ angular.module 'bijyoZukanGroup'
   connect = ->
     self = vm
     return new Promise((resolve, reject) ->
-      get '/api/group/api0', {}, ((data) ->
-        self.user = data.user
+      get '/api/group/api2', {}, ((data) ->
         resolve data
       ), (error) ->
-        self.user = null
         reject error
     )
   run = (url, httpMethod, params, callbackSuccess = null, callbackFailed = null) ->

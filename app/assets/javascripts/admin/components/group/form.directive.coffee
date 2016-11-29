@@ -6,6 +6,7 @@ angular.module 'bijyoZukanAdmin'
 
     vm.init = ->
       vm.canSubmit = true
+      vm.getTags()
       vm.breadcrumb = [{name:'Dashboard',link:'/business'},{name:'Group',link:'/business/maps'}]
       vm.open_options={
         from:{is_from:true,date:null}
@@ -56,6 +57,12 @@ angular.module 'bijyoZukanAdmin'
           })
         )
       )
+    vm.getTags = ->
+      groupService.getTags().then((res) ->
+        vm.tags = res.data.tags
+      )
+    vm.onClickTag = (tag_name) ->
+      vm.group.tags.push({text: tag_name})
 
     vm.newGroup = ->
       groupService.newGroup().then((res) ->
@@ -111,7 +118,7 @@ angular.module 'bijyoZukanAdmin'
         )
       else
         groupService.createGroup(vm.group).then((res) ->
-          if res.status == 1
+          if res.data.status == 1
             vm.group = res.data.group
             datas = vm.makeDataForModal(vm.group)
             modalService.confirm(title,datas,buttons)

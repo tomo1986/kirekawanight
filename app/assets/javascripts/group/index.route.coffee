@@ -90,77 +90,19 @@ angular.module 'bijyoZukanGroup'
       templateUrl: '/group/tpl/contact/form.html'
 
 
-    .state '/banners',
-      url: '/group/banners?page'
-      active_menu: 'banner'
-      templateUrl: '/group/tpl/banner/index.html'
+    .state '/discounts',
+      url: '/group/discounts?page'
+      active_menu: 'discount'
+      templateUrl: '/group/tpl/discount/index.html'
 
-    .state '/banners/:id/detail',
-      url: '/group/banners/:id/detail'
-      active_menu: 'banner'
+    .state '/discounts/:id/edit',
+      url: '/group/discounts/:id/edit'
+      active_menu: 'discount'
       action: 'update'
-      templateUrl: '/group/tpl/banner/detail.html'
+      templateUrl: '/group/tpl/discount/form.html'
 
-    .state '/banners/new',
-      url: '/group/banners/new'
-      active_menu: 'banner'
-      action: 'create'
-      templateUrl: '/group/tpl/banner/form.html'
-
-
-    .state '/banners/:id/edit',
-      url: '/group/banners/:id/edit'
-      active_menu: 'banner'
-      action: 'update'
-      templateUrl: '/group/tpl/banner/form.html'
-
-
-
-
-
-
-    .state '/pickups',
-      url: '/group/pickups?page'
-      active_menu: 'pickup'
-      templateUrl: '/group/tpl/pickup/index.html'
-
-    .state '/pickups/:id/detail',
-      url: '/group/pickups/:id/detail'
-      active_menu: 'pickup'
-      templateUrl: '/group/tpl/pickup/detail.html'
-
-    .state '/pickups/new',
-      url: '/group/pickups/new'
-      active_menu: 'pickup'
-      action: 'create'
-      templateUrl: '/group/tpl/pickup/form.html'
-
-    .state '/pickups/:id/edit',
-      url: '/group/pickups/:id/edit'
-      active_menu: 'pickup'
-      action: 'update'
-      templateUrl: '/group/tpl/pickup/form.html'
-
-
-
-    .state '/blogs',
-      url: '/group/blogs?page'
-      active_menu: 'blog'
-      templateUrl: '/group/tpl/blog/index.html'
-
-    .state '/blogs/:id/detail',
-      url: '/group/blogs/:id/detail'
-      active_menu: 'blog'
-      templateUrl: '/group/tpl/blog/detail.html'
-
-    .state '/blogs/new',
-      url: '/group/blogs/new'
-      active_menu: 'blog'
-      action: 'create'
-      templateUrl: '/group/tpl/blog/form.html'
-
-    .state '/blogs/:id/edit',
-      url: '/group/blogs/:id/edit'
-      active_menu: 'blog'
-      action: 'update'
-      templateUrl: '/group/tpl/blog/form.html'
+    .state '/discounts/new',
+      url: '/group/discounts/new'
+      active_menu: 'discount'
+      action: 'new'
+      templateUrl: '/group/tpl/discount/form.html'

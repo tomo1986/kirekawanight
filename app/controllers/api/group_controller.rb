@@ -183,133 +183,6 @@ class Api::GroupController < ApiController
 
   def api11
     user = User.new
-    blog = BlogType::Introduction.new
-    blog.subject_type = "User"
-
-    if params[:ja]
-      user.user_profiles << ProfileType::Ja.create(
-          like_boy: params[:ja]['like_boy'],
-          like_girl: params[:ja]['like_girl'],
-          my_color: params[:ja]['my_color'],
-          happy_word: params[:ja]['happy_word'],
-          gesture: params[:ja]['gesture'],
-          attracted: params[:ja]['attracted'],
-          love_situation: params[:ja]['love_situation'],
-          first_love: params[:ja]['first_love'],
-          how_to_approach: params[:ja]['how_to_approach'],
-          how_to_holiday: params[:ja]['how_to_holiday'],
-          idea_couple: params[:ja]['idea_couple'],
-          take_one: params[:ja]['take_one'],
-          like_movie: params[:ja]['like_movie'],
-          like_word: params[:ja]['like_word'],
-          like_music: params[:ja]['like_music'],
-          like_place: params[:ja]['like_place'],
-          like_food: params[:ja]['like_food'],
-          like_drink: params[:ja]['like_drink'],
-          like_sports: params[:ja]['like_sports'],
-          best_feature: params[:ja]['best_feature'],
-          love_tips: params[:ja]['love_tips'],
-          character: params[:ja]['character'],
-          hobby: params[:ja]['hobby'],
-          skill: params[:ja]['skill'],
-          habit: params[:ja]['habit'],
-          brag: params[:ja]['brag'],
-          my_fad: params[:ja]['my_fad'],
-          secret_talk: params[:ja]['secret_talk'],
-          dream: params[:ja]['dream'],
-          go: params[:ja]['go'],
-          want: params[:ja]['want'],
-          do_something: params[:ja]['do_something'],
-          happy_event: params[:ja]['happy_event'],
-          painful_event: params[:ja]['painful_event'],
-          previous_life: params[:ja]['previous_life'],
-          admire_person: params[:ja]['admire_person'],
-          interview: params[:ja]['interview']
-      )
-    end
-    if params[:vn]
-      user.user_profiles << ProfileType::Vn.new(
-          like_boy: params[:vn]['like_boy'],
-          like_girl: params[:vn]['like_girl'],
-          my_color: params[:vn]['my_color'],
-          happy_word: params[:vn]['happy_word'],
-          gesture: params[:vn]['gesture'],
-          attracted: params[:vn]['attracted'],
-          love_situation: params[:vn]['love_situation'],
-          first_love: params[:vn]['first_love'],
-          how_to_approach: params[:vn]['how_to_approach'],
-          how_to_holiday: params[:vn]['how_to_holiday'],
-          idea_couple: params[:vn]['idea_couple'],
-          take_one: params[:vn]['take_one'],
-          like_word: params[:vn]['like_word'],
-          like_movie: params[:vn]['like_movie'],
-          like_music: params[:vn]['like_music'],
-          like_place: params[:vn]['like_place'],
-          like_food: params[:vn]['like_food'],
-          like_drink: params[:vn]['like_drink'],
-          like_sports: params[:vn]['like_sports'],
-          best_feature: params[:vn]['best_feature'],
-          love_tips: params[:vn]['love_tips'],
-          character: params[:vn]['character'],
-          hobby: params[:vn]['hobby'],
-          skill: params[:vn]['skill'],
-          habit: params[:vn]['habit'],
-          brag: params[:vn]['brag'],
-          my_fad: params[:vn]['my_fad'],
-          secret_talk: params[:vn]['secret_talk'],
-          dream: params[:vn]['dream'],
-          go: params[:vn]['go'],
-          want: params[:vn]['want'],
-          do_something: params[:vn]['do_something'],
-          happy_event: params[:vn]['happy_event'],
-          painful_event: params[:vn]['painful_event'],
-          previous_life: params[:vn]['previous_life'],
-          admire_person: params[:vn]['admire_person'],
-          interview: params[:vn]['interview']
-      )
-    end
-    if params[:en]
-      user.user_profiles << ProfileType::En.new(
-          like_boy: params[:en]['like_boy'],
-          like_girl: params[:en]['like_girl'],
-          my_color: params[:en]['my_color'],
-          happy_word: params[:en]['happy_word'],
-          gesture: params[:en]['gesture'],
-          attracted: params[:en]['attracted'],
-          love_situation: params[:en]['love_situation'],
-          first_love: params[:en]['first_love'],
-          how_to_approach: params[:en]['how_to_approach'],
-          how_to_holiday: params[:en]['how_to_holiday'],
-          idea_couple: params[:en]['idea_couple'],
-          take_one: params[:en]['take_one'],
-          like_word: params[:en]['like_word'],
-          like_music: params[:en]['like_music'],
-          like_movie: params[:en]['like_movie'],
-          like_place: params[:en]['like_place'],
-          like_food: params[:en]['like_food'],
-          like_drink: params[:en]['like_drink'],
-          like_sports: params[:en]['like_sports'],
-          best_feature: params[:en]['best_feature'],
-          love_tips: params[:en]['love_tips'],
-          character: params[:en]['character'],
-          hobby: params[:en]['hobby'],
-          skill: params[:en]['skill'],
-          habit: params[:en]['habit'],
-          brag: params[:en]['brag'],
-          my_fad: params[:en]['my_fad'],
-          secret_talk: params[:en]['secret_talk'],
-          dream: params[:en]['dream'],
-          go: params[:en]['go'],
-          want: params[:en]['want'],
-          do_something: params[:en]['do_something'],
-          happy_event: params[:en]['happy_event'],
-          painful_event: params[:en]['painful_event'],
-          previous_life: params[:en]['previous_life'],
-          admire_person: params[:en]['admire_person'],
-          interview: params[:en]['interview']
-      )
-    end
-
     user.attributes = {
         name: params[:name],
         nick_name: params[:nick_name],
@@ -320,30 +193,18 @@ class Api::GroupController < ApiController
         group_id: params[:group_id] ? params[:group_id] : nil,
         job_type: params[:job_type],
         blood_type: params[:blood_type],
-        sex: params[:sex],
-        sns_line: params[:sns_line],
-        sns_zalo: params[:sns_zalo],
-        sns_wechat: params[:sns_wechat],
+        sex: 1,
         height: params[:height],
         weight: params[:weight],
-        bust: params[:bust],
-        bust_size: params[:bust_size],
-        waist: params[:waist],
-        hip: params[:hip],
+        bust: "♡",
+        bust_size: "♡",
+        waist: "♡",
+        hip: "♡",
         is_japanese: params[:is_japanese],
-        is_english: params[:is_english],
-        is_chinese: params[:is_chinese],
-        is_korean: params[:is_korean],
-        images: params[:images]
+        is_english: params[:is_english]
     }
-    if params[:tags]
-      params[:tags].each do |key,val|
-        user.tag_list.add(val["text"])
-      end
-    end
 
     if user.save!
-      blog.auto_save_user(user)
       builder = Jbuilder.new do |json|
         json.user user.to_jbuilder
         json.status 1
@@ -497,7 +358,7 @@ class Api::GroupController < ApiController
         constellation: params[:constellation],
         job_type: params[:job_type],
         blood_type: params[:blood_type],
-        sex: params[:sex],
+        sex: 1,
         sns_line: params[:sns_line],
         sns_zalo: params[:sns_zalo],
         sns_wechat: params[:sns_wechat],
@@ -1026,5 +887,51 @@ class Api::GroupController < ApiController
     render json: builders.target!
   end
 
+  def api44
+    tags = Tag.all
+    builders = Jbuilder.new do |json|
+      json.tags Tag.to_jbuilders(tags)
+    end
+    render json: builders.target!
+  end
+
+  def api45
+    discount = Discount.new
+    builder = Jbuilder.new do |json|
+      json.discount discount.to_jbuilder
+    end
+    render json: builder.target!
+  end
+  def api46
+    if params[:type] == 'time'
+      discount = DiscountType::Time.new
+    end
+
+    discount.attributes = {
+        group_id: current_group.id,
+        groups: params[:groups],
+        peoples: params[:peoples],
+        price: params[:price],
+        content: params[:content],
+        watchword: params[:watchword],
+        start_at: params[:start_at],
+        end_at: params[:end_at],
+        tel: params[:tel],
+        is_displayed: params[:is_displayed]
+    }
+    discount.content = discount.make_content_ja
+    if discount.save
+      builder = Jbuilder.new do |json|
+        json.discount discount.to_jbuilder
+        json.status 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors discount.errors.full_messages
+        json.status 0
+      end
+    end
+    render json: builder.target!
+  end
 
 end

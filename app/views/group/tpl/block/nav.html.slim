@@ -18,3 +18,8 @@ nav.sidebar ng-class="{'sidebarPushRight': vm.isActive}"
         .menu-icon
           i.fa.fa-fw.fa-users
         span.menu-text Users
+    li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'user'}" href="/group/discounts" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-users
+        span.menu-text Discounts

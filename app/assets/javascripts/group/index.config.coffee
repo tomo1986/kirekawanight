@@ -14,14 +14,14 @@ angular.module 'bijyoZukanGroup'
     $httpProvider.defaults.cache = false
     delete $httpProvider.defaults.headers.common["X-Requested-With"]
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;application/json;charset=utf-8'
-    uiDatetimePickerConfig.showWeeks = false
-    uiDatetimePickerConfig.dayTitleFormat = "yyyy年 MMMM"
-    uiDatetimePickerConfig.buttonBar.today.text = "本日"
-    uiDatetimePickerConfig.buttonBar.clear.text = "消去"
-    uiDatetimePickerConfig.buttonBar.time.text = "時間"
-    uiDatetimePickerConfig.buttonBar.date.text = "日付"
-    uiDatetimePickerConfig.buttonBar.close.text = "閉じる"
-    uiDatetimePickerConfig.showMeridian = false
+#    uiDatetimePickerConfig.showWeeks = false
+#    uiDatetimePickerConfig.dayTitleFormat = "yyyy年 MMMM"
+#    uiDatetimePickerConfig.buttonBar.today.text = "本日"
+#    uiDatetimePickerConfig.buttonBar.clear.text = "消去"
+#    uiDatetimePickerConfig.buttonBar.time.text = "時間"
+#    uiDatetimePickerConfig.buttonBar.date.text = "日付"
+#    uiDatetimePickerConfig.buttonBar.close.text = "閉じる"
+#    uiDatetimePickerConfig.showMeridian = false
     scrollable = document.querySelector('#scrollable')
     lazyImgConfigProvider.setOptions
       offset: 100

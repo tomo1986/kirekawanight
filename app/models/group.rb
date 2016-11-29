@@ -5,6 +5,7 @@ class Group < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many  :images, class_name: 'ImageType::Group', as: :subject, dependent: :destroy, :autosave => true
   has_many :users
+  has_many :time_discounts, class_name: 'DiscountType::Time'
 
   has_many  :contacts, class_name: 'ContactType::GroupDetail', as: :subject, dependent: :destroy, :autosave => true
   has_many  :supports, class_name: 'PostType::Support', as: :receiver, dependent: :destroy, :autosave => true
@@ -21,9 +22,14 @@ class Group < ApplicationRecord
   has_many  :massage_pickups, class_name: 'BannerType::TopSide', as: :subject, dependent: :destroy, :autosave => true
   has_many  :bar_pickups, class_name: 'BannerType::TopSide', as: :subject, dependent: :destroy, :autosave => true
 
+
   acts_as_taggable_on :labels
   acts_as_taggable
 
+  def open_discounts
+    now = Time.zone.now
+    return self.time_discounts.where('start_at <= ? and end_at > ?',now, now)
+  end
 
   def self.to_jbuilders(groups)
     Jbuilder.new do |json|

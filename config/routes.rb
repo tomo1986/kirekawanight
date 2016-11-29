@@ -22,6 +22,13 @@ Rails.application.routes.draw do
     get 'groups/:id/detail',to: 'pages#index'
     get 'groups/:id/edit',to: 'pages#index'
     get 'groups/new',to: 'pages#index'
+
+    get 'discounts',to: 'pages#index'
+    get 'discounts/:id/detail',to: 'pages#index'
+    get 'discounts/:id/edit',to: 'pages#index'
+    get 'discounts/new',to: 'pages#index'
+
+
     get 'tpl/:name.html' => 'pages#templates'
     get 'tpl/:path1/:name.html' => 'pages#templates'
     get 'tpl/:path1/:path2/:name.html' => 'pages#templates'
@@ -223,6 +230,7 @@ Rails.application.routes.draw do
       get :api43
       get :api44
       get :api45
+      post :api46
     end
 
   end

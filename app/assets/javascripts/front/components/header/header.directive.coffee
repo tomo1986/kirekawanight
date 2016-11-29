@@ -3,6 +3,7 @@ angular.module 'bisyoujoZukanNight'
   HeaderController = ($state,api) ->
     vm = this
     api.getPromise('/api/front/api20',{}).then((res) ->
+      console.log("fasd",res)
       vm.userCount = res.data.user_count
       vm.groupCount = res.data.group_count
     )

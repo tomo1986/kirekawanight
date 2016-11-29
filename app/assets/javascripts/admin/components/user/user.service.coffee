@@ -37,6 +37,10 @@ angular.module 'bijyoZukanAdmin'
     api.getPromise('/api/admin/api15',{}).then((res) ->
       return res
     )
+  sm.getTags = ->
+    api.getPromise('/api/admin/api44',{}).then((res) ->
+      return res
+    )
 
   sm.profile = {
     user_id:{
@@ -813,3 +817,4 @@ angular.module 'bijyoZukanAdmin'
     getValidationRule: sm.getValidationRule
     getDate: sm.getDate
     getContacts: sm.getContacts
+    getTags: sm.getTags

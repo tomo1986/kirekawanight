@@ -1031,5 +1031,12 @@ class Api::AdminController < ApiController
     render json: builders.target!
   end
 
+  def api44
+    tags = Tag.all
+    builders = Jbuilder.new do |json|
+      json.tags Tag.to_jbuilders(tags)
+    end
+    render json: builders.target!
+  end
 
 end

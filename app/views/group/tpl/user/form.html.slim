@@ -24,18 +24,6 @@ section.main-container.map-form-page user-form-directive=""
               input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.user.nick_name"
               span.is-text-danger ng-if="vm.errors.nick_name"
                 | {{vm.errors.nick_name}}
-
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" birthplace
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="birthplace"  placeholder="aiueo" ng-model="vm.user.birthplace"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" residence
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="residence" placeholder="aiueo" ng-model="vm.user.residence"
-
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" birthday
@@ -46,12 +34,14 @@ section.main-container.map-form-page user-form-directive=""
                 | {{vm.errors.birthday}}
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" sex
+              span.title ng-class="{'is-text-danger': vm.errors.name}" birthplace
             td.res-form-table__td.input-box
-              select.form-control name="business_type" ng-model="vm.user.sex"
-                option value=""  -- Please select --
-                option value="1" girl
-                option value="2" boy
+              input.form-control type="text" name="birthplace" placeholder="aiueo" ng-model="vm.user.birthplace"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" residence
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="residence" placeholder="aiueo" ng-model="vm.user.residence"
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" blood_type
@@ -65,21 +55,20 @@ section.main-container.map-form-page user-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" SNS
+              span.title Talk
             td.res-form-table__td.input-box
-              dl
-                dt
-                  | Zalo
-                dd
-                  input.form-control type="text" name="zalo" placeholder="aiueo" ng-model="vm.user.sns.zalo"
-                dt
-                  | WeChat
-                dd
-                  input.form-control type="text" name="wechat" placeholder="aiueo" ng-model="vm.user.sns.wechat"
-                dt
-                  | Line
-                dd
-                  input.form-control type="text" name="line" placeholder="aiueo" ng-model="vm.user.sns.line"
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.user.is_japanese"
+                | japanese
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.user.is_english"
+                | english
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.user.is_chinese"
+                | chinese
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.user.is_korean"
+                | korean
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" body
@@ -93,67 +82,6 @@ section.main-container.map-form-page user-form-directive=""
                   | weight
                 dd
                   input.form-control type="text" name="weight" placeholder="aiueo" ng-model="vm.user.weight"
-
-                dt
-                  | bust
-                dd
-                  input.form-control type="text" name="bust" placeholder="aiueo" ng-model="vm.user.bust"
-                dt
-                  | bust_size
-                dd
-                  input.form-control type="text" name="bust_size" placeholder="aiueo" ng-model="vm.user.bust_size"
-                dt
-                  | waist
-                dd
-                  input.form-control type="text" name="waist" placeholder="aiueo" ng-model="vm.user.waist"
-                dt
-                  | hip
-                dd
-                  input.form-control type="text" name="hip" placeholder="aiueo" ng-model="vm.user.hip"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title tags
-            td.res-form-table__td.input-box
-              tags-input(ng-model='vm.user.tags')
-
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.image_url}" MAP画像
-              span.btn.btn-danger.btn-xs.absolutely 必須
-            td.res-form-table__td.input-box.image-box--arry
-              .row
-                .col-md-4 ng-repeat="image in vm.images track by $index"
-                  .pic
-                    image-directive parent-class="pic" img-url="{{vm.images[$index].url}}"
-                    .hover-img
-                      input#fileInput.change-img-file type="file" name="image_url" ng-model="vm.images[$index].url" options="image.options" image-cropper=""
-                      span
-                        | 画像選択
-              .button-center
-                button.btn.main-btn type="button" ng-if="vm.images.length < 6" ng-click="vm.addImage()" add image
-
-        ul.nav.nav-justified.nav-tabs style="margin-bottom: 1rem;"
-          li.nav-item ng-class="{'active':vm.active_tab == 'ja'}"
-            a.nav-link href="javascript:void(0)" ng-class="{'active':vm.active_tab == 'ja'}" ng-click="vm.onChangeTab('ja')"
-              span 日本語
-          li.nav-item ng-class="{'active':vm.active_tab == 'vn'}"
-            a.nav-link href="javascript:void(0)" ng-class="{'active':vm.active_tab == 'vn'}" ng-click="vm.onChangeTab('vn')"
-              span Vietnam
-          li.nav-item ng-class="{'active':vm.active_tab == 'en'}"
-            a.nav-link href="javascript:void(0)" ng-class="{'active':vm.active_tab == 'en'}" ng-click="vm.onChangeTab('en')"
-              span English
-
-
-        table.res-form-table
-          caption Questionnaire
-          tr ng-repeat="(key,val) in vm.user[vm.active_tab]" ng-if="vm.profile[key].is_displayed"
-            th.res-form-table__th.title-box.clearfix
-              span.title
-                | {{vm.profile[key][vm.active_tab].name}}
-            td.res-form-table__td.input-box
-              textarea.form-control row="2" placeholder="{{vm.profile[key][vm.active_tab].placeholder}}" ng-model="vm.user[vm.active_tab][key]" ng-if=" key != 'interview'"
-              textarea.form-control ckeditor="vm.options" ng-model="vm.user[vm.active_tab][key]" ng-if=" key == 'interview'"
-
 
         .button-center ng-show="vm.canSubmit"
           button.btn.main-btn type="submit" 登録する

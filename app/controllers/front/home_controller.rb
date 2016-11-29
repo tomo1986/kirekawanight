@@ -71,6 +71,7 @@ class Front::HomeController < ApplicationController
     @head_title = "ベトナム・ホーチミン/ハノイでカラオケで働くお気に入りの子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、観光、キレカワ、kirekawa"
     @head_description = "ベトナム、ホーチミン/ハノイのカラオケで働く#{User.where(job_type: "karaoke").count}人の可愛い女の子の中から、あなたのお気に入りの美女を見つけて夜遊びしませんか？カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
+    @site_title = "ベトナム・ホーチミン/ハノイで夜遊び！！カラオケの女の子数No.1「キレカワ」"
     render action: :index
   end
 

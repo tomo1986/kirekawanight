@@ -26,6 +26,7 @@ angular.module 'bijyoZukanAdmin'
         entities: false
 
       vm.getSubjects()
+      vm.getTags()
 
       vm.action = $state.current.action
       if vm.action == 'update'
@@ -39,6 +40,12 @@ angular.module 'bijyoZukanAdmin'
       user.getSubjects().then((res) ->
         vm.groups = res.data.groups
       )
+    vm.getTags = ->
+      user.getTags().then((res) ->
+        vm.tags = res.data.tags
+      )
+    vm.onClickTag = (tag_name) ->
+      vm.user.tags.push({text: tag_name})
 
     vm.getUser = ->
       user.getUser($state.params.id).then((res) ->
@@ -81,6 +88,8 @@ angular.module 'bijyoZukanAdmin'
       })
 
     vm.submit = ->
+      console.log(vm.user.tags)
+      return
       vm.errors = null
       vm.errors = validationService.checks(vm.user,user.getValidationRule())
       console.log(vm.errors)
@@ -105,7 +114,7 @@ angular.module 'bijyoZukanAdmin'
       ]
       if vm.action == 'update'
         user.updateUser(vm.user).then((res) ->
-          if res.status == 1
+          if res.data.status == 1
             vm.user = res.data.user
             datas = vm.makeDataForModal(vm.user)
             modalService.confirm(title,datas,buttons)
@@ -114,7 +123,7 @@ angular.module 'bijyoZukanAdmin'
         )
       else
         user.createUser(vm.user).then((res) ->
-          if res.status == 1
+          if res.data.status == 1
             vm.user = res.data.user
             datas = vm.makeDataForModal(vm.user)
             modalService.confirm(title,datas,buttons)

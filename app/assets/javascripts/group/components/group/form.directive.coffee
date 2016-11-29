@@ -112,7 +112,7 @@ angular.module 'bijyoZukanGroup'
         )
       else
         groupService.createGroup(vm.group).then((res) ->
-          if res.status == 1
+          if res.data.status == 1
             vm.group = res.data.group
             datas = vm.makeDataForModal(vm.group)
             modalService.confirm(title,datas,buttons)

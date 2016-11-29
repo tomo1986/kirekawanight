@@ -9,49 +9,39 @@
         img src="{{vm.groupMainImg}}"
   .container
     main#main
-      ul.group-nav--list
-        li
-          a href="#intoroduction" ng-click="vm.changeContents('intoroduction')"
-            h3 INTORODUCTION
-        li
-          a href="#cast" ng-click="vm.changeContents('cast')"
-            h3 CAST
-        li
-          a href="#system" ng-click="vm.changeContents('system')"
-            h3 SYSTEM
-        li
-          a href="#map" ng-click="vm.changeContents('map')"
-            h3 MAP
-        li
-          a href="#contact" ng-click="vm.changeContents('contact')"
-            h3 CONTACT
-        li
-          a href="#review" ng-click="vm.changeContents('review')"
-            h3 REVIEW
       .rank-box.shop-top-box
         h2.shop-name
           | {{vm.group.name}}
         .shop-tags
           a.btn ng-repeat="tag in vm.group.tags"
             | {{tag.name}}
-        span#intoroduction
-        span#cast
-        span#system
-        span#map
-        span#contact
-        span#review
         p.shop-copy ng-bind-html="vm.group.service | noHTML | newlines"
         .shop-button-box.clearfix
           .favorite
             a.btn ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()" お気に入り登録
           .support
             a.btn  href="javascript:void(0)" ng-click="vm.onClickedSupport()" 応援する
-      .rank-box.shop-new-face ng-if="vm.displayContent == 'intoroduction'"
+
+      .rank-box.shop-new-face
+        .page-title
+          h2.title
+            | INFORMATION
+        table
+          tr ng-repeat="discount in vm.discounts"
+            td
+             | {{discount.content}}
+             | 電話の際に合言葉を行ってくださいね！！
+          tr
+            td
+              | タイムサービス！！本日21:00〜22:00の間に3人以上で電話予約された方限定！！なんと一人65万！！合言葉は「ママさんかわいい」です
+              | 電話の際に合言葉を行ってくださいね！！
+
+      .rank-box.shop-new-face
         .page-title
           h2.title
             | INTORODUCTION
         div ng-bind-html="vm.group.interview_ja"
-      .rank-box.shop-new-face ng-if="vm.displayContent == 'cast'"
+      .rank-box.shop-new-face
         .page-title
           h2.title
             | NEW FACE
@@ -111,7 +101,7 @@
                     p.count
                       |  {{cast.favorite_count | number}}
 
-      #system.rank-box.shop-system ng-if="vm.displayContent == 'system'"
+      #system.rank-box.shop-system
         .page-title
           h2.title
             | SYSTEM
@@ -168,7 +158,7 @@
                 | Korean
               div ng-if="vm.group.is_chinese"
                 | Chinese
-      #map.rank-box.shop-map.clearfix ng-if="vm.displayContent == 'map'"
+      #map.rank-box.shop-map.clearfix
         .page-title
           h2.title
             | ADDRESS & INFOMATION
@@ -194,7 +184,7 @@
                     dd
                       | {{vm.group.address}}
 
-      #contact.rank-box.shop-map.clearfix ng-if="vm.displayContent == 'contact'"
+      #contact.rank-box.shop-map.clearfix
         .page-title
           h2.title
             | CONTACT
@@ -270,7 +260,7 @@
             .center-button style="text-align:center;" ng-hide="vm.canContactSubmited"
               loading-directive size="125"
 
-      #review.rank-box.shop-map.clearfix ng-if="vm.displayContent == 'review'"
+      #review.rank-box.shop-map.clearfix
         .page-title
           h2.title
             | REVIEW

@@ -24,7 +24,7 @@ angular.module 'bijyoZukanGroup'
       api.postPromise('/api/group/api1',vm.user).then((res) ->
         if res.data.code == 1
           user.setLoginUser(res.data.data)
-          window.location.reload()
+          window.location.href = '/group/users/new'
         else
           modalService.error(res.data.message)
       )

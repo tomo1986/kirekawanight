@@ -111,6 +111,7 @@ class Api::FrontController < ApiController
       json.reviews reviews ? Review.to_jbuilders(reviews) : nil
       json.users users ? User.to_jbuilders(users) : nil
       json.favorites favorites
+      json.discounts Discount.to_jbuilders(group.open_discounts)
     end
     render json: builder.target!
 

@@ -109,11 +109,11 @@ angular.module 'bijyoZukanGroup'
       title = "We saved finish"
       buttons = [
         {name:'一覧へ戻る',link:"/group/users"}
-        {name:'新しいカプセル追加',link:"/group/users/new",callbackFunc: vm.init}
+        {name:'new user',link:"/group/users/new",callbackFunc: vm.init}
       ]
       if vm.action == 'update'
         user.updateUser(vm.user).then((res) ->
-          if res.status == 1
+          if res.data.status == 1
             vm.user = res.data.user
             datas = vm.makeDataForModal(vm.user)
             modalService.confirm(title,datas,buttons)
@@ -122,7 +122,7 @@ angular.module 'bijyoZukanGroup'
         )
       else
         user.createUser(vm.user).then((res) ->
-          if res.status == 1
+          if res.data.status == 1
             vm.user = res.data.user
             datas = vm.makeDataForModal(vm.user)
             modalService.confirm(title,datas,buttons)
@@ -133,6 +133,22 @@ angular.module 'bijyoZukanGroup'
       return [
         {name:"name", val: user.name, kind:"string"}
         {name:"nick_name", val: user.nick_name, kind:"string"}
+        {name:"birthplace", val: user.birthplace, kind:"string"}
+        {name:"residence", val: user.residence, kind:"string"}
+        {name:"birthday", val: user.birthday, kind:"date"}
+        {name:"constellation", val: user.constellation, kind:"string"}
+        {name:"job_type", val: user.job_type, kind:"string"}
+        {name:"blood_type", val: user.blood_type, kind:"string"}
+        {name:"sex", val: user.sex, kind:"string"}
+        {name:"sns_line", val: user.sns_line, kind:"string"}
+        {name:"sns_zalo", val: user.sns_zalo, kind:"string"}
+        {name:"sns_wechat", val: user.sns_wechat, kind:"string"}
+        {name:"height", val: user.height, kind:"string"}
+        {name:"weight", val: user.weight, kind:"string"}
+        {name:"bust", val: user.bust, kind:"string"}
+        {name:"bust_size", val: user.bust_size, kind:"string"}
+        {name:"waist", val: user.waist, kind:"string"}
+        {name:"hip", val: user.hip, kind:"string"}
       ]
 
     vm.init()

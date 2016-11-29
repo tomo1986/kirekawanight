@@ -59,6 +59,7 @@ angular.module 'bisyoujoZukanNight'
         vm.breadcrumb.push({name:vm.group.name, link:''})
         vm.casts = res.data.users
         vm.favorites = res.data.favorites
+        vm.discounts  = res.data.discounts
         vm.groupMainImg = vm.group.images[0].url
       )
 
