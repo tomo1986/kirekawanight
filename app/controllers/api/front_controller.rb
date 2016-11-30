@@ -36,9 +36,8 @@ class Api::FrontController < ApiController
     elsif params[:job_type] == 'sexy'
       PageViewType::CastSexy.create
     end
-
-    total = User.where(job_type: params[:job_type]).count
     users = User.where(job_type: params[:job_type])
+    total = users.count
     if params[:sort] == 'new'
       users = users.sort_new(params[:order])
     elsif params[:sort] == 'support'
@@ -272,10 +271,10 @@ class Api::FrontController < ApiController
       json.favorite_massage_users favorite_users ? User.to_jbuilders(users.where(job_type: 'massage')) : nil
       json.favorite_sexy_users favorite_users ? User.to_jbuilders(users.where(job_type: 'sexy')) : nil
       json.favorites favorites
-      json.new_karaoke_users User.to_jbuilders(users.where(job_type: 'karaoke',created_at: from...to).limit(5))
-      json.new_bar_users User.to_jbuilders(users.where(job_type: 'bar',created_at: from...to).limit(5))
-      json.new_massage_users User.to_jbuilders(users.where(job_type: 'massage',created_at: from...to).limit(5))
-      json.new_sexy_users User.to_jbuilders(users.where(job_type: 'sexy',created_at: from...to).limit(5))
+      json.new_karaoke_users User.to_jbuilders(users.where(job_type: 'karaoke',created_at: from...to).order("id desc").limit(5))
+      json.new_bar_users User.to_jbuilders(users.where(job_type: 'bar',created_at: from...to).order("id desc").limit(5))
+      json.new_massage_users User.to_jbuilders(users.where(job_type: 'massage',created_at: from...to).order("id desc").limit(5))
+      json.new_sexy_users User.to_jbuilders(users.where(job_type: 'sexy',created_at: from...to).order("id desc").limit(5))
 
     end
     render json: builders.target!
