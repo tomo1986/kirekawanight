@@ -2,7 +2,7 @@ angular.module 'bisyoujoZukanNight'
 .directive 'contactDirective', ($state, modalService,validationService,groupService,customerService) ->
   ContactController = () ->
     vm = this
-    vm.breadcrumb = [{name:'TOP',link:'/'},{name:'CONTACT',link:''}]
+    vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'CONTACT',link:''}]
     vm.loginCustomer = customerService.getLoginCustomer()
     vm.canContactSubmited = true
     vm.contact = {

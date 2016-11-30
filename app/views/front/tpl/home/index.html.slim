@@ -38,6 +38,25 @@
             p 2016-05-08
   .container
     main#main
+      .top-box style="margin: 3rem 0;" ng-if="vm.timeServices.length > 0"
+        .page-title
+          h2.title
+            | Time service
+        .news-list
+          table.res-form-table ng-if="vm.timeServices.length > 0"
+            tr.news-list__item ng-repeat="discount in vm.timeServices"
+              td
+                | {{discount.group.job_type}}
+              td
+                p ng-bind-html="discount.content"
+              td
+                a href="/groups/{{discount.group.job_type}}/{{discount.group.id}}"
+                  | {{discount.group.name}}
+
+
+
+
+
       .top-box style="margin: 3rem 0;" ng-if="vm.karaokeUsers.length > 0"
         .page-title
           h2.title

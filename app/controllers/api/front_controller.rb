@@ -93,6 +93,11 @@ class Api::FrontController < ApiController
   def api4
     PageViewType::GroupDetail.create(subject_type: 'Group',subject_id: params[:id])
     group = Group.find_by(id: params[:id])
+    p "======================"
+    p group
+    p "======================"
+    render_failed(4, t('group.error.not_find')) and return if group.blank?
+
     users = User.where( group_id: params[:id])
     reviews = group.reviews.where(is_displayed: true) if group.reviews
     is_favorited = false
@@ -105,9 +110,11 @@ class Api::FrontController < ApiController
     end
 
     builder = Jbuilder.new do |json|
+      json.code 1
       json.group group.to_jbuilder
       json.is_favorited is_favorited
       json.reviews reviews ? Review.to_jbuilders(reviews) : nil
+      json.new_users users ? User.to_jbuilders(users.find_new_user) : nil
       json.users users ? User.to_jbuilders(users) : nil
       json.favorites favorites
       json.discounts Discount.to_jbuilders(group.open_discounts)
@@ -211,41 +218,35 @@ class Api::FrontController < ApiController
     render json: builder.target!
   end
 
+  #New Customer create
   def api9
     email = params[:email]
     password = params[:password]
-    render json: 'error' if email.blank? || password.blank?
-    render json: 'error' if Customer.find_by(email: email)
+    render_failed(4, t('customer.error.not_params')) and return if email.blank? || password.blank?
+    render_failed(4, t('customer.aleady')) and return if Customer.find_by(email: email)
     customer =Customer.create(name: params[:name], email: email, password: password)
+
     if customer.save!
       session[:customer_id] = customer.id
-      sign_in customer
-      builder = Jbuilder.new do |json|
-        json.code 1
-        json.customer customer
-      end
+      j_builder = customer.to_builder
+      render_success(j_builder)
+    else
+      render_failed(4, t('customer.not'))
     end
-    render json: builder.target!
-
   end
 
+  #login Customer API
   def api10
     email = params[:email]
     password = params[:password]
-    p "============1==========="
-    render json: 'email or password is missing.' and return if email.blank? || password.blank?
-    p "============2==========="
+    render_failed(4, t('customer.error.not_params')) and return  if email.blank? || password.blank?
     customer = Customer.where(:email => params[:email]).first
-    p "============3==========="
-    render json: 'email or password is missing.' and return unless customer && customer.valid_password?(params[:password])
-    p "============4==========="
+    render_failed(4, t('customer.error.email_not_exist')) and return unless customer && customer.valid_password?(params[:password])
+
     session[:customer_id] = customer.id
     sign_in customer
-    builder = Jbuilder.new do |json|
-      json.code 1
-      json.customer customer
-    end
-    render json: builder.target!
+    j_builder = customer.to_builder
+    render_success(j_builder)
   end
 
   #Top page
@@ -275,7 +276,7 @@ class Api::FrontController < ApiController
       json.new_bar_users User.to_jbuilders(users.where(job_type: 'bar',created_at: from...to).order("id desc").limit(5))
       json.new_massage_users User.to_jbuilders(users.where(job_type: 'massage',created_at: from...to).order("id desc").limit(5))
       json.new_sexy_users User.to_jbuilders(users.where(job_type: 'sexy',created_at: from...to).order("id desc").limit(5))
-
+      json.time_services Discount.to_jbuilders(Discount.open_time_discounts)
     end
     render json: builders.target!
   end
@@ -351,7 +352,7 @@ class Api::FrontController < ApiController
   end
 
   def api14
-    render json: 'このメールアドレスはすでに登録されております。' and return if Customer.find_by(email: params[:email]).first
+    render_failed(4, 'このメールアドレスはすでに登録されております。') and return if Customer.find_by(email: params[:email]).first
     customer = Customer.new
     customer.attributes = {
         email: params[:email],
@@ -373,7 +374,7 @@ class Api::FrontController < ApiController
 
   def api15
     customer = Customer.find_by(id: params[:id]).first
-    render json: "いません" and return if customer.blank?
+    render_failed(4, 'いません') and return if customer.blank?
     customer.attributes = {
         name: params[:name],
         email: params[:email],

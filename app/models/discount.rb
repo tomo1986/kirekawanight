@@ -1,6 +1,12 @@
 class Discount < ApplicationRecord
   belongs_to :group
 
+  scope :open_time_discounts, -> () {
+    now = Time.zone.now
+    return self.where('start_at <= ? and end_at > ?',now, now)
+  }
+
+
   def make_content_ja
     if self.type == 'DiscountType::Time'
       type = "タイムセール"
@@ -30,7 +36,6 @@ class Discount < ApplicationRecord
     Jbuilder.new do |json|
       json.id self.id
       json.status self.status_discount
-      json.group_id self.group_id
       json.type self.type
       json.groups self.groups
       json.peoples self.peoples
@@ -41,6 +46,7 @@ class Discount < ApplicationRecord
       json.end_at self.end_at
       json.tel self.tel
       json.is_displayed self.is_displayed
+      json.group self.group.to_jbuilder
     end
   end
 
@@ -49,7 +55,6 @@ class Discount < ApplicationRecord
       json.array! discounts do |discount|
         json.id discount.id
         json.status discount.status_discount
-        json.group_id discount.group_id
         json.type discount.type
         json.groups discount.groups
         json.peoples discount.peoples
@@ -60,6 +65,7 @@ class Discount < ApplicationRecord
         json.end_at discount.end_at
         json.tel discount.tel
         json.is_displayed discount.is_displayed
+        json.group discount.group.to_jbuilder
       end
     end
   end

@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   GroupBarDetailController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'BAR SHOP',link:'/groups/bar'}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'BAR SHOP',link:'/groups/bar'}]
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
       vm.serviceScoreAange = {minValue: 1,maxValue: 5,options: {floor: 1,ceil: 5,showTicks: true,showTicks: 1,step: 1}}

@@ -3,48 +3,47 @@
     breadcrumb-directive data="vm.breadcrumb"
     .cast-detail-page.clearfix
       .col-md-12.detail.clearfix
-        .row
-          .col-md-6
-            .row
-              .schedule
-                .page-title
-                  h2.title
-                    | login
-                form role="form" ng-submit='vm.submit()' name="loginForm" novalidate=''
-                  .form-content style="background-color:#222; padding:0.9375rem;"
-                    .form-group.clearfix
-                      label.input-label for="email" 登録メールアドレス
-                      input#email.form-control type="text" name="email" ng-model="vm.customer.email" required='' placeholder="ご登録のメールアドレス"
-                      .error
-                        span.is-text-danger ng-if="vm.errors.email"
-                          | {{vm.errors.email}}
-                    .form-group
-                      label.input-label for="password" パスワード
-                      input#password.form-control type="password" name="password" ng-model="vm.customer.password" required='' placeholder="半角英数字8文字以上"
-                      .error
-                        span.is-text-danger ng-if="vm.errors.password"
-                          | {{vm.errors.password}}
-                    div style="width:5rem; margin: 0 auto;"
-                      button.btn.rounded-btn type="submit" ログイン
-          .col-md-6
-            .row
-              .option
-                .page-title
-                  h2.title
-                    | 新規登録
-                form role="form" ng-submit='vm.makeNewCustomer()' name="loginForm" novalidate=''
-                  .form-content style="background-color:#222; padding:0.9375rem;"
-                    .form-group.clearfix
-                      label.input-label for="email" 登録メールアドレス
-                      input#email.form-control type="text" name="email" ng-model="vm.customer.email" required='' placeholder="ご登録のメールアドレス"
-                      .error
-                        span.is-text-danger ng-if="vm.errors.email"
-                          | {{vm.errors.email}}
-                    .form-group
-                      label.input-label for="password" パスワード
-                      input#password.form-control type="password" name="password" ng-model="vm.customer.password" required='' placeholder="半角英数字8文字以上"
-                      .error
-                        span.is-text-danger ng-if="vm.errors.password"
-                          | {{vm.errors.password}}
-                    div style="width:5rem; margin: 0 auto;"
-                      button.btn.rounded-btn type="submit" ng-disabled="loginForm.$invalid" ログイン
+        .col-md-6 style="margin-bottom:2rem;"
+          .row
+            .schedule
+              .page-title
+                h2.title
+                  | login
+              form role="form" ng-submit='vm.submit()' name="loginForm" novalidate=''
+                .form-content style="background-color:#222; padding:0.9375rem;"
+                  .form-group.clearfix.clearfix
+                    label.input-label for="email" 登録メールアドレス
+                    input#email.form-control type="text" name="email" ng-model="vm.loginCustomer.email" required='' placeholder="ご登録のメールアドレス"
+                    .error
+                      span.is-text-danger ng-if="vm.errors.email"
+                        | {{vm.errors.email}}
+                  .form-group.clearfix
+                    label.input-label for="password" パスワード
+                    input#password.form-control type="password" name="password" ng-model="vm.loginCustomer.password" required='' placeholder="半角英数字8文字以上"
+                    .error
+                      span.is-text-danger ng-if="vm.errors.password"
+                        | {{vm.errors.password}}
+                  div style="width:5rem; margin: 0 auto;"
+                    button.btn.rounded-btn type="submit" ログイン
+        .col-md-6 style="margin-bottom:2rem;"
+          .row
+            .option
+              .page-title
+                h2.title
+                  | 新規登録
+              form role="form" ng-submit='vm.makeNewCustomer()' name="loginForm" novalidate=''
+                .form-content style="background-color:#222; padding:0.9375rem;"
+                  .form-group.clearfix.clearfix
+                    label.input-label for="email" 登録メールアドレス
+                    input#email.form-control type="text" name="email" ng-model="vm.newCustomer.email" required='' placeholder="ご登録のメールアドレス"
+                    .error
+                      span.is-text-danger ng-if="vm.errors.email"
+                        | {{vm.errors.email}}
+                  .form-group.clearfix
+                    label.input-label for="password" パスワード
+                    input#password.form-control type="password" name="password" ng-model="vm.newCustomer.password" required='' placeholder="半角英数字8文字以上"
+                    .error
+                      span.is-text-danger ng-if="vm.errors.password"
+                        | {{vm.errors.password}}
+                  div style="width:5rem; margin: 0 auto;"
+                    button.btn.rounded-btn type="submit" ng-disabled="loginForm.$invalid" ログイン

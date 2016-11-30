@@ -4,7 +4,7 @@ angular.module 'bisyoujoZukanNight'
     console.log("aaa")
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'KARAOKE CAST',link:''}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE CAST',link:''}]
       vm.filters ={
         limit: 20
         page: if $state.params.page then $state.params.page else 1

@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   CastSexyDetailController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'SEXY CAST',link:'/casts/sexy'}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'SEXY CAST',link:'/casts/sexy'}]
       vm.active_language = 'ja'
       vm.profile = castService.profile
       vm.loginCustomer = customerService.getLoginCustomer()

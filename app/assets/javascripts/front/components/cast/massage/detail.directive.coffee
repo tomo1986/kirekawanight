@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   CastMassageDetailController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'MASSAGE CAST',link:''}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MASSAGE CAST',link:''}]
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
       vm.loginCustomer = customerService.getLoginCustomer()

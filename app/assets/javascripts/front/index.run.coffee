@@ -2,7 +2,6 @@ angular.module 'bisyoujoZukanNight'
   .run ($log, $rootScope, $state, $location, api,$http, $timeout, customerService) ->
     'ngInject'
     api.connect().then((res) ->
-      console.log(res)
       customerService.setLoginCustomer(res.login_customer)
     )
 
@@ -28,8 +27,8 @@ angular.module 'bisyoujoZukanNight'
       $('<div class="fade-layer"/>').prependTo('body').fadeOut(1000, ->
         $(this).remove();
       )
-      $(window).on("beforeunload",(e) ->
-        $('body').fadeOut()
-      )
+#      $(window).on("beforeunload",(e) ->
+#        $('body').fadeOut()
+#      )
       return
 

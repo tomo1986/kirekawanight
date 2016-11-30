@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   HomeController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'gai dep',link:'/'}]
+      vm.breadcrumb = [{name:'キレカワ TOP',link:'/'}]
       vm.getFavorited()
 
     vm.getFavorited = ->
@@ -18,6 +18,7 @@ angular.module 'bisyoujoZukanNight'
         vm.newBarUsers = res.data.new_bar_users
         vm.newMassageUsers = res.data.new_massage_users
         vm.newSexyUsers = res.data.new_sexy_users
+        vm.timeServices = res.data.time_services
 
       )
 

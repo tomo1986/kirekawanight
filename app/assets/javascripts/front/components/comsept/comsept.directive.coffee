@@ -2,7 +2,7 @@ angular.module 'bisyoujoZukanNight'
 .directive 'comseptDirective', ($state,$rootScope) ->
   ComseptController = () ->
     vm = this
-    vm.breadcrumb = [{name:'TOP',link:'/'},{name:'COMSEPT',link:''}]
+    vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'COMSEPT',link:''}]
     return
   linkFunc = (scope, el, attr, vm) ->
     return

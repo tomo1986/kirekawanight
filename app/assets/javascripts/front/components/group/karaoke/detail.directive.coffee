@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   GroupKaraokeDetailController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'KARAOKE SHOP',link:'/groups/karaoke'}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE SHOP',link:'/groups/karaoke'}]
       vm.displayContent = 'intoroduction'
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
@@ -53,14 +53,18 @@ angular.module 'bisyoujoZukanNight'
 
     vm.getGroup = ->
       groupService.getGroup($state.params.id).then((res) ->
-        vm.group = res.data.group
-        vm.reviews = res.data.reviews
-        vm.isFavorited = res.data.is_favorited
-        vm.breadcrumb.push({name:vm.group.name, link:''})
-        vm.casts = res.data.users
-        vm.favorites = res.data.favorites
-        vm.discounts  = res.data.discounts
-        vm.groupMainImg = vm.group.images[0].url
+        if res.data.code == 1
+          vm.group = res.data.group
+          vm.reviews = res.data.reviews
+          vm.isFavorited = res.data.is_favorited
+          vm.breadcrumb.push({name:vm.group.name, link:''})
+          vm.newCasts = res.data.new_users
+          vm.casts = res.data.users
+          vm.favorites = res.data.favorites
+          vm.discounts  = res.data.discounts
+          vm.groupMainImg = vm.group.images[0].url
+        else
+          modalService.error('エラー',res.data.message)
       )
 
     vm.onClickedSupport = ->

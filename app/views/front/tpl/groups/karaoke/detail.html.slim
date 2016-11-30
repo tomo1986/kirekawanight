@@ -25,7 +25,7 @@
       .rank-box.shop-new-face
         .page-title
           h2.title
-            | INFORMATION
+            | TIME SALE
         table
           tr ng-repeat="discount in vm.discounts"
             td
@@ -41,7 +41,7 @@
           h2.title
             | NEW FACE
         .queen-list.clearfix
-          li ng-repeat="cast in vm.casts"
+          li ng-repeat="cast in vm.newCasts"
             .fream
               .fream--basic.fream--top-left
               .fream--basic.fream--top-right
@@ -199,7 +199,7 @@
                     span.title 折り返し連絡手段選択
                     span.btn.required 必須
                   td
-                    .form-group
+                    .form-group.clearfix
                       .col-xs-12
                         label.radio-inline
                           input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email

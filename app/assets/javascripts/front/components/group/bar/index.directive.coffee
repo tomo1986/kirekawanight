@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   GroupBarIndexController = (groupService, customerService, modalService) ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'BAR GROUP',link:''}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'BAR GROUP',link:''}]
       vm.getGroups()
 
     vm.getGroups = ->

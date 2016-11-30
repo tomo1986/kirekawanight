@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   CastKaraokeDetailController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'KARAOKE CAST',link:'/casts/karaoke'}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE CAST',link:'/casts/karaoke'}]
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
       vm.loginCustomer = customerService.getLoginCustomer()

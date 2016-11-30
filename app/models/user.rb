@@ -55,6 +55,12 @@ class User < ApplicationRecord
     return self.joins("left join posts on posts.receiver_id = users.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'User'").group("users.id")
                .order("count(*) #{order}, users.id desc")
   }
+  scope :find_new_user, -> (){
+    now = Time.zone.now
+    return self.where(created_at: now.beginning_of_month...now.end_of_month).sort_new
+  }
+
+
 
   def age
     date_format = "%Y%m%d"

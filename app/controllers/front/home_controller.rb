@@ -21,6 +21,7 @@ class Front::HomeController < ApplicationController
     @head_title = "ベトナム・ホーチミン/ハノイで夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、観光"
     @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛い女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
+    @page_type = "website"
   end
   def login
     if customer_signed_in?

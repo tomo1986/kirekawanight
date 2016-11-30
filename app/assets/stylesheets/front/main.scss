@@ -246,10 +246,11 @@ a, button {
     }
     & td {
       display: block;
+      width: 100% !important;
     }
     & th {
       display: block;
-      width: 100%;
+      width: 100% !important;
     }
   }
 }

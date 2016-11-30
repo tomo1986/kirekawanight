@@ -2,7 +2,7 @@ angular.module 'bisyoujoZukanNight'
 .directive 'castIndexDirective', ($state) ->
   CastIndexController = () ->
     vm = this
-    vm.breadcrumb = [{name:'TOP',link:'/'},{name:'CAST',link:''}]
+    vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'CAST',link:''}]
 #    vm.casts = []
     vm.casts = [
       {

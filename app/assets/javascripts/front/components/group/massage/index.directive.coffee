@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   GroupMassageIndexController = (groupService, customerService, modalService) ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'MASSAGE GROUP',link:''}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MASSAGE GROUP',link:''}]
       vm.getGroups()
 
     vm.getGroups = ->

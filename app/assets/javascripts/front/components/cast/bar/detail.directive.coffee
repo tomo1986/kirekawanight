@@ -2,7 +2,7 @@ angular.module 'bisyoujoZukanNight'
 .directive 'castBarDetailDirective', ($state,castService) ->
   CastBarDetailController = () ->
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'BAR CAST',link:'/casts/bar'}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'BAR CAST',link:'/casts/bar'}]
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
       vm.loginCustomer = customerService.getLoginCustomer()

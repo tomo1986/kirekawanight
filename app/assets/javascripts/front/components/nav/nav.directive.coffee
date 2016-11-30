@@ -1,12 +1,17 @@
 angular.module 'bisyoujoZukanNight'
 .directive 'navDirective', ($state,$rootScope) ->
-  NavController = (customerService,$timeout) ->
+  NavController = (api, customerService,$timeout) ->
     vm = this
     vm.init = ->
       vm.isActive = false
       vm.isParentActive = false
       vm.isParentChild = false
       vm.loginCustomer = customerService.getLoginCustomer()
+      api.getPromise('/api/front/api20',{}).then((res) ->
+        vm.userCount = res.data.user_count
+        vm.groupCount = res.data.group_count
+      )
+
     vm.onClickedLogout = ->
       customerService.clear().then((res)->
         window.location.reload()

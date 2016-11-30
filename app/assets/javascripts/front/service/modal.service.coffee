@@ -5,11 +5,15 @@ angular.module 'bisyoujoZukanNight'
     modalInstance = $uibModal.open(
       templateUrl: "#{location.protocol + '//' + location.host}/front/tpl/modal/error.html"
       windowClass: 'my-block-bottom'
+      keyboard: false
+      backdropClick: false
+      backdrop: 'static'
       controller: ($scope)->
         self = $scope
         self.message = message
         self.close = ()->
           modalInstance.dismiss('cancel')
+          $state.go('/')
     )
   sm.alert = (title,message) ->
     modalInstance = $uibModal.open(

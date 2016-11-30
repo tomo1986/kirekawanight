@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   CustomerMypageController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'MYPAGE',link:''}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MYPAGE',link:''}]
       vm.getFavorited()
     vm.getFavorited = ->
       api.getPromise('/api/front/api11',{}).then((res) ->

@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   CastSexyIndexController = ($state,castService, customerService, modalService) ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'TOP',link:'/'},{name:'SEXY CAST',link:''}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'SEXY CAST',link:''}]
       vm.filters ={
         limit: 20
         page: if $state.params.page then $state.params.page else 1

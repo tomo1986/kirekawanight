@@ -1,5 +1,95 @@
 ja:
-  group_karaoke:
-    title: "Hello world"
-    keyword: 'aaa,aaa,aa,aa'
-    description: 'vvvvvvvvvvvvvvvvvvvv'
+  customer:
+    error:
+      not_params: 'メールアドレスまたはパスワードが入力されていません'
+      email_not_exist: 'メールアドレスが登録されておりません。再度ご確認ください。'
+      aleady: 'このメールアドレスはすでに登録されています'
+      not: '保存中に何かエラーが発生しました。しばらくたってからもう一度お試しください'
+  group:
+    error:
+      not_find: '存在しない店舗です。'
+
+  common:
+    like:
+      me_liked: 'Bạn đã thích'
+      one_like: '%{liker_name} đã thích'
+      me_and_you: 'Bạn và %{liker_name} đã thích'
+      me_and_others: 'Bạn, %{liker_name} và %{others_count} đã thích'
+      others_like: '%{liker_name} và %{others_count} người đã thích'
+  time_ago:
+    no_time: 'たった今'
+    minute: '%{min}分前'
+    hour: '%{hour}時間前'
+    yesterday: '昨日 '
+    wday_1: '月曜日 '
+    wday_2: '火曜日 '
+    wday_3: '水曜日 '
+    wday_4: '木曜日 '
+    wday_5: '金曜日 '
+    wday_6: '土曜日 '
+    wday_7: '日曜日 '
+    month: "%{month}月%{day}日 "
+    year: "%{year}年%{month}月%{day}日"
+  ranking_type_message:    
+    point: "ポイント獲得"
+    sent: "贈ったレータ数"
+    my_special: "MY SPECIALに選ばれた回数"
+    stamp: "%{stamp}獲得"
+    year: "%{year}年度"
+    month: "%{month}月"
+  notification:
+    message:
+      letter: '<b>%{sender_name}</b>さんからレターが届きました。'
+      letter_comment_1: '<b>%{sender_name}</b>さんがあなたの投稿にコメントしました。'
+      letter_comment_2: '<b>%{sender_name_1}</b>さん、<b>%{sender_name_2}</b>さんがあなたの投稿にコメントしました。'
+      letter_comment_3: '<b>%{sender_name_1}</b>さん、<b>%{sender_name_2}</b>さん、他%{others_count}名があなたの投稿にコメントしました。'
+      letter_comment_4: '<b>%{sender_name}</b>さんも<b>%{post_creator}</b>さんの投稿にコメントしました。'
+      letter_comment_5: '<b>%{sender_name_1}</b>さん、<b>%{sender_name_2}</b>さんも<b>%{post_creator}</b>さん の投稿にコメントしました。'
+      letter_comment_6: '<b>%{sender_name_1}</b>さん、<b>%{sender_name_2}</b>さん、他%{others_count}人も<b>%{post_creator}</b>さんの投稿にコメントしました。'
+      letter_like_1: '<b>%{liker_name}</b>さんがあなたの贈ったレターに「共 感!」しました。'
+      letter_like_2: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さんがあなたの贈ったレ ターに「共感!」しました。'
+      letter_like_3: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さん、他%{others_count}名があなたの 贈ったレターに「共感!」しました'
+      letter_like_4: '<b>%{liker_name}</b>さんがあなたの贈られたレターに「共 感!」しました。'
+      letter_like_5: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さんがあなたの贈られたレ ターに「共感!」しました。'
+      letter_like_6: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さん、他%{others_count}名があなたの贈 られたレターに「共感!」しました。'
+      letter_like_7: '<b>%{liker_name}</b>さんも<b>%{sender_name}</b>さんから<b>%{receiver_name}</b>さんへのレターに「共感!」しました。'
+      letter_like_8: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さんも<b>%{sender_name}</b>さんから<b>%{receiver_name}</b>さんへのレターに「共感!」しまし'
+      letter_like_9: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さん、他%{others_count}人も<b>%{sender_name}</b>さんから<b>%{receiver_name}</b>さんへのレターに「共感!」しました。'
+      my_special: '<b>%{sender_name}</b>さんがあなたの贈ったレターをMY SPECIALに選びました。'
+      tweet: '%{sender_name} đã rảnh rỗi post 1 bài mới'
+      post_comment_1: '<b>%{sender_name}</b>さんがあなたの投稿にコメントしました。'
+      post_comment_2: '<b>%{sender_name_1}</b>さん、<b>%{sender_name_2}</b>さんがあなたの投稿にコメントしました。'
+      post_comment_3: '<b>%{sender_name_1}</b>さん、<b>%{sender_name_2}</b>さん、他%{others_count}名があなたの投稿にコメントしました。'
+      post_comment_4: '<b>%{sender_name}</b>さんも<b>%{post_creator}</b>さんの投稿にコメントしました。'
+      post_comment_5: '<b>%{sender_name_1}</b>さん、<b>%{sender_name_2}</b>さんも<b>%{post_creator}</b>さん の投稿にコメントしました。'
+      post_comment_6: '<b>%{sender_name_1}</b>さん、<b>%{sender_name_2}</b>さん、他%{others_count}人も<b>%{post_creator}</b>さんの投稿にコメントしました。'
+      post_like_1: '<b>%{liker_name}</b>さんがあなたの投稿に「いいね!」しま した。'
+      post_like_2: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さんがあなたの投稿 に「いいね!」しました。'
+      post_like_3: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さん、他%{others_count}名があなた の投稿に「いいね!」しました。'
+      comment_like_1: '<b>%{liker_name}</b>さんがあなたのコメントに「いいね!」 しました。'
+      comment_like_2: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さんがあなたのコメ ントに「いいね!」しました。'
+      comment_like_3: '<b>%{liker_name_1}</b>さん、<b>%{liker_name_2}</b>さん、他%{others_count}名があなた のコメントに「いいね!」しました。'
+      point_status_1: '先週1週間の1日あたり平均ポイントは%{point}ptで した。もうちょっとがんばりましょう!'
+      point_status_2: '先週1週間の1日あたり平均ポイントは%{point}ptで した。がんばりましたね!'
+      point_status_3: '先週1週間の1日あたり平均ポイントは%{point}ptで した。すばらしい!'
+      letter_activity_1: '<b>%{sender_name}</b>さんはこの1週間レターを贈られていません。'
+      letter_activity_2: '<b>%{sender_name}</b>さんはこの2週間レターを贈られていませ ん。'
+      letter_activity_3: '<b>%{sender_name}</b>さんはこの1ヵ月レターを贈られていませ ん。'
+      letter_activity_4: '<b>%{sender_name}</b>さんは、この1週間レターを贈られている けれど贈ってはいません。'
+      users_report_1: '先週1週間で贈られたレターは%{letters_count}通、合計%{point}ptを 獲得しました。1週間を振り返ってみましょう'
+      users_report_2: '先月贈られたレターは%{letters_count}通、合計%{point}ptを獲得し ました。先月を振り返ってみましょう。'
+      monthly_point_1: '今月のポイントランキングでただいまトップです!'
+      monthly_point_2: ' 今月のポイントランキングでベスト%{rank}に入りまし た。'
+      monthly_letter_sent_1: '今月のポイントランキングでただいまトップです!'
+      monthly_letter_sent_2: ' 今月のポイントランキングでベスト%{rank}に入りまし た。'
+      monthly_my_special_1: '今月のポイントランキングでただいまトップです!'
+      monthly_my_special_2: ' 今月のポイントランキングでベスト%{rank}に入りまし た。'
+      yearly_point_1: '今月のポイントランキングでただいまトップです!yearly_point_1'
+      yearly_point_2: ' 今月のポイントランキングでベスト%{rank}に入りまし た。yearly_point_1'
+      yearly_letter_sent_1: '今月のポイントランキングでただいまトップです!yearly_letter_sent_1'
+      yearly_letter_sent_2: ' 今月のポイントランキングでベスト%{rank}に入りまし た。yearly_letter_sent_1'
+      yearly_stamp_got_1: '今月のポイントランキングでただいまトップです!yearly_stamp_got_1 %{stamp_name}'
+      yearly_stamp_got_2: ' 今月のポイントランキングでベスト%{rank}に入りまし た。yearly_stamp_got_2 %{stamp_name}'
+      yearly_special_1: '今月のポイントランキングでただいまトップです!'
+      yearly_special_2: ' 今月のポイントランキングでベスト%{rank}に入りまし た。'
+      point_max: '[新記録!]先月贈られたレターは%{letters_count}通、合計%{point}ptを獲 得しました。先月を振り返ってみましょう。'
