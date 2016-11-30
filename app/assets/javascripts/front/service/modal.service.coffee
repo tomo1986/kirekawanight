@@ -197,7 +197,6 @@ angular.module 'bisyoujoZukanNight'
         self.isCreateFormDisplayed = false
         self.callbackFunc = callback
         self.customer = {
-          name: null
           email: null
           password: null
         }

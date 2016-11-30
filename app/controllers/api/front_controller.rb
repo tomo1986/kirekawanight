@@ -227,8 +227,11 @@ class Api::FrontController < ApiController
     customer =Customer.create(name: params[:name], email: email, password: password)
 
     if customer.save!
+      p "================="
+      p customer
+      p "================="
       session[:customer_id] = customer.id
-      j_builder = customer.to_builder
+      j_builder = customer.to_jbuilder
       render_success(j_builder)
     else
       render_failed(4, t('customer.not'))
@@ -352,7 +355,8 @@ class Api::FrontController < ApiController
   end
 
   def api14
-    render_failed(4, 'このメールアドレスはすでに登録されております。') and return if Customer.find_by(email: params[:email]).first
+
+    render_failed(4, t('customer.error.not_params')) and return if Customer.find_by(email: params[:email])
     customer = Customer.new
     customer.attributes = {
         email: params[:email],

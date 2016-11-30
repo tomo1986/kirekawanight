@@ -190,7 +190,7 @@ class Api::GroupController < ApiController
         residence: params[:residence],
         birthday: params[:birthday],
         constellation: params[:constellation],
-        group_id: params[:group_id] ? params[:group_id] : nil,
+        group_id: current_group.id,
         job_type: params[:job_type],
         blood_type: params[:blood_type],
         sex: 1,
@@ -351,6 +351,7 @@ class Api::GroupController < ApiController
     # }
     user.attributes = {
         name: params[:name],
+
         nick_name: params[:nick_name],
         birthplace: params[:birthplace],
         residence: params[:residence],

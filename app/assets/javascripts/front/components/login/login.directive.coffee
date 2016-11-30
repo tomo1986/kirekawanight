@@ -24,7 +24,7 @@ angular.module 'bisyoujoZukanNight'
 
       api.postPromise('/api/front/api10',vm.loginCustomer).then((res) ->
         console.log(res)
-        if res.code == 1
+        if res.data.code == 1
           window.location.reload()
         else
           modalService.alert('エラー',res.data.message)
@@ -34,8 +34,8 @@ angular.module 'bisyoujoZukanNight'
       vm.errors = validationService.checks(vm.newCustomer,vm.validations)
       return window.scrollTo(0, 0) if Object.keys(vm.errors) && Object.keys(vm.errors).length > 0
 
-      api.postPromise('/api/front/api14',vm.newCustomer).then((res) ->
-        if res.code == 1
+      api.postPromise('/api/front/api9',vm.newCustomer).then((res) ->
+        if res.data.code == 1
           window.location.reload()
         else
           modalService.alert('エラー',res.data.message)
