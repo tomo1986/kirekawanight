@@ -62,6 +62,7 @@ angular.module 'bisyoujoZukanNight'
         modalService.createCustomer(vm.setLoginCustomer)
 
     vm.setLoginCustomer = (loginUser) ->
+      console.log(loginUser)
       customerService.setLoginCustomer(loginUser)
       vm.loginCustomer = customerService.getLoginCustomer()
       vm.CountUpSupport()

@@ -213,12 +213,12 @@ angular.module 'bisyoujoZukanNight'
         self.onSubmited = ()->
           if self.isLoginFormDisplayed
             api.postPromise('/api/front/api10',self.customer).then((res) ->
-              self.callbackFunc(res.data.customer)
+              self.callbackFunc(res.data.data)
               modalInstance.dismiss('cancel')
             )
           else if self.isCreateFormDisplayed
             api.postPromise('/api/front/api9',self.customer).then((res) ->
-              self.callbackFunc(res.data.customer)
+              self.callbackFunc(res.data.data)
               modalInstance.dismiss('cancel')
             )
 
