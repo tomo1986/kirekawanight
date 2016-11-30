@@ -89,7 +89,6 @@ angular.module 'bijyoZukanAdmin'
 
     vm.submit = ->
       console.log(vm.user.tags)
-      return
       vm.errors = null
       vm.errors = validationService.checks(vm.user,user.getValidationRule())
       console.log(vm.errors)
