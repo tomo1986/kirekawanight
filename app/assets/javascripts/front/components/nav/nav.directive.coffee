@@ -34,6 +34,7 @@ angular.module 'bisyoujoZukanNight'
 
     return
   linkFunc = (scope, el, attr, vm) ->
+    console.log(scope)
     scope.vm.active = $state.current.active_menu
     $rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->
       scope.vm.active = toState.active_menu

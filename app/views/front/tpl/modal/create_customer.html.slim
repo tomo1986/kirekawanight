@@ -6,11 +6,6 @@
 .modal-body
   .data-table-box
     table.data-table ng-if="isCreateFormDisplayed || isLoginFormDisplayed"
-      tr ng-if="isCreateFormDisplayed"
-        th.res-form-table__th.title-box.clearfix
-          span.title ng-class="{'is-text-danger': vm.errors.name}" name
-        td.res-form-table__td.input-box
-          input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="customer.name"
       tr
         th.res-form-table__th.title-box.clearfix
           span.title email
@@ -22,7 +17,7 @@
         td.res-form-table__td.input-box
           input.form-control type="password" name="password" required='' placeholder="aiueo" ng-model="customer.password"
 
-    div.col-6-btn ng-if="isCreateFormDisplayed || isLoginFormDisplayed" style="margin-top:1rem;"
+    div.col-12-btn ng-if="isCreateFormDisplayed || isLoginFormDisplayed" style="margin-top:1rem;"
       a.btn.main-btn href="javascript:void(0)" ng-click="onSubmited()"
         span 送信
 

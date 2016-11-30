@@ -5,6 +5,7 @@ angular.module 'bisyoujoZukanNight'
       customerService.setLoginCustomer(res.login_customer)
     )
 
+
     $rootScope.$on('$stateChangeStart', (e, toState, toParams, fromState, fromParams) ->
       window.scrollTo(0, 0)
     )

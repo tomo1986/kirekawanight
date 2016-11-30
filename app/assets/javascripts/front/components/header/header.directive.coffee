@@ -1,13 +1,37 @@
 angular.module 'bisyoujoZukanNight'
 .directive 'headerDirective',  (api) ->
-  HeaderController = ($state) ->
+  HeaderController = ($state,api, customerService,$timeout) ->
     vm = this
-    api.getPromise('/api/front/api20',{}).then((res) ->
-      vm.userCount = res.data.user_count
-      vm.groupCount = res.data.group_count
-    )
+    vm.init = ->
+      vm.isActive = false
+      vm.isParentActive = false
+      vm.isParentChild = false
+      vm.loginCustomer = customerService.getLoginCustomer()
+      api.getPromise('/api/front/api20',{}).then((res) ->
+        vm.userCount = res.data.user_count
+        vm.groupCount = res.data.group_count
+      )
 
+    vm.onClickedLogout = ->
+      customerService.clear().then((res)->
+        window.location.reload()
+      )
 
+    vm.eventOpenParent =  ->
+      vm.isParentActive = !vm.isParentActive
+      vm.isParentChild = false if !vm.isParentActive
+
+    vm.eventOpenchild = ->
+      vm.isParentChild = !vm.isParentChild
+
+    vm.eventCalled = ->
+      vm.isActive = !vm.isActive
+      console.log(vm.isActive)
+
+    vm.onClosed = ->
+      vm.isActive = !vm.isActive
+
+    vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
     console.log("=========",scope, el, attr, vm)
