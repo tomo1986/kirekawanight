@@ -234,6 +234,7 @@ class Api::AdminController < ApiController
     )
     user.attributes = {
         name: params[:name],
+        group_id: params[:group_id],
         nick_name: params[:nick_name],
         birthplace: params[:birthplace],
         residence: params[:residence],
@@ -409,6 +410,7 @@ class Api::AdminController < ApiController
     # }
     user.attributes = {
         name: params[:name],
+        group_id: params[:group_id],
         nick_name: params[:nick_name],
         birthplace: params[:birthplace],
         residence: params[:residence],
