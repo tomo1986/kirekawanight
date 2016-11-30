@@ -1134,3 +1134,16 @@ input[type="color"]:focus,
 .rzslider .rz-pointer:after{
   background-color: $_em_text;
 }
+.center-button {
+  text-align: center;
+  margin: 2rem auto;
+}
+.btn-submit {
+  background-color: $_sub_text;
+  color: $_em_text_hover;
+  font-weight: bold;
+  &:hover {
+    opacity: .7;
+
+  }
+}
