@@ -29,6 +29,12 @@ angular.module 'bijyoZukanAdmin'
     api.postPromise('/api/admin/api55',opt_prams).then((res) ->
       return res
     )
+  sm.getGroups = ->
+    api.getPromise('/api/admin/all_groups',{}).then((res) ->
+      return res
+    )
+
+
   sm.getTags = ->
     api.getPromise('/api/admin/all_tags',{}).then((res) ->
       return res
@@ -90,3 +96,4 @@ angular.module 'bijyoZukanAdmin'
     getContacts: sm.getContacts
     deleteShop: sm.deleteShop
     getTags: sm.getTags
+    getGroups: sm.getGroups

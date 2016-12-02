@@ -32,7 +32,7 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     groups = Group.where(deleted_at: nil)
     builders = Jbuilder.new do |json|
-      json.shops Group.to_jbuilders(groups)
+      json.groups Group.to_jbuilders(groups)
     end
     render json: builders.target!
   end

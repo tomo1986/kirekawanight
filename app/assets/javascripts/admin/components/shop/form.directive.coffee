@@ -38,12 +38,18 @@ angular.module 'bijyoZukanAdmin'
         allowedContent: true
         entities: false
       vm.getTags()
+      vm.getGroups()
       vm.action = $state.current.action
       if vm.action == 'update'
         vm.getShop()
       else
         vm.newShop()
         vm.breadcrumb.push({name:'New Shop',link:''})
+
+    vm.getGroups = ->
+      shopService.getGroups().then((res) ->
+        vm.groups = res.data.groups
+      )
     vm.getTags = ->
       shopService.getTags().then((res) ->
         vm.tags = res.data.tags
@@ -167,6 +173,13 @@ angular.module 'bijyoZukanAdmin'
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
+#    scope.$watch("vm.shop.group_id",(newVal,oldVal) ->
+#      if newVal != oldVal && oldVal != undefined
+#        angular.forEach(scope.vm.groups,(group) ->
+#          scope.vm.user.job_type = shop.job_type if Number(newVal) == Number(shop.id)
+#        )
+#    )
+
     return
 
   directive =

@@ -62,6 +62,18 @@ section.main-container.map-form-page shop-form-directive=""
                 | {{vm.errors.password}}
           tr
             th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" Select Group
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              select.form-control name="group_id" ng-model="vm.shop.group_id"
+                option value=""  -- Please select --
+                option value="{{group.id}}" ng-repeat="group in vm.groups"
+                  | {{group.name}}
+              span.is-text-danger ng-if="vm.errors.group_id"
+                | {{vm.errors.group_id}}
+
+          tr
+            th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" Job type
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
