@@ -90,13 +90,19 @@ angular.module 'bisyoujoZukanNight'
         self.onSubmited = ()->
           if self.isLoginFormDisplayed
             api.postPromise('/api/front/api0',self.customer).then((res) ->
-              self.callbackFunc(res.data.customer)
-              modalInstance.dismiss('cancel')
+              if res.data.code == 1
+                self.callbackFunc(res.data.customer)
+                modalInstance.dismiss('cancel')
+              else
+                self.error = "メールアドレスとパスワードが一致しません。"
             )
           else if self.isCreateFormDisplayed
             api.postPromise('/api/front/api9',self.customer).then((res) ->
-              self.callbackFunc(res.data.customer)
-              modalInstance.dismiss('cancel')
+              if res.data.code == 1
+                self.callbackFunc(res.data.customer)
+                modalInstance.dismiss('cancel')
+              else
+                self.error = "すでに登録されているアドレスです。"
             )
 
     )
