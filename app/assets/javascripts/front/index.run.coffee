@@ -8,11 +8,11 @@ angular.module 'bisyoujoZukanNight'
 
 
     $rootScope.$on('$stateChangeStart', (e, toState, toParams, fromState, fromParams) ->
-#      window.scrollTo(0, 0)
+      window.scrollTo(0, 0)
     )
     $rootScope.$on '$locationChangeSuccess', (e, toState, toParams, fromState, fromParams) ->
 
-#      window.scrollTo(0, 0)
+      window.scrollTo(0, 0)
       $rootScope.actualLocation = $location.path()
       $rootScope.history_url = toParams
       $(window).unbind('scroll').bind('scroll', ()->

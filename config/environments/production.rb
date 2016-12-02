@@ -15,7 +15,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  
+
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
   config.assets.compress = true
