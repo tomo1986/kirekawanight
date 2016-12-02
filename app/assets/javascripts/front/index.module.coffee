@@ -19,5 +19,6 @@ angular.module 'bisyoujoZukanNight', [
   'angularLazyImg'
   'ui.sortable'
   'ngFileUpload'
-
+  'angulartics'
+  'angulartics.google.analytics'
 ]

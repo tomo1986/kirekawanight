@@ -5,7 +5,9 @@ angular.module 'bisyoujoZukanNight'
       if res.code == 1
         customerService.setLoginCustomer(res.customer)
     )
-
+    $rootScope.$on("$routeChangeSuccess",  (event, current, previous, rejection) ->
+      ga('send', 'pageview')
+    )
 
     $rootScope.$on('$stateChangeStart', (e, toState, toParams, fromState, fromParams) ->
       window.scrollTo(0, 0)

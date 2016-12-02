@@ -26,6 +26,10 @@
 
 //= require bower_components/angular/angular
 //= require bower_components/angular-masonry/angular-masonry
+//= require bower_components/angulartics/dist/angulartics.min
+//= require bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min
+
+
 //= require bower_components/angular-i18n/angular-locale_ja-jp
 //= require bower_components/angular-aria/angular-aria
 //= require bower_components/angular-toastr/dist/angular-toastr.tpls
