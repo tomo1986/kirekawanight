@@ -15,8 +15,8 @@ angular.module 'bisyoujoZukanNight'
     api.getPromise('/api/front/api3',{id: opt_user_id}).then((res) ->
       return res
     )
-  sm.getCastList = (opt_jobType) ->
-    api.getPromise('/api/front/api2',opt_jobType).then((res) ->
+  sm.getCastList = (opt_params) ->
+    api.getPromise('/api/front/api2',opt_params).then((res) ->
       return res
     )
   sm.pushSupport = (opt_params) ->

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128172549) do
+ActiveRecord::Schema.define(version: 20161201104400) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -107,7 +107,6 @@ ActiveRecord::Schema.define(version: 20161128172549) do
   end
 
   create_table "discounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "group_id"
     t.string   "type"
     t.integer  "groups"
     t.integer  "peoples"
@@ -120,7 +119,8 @@ ActiveRecord::Schema.define(version: 20161128172549) do
     t.boolean  "is_displayed"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["group_id"], name: "index_discounts_on_group_id", using: :btree
+    t.string   "subject_type"
+    t.string   "subject_id"
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -237,7 +237,6 @@ ActiveRecord::Schema.define(version: 20161128172549) do
   end
 
   create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "group_id"
     t.integer  "total",       default: 0, null: false
     t.datetime "period_from"
     t.datetime "period_to"
@@ -246,7 +245,7 @@ ActiveRecord::Schema.define(version: 20161128172549) do
     t.datetime "paid_at"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.index ["group_id"], name: "index_invoices_on_group_id", using: :btree
+    t.integer  "shop_id"
   end
 
   create_table "page_views", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -310,6 +309,64 @@ ActiveRecord::Schema.define(version: 20161128172549) do
     t.float    "total_score",    limit: 24
     t.index ["receiver_id"], name: "index_reviews_on_receiver_id", using: :btree
     t.index ["sender_id"], name: "index_reviews_on_sender_id", using: :btree
+  end
+
+  create_table "shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "email",                                default: "", null: false
+    t.string   "encrypted_password",                   default: "", null: false
+    t.integer  "group_id"
+    t.string   "job_type",                             default: ""
+    t.string   "tel",                                  default: ""
+    t.integer  "min_budget"
+    t.integer  "max_budget"
+    t.string   "sns_line",                             default: ""
+    t.string   "sns_zalo",                             default: ""
+    t.string   "sns_wechat",                           default: ""
+    t.string   "address",                              default: ""
+    t.string   "lat",                                  default: ""
+    t.string   "lon",                                  default: ""
+    t.text     "interview_ja",           limit: 65535
+    t.text     "interview_vn",           limit: 65535
+    t.text     "interview_en",           limit: 65535
+    t.boolean  "is_credit"
+    t.boolean  "is_japanese"
+    t.boolean  "is_english"
+    t.boolean  "is_chinese"
+    t.boolean  "is_korean"
+    t.datetime "deleted_at"
+    t.datetime "stopped_at"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                        default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.string   "name_kana"
+    t.boolean  "is_smoked"
+    t.datetime "opened_at"
+    t.datetime "closed_at"
+    t.boolean  "is_card"
+    t.integer  "girls_count"
+    t.integer  "budget_yen"
+    t.integer  "budget_vnd"
+    t.integer  "budget_usd"
+    t.text     "service",                limit: 65535
+    t.float    "score",                  limit: 24
+    t.integer  "broker_id"
+    t.string   "tip"
+    t.index ["email"], name: "index_shops_on_email", unique: true, using: :btree
+    t.index ["group_id"], name: "index_shops_on_group_id", using: :btree
+    t.index ["is_chinese"], name: "index_shops_on_is_chinese", using: :btree
+    t.index ["is_credit"], name: "index_shops_on_is_credit", using: :btree
+    t.index ["is_english"], name: "index_shops_on_is_english", using: :btree
+    t.index ["is_japanese"], name: "index_shops_on_is_japanese", using: :btree
+    t.index ["is_korean"], name: "index_shops_on_is_korean", using: :btree
+    t.index ["reset_password_token"], name: "index_shops_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "supports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -392,7 +449,6 @@ ActiveRecord::Schema.define(version: 20161128172549) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "group_id"
     t.string   "name",                        default: ""
     t.string   "nick_name",                   default: ""
     t.string   "birthplace",                  default: ""
@@ -422,7 +478,7 @@ ActiveRecord::Schema.define(version: 20161128172549) do
     t.text     "note",          limit: 65535
     t.text     "payment_sql",   limit: 65535
     t.float    "score",         limit: 24
-    t.index ["group_id"], name: "index_users_on_group_id", using: :btree
+    t.integer  "shop_id"
     t.index ["is_chinese"], name: "index_users_on_is_chinese", using: :btree
     t.index ["is_english"], name: "index_users_on_is_english", using: :btree
     t.index ["is_japanese"], name: "index_users_on_is_japanese", using: :btree

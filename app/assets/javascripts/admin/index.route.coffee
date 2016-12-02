@@ -68,6 +68,32 @@ angular.module 'bijyoZukanAdmin'
       templateUrl: '/admin/tpl/group/form.html'
 
 
+
+
+    .state '/shops',
+      url: '/admin/shops?page'
+      active_menu: 'shop'
+      templateUrl: '/admin/tpl/shop/index.html'
+
+    .state '/shops/:id/detail',
+      url: '/admin/shops/:id/detail'
+      active_menu: 'shop'
+      templateUrl: '/admin/tpl/shop/detail.html'
+
+    .state '/shops/new',
+      url: '/admin/shops/new'
+      active_menu: 'shop'
+      action: 'create'
+      templateUrl: '/admin/tpl/shop/form.html'
+
+    .state '/shops/:id/edit',
+      url: '/admin/shops/:id/edit'
+      active_menu: 'shop'
+      action: 'update'
+      templateUrl: '/admin/tpl/shop/form.html'
+
+
+
     .state '/contacts',
       url: '/admin/contacts?page'
       active_menu: 'contact'

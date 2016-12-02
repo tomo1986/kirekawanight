@@ -1,11 +1,56 @@
 class Api::AdminController < ApiController
 
+  def logout
+    sign_out(current_admin) if admin_signed_in?
+    builder = Jbuilder.new do |json|
+      json.code 1
+    end
+    render json: builder.target!
+  end
+
+  def all_users
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    users = User.where(deleted_at: nil)
+    builders = Jbuilder.new do |json|
+      json.users User.to_jbuilders(users)
+    end
+    render json: builders.target!
+
+  end
+
+  def all_shops
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    shops = Shop.where(deleted_at: nil)
+    builders = Jbuilder.new do |json|
+      json.shops Shop.to_jbuilders(shops)
+    end
+    render json: builders.target!
+
+  end
+
+  def all_groups
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    groups = Group.where(deleted_at: nil)
+    builders = Jbuilder.new do |json|
+      json.shops Group.to_jbuilders(groups)
+    end
+    render json: builders.target!
+  end
+  def all_tags
+    tags = Tag.all
+    builders = Jbuilder.new do |json|
+      json.tags Tag.to_jbuilders(tags)
+    end
+    render json: builders.target!
+  end
+
   def api1
     email = params[:email]
     password = params[:password]
-    raise 'email or password is missing.' if email.blank? || password.blank?
+    render_failed(4, t('admin.error.not_find')) and return if email.blank? || password.blank?
     admin = Admin.where(:email => params[:email]).first
-    render_failed(2,t('errors.messages.object_not_found',:name => params[:email])) and return unless admin && admin.valid_password?(params[:password])
+    render_failed(4, t('admin.error.not_find')) and return  unless admin && admin.valid_password?(params[:password])
+    admin.remember_me = params[:remember_me]
     sign_in admin
     builder = Jbuilder.new do |json|
       json.code 1
@@ -14,12 +59,14 @@ class Api::AdminController < ApiController
     render json: builder.target!
   end
 
+
+
   def api2
-    render_failed(102, 'ログインが必要です(needs login)', response_type = 'json') and return unless admin_signed_in?
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    total = Group.count
-    groups = Group.all
+    groups = Group.where(deleted_at: nil)
+    total = groups.count
     groups = groups.page(page).per(limit) if groups.present?
     builders = Jbuilder.new do |json|
       json.groups Group.to_jbuilders(groups)
@@ -29,7 +76,7 @@ class Api::AdminController < ApiController
   end
 
   def api3
-    render_failed(102, 'ログインが必要です') and return unless admin_signed_in?
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     group = Group.new
     builder = Jbuilder.new do |json|
       json.group group.to_jbuilder
@@ -38,61 +85,34 @@ class Api::AdminController < ApiController
   end
 
   def api4
-    render_failed(102, 'ログインが必要です') and return unless admin_signed_in?
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     group = Group.new
     group.attributes = {
       name: params[:name],
       name_kana: params[:name_kana],
-      job_type: params[:job_type],
       tel: params[:tel],
       email: params[:email],
       password: params[:password],
-      sns_line: params[:sns_line],
-      sns_zalo: params[:sns_zalo],
-      sns_wechat: params[:sns_wechat],
       address: params[:address],
       lat: params[:lat],
-      lon: params[:lon],
-      interview_ja: params[:interview_ja],
-      interview_vn: params[:interview_vn],
-      interview_en: params[:interview_en],
-      is_credit: params[:is_credit],
-      is_japanese: params[:is_japanese],
-      is_english: params[:is_english],
-      is_chinese: params[:is_chinese],
-      is_korean: params[:is_korean],
-      girls_count: params[:girls_count],
-      chip: params[:chip],
-      note: params[:note],
-      is_smoked: params[:is_smoked],
-      opened_at: params[:opened_at],
-      closed_at: params[:closed_at],
-      budget_yen: params[:budget_yen],
-      budget_vnd: params[:budget_vnd],
-      budget_usd: params[:budget_usd],
-      service: params[:service],
-      images: params[:images]
+      lon: params[:lon]
     }
-    params[:tags].each do |key,val|
-      group.tag_list.add(val["text"])
-    end
 
     if group.save
       builder = Jbuilder.new do |json|
         json.group group.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors group.errors.full_messages
-        json.status 0
       end
     end
     render json: builder.target!
   end
 
   def api5
-    render_failed(102, 'ログインが必要です') and return unless admin_signed_in?
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     group = Group.find_by(id: params[:id])
     builder = Jbuilder.new do |json|
       json.group group.to_jbuilder
@@ -101,40 +121,17 @@ class Api::AdminController < ApiController
 
   end
   def api6
-    render_failed(102, 'ログインが必要です') and return unless admin_signed_in?
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     group = Group.find_by(id: params[:id])
     group.attributes = {
         name: params[:name],
         name_kana: params[:name_kana],
-        job_type: params[:job_type],
         tel: params[:tel],
         email: params[:email],
         password: params[:password],
-        sns_line: params[:sns_line],
-        sns_zalo: params[:sns_zalo],
-        sns_wechat: params[:sns_wechat],
         address: params[:address],
         lat: params[:lat],
-        lon: params[:lon],
-        interview_ja: params[:interview_ja],
-        interview_vn: params[:interview_vn],
-        interview_en: params[:interview_en],
-        is_credit: params[:is_credit],
-        is_japanese: params[:is_japanese],
-        is_english: params[:is_english],
-        is_chinese: params[:is_chinese],
-        is_korean: params[:is_korean],
-        girls_count: params[:girls_count],
-        chip: params[:chip],
-        note: params[:note],
-        is_smoked: params[:is_smoked],
-        opened_at: params[:opened_at],
-        closed_at: params[:closed_at],
-        budget_yen: params[:budget_yen],
-        budget_vnd: params[:budget_vnd],
-        budget_usd: params[:budget_usd],
-        service: params[:service]
-
+        lon: params[:lon]
     }
     if params[:images].present?
       params[:images].values.each do |image|
@@ -146,22 +143,41 @@ class Api::AdminController < ApiController
     if group.save!
       builder = Jbuilder.new do |json|
         json.group group.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors group.errors.full_messages
-        json.status 0
       end
     end
     render json: builder.target!
   end
+
+  def api7
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    group = Group.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_shop')) and return unless group
+    group.deleted_at = Time.zone.now
+    if group.save
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.group group.to_jbuilder
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors group.errors.full_messages
+      end
+    end
+    render json: builder.target!
+
+  end
+
   def api8
-    render_failed(102, 'ログインが必要です(needs login)', response_type = 'json') and return unless admin_signed_in?
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
 
-    users = User.all
+    users = User.where(deleted_at: nil)
     users = users.keyword_filter(params[:keyword]) if params[:keyword]
     users = users.job_type_filter(params[:job_type]) if params[:job_type]
     users = users.sex_filter(params[:sex]) if params[:sex]
@@ -175,66 +191,73 @@ class Api::AdminController < ApiController
   end
 
   def api9
-    render_failed(102, 'ログインが必要です(needs login)', response_type = 'json') and return unless admin_signed_in?
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     user = User.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_user')) and return unless user
     builders = Jbuilder.new do |json|
+      json.code 1
       json.user user.to_jbuilder
     end
     render json: builders.target!
   end
 
   def api10
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     user = User.new
     builder = Jbuilder.new do |json|
+      json.code 1
       json.user user.to_jbuilder
     end
     render json: builder.target!
   end
 
   def api11
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     user = User.new
+    if params[:ja]
+      user.user_profiles << ProfileType::Ja.create(
+          like_boy: params[:ja]['like_boy'],
+          like_girl: params[:ja]['like_girl'],
+          my_color: params[:ja]['my_color'],
+          happy_word: params[:ja]['happy_word'],
+          gesture: params[:ja]['gesture'],
+          attracted: params[:ja]['attracted'],
+          love_situation: params[:ja]['love_situation'],
+          first_love: params[:ja]['first_love'],
+          how_to_approach: params[:ja]['how_to_approach'],
+          how_to_holiday: params[:ja]['how_to_holiday'],
+          idea_couple: params[:ja]['idea_couple'],
+          take_one: params[:ja]['take_one'],
+          like_word: params[:ja]['like_word'],
+          like_music: params[:ja]['like_music'],
+          like_place: params[:ja]['like_place'],
+          like_food: params[:ja]['like_food'],
+          like_drink: params[:ja]['like_drink'],
+          like_sports: params[:ja]['like_sports'],
+          best_feature: params[:ja]['best_feature'],
+          love_tips: params[:ja]['love_tips'],
+          character: params[:ja]['character'],
+          hobby: params[:ja]['hobby'],
+          skill: params[:ja]['skill'],
+          habit: params[:ja]['habit'],
+          brag: params[:ja]['brag'],
+          my_fad: params[:ja]['my_fad'],
+          secret_talk: params[:ja]['secret_talk'],
+          dream: params[:ja]['dream'],
+          go: params[:ja]['go'],
+          want: params[:ja]['want'],
+          do_something: params[:ja]['do_something'],
+          happy_event: params[:ja]['happy_event'],
+          painful_event: params[:ja]['painful_event'],
+          previous_life: params[:ja]['previous_life'],
+          admire_person: params[:ja]['admire_person'],
+          interview: params[:ja]['interview']
+      )
+    end
 
-    user.user_profiles << ProfileType::Ja.create(
-        like_boy: params[:ja]['like_boy'],
-        like_girl: params[:ja]['like_girl'],
-        my_color: params[:ja]['my_color'],
-        happy_word: params[:ja]['happy_word'],
-        gesture: params[:ja]['gesture'],
-        attracted: params[:ja]['attracted'],
-        love_situation: params[:ja]['love_situation'],
-        first_love: params[:ja]['first_love'],
-        how_to_approach: params[:ja]['how_to_approach'],
-        how_to_holiday: params[:ja]['how_to_holiday'],
-        idea_couple: params[:ja]['idea_couple'],
-        take_one: params[:ja]['take_one'],
-        like_word: params[:ja]['like_word'],
-        like_music: params[:ja]['like_music'],
-        like_place: params[:ja]['like_place'],
-        like_food: params[:ja]['like_food'],
-        like_drink: params[:ja]['like_drink'],
-        like_sports: params[:ja]['like_sports'],
-        best_feature: params[:ja]['best_feature'],
-        love_tips: params[:ja]['love_tips'],
-        character: params[:ja]['character'],
-        hobby: params[:ja]['hobby'],
-        skill: params[:ja]['skill'],
-        habit: params[:ja]['habit'],
-        brag: params[:ja]['brag'],
-        my_fad: params[:ja]['my_fad'],
-        secret_talk: params[:ja]['secret_talk'],
-        dream: params[:ja]['dream'],
-        go: params[:ja]['go'],
-        want: params[:ja]['want'],
-        do_something: params[:ja]['do_something'],
-        happy_event: params[:ja]['happy_event'],
-        painful_event: params[:ja]['painful_event'],
-        previous_life: params[:ja]['previous_life'],
-        admire_person: params[:ja]['admire_person'],
-        interview: params[:ja]['interview']
-    )
     user.attributes = {
         name: params[:name],
-        group_id: params[:group_id],
+        shop_id: params[:shop_id],
         nick_name: params[:nick_name],
         birthplace: params[:birthplace],
         residence: params[:residence],
@@ -265,152 +288,70 @@ class Api::AdminController < ApiController
     end
 
     if user.save!
+      if params[:is_blog].to_i == 1
+        blog = BlogType::Introduction.new
+        blog.auto_save_user(user)
+      end
       builder = Jbuilder.new do |json|
         json.user user.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors user.errors.full_messages
-        json.status 0
       end
     end
     render json: builder.target!
-
   end
 
   def api12
-    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
-    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    total = Contact.count
-    contacts = Contact.all
-    contacts = contacts.order("id desc").page(page).per(limit) if contacts.present?
-    builders = Jbuilder.new do |json|
-      json.contacts Contact.to_jbuilders(contacts)
-      json.total total
-    end
-    render json: builders.target!
-  end
-  def api13
-    render_failed(102, 'ログインが必要です(needs login)', response_type = 'json') and return unless admin_signed_in?
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     user = User.find_by(id: params[:id])
-    user.ja_profile.attributes = {
-        like_boy: params[:ja]['like_boy'],
-        like_girl: params[:ja]['like_girl'],
-        my_color: params[:ja]['my_color'],
-        happy_word: params[:ja]['happy_word'],
-        gesture: params[:ja]['gesture'],
-        attracted: params[:ja]['attracted'],
-        love_situation: params[:ja]['love_situation'],
-        first_love: params[:ja]['first_love'],
-        how_to_approach: params[:ja]['how_to_approach'],
-        how_to_holiday: params[:ja]['how_to_holiday'],
-        idea_couple: params[:ja]['idea_couple'],
-        take_one: params[:ja]['take_one'],
-        like_word: params[:ja]['like_word'],
-        like_music: params[:ja]['like_music'],
-        like_place: params[:ja]['like_place'],
-        like_food: params[:ja]['like_food'],
-        like_drink: params[:ja]['like_drink'],
-        like_sports: params[:ja]['like_sports'],
-        best_feature: params[:ja]['best_feature'],
-        love_tips: params[:ja]['love_tips'],
-        character: params[:ja]['character'],
-        hobby: params[:ja]['hobby'],
-        skill: params[:ja]['skill'],
-        habit: params[:ja]['habit'],
-        brag: params[:ja]['brag'],
-        my_fad: params[:ja]['my_fad'],
-        secret_talk: params[:ja]['secret_talk'],
-        dream: params[:ja]['dream'],
-        go: params[:ja]['go'],
-        want: params[:ja]['want'],
-        do_something: params[:ja]['do_something'],
-        happy_event: params[:ja]['happy_event'],
-        painful_event: params[:ja]['painful_event'],
-        previous_life: params[:ja]['previous_life'],
-        admire_person: params[:ja]['admire_person'],
-        interview: params[:ja]['interview']
-    }
-    # user.vn_profile.attributes = {
-    #     like_boy: params[:vn]['like_boy'],
-    #     like_girl: params[:vn]['like_girl'],
-    #     my_color: params[:vn]['my_color'],
-    #     happy_word: params[:vn]['happy_word'],
-    #     gesture: params[:vn]['gesture'],
-    #     attracted: params[:vn]['attracted'],
-    #     love_situation: params[:vn]['love_situation'],
-    #     first_love: params[:vn]['first_love'],
-    #     how_to_approach: params[:vn]['how_to_approach'],
-    #     how_to_holiday: params[:vn]['how_to_holiday'],
-    #     idea_couple: params[:vn]['idea_couple'],
-    #     take_one: params[:vn]['take_one'],
-    #     like_word: params[:vn]['like_word'],
-    #     like_music: params[:vn]['like_music'],
-    #     like_place: params[:vn]['like_place'],
-    #     like_food: params[:vn]['like_food'],
-    #     like_drink: params[:vn]['like_drink'],
-    #     like_sports: params[:vn]['like_sports'],
-    #     best_feature: params[:vn]['best_feature'],
-    #     love_tips: params[:vn]['love_tips'],
-    #     character: params[:vn]['character'],
-    #     hobby: params[:vn]['hobby'],
-    #     skill: params[:vn]['skill'],
-    #     habit: params[:vn]['habit'],
-    #     brag: params[:vn]['brag'],
-    #     my_fad: params[:vn]['my_fad'],
-    #     secret_talk: params[:vn]['secret_talk'],
-    #     dream: params[:vn]['dream'],
-    #     go: params[:vn]['go'],
-    #     want: params[:vn]['want'],
-    #     do_something: params[:vn]['do_something'],
-    #     happy_event: params[:vn]['happy_event'],
-    #     painful_event: params[:vn]['painful_event'],
-    #     previous_life: params[:vn]['previous_life'],
-    #     admire_person: params[:vn]['admire_person'],
-    #     interview: params[:vn]['interview']
-    # }
-    # user.en_profile.attributes = {
-    #     like_boy: params[:en]['like_boy'],
-    #     like_girl: params[:en]['like_girl'],
-    #     my_color: params[:en]['my_color'],
-    #     happy_word: params[:en]['happy_word'],
-    #     gesture: params[:en]['gesture'],
-    #     attracted: params[:en]['attracted'],
-    #     love_situation: params[:en]['love_situation'],
-    #     first_love: params[:en]['first_love'],
-    #     how_to_approach: params[:en]['how_to_approach'],
-    #     how_to_holiday: params[:en]['how_to_holiday'],
-    #     idea_couple: params[:en]['idea_couple'],
-    #     take_one: params[:en]['take_one'],
-    #     like_word: params[:en]['like_word'],
-    #     like_music: params[:en]['like_music'],
-    #     like_place: params[:en]['like_place'],
-    #     like_food: params[:en]['like_food'],
-    #     like_drink: params[:en]['like_drink'],
-    #     like_sports: params[:en]['like_sports'],
-    #     best_feature: params[:en]['best_feature'],
-    #     love_tips: params[:en]['love_tips'],
-    #     character: params[:en]['character'],
-    #     hobby: params[:en]['hobby'],
-    #     skill: params[:en]['skill'],
-    #     habit: params[:en]['habit'],
-    #     brag: params[:en]['brag'],
-    #     my_fad: params[:en]['my_fad'],
-    #     secret_talk: params[:en]['secret_talk'],
-    #     dream: params[:en]['dream'],
-    #     go: params[:en]['go'],
-    #     want: params[:en]['want'],
-    #     do_something: params[:en]['do_something'],
-    #     happy_event: params[:en]['happy_event'],
-    #     painful_event: params[:en]['painful_event'],
-    #     previous_life: params[:en]['previous_life'],
-    #     admire_person: params[:en]['admire_person'],
-    #     interview: params[:en]['interview']
-    # }
+    render_failed(4, t('admin.error.no_user')) and return unless user
+    if params[:ja]
+      user.ja_profile.attributes = {
+          like_boy: params[:ja]['like_boy'],
+          like_girl: params[:ja]['like_girl'],
+          my_color: params[:ja]['my_color'],
+          happy_word: params[:ja]['happy_word'],
+          gesture: params[:ja]['gesture'],
+          attracted: params[:ja]['attracted'],
+          love_situation: params[:ja]['love_situation'],
+          first_love: params[:ja]['first_love'],
+          how_to_approach: params[:ja]['how_to_approach'],
+          how_to_holiday: params[:ja]['how_to_holiday'],
+          idea_couple: params[:ja]['idea_couple'],
+          take_one: params[:ja]['take_one'],
+          like_word: params[:ja]['like_word'],
+          like_music: params[:ja]['like_music'],
+          like_place: params[:ja]['like_place'],
+          like_food: params[:ja]['like_food'],
+          like_drink: params[:ja]['like_drink'],
+          like_sports: params[:ja]['like_sports'],
+          best_feature: params[:ja]['best_feature'],
+          love_tips: params[:ja]['love_tips'],
+          character: params[:ja]['character'],
+          hobby: params[:ja]['hobby'],
+          skill: params[:ja]['skill'],
+          habit: params[:ja]['habit'],
+          brag: params[:ja]['brag'],
+          my_fad: params[:ja]['my_fad'],
+          secret_talk: params[:ja]['secret_talk'],
+          dream: params[:ja]['dream'],
+          go: params[:ja]['go'],
+          want: params[:ja]['want'],
+          do_something: params[:ja]['do_something'],
+          happy_event: params[:ja]['happy_event'],
+          painful_event: params[:ja]['painful_event'],
+          previous_life: params[:ja]['previous_life'],
+          admire_person: params[:ja]['admire_person'],
+          interview: params[:ja]['interview']
+      }
+    end
+
     user.attributes = {
         name: params[:name],
-        group_id: params[:group_id],
+        shop_id: params[:shop_id],
         nick_name: params[:nick_name],
         birthplace: params[:birthplace],
         residence: params[:residence],
@@ -441,11 +382,6 @@ class Api::AdminController < ApiController
         image.image = image[:url] and image.save! if image[:url] != 'null'
       end
     end
-    p "========================"
-    p params[:tags]
-    p "========================"
-
-
     if params[:tags]
       params[:tags].each do |key,val|
         user.tag_list.add(val["text"])
@@ -453,29 +389,147 @@ class Api::AdminController < ApiController
     end
 
     if user.save!
+      if params[:is_blog].to_i == 1
+        blog = BlogType::Introduction.new
+        blog.auto_save_user(user)
+      end
       builder = Jbuilder.new do |json|
         json.user user.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors user.errors.full_messages
-        json.status 0
       end
     end
     render json: builder.target!
   end
-  def api15
-    users = User.all
-    groups = Group.all
+
+  def api13
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    user = User.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_user')) and return unless user
+    user.deleted_at = Time.zone.now
+    if user.save
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.user user.to_jbuilder
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors user.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+
+  def api14
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    total = Contact.count
+    contacts = Contact.all
+    contacts = contacts.order("id desc").page(page).per(limit) if contacts.present?
     builders = Jbuilder.new do |json|
-      json.users User.to_jbuilders(users)
-      json.groups Group.to_jbuilders(groups)
+      json.contacts Contact.to_jbuilders(contacts)
+      json.total total
     end
     render json: builders.target!
   end
 
+  def api15
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    contact = Contact.new
+    builders = Jbuilder.new do |json|
+      json.contact contact.to_jbuilder
+    end
+    render json: builders.target!
+
+  end
+
   def api16
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    contact = Contact.new
+    contact.attributes = {
+        type:params[:type],
+        subject_type:params[:subject_type],
+        subject_id:params[:subject_id],
+        name:params[:name],
+        tel:params[:tel],
+        email:params[:email],
+        sns_line:params[:sns_line],
+        sns_zalo:params[:sns_zalo],
+        sns_wechat:params[:sns_wechat],
+        message:params[:message]
+    }
+    if contact.save
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.contact contact.to_jbuilder
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors contact.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+
+  def api17
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    contact = Contact.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_user')) and return unless contact
+    builder = Jbuilder.new do |json|
+      json.contact contact.to_jbuilder
+    end
+    render json: builder.target!
+  end
+
+  def api18
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    contact = Contact.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_user')) and return unless contact
+    contact.attributes = {
+        type:params[:type],
+        subject_type:params[:subject_type],
+        subject_id:params[:subject_id],
+        name:params[:name],
+        tel:params[:tel],
+        email:params[:email],
+        sns_line:params[:sns_line],
+        sns_zalo:params[:sns_zalo],
+        sns_wechat:params[:sns_wechat],
+        message:params[:message]
+    }
+    if contact.save
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.contact contact.to_jbuilder
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors contact.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+
+  def api19
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    total = Pickup.count
+    pickups = Pickup.all
+    pickups = pickups.page(page).per(limit) if pickups.present?
+    builders = Jbuilder.new do |json|
+      json.pickups Pickup.to_jbuilders(pickups)
+      json.total total
+    end
+    render json: builders.target!
+  end
+
+  def api20
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     pickup = Pickup.new
     builders = Jbuilder.new do |json|
       json.pickup pickup.to_jbuilder
@@ -483,7 +537,9 @@ class Api::AdminController < ApiController
     render json: builders.target!
   end
 
-  def api17
+
+  def api21
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     if params[:type] == 'top'
       pickup = PickupType::Top.new
     elsif params[:type] == 'push'
@@ -501,96 +557,34 @@ class Api::AdminController < ApiController
     if pickup.save!
       builder = Jbuilder.new do |json|
         json.pickup pickup.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors pickup.errors.full_messages
-        json.status 0
+        json.code 0
       end
     end
     render json: builder.target!
   end
-  def api18
-    render_failed(102, 'ログインが必要です(needs login)', response_type = 'json') and return unless admin_signed_in?
-    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
-    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    total = Pickup.count
-    pickups = Pickup.all
-    pickups = pickups.page(page).per(limit) if pickups.present?
-    builders = Jbuilder.new do |json|
-      json.pickups Pickup.to_jbuilders(pickups)
-      json.total total
-    end
-    render json: builders.target!
-  end
-
-  def api19
-    contact = Contact.new
-    builders = Jbuilder.new do |json|
-      json.contact contact.to_jbuilder
-    end
-    render json: builders.target!
-  end
-  def api20
-    contact = Contact.new
-    contact.attributes = {
-       type:params[:type],
-       subject_type:params[:subject_type],
-       subject_id:params[:subject_id],
-       name:params[:name],
-       tel:params[:tel],
-       email:params[:email],
-       sns_line:params[:sns_line],
-       sns_zalo:params[:sns_zalo],
-       sns_wechat:params[:sns_wechat],
-       message:params[:message]
-    }
-    builders = Jbuilder.new do |json|
-      json.contact contact.to_jbuilder
-    end
-    render json: builders.target!
-  end
-
-  def api21
-    contact = Contact.find_by(id: params[:id])
-    builders = Jbuilder.new do |json|
-      json.contact contact.to_jbuilder
-    end
-    render json: builders.target!
-  end
 
   def api22
-    contact = Contact.find_by(id: params[:id])
-    contact.attributes = {
-        type:params[:type],
-        subject_type:params[:subject_type],
-        subject_id:params[:subject_id],
-        name:params[:name],
-        tel:params[:tel],
-        email:params[:email],
-        sns_line:params[:sns_line],
-        sns_zalo:params[:sns_zalo],
-        sns_wechat:params[:sns_wechat],
-        message:params[:message]
-    }
-    builders = Jbuilder.new do |json|
-      json.contact contact.to_jbuilder
-    end
-    render json: builders.target!
-  end
-
-
-  def api23
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     pickup = Pickup.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_login')) and return unless pickup
+    
     builder = Jbuilder.new do |json|
       json.pickup pickup.to_jbuilder
-      json.status 1
+      json.code 1
     end
     render json: builder.target!
   end
-  def api24
+
+  def api23
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     pickup = Pickup.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_login')) and return unless pickup
+
     pickup.attributes = {
         subject_type: params[:subject_type],
         subject_id: params[:subject_id],
@@ -608,12 +602,12 @@ class Api::AdminController < ApiController
     if pickup.save!
       builder = Jbuilder.new do |json|
         json.pickup pickup.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors pickup.errors.full_messages
-        json.status 0
+        json.code 0
       end
     end
     render json: builder.target!
@@ -662,12 +656,12 @@ class Api::AdminController < ApiController
     if banner.save!
       builder = Jbuilder.new do |json|
         json.banner banner.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors banner.errors.full_messages
-        json.status 0
+        json.code 0
       end
     end
     render json: builder.target!
@@ -689,12 +683,12 @@ class Api::AdminController < ApiController
     if banner.save!
       builder = Jbuilder.new do |json|
         json.banner banner.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors banner.errors.full_messages
-        json.status 0
+        json.code 0
       end
     end
     render json: builder.target!
@@ -751,12 +745,12 @@ class Api::AdminController < ApiController
     if blog.save!
       builder = Jbuilder.new do |json|
         json.blog blog.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors blog.errors.full_messages
-        json.status 0
+        json.code 0
       end
     end
     render json: builder.target!
@@ -786,12 +780,12 @@ class Api::AdminController < ApiController
     if blog.save!
       builder = Jbuilder.new do |json|
         json.blog blog.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors blog.errors.full_messages
-        json.status 0
+        json.code 0
       end
     end
     render json: builder.target!
@@ -936,6 +930,10 @@ class Api::AdminController < ApiController
     render json: {chart_date: dates, monthly_pv_count: monthly_pv_count, monthly_support_count: monthly_support_count, monthly_favorite_count: monthly_favorite_count, monthly_contact_count: monthly_contact_count, monthly_review_count: monthly_review_count}
   end
 
+
+
+
+
   def api42
     user = User.find_by(id: params[:id])
     builders = Jbuilder.new do |json|
@@ -961,5 +959,171 @@ class Api::AdminController < ApiController
     end
     render json: builders.target!
   end
+
+
+
+
+
+
+  def api50
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    shops = Shop.where(deleted_at: nil)
+    total = shops.count
+    shops = shops.page(page).per(limit) if shops.present?
+    builders = Jbuilder.new do |json|
+      json.shops Shop.to_jbuilders(shops)
+      json.total total
+    end
+    render json: builders.target!
+  end
+
+  def api51
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    shop = Shop.new
+    builder = Jbuilder.new do |json|
+      json.shop shop.to_jbuilder
+    end
+    render json: builder.target!
+  end
+
+  def api52
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    shop = Shop.new
+    shop.attributes = {
+        group_id: params[:group_id],
+        name: params[:name],
+        name_kana: params[:name_kana],
+        job_type: params[:job_type],
+        tel: params[:tel],
+        email: params[:email],
+        password: params[:password],
+        sns_line: params[:sns_line],
+        sns_zalo: params[:sns_zalo],
+        sns_wechat: params[:sns_wechat],
+        address: params[:address],
+        lat: params[:lat],
+        lon: params[:lon],
+        interview_ja: params[:interview_ja],
+        interview_vn: params[:interview_vn],
+        interview_en: params[:interview_en],
+        is_credit: params[:is_credit],
+        is_japanese: params[:is_japanese],
+        is_english: params[:is_english],
+        is_chinese: params[:is_chinese],
+        is_korean: params[:is_korean],
+        girls_count: params[:girls_count],
+        tip: params[:tip],
+        is_smoked: params[:is_smoked],
+        opened_at: params[:opened_at],
+        closed_at: params[:closed_at],
+        budget_yen: params[:budget_yen],
+        budget_vnd: params[:budget_vnd],
+        budget_usd: params[:budget_usd],
+        images: params[:images]
+    }
+
+    if shop.save
+      builder = Jbuilder.new do |json|
+        json.shop shop.to_jbuilder
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors shop.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+
+  def api53
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    shop = Shop.find_by(id: params[:id])
+    builder = Jbuilder.new do |json|
+      json.shop shop.to_jbuilder
+    end
+    render json: builder.target!
+
+  end
+  def api54
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    shop = Shop.find_by(id: params[:id])
+    shop.attributes = {
+        group_id: params[:group_id],
+        name: params[:name],
+        name_kana: params[:name_kana],
+        job_type: params[:job_type],
+        tel: params[:tel],
+        email: params[:email],
+        password: params[:password],
+        sns_line: params[:sns_line],
+        sns_zalo: params[:sns_zalo],
+        sns_wechat: params[:sns_wechat],
+        address: params[:address],
+        lat: params[:lat],
+        lon: params[:lon],
+        interview_ja: params[:interview_ja],
+        interview_vn: params[:interview_vn],
+        interview_en: params[:interview_en],
+        is_credit: params[:is_credit],
+        is_japanese: params[:is_japanese],
+        is_english: params[:is_english],
+        is_chinese: params[:is_chinese],
+        is_korean: params[:is_korean],
+        girls_count: params[:girls_count],
+        tip: params[:tip],
+        is_smoked: params[:is_smoked],
+        opened_at: params[:opened_at],
+        closed_at: params[:closed_at],
+        budget_yen: params[:budget_yen],
+        budget_vnd: params[:budget_vnd],
+        budget_usd: params[:budget_usd]
+    }
+    if params[:images].present?
+      params[:images].values.each do |image|
+        shop.images.where(id: image[:id]).first.update(image: image[:url]) and next if image.present? && image[:id].present? && image[:id] != 'null'
+        shop.images << ImageType::Shop.new(image: image[:url]) if image[:url] != 'null'
+      end
+    end
+    if params[:tags].present?
+      params[:tags].each do |key,val|
+        shop.tag_list.add(val["text"])
+      end
+    end
+
+    if shop.save!
+      builder = Jbuilder.new do |json|
+        json.shop shop.to_jbuilder
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors shop.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+
+  def api55
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    shop = Shop.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_shop')) and return unless shop
+    shop.deleted_at = Time.zone.now
+    if shop.save
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.shop shop.to_jbuilder
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors shop.errors.full_messages
+      end
+    end
+    render json: builder.target!
+
+  end
+
+
 
 end

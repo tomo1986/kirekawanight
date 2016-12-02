@@ -1,12 +1,13 @@
 angular.module 'bijyoZukanGroup'
 .directive 'userFormDirective',  ->
-  UserFormController = (user, modalService,datePickerService,$state,validationService,groupService) ->
+  UserFormController = (user, modalService,datePickerService,$state,validationService,groupService,shopService) ->
     vm = this
     self = vm
     vm.init = ->
+
       vm.canSubmit = true
       vm.image_url = null
-      vm.breadcrumb = [{name:'Dashboard',link:'/business'},{name:'MAP編集',link:'/business/maps'}]
+      vm.breadcrumb = [{name:'Dashboard',link:'/group'},{name:'User list',link:'/group/users'}]
       vm.images = []
       vm.active_tab = 'ja'
       vm.profile = user.profile
@@ -26,6 +27,10 @@ angular.module 'bijyoZukanGroup'
         entities: false
 
 
+      shopService.getShops({}).then((res) ->
+       if res.data.code == 1
+         vm.shops = res.data.shops
+      )
 
       vm.action = $state.current.action
       if vm.action == 'update'
@@ -35,19 +40,9 @@ angular.module 'bijyoZukanGroup'
         vm.breadcrumb.push({name:'MAP新規作成',link:''})
 
 
-    vm.getSubjects = ->
-      groupService.loginGroup().then((res) ->
-        vm.group = res.data.group
-        vm.user.group_id = vm.group.id
-        vm.user.job_type = vm.group.job_type
-        console.log(vm.group)
-        console.log(vm.user)
-
-      )
     vm.getUser = ->
       user.getUser($state.params.id).then((res) ->
         vm.user = res.data.user
-        vm.getSubjects()
         angular.forEach(vm.user.images, (image) ->
           vm.images.push({
             id: image.id
@@ -61,7 +56,6 @@ angular.module 'bijyoZukanGroup'
     vm.newUser = () ->
       user.newUser().then((res) ->
         vm.user = res.data.user
-        vm.getSubjects()
         vm.images.push({
           id: null
           url: null
@@ -87,8 +81,6 @@ angular.module 'bijyoZukanGroup'
       })
 
     vm.submit = ->
-      console.log(vm.group.id)
-      vm.user.group_id = vm.group.id
       vm.errors = null
       vm.errors = validationService.checks(vm.user,user.getValidationRule())
       console.log(vm.errors)
@@ -154,6 +146,13 @@ angular.module 'bijyoZukanGroup'
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
+    scope.$watch("vm.user.shop_id",(newVal,oldVal) ->
+      if newVal != oldVal && oldVal != undefined
+        angular.forEach(scope.vm.shops,(shop) ->
+          vm.user.job_type = shop.job_type if Number(newVal) == Number(shop.id)
+        )
+    )
+
     return
 
   directive =

@@ -13,8 +13,10 @@ angular.module 'bijyoZukanGroup'
 
     vm.eventCalled = ->
       vm.isActive = !vm.isActive
+
     vm.onLogout = ->
       user.clear().then((res)->
+        console.log("soeya")
         window.location.reload()
       )
 

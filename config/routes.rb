@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :shops
   devise_for :groups
   devise_for :admins
   devise_for :customers
@@ -12,6 +13,38 @@ Rails.application.routes.draw do
     as :group do
       match '/sign_out' => 'sessions#destroy', :as => :destroy_group_session,
             :via => Devise.mappings[:group].sign_out_via
+    end
+    get 'login',to: 'pages#login'
+    get 'users',to: 'pages#index'
+    get 'users/:id/detail',to: 'pages#index'
+    get 'users/:id/edit',to: 'pages#index'
+    get 'users/new',to: 'pages#index'
+    get 'groups',to: 'pages#index'
+    get 'groups/:id/detail',to: 'pages#index'
+    get 'groups/:id/edit',to: 'pages#index'
+    get 'groups/new',to: 'pages#index'
+
+    get 'shops',to: 'pages#index'
+    get 'shops/:id/detail',to: 'pages#index'
+    get 'shops/:id/edit',to: 'pages#index'
+    get 'shops/new',to: 'pages#index'
+
+    get 'discounts',to: 'pages#index'
+    get 'discounts/:id/detail',to: 'pages#index'
+    get 'discounts/:id/edit',to: 'pages#index'
+    get 'discounts/new',to: 'pages#index'
+
+
+    get 'tpl/:name.html' => 'pages#templates'
+    get 'tpl/:path1/:name.html' => 'pages#templates'
+    get 'tpl/:path1/:path2/:name.html' => 'pages#templates'
+  end
+  namespace :shop do
+    root to: 'pages#index', via: :get
+    devise_for :shops, path_prefix: '/shop',controllers: {},:skip => [:sessions,:passwords]
+    as :shop do
+      match '/sign_out' => 'sessions#destroy', :as => :destroy_group_session,
+            :via => Devise.mappings[:shop].sign_out_via
     end
     get 'login',to: 'pages#login'
     get 'users',to: 'pages#index'
@@ -50,6 +83,14 @@ Rails.application.routes.draw do
     get 'groups/:id/detail',to: 'pages#index'
     get 'groups/:id/edit',to: 'pages#index'
     get 'groups/new',to: 'pages#index'
+
+    get 'shops',to: 'pages#index'
+    get 'shops/:id/detail',to: 'pages#index'
+    get 'shops/:id/edit',to: 'pages#index'
+    get 'shops/new',to: 'pages#index'
+
+
+
     get 'blogs',to: 'pages#index'
     get 'blogs/:id/detail',to: 'pages#index'
     get 'blogs/:id/edit',to: 'pages#index'
@@ -91,21 +132,21 @@ Rails.application.routes.draw do
     get 'casts/karaoke', to: 'home#cast_karaoke'
     get 'casts/karaoke/:id', to: 'home#index'
 
-    get 'groups/karaoke', to: 'home#group_karaoke'
-    get 'groups/karaoke/:id', to: 'home#index'
+    get 'shops/karaoke', to: 'home#shop_karaoke'
+    get 'shops/karaoke/:id', to: 'home#index'
 
 
     get 'casts/bar', to: 'home#cast_bar'
     get 'casts/bar/:id', to: 'home#index'
 
-    get 'groups/bar', to: 'home#group_bar'
-    get 'groups/bar/:id', to: 'home#index'
+    get 'shops/bar', to: 'home#shop_bar'
+    get 'shops/bar/:id', to: 'home#index'
 
     get 'casts/massage', to: 'home#cast_massage'
     get 'casts/massage/:id', to: 'home#index'
 
-    get 'groups/massage', to: 'home#group_massage'
-    get 'groups/massage/:id', to: 'home#index'
+    get 'shops/massage', to: 'home#shop_massage'
+    get 'shops/massage/:id', to: 'home#index'
 
     get 'casts/sexy', to: 'home#cast_sexy'
     get 'casts/sexy/:id', to: 'home#index'
@@ -127,7 +168,11 @@ Rails.application.routes.draw do
   end
   namespace :api do
     scope :front, module: 'front' do
-      get :api0
+      post :logout
+      get :connect
+      post :api0
+
+
       post :api0_1
       get :api1
       get :api2
@@ -148,29 +193,38 @@ Rails.application.routes.draw do
     end
 
     scope :admin, module: 'admin' do
+      post :logout
+      get :all_users
+      get :all_shops
+      get :all_groups
+      get :all_tags
       post :api1
       get :api2
       get :api3
       post :api4
       get :api5
       post :api6
-      get :api7
+      post :api7
       get :api8
       get :api9
       get :api10
       post :api11
-      get :api12
+      post :api12
       post :api13
       get :api14
       get :api15
-      get :api16
-      post :api17
-      get :api18
+      post :api16
+      get :api17
+      post :api18
       get :api19
-      post :api20
-      get :api21
-      post :api22
-      get :api23
+      get :api20
+      post :api21
+      get :api22
+      post :api23
+
+
+
+
       post :api24
       get :api25
       get :api26
@@ -188,8 +242,17 @@ Rails.application.routes.draw do
       get :api43
       get :api44
       get :api45
+
+      get :api50
+      get :api51
+      post :api52
+      get :api53
+      post :api54
+      post :api55
+
     end
     scope :group, module: 'group' do
+      post :logout
       post :api1
       get :api2
       get :api3
@@ -197,22 +260,26 @@ Rails.application.routes.draw do
       get :api5
       post :api6
       get :api7
-      get :api8
+      post :api8
       get :api9
       get :api10
-      post :api11
+      get :api11
       get :api12
       post :api13
       get :api14
-      get :api15
-      get :api16
-      post :api17
+      post :api15
+      post :api16
+      get :api17
       get :api18
       get :api19
-      post :api20
-      get :api21
-      post :api22
-      get :api23
+      get :api20
+
+
+
+
+      post :api21
+      get :api22
+      post :api23
       post :api24
       get :api25
       get :api26
@@ -233,6 +300,30 @@ Rails.application.routes.draw do
       post :api46
     end
 
+    scope :shop, module: 'shop' do
+      post :logout
+      post :api1
+      get :api2
+      get :api3
+      post :api4
+      get :api5
+      get :api6
+      get :api7
+      get :api8
+      post :api9
+      get :api10
+      post :api11
+      post :api12
+      get :api13
+      get :api14
+      get :api15
+      get :api16
+      post :api17
+      get :api18
+      post :api19
+      get :api20
+
+    end
   end
 
 end

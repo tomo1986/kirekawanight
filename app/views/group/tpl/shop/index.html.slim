@@ -1,0 +1,34 @@
+section.main-container.notification-index-page shop-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | Group List
+    .row
+      .make-new-map
+        a.btn.make-btn href="/group/shops/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th ID
+            th name
+            th member_count
+            th edit
+            th delete
+        tbody
+          tr(dir-paginate="shop in vm.shops | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="ID"  {{shop.id}}
+            td.clearfix data-label="name"
+              a.btn.action-btn href="/group/shops/{{shop.id}}/detail"
+                | {{shop.name}}
+            td.clearfix data-label="member_count" {{shop.user_count}}
+            td.clearfix data-label="edit"
+              a.btn.action-btn href="/group/shops/{{shop.id}}/edit" 編集
+            td.clearfix data-label="delete"
+              a.btn.action-btn ng-click="vm.executeDeletion(shop.id)" 削除
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/shop/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"

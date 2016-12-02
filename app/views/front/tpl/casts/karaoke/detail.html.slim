@@ -12,7 +12,7 @@
             h3
               | {{vm.cast.name}}({{vm.cast.age}})
             p
-              | {{vm.cast.nick_name}} T{{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
+              | T{{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
             .feature
               a.btn.btn-feature  ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()"
                 | お気入り登録
@@ -42,7 +42,7 @@
             form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
               table.res-form-table
 
-                tr ng-if="!vm.contact.name"
+                tr
                   th.clearfix
                     span.title 氏名
                     span.btn.required 必須
@@ -53,7 +53,7 @@
                     span.title 折り返し連絡手段選択
                     span.btn.required 必須
                   td
-                    .form-group.clearfix
+                    .form-shop.clearfix
                       .col-xs-12
                         label.radio-inline
                           input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
@@ -160,7 +160,7 @@
             form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
               table.res-form-table
 
-                tr ng-if="!vm.contact.name"
+                tr
                   th.clearfix
                     span.title 氏名
                     span.btn.required 必須
@@ -171,7 +171,7 @@
                     span.title 折り返し連絡手段選択
                     span.btn.required 必須
                   td
-                    .form-group.clearfix
+                    .form-shop.clearfix
                       .col-xs-12
                         label.radio-inline
                           input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
@@ -227,6 +227,7 @@
                 button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  この子に会いに行く
 
       .col-md-12.detail.clearfix
+        a name="review"
         .row
           .page-title
             h2.title
@@ -310,5 +311,5 @@
                 p.count
                   | {{cast.support_count | number}}
   .cast-page--service
-    a href="/groups/karaoke/{{vm.cast.group_id}}"
-      span.blinking キレカワだけの特別プランは『こちら』
+    a href="/shops/karaoke/{{vm.cast.shop_id}}"
+      span.blinking キレカワ特別プランは『こちら』

@@ -25,7 +25,7 @@ angular.module 'bijyoZukanAdmin'
         allowedContent: true
         entities: false
 
-      vm.getSubjects()
+      vm.allShops()
       vm.getTags()
 
       vm.action = $state.current.action
@@ -33,12 +33,12 @@ angular.module 'bijyoZukanAdmin'
         vm.getUser()
       else
         vm.newUser()
-        vm.breadcrumb.push({name:'MAP新規作成',link:''})
+        vm.breadcrumb.push({name:'New User',link:''})
 
 
-    vm.getSubjects = ->
-      user.getSubjects().then((res) ->
-        vm.groups = res.data.groups
+    vm.allShops = ->
+      user.allShops().then((res) ->
+        vm.shops = res.data.shops
       )
     vm.getTags = ->
       user.getTags().then((res) ->
@@ -50,6 +50,7 @@ angular.module 'bijyoZukanAdmin'
     vm.getUser = ->
       user.getUser($state.params.id).then((res) ->
         vm.user = res.data.user
+        vm.user["is_blog"] = 0
         angular.forEach(vm.user.images, (image) ->
           vm.images.push({
             id: image.id
@@ -63,6 +64,7 @@ angular.module 'bijyoZukanAdmin'
     vm.newUser = () ->
       user.newUser().then((res) ->
         vm.user = res.data.user
+        vm.user["is_blog"] = 0
         vm.images.push({
           id: null
           url: null
@@ -115,6 +117,7 @@ angular.module 'bijyoZukanAdmin'
         user.updateUser(vm.user).then((res) ->
           if res.data.status == 1
             vm.user = res.data.user
+
             datas = vm.makeDataForModal(vm.user)
             modalService.confirm(title,datas,buttons)
           else
@@ -138,10 +141,10 @@ angular.module 'bijyoZukanAdmin'
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
-    scope.$watch("vm.user.group_id",(newVal,oldVal) ->
+    scope.$watch("vm.user.shop_id",(newVal,oldVal) ->
       if newVal != oldVal && oldVal != undefined
-        angular.forEach(scope.vm.groups,(group) ->
-          vm.user.job_type = group.job_type if Number(newVal) == Number(group.id)
+        angular.forEach(scope.vm.shops,(shop) ->
+          scope.vm.user.job_type = shop.job_type if Number(newVal) == Number(shop.id)
         )
     )
     return

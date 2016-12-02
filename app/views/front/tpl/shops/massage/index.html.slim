@@ -1,0 +1,25 @@
+.main-content.container shop-massage-index-directive=""
+  main#main.shop-page
+    breadcrumb-directive data="vm.breadcrumb"
+    .rank-box
+      ul.genre-tag
+        li
+          a.active href="/shops/massage"
+            | SHOP
+        li
+          a href="/casts/massage"
+            | CAST
+    .rank-box ng-if="vm.shops.length > 0"
+      .page-title
+        h2.title
+          /| TODAY'S POWER PUSH
+          | SHOP
+      .shop-list.clearfix
+        li ng-repeat="shop in vm.shops"
+          a href="/shops/massage/{{shop.id}}"
+            img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
+          .shop-info
+            h3.name
+              | {{shop.name}}
+              span
+                i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"

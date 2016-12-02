@@ -1,0 +1,44 @@
+section.main-container.notification-index-page banner-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | プッシュ通知
+      .make-new-map
+        a.btn.make-btn href="/group/banners/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th id
+            th type
+            th subject_type
+            th subject_id
+            th title
+            th article
+            th start_at
+            th end_at
+            th 編集
+        tbody
+          tr(dir-paginate="item in vm.banners | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="id"  {{item.deliver_device_count}}
+            td.clearfix data-label="type" {{item.type}}
+            td.clearfix data-label="subject_type"  {{item.subject_type}}
+            td.clearfix data-label="subject_id"  {{item.subject_id}}
+            td.clearfix data-label="title"  {{item.title}}
+            td.clearfix data-label="link"  {{item.link}}
+            td.clearfix data-label="is_target_blank"  {{item.is_target_blank}}
+            td.clearfix data-label="article"  {{item.article}}
+            td.clearfix data-label="start_at"  {{item.start_at | date: 'yyyy年M月d日 HH:mm'}}
+            td.clearfix data-label="end_at"  {{item.end_at | date: 'yyyy年M月d日 HH:mm'}}
+
+            td.clearfix data-label="編集"
+              a.btn.action-btn href="/group/banners/{{item.id}}" 編集
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/group/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+
+
+

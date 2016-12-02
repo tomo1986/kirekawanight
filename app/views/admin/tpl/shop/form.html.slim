@@ -1,0 +1,234 @@
+section.main-container.map-form-page shop-form-directive=""
+  .container-fluid
+    form role="form" ng-submit='vm.submit()' name="mapForm" novalidate=''
+      .row
+        breadcrumb-directive data="vm.breadcrumb"
+        h2.page-header
+          | new shop
+      .row
+        table.res-form-table style="margin-bottom: 4rem;"
+          caption basic
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title Address
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              .input-shop
+                input.form-control type="text" name="address" required='' disabled="true" ng-model="vm.shop.address"
+                span.input-shop-btn
+                  button.btn.btn-default.main-btn-color ng-click="vm.getAddressFromMap()" type="button"
+                    i.fa.fa-map-marker
+                span.is-text-danger ng-if="vm.errors.address"
+                  | {{vm.errors.address}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" name
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="name" required='' placeholder="Lounge kirekawa " ng-model="vm.shop.name"
+              span.is-text-danger ng-if="vm.errors.name"
+                | {{vm.errors.name}}
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name_kana}" name_kana(japanese)
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="name_kana" required='' placeholder="ラウンジ キレカワ" ng-model="vm.shop.name_kana"
+              span.is-text-danger ng-if="vm.errors.name_kana"
+                | {{vm.errors.name_kana}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" tel
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="tel" required='' placeholder="090xxxxxxxxxx" ng-model="vm.shop.tel"
+              span.is-text-danger ng-if="vm.errors.tel"
+                | {{vm.errors.tel}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title email
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="email" name="email" required='' placeholder="info@kire-kawa.com" ng-model="vm.shop.email"
+              span.is-text-danger ng-if="vm.errors.email"
+                | {{vm.errors.email}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title password
+            td.res-form-table__td.input-box
+              input.form-control type="password" name="password" required='' placeholder="aiueo" ng-model="vm.shop.password"
+              span.is-text-danger ng-if="vm.errors.password"
+                | {{vm.errors.password}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" Job type
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              select.form-control name="job_type" ng-model="vm.shop.job_type"
+                option value=""  -- Please select --
+                option value="karaoke" KARAOKE
+                option value="bar" GIRLS BAR
+                option value="massage" MASSAGE
+                option value="sexy" SEXY
+              span.is-text-danger ng-if="vm.errors.job_type"
+                | {{vm.errors.job_type}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 言語
+            td.res-form-table__td.input-box
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.shop.is_japanese"
+                | japanese
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.shop.is_english"
+                | english
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.shop.is_chinese"
+                | chinese
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.shop.is_korean"
+                | korean
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title smoking
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              .form-group.clearfix
+                label.radio-inline
+                  input name="is_smoked" type="radio" value="1" ng-model="vm.shop.is_smoked" can smoking
+                label.radio-inline
+                  input name="is_smoked" type="radio" value="0" ng-model="vm.shop.is_smoked" can not smoking
+              span.is-text-danger ng-if="vm.errors.is_smoked"
+                | {{vm.errors.is_smoked}}
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title shop open time
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="opened_at" data="vm.shop" options="vm.open_options" ng-model="vm.shop.opened_at"
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title shop close time
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="closed_at" data="vm.shop" options="vm.close_options" ng-model="vm.shop.closed_at"
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title card
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              .form-group.clearfix
+                label.radio-inline
+                  input name="is_credit" type="radio" value="1" ng-model="vm.shop.is_credit" can use
+                label.radio-inline
+                  input name="is_credit" type="radio" value="0" ng-model="vm.shop.is_credit" can not use
+              span.is-text-danger ng-if="vm.errors.is_credit"
+                | {{vm.errors.is_credit}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title need tip??
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              .form-group.clearfix
+                label.radio-inline
+                  input name="tip" type="radio" value="no_need" ng-model="vm.shop.tip" no need
+                label.radio-inline
+                  input name="tip" type="radio" value="need" ng-model="vm.shop.tip" need
+                label.radio-inline
+                  input name="tip" type="radio" value="up_to_you" ng-model="vm.shop.tip" up to you
+              span.is-text-danger ng-if="vm.errors.tip"
+                | {{vm.errors.tip}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title budget yen
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="budget_yen" required='3000' placeholder="aiueo" ng-model="vm.shop.budget_yen"
+              span.is-text-danger ng-if="vm.errors.budget_yen"
+                | {{vm.errors.budget_yen}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title budget vnd
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="budget_vnd" required='850000' placeholder="aiueo" ng-model="vm.shop.budget_vnd"
+              span.is-text-danger ng-if="vm.errors.budget_vnd"
+                | {{vm.errors.budget_vnd}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title budget usd
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="budget_usd" required='40' placeholder="aiueo" ng-model="vm.shop.budget_usd"
+              span.is-text-danger ng-if="vm.errors.budget_usd"
+                | {{vm.errors.budget_usd}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title How many girls
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="girls_count" required='' placeholder="45" ng-model="vm.shop.girls_count"
+              span.is-text-danger ng-if="vm.errors.girls_count"
+                | {{vm.errors.girls_count}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title sns
+            td.res-form-table__td.input-box
+              dl
+                dt
+                  | Zalo
+                dd
+                  input.form-control type="text" name="zalo" placeholder="aiueo" ng-model="vm.shop.sns_zalo"
+                dt
+                  | WeChat
+                dd
+                  input.form-control type="text" name="wechat" placeholder="aiueo" ng-model="vm.shop.sns_wechat"
+                dt
+                  | Line
+                dd
+                  input.form-control type="text" name="line" placeholder="aiueo" ng-model="vm.shop.sns_line"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.service}" service
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control row="6" ng-model="vm.shop.service"
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title tags
+            td.res-form-table__td.input-box
+              tags-input(ng-model='vm.shop.tags')
+              span.btn ng-repeat="tag in vm.tags" ng-click="vm.onClickTag(tag.name)"
+                | {{tag.name}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.image_url}" shop images
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box.image-box--arry
+              .row
+                .col-md-4 ng-repeat="image in vm.images track by $index"
+                  .pic
+                    image-directive parent-class="pic" img-url="{{vm.images[$index].url}}"
+                    .hover-img
+                      input#fileInput.change-img-file type="file" name="image_url" ng-model="vm.images[$index].url" options="image.options" image-cropper=""
+                      span
+                        | 画像選択
+              .button-center
+                button.btn.main-btn type="button" ng-click="vm.addImage()" add image
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" Interview 日本語
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control ng-model="vm.shop.interview_ja"
+
+
+        .button-center ng-show="vm.canSubmit"
+          button.btn.main-btn type="submit" 登録する
+        .button-center ng-hide="vm.canSubmit"
+          loading-directive size="125"

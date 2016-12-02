@@ -23,11 +23,11 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'cast'
         templateUrl: '/front/tpl/casts/karaoke/index.html'
 
-      .state '/groups/karaoke',
-        url: '/groups/karaoke?page'
+      .state '/shops/karaoke',
+        url: '/shops/karaoke?page'
         active_menu: 'karaoke'
         active_tab: 'shop'
-        templateUrl: '/front/tpl/groups/karaoke/index.html'
+        templateUrl: '/front/tpl/shops/karaoke/index.html'
 
 
       .state '/casts/karaoke/:id',
@@ -35,11 +35,11 @@ angular.module 'bisyoujoZukanNight'
         active_menu: 'karaoke'
         templateUrl: '/front/tpl/casts/karaoke/detail.html'
 
-      .state '/groups/karaoke/:id',
-        url: '/groups/karaoke/:id'
+      .state '/shops/karaoke/:id',
+        url: '/shops/karaoke/:id'
         active_menu: 'karaoke'
         active_tab: 'shop'
-        templateUrl: '/front/tpl/groups/karaoke/detail.html'
+        templateUrl: '/front/tpl/shops/karaoke/detail.html'
 
 
 
@@ -47,39 +47,39 @@ angular.module 'bisyoujoZukanNight'
         url: '/casts/bar?page'
         active_menu: 'bar'
         templateUrl: '/front/tpl/casts/bar/index.html'
-      .state '/groups/bar',
-        url: '/groups/bar?page'
+      .state '/shops/bar',
+        url: '/shops/bar?page'
         active_menu: 'bar'
-        templateUrl: '/front/tpl/groups/bar/index.html'
+        templateUrl: '/front/tpl/shops/bar/index.html'
 
 
       .state '/casts/bar/:id',
         url: '/casts/bar/:id'
         active_menu: 'bar'
         templateUrl: '/front/tpl/casts/bar/detail.html'
-      .state '/groups/bar/:id',
-        url: '/groups/bar/:id'
+      .state '/shops/bar/:id',
+        url: '/shops/bar/:id'
         active_menu: 'bar'
-        templateUrl: '/front/tpl/groups/bar/detail.html'
+        templateUrl: '/front/tpl/shops/bar/detail.html'
 
 
       .state '/casts/massage',
         url: '/casts/massage?page'
         active_menu: 'massage'
         templateUrl: '/front/tpl/casts/massage/index.html'
-      .state '/groups/massage',
-        url: '/groups/massage?page'
+      .state '/shops/massage',
+        url: '/shops/massage?page'
         active_menu: 'massage'
-        templateUrl: '/front/tpl/groups/massage/index.html'
+        templateUrl: '/front/tpl/shops/massage/index.html'
 
       .state '/casts/massage/:id',
         url: '/casts/massage/:id'
         active_menu: 'massage'
         templateUrl: '/front/tpl/casts/massage/detail.html'
-      .state '/groups/massage/:id',
-        url: '/groups/massage/:id'
+      .state '/shops/massage/:id',
+        url: '/shops/massage/:id'
         active_menu: 'massage'
-        templateUrl: '/front/tpl/groups/massage/detail.html'
+        templateUrl: '/front/tpl/shops/massage/detail.html'
 
       .state '/casts/sexy',
         url: '/casts/sexy?page'

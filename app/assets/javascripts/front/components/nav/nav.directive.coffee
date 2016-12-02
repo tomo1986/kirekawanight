@@ -9,7 +9,7 @@ angular.module 'bisyoujoZukanNight'
       vm.loginCustomer = customerService.getLoginCustomer()
       api.getPromise('/api/front/api20',{}).then((res) ->
         vm.userCount = res.data.user_count
-        vm.groupCount = res.data.group_count
+        vm.shopCount = res.data.shop_count
       )
 
     vm.onClickedLogout = ->

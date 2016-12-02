@@ -7,7 +7,7 @@ angular.module 'bisyoujoZukanNight'
   connect = ->
     self = vm
     return new Promise((resolve, reject) ->
-      get '/api/front/api0', {}, ((data) ->
+      get '/api/front/connect', {}, ((data) ->
         self.user = data.user
         resolve data
       ), (error) ->

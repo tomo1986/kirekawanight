@@ -12,10 +12,8 @@ angular.module 'bijyoZukanGroup'
       datepickerOptions: {showWeeks: false}
       timepickerOptions: if vm.options.timepickerOptions then vm.options.timepickerOptions else {}
 
-    vm.picker.datepickerOptions["maxDate"] = vm.options.from.date if vm.options && vm.options.from && vm.options.from.is_from
-    vm.picker.datepickerOptions["minDate"] = vm.options.to.date if vm.options && vm.options.to && vm.options.to.is_to
-#    vm.picker["timepickerOptions"]["max"] = vm.options.from.date if vm.options && vm.options.from && vm.options.from.is_from
-#    vm.picker["timepickerOptions"]["min"] = vm.options.to.date if vm.options && vm.options.to && vm.options.to.is_to
+    vm.picker.datepickerOptions["maxDate"] = if vm.options && vm.options.from && vm.options.from.is_from then vm.options.from.date else new Date()
+    vm.picker.datepickerOptions["minDate"] = if vm.options && vm.options.to && vm.options.to.is_to then vm.options.to.date else new Date()
 
 
     vm.openCalendar = (e, picker) ->

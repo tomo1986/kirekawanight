@@ -9,7 +9,7 @@ angular.module 'bisyoujoZukanNight'
       vm.loginCustomer = customerService.getLoginCustomer()
       api.getPromise('/api/front/api20',{}).then((res) ->
         vm.userCount = res.data.user_count
-        vm.groupCount = res.data.group_count
+        vm.shopCount = res.data.shop_count
       )
 
     vm.onClickedLogout = ->
@@ -36,7 +36,7 @@ angular.module 'bisyoujoZukanNight'
   linkFunc = (scope, el, attr, vm) ->
     console.log("=========",scope, el, attr, vm)
     scope.vm.userCount = vm.userCount
-    scope.vm.groupCount = vm.groupCount
+    scope.vm.shopCount = vm.shopCount
     return
 
   directive =

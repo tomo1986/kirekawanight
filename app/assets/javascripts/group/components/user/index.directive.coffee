@@ -18,10 +18,13 @@ angular.module 'bijyoZukanGroup'
 
     vm.getUsers = ->
       user.getUsers(vm.filter).then((res) ->
+        if res.data.code == 1
           vm.users = res.data.users
           vm.groups = res.data.groups
           vm.total = res.data.total
           window.scrollTo(0, 0)
+        else
+          modalService.error("Error","Please retry")
       )
     vm.submit = ->
 

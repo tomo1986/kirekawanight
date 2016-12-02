@@ -1,0 +1,45 @@
+.login-page {
+  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background: #eee;
+  text-align: center;
+  color: #fff;
+  padding: 9em 0;
+  @media screen and (max-width: 763px) {
+    padding: 3em 0;
+  }
+  .login-page-box{
+    background-color: #fff;
+    color: #000;
+    padding:$row-space;
+  }
+
+  .form-box {
+    background-color:#fff;
+    .login-logo {
+      width:200px;
+      margin-top:1rem;
+    }
+    & > form {
+      .form-content {
+        padding: 0 3rem 1rem;
+        @media screen and (max-width: 500px) {
+          padding: 0 1rem 1rem;
+        }
+
+      }
+    }
+
+  }
+
+  .rounded-btn{
+    background-color: $_brand-darker;
+  }
+
+
+}

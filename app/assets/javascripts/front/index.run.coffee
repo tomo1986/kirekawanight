@@ -2,15 +2,17 @@ angular.module 'bisyoujoZukanNight'
   .run ($log, $rootScope, $state, $location, api,$http, $timeout, customerService) ->
     'ngInject'
     api.connect().then((res) ->
-      customerService.setLoginCustomer(res.login_customer)
+      if res.code == 1
+        customerService.setLoginCustomer(res.customer)
     )
 
 
     $rootScope.$on('$stateChangeStart', (e, toState, toParams, fromState, fromParams) ->
-      window.scrollTo(0, 0)
+#      window.scrollTo(0, 0)
     )
     $rootScope.$on '$locationChangeSuccess', (e, toState, toParams, fromState, fromParams) ->
-      window.scrollTo(0, 0)
+
+#      window.scrollTo(0, 0)
       $rootScope.actualLocation = $location.path()
       $rootScope.history_url = toParams
       $(window).unbind('scroll').bind('scroll', ()->

@@ -5,9 +5,30 @@ ja:
       email_not_exist: 'メールアドレスが登録されておりません。再度ご確認ください。'
       aleady: 'このメールアドレスはすでに登録されています'
       not: '保存中に何かエラーが発生しました。しばらくたってからもう一度お試しください'
+
+  admin:
+    error:
+      not_find: 'Can not find group'
+      no_login: 'not login'
+      no_shop: 'not the shop'
+      no_user: 'not the user'
+      no_contact: 'not the contact'
+
+
   group:
     error:
-      not_find: '存在しない店舗です。'
+      not_find: 'Can not find group'
+      no_login: 'not login'
+      no_shop: 'not the shop'
+      no_user: 'not the user'
+  shop:
+    error:
+      not_find: 'Can not find shop'
+      no_login: 'not login'
+      no_shop: 'not the shop'
+      no_user: 'not the user'
+
+
 
   common:
     like:

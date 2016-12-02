@@ -13,6 +13,11 @@
   @media screen and (max-width: 763px) {
     padding: 3em 0;
   }
+  .login-page-box{
+    background-color: #fff;
+    color: #000;
+    padding:$row-space;
+  }
 
   .form-box {
     background-color:#fff;
@@ -31,7 +36,7 @@
     }
 
   }
-
-
-
+  .rounded-btn{
+    background-color: $_brand-darker;
+  }
 }

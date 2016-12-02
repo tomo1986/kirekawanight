@@ -39,7 +39,7 @@
             form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
               table.res-form-table
 
-                tr ng-if="!vm.contact.name"
+                tr
                   th.clearfix
                     span.title 氏名
                     span.btn.required 必須
@@ -50,7 +50,7 @@
                     span.title 折り返し連絡手段選択
                     span.btn.required 必須
                   td
-                    .form-group.clearfix
+                    .form-shop.clearfix
                       .col-xs-12
                         label.radio-inline
                           input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
@@ -151,7 +151,7 @@
             form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
               table.res-form-table
 
-                tr ng-if="!vm.contact.name"
+                tr
                   th.clearfix
                     span.title 氏名
                     span.btn.required 必須
@@ -162,7 +162,7 @@
                     span.title 折り返し連絡手段選択
                     span.btn.required 必須
                   td
-                    .form-group.clearfix
+                    .form-shop.clearfix
                       .col-xs-12
                         label.radio-inline
                           input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
@@ -244,5 +244,5 @@
                 p.count
                   | {{cast.support_count | number}}
   .cast-page--service
-    a href="/groups/massage/{{vm.cast.group_id}}"
+    a href="/shops/massage/{{vm.cast.shop_id}}"
       span.blinking キレカワだけの特別プランは『こちら』

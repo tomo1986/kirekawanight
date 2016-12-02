@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  belongs_to :group
+  belongs_to :shop
   has_one :ja_profile, class_name: 'ProfileType::Ja', dependent: :destroy, :autosave => true
   has_one :vn_profile, class_name: 'ProfileType::Vn', dependent: :destroy, :autosave => true
   has_one :en_profile, class_name: 'ProfileType::En', dependent: :destroy, :autosave => true
@@ -38,7 +38,7 @@ class User < ApplicationRecord
   }
   scope :job_type_filter, -> (opt_type= nil) {
     return if opt_type.blank?
-    return self.where(groups: {job_type: opt_type})
+    return self.where(shops: {job_type: opt_type})
   }
   scope :sex_filter, -> (opt_sex= nil) {
     return if opt_sex.blank?
@@ -49,15 +49,18 @@ class User < ApplicationRecord
   }
   scope :sort_support, -> (order= 'desc'){
     return self.joins("left join posts on posts.receiver_id = users.id and posts.type = 'PostType::Support' and posts.receiver_type = 'User'").group("users.id")
-               .order("count(*) #{order}, users.id desc")
+               .order("count(posts.receiver_id) #{order}, users.id desc")
   }
   scope :sort_favorite, -> (order= 'desc'){
     return self.joins("left join posts on posts.receiver_id = users.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'User'").group("users.id")
-               .order("count(*) #{order}, users.id desc")
+               .order("count(posts.receiver_id) #{order}, users.id desc")
   }
   scope :find_new_user, -> (){
     now = Time.zone.now
     return self.where(created_at: now.beginning_of_month...now.end_of_month).sort_new
+  }
+  scope :find_open, -> () {
+    return self.where(deleted_at: nil)
   }
 
 
@@ -94,7 +97,7 @@ class User < ApplicationRecord
         json.favorite_count user.favorites.count
         json.contact_count user.contacts.count
         json.images user.abc
-        json.group user.group ? user.group.to_jbuilder : nil
+        json.shop user.shop ? user.shop.to_jbuilder : nil
         json.tags user.tag_list ? user.tag_list : nil
       end
     end
@@ -124,7 +127,7 @@ class User < ApplicationRecord
   def to_jbuilder
     Jbuilder.new do |json|
       json.id self.id
-      json.group_id self.group_id
+      json.shop_id self.shop_id
       json.name self.name
       json.nick_name self.nick_name
       json.birthplace self.birthplace
@@ -152,7 +155,7 @@ class User < ApplicationRecord
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
       json.contact_count self.contacts.count
-      json.group self.group ? self.group.to_jbuilder : nil
+      json.shop self.shop ? self.shop.to_jbuilder : nil
       json.ja self.ja_profile ? self.ja_profile.to_jbuilder : UserProfile.new.to_jbuilder
       json.vn self.vn_profile ? self.vn_profile.to_jbuilder : UserProfile.new.to_jbuilder
       json.en self.en_profile ? self.en_profile.to_jbuilder : UserProfile.new.to_jbuilder

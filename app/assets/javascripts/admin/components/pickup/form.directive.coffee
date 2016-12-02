@@ -33,24 +33,24 @@ angular.module 'bijyoZukanAdmin'
     vm.getPickup = ->
       pickupService.getPickup($state.params.id).then((res) ->
         vm.pickup = res.data.pickup
-        vm.getSubjects()
       )
 
     vm.newPickup = () ->
       pickupService.newPickup().then((res) ->
         vm.pickup = res.data.pickup
-        vm.getSubjects()
       )
 
-    vm.getSubjects = () ->
-      pickupService.getSubjects().then((res) ->
+    vm.getAllUsers = () ->
+      pickupService.getAllUsers().then((res) ->
         vm.users = res.data.users
-        vm.groups = res.data.groups
-        if vm.pickup.subject_type == 'Group'
-          vm.subjectList = vm.groups
-        else if vm.pickup.subject_type == 'User'
-          vm.subjectList = vm.users
+        vm.subjectList = vm.users
       )
+    vm.getAllShops = () ->
+      pickupService.getAllShops().then((res) ->
+        vm.shops = res.data.shops
+        vm.subjectList = vm.shops
+      )
+
 
     vm.submit = ->
       buttons = [
@@ -72,13 +72,13 @@ angular.module 'bijyoZukanAdmin'
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
-
     scope.$watch("vm.pickup.subject_type",(val) ->
-      console.log("aaaa",val)
-      if val == 'Group'
-        scope.vm.subjectList = scope.vm.groups
+      if val == 'Shop'
+        return scope.vm.subjectList = scope.vm.shops if scope.vm.shops
+        scope.vm.getAllShops()
       else if val == 'User'
-        scope.vm.subjectList = scope.vm.users
+        return scope.vm.subjectList = scope.vm.users if scope.vm.users
+        scope.vm.getAllUsers()
     )
 
     return

@@ -1,0 +1,65 @@
+section.main-container.map-form-page contact-form-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | contact
+    .row
+      table.res-form-table style="margin-bottom: 4rem;"
+        caption aaaaaa
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 住所
+            span.btn.btn-danger.btn-xs.absolutely.absolutely 必須
+          td.res-form-table__td.input-box
+            .input-group
+              input.form-control type="text" name="address" required='' disabled="true" placeholder="東京都品川区 xx-xx" ng-model="vm.group.address"
+              span.input-group-btn
+                button.btn.btn-default.main-btn-color ng-click="vm.getAddressFromMap()" type="button"
+                  i.fa.fa-map-marker
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title ng-class="{'is-text-danger': vm.errors.name}" name
+          td.res-form-table__td.input-box
+            input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.group.name"
+    .row
+      form role="form" ng-submit='vm.submit()' name="mapForm" novalidate=''
+        table.res-form-table style="margin-bottom: 4rem;"
+          caption aaaaaa
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" Interview english
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control rows="5" ng-model="vm.content"
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" Interview english
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              fieldset.form-group.clearfix
+                label.radio-inline
+                  input#optionsRadiosInline1 checked="" name="quiz_answer_type" type="radio" value="text" ng-model="vm.parentCtrl.capsule.quiz_answer_type"
+                  | 紹介した
+                label.radio-inline
+                  input#optionsRadiosInline2 name="quiz_answer_type" type="radio" value="image" ng-model="vm.parentCtrl.capsule.quiz_answer_type"
+                  | 紹介しなかった
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" 紹介人数
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              input.form-control type="text" ng-model="ninzuu"
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" いただいた金額
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              input.form-control type="text" ng-model="kingaku"
+
+        .button-center ng-show="vm.canSubmit"
+          button.btn.main-btn type="submit" ng-disabled="mapForm.$invalid" 登録する
+        .button-center ng-hide="vm.canSubmit"
+          loading-directive size="125"

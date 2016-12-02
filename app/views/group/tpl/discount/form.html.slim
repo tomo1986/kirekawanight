@@ -9,16 +9,29 @@ section.main-container.map-form-page discount-form-directive=""
         table.res-form-table
           tr
             th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" Select Shop
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              select.form-control name="blood_type" ng-model="vm.discount.subject_id"
+                option value=""  -- Please select --
+                option value="{{shop.id}}" ng-selected="vm.discount.subject_id== shop.id" ng-repeat="shop in vm.shops"
+                  | {{shop.name}}
+
+
+
+
+          tr
+            th.res-form-table__th.title-box.clearfix
               span.title discount type
-              span.btn.btn-danger.btn-xs.absolutely.absolutely 必須
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               select.form-control name="type" ng-model="vm.discount.type"
                 option value=""  -- Please select --
-                option value="time" ng-selected="vm.discount.type == 'DiscountType::Top'" Time_sale
+                option value="DiscountType::Top" ng-selected="vm.discount.type == 'DiscountType::Time'" DiscountType::Time
           tr
             th.res-form-table__th.title-box.clearfix
               span.title how many group?
-              span.btn.btn-danger.btn-xs.absolutely.absolutely 必須
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               select.form-control name="type" ng-model="vm.discount.groups"
                 option value=""  -- Please select --
@@ -35,7 +48,7 @@ section.main-container.map-form-page discount-form-directive=""
           tr
             th.res-form-table__th.title-box.clearfix
               span.title how many peaple?
-              span.btn.btn-danger.btn-xs.absolutely.absolutely 必須
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               select.form-control name="type" ng-model="vm.discount.peoples"
                 option value=""  -- Please select --
@@ -74,20 +87,20 @@ section.main-container.map-form-page discount-form-directive=""
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.description}" price （USD）
-              span.btn.btn-danger.btn-xs.absolutely 必須
+              span.btn.btn-danger.btn-xs.absolutely Required
             td.res-form-table__td.input-box
               input.form-control type="text" ng-model="vm.discount.price"
 
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.description}" phone number
-              span.btn.btn-danger.btn-xs.absolutely 必須
+              span.btn.btn-danger.btn-xs.absolutely Required
             td.res-form-table__td.input-box
               input.form-control type="text" ng-model="vm.discount.tel"
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.description}" displayed
-              span.btn.btn-danger.btn-xs.absolutely 必須
+              span.btn.btn-danger.btn-xs.absolutely Required
             td.res-form-table__td.input-box
               .form-group.clearfix
                 .col-xs-12

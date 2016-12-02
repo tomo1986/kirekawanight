@@ -9,6 +9,7 @@ class Blog < ApplicationRecord
   end
   def auto_save_user(user)
       self.subject_id = user.id
+      self.subject_type = 'User'
       self.article_ja = Blog.make_article_ja_for_user(user)
       self.title_ja = Blog.make_title_ja_for_user(user)
       self.head_title_ja = Blog.make_head_title_ja_for_user(user)

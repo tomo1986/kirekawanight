@@ -1,5 +1,5 @@
 class Discount < ApplicationRecord
-  belongs_to :group
+  belongs_to :subject, polymorphic: true
 
   scope :open_time_discounts, -> () {
     now = Time.zone.now
@@ -37,6 +37,8 @@ class Discount < ApplicationRecord
       json.id self.id
       json.status self.status_discount
       json.type self.type
+      json.subject_type self.subject_type
+      json.subject_id self.subject_id
       json.groups self.groups
       json.peoples self.peoples
       json.price self.price
@@ -46,7 +48,7 @@ class Discount < ApplicationRecord
       json.end_at self.end_at
       json.tel self.tel
       json.is_displayed self.is_displayed
-      json.group self.group.to_jbuilder
+      json.subject self.subject ? self.subject.to_jbuilder : nil
     end
   end
 
@@ -54,8 +56,9 @@ class Discount < ApplicationRecord
     Jbuilder.new do |json|
       json.array! discounts do |discount|
         json.id discount.id
-        json.status discount.status_discount
         json.type discount.type
+        json.subject_type discount.subject_type
+        json.subject_id discount.subject_id
         json.groups discount.groups
         json.peoples discount.peoples
         json.price discount.price
@@ -65,11 +68,9 @@ class Discount < ApplicationRecord
         json.end_at discount.end_at
         json.tel discount.tel
         json.is_displayed discount.is_displayed
-        json.group discount.group.to_jbuilder
+        json.subject discount.subject ? discount.subject.to_jbuilder : nil
       end
     end
   end
-
-
 
 end

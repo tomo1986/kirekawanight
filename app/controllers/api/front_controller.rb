@@ -1,25 +1,45 @@
 class Api::FrontController < ApiController
 
-  def api0
-    if session[:customer_id]
-      customer = Customer.find(session[:customer_id])
-    else
-      customer = nil
-    end
+  def logout
+    sign_out(current_customer) if customer_signed_in?
     builder = Jbuilder.new do |json|
-      json.authenticity_token form_authenticity_token
-      json.login_customer customer
+      json.code 1
+      json.custommer nil
     end
     render json: builder.target!
   end
 
-  def api0_1
+  def connect
     if customer_signed_in?
-      customer = Customer.find(session[:customer_id])
-      sign_out customer
-      session[:customer_id] = nil
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.customer current_customer.to_jbuilder
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.customer nil
+      end
     end
-    render json: nil
+    render json: builder.target!
+  end
+
+
+
+  def api0
+    email = params[:email]
+    password = params[:password]
+    render_failed(4, t('admin.error.not_find')) and return if email.blank? || password.blank?
+    customer = Customer.where(:email => params[:email]).first
+    render_failed(4, t('admin.error.not_find')) and return  unless customer && customer.valid_password?(params[:password])
+    customer.remember_me = params[:remember_me]
+    sign_in customer
+    builder = Jbuilder.new do |json|
+      json.code 1
+      json.customer customer.to_jbuilder
+    end
+    render json: builder.target!
+
   end
 
   def api1
@@ -43,6 +63,7 @@ class Api::FrontController < ApiController
     elsif params[:sort] == 'support'
       users = users.sort_support(params[:order])
     elsif params[:sort] == 'favorite'
+      p "soeya"
       users = users.sort_favorite(params[:order])
 
     end
@@ -76,7 +97,7 @@ class Api::FrontController < ApiController
   def api3
     PageViewType::UserDetail.create(subject_type: 'User',subject_id: params[:id])
     user = User.find_by(id: params[:id])
-    users = User.where( group_id: user.group_id)
+    users = User.where( shop_id: user.shop_id)
     users = users.where.not(id: user.id)
     is_favorited = false
     is_favorited = current_customer.favorites.exists?(receiver_type: 'User', receiver_id: params[:id]) if customer_signed_in?
@@ -84,40 +105,38 @@ class Api::FrontController < ApiController
     builder = Jbuilder.new do |json|
       json.user user.to_jbuilder
       json.profile user.ja_profile ?  user.ja_profile.to_jbuilder : nil
-      json.users user.group ? User.to_jbuilders(users) : nil
+      json.users user.shop ? User.to_jbuilders(users) : nil
       json.is_favorited is_favorited
     end
     render json: builder.target!
 
   end
   def api4
-    PageViewType::GroupDetail.create(subject_type: 'Group',subject_id: params[:id])
-    group = Group.find_by(id: params[:id])
-    p "======================"
-    p group
-    p "======================"
-    render_failed(4, t('group.error.not_find')) and return if group.blank?
-
-    users = User.where( group_id: params[:id])
-    reviews = group.reviews.where(is_displayed: true) if group.reviews
+    PageViewType::ShopDetail.create(subject_type: 'Shop',subject_id: params[:id])
+    shop = Shop.find_by(id: params[:id])
+    render_failed(4, t('shop.error.not_find')) and return if shop.blank?
+    users = shop.users
+    reviews = shop.reviews.where(is_displayed: true) if shop.reviews
     is_favorited = false
-    is_favorited = current_customer.favorites.exists?(receiver_type: 'Group', receiver_id: params[:id]) if customer_signed_in?
+    is_favorited = current_customer.favorites.exists?(receiver_type: 'Shop', receiver_id: params[:id]) if customer_signed_in?
     favorites = {}
     if customer_signed_in?
       current_customer.favorites.each do |favorite|
         favorites[favorite.receiver_id] = favorite
       end
     end
-
+    shops = Shop.where(group_id: shop.group_id).where.not(id: shop.id)
     builder = Jbuilder.new do |json|
       json.code 1
-      json.group group.to_jbuilder
+      json.shop shop.to_jbuilder
       json.is_favorited is_favorited
       json.reviews reviews ? Review.to_jbuilders(reviews) : nil
       json.new_users users ? User.to_jbuilders(users.find_new_user) : nil
       json.users users ? User.to_jbuilders(users) : nil
       json.favorites favorites
-      json.discounts Discount.to_jbuilders(group.open_discounts)
+      json.discounts Discount.to_jbuilders(shop.open_discounts)
+      json.shops Shop.to_jbuilders(shops)
+
     end
     render json: builder.target!
 
@@ -150,10 +169,10 @@ class Api::FrontController < ApiController
       user = User.find_by(id: params[:receiver_id])
       support_count = user.supports.count
       favorite_count = user.favorites.count
-    elsif params[:receiver_type] == 'Group'
-      group = Group.find_by(id: params[:receiver_id])
-      support_count = group.supports.count
-      favorite_count = group.favorites.count
+    elsif params[:receiver_type] == 'Shop'
+      shop = Shop.find_by(id: params[:receiver_id])
+      support_count = shop.supports.count
+      favorite_count = shop.favorites.count
 
     end
 
@@ -224,15 +243,14 @@ class Api::FrontController < ApiController
     password = params[:password]
     render_failed(4, t('customer.error.not_params')) and return if email.blank? || password.blank?
     render_failed(4, t('customer.aleady')) and return if Customer.find_by(email: email)
-    customer =Customer.create(name: params[:name], email: email, password: password)
-
+    customer =Customer.new(email: email, password: password)
     if customer.save!
-      p "================="
-      p customer
-      p "================="
-      session[:customer_id] = customer.id
-      j_builder = customer.to_jbuilder
-      render_success(j_builder)
+      sign_in customer
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.customer customer.to_jbuilder
+      end
+      render json: builder.target!
     else
       render_failed(4, t('customer.not'))
     end
@@ -283,23 +301,23 @@ class Api::FrontController < ApiController
     end
     render json: builders.target!
   end
-  #group list page
+  #shop list page
   def api12
     if params[:job_type] == 'karaoke'
-      PageViewType::GroupKaraoke.create
+      PageViewType::ShopKaraoke.create
     elsif params[:job_type] == 'bar'
-      PageViewType::GroupBar.create
+      PageViewType::ShopBar.create
     elsif params[:job_type] == 'massage'
-      PageViewType::GroupMassage.create
+      PageViewType::ShopMassage.create
     elsif params[:job_type] == 'sexy'
-      PageViewType::GroupSexy.create
+      PageViewType::ShopSexy.create
     end
 
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    total = Group.where(job_type: params[:job_type]).count
-    groups = Group.where(job_type: params[:job_type])
-    groups = groups.page(page).per(limit) if groups.present?
+    total = Shop.where(job_type: params[:job_type]).count
+    shops = Shop.where(job_type: params[:job_type])
+    shops = shops.page(page).per(limit) if shops.present?
 
     favorites = {}
     if customer_signed_in?
@@ -310,7 +328,7 @@ class Api::FrontController < ApiController
     end
 
     builders = Jbuilder.new do |json|
-      json.groups Group.to_jbuilders(groups)
+      json.shops Shop.to_jbuilders(shops)
       json.favorites favorites
       json.total total
     end
@@ -320,8 +338,8 @@ class Api::FrontController < ApiController
 
 
   def api13
-    if params[:type] == 'group'
-      review = ReviewType::Group.new
+    if params[:type] == 'shop'
+      review = ReviewType::Shop.new
     elsif params[:type] == 'user'
       review = ReviewType::User.new
     end
@@ -405,7 +423,7 @@ class Api::FrontController < ApiController
   def api20
     builder = Jbuilder.new do |json|
       json.user_count User.count
-      json.group_count Group.count
+      json.shop_count Shop.count
     end
     render json: builder.target!
   end

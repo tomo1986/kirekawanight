@@ -13,17 +13,17 @@ angular.module 'bijyoZukanAdmin'
         window.scrollTo(0, 0)
       )
 
-    vm.executeDeletion = () ->
-      mapService.deleteMap(vm.delete_map_id).then((res) ->
-        if res.code == 1
+    vm.executeDeletion = (opt_id) ->
+      groupService.deleteGroup({id: opt_id}).then((res) ->
+        if res.data.code == 1
           modalService.alert('削除しました。')
-          vm.getMaps()
+          vm.getGroups()
         else
-          modalService.error(res.data.message)
+          modalService.error("error",res.data.message)
       )
 
     vm.pageChanged = (page) ->
-      $state.go('/maps',{page:page})
+      $state.go('/groups',{page:page})
       return
 
     vm.init()

@@ -19,18 +19,15 @@ angular.module 'bijyoZukanAdmin'
     vm.getUsers = ->
       user.getUsers(vm.filter).then((res) ->
           vm.users = res.data.users
-          vm.groups = res.data.groups
           vm.total = res.data.total
           window.scrollTo(0, 0)
       )
-    vm.submit = ->
-
 
     vm.executeDeletion = () ->
-      mapService.deleteMap(vm.delete_map_id).then((res) ->
-        if res.code == 1
+      user.deleteUser(vm.delete_map_id).then((res) ->
+        if res.data.code == 1
           modalService.alert('削除しました。')
-          vm.getMaps()
+          vm.getUsers()
         else
           modalService.error(res.data.message)
       )

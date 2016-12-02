@@ -6,8 +6,7 @@ angular.module 'bijyoZukanAdmin'
 
     vm.init = ->
       vm.canSubmit = true
-      vm.getTags()
-      vm.breadcrumb = [{name:'Dashboard',link:'/business'},{name:'Group',link:'/business/maps'}]
+      vm.breadcrumb = [{name:'Dashboard',link:'/admin'},{name:'Group',link:''}]
       vm.open_options={
         from:{is_from:true,date:null}
         used: 'timePicker'
@@ -44,7 +43,7 @@ angular.module 'bijyoZukanAdmin'
         vm.getGroup()
       else
         vm.newGroup()
-        vm.breadcrumb.push({name:'MAP新規作成',link:''})
+        vm.breadcrumb.push({name:'New Group',link:''})
     vm.getGroup = ->
       groupService.getGroup($state.params.id).then((res) ->
         vm.group = res.data.group
@@ -57,13 +56,6 @@ angular.module 'bijyoZukanAdmin'
           })
         )
       )
-    vm.getTags = ->
-      groupService.getTags().then((res) ->
-        vm.tags = res.data.tags
-      )
-    vm.onClickTag = (tag_name) ->
-      vm.group.tags.push({text: tag_name})
-
     vm.newGroup = ->
       groupService.newGroup().then((res) ->
         vm.group = res.data.group

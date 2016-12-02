@@ -1,0 +1,56 @@
+section.main-container.notification-index-page user-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | プッシュ通知
+    .row
+      .page-detail
+        | プッシュ通知一覧です。
+        br
+        | お客様のスマートフォンに通知することができます。
+      .make-new-map
+        a.btn.make-btn href="/shop/users/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th
+              | id
+              i.fa ng-class="{'fa-arrow-down': vm.filters.ordered == '-id', 'fa-arrow-up': vm.filters.ordered == 'id'}"
+            th name
+            th image
+            th dayly PV
+            th weekly PV
+            th monthly PV
+            th support count
+            th favorite count
+            th contact count
+            th edit
+            th delete
+        tbody
+          tr(dir-paginate="user in vm.users | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="id"  {{user.id}}
+            td.clearfix data-label="name"
+              a href="/shop/users/{{user.id}}/detail"
+                | {{user.name}}
+            td.clearfix data-label="image"
+              img ng-src="{{user.images[0].url}}" style="width:50px;" ng-if="user.images &&  user.images[0]"
+            td.clearfix data-label="dayly PV"  {{user.dayly_count}}
+            td.clearfix data-label="weekly PV"  {{user.weekly_count}}
+            td.clearfix data-label="monthly PV"  {{user.monthly_count}}
+            td.clearfix data-label="support count"  {{user.support_count}}
+            td.clearfix data-label="favorite count"  {{user.favorite_count}}
+            td.clearfix data-label="contact count"  {{user.contact_count}}
+            td.clearfix data-label="編集"
+              a.btn.action-btn href="/shop/users/{{user.id}}/edit" 編集
+            td.clearfix data-label="削除"
+              a.btn.action-btn ng-click="vm.onCancelButtonClicked(user.id)" 削除
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/shop/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+
+
+

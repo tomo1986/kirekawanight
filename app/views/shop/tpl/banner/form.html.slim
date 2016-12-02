@@ -1,0 +1,86 @@
+section.main-container.map-form-page banner-form-directive=""
+  .container-fluid
+    form role="form" ng-submit='vm.submit()' name="mapForm" novalidate=''
+      .row
+        breadcrumb-directive data="vm.breadcrumb"
+        h2.page-header
+          | Banner
+      .row
+        table.res-form-table style="margin-bottom: 4rem;"
+          caption aaaaa
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title バナーのいち
+            td.res-form-table__td.input-box
+              select.form-control name="group_id" ng-model="vm.banner.type"
+                option value=""  -- Please select --
+                option value="Top" Top
+                option value="Top_side" Top side
+                option value="Karaoke" Karaoke
+                option value="Bar" Bar
+                option value="Massage" Massage
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 内容
+            td.res-form-table__td.input-box
+              select.form-control name="subject_type" ng-model="vm.banner.subject_type"
+                option value=""  -- Please select --
+                option value="Group" Group
+                option value="User" User
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 内容
+            td.res-form-table__td.input-box
+              select.form-control name="subject_id" ng-model="vm.banner.subject_id"
+                option value=""  -- Please select --
+                option value="{{item.id}}" ng-selected="item.id == vm.banner.subject_id" ng-repeat="item in vm.subjectList"
+                  | {{item.name}}
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title Title
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              input.form-control type="text" ng-model="vm.banner.title"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title link
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              input.form-control type="text" ng-model="vm.banner.link"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title link
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control ckeditor="vm.ckOptions" ng-model="vm.banner.article"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" start_at
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="start_at" data="vm.banner" options="vm.start_at_options" ng-model="vm.banner.start_at"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" end_at
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="end_at" data="vm.banner" options="vm.end_at_options" ng-model="vm.banner.end_at"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.image_url}" MAP画像
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box.image-box--arry
+              .row
+                .col-md-4
+                  .pic
+                    image-directive parent-class="pic" img-url="{{vm.image.url}}"
+                    .hover-img
+                      input#fileInput.change-img-file type="file" name="image_url" ng-model="vm.image.url" options="image.options" image-cropper=""
+                      span
+                        | 画像選択
+
+        .button-center ng-show="vm.canSubmit"
+          button.btn.main-btn type="submit" ng-disabled="mapForm.$invalid" 登録する
+        .button-center ng-hide="vm.canSubmit"
+          loading-directive size="125"

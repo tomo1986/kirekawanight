@@ -13,6 +13,29 @@ section.main-container.map-form-page user-form-directive=""
               span.title ng-class="{'is-text-danger': vm.errors.name}" name
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
+              select.form-control name="blood_type" ng-model="vm.user.shop_id"
+                option value=""  -- Please select --
+                option value="{{shop.id}}" ng-selected="vm.user.shop_id== shop.id" ng-repeat="shop in vm.shops"
+                  | {{shop.name}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" Job type
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              select.form-control name="job_type" ng-model="vm.user.job_type" disabled=""
+                option value=""  -- Please select --
+                option value="karaoke" ng-selected="vm.user.job_type == 'karaoke'"  KARAOKE
+                option value="bar" ng-selected="vm.user.job_type == 'bar'" GIRLS BAR
+                option value="massage" ng-selected="vm.user.job_type == 'massage'" MASSAGE
+                option value="sexy" ng-selected="vm.user.job_type == 'sexy'" SEXY
+              span.is-text-danger ng-if="vm.errors.job_type"
+                | {{vm.errors.job_type}}
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" name
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
               input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.user.name"
               span.is-text-danger ng-if="vm.errors.name"
                 | {{vm.errors.name}}
@@ -24,6 +47,21 @@ section.main-container.map-form-page user-form-directive=""
               input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.user.nick_name"
               span.is-text-danger ng-if="vm.errors.nick_name"
                 | {{vm.errors.nick_name}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.image_url}" MAP画像
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box.image-box--arry
+              .row
+                .col-md-4 ng-repeat="image in vm.images track by $index"
+                  .pic
+                    image-directive parent-class="pic" img-url="{{vm.images[$index].url}}"
+                    .hover-img
+                      input#fileInput.change-img-file type="file" name="image_url" ng-model="vm.images[$index].url" options="image.options" image-cropper=""
+                      span
+                        | Select Photo
+              .button-center
+                button.btn.main-btn type="button" ng-click="vm.addImage()" add image
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" birthday

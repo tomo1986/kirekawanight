@@ -18,7 +18,7 @@
           input.form-control type="password" name="password" required='' placeholder="aiueo" ng-model="customer.password"
 
     div.col-12-btn ng-if="isCreateFormDisplayed || isLoginFormDisplayed" style="margin-top:1rem;"
-      a.btn.main-btn href="javascript:void(0)" ng-click="onSubmited()"
+      a.btn.btn-submit href="javascript:void(0)" ng-click="onSubmited()"
         span 送信
 
     .clearfix ng-if="!isCreateFormDisplayed && !isLoginFormDisplayed"
@@ -28,7 +28,7 @@
             a.btn.main-btn href="javascript:void(0)" ng-click="onLogined()"  ng-if="!button.callbackFunc"
               span ログイン
           .login-customer-right
-            a.btn.main-btn href="javascript:void(0)" ng-click="onCreated()"  ng-if="!button.callbackFunc"
+            a.btn.btn-submit href="javascript:void(0)" ng-click="onCreated()"  ng-if="!button.callbackFunc"
               span 新規登録
       div.col-12-btn
         a.btn.main-btn href="javascript:void(0)" ng-click="close()"

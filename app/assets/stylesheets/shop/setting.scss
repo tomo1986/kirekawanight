@@ -1,0 +1,46 @@
+.capusule-index-page, .capusule-form-page{
+  .page-detail{float:left;font-size:.7rem;margin-left:1rem;}
+  .make-new-map{float:right;}
+  .function-box{
+    .map-title{display: inline-block;font-size: 1.2rem;margin-right:1rem;position: relative;top:4px;}
+    .map-type{display: inline-block;list-style: none;padding: 0;
+      & > li{border:3px solid #ccc;color:#ccc;font-size: .5rem;margin-right:.5rem;
+        &.active{border-color:#e69138;color:#e69138;}
+        &:hover{cursor: default;}
+      }
+
+    }
+  }
+}
+.setting-form-page{
+  .nav-tabs{margin-bottom:1rem;}
+  .capsule-image{width: 202px;height: 200px;padding:1px;}
+  .button-center{margin: 1rem auto;width: 150px;text-align: center;}
+  .capsule-select-btn-box{position: relative;top:60px;text-align: right;
+    .hover-img{height: 35px;opacity: 0.7;bottom: 20px;margin: 0 auto;font-size: .9rem;display: inline-block;border:1px solid transparent;width: 45%;
+      @media screen and (max-width: 535px) {
+        width: 100%;
+        margin-bottom:.5rem;
+      }
+      text-align: center;padding: 7px;border-radius: 5px;position: relative;
+      & > .change-img-file{border-radius: 0;-webkit-border-radius: 0;border-color: #9c9c9c;height: 35px;width: 100%;cursor: pointer;
+        filter: alpha(opacity=1);-moz-opacity: 0.01;opacity: 0.01;position: absolute;right: 0;top:0;}
+      &:first-child{margin-right:1rem;}
+      &.select-temp{background: $topnav-background-color;color: #fff;}
+      &.select-upload{background-color: #fff;color:#555;border-color:#555;}
+    }
+  }
+  .image-box{
+    .pic{height: 200px;width: 100%;overflow: hidden;display: table;border: 2px solid #ccc;
+      image-directive {position: relative;display: table-cell;vertical-align: middle;text-align: center;
+        & > img {width: auto;margin: auto;display: table-cell;position: absolute;top: 0;left: 0;bottom: 0;}
+      }
+
+      .hover-img{position: absolute;width: calc(100% - 1.885rem);height: 35px;background: #887567;opacity: 0.7;color: #fff;bottom: 0;margin: 0 auto;font-size: 16px;
+        text-align: center;padding: 7px;left: 0.9375rem;
+        & > .change-img-file{border-radius: 0;-webkit-border-radius: 0;border-color: #9c9c9c;height: 35px;width: 100%;cursor: pointer;top:0;
+          filter: alpha(opacity=1);-moz-opacity: 0.01;opacity: 0.01;position: absolute;right: 0;}
+      }
+    }
+  }
+}

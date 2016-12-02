@@ -1,0 +1,282 @@
+.modal-header
+  button.close aria-label="Close" data-dismiss="modal" type="button" ng-click="close()"
+    span aria-hidden="true"  &times;
+.modal-body
+  .title style="text-align:center;" スタンプのマスを設定する。
+  div style="margin-bottom:2rem;text-align:center;"
+    span style="color:#cfe2f3;"
+      | ■
+    | 選択可
+  .data-table-box.clearfix.celected-cell-table
+    table.make-table
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(1)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 1,'disable': has_capsule > 1}" ng-click="decideCellCount(1)" 1
+        td
+          div ng-mouseover="mouseOverCounter(2)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 2,'disable': has_capsule > 2}" ng-click="decideCellCount(2)"  2
+        td
+          div ng-mouseover="mouseOverCounter(3)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 3,'disable': has_capsule > 3}" ng-click="decideCellCount(3)"  3
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(4)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 4,'disable': has_capsule > 4}" ng-click="decideCellCount(4)"  4
+        td
+          div ng-mouseover="mouseOverCounter(5)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 5 ,'disable': has_capsule > 5}" ng-click="decideCellCount(5)" 5
+        td
+          div ng-mouseover="mouseOverCounter(6)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 6 ,'disable': has_capsule > 6}" ng-click="decideCellCount(6)"  6
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(7)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 7,'disable': has_capsule > 7}" ng-click="decideCellCount(7)" 7
+        td
+          div ng-mouseover="mouseOverCounter(8)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 8 ,'disable': has_capsule > 8}" ng-click="decideCellCount(8)"  8
+        td
+          div ng-mouseover="mouseOverCounter(9)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 9,'disable': has_capsule > 9}" ng-click="decideCellCount(9)"  9
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(10)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 10,'disable': has_capsule > 10}" ng-click="decideCellCount(10)"  10
+        td
+          div ng-mouseover="mouseOverCounter(11)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 11,'disable': has_capsule > 11}" ng-click="decideCellCount(11)" 11
+        td
+          div ng-mouseover="mouseOverCounter(12)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 12,'disable': has_capsule > 12}" ng-click="decideCellCount(12)"  12
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(13)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 13,'disable': has_capsule > 13}" ng-click="decideCellCount(13)" 13
+        td
+          div ng-mouseover="mouseOverCounter(14)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 14,'disable': has_capsule > 14}" ng-click="decideCellCount(14)"  14
+        td
+          div ng-mouseover="mouseOverCounter(15)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 15,'disable': has_capsule > 15}" ng-click="decideCellCount(15)"  15
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(16)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 16,'disable': has_capsule > 16}" ng-click="decideCellCount(16)"  16
+        td
+          div ng-mouseover="mouseOverCounter(17)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 17,'disable': has_capsule > 17}" ng-click="decideCellCount(17)" 17
+        td
+          div ng-mouseover="mouseOverCounter(18)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 18,'disable': has_capsule > 18}" ng-click="decideCellCount(18)"  18
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(19)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 19,'disable': has_capsule > 19}" ng-click="decideCellCount(19)" 19
+        td
+          div ng-mouseover="mouseOverCounter(20)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 20,'disable': has_capsule > 20}" ng-click="decideCellCount(20)"  20
+        td
+          div ng-mouseover="mouseOverCounter(21)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 21,'disable': has_capsule > 21}" ng-click="decideCellCount(21)"  21
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(22)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 22,'disable': has_capsule > 22}" ng-click="decideCellCount(22)"  22
+        td
+          div ng-mouseover="mouseOverCounter(23)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 23,'disable': has_capsule > 23}" ng-click="decideCellCount(23)" 23
+        td
+          div ng-mouseover="mouseOverCounter(24)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 24,'disable': has_capsule > 24}" ng-click="decideCellCount(24)"  24
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(25)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 25,'disable': has_capsule > 25}" ng-click="decideCellCount(25)" 25
+        td
+          div ng-mouseover="mouseOverCounter(26)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 26,'disable': has_capsule > 26}" ng-click="decideCellCount(26)"  26
+        td
+          div ng-mouseover="mouseOverCounter(27)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 27,'disable': has_capsule > 27}" ng-click="decideCellCount(27)"  27
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(28)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 28,'disable': has_capsule > 28}" ng-click="decideCellCount(28)"  28
+        td
+          div ng-mouseover="mouseOverCounter(29)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 29,'disable': has_capsule > 29}" ng-click="decideCellCount(29)" 29
+        td
+          div ng-mouseover="mouseOverCounter(30)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 30,'disable': has_capsule > 30}" ng-click="decideCellCount(30)"  30
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(31)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 31,'disable': has_capsule > 31}" ng-click="decideCellCount(31)" 31
+        td
+          div ng-mouseover="mouseOverCounter(32)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 32,'disable': has_capsule > 32}" ng-click="decideCellCount(32)"  32
+        td
+          div ng-mouseover="mouseOverCounter(33)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 33,'disable': has_capsule > 33}" ng-click="decideCellCount(33)"  33
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(34)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 34,'disable': has_capsule > 34}" ng-click="decideCellCount(34)"  34
+        td
+          div ng-mouseover="mouseOverCounter(35)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 35,'disable': has_capsule > 35}" ng-click="decideCellCount(35)" 35
+        td
+          div ng-mouseover="mouseOverCounter(36)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 36,'disable': has_capsule > 36}" ng-click="decideCellCount(36)"  36
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(37)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 37,'disable': has_capsule > 37}" ng-click="decideCellCount(37)"  37
+        td
+          div ng-mouseover="mouseOverCounter(38)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 38,'disable': has_capsule > 38}" ng-click="decideCellCount(38)" 38
+        td
+          div ng-mouseover="mouseOverCounter(39)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 39,'disable': has_capsule > 39}" ng-click="decideCellCount(39)"  39
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(40)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 40,'disable': has_capsule > 40}" ng-click="decideCellCount(40)"  40
+        td
+          div ng-mouseover="mouseOverCounter(41)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 41,'disable': has_capsule > 41}" ng-click="decideCellCount(41)" 41
+        td
+          div ng-mouseover="mouseOverCounter(42)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 42,'disable': has_capsule > 42}" ng-click="decideCellCount(42)"  42
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(43)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 43,'disable': has_capsule > 43}" ng-click="decideCellCount(43)"  43
+        td
+          div ng-mouseover="mouseOverCounter(44)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 44,'disable': has_capsule > 44}" ng-click="decideCellCount(44)"  44
+        td
+          div ng-mouseover="mouseOverCounter(45)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 45,'disable': has_capsule > 45}" ng-click="decideCellCount(45)" 45
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(46)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 46,'disable': has_capsule > 46}" ng-click="decideCellCount(46)"  46
+        td
+          div ng-mouseover="mouseOverCounter(47)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 47,'disable': has_capsule > 47}" ng-click="decideCellCount(47)" 47
+        td
+          div ng-mouseover="mouseOverCounter(48)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 48,'disable': has_capsule > 48}" ng-click="decideCellCount(48)"  48
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(49)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 49,'disable': has_capsule > 49}" ng-click="decideCellCount(49)"  49
+        td
+          div ng-mouseover="mouseOverCounter(50)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 50,'disable': has_capsule > 50}" ng-click="decideCellCount(50)"  50
+        td
+          div ng-mouseover="mouseOverCounter(51)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 51,'disable': has_capsule > 51}" ng-click="decideCellCount(51)"  51
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(52)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 52,'disable': has_capsule > 52}" ng-click="decideCellCount(52)" 52
+        td
+          div ng-mouseover="mouseOverCounter(53)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 53,'disable': has_capsule > 53}" ng-click="decideCellCount(53)"  53
+        td
+          div ng-mouseover="mouseOverCounter(54)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 54,'disable': has_capsule > 54}" ng-click="decideCellCount(54)"  54
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(55)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 55,'disable': has_capsule > 55}" ng-click="decideCellCount(55)"  55
+        td
+          div ng-mouseover="mouseOverCounter(56)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 56,'disable': has_capsule > 56}" ng-click="decideCellCount(56)"  56
+        td
+          div ng-mouseover="mouseOverCounter(57)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 57,'disable': has_capsule > 57}" ng-click="decideCellCount(57)" 57
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(58)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 58,'disable': has_capsule > 58}" ng-click="decideCellCount(58)"  58
+        td
+          div ng-mouseover="mouseOverCounter(59)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 59,'disable': has_capsule > 59}" ng-click="decideCellCount(59)"  59
+        td
+          div ng-mouseover="mouseOverCounter(60)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 60,'disable': has_capsule > 60}" ng-click="decideCellCount(60)"  60
+
+
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(61)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 61,'disable': has_capsule > 61}" ng-click="decideCellCount(61)"  61
+        td
+          div ng-mouseover="mouseOverCounter(62)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 62,'disable': has_capsule > 62}" ng-click="decideCellCount(62)" 62
+        td
+          div ng-mouseover="mouseOverCounter(63)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 63,'disable': has_capsule > 63}" ng-click="decideCellCount(63)"  63
+
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(64)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 64,'disable': has_capsule > 64}" ng-click="decideCellCount(64)"  64
+        td
+          div ng-mouseover="mouseOverCounter(65)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 65,'disable': has_capsule > 65}" ng-click="decideCellCount(65)"  65
+        td
+          div ng-mouseover="mouseOverCounter(66)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 66,'disable': has_capsule > 66}" ng-click="decideCellCount(66)"  66
+
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(67)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 67,'disable': has_capsule > 67}" ng-click="decideCellCount(67)" 67
+        td
+          div ng-mouseover="mouseOverCounter(68)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 68,'disable': has_capsule > 68}" ng-click="decideCellCount(68)"  68
+        td
+          div ng-mouseover="mouseOverCounter(69)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 69,'disable': has_capsule > 69}" ng-click="decideCellCount(69)"  69
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(70)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 70,'disable': has_capsule > 70}" ng-click="decideCellCount(70)"  70
+        td
+          div ng-mouseover="mouseOverCounter(71)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 71,'disable': has_capsule > 71}" ng-click="decideCellCount(71)"  71
+        td
+          div ng-mouseover="mouseOverCounter(72)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 72,'disable': has_capsule > 72}" ng-click="decideCellCount(72)" 72
+
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(73)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 73,'disable': has_capsule > 73}" ng-click="decideCellCount(73)"  73
+        td
+          div ng-mouseover="mouseOverCounter(74)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 74,'disable': has_capsule > 74}" ng-click="decideCellCount(74)"  74
+        td
+          div ng-mouseover="mouseOverCounter(75)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 75,'disable': has_capsule > 75}" ng-click="decideCellCount(75)"  75
+
+
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(76)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 76,'disable': has_capsule > 76}" ng-click="decideCellCount(76)"  76
+        td
+          div ng-mouseover="mouseOverCounter(77)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 77,'disable': has_capsule > 77}" ng-click="decideCellCount(77)" 77
+        td
+          div ng-mouseover="mouseOverCounter(78)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 78,'disable': has_capsule > 78}" ng-click="decideCellCount(78)"  78
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(79)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 79,'disable': has_capsule > 79}" ng-click="decideCellCount(79)"  79
+        td
+          div ng-mouseover="mouseOverCounter(80)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 80,'disable': has_capsule > 80}" ng-click="decideCellCount(80)"  80
+        td
+          div ng-mouseover="mouseOverCounter(81)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 81,'disable': has_capsule > 81}" ng-click="decideCellCount(81)"  81
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(82)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 82,'disable': has_capsule > 82}" ng-click="decideCellCount(82)" 82
+        td
+          div ng-mouseover="mouseOverCounter(83)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 83,'disable': has_capsule > 83}" ng-click="decideCellCount(83)"  83
+        td
+          div ng-mouseover="mouseOverCounter(84)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 84,'disable': has_capsule > 84}" ng-click="decideCellCount(84)"  84
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(85)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 85,'disable': has_capsule > 85}" ng-click="decideCellCount(85)"  85
+        td
+          div ng-mouseover="mouseOverCounter(86)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 86,'disable': has_capsule > 86}" ng-click="decideCellCount(86)"  86
+        td
+          div ng-mouseover="mouseOverCounter(87)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 87,'disable': has_capsule > 87}" ng-click="decideCellCount(87)" 87
+
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(88)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 88,'disable': has_capsule > 88}" ng-click="decideCellCount(88)"  88
+        td
+          div ng-mouseover="mouseOverCounter(89)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 89,'disable': has_capsule > 89}" ng-click="decideCellCount(89)"  89
+        td
+          div ng-mouseover="mouseOverCounter(90)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 90,'disable': has_capsule > 90}" ng-click="decideCellCount(90)"  90
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(91)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 91,'disable': has_capsule > 91}" ng-click="decideCellCount(91)"  91
+        td
+          div ng-mouseover="mouseOverCounter(92)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 92,'disable': has_capsule > 92}" ng-click="decideCellCount(92)"  92
+        td
+          div ng-mouseover="mouseOverCounter(93)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 93,'disable': has_capsule > 93}" ng-click="decideCellCount(93)"  93
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(94)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 94,'disable': has_capsule > 94}" ng-click="decideCellCount(94)"  94
+        td
+          div ng-mouseover="mouseOverCounter(95)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 95,'disable': has_capsule > 95}" ng-click="decideCellCount(95)"  95
+        td
+          div ng-mouseover="mouseOverCounter(96)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 96,'disable': has_capsule > 96}" ng-click="decideCellCount(96)"  96
+
+
+
+      tr
+        td
+          div ng-mouseover="mouseOverCounter(97)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 97,'disable': has_capsule > 97}" ng-click="decideCellCount(97)"  97
+        td
+          div ng-mouseover="mouseOverCounter(98)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 98,'disable': has_capsule > 98}" ng-click="decideCellCount(98)"  98
+        td
+          div ng-mouseover="mouseOverCounter(99)" ng-mouseout="selected_cell = null" ng-class="{'active': selected_cell >= 99,'disable': has_capsule > 99}" ng-click="decideCellCount(99)"  99

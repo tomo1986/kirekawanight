@@ -8,8 +8,7 @@ angular.module 'bisyoujoZukanNight'
   sm.getLoginCustomer = ->
     return sm.loginCustomer
   sm.clear = ->
-    api.postPromise('/api/front/api0_1',{}).then((res) ->
-      console.log(res)
+    api.postPromise('/api/front/logout',{}).then((res) ->
       sm.login_user = null
       return true
     )

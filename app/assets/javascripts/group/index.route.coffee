@@ -45,27 +45,27 @@ angular.module 'bijyoZukanGroup'
         action: 'update'
         templateUrl: '/group/tpl/user/form.html'
 
-    .state '/groups',
-      url: '/group/groups?page'
-      active_menu: 'group'
-      templateUrl: '/group/tpl/group/index.html'
+    .state '/shops',
+      url: '/group/shops?page'
+      active_menu: 'shop'
+      templateUrl: '/group/tpl/shop/index.html'
 
-    .state '/groups/:id/detail',
-      url: '/group/groups/:id/detail'
-      active_menu: 'group'
-      templateUrl: '/group/tpl/group/detail.html'
+    .state '/shops/:id/detail',
+      url: '/group/shops/:id/detail'
+      active_menu: 'shop'
+      templateUrl: '/group/tpl/shop/detail.html'
 
-    .state '/groups/new',
-      url: '/group/groups/new'
-      active_menu: 'group'
+    .state '/shops/new',
+      url: '/group/shops/new'
+      active_menu: 'shop'
       action: 'create'
-      templateUrl: '/group/tpl/group/form.html'
+      templateUrl: '/group/tpl/shop/form.html'
 
-    .state '/groups/:id/edit',
-      url: '/group/groups/:id/edit'
-      active_menu: 'group'
+    .state '/shops/:id/edit',
+      url: '/group/shops/:id/edit'
+      active_menu: 'shop'
       action: 'update'
-      templateUrl: '/group/tpl/group/form.html'
+      templateUrl: '/group/tpl/shop/form.html'
 
 
     .state '/contacts',

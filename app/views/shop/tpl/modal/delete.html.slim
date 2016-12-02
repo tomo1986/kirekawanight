@@ -1,0 +1,15 @@
+.modal-header
+  button.close aria-label="Close" data-dismiss="modal" type="button" ng-click="close()"
+    span aria-hidden="true"  &times;
+  h2.modal-title
+    span 本当に削除しますか?
+.modal-body
+  .data-table-box.clearfix
+    p ng-bind-html="message | noHTML | newlines"
+  .clearfix style="margin:1rem 0;"
+    p.col-xs-12.col-sm-6
+      button.btn.main-btn type="button" ng-click="executeDeletion()"
+        span 削除
+    p.col-xs-12.col-sm-6
+      button.btn.main-btn type="button" ng-click="close()"
+        span キャンセル

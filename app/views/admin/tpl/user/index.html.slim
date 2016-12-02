@@ -109,8 +109,8 @@ section.main-container.notification-index-page user-index-directive=""
             td.clearfix data-label="image"
               img ng-src="{{user.images[0].url}}" style="width:50px;" ng-if="user.images &&  user.images[0]"
             td.clearfix data-label="belong"
-              a href="/admin/groups/{{user.group.id}}/detail"
-                | {{user.group.name}}
+              a href="/admin/shops/{{user.shop.id}}/detail"
+                | {{user.shop.name}}
             td.clearfix data-label="dayly PV"  {{user.dayly_count}}
             td.clearfix data-label="weekly PV"  {{user.weekly_count}}
             td.clearfix data-label="monthly PV"  {{user.monthly_count}}

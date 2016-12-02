@@ -1,0 +1,44 @@
+section.main-container.notification-index-page banner-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | プッシュ通知
+      .make-new-map
+        a.btn.make-btn href="/group/banner/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th id
+            th place
+            th group
+            th dayly PV
+            th weekly PV
+            th monthly PV
+            th support count
+            th post count
+            th edit
+            th delete
+        tbody
+          tr(dir-paginate="item in vm.items | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="id"  {{item.deliver_device_count}}
+            td.clearfix data-label="image" {{item.deliver_device_count}}
+            td.clearfix data-label="group"  {{item.deliver_device_count}}
+            td.clearfix data-label="dayly PV"  {{item.deliver_device_count}}
+            td.clearfix data-label="weekly PV"  {{item.deliver_device_count}}
+            td.clearfix data-label="monthly PV"  {{item.deliver_device_count}}
+            td.clearfix data-label="support count"  {{item.deliver_device_count}}
+            td.clearfix data-label="post count"  {{item.deliver_device_count}}
+            td.clearfix data-label="編集"
+              a.btn.action-btn ng-click="vm.onEditButtonClicked(item)" 編集
+            td.clearfix data-label="削除"
+              a.btn.action-btn ng-click="vm.onCancelButtonClicked(item)" 削除
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/group/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+
+
+

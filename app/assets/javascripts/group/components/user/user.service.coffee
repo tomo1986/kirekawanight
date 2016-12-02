@@ -6,35 +6,52 @@ angular.module 'bijyoZukanGroup'
   sm.setLoginUser = (user)-> sm.login_user = user
   sm.getLoginUser = -> return sm.login_user
   sm.clear = ->
-    api.postPromise('/api/group/api3',{}).then((res) ->
+    api.postPromise('/api/group/logout',{}).then((res) ->
       sm.login_user = null
-      return true
-    )
-  sm.newUser = ->
-    api.getPromise('/api/group/api10',{}).then((res) ->
-      return res
-    )
-
-  sm.createUser = (opt_user)->
-    api.postPromise('/api/group/api11',opt_user).then((res) ->
-      return res
-    )
-  sm.updateUser = (opt_user) ->
-    api.postPromise('/api/group/api13',opt_user).then((res) ->
-      return res
-    )
-  sm.getUser = (opt_user_id) ->
-    api.getPromise('/api/group/api9',{id:opt_user_id}).then((res) ->
+      window.location.reload()
       return res
     )
 
 
   sm.getUsers = (opt_filter)->
-    api.getPromise('/api/group/api8',opt_filter).then((res) ->
+    api.getPromise('/api/group/api11',opt_filter).then((res) ->
       return res
     )
-  sm.getSubjects = ->
-    api.getPromise('/api/group/api15',{}).then((res) ->
+
+  sm.newUser = ->
+    api.getPromise('/api/group/api12',{}).then((res) ->
+      return res
+    )
+
+  sm.createUser = (opt_user)->
+    api.postPromise('/api/group/api13',opt_user).then((res) ->
+      return res
+    )
+
+  sm.getUser = (opt_user_id) ->
+    api.getPromise('/api/group/api14',{id:opt_user_id}).then((res) ->
+      return res
+    )
+
+
+  sm.updateUser = (opt_user) ->
+    api.postPromise('/api/group/api15',opt_user).then((res) ->
+      return res
+    )
+
+  sm.deleteUser = (opt_user_id) ->
+    api.postPromise('/api/group/api16',opt_user_id).then((res) ->
+      return res
+    )
+
+
+  sm.getDate = (opt_id) ->
+    api.getPromise('/api/group/api17',{id: opt_id}).then((res) ->
+      return res
+    )
+
+  sm.getContacts = (opt_id) ->
+    api.getPromise('/api/group/api18',{id: opt_id}).then((res) ->
       return res
     )
 
@@ -786,14 +803,6 @@ angular.module 'bijyoZukanGroup'
       birthday:{required: 'birthday is required entry'}
     }
   }
-  sm.getDate = (opt_id) ->
-    api.getPromise('/api/group/api40',{id: opt_id}).then((res) ->
-      return res
-    )
-  sm.getContacts = (opt_id) ->
-    api.getPromise('/api/group/api42',{id: opt_id}).then((res) ->
-      return res
-    )
 
 
   service =
@@ -811,5 +820,6 @@ angular.module 'bijyoZukanGroup'
     getSubjects: sm.getSubjects
     validations : sm.validations
     getValidationRule: sm.getValidationRule
+    deleteUser: sm.deleteUser
     getDate: sm.getDate
     getContacts: sm.getContacts

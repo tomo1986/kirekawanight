@@ -1,0 +1,89 @@
+section.main-container.map-form-page user-form-directive=""
+  .container-fluid
+    form role="form" ng-submit='vm.submit()' name="mapForm" novalidate=''
+      .row
+        breadcrumb-directive data="vm.breadcrumb"
+        h2.page-header
+          | MAP新規登録
+      .row
+        table.res-form-table style="margin-bottom: 4rem;"
+          caption Profile
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" name
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.user.name"
+              span.is-text-danger ng-if="vm.errors.name"
+                | {{vm.errors.name}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" nick name
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.user.nick_name"
+              span.is-text-danger ng-if="vm.errors.nick_name"
+                | {{vm.errors.nick_name}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" birthday
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="birthday" data="vm.user" options="vm.birthday_options" ng-model="vm.user.birthday"
+              span.is-text-danger ng-if="vm.errors.birthday"
+                | {{vm.errors.birthday}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" birthplace
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="birthplace" placeholder="aiueo" ng-model="vm.user.birthplace"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" residence
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="residence" placeholder="aiueo" ng-model="vm.user.residence"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" blood_type
+            td.res-form-table__td.input-box
+              select.form-control name="blood_type" ng-model="vm.user.blood_type"
+                option value=""  -- Please select --
+                option value="A" A
+                option value="B" B
+                option value="O" O
+                option value="AB" AB
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title Talk
+            td.res-form-table__td.input-box
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.user.is_japanese"
+                | japanese
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.user.is_english"
+                | english
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.user.is_chinese"
+                | chinese
+              label.form-check-inline
+                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.user.is_korean"
+                | korean
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" body
+            td.res-form-table__td.input-box
+              dl
+                dt
+                  | height
+                dd
+                  input.form-control type="text" name="height" placeholder="aiueo" ng-model="vm.user.height"
+                dt
+                  | weight
+                dd
+                  input.form-control type="text" name="weight" placeholder="aiueo" ng-model="vm.user.weight"
+
+        .button-center ng-show="vm.canSubmit"
+          button.btn.main-btn type="submit" 登録する
+        .button-center ng-hide="vm.canSubmit"
+          loading-directive size="125"

@@ -260,15 +260,6 @@
           background-color: #222;
           color: $_brand-basic;
           position: relative;
-          &:before {
-            font-family: FontAwesome;
-            content: "\f00c";
-            display: inline-block;
-            padding-right: $row-space-half;
-            vertical-align: initial;
-            color: $_brand-basic;
-            font-size:1.1rem;
-          }
 
         }
         p {
@@ -462,6 +453,7 @@
         float: none;
         width: calc(100% + 1.875rem);
         height: auto;
+        padding:1rem;
         .name-area {
           margin:0;
           h3 {
@@ -489,7 +481,7 @@
           margin: 0;
           width: calc(100% - 182px);
           position: absolute;
-          top: -95%;
+          top: -60%;
           right: 0px;
           text-align: center;
           padding: 0 $row-space;
@@ -555,6 +547,7 @@
         float: none;
         width: calc(100% + 1.875rem);
         height: auto;
+        padding:1rem;
         .name-area {
           margin:0;
           h3 {
@@ -663,6 +656,7 @@
     color: #E2D39F;
     text-shadow: 2px 2px 10px #f7cb47;
   }
+
 }
 .blinking{
   -webkit-animation:blink 1s ease-in-out infinite alternate;

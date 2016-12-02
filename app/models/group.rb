@@ -4,7 +4,7 @@ class Group < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many  :images, class_name: 'ImageType::Group', as: :subject, dependent: :destroy, :autosave => true
-  has_many :users
+  has_many :shops
   has_many :time_discounts, class_name: 'DiscountType::Time'
 
   has_many  :contacts, class_name: 'ContactType::GroupDetail', as: :subject, dependent: :destroy, :autosave => true

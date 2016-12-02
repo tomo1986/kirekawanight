@@ -9,17 +9,17 @@ nav.sidebar ng-class="{'sidebarPushRight': vm.isActive}"
           i.fa.fa-fw.fa-dashboard
         span.menu-text Dashboard
     li
-      a.list-group-item ng-class="{'router-link-active': vm.active == 'group'}" href="/group/groups/#{current_group.id}/detail" ng-click="vm.eventCalled()"
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'shop'}" href="/group/shops" ng-click="vm.eventCalled()"
         .menu-icon
           i.fa.fa-fw.fa-building
-        span.menu-text Groups
+        span.menu-text Shops
     li
       a.list-group-item ng-class="{'router-link-active': vm.active == 'user'}" href="/group/users" ng-click="vm.eventCalled()"
         .menu-icon
           i.fa.fa-fw.fa-users
         span.menu-text Users
     li
-      a.list-group-item ng-class="{'router-link-active': vm.active == 'user'}" href="/group/discounts" ng-click="vm.eventCalled()"
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'discount'}" href="/group/discounts" ng-click="vm.eventCalled()"
         .menu-icon
-          i.fa.fa-fw.fa-users
+          i.fa.fa-fw.fa-cart-arrow-down
         span.menu-text Discounts

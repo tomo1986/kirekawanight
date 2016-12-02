@@ -1,15 +1,18 @@
 angular.module 'bijyoZukanAdmin'
 .factory 'user', (api) ->
   sm = this
-  sm.login_user = null
-  sm.isLogin = -> return Boolean(sm.login_user)
-  sm.setLoginUser = (user)-> sm.login_user = user
-  sm.getLoginUser = -> return sm.login_user
-  sm.clear = ->
-    api.postPromise('/api/admin/api3',{}).then((res) ->
-      sm.login_user = null
-      return true
+
+  sm.getUsers = (opt_filter)->
+    api.getPromise('/api/admin/api8',opt_filter).then((res) ->
+      return res
     )
+
+  sm.getUser = (opt_user_id) ->
+    api.getPromise('/api/admin/api9',{id:opt_user_id}).then((res) ->
+      return res
+    )
+
+
   sm.newUser = ->
     api.getPromise('/api/admin/api10',{}).then((res) ->
       return res
@@ -19,26 +22,22 @@ angular.module 'bijyoZukanAdmin'
     api.postPromise('/api/admin/api11',opt_user).then((res) ->
       return res
     )
+
   sm.updateUser = (opt_user) ->
-    api.postPromise('/api/admin/api13',opt_user).then((res) ->
+    api.postPromise('/api/admin/api12',opt_user).then((res) ->
       return res
     )
-  sm.getUser = (opt_user_id) ->
-    api.getPromise('/api/admin/api9',{id:opt_user_id}).then((res) ->
+  sm.deleteUser = (opt_user_id) ->
+    api.postPromise('/api/group/api13',opt_user_id).then((res) ->
       return res
     )
 
-
-  sm.getUsers = (opt_filter)->
-    api.getPromise('/api/admin/api8',opt_filter).then((res) ->
-      return res
-    )
-  sm.getSubjects = ->
-    api.getPromise('/api/admin/api15',{}).then((res) ->
+  sm.allShops = ->
+    api.getPromise('/api/admin/all_shops',{}).then((res) ->
       return res
     )
   sm.getTags = ->
-    api.getPromise('/api/admin/api44',{}).then((res) ->
+    api.getPromise('/api/admin/all_tags',{}).then((res) ->
       return res
     )
 
@@ -801,18 +800,14 @@ angular.module 'bijyoZukanAdmin'
 
 
   service =
-    login_user: sm.login_user
-    isLogin: sm.isLogin
-    setLoginUser: sm.setLoginUser
-    getLoginUser: sm.getLoginUser
-    clear: sm.clear
     profile: sm.profile
     newUser: sm.newUser
     createUser: sm.createUser
     updateUser: sm.updateUser
     getUser: sm.getUser
     getUsers: sm.getUsers
-    getSubjects: sm.getSubjects
+    deleteUser: sm.deleteUser
+    allShops: sm.allShops
     validations : sm.validations
     getValidationRule: sm.getValidationRule
     getDate: sm.getDate

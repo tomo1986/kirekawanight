@@ -22,10 +22,10 @@ angular.module 'bisyoujoZukanNight'
       vm.errors = validationService.checks(vm.loginCustomer,vm.validations)
       return window.scrollTo(0, 0) if Object.keys(vm.errors) && Object.keys(vm.errors).length > 0
 
-      api.postPromise('/api/front/api10',vm.loginCustomer).then((res) ->
+      api.postPromise('/api/front/api0',vm.loginCustomer).then((res) ->
         console.log(res)
         if res.data.code == 1
-          window.location.reload()
+          window.location.href = if /login/.test($rootScope.history_url) then '/' else $rootScope.history_url
         else
           modalService.alert('エラー',res.data.message)
       )
@@ -36,7 +36,7 @@ angular.module 'bisyoujoZukanNight'
 
       api.postPromise('/api/front/api9',vm.newCustomer).then((res) ->
         if res.data.code == 1
-          window.location.reload()
+          window.location.href = if /login/.test($rootScope.history_url) then '/' else $rootScope.history_url
         else
           modalService.alert('エラー',res.data.message)
       )

@@ -1,0 +1,45 @@
+section.main-container.notification-index-page discount-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | プッシュ通知
+    .row
+      .page-detail
+        | プッシュ通知一覧です。
+        br
+        | お客様のスマートフォンに通知することができます。
+      .make-new-map
+        a.btn.make-btn href="/shop/discounts/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th id
+            th shop name
+            th price
+            th start_at
+            th end_at
+            th 編集
+        tbody
+          tr(dir-paginate="item in vm.discounts | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="id"
+              | {{item.id}}
+            td.clearfix data-label="shop name"
+              a href="/shop/shops/{{item.subject.id}}/detail" ng-if="item.subject_type == 'Shop'"
+                | {{item.subject.name}}
+              a href="/shop/users/{{item.subject.id}}/detail" ng-if="item.subject_type == 'User'"
+                | {{item.subject.name}}
+            td.clearfix data-label="price"  {{item.price}}USD
+            td.clearfix data-label="start_at"  {{item.start_at | date: 'yyyy年M月d日 HH:mm'}}
+            td.clearfix data-label="end_at"  {{item.end_at | date: 'yyyy年M月d日 HH:mm'}}
+            td.clearfix data-label="編集"
+              a.btn.action-btn href="/shop/discounts/{{item.id}}/edit" 編集
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/shop/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+
+
+

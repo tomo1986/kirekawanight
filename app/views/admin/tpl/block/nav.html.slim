@@ -14,6 +14,13 @@ nav.sidebar ng-class="{'sidebarPushRight': vm.isActive}"
           i.fa.fa-fw.fa-building
         span.menu-text Groups
     li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'shop'}" href="/admin/shops" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-building
+        span.menu-text Shops
+
+
+    li
       a.list-group-item ng-class="{'router-link-active': vm.active == 'user'}" href="/admin/users" ng-click="vm.eventCalled()"
         .menu-icon
           i.fa.fa-fw.fa-users

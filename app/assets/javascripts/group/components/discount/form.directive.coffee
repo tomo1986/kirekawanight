@@ -1,22 +1,26 @@
 angular.module 'bijyoZukanGroup'
 .directive 'discountFormDirective',  ->
-  DiscountFormController = (api,discountService, groupService,modalService,datePickerService,$state,validationService) ->
+  DiscountFormController = (api,discountService, groupService,modalService,datePickerService,$state,validationService, shopService) ->
     vm = this
     self = vm
 
     vm.init = ->
+      shopService.getShops({}).then((res) ->
+       if res.data.code == 1
+         vm.shops = res.data.shops
+      )
       vm.canSubmit = true
       vm.breadcrumb = [{name:'Dashboard',link:'/business'},{name:'MAP編集',link:'/business/maps'}]
       vm.subjectList = []
       vm.start_at_options={
-        from:{is_from:true,date:null}
+        from:{is_from:true,date: null}
         enable_time: true
         format: 'yyyy-MM-dd HH:mm'
         is_required:true
         placeholder:'必須'
       }
       vm.end_at_options={
-        from:{is_from:true,date:null}
+        to:{is_from:true,date:null}
         enable_time: true
         format: 'yyyy-MM-dd HH:mm'
         is_required:true
@@ -42,7 +46,6 @@ angular.module 'bijyoZukanGroup'
     vm.newDiscount = () ->
       discountService.newDiscount().then((res) ->
         vm.discount = res.data.discount
-        vm.discount.tel = vm.group.tel
         vm.discount.is_displayed = 1
       )
 
@@ -51,6 +54,7 @@ angular.module 'bijyoZukanGroup'
       buttons = [
         {name:'return lists',link:"/group/discounts"}
       ]
+      console.log("submit",vm.discount)
       if vm.action == 'update'
         discountService.updateDiscount(vm.discount).then((res) ->
           vm.discount = res.data.discount
@@ -74,13 +78,21 @@ angular.module 'bijyoZukanGroup'
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
-
-    scope.$watch("vm.discount.subject_type",(val) ->
-      if val == 'Group'
-        scope.vm.subjectList = scope.vm.groups
-      else if val == 'User'
-        scope.vm.subjectList = scope.vm.users
+    scope.$watch("vm.discount.subject_id",(newVal,oldVal) ->
+      if newVal != oldVal && oldVal != undefined
+        angular.forEach(scope.vm.shops,(shop) ->
+          scope.vm.discount.tel = shop.tel if Number(newVal) == Number(shop.id)
+        )
     )
+    scope.$watch("vm.discount.start_at",(newVal,oldVal) ->
+      if newVal != oldVal && newVal != undefined
+        scope.vm.end_at_options.to.date = newVal
+    )
+    scope.$watch("vm.discount.end_at",(newVal,oldVal) ->
+      if newVal != oldVal && newVal != undefined
+        scope.vm.start_at_options.from.date = newVal
+    )
+
 
     return
 

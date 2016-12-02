@@ -1,21 +1,21 @@
 
-.main-content.group-detail-page.clearfix group-karaoke-detail-directive=""
+.main-content.shop-detail-page.clearfix shop-karaoke-detail-directive=""
   .container
     breadcrumb-directive data="vm.breadcrumb"
   .top-view-box
-    .shop-cover-wrap style="background-image:url({{vm.groupMainImg}});"
+    .shop-cover-wrap style="background-image:url({{vm.shopMainImg}});"
       .shopCover
       .container
-        img src="{{vm.groupMainImg}}"
+        img src="{{vm.shopMainImg}}"
   .container
     main#main
       .rank-box.shop-top-box
         h2.shop-name
-          | {{vm.group.name}}
+          | {{vm.shop.name}}
         .shop-tags
-          a.btn ng-repeat="tag in vm.group.tags"
+          a.btn ng-repeat="tag in vm.shop.tags"
             | {{tag.name}}
-        p.shop-copy ng-bind-html="vm.group.service | noHTML | newlines"
+        p.shop-copy ng-bind-html="vm.shop.service | noHTML | newlines"
         .shop-button-box.clearfix
           .favorite
             a.btn ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()" お気に入り登録
@@ -35,7 +35,7 @@
         .page-title
           h2.title
             | INTORODUCTION
-        div ng-bind-html="vm.group.interview_ja"
+        div ng-bind-html="vm.shop.interview_ja"
       .rank-box.shop-new-face
         .page-title
           h2.title
@@ -104,54 +104,54 @@
           tr
             th 予算
             td
-              | {{vm.group.budget_yen}}円
+              | {{vm.shop.budget_yen}}円
               br
-              | {{vm.group.budget_vnd}}VND
+              | {{vm.shop.budget_vnd}}VND
               br
-              | {{vm.group.budget_usd}}USD
+              | {{vm.shop.budget_usd}}USD
 
           tr
             th chip有無
             td
-              div ng-if="vm.group.chip == 'no_need'"
+              div ng-if="vm.shop.chip == 'no_need'"
                 | 無
-              div ng-if="vm.group.chip == 'need'"
+              div ng-if="vm.shop.chip == 'need'"
                 | 有
-              div ng-if="vm.group.chip == 'up_to_you'"
+              div ng-if="vm.shop.chip == 'up_to_you'"
                 | どちらでも
           tr
             th OPEN時間
             td
-              | {{vm.group.opened_at | date: 'HH:mm'}} 〜 {{vm.group.closed_at | date: 'HH:mm'}}
+              | {{vm.shop.opened_at | date: 'HH:mm'}} 〜 {{vm.shop.closed_at | date: 'HH:mm'}}
           tr
             th card
             td
-              div ng-if="vm.group.is_credit"
+              div ng-if="vm.shop.is_credit"
                 = image_tag 'front/card.png', alt:"card list"
-              div ng-if="!vm.group.is_credit"
+              div ng-if="!vm.shop.is_credit"
                 | 使用できません
           tr
             th 在籍女性
             td
-              | {{vm.group.girls_count}}名
+              | {{vm.shop.girls_count}}名
           tr
             th 喫煙
             td
-              div ng-if="vm.group.is_smoked"
+              div ng-if="vm.shop.is_smoked"
                 | 可
-              div ng-if="!vm.group.is_smoked"
+              div ng-if="!vm.shop.is_smoked"
                 | 不可
 
           tr
             th lungerge
             td
-              div ng-if="vm.group.is_japanese"
+              div ng-if="vm.shop.is_japanese"
                 | 日本語
-              div ng-if="vm.group.is_english"
+              div ng-if="vm.shop.is_english"
                 | English
-              div ng-if="vm.group.is_korean"
+              div ng-if="vm.shop.is_korean"
                 | Korean
-              div ng-if="vm.group.is_chinese"
+              div ng-if="vm.shop.is_chinese"
                 | Chinese
       #map.rank-box.shop-map.clearfix
         .page-title
@@ -160,24 +160,24 @@
         .col-md-12
           .row
             .col-md-6
-              ng-map zoom="16" default-style="true" center="{{vm.group.lon}},{{vm.group.lat}}" styles="{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
-                marker id='{{vm.group.id}} ' title="{{vm.group.address}}" position=" {{vm.group.lon}}, {{vm.group.lat}}"
+              ng-map zoom="16" default-style="true" center="{{vm.shop.lon}},{{vm.shop.lat}}" styles="{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
+                marker id='{{vm.shop.id}} ' title="{{vm.shop.address}}" position=" {{vm.shop.lon}}, {{vm.shop.lat}}"
             .col-md-6
               .shop-map--info-box
                 .shop-map--info-wrap
                   .shop-name-titlt
                     .shop-map--info-name
-                      | {{vm.group.name}}
+                      | {{vm.shop.name}}
                   dl.profile.clearfix
                     dt TEL
                     dd
-                      | {{vm.group.tel}}
+                      | {{vm.shop.tel}}
                     dt EMAIL
                     dd
-                      | {{vm.group.email}}
+                      | {{vm.shop.email}}
                     dt ADDRESS
                     dd
-                      | {{vm.group.address}}
+                      | {{vm.shop.address}}
 
       #contact.rank-box.shop-map.clearfix
         .page-title
@@ -199,7 +199,7 @@
                     span.title 折り返し連絡手段選択
                     span.btn.required 必須
                   td
-                    .form-group.clearfix
+                    .form-shop.clearfix
                       .col-xs-12
                         label.radio-inline
                           input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email

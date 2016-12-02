@@ -46,12 +46,12 @@
           table.res-form-table ng-if="vm.timeServices.length > 0"
             tr.news-list__item ng-repeat="discount in vm.timeServices"
               td
-                | {{discount.group.job_type}}
+                | {{discount.subject.job_type}}
               td
                 p ng-bind-html="discount.content"
               td
-                a href="/groups/{{discount.group.job_type}}/{{discount.group.id}}"
-                  | {{discount.group.name}}
+                a href="/shops/{{discount.shop.job_type}}/{{discount.shop.id}}"
+                  | {{discount.subject.name}}
 
 
 

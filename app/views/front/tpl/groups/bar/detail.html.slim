@@ -1,15 +1,15 @@
 
-.main-content.group-detail-page.clearfix group-bar-detail-directive=""
+.main-content.shop-detail-page.clearfix shop-bar-detail-directive=""
   .container
     breadcrumb-directive data="vm.breadcrumb"
   .top-view-box
-    .shop-cover-wrap style="background-image:url({{vm.groupMainImg}});"
+    .shop-cover-wrap style="background-image:url({{vm.shopMainImg}});"
       .shopCover
       .container
-        img src="{{vm.groupMainImg}}"
+        img src="{{vm.shopMainImg}}"
   .container
     main#main
-      ul.group-nav--list
+      ul.shop-nav--list
         li
           a href="#intoroduction"
             h3 INTORODUCTION
@@ -30,9 +30,9 @@
             h3 REVIEW
       .rank-box.shop-top-box
         h2.shop-name
-          | {{vm.group.name}}
+          | {{vm.shop.name}}
         .shop-tags
-          a.btn href="" ng-repeat="tag in vm.group.tags"
+          a.btn href="" ng-repeat="tag in vm.shop.tags"
             | {{tag.name}}
 
         p.shop-copy
@@ -48,7 +48,7 @@
         .page-title
           h2.title
             | INTORODUCTION
-        div ng-bind-html="vm.group.interview_ja"
+        div ng-bind-html="vm.shop.interview_ja"
       #cast.rank-box.shop-new-face
         .page-title
           h2.title
@@ -104,7 +104,7 @@
           tr
             th lungerge
             td
-              | {{vm.group.is_japanese}}
+              | {{vm.shop.is_japanese}}
       #map.rank-box.shop-map.clearfix
         .page-title
           h2.title
@@ -112,24 +112,24 @@
         .col-md-12
           .row
             .col-md-6
-              ng-map zoom="14" default-style="true" center="{{vm.group.lon}},{{vm.group.lat}}" styles="[{stylers:[{hue:'#ad9a58'},{visibility:'simplified'},{gamma:0.5},{weight:0.5}]},{elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
-                marker id='{{vm.group.id}} ' title="{{vm.group.address}}" position=" {{vm.group.lon}}, {{vm.group.lat}}"
+              ng-map zoom="14" default-style="true" center="{{vm.shop.lon}},{{vm.shop.lat}}" styles="[{stylers:[{hue:'#ad9a58'},{visibility:'simplified'},{gamma:0.5},{weight:0.5}]},{elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
+                marker id='{{vm.shop.id}} ' title="{{vm.shop.address}}" position=" {{vm.shop.lon}}, {{vm.shop.lat}}"
             .col-md-6
               .shop-map--info-box
                 .shop-map--info-wrap
                   .shop-name-titlt
                     .shop-map--info-name
-                      | {{vm.group.name}}
+                      | {{vm.shop.name}}
                   dl.profile.clearfix
                     dt TEL
                     dd
-                      | {{vm.group.tel}}
+                      | {{vm.shop.tel}}
                     dt EMAIL
                     dd
-                      | {{vm.group.email}}
+                      | {{vm.shop.email}}
                     dt ADDRESS
                     dd
-                      | {{vm.group.address}}
+                      | {{vm.shop.address}}
       #contact.rank-box.shop-map.clearfix
         .page-title
           h2.title
@@ -150,7 +150,7 @@
                     span.title 折り返し連絡手段選択
                     span.btn.required 必須
                   td
-                    .form-group.clearfix
+                    .form-shop.clearfix
                       .col-xs-12
                         label.radio-inline
                           input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email

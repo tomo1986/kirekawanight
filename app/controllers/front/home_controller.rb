@@ -34,7 +34,7 @@ class Front::HomeController < ApplicationController
     redirect_to root_path
   end
 
-  def group_karaoke
+  def shop_karaoke
     p "soeya"
     @head_title = "ベトナム・ホーチミン/ハノイでカラオケの女の子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
@@ -42,29 +42,29 @@ class Front::HomeController < ApplicationController
     render action: :index
   end
 
-  def group_karaoke_detail
+  def shop_karaoke_detail
 
   end
 
-  def group_bar
+  def shop_bar
     @head_title = "ベトナム・ホーチミン/ハノイでガールズバーの女の子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
     @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛いガールズバーの女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
-  def group_bar_detail
+  def shop_bar_detail
 
   end
 
-  def group_massage
+  def shop_massage
     @head_title = "ベトナム・ホーチミン/ハノイでマッサージの女の子と夜遊び！！ | 見つかる出会える女の子数No.1「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
     @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛いマッサージの女の子がきっと見つかる夜遊びサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワ"
     render action: :index
   end
 
-  def group_massage_detail
+  def shop_massage_detail
 
   end
 

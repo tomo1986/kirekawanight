@@ -1,25 +1,23 @@
 angular.module 'bijyoZukanAdmin'
 .factory 'groupService', (api) ->
   sm = this
-  sm.login_user = null
-  sm.isLogin = -> return Boolean(sm.login_user)
-  sm.setLoginUser = (user)-> sm.login_user = user
-  sm.getLoginUser = -> return sm.login_user
-  sm.clear = ->
-    api.postPromise('/api/admin/api3',{}).then((res) ->
-      sm.login_user = null
-      return true
+
+  sm.getGroups = (opt_filter) ->
+    api.getPromise('/api/admin/api2', opt_filter).then((res) ->
+      return res
     )
   sm.newGroup = ->
     api.getPromise('/api/admin/api3',{}).then((res) ->
       return res
     )
-  sm.getGroup = (opt_group_id) ->
-    api.getPromise('/api/admin/api5',{id: opt_group_id}).then((res) ->
-      return res
-    )
+
   sm.createGroup = (opt_group) ->
     api.postPromise('/api/admin/api4',opt_group).then((res) ->
+      return res
+    )
+
+  sm.getGroup = (opt_group_id) ->
+    api.getPromise('/api/admin/api5',{id: opt_group_id}).then((res) ->
       return res
     )
   sm.updateGroup = (opt_group) ->
@@ -27,10 +25,13 @@ angular.module 'bijyoZukanAdmin'
       return res
     )
 
-  sm.getGroups = (opt_filter) ->
-    api.getPromise('/api/admin/api2', opt_filter).then((res) ->
+  sm.deleteGroup = (opt_prams) ->
+    api.postPromise('/api/admin/api7',opt_prams).then((res) ->
       return res
     )
+
+
+
   sm.getValidationRule = -> return sm.validations
   sm.validations = {
     rules:{
@@ -71,18 +72,9 @@ angular.module 'bijyoZukanAdmin'
     api.getPromise('/api/admin/api43',{id: opt_id}).then((res) ->
       return res
     )
-  sm.getTags = ->
-    api.getPromise('/api/admin/api44',{}).then((res) ->
-      return res
-    )
 
 
   service =
-    login_user: sm.login_user
-    isLogin: sm.isLogin
-    setLoginUser: sm.setLoginUser
-    getLoginUser: sm.getLoginUser
-    clear: sm.clear
     newGroup: sm.newGroup
     getGroup: sm.getGroup
     createGroup: sm.createGroup
@@ -92,4 +84,4 @@ angular.module 'bijyoZukanAdmin'
     getValidationRule: sm.getValidationRule
     getDate: sm.getDate
     getContacts: sm.getContacts
-    getTags: sm.getTags
+    deleteGroup: sm.deleteGroup

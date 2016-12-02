@@ -25,14 +25,14 @@ section.main-container.map-form-page user-form-directive=""
               span.is-text-danger ng-if="vm.errors.nick_name"
                 | {{vm.errors.nick_name}}
 
-          tr ng-if="vm.action == 'create'"
+          tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" group select
+              span.title ng-class="{'is-text-danger': vm.errors.name}" shop select
             td.res-form-table__td.input-box
-              select.form-control name="group_id" ng-model="vm.user.group_id"
+              select.form-control name="shop_id" ng-model="vm.user.shop_id"
                 option value=""  -- Please select --
-                option value="{{group.id}}" ng-repeat="group in vm.groups"
-                  | {{group.name}}
+                option value="{{shop.id}}" ng-repeat="shop in vm.shops"
+                  | {{shop.name}}
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" Job type
@@ -156,6 +156,16 @@ section.main-container.map-form-page user-form-directive=""
                         | 画像選択
               .button-center
                 button.btn.main-btn type="button" ng-click="vm.addImage()" add image
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" blog
+            td.res-form-table__td.input-box
+              .form-group.clearfix
+                .col-xs-12
+                  label.radio-inline
+                    input name="is_blog" type="radio" value="1" ng-model="vm.user.is_blog" ng-selected="vm.user.is_blog == '1'" 書く
+                  label.radio-inline
+                    input name="is_blog" type="radio" value="0" ng-model="vm.user.is_blog" ng-selected="vm.user.is_blog == '0'" 書かない
 
         ul.nav.nav-justified.nav-tabs style="margin-bottom: 1rem;"
           li.nav-item ng-class="{'active':vm.active_tab == 'ja'}"
@@ -176,9 +186,8 @@ section.main-container.map-form-page user-form-directive=""
               span.title
                 | {{vm.profile[key][vm.active_tab].name}}
             td.res-form-table__td.input-box
-              textarea.form-control row="2" placeholder="{{vm.profile[key][vm.active_tab].placeholder}}" ng-model="vm.user[vm.active_tab][key]" ng-if=" key != 'interview'"
-              textarea.form-control ckeditor="vm.options" ng-model="vm.user[vm.active_tab][key]" ng-if=" key == 'interview'"
-
+              textarea.form-control row="3" placeholder="{{vm.profile[key][vm.active_tab].placeholder}}" ng-model="vm.user[vm.active_tab][key]"
+              /textarea.form-control ckeditor="vm.options" ng-model="vm.user[vm.active_tab][key]" ng-if=" key == 'interview'"
 
         .button-center ng-show="vm.canSubmit"
           button.btn.main-btn type="submit" 登録する
