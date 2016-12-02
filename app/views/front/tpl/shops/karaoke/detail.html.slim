@@ -111,13 +111,13 @@
               | {{vm.shop.budget_usd}}USD
 
           tr
-            th chip有無
+            th tip有無
             td
-              div ng-if="vm.shop.chip == 'no_need'"
+              div ng-if="vm.shop.tip == 'no_need'"
                 | 無
-              div ng-if="vm.shop.chip == 'need'"
+              div ng-if="vm.shop.tip == 'need'"
                 | 有
-              div ng-if="vm.shop.chip == 'up_to_you'"
+              div ng-if="vm.shop.tip == 'up_to_you'"
                 | どちらでも
           tr
             th OPEN時間
@@ -157,27 +157,29 @@
         .page-title
           h2.title
             | ADDRESS & INFOMATION
-        .col-md-12
+        .clearfix
           .row
-            .col-md-6
-              ng-map zoom="16" default-style="true" center="{{vm.shop.lon}},{{vm.shop.lat}}" styles="{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
-                marker id='{{vm.shop.id}} ' title="{{vm.shop.address}}" position=" {{vm.shop.lon}}, {{vm.shop.lat}}"
-            .col-md-6
-              .shop-map--info-box
-                .shop-map--info-wrap
-                  .shop-name-titlt
-                    .shop-map--info-name
-                      | {{vm.shop.name}}
-                  dl.profile.clearfix
-                    dt TEL
-                    dd
-                      | {{vm.shop.tel}}
-                    dt EMAIL
-                    dd
-                      | {{vm.shop.email}}
-                    dt ADDRESS
-                    dd
-                      | {{vm.shop.address}}
+            .col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+              .col-row-left.clearfix
+                ng-map zoom="16" default-style="true" center="{{vm.shop.lon}},{{vm.shop.lat}}" styles="{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
+                  marker id='{{vm.shop.id}} ' title="{{vm.shop.address}}" position=" {{vm.shop.lon}}, {{vm.shop.lat}}"
+            .col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+              .col-row-right.clearfix
+                .shop-map--info-box
+                  .shop-map--info-wrap
+                    .shop-name-titlt
+                      .shop-map--info-name
+                        | {{vm.shop.name}}
+                    dl.profile.clearfix
+                      dt TEL
+                      dd
+                        | {{vm.shop.tel}}
+                      dt EMAIL
+                      dd
+                        | {{vm.shop.email}}
+                      dt ADDRESS
+                      dd
+                        | {{vm.shop.address}}
 
       #contact.rank-box.shop-map.clearfix
         .page-title
