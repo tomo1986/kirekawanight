@@ -4,6 +4,7 @@ angular.module 'bisyoujoZukanNight'
     vm = this
 
     vm.init = ->
+      vm.isLoading = true
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MASSAGE CAST',link:''}]
       vm.filters ={
         limit: 20
@@ -22,6 +23,7 @@ angular.module 'bisyoujoZukanNight'
         vm.casts = res.data.users
         vm.total = res.data.total
         vm.favorites = res.data.favorites
+        vm.isLoading = false
       )
 
     vm.onClickedFavorite = (opt_cast_id)->
@@ -55,10 +57,14 @@ angular.module 'bisyoujoZukanNight'
   linkFunc = (scope, el, attr, vm) ->
     scope.$watch("vm.filters.sort",(newVal,oldVal) ->
       if newVal != oldVal
+        scope.vm.casts = null
+        scope.vm.isLoading = true
         scope.vm.getCasts()
     )
     scope.$watch("vm.filters.order",(newVal,oldVal) ->
       if newVal != oldVal
+        scope.vm.casts = null
+        scope.vm.isLoading = true
         scope.vm.getCasts()
     )
     return

@@ -54,6 +54,8 @@ angular.module 'bijyoZukanAdmin'
       shopService.getTags().then((res) ->
         vm.tags = res.data.tags
       )
+    vm.onClickTag = (tag_name) ->
+      vm.shop.tags.push({text: tag_name})
 
     vm.getShop = ->
       shopService.getShop($state.params.id).then((res) ->

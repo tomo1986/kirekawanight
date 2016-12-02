@@ -42,11 +42,11 @@
           | CAST
 
       .filter-box.clearfix
+
         .total-count-box
           span
             | {{vm.total | number}}
           | 件の女の子がいます。
-
         ul.filter-list
           li.sort
             select.form-control name="constellation" ng-model="vm.filters.sort"
@@ -58,7 +58,9 @@
             select.form-control name="constellation" ng-model="vm.filters.order"
               option value="asc" ng-selected="vm.filters.order == 'asc'" 昇順
               option value="desc" ng-selected="vm.filters.order == 'desc'" 降順
-      ul.queen-list.clearfix ng-if="vm.casts"
+      .button-center ng-if="vm.isLoading"
+        loading-directive size="125"
+      ul.queen-list.clearfix ng-if="vm.casts && !vm.isLoading"
         li dir-paginate="cast in vm.casts | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page"
           .fream
             .fream--basic.fream--top-left
