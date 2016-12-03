@@ -279,6 +279,9 @@ class Api::AdminController < ApiController
         is_english: params[:is_english],
         is_chinese: params[:is_chinese],
         is_korean: params[:is_korean],
+
+        can_guided: params[:can_guided],
+        japanese_level: params[:japanese_level],
         images: params[:images]
     }
     if params[:tags]
@@ -373,6 +376,8 @@ class Api::AdminController < ApiController
         is_english: params[:is_english],
         is_chinese: params[:is_chinese],
         is_korean: params[:is_korean],
+        can_guided: params[:can_guided],
+        japanese_level: params[:japanese_level]
     }
 
     if params[:images].present?

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201104400) do
+ActiveRecord::Schema.define(version: 20161203162043) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -449,36 +449,38 @@ ActiveRecord::Schema.define(version: 20161201104400) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                        default: ""
-    t.string   "nick_name",                   default: ""
-    t.string   "birthplace",                  default: ""
-    t.string   "residence",                   default: ""
+    t.string   "name",                         default: ""
+    t.string   "nick_name",                    default: ""
+    t.string   "birthplace",                   default: ""
+    t.string   "residence",                    default: ""
     t.datetime "birthday"
-    t.string   "constellation",               default: ""
-    t.string   "job_type",                    default: ""
-    t.string   "blood_type",                  default: ""
-    t.string   "sex",                         default: ""
-    t.string   "sns_line",                    default: ""
-    t.string   "sns_zalo",                    default: ""
-    t.string   "sns_wechat",                  default: ""
-    t.string   "height",                      default: ""
-    t.string   "weight",                      default: ""
-    t.string   "bust",                        default: ""
-    t.string   "bust_size",                   default: ""
-    t.string   "waist",                       default: ""
-    t.string   "hip",                         default: ""
+    t.string   "constellation",                default: ""
+    t.string   "job_type",                     default: ""
+    t.string   "blood_type",                   default: ""
+    t.string   "sex",                          default: ""
+    t.string   "sns_line",                     default: ""
+    t.string   "sns_zalo",                     default: ""
+    t.string   "sns_wechat",                   default: ""
+    t.string   "height",                       default: ""
+    t.string   "weight",                       default: ""
+    t.string   "bust",                         default: ""
+    t.string   "bust_size",                    default: ""
+    t.string   "waist",                        default: ""
+    t.string   "hip",                          default: ""
     t.boolean  "is_japanese"
     t.boolean  "is_english"
     t.boolean  "is_chinese"
     t.boolean  "is_korean"
     t.datetime "deleted_at"
     t.datetime "stopped_at"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.text     "note",          limit: 65535
-    t.text     "payment_sql",   limit: 65535
-    t.float    "score",         limit: 24
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.text     "note",           limit: 65535
+    t.text     "payment_sql",    limit: 65535
+    t.float    "score",          limit: 24
     t.integer  "shop_id"
+    t.boolean  "can_guided"
+    t.string   "japanese_level"
     t.index ["is_chinese"], name: "index_users_on_is_chinese", using: :btree
     t.index ["is_english"], name: "index_users_on_is_english", using: :btree
     t.index ["is_japanese"], name: "index_users_on_is_japanese", using: :btree

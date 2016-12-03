@@ -88,6 +88,26 @@ section.main-container.map-form-page user-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" ガイドできますか?
+            td.res-form-table__td.input-box
+              select.form-control name="blood_type" ng-model="vm.user.can_guided"
+                option value=""  -- Please select --
+                option value="0" ng-selected="vm.user.can_guided == false || !vm.user.can_guided" できない
+                option value="1" ng-selected="vm.user.can_guided == true" できる
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" 日本語レベル
+            td.res-form-table__td.input-box
+              select.form-control name="blood_type" ng-model="vm.user.japanese_level"
+                option value=""  -- Please select --
+                option value="1" 日本語と読み書きできるレベル
+                option value="2" 書きはできないが日本語が話せる
+                option value="3" ゆっくり話せば問題ないレベル
+
+
+          tr
+            th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" SNS
             td.res-form-table__td.input-box
               dl
@@ -138,7 +158,7 @@ section.main-container.map-form-page user-form-directive=""
               span.title tags
             td.res-form-table__td.input-box
               tags-input ng-model='vm.user.tags' display-property="name"
-              
+
               span.btn ng-repeat="tag in vm.tags" ng-click="vm.onClickTag(tag)"
                 | {{tag.name}}
 

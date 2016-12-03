@@ -90,6 +90,10 @@ class User < ApplicationRecord
         json.bust_size user.bust_size
         json.waist user.waist
         json.hip user.hip
+
+        json.can_guided user.can_guided
+        json.japanese_level user.japanese_level
+
         json.dayly_count PageView.counts_period(user.page_views)
         json.weekly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_week,Time.zone.now.end_of_week)
         json.monthly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_month,Time.zone.now.end_of_month)
@@ -147,6 +151,8 @@ class User < ApplicationRecord
       json.bust_size self.bust_size
       json.waist self.waist
       json.hip self.hip
+      json.can_guided self.can_guided
+      json.japanese_level self.japanese_level
       json.is_japanese self.is_japanese
       json.is_english self.is_english
       json.is_chinese self.is_chinese
