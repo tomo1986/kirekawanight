@@ -1,6 +1,8 @@
-class Tag < ApplicationRecord
+class Tagging < ApplicationRecord
 
-  has_many :taggings
+  belongs_to :tag
+  belongs_to :taggable, polymorphic: true
+
 
   def to_jbuilder
     Jbuilder.new do |json|

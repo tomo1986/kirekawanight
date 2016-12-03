@@ -22,6 +22,11 @@ angular.module 'bisyoujoZukanNight'
     api.postPromise('/api/front/api13',opt_params).then((res) ->
       return res
     )
+  sm.getTags = ->
+    api.getPromise('/api/front/all_tags',{}).then((res) ->
+      return res
+    )
+
 
   sm.contactValidations = {
     rules: {
@@ -62,5 +67,6 @@ angular.module 'bisyoujoZukanNight'
     getShop: sm.getShop
     sendContact: sm.sendContact
     sendReview: sm.sendReview
+    getTags: sm.getTags
     contactValidations: sm.contactValidations
     reviewValidations: sm.reviewValidations

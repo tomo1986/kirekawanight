@@ -170,9 +170,11 @@ Rails.application.routes.draw do
     scope :front, module: 'front' do
       post :logout
       get :connect
+      get :all_users
+      get :all_shops
+      get :all_groups
+      get :all_tags
       post :api0
-
-
       post :api0_1
       get :api1
       get :api2

@@ -20,20 +20,6 @@ body {
   background-color: $_basic_background;
   color: $_basic_text;
 }
-.fade-layer,
-body.fadebody:before{
-  content: '';
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:#000;
-  z-index:99999;
-}
-body.fadebody.fade-layer-off:before{
-  content: none;
-}
 .main-content {
 
   @media screen and (min-width: 320px) and (max-width: 543px){
@@ -641,7 +627,7 @@ a, button {
     list-style: none;
     padding: 0;
     margin: 0;
-    width:100%;
+    width: calc(100% + 1.875rem);
     display: block;
     @media screen and (min-width: 320px) and (max-width: 767px){
       margin: 0 -0.9375rem;

@@ -63,6 +63,8 @@
 
       .button-center ng-if="vm.isLoading"
         loading-directive size="125"
+
+
       ul.queen-list.clearfix ng-if="vm.casts && !vm.isLoading"
         li dir-paginate="cast in vm.casts | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page"
           .fream

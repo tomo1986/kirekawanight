@@ -6,7 +6,6 @@ angular.module 'bijyoZukanShop'
 
     vm.init = ->
       vm.canSubmit = true
-
       vm.breadcrumb = [{name:'Dashboard',link:'/business'},{name:'Group',link:'/business/maps'}]
       vm.open_options={
         from:{is_from:true,date:null}
@@ -48,6 +47,7 @@ angular.module 'bijyoZukanShop'
     vm.getGroup = ->
       shopService.getGroup($state.params.id).then((res) ->
         vm.shop = res.data.shop
+
         angular.forEach(vm.shop.images, (image) ->
           vm.images.push({
             id: image.id

@@ -10,14 +10,12 @@ angular.module 'bisyoujoZukanNight'
       vm.filters ={
         limit: 20
         page: if $state.params.page then $state.params.page else 1
-        sort: 'new'
-        order: 'desc'
+        sort: if $state.params.sort then $state.params.sort else 'new'
+        order: if $state.params.order then $state.params.order else 'desc'
         job_type: 'bar'
       }
       vm.getCasts()
 
-    vm.onPageChanged = (page) ->
-      $state.go('/casts/bar',{page:page})
 
     vm.getCasts = ->
       castService.getCastList(vm.filters).then((res) ->
@@ -54,6 +52,13 @@ angular.module 'bisyoujoZukanNight'
         title = res.data.message
         modalService.alert(title)
       )
+    vm.onPageChanged = (page) ->
+      vm.filters.page = page
+      vm.changePageFunk()
+
+    vm.changePageFunk = ->
+      $state.go('/casts/bar',{page:vm.filters.page, sort: vm.filters.sort, order: vm.filters.order})
+
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
@@ -61,13 +66,16 @@ angular.module 'bisyoujoZukanNight'
       if newVal != oldVal
         scope.vm.casts = null
         scope.vm.isLoading = true
-        scope.vm.getCasts()
+        scope.vm.filters.sort = newVal
+        scope.vm.changePageFunk()
+
     )
     scope.$watch("vm.filters.order",(newVal,oldVal) ->
       if newVal != oldVal
         scope.vm.casts = null
         scope.vm.isLoading = true
-        scope.vm.getCasts()
+        scope.vm.filters.order = newVal
+        scope.vm.changePageFunk()
     )
 
     return

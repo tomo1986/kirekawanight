@@ -9,11 +9,41 @@
         li
           a href="/casts/karaoke"
             | CAST
+    .rank-box ng-if="vm.push_shops.length > 0 && vm.filters.page == 1"
+      .page-title
+        h2.title
+          | TODAY'S POWER PUSH
+      .shop-list.clearfix
+        li ng-repeat="shop in vm.push_shops"
+          a href="/shops/karaoke/{{shop.id}}"
+            img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
+          .shop-info
+            h3.name
+              | {{shop.name}}
+              span
+                i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
     .rank-box ng-if="vm.shops.length > 0"
       .page-title
         h2.title
-          /| TODAY'S POWER PUSH
           | SHOP
+      .filter-box.clearfix
+        .total-count-box
+          span
+            | {{vm.total | number}}
+          | 件の店舗が見つかりました。
+        ul.filter-list
+          li.sort
+            select.form-control name="constellation" ng-model="vm.filters.sort"
+              option value="new" ng-selected="vm.filters.sort == 'new'" 新着順
+              option value="support" ng-selected="vm.filters.sort == 'support'" 応援されている順
+              option value="favorite" ng-selected="vm.filters.sort == 'favorite'" お気に入り登録されている順
+              option value="review" ng-selected="vm.filters.sort == 'review'" スコアが高い順
+          li.order
+            select.form-control name="constellation" ng-model="vm.filters.order"
+              option value="asc" ng-selected="vm.filters.order == 'asc'" 昇順
+              option value="desc" ng-selected="vm.filters.order == 'desc'" 降順
+      .button-center ng-if="vm.isLoading"
+        loading-directive size="125"
       .shop-list.clearfix
         li ng-repeat="shop in vm.shops"
           a href="/shops/karaoke/{{shop.id}}"

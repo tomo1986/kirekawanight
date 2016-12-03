@@ -31,6 +31,10 @@ angular.module 'bisyoujoZukanNight'
     api.postPromise('/api/front/api13',opt_params).then((res) ->
       return res
     )
+  sm.getTags = ->
+    api.getPromise('/api/front/all_tags',{}).then((res) ->
+      return res
+    )
 
 
 
@@ -821,6 +825,7 @@ angular.module 'bisyoujoZukanNight'
     newUser: sm.newUser
     createUser: sm.createUser
     getCast: sm.getCast
+    getTags: sm.getTags
     getCastList: sm.getCastList
     pushSupport: sm.pushSupport
     sendContact: sm.sendContact

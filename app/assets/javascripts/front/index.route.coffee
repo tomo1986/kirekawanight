@@ -18,17 +18,26 @@ angular.module 'bisyoujoZukanNight'
 
 
       .state '/casts/karaoke',
-        url: '/casts/karaoke?page'
+        url: '/casts/karaoke?page&sort&orde'
         active_menu: 'karaoke'
         active_tab: 'cast'
         templateUrl: '/front/tpl/casts/karaoke/index.html'
+        params: {
+          page: null
+          sort: null
+          order: null
+        }
 
       .state '/shops/karaoke',
-        url: '/shops/karaoke?page'
+        url: '/shops/karaoke?page&sort&order'
         active_menu: 'karaoke'
         active_tab: 'shop'
         templateUrl: '/front/tpl/shops/karaoke/index.html'
-
+        params: {
+          page: null
+          sort: null
+          order: null
+        }
 
       .state '/casts/karaoke/:id',
         url: '/casts/karaoke/:id'
@@ -44,13 +53,26 @@ angular.module 'bisyoujoZukanNight'
 
 
       .state '/casts/bar',
-        url: '/casts/bar?page'
+        url: '/casts/bar?page&sort&order'
         active_menu: 'bar'
         templateUrl: '/front/tpl/casts/bar/index.html'
+        params: {
+          page: null
+          sort: null
+          order: null
+        }
+
+
+
       .state '/shops/bar',
-        url: '/shops/bar?page'
+        url: '/shops/bar?page&sort&order'
         active_menu: 'bar'
         templateUrl: '/front/tpl/shops/bar/index.html'
+        params: {
+          page: null
+          sort: null
+          order: null
+        }
 
 
       .state '/casts/bar/:id',
@@ -64,13 +86,25 @@ angular.module 'bisyoujoZukanNight'
 
 
       .state '/casts/massage',
-        url: '/casts/massage?page'
+        url: '/casts/massage?page&sort&order'
         active_menu: 'massage'
         templateUrl: '/front/tpl/casts/massage/index.html'
+        params: {
+          page: null
+          sort: null
+          order: null
+        }
+
+
       .state '/shops/massage',
-        url: '/shops/massage?page'
+        url: '/shops/massage?page&sort&order'
         active_menu: 'massage'
         templateUrl: '/front/tpl/shops/massage/index.html'
+        params: {
+          page: null
+          sort: null
+          order: null
+        }
 
       .state '/casts/massage/:id',
         url: '/casts/massage/:id'
@@ -82,24 +116,18 @@ angular.module 'bisyoujoZukanNight'
         templateUrl: '/front/tpl/shops/massage/detail.html'
 
       .state '/casts/sexy',
-        url: '/casts/sexy?page'
+        url: '/casts/sexy?page&sort&order'
         active_menu: 'sexy'
         templateUrl: '/front/tpl/casts/sexy/index.html'
-
+        params: {
+          page: null
+          sort: null
+          order: null
+        }
       .state '/casts/sexy/:id',
         url: '/casts/sexy/:id'
         active_menu: 'sexy'
         templateUrl: '/front/tpl/casts/sexy/detail.html'
-
-      .state '/casts',
-        url: '/casts'
-        active_menu: 'cast'
-        templateUrl: '/front/tpl/casts/index.html'
-
-      .state '/casts/:id',
-        url: '/casts/:id'
-        active_menu: 'cast'
-        templateUrl: '/front/tpl/casts/detail.html'
 
       .state '/system',
         url: '/system'

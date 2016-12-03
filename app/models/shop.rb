@@ -33,6 +33,17 @@ class Shop < ApplicationRecord
     return self.where(deleted_at: nil)
   }
 
+  scope :sort_new, -> (order= 'desc'){
+    return self.order("created_at #{order}")
+  }
+  scope :sort_support, -> (order= 'desc'){
+    return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Support' and posts.receiver_type = 'User'").group("shops.id")
+               .order("count(posts.receiver_id) #{order}, shops.id desc")
+  }
+  scope :sort_favorite, -> (order= 'desc'){
+    return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'User'").group("shops.id")
+               .order("count(posts.receiver_id) #{order}, shops.id desc")
+  }
 
   def open_discounts
     now = Time.zone.now

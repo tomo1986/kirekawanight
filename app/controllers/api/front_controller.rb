@@ -24,6 +24,38 @@ class Api::FrontController < ApiController
     render json: builder.target!
   end
 
+  def all_users
+    users = User.where(deleted_at: nil)
+    builders = Jbuilder.new do |json|
+      json.users User.to_jbuilders(users)
+    end
+    render json: builders.target!
+
+  end
+
+  def all_shops
+    shops = Shop.where(deleted_at: nil)
+    builders = Jbuilder.new do |json|
+      json.shops Shop.to_jbuilders(shops)
+    end
+    render json: builders.target!
+
+  end
+
+  def all_groups
+    groups = Group.where(deleted_at: nil)
+    builders = Jbuilder.new do |json|
+      json.groups Group.to_jbuilders(groups)
+    end
+    render json: builders.target!
+  end
+  def all_tags
+    tags = Tag.all
+    builders = Jbuilder.new do |json|
+      json.tags Tag.to_jbuilders(tags)
+    end
+    render json: builders.target!
+  end
 
 
   def api0
@@ -63,7 +95,6 @@ class Api::FrontController < ApiController
     elsif params[:sort] == 'support'
       users = users.sort_support(params[:order])
     elsif params[:sort] == 'favorite'
-      p "soeya"
       users = users.sort_favorite(params[:order])
 
     end
@@ -315,9 +346,17 @@ class Api::FrontController < ApiController
 
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    total = Shop.where(job_type: params[:job_type]).count
     shops = Shop.where(job_type: params[:job_type])
-    shops = shops.page(page).per(limit) if shops.present?
+    total = shops.count
+
+    if params[:sort] == 'new'
+      shops = shops.sort_new(params[:order])
+    elsif params[:sort] == 'support'
+      shops = shops.sort_support(params[:order])
+    elsif params[:sort] == 'favorite'
+      shops = shops.sort_favorite(params[:order])
+    end
+      shops = shops.page(page).per(limit) if shops.present?
 
     favorites = {}
     if customer_signed_in?
