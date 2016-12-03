@@ -76,10 +76,6 @@ angular.module 'bijyoZukanAdmin'
       })
 
     vm.submit = ->
-      vm.errors = null
-      vm.errors = validationService.checks(vm.group,groupService.getValidationRule())
-      console.log(vm.errors)
-      return window.scrollTo(0, 0) if Object.keys(vm.errors) && Object.keys(vm.errors).length > 0
 
       images = []
       imageUploaded = $('.image-box--arry image-directive img')
