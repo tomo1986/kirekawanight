@@ -137,8 +137,9 @@ section.main-container.map-form-page user-form-directive=""
             th.res-form-table__th.title-box.clearfix
               span.title tags
             td.res-form-table__td.input-box
-              tags-input(ng-model='vm.user.tags')
-              span.btn ng-repeat="tag in vm.tags" ng-click="vm.onClickTag(tag.name)"
+              tags-input ng-model='vm.user.tags' display-property="name"
+              
+              span.btn ng-repeat="tag in vm.tags" ng-click="vm.onClickTag(tag)"
                 | {{tag.name}}
 
           tr

@@ -215,8 +215,9 @@ section.main-container.map-form-page shop-form-directive=""
               span.title tags
             td.res-form-table__td.input-box
               tags-input ng-model='vm.shop.tags' display-property="name"
-                auto-complete source="loadTags($query)"
-              span.btn ng-repeat="tag in vm.tags" ng-click="vm.onClickTag(tag.name)"
+
+
+              span.btn ng-repeat="tag in vm.tags" ng-click="vm.onClickTag(tag)"
                 | {{tag.name}}
           tr
             th.res-form-table__th.title-box.clearfix
