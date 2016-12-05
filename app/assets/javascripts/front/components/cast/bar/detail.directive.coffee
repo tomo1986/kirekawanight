@@ -1,6 +1,7 @@
 angular.module 'bisyoujoZukanNight'
-.directive 'castBarDetailDirective', ($state,castService) ->
+.directive 'castBarDetailDirective', ($state,castService,customerService) ->
   CastBarDetailController = () ->
+    vm = this
     vm.init = ->
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'BAR CAST',link:'/casts/bar'}]
       vm.selectSns = 'Zalo'
