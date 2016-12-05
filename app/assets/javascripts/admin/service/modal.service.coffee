@@ -166,7 +166,7 @@ angular.module 'bijyoZukanAdmin'
     )
   sm.getAddress = (position, callback) ->
     modalInstance = $uibModal.open(
-      templateUrl: "#{location.protocol + '//' + location.host}/business/tpl/modal/map.html"
+      templateUrl: "#{location.protocol + '//' + location.host}/admin/tpl/modal/map.html"
       windowClass: 'my-block-bottom'
       keyboard: false
       backdropClick: false
