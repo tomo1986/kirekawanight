@@ -132,6 +132,9 @@ Rails.application.routes.draw do
     get 'casts/karaoke', to: 'home#cast_karaoke'
     get 'casts/karaoke/:id', to: 'home#index'
 
+    get 'casts/guide', to: 'home#index'
+    get 'casts/guide/:id', to: 'home#index'
+
     get 'shops/karaoke', to: 'home#shop_karaoke'
     get 'shops/karaoke/:id', to: 'home#index'
 
@@ -192,6 +195,7 @@ Rails.application.routes.draw do
       post :api14
       post :api15
       get :api20
+      get :api21
     end
 
     scope :admin, module: 'admin' do

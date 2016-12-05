@@ -19,6 +19,14 @@ angular.module 'bisyoujoZukanNight'
     api.getPromise('/api/front/api2',opt_params).then((res) ->
       return res
     )
+  sm.getGuideCastList = (opt_params) ->
+    api.getPromise('/api/front/api21',opt_params).then((res) ->
+      return res
+    )
+
+
+
+
   sm.pushSupport = (opt_params) ->
     api.postPromise('/api/front/api5',opt_params).then((res) ->
       return res
@@ -830,3 +838,4 @@ angular.module 'bisyoujoZukanNight'
     pushSupport: sm.pushSupport
     sendContact: sm.sendContact
     sendReview: sm.sendReview
+    getGuideCastList: sm.getGuideCastList

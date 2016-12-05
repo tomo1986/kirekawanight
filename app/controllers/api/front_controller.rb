@@ -466,5 +466,44 @@ class Api::FrontController < ApiController
     end
     render json: builder.target!
   end
+
+  def api21
+    PageViewType::CastGuide.create
+    users = User.where(can_guided: true)
+    total = users.count
+    if params[:sort] == 'new'
+      users = users.sort_new(params[:order])
+    elsif params[:sort] == 'support'
+      users = users.sort_support(params[:order])
+    elsif params[:sort] == 'favorite'
+      users = users.sort_favorite(params[:order])
+    end
+    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    users = users.page(page).per(limit) if users.present?
+    now = Time.zone.now
+    supports = {}
+    favorites = {}
+    if customer_signed_in?
+      customer = Customer.find_by(id: current_customer.id)
+      customer.supports.each do |support|
+        supports[support.receiver_id] = support
+      end
+      customer.favorites.each do |favorite|
+        favorites[favorite.receiver_id] = favorite
+      end
+    end
+
+    builders = Jbuilder.new do |json|
+      json.users User.to_jbuilders(users)
+      json.supports supports
+      json.favorites favorites
+      json.total total
+    end
+    render json: builders.target!
+
+  end
+
+
 end
 

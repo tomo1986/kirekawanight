@@ -50,6 +50,20 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'shop'
         templateUrl: '/front/tpl/shops/karaoke/detail.html'
 
+      .state '/casts/guide',
+        url: '/casts/guide?page&sort&orde'
+        active_menu: 'guide'
+        active_tab: 'cast'
+        templateUrl: '/front/tpl/casts/guide/index.html'
+        params: {
+          page: null
+          sort: null
+          order: null
+        }
+      .state '/casts/guide/:id',
+        url: '/casts/guide/:id'
+        active_menu: 'guide'
+        templateUrl: '/front/tpl/casts/guide/detail.html'
 
 
       .state '/casts/bar',
