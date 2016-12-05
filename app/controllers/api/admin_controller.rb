@@ -54,7 +54,7 @@ class Api::AdminController < ApiController
     sign_in admin
     builder = Jbuilder.new do |json|
       json.code 1
-      json.admin admin.name
+      json.admin admin
     end
     render json: builder.target!
   end

@@ -76,7 +76,7 @@ angular.module 'bijyoZukanAdmin'
             id: image.id
             url: image.url
             original_url: image.url
-            options:{minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true,aspectRatio:"NaN"}
+            options:{aspectRatio: 2 / 1.1,minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true}
           })
         )
       )
@@ -88,7 +88,8 @@ angular.module 'bijyoZukanAdmin'
           id: null
           url: null
           original_url: null
-          options:{minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true,zoomable: true,aspectRatio: "NaN"}
+          options:{aspectRatio: 2 / 1.1,minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true}
+#          options:{minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true,zoomable: true,aspectRatio: "NaN"}
         })
       )
     vm.addImage = ->
@@ -96,7 +97,7 @@ angular.module 'bijyoZukanAdmin'
         id: null
         url: null
         original_url: null
-        options:{zoomable: true,aspectRatio: "NaN"}
+        options:{aspectRatio: 2 / 1.1,minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true}
       })
 
     vm.submit = ->
