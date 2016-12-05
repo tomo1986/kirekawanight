@@ -16,7 +16,10 @@
       .shop-list.clearfix
         li ng-repeat="shop in vm.push_shops"
           a href="/shops/karaoke/{{shop.id}}"
-            img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像" ng-if="shop.images[0]"
+            span ng-if="shop.images[0]"
+              img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
+            span ng-if="!shop.images[0]"
+              = image_tag 'front/shop-no-image.png', alt:"kirekawa collection shop no-image"
           .shop-info
             h3.name
               | {{shop.name}}
@@ -47,7 +50,10 @@
       .shop-list.clearfix
         li ng-repeat="shop in vm.shops"
           a href="/shops/karaoke/{{shop.id}}"
-            img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
+            span ng-if="shop.images[0]"
+              img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
+            span ng-if="!shop.images[0]"
+              = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
           .shop-info
             h3.name
               | {{shop.name}}
