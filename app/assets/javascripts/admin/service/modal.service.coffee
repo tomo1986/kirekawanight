@@ -166,7 +166,7 @@ angular.module 'bijyoZukanAdmin'
     )
   sm.getAddress = (position, callback) ->
     modalInstance = $uibModal.open(
-      templateUrl: "#{location.protocol + '//' + location.host}/admin/tpl/modal/map.html"
+      templateUrl: "#{location.protocol + '//' + location.host}/business/tpl/modal/map.html"
       windowClass: 'my-block-bottom'
       keyboard: false
       backdropClick: false
@@ -269,16 +269,16 @@ angular.module 'bijyoZukanAdmin'
             if !self.ido && !self.keido
               if navigator.geolocation
                 navigator.geolocation.getCurrentPosition ((position) ->
-                  data = position.coords
-                  self.ido = data.latitude
-                  self.keido = data.longitude
-                  self.settings()
-                ), ((error) ->
-                  self.ido = 35.689488
-                  self.keido = 139.691706
-                  self.settings()
-                  return
-                ),
+                    data = position.coords
+                    self.ido = data.latitude
+                    self.keido = data.longitude
+                    self.settings()
+                  ), ((error) ->
+                    self.ido = 35.689488
+                    self.keido = 139.691706
+                    self.settings()
+                    return
+                  ),
                   'enableHighAccuracy': false
                   'timeout': 8000
                   'maximumAge': 2000
