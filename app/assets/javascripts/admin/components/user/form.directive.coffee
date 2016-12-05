@@ -47,7 +47,7 @@ angular.module 'bijyoZukanAdmin'
     vm.onClickTag = (opt_tag) ->
       isFirst = true
       canAdd = true
-      angular.forEach(vm.shop.tags, (tag) ->
+      angular.forEach(vm.user.tags, (tag) ->
         if canAdd || isFirst
           if tag.id != opt_tag.id
             canAdd = true
@@ -55,7 +55,7 @@ angular.module 'bijyoZukanAdmin'
             canAdd = false
         isFirst = false
       )
-      vm.shop.tags.push(opt_tag) if canAdd
+      vm.user.tags.push(opt_tag) if canAdd
 
     vm.getUser = ->
       user.getUser($state.params.id).then((res) ->
