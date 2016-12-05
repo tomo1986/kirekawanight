@@ -102,7 +102,7 @@ angular.module 'bijyoZukanShop'
 
       if vm.action == 'update'
         shopService.updateGroup(vm.shop).then((res) ->
-          if res.data.status == 1
+          if res.data.code == 1
             vm.shop = res.data.shop
             datas = vm.makeDataForModal(vm.shop)
             console.log(title,datas,buttons)
@@ -112,7 +112,7 @@ angular.module 'bijyoZukanShop'
         )
       else
         shopService.createGroup(vm.shop).then((res) ->
-          if res.data.status == 1
+          if res.data.code == 1
             vm.shop = res.data.shop
             datas = vm.makeDataForModal(vm.shop)
             modalService.confirm(title,datas,buttons)

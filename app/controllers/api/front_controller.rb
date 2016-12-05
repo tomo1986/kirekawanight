@@ -257,12 +257,12 @@ class Api::FrontController < ApiController
     if contact.save!
       builder = Jbuilder.new do |json|
         json.contact contact.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors contact.errors.full_messages
-        json.status 0
+        json.code 0
       end
     end
     render json: builder.target!
@@ -400,12 +400,12 @@ class Api::FrontController < ApiController
     if review.save!
       builder = Jbuilder.new do |json|
         json.review review.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.errors review.errors.full_messages
-        json.status 0
+        json.code 0
       end
     end
     render json: builder.target!
@@ -422,12 +422,11 @@ class Api::FrontController < ApiController
     if customer.save
       builder = Jbuilder.new do |json|
         json.customer customer.to_jbuilder
-        json.status true
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.customer customer.to_jbuilder
-        json.status false
       end
     end
     render json: builder.target!
@@ -448,12 +447,11 @@ class Api::FrontController < ApiController
     if customer.save
       builder = Jbuilder.new do |json|
         json.customer customer.to_jbuilder
-        json.status true
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
         json.customer customer.to_jbuilder
-        json.status false
       end
     end
     render json: builder.target!

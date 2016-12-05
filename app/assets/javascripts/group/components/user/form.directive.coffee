@@ -105,7 +105,7 @@ angular.module 'bijyoZukanGroup'
       ]
       if vm.action == 'update'
         user.updateUser(vm.user).then((res) ->
-          if res.data.status == 1
+          if res.data.code == 1
             vm.user = res.data.user
             datas = vm.makeDataForModal(vm.user)
             modalService.confirm(title,datas,buttons)
@@ -114,7 +114,7 @@ angular.module 'bijyoZukanGroup'
         )
       else
         user.createUser(vm.user).then((res) ->
-          if res.data.status == 1
+          if res.data.code == 1
             vm.user = res.data.user
             datas = vm.makeDataForModal(vm.user)
             modalService.confirm(title,datas,buttons)

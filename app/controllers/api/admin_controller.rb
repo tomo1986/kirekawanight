@@ -1026,6 +1026,7 @@ class Api::AdminController < ApiController
         budget_yen: params[:budget_yen],
         budget_vnd: params[:budget_vnd],
         budget_usd: params[:budget_usd],
+        service: params[:service],
         images: params[:images]
     }
 
@@ -1079,6 +1080,7 @@ class Api::AdminController < ApiController
         girls_count: params[:girls_count],
         tip: params[:tip],
         is_smoked: params[:is_smoked],
+        service: params[:service],
         opened_at: params[:opened_at],
         closed_at: params[:closed_at],
         budget_yen: params[:budget_yen],

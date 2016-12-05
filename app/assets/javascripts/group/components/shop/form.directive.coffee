@@ -104,7 +104,7 @@ angular.module 'bijyoZukanGroup'
 
       if vm.action == 'update'
         shopService.updateShop(vm.shop).then((res) ->
-          if res.data.status == 1
+          if res.data.code == 1
             vm.shop = res.data.shop
             datas = vm.makeDataForModal(vm.shop)
             console.log(title,datas,buttons)

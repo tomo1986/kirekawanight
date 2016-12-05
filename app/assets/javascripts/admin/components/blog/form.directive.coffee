@@ -71,7 +71,7 @@ angular.module 'bijyoZukanAdmin'
 
       if vm.action == 'update'
         blogService.updateBlog(vm.blog).then((res) ->
-          if res.data.status == 1
+          if res.data.code == 1
             vm.blog = res.data.blog
             datas = vm.makeDataForModal()
             console.log(title,datas,buttons)

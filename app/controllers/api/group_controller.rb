@@ -352,7 +352,7 @@ class Api::GroupController < ApiController
     if user.save!
       builder = Jbuilder.new do |json|
         json.user user.to_jbuilder
-        json.status 1
+        json.code 1
       end
     else
       builder = Jbuilder.new do |json|
@@ -627,12 +627,12 @@ class Api::GroupController < ApiController
   #   if discount.save
   #     builder = Jbuilder.new do |json|
   #       json.discount discount.to_jbuilder
-  #       json.status 1
+  #       json.code 1
   #     end
   #   else
   #     builder = Jbuilder.new do |json|
   #       json.errors discount.errors.full_messages
-  #       json.status 0
+  #       json.code 0
   #     end
   #   end
   #   render json: builder.target!

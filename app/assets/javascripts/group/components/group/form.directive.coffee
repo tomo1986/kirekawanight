@@ -102,7 +102,7 @@ angular.module 'bijyoZukanGroup'
 
       if vm.action == 'update'
         groupService.updateGroup(vm.group).then((res) ->
-          if res.data.status == 1
+          if res.data.code == 1
             vm.group = res.data.group
             datas = vm.makeDataForModal(vm.group)
             console.log(title,datas,buttons)
@@ -112,7 +112,7 @@ angular.module 'bijyoZukanGroup'
         )
       else
         groupService.createGroup(vm.group).then((res) ->
-          if res.data.status == 1
+          if res.data.code == 1
             vm.group = res.data.group
             datas = vm.makeDataForModal(vm.group)
             modalService.confirm(title,datas,buttons)

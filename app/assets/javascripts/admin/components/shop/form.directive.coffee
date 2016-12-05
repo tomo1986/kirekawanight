@@ -135,7 +135,7 @@ angular.module 'bijyoZukanAdmin'
         )
       else
         shopService.createShop(vm.shop).then((res) ->
-          if res.data.status == 1
+          if res.data.code == 1
             vm.shop = res.data.shop
             datas = vm.makeDataForModal(vm.shop)
             modalService.confirm(title,datas,buttons)
