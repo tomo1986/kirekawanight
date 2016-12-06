@@ -47,7 +47,7 @@
               option value="desc" ng-selected="vm.filters.order == 'desc'" 降順
       .button-center ng-if="vm.isLoading"
         loading-directive size="125"
-      .shop-list.clearfix
+      .shop-list.clearfix ng-if="vm.shops && !vm.isLoading"
         li ng-repeat="shop in vm.shops"
           a href="/shops/bar/{{shop.id}}"
             span ng-if="shop.images[0]"
