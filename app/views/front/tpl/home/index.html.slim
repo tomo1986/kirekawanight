@@ -2,18 +2,18 @@
   .main-wrap.container-fluid
     section.center.slick-slider
       div
-        a.slider-link href="/casts/guide"
+        a.slider-link href="https://www.facebook.com/KireKawa-231672127266670/" target="_blank"
           .img-box
-            img.img src="https://storage.googleapis.com/luline/img/FrontPc/night/top/top_main_image1.jpg" /
+            = image_tag "front/facebook.png", alt:"お得な情報発信！キレカワのfacebookページはこちら", class:"img"
           .cover.clearfix
-            h2 夢の国にようこそ
+            h2 Kirekawa 公式facebook ページ
             p 2016-05-08
       div
         a.slider-link href="/casts/guide"
           .img-box
-            img.img src="https://storage.googleapis.com/luline/img/FrontPc/night/top/top_main_image2.jpg" /
+            = image_tag "front/vietnam.png", alt:"えっベトナム旅行ってこんなに安いの??とってもお得な旅行プラン紹介", class:"img"
           .cover.clearfix
-            h2 夢の国にようこそ
+            h2 ベトナム旅行プラン紹介
             p 2016-05-08
       div
         a.slider-link href="/casts/guide"
@@ -224,3 +224,20 @@
                 | {{cast.nick_name}}({{cast.age}})
               .body
                 | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+
+      .comsept-box--detail
+        h3.sub-title 会員登録について
+        p
+          | キレカワへの会員登録は全て無料です。
+
+        h3.sub-title キレカワ -night-とは
+        p
+          | キレカワナイトは「綺麗」「可愛い」ベトナムのカラオケ、ガールズバー、マッサージ、セクシーな女の子を集め、
+          br
+          | あなたと女の子をマッチングさせるサービスです。
+          br
+          | ベトナムへ旅行に来る方もあらかじめ連絡を取っていれば安心して遊ぶことができます。
+          br
+          | また、駐在の方もカラオケに行ったけど、なかなか本命に当たらないかと思います。
+          br
+          |

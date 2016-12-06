@@ -15,6 +15,8 @@
           | TODAY'S POWER PUSH
       .shop-list.clearfix
         li ng-repeat="shop in vm.push_shops"
+          span
+            i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
           a href="/shops/karaoke/{{shop.id}}"
             span ng-if="shop.images[0]"
               img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
@@ -23,8 +25,6 @@
           .shop-info
             h3.name
               | {{shop.name}}
-              span
-                i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
     .rank-box
       .page-title
         h2.title
@@ -49,6 +49,8 @@
         loading-directive size="125"
       .shop-list.clearfix ng-if="vm.shops && !vm.isLoading"
         li ng-repeat="shop in vm.shops"
+          span
+            i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
           a href="/shops/karaoke/{{shop.id}}"
             span ng-if="shop.images[0]"
               img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
@@ -57,5 +59,3 @@
           .shop-info
             h3.name
               | {{shop.name}}
-              span
-                i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
