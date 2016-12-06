@@ -51,7 +51,7 @@ angular.module 'bisyoujoZukanNight'
         vm.cast['profile'] = res.data.profile
         vm.casts = res.data.users
         vm.isFavorited = res.data.is_favorited
-        vm.castMainImg = vm.cast.images[0].url
+        vm.castMainImg = vm.cast.images[0].url if vm.cast.images[0]
       )
 
     vm.onClickedSupport = ->

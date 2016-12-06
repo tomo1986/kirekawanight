@@ -5,11 +5,10 @@
       .cast-detail.clearfix
         .photo-area
           .fream
-            p.main-image ng-repeat="image in vm.cast.images track by $index"
-              span ng-if="vm.castMainImg"
-                img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"  ng-class="{'target': vm.castMainImg == image.url}"
-              span ng-if="!vm.castMainImg"
-                = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+            p.main-image ng-repeat="image in vm.cast.images track by $index" ng-if="vm.castMainImg"
+              img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"  ng-class="{'target': vm.castMainImg == image.url}"
+            p ng-if="!vm.castMainImg"
+              = image_tag 'front/cast-no-image.png', class:"target img", alt: "kirekawa collection cast no-image"
 
         .profile-area
           .name-area

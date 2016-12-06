@@ -6,6 +6,7 @@ angular.module 'bisyoujoZukanNight'
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'BAR CAST',link:'/casts/bar'}]
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
+      vm.castMainImg = null
       vm.loginCustomer = customerService.getLoginCustomer()
       vm.profile = castService.profile
       vm.canReviewSubmited = true
@@ -50,7 +51,8 @@ angular.module 'bisyoujoZukanNight'
         vm.cast['profile'] = res.data.profile
         vm.casts = res.data.users
         vm.isFavorited = res.data.is_favorited
-        vm.castMainImg = vm.cast.images[0].url
+        vm.castMainImg = vm.cast.images[0].url if vm.cast.images[0]
+        console.log("fdas",vm.castMainImg)
       )
 
     vm.onClickedSupport = ->
