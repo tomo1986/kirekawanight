@@ -33,149 +33,139 @@
     <favorites_list name="bisyoujo_zukan_night" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.48458692">
+    <splitter split-orientation="vertical" split-proportion="0.54747224">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/home/index.html.slim">
+          <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/main.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.64285713">
-                  <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+                <state vertical-scroll-proportion="-2.9411764">
+                  <caret line="485" column="14" selection-start-line="485" selection-start-column="14" selection-end-line="485" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-8.75">
+                  <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-10.875">
+                  <caret line="203" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="3.25">
+                  <caret line="87" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.7364341">
+                  <caret line="87" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
                   <folding>
-                    <marker date="1481044182000" expanded="true" signature="0:9903" placeholder=".main-content.home-page home-directive=&quot;&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="44:1408" placeholder=".main-wrap.container-fluid" />
-                    <marker date="1481044182000" expanded="true" signature="219:321" placeholder=".img-box" />
-                    <marker date="1481044182000" expanded="true" signature="332:411" placeholder=".cover.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="474:580" placeholder=".img-box" />
-                    <marker date="1481044182000" expanded="true" signature="591:658" placeholder=".cover.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="721:837" placeholder=".img-box" />
-                    <marker date="1481044182000" expanded="true" signature="848:912" placeholder=".cover.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="975:1091" placeholder=".img-box" />
-                    <marker date="1481044182000" expanded="true" signature="1102:1166" placeholder=".cover.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="1217:1333" placeholder=".img-box" />
-                    <marker date="1481044182000" expanded="true" signature="1344:1408" placeholder=".cover.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="1411:9903" placeholder=".container" />
-                    <marker date="1481044182000" expanded="true" signature="1442:2011" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.timeServices.length &gt; 0&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="1518:1575" placeholder=".page-title" />
-                    <marker date="1481044182000" expanded="true" signature="1584:2011" placeholder=".news-list" />
-                    <marker date="1481044182000" expanded="true" signature="2018:2988" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.karaokeUsers.length &gt; 0&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="2094:2166" placeholder=".page-title" />
-                    <marker date="1481044182000" expanded="true" signature="2175:2988" placeholder=".queen-list.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="2257:2761" placeholder=".fream" />
-                    <marker date="1481044182000" expanded="true" signature="2278:2307" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481044182000" expanded="true" signature="2322:2352" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481044182000" expanded="true" signature="2367:2399" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481044182000" expanded="true" signature="2414:2447" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481044182000" expanded="true" signature="2774:2988" placeholder=".profile" />
-                    <marker date="1481044182000" expanded="true" signature="2797:2853" placeholder=".name" />
-                    <marker date="1481044182000" expanded="true" signature="2868:2988" placeholder=".body" />
-                    <marker date="1481044182000" expanded="true" signature="2995:3950" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.barUsers.length &gt; 0&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="3067:3135" placeholder=".page-title" />
-                    <marker date="1481044182000" expanded="true" signature="3144:3950" placeholder=".queen-list.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="3222:3722" placeholder=".fream" />
-                    <marker date="1481044182000" expanded="true" signature="3243:3272" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481044182000" expanded="true" signature="3287:3317" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481044182000" expanded="true" signature="3332:3364" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481044182000" expanded="true" signature="3379:3412" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481044182000" expanded="true" signature="3735:3950" placeholder=".profile" />
-                    <marker date="1481044182000" expanded="true" signature="3758:3814" placeholder=".name" />
-                    <marker date="1481044182000" expanded="true" signature="3829:3950" placeholder=".body" />
-                    <marker date="1481044182000" expanded="true" signature="3957:4927" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.massageUsers.length &gt; 0&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="4033:4105" placeholder=".page-title" />
-                    <marker date="1481044182000" expanded="true" signature="4114:4927" placeholder=".queen-list.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="4196:4700" placeholder=".fream" />
-                    <marker date="1481044182000" expanded="true" signature="4217:4246" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481044182000" expanded="true" signature="4261:4291" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481044182000" expanded="true" signature="4306:4338" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481044182000" expanded="true" signature="4353:4386" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481044182000" expanded="true" signature="4713:4927" placeholder=".profile" />
-                    <marker date="1481044182000" expanded="true" signature="4736:4792" placeholder=".name" />
-                    <marker date="1481044182000" expanded="true" signature="4807:4927" placeholder=".body" />
-                    <marker date="1481044182000" expanded="true" signature="4934:5893" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.sexyUsers.length &gt; 0&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="5007:5076" placeholder=".page-title" />
-                    <marker date="1481044182000" expanded="true" signature="5085:5893" placeholder=".queen-list.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="5164:5665" placeholder=".fream" />
-                    <marker date="1481044182000" expanded="true" signature="5185:5214" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481044182000" expanded="true" signature="5229:5259" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481044182000" expanded="true" signature="5274:5306" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481044182000" expanded="true" signature="5321:5354" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481044182000" expanded="true" signature="5678:5893" placeholder=".profile" />
-                    <marker date="1481044182000" expanded="true" signature="5701:5757" placeholder=".name" />
-                    <marker date="1481044182000" expanded="true" signature="5772:5893" placeholder=".body" />
-                    <marker date="1481044182000" expanded="true" signature="5900:6731" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.newKaraokeUsers.length &gt; 0&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="5979:6041" placeholder=".page-title" />
-                    <marker date="1481044182000" expanded="true" signature="6050:6731" placeholder=".queen-list.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="6135:6639" placeholder=".fream" />
-                    <marker date="1481044182000" expanded="true" signature="6156:6185" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481044182000" expanded="true" signature="6200:6230" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481044182000" expanded="true" signature="6245:6277" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481044182000" expanded="true" signature="6292:6325" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481044182000" expanded="true" signature="6652:6731" placeholder=".profile" />
-                    <marker date="1481044182000" expanded="true" signature="6675:6731" placeholder=".name" />
-                    <marker date="1481044182000" expanded="true" signature="6738:7554" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.newBarUsers.length &gt; 0&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="6813:6871" placeholder=".page-title" />
-                    <marker date="1481044182000" expanded="true" signature="6880:7554" placeholder=".queen-list.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="6961:7461" placeholder=".fream" />
-                    <marker date="1481044182000" expanded="true" signature="6982:7011" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481044182000" expanded="true" signature="7026:7056" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481044182000" expanded="true" signature="7071:7103" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481044182000" expanded="true" signature="7118:7151" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481044182000" expanded="true" signature="7474:7554" placeholder=".profile" />
-                    <marker date="1481044182000" expanded="true" signature="7497:7554" placeholder=".name" />
-                    <marker date="1481044182000" expanded="true" signature="7561:8527" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.newMassageUsers.length &gt; 0&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="7640:7702" placeholder=".page-title" />
-                    <marker date="1481044182000" expanded="true" signature="7711:8527" placeholder=".queen-list.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="7796:8300" placeholder=".fream" />
-                    <marker date="1481044182000" expanded="true" signature="7817:7846" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481044182000" expanded="true" signature="7861:7891" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481044182000" expanded="true" signature="7906:7938" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481044182000" expanded="true" signature="7953:7986" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481044182000" expanded="true" signature="8313:8527" placeholder=".profile" />
-                    <marker date="1481044182000" expanded="true" signature="8336:8392" placeholder=".name" />
-                    <marker date="1481044182000" expanded="true" signature="8407:8527" placeholder=".body" />
-                    <marker date="1481044182000" expanded="true" signature="8534:9489" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.newSexyUsers.length &gt; 0&quot;" />
-                    <marker date="1481044182000" expanded="true" signature="8610:8669" placeholder=".page-title" />
-                    <marker date="1481044182000" expanded="true" signature="8678:9489" placeholder=".queen-list.clearfix" />
-                    <marker date="1481044182000" expanded="true" signature="8760:9261" placeholder=".fream" />
-                    <marker date="1481044182000" expanded="true" signature="8781:8810" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481044182000" expanded="true" signature="8825:8855" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481044182000" expanded="true" signature="8870:8902" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481044182000" expanded="true" signature="8917:8950" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481044182000" expanded="true" signature="9274:9489" placeholder=".profile" />
-                    <marker date="1481044182000" expanded="true" signature="9297:9353" placeholder=".name" />
-                    <marker date="1481044182000" expanded="true" signature="9368:9489" placeholder=".body" />
-                    <marker date="1481044182000" expanded="true" signature="9496:9903" placeholder=".comsept-box--detail" />
-                    <marker date="1481044182000" expanded="true" signature="9567:9587" placeholder="| キレカワへの会員登録は全て無料です。" />
+                    <marker date="1481048006000" expanded="true" signature="1:13484" placeholder=".main-content.shop-detail-page.clearfix shop-massage-detail-directive=&quot;&quot;" />
+                    <marker date="1481048006000" expanded="true" signature="76:132" placeholder=".container" />
+                    <marker date="1481048006000" expanded="true" signature="135:290" placeholder=".top-view-box" />
+                    <marker date="1481048006000" expanded="true" signature="153:290" placeholder=".shop-cover-wrap style=&quot;background-image:url({{vm.shopMainImg}});&quot;" />
+                    <marker date="1481048006000" expanded="true" signature="226:236" placeholder=".shopCover" />
+                    <marker date="1481048006000" expanded="true" signature="243:290" placeholder=".container" />
+                    <marker date="1481048006000" expanded="true" signature="293:13484" placeholder=".container" />
+                    <marker date="1481048006000" expanded="true" signature="324:843" placeholder=".rank-box.shop-top-box" />
+                    <marker date="1481048006000" expanded="true" signature="405:490" placeholder=".shop-tags" />
+                    <marker date="1481048006000" expanded="true" signature="570:843" placeholder=".shop-button-box.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="606:740" placeholder=".favorite" />
+                    <marker date="1481048006000" expanded="true" signature="751:843" placeholder=".support" />
+                    <marker date="1481048006000" expanded="true" signature="850:1063" placeholder=".rank-box.shop-new-face" />
+                    <marker date="1481048006000" expanded="true" signature="882:936" placeholder=".page-title" />
+                    <marker date="1481048006000" expanded="true" signature="1071:1209" placeholder=".rank-box.shop-new-face" />
+                    <marker date="1481048006000" expanded="true" signature="1103:1161" placeholder=".page-title" />
+                    <marker date="1481048006000" expanded="true" signature="1216:3821" placeholder=".rank-box.shop-new-face" />
+                    <marker date="1481048006000" expanded="true" signature="1248:1301" placeholder=".page-title" />
+                    <marker date="1481048006000" expanded="true" signature="1310:2483" placeholder=".queen-list.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="1388:1872" placeholder=".fream" />
+                    <marker date="1481048006000" expanded="true" signature="1409:1438" placeholder=".fream--basic.fream--top-left" />
+                    <marker date="1481048006000" expanded="true" signature="1453:1483" placeholder=".fream--basic.fream--top-right" />
+                    <marker date="1481048006000" expanded="true" signature="1498:1530" placeholder=".fream--basic.fream--bottom-left" />
+                    <marker date="1481048006000" expanded="true" signature="1545:1578" placeholder=".fream--basic.fream--bottom-right" />
+                    <marker date="1481048006000" expanded="true" signature="1885:2483" placeholder=".profile" />
+                    <marker date="1481048006000" expanded="true" signature="1908:2122" placeholder=".name" />
+                    <marker date="1481048006000" expanded="true" signature="2137:2483" placeholder=".body" />
+                    <marker date="1481048006000" expanded="true" signature="2159:2309" placeholder=".support.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="2326:2483" placeholder=".favorid.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="2492:3821" placeholder=".rank-box.shop-cast" />
+                    <marker date="1481048006000" expanded="true" signature="2522:2575" placeholder=".page-title" />
+                    <marker date="1481048006000" expanded="true" signature="2586:3821" placeholder=".queen-list.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="2665:3167" placeholder=".fream" />
+                    <marker date="1481048006000" expanded="true" signature="2688:2717" placeholder=".fream--basic.fream--top-left" />
+                    <marker date="1481048006000" expanded="true" signature="2734:2764" placeholder=".fream--basic.fream--top-right" />
+                    <marker date="1481048006000" expanded="true" signature="2781:2813" placeholder=".fream--basic.fream--bottom-left" />
+                    <marker date="1481048006000" expanded="true" signature="2830:2863" placeholder=".fream--basic.fream--bottom-right" />
+                    <marker date="1481048006000" expanded="true" signature="3182:3821" placeholder=".profile" />
+                    <marker date="1481048006000" expanded="true" signature="3207:3438" placeholder=".name" />
+                    <marker date="1481048006000" expanded="true" signature="3455:3821" placeholder=".body" />
+                    <marker date="1481048006000" expanded="true" signature="3479:3637" placeholder=".support.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="3656:3821" placeholder=".favorid.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="3828:5385" placeholder="#system.rank-box.shop-system" />
+                    <marker date="1481048006000" expanded="true" signature="3865:3916" placeholder=".page-title" />
+                    <marker date="1481048006000" expanded="true" signature="5392:6535" placeholder="#map.rank-box.shop-map.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="5432:5497" placeholder=".page-title" />
+                    <marker date="1481048006000" expanded="true" signature="5506:6535" placeholder=".clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="5526:6535" placeholder=".row" />
+                    <marker date="1481048006000" expanded="true" signature="5543:5900" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
+                    <marker date="1481048006000" expanded="true" signature="5604:5900" placeholder=".col-row-left.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="5913:6535" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
+                    <marker date="1481048006000" expanded="true" signature="5974:6535" placeholder=".col-row-right.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="6014:6535" placeholder=".shop-map--info-box" />
+                    <marker date="1481048006000" expanded="true" signature="6052:6535" placeholder=".shop-map--info-wrap" />
+                    <marker date="1481048006000" expanded="true" signature="6093:6195" placeholder=".shop-name-titlt" />
+                    <marker date="1481048006000" expanded="true" signature="6132:6195" placeholder=".shop-map--info-name" />
+                    <marker date="1481048006000" expanded="true" signature="6542:10617" placeholder="#contact.rank-box.shop-map.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="6586:6638" placeholder=".page-title" />
+                    <marker date="1481048006000" expanded="true" signature="6647:10617" placeholder=".contact" />
+                    <marker date="1481048006000" expanded="true" signature="7295:7815" placeholder=".form-shop.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="7337:7815" placeholder=".col-xs-12" />
+                    <marker date="1481048006000" expanded="true" signature="10358:10488" placeholder=".center-button style=&quot;text-align:center;&quot; ng-show=&quot;vm.canContactSubmited&quot;" />
+                    <marker date="1481048006000" expanded="true" signature="10501:10617" placeholder=".center-button style=&quot;text-align:center;&quot; ng-hide=&quot;vm.canContactSubmited&quot;" />
+                    <marker date="1481048006000" expanded="true" signature="10625:13107" placeholder="#review.rank-box.shop-map.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="10668:10719" placeholder=".page-title" />
+                    <marker date="1481048006000" expanded="true" signature="10762:12955" placeholder=".contact" />
+                    <marker date="1481048006000" expanded="true" signature="12596:12730" placeholder=".error" />
+                    <marker date="1481048006000" expanded="true" signature="12745:12850" placeholder=".center-button  ng-show=&quot;vm.canReviewSubmited&quot;" />
+                    <marker date="1481048006000" expanded="true" signature="12865:12955" placeholder=".center-button ng-hide=&quot;vm.canReviewSubmited&quot;" />
+                    <marker date="1481048006000" expanded="true" signature="13015:13107" placeholder=".center-button style=&quot;text-align:center;&quot;" />
+                    <marker date="1481048006000" expanded="true" signature="13114:13484" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
+                    <marker date="1481048006000" expanded="true" signature="13160:13216" placeholder=".page-title" />
+                    <marker date="1481048006000" expanded="true" signature="13225:13484" placeholder=".shop-list.clearfix" />
+                    <marker date="1481048006000" expanded="true" signature="13420:13484" placeholder=".shop-info" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="shop.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
+          <file leaf-file-name="front_controller.rb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.7058823">
-                  <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/main.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.1960785">
-                  <caret line="541" column="18" selection-start-line="541" selection-start-column="18" selection-end-line="541" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="home.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/home.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.5294118">
-                  <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="90" column="51" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
@@ -185,71 +175,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="home_controller.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="home_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/front/home_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.directive.coffee" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/karaoke/index.directive.coffee">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.0">
-                  <caret line="73" column="11" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/index.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.625">
-                  <caret line="19" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.625">
-                  <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index_jp.html.slim" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/visitor/index_jp.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.49586776">
-                  <caret line="12" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.875">
-                  <caret line="52" column="130" selection-start-line="52" selection-start-column="130" selection-end-line="52" selection-end-column="130" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/index.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.875">
-                  <caret line="52" column="130" selection-start-line="52" selection-start-column="130" selection-end-line="52" selection-end-column="130" />
+                <state vertical-scroll-proportion="1.2526691">
+                  <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -262,9 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/index.route.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/guide/detail.directive.coffee" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/page_view_type/cast_guide.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/guide/index.directive.coffee" />
@@ -290,7 +217,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/service/modal.service.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/karaoke/index.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/group.scss" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/guide/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim" />
@@ -301,18 +227,22 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/sexy/detail.html.slim" />
-        <option value="$PROJECT_DIR$/app/controllers/front/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/karaoke/index.directive.coffee" />
         <option value="$PROJECT_DIR$/app/views/layouts/front/base.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/front/home/index.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/home.scss" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/index.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/front/main.scss" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/massage/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/home/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/controllers/front/home_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/front/home/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/front/main.scss" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim" />
       </list>
     </option>
   </component>
@@ -407,84 +337,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="visitor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="front" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -514,6 +366,14 @@
               <option name="myItemId" value="front" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -537,43 +397,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemId" value="tpl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemId" value="shops" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
+              <option name="myItemId" value="massage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -591,15 +423,151 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shops" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shops" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -855,7 +823,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20731707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17862266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292232" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -863,10 +833,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46979037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292232" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -896,30 +864,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/group/components/user/form.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79545456">
-          <caret line="116" column="26" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/index.route.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/shop/components/group/form.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/admin_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1054,38 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.083333">
-          <caret line="69" column="95" selection-start-line="69" selection-start-column="95" selection-end-line="69" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.29757786">
-          <caret line="79" column="95" selection-start-line="79" selection-start-column="95" selection-end-line="79" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47965115">
-          <caret line="28" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.9583335">
@@ -1118,14 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.556962">
-          <caret line="203" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.8607595">
@@ -1146,14 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49295774">
           <caret line="11" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/front/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -1187,14 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/home/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.875">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/bar/index.directive.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1219,35 +1107,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8264463">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/karaoke/index.directive.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.0">
           <caret line="73" column="11" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7058823">
-          <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1960785">
-          <caret line="541" column="18" selection-start-line="541" selection-start-column="18" selection-end-line="541" selection-end-column="18" />
-          <folding />
+          <folding>
+            <marker date="1481028710000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1275,17 +1141,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/visitor/index_jp.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49586776">
+        <state vertical-scroll-proportion="0.34749034">
           <caret line="12" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
@@ -1293,113 +1151,195 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/home/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64285713">
-          <caret line="233" column="0" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+        <state vertical-scroll-proportion="5.5833335">
+          <caret line="227" column="26" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.6744187">
+          <caret line="69" column="95" selection-start-line="69" selection-start-column="95" selection-end-line="69" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5348837">
+          <caret line="79" column="95" selection-start-line="79" selection-start-column="95" selection-end-line="79" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7364341">
+          <caret line="81" column="95" selection-start-line="81" selection-start-column="95" selection-end-line="81" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7058823">
+          <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/home/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.1666665">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/front/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2526691">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/system/index_jp.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.116279">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9411764">
+          <caret line="485" column="14" selection-start-line="485" selection-start-column="14" selection-end-line="485" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7751938">
+          <caret line="25" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="51" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.875">
+          <caret line="203" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.25">
+          <caret line="87" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7364341">
+          <caret line="87" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
-            <marker date="1481044182000" expanded="true" signature="0:9903" placeholder=".main-content.home-page home-directive=&quot;&quot;" />
-            <marker date="1481044182000" expanded="true" signature="44:1408" placeholder=".main-wrap.container-fluid" />
-            <marker date="1481044182000" expanded="true" signature="219:321" placeholder=".img-box" />
-            <marker date="1481044182000" expanded="true" signature="332:411" placeholder=".cover.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="474:580" placeholder=".img-box" />
-            <marker date="1481044182000" expanded="true" signature="591:658" placeholder=".cover.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="721:837" placeholder=".img-box" />
-            <marker date="1481044182000" expanded="true" signature="848:912" placeholder=".cover.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="975:1091" placeholder=".img-box" />
-            <marker date="1481044182000" expanded="true" signature="1102:1166" placeholder=".cover.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="1217:1333" placeholder=".img-box" />
-            <marker date="1481044182000" expanded="true" signature="1344:1408" placeholder=".cover.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="1411:9903" placeholder=".container" />
-            <marker date="1481044182000" expanded="true" signature="1442:2011" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.timeServices.length &gt; 0&quot;" />
-            <marker date="1481044182000" expanded="true" signature="1518:1575" placeholder=".page-title" />
-            <marker date="1481044182000" expanded="true" signature="1584:2011" placeholder=".news-list" />
-            <marker date="1481044182000" expanded="true" signature="2018:2988" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.karaokeUsers.length &gt; 0&quot;" />
-            <marker date="1481044182000" expanded="true" signature="2094:2166" placeholder=".page-title" />
-            <marker date="1481044182000" expanded="true" signature="2175:2988" placeholder=".queen-list.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="2257:2761" placeholder=".fream" />
-            <marker date="1481044182000" expanded="true" signature="2278:2307" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481044182000" expanded="true" signature="2322:2352" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481044182000" expanded="true" signature="2367:2399" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481044182000" expanded="true" signature="2414:2447" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481044182000" expanded="true" signature="2774:2988" placeholder=".profile" />
-            <marker date="1481044182000" expanded="true" signature="2797:2853" placeholder=".name" />
-            <marker date="1481044182000" expanded="true" signature="2868:2988" placeholder=".body" />
-            <marker date="1481044182000" expanded="true" signature="2995:3950" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.barUsers.length &gt; 0&quot;" />
-            <marker date="1481044182000" expanded="true" signature="3067:3135" placeholder=".page-title" />
-            <marker date="1481044182000" expanded="true" signature="3144:3950" placeholder=".queen-list.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="3222:3722" placeholder=".fream" />
-            <marker date="1481044182000" expanded="true" signature="3243:3272" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481044182000" expanded="true" signature="3287:3317" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481044182000" expanded="true" signature="3332:3364" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481044182000" expanded="true" signature="3379:3412" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481044182000" expanded="true" signature="3735:3950" placeholder=".profile" />
-            <marker date="1481044182000" expanded="true" signature="3758:3814" placeholder=".name" />
-            <marker date="1481044182000" expanded="true" signature="3829:3950" placeholder=".body" />
-            <marker date="1481044182000" expanded="true" signature="3957:4927" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.massageUsers.length &gt; 0&quot;" />
-            <marker date="1481044182000" expanded="true" signature="4033:4105" placeholder=".page-title" />
-            <marker date="1481044182000" expanded="true" signature="4114:4927" placeholder=".queen-list.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="4196:4700" placeholder=".fream" />
-            <marker date="1481044182000" expanded="true" signature="4217:4246" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481044182000" expanded="true" signature="4261:4291" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481044182000" expanded="true" signature="4306:4338" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481044182000" expanded="true" signature="4353:4386" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481044182000" expanded="true" signature="4713:4927" placeholder=".profile" />
-            <marker date="1481044182000" expanded="true" signature="4736:4792" placeholder=".name" />
-            <marker date="1481044182000" expanded="true" signature="4807:4927" placeholder=".body" />
-            <marker date="1481044182000" expanded="true" signature="4934:5893" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.sexyUsers.length &gt; 0&quot;" />
-            <marker date="1481044182000" expanded="true" signature="5007:5076" placeholder=".page-title" />
-            <marker date="1481044182000" expanded="true" signature="5085:5893" placeholder=".queen-list.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="5164:5665" placeholder=".fream" />
-            <marker date="1481044182000" expanded="true" signature="5185:5214" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481044182000" expanded="true" signature="5229:5259" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481044182000" expanded="true" signature="5274:5306" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481044182000" expanded="true" signature="5321:5354" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481044182000" expanded="true" signature="5678:5893" placeholder=".profile" />
-            <marker date="1481044182000" expanded="true" signature="5701:5757" placeholder=".name" />
-            <marker date="1481044182000" expanded="true" signature="5772:5893" placeholder=".body" />
-            <marker date="1481044182000" expanded="true" signature="5900:6731" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.newKaraokeUsers.length &gt; 0&quot;" />
-            <marker date="1481044182000" expanded="true" signature="5979:6041" placeholder=".page-title" />
-            <marker date="1481044182000" expanded="true" signature="6050:6731" placeholder=".queen-list.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="6135:6639" placeholder=".fream" />
-            <marker date="1481044182000" expanded="true" signature="6156:6185" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481044182000" expanded="true" signature="6200:6230" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481044182000" expanded="true" signature="6245:6277" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481044182000" expanded="true" signature="6292:6325" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481044182000" expanded="true" signature="6652:6731" placeholder=".profile" />
-            <marker date="1481044182000" expanded="true" signature="6675:6731" placeholder=".name" />
-            <marker date="1481044182000" expanded="true" signature="6738:7554" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.newBarUsers.length &gt; 0&quot;" />
-            <marker date="1481044182000" expanded="true" signature="6813:6871" placeholder=".page-title" />
-            <marker date="1481044182000" expanded="true" signature="6880:7554" placeholder=".queen-list.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="6961:7461" placeholder=".fream" />
-            <marker date="1481044182000" expanded="true" signature="6982:7011" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481044182000" expanded="true" signature="7026:7056" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481044182000" expanded="true" signature="7071:7103" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481044182000" expanded="true" signature="7118:7151" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481044182000" expanded="true" signature="7474:7554" placeholder=".profile" />
-            <marker date="1481044182000" expanded="true" signature="7497:7554" placeholder=".name" />
-            <marker date="1481044182000" expanded="true" signature="7561:8527" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.newMassageUsers.length &gt; 0&quot;" />
-            <marker date="1481044182000" expanded="true" signature="7640:7702" placeholder=".page-title" />
-            <marker date="1481044182000" expanded="true" signature="7711:8527" placeholder=".queen-list.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="7796:8300" placeholder=".fream" />
-            <marker date="1481044182000" expanded="true" signature="7817:7846" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481044182000" expanded="true" signature="7861:7891" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481044182000" expanded="true" signature="7906:7938" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481044182000" expanded="true" signature="7953:7986" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481044182000" expanded="true" signature="8313:8527" placeholder=".profile" />
-            <marker date="1481044182000" expanded="true" signature="8336:8392" placeholder=".name" />
-            <marker date="1481044182000" expanded="true" signature="8407:8527" placeholder=".body" />
-            <marker date="1481044182000" expanded="true" signature="8534:9489" placeholder=".top-box style=&quot;margin: 3rem 0;&quot; ng-if=&quot;vm.newSexyUsers.length &gt; 0&quot;" />
-            <marker date="1481044182000" expanded="true" signature="8610:8669" placeholder=".page-title" />
-            <marker date="1481044182000" expanded="true" signature="8678:9489" placeholder=".queen-list.clearfix" />
-            <marker date="1481044182000" expanded="true" signature="8760:9261" placeholder=".fream" />
-            <marker date="1481044182000" expanded="true" signature="8781:8810" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481044182000" expanded="true" signature="8825:8855" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481044182000" expanded="true" signature="8870:8902" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481044182000" expanded="true" signature="8917:8950" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481044182000" expanded="true" signature="9274:9489" placeholder=".profile" />
-            <marker date="1481044182000" expanded="true" signature="9297:9353" placeholder=".name" />
-            <marker date="1481044182000" expanded="true" signature="9368:9489" placeholder=".body" />
-            <marker date="1481044182000" expanded="true" signature="9496:9903" placeholder=".comsept-box--detail" />
-            <marker date="1481044182000" expanded="true" signature="9567:9587" placeholder="| キレカワへの会員登録は全て無料です。" />
+            <marker date="1481048006000" expanded="true" signature="1:13484" placeholder=".main-content.shop-detail-page.clearfix shop-massage-detail-directive=&quot;&quot;" />
+            <marker date="1481048006000" expanded="true" signature="76:132" placeholder=".container" />
+            <marker date="1481048006000" expanded="true" signature="135:290" placeholder=".top-view-box" />
+            <marker date="1481048006000" expanded="true" signature="153:290" placeholder=".shop-cover-wrap style=&quot;background-image:url({{vm.shopMainImg}});&quot;" />
+            <marker date="1481048006000" expanded="true" signature="226:236" placeholder=".shopCover" />
+            <marker date="1481048006000" expanded="true" signature="243:290" placeholder=".container" />
+            <marker date="1481048006000" expanded="true" signature="293:13484" placeholder=".container" />
+            <marker date="1481048006000" expanded="true" signature="324:843" placeholder=".rank-box.shop-top-box" />
+            <marker date="1481048006000" expanded="true" signature="405:490" placeholder=".shop-tags" />
+            <marker date="1481048006000" expanded="true" signature="570:843" placeholder=".shop-button-box.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="606:740" placeholder=".favorite" />
+            <marker date="1481048006000" expanded="true" signature="751:843" placeholder=".support" />
+            <marker date="1481048006000" expanded="true" signature="850:1063" placeholder=".rank-box.shop-new-face" />
+            <marker date="1481048006000" expanded="true" signature="882:936" placeholder=".page-title" />
+            <marker date="1481048006000" expanded="true" signature="1071:1209" placeholder=".rank-box.shop-new-face" />
+            <marker date="1481048006000" expanded="true" signature="1103:1161" placeholder=".page-title" />
+            <marker date="1481048006000" expanded="true" signature="1216:3821" placeholder=".rank-box.shop-new-face" />
+            <marker date="1481048006000" expanded="true" signature="1248:1301" placeholder=".page-title" />
+            <marker date="1481048006000" expanded="true" signature="1310:2483" placeholder=".queen-list.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="1388:1872" placeholder=".fream" />
+            <marker date="1481048006000" expanded="true" signature="1409:1438" placeholder=".fream--basic.fream--top-left" />
+            <marker date="1481048006000" expanded="true" signature="1453:1483" placeholder=".fream--basic.fream--top-right" />
+            <marker date="1481048006000" expanded="true" signature="1498:1530" placeholder=".fream--basic.fream--bottom-left" />
+            <marker date="1481048006000" expanded="true" signature="1545:1578" placeholder=".fream--basic.fream--bottom-right" />
+            <marker date="1481048006000" expanded="true" signature="1885:2483" placeholder=".profile" />
+            <marker date="1481048006000" expanded="true" signature="1908:2122" placeholder=".name" />
+            <marker date="1481048006000" expanded="true" signature="2137:2483" placeholder=".body" />
+            <marker date="1481048006000" expanded="true" signature="2159:2309" placeholder=".support.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="2326:2483" placeholder=".favorid.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="2492:3821" placeholder=".rank-box.shop-cast" />
+            <marker date="1481048006000" expanded="true" signature="2522:2575" placeholder=".page-title" />
+            <marker date="1481048006000" expanded="true" signature="2586:3821" placeholder=".queen-list.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="2665:3167" placeholder=".fream" />
+            <marker date="1481048006000" expanded="true" signature="2688:2717" placeholder=".fream--basic.fream--top-left" />
+            <marker date="1481048006000" expanded="true" signature="2734:2764" placeholder=".fream--basic.fream--top-right" />
+            <marker date="1481048006000" expanded="true" signature="2781:2813" placeholder=".fream--basic.fream--bottom-left" />
+            <marker date="1481048006000" expanded="true" signature="2830:2863" placeholder=".fream--basic.fream--bottom-right" />
+            <marker date="1481048006000" expanded="true" signature="3182:3821" placeholder=".profile" />
+            <marker date="1481048006000" expanded="true" signature="3207:3438" placeholder=".name" />
+            <marker date="1481048006000" expanded="true" signature="3455:3821" placeholder=".body" />
+            <marker date="1481048006000" expanded="true" signature="3479:3637" placeholder=".support.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="3656:3821" placeholder=".favorid.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="3828:5385" placeholder="#system.rank-box.shop-system" />
+            <marker date="1481048006000" expanded="true" signature="3865:3916" placeholder=".page-title" />
+            <marker date="1481048006000" expanded="true" signature="5392:6535" placeholder="#map.rank-box.shop-map.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="5432:5497" placeholder=".page-title" />
+            <marker date="1481048006000" expanded="true" signature="5506:6535" placeholder=".clearfix" />
+            <marker date="1481048006000" expanded="true" signature="5526:6535" placeholder=".row" />
+            <marker date="1481048006000" expanded="true" signature="5543:5900" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
+            <marker date="1481048006000" expanded="true" signature="5604:5900" placeholder=".col-row-left.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="5913:6535" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
+            <marker date="1481048006000" expanded="true" signature="5974:6535" placeholder=".col-row-right.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="6014:6535" placeholder=".shop-map--info-box" />
+            <marker date="1481048006000" expanded="true" signature="6052:6535" placeholder=".shop-map--info-wrap" />
+            <marker date="1481048006000" expanded="true" signature="6093:6195" placeholder=".shop-name-titlt" />
+            <marker date="1481048006000" expanded="true" signature="6132:6195" placeholder=".shop-map--info-name" />
+            <marker date="1481048006000" expanded="true" signature="6542:10617" placeholder="#contact.rank-box.shop-map.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="6586:6638" placeholder=".page-title" />
+            <marker date="1481048006000" expanded="true" signature="6647:10617" placeholder=".contact" />
+            <marker date="1481048006000" expanded="true" signature="7295:7815" placeholder=".form-shop.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="7337:7815" placeholder=".col-xs-12" />
+            <marker date="1481048006000" expanded="true" signature="10358:10488" placeholder=".center-button style=&quot;text-align:center;&quot; ng-show=&quot;vm.canContactSubmited&quot;" />
+            <marker date="1481048006000" expanded="true" signature="10501:10617" placeholder=".center-button style=&quot;text-align:center;&quot; ng-hide=&quot;vm.canContactSubmited&quot;" />
+            <marker date="1481048006000" expanded="true" signature="10625:13107" placeholder="#review.rank-box.shop-map.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="10668:10719" placeholder=".page-title" />
+            <marker date="1481048006000" expanded="true" signature="10762:12955" placeholder=".contact" />
+            <marker date="1481048006000" expanded="true" signature="12596:12730" placeholder=".error" />
+            <marker date="1481048006000" expanded="true" signature="12745:12850" placeholder=".center-button  ng-show=&quot;vm.canReviewSubmited&quot;" />
+            <marker date="1481048006000" expanded="true" signature="12865:12955" placeholder=".center-button ng-hide=&quot;vm.canReviewSubmited&quot;" />
+            <marker date="1481048006000" expanded="true" signature="13015:13107" placeholder=".center-button style=&quot;text-align:center;&quot;" />
+            <marker date="1481048006000" expanded="true" signature="13114:13484" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
+            <marker date="1481048006000" expanded="true" signature="13160:13216" placeholder=".page-title" />
+            <marker date="1481048006000" expanded="true" signature="13225:13484" placeholder=".shop-list.clearfix" />
+            <marker date="1481048006000" expanded="true" signature="13420:13484" placeholder=".shop-info" />
           </folding>
         </state>
       </provider>
