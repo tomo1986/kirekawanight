@@ -21,8 +21,11 @@
             .fream--basic.fream--top-right
             .fream--basic.fream--bottom-left
             .fream--basic.fream--bottom-right
-            a href="/casts/karaoke/{{cast.id}}"
-              img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            a href="/casts/bar/{{cast.id}}"
+              span ng-if="cast.images[0]"
+                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+              span ng-if="!cast.images[0]"
+                = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
           .profile
             .name
               | {{cast.nick_name}}({{cast.age}})
@@ -72,7 +75,7 @@
             .fream--basic.fream--top-right
             .fream--basic.fream--bottom-left
             .fream--basic.fream--bottom-right
-            a href="/casts/karaoke/{{cast.id}}"
+            a href="/casts/bar/{{cast.id}}"
               img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
           .profile
             .name
