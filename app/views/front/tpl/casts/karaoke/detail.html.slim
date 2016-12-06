@@ -6,7 +6,11 @@
         .photo-area
           .fream
             p.main-image ng-repeat="image in vm.cast.images track by $index"
-              img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"  ng-class="{'target': vm.castMainImg == image.url}"
+              span ng-if="vm.castMainImg"
+                img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"  ng-class="{'target': vm.castMainImg == image.url}"
+              span ng-if="!vm.castMainImg"
+                = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+
         .profile-area
           .name-area
             h3
@@ -295,7 +299,10 @@
             .fream--basic.fream--bottom-left
             .fream--basic.fream--bottom-right
             a href="/casts/karaoke/{{cast.id}}"
-              img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+              span ng-if="cast.images[0]"
+                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+              span ng-if="!cast.images[0]"
+                = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
           .profile
             .name
               | {{cast.nick_name}}({{cast.age}})
