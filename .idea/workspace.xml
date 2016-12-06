@@ -49,8 +49,8 @@
           <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.75">
-                  <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+                <state vertical-scroll-proportion="-13.0">
+                  <caret line="333" column="0" selection-start-line="329" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -69,8 +69,8 @@
           <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="3.25">
-                  <caret line="87" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+                <state vertical-scroll-proportion="-9.875">
+                  <caret line="327" column="26" selection-start-line="327" selection-start-column="26" selection-end-line="327" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -79,84 +79,94 @@
           <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7364341">
-                  <caret line="87" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.8062016">
+                  <caret line="332" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
                   <folding>
-                    <marker date="1481048006000" expanded="true" signature="1:13484" placeholder=".main-content.shop-detail-page.clearfix shop-massage-detail-directive=&quot;&quot;" />
-                    <marker date="1481048006000" expanded="true" signature="76:132" placeholder=".container" />
-                    <marker date="1481048006000" expanded="true" signature="135:290" placeholder=".top-view-box" />
-                    <marker date="1481048006000" expanded="true" signature="153:290" placeholder=".shop-cover-wrap style=&quot;background-image:url({{vm.shopMainImg}});&quot;" />
-                    <marker date="1481048006000" expanded="true" signature="226:236" placeholder=".shopCover" />
-                    <marker date="1481048006000" expanded="true" signature="243:290" placeholder=".container" />
-                    <marker date="1481048006000" expanded="true" signature="293:13484" placeholder=".container" />
-                    <marker date="1481048006000" expanded="true" signature="324:843" placeholder=".rank-box.shop-top-box" />
-                    <marker date="1481048006000" expanded="true" signature="405:490" placeholder=".shop-tags" />
-                    <marker date="1481048006000" expanded="true" signature="570:843" placeholder=".shop-button-box.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="606:740" placeholder=".favorite" />
-                    <marker date="1481048006000" expanded="true" signature="751:843" placeholder=".support" />
-                    <marker date="1481048006000" expanded="true" signature="850:1063" placeholder=".rank-box.shop-new-face" />
-                    <marker date="1481048006000" expanded="true" signature="882:936" placeholder=".page-title" />
-                    <marker date="1481048006000" expanded="true" signature="1071:1209" placeholder=".rank-box.shop-new-face" />
-                    <marker date="1481048006000" expanded="true" signature="1103:1161" placeholder=".page-title" />
-                    <marker date="1481048006000" expanded="true" signature="1216:3821" placeholder=".rank-box.shop-new-face" />
-                    <marker date="1481048006000" expanded="true" signature="1248:1301" placeholder=".page-title" />
-                    <marker date="1481048006000" expanded="true" signature="1310:2483" placeholder=".queen-list.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="1388:1872" placeholder=".fream" />
-                    <marker date="1481048006000" expanded="true" signature="1409:1438" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481048006000" expanded="true" signature="1453:1483" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481048006000" expanded="true" signature="1498:1530" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481048006000" expanded="true" signature="1545:1578" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481048006000" expanded="true" signature="1885:2483" placeholder=".profile" />
-                    <marker date="1481048006000" expanded="true" signature="1908:2122" placeholder=".name" />
-                    <marker date="1481048006000" expanded="true" signature="2137:2483" placeholder=".body" />
-                    <marker date="1481048006000" expanded="true" signature="2159:2309" placeholder=".support.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="2326:2483" placeholder=".favorid.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="2492:3821" placeholder=".rank-box.shop-cast" />
-                    <marker date="1481048006000" expanded="true" signature="2522:2575" placeholder=".page-title" />
-                    <marker date="1481048006000" expanded="true" signature="2586:3821" placeholder=".queen-list.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="2665:3167" placeholder=".fream" />
-                    <marker date="1481048006000" expanded="true" signature="2688:2717" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1481048006000" expanded="true" signature="2734:2764" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1481048006000" expanded="true" signature="2781:2813" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1481048006000" expanded="true" signature="2830:2863" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1481048006000" expanded="true" signature="3182:3821" placeholder=".profile" />
-                    <marker date="1481048006000" expanded="true" signature="3207:3438" placeholder=".name" />
-                    <marker date="1481048006000" expanded="true" signature="3455:3821" placeholder=".body" />
-                    <marker date="1481048006000" expanded="true" signature="3479:3637" placeholder=".support.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="3656:3821" placeholder=".favorid.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="3828:5385" placeholder="#system.rank-box.shop-system" />
-                    <marker date="1481048006000" expanded="true" signature="3865:3916" placeholder=".page-title" />
-                    <marker date="1481048006000" expanded="true" signature="5392:6535" placeholder="#map.rank-box.shop-map.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="5432:5497" placeholder=".page-title" />
-                    <marker date="1481048006000" expanded="true" signature="5506:6535" placeholder=".clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="5526:6535" placeholder=".row" />
-                    <marker date="1481048006000" expanded="true" signature="5543:5900" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
-                    <marker date="1481048006000" expanded="true" signature="5604:5900" placeholder=".col-row-left.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="5913:6535" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
-                    <marker date="1481048006000" expanded="true" signature="5974:6535" placeholder=".col-row-right.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="6014:6535" placeholder=".shop-map--info-box" />
-                    <marker date="1481048006000" expanded="true" signature="6052:6535" placeholder=".shop-map--info-wrap" />
-                    <marker date="1481048006000" expanded="true" signature="6093:6195" placeholder=".shop-name-titlt" />
-                    <marker date="1481048006000" expanded="true" signature="6132:6195" placeholder=".shop-map--info-name" />
-                    <marker date="1481048006000" expanded="true" signature="6542:10617" placeholder="#contact.rank-box.shop-map.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="6586:6638" placeholder=".page-title" />
-                    <marker date="1481048006000" expanded="true" signature="6647:10617" placeholder=".contact" />
-                    <marker date="1481048006000" expanded="true" signature="7295:7815" placeholder=".form-shop.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="7337:7815" placeholder=".col-xs-12" />
-                    <marker date="1481048006000" expanded="true" signature="10358:10488" placeholder=".center-button style=&quot;text-align:center;&quot; ng-show=&quot;vm.canContactSubmited&quot;" />
-                    <marker date="1481048006000" expanded="true" signature="10501:10617" placeholder=".center-button style=&quot;text-align:center;&quot; ng-hide=&quot;vm.canContactSubmited&quot;" />
-                    <marker date="1481048006000" expanded="true" signature="10625:13107" placeholder="#review.rank-box.shop-map.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="10668:10719" placeholder=".page-title" />
-                    <marker date="1481048006000" expanded="true" signature="10762:12955" placeholder=".contact" />
-                    <marker date="1481048006000" expanded="true" signature="12596:12730" placeholder=".error" />
-                    <marker date="1481048006000" expanded="true" signature="12745:12850" placeholder=".center-button  ng-show=&quot;vm.canReviewSubmited&quot;" />
-                    <marker date="1481048006000" expanded="true" signature="12865:12955" placeholder=".center-button ng-hide=&quot;vm.canReviewSubmited&quot;" />
-                    <marker date="1481048006000" expanded="true" signature="13015:13107" placeholder=".center-button style=&quot;text-align:center;&quot;" />
-                    <marker date="1481048006000" expanded="true" signature="13114:13484" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
-                    <marker date="1481048006000" expanded="true" signature="13160:13216" placeholder=".page-title" />
-                    <marker date="1481048006000" expanded="true" signature="13225:13484" placeholder=".shop-list.clearfix" />
-                    <marker date="1481048006000" expanded="true" signature="13420:13484" placeholder=".shop-info" />
+                    <marker date="1481048359000" expanded="true" signature="1:13667" placeholder=".main-content.shop-detail-page.clearfix shop-massage-detail-directive=&quot;&quot;" />
+                    <marker date="1481048359000" expanded="true" signature="76:132" placeholder=".container" />
+                    <marker date="1481048359000" expanded="true" signature="135:290" placeholder=".top-view-box" />
+                    <marker date="1481048359000" expanded="true" signature="153:290" placeholder=".shop-cover-wrap style=&quot;background-image:url({{vm.shopMainImg}});&quot;" />
+                    <marker date="1481048359000" expanded="true" signature="226:236" placeholder=".shopCover" />
+                    <marker date="1481048359000" expanded="true" signature="243:290" placeholder=".container" />
+                    <marker date="1481048359000" expanded="true" signature="293:13667" placeholder=".container" />
+                    <marker date="1481048359000" expanded="true" signature="324:843" placeholder=".rank-box.shop-top-box" />
+                    <marker date="1481048359000" expanded="true" signature="405:490" placeholder=".shop-tags" />
+                    <marker date="1481048359000" expanded="true" signature="570:843" placeholder=".shop-button-box.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="606:740" placeholder=".favorite" />
+                    <marker date="1481048359000" expanded="true" signature="751:843" placeholder=".support" />
+                    <marker date="1481048359000" expanded="true" signature="850:1063" placeholder=".rank-box.shop-new-face" />
+                    <marker date="1481048359000" expanded="true" signature="882:936" placeholder=".page-title" />
+                    <marker date="1481048359000" expanded="true" signature="1071:1209" placeholder=".rank-box.shop-new-face" />
+                    <marker date="1481048359000" expanded="true" signature="1103:1161" placeholder=".page-title" />
+                    <marker date="1481048359000" expanded="true" signature="1216:3821" placeholder=".rank-box.shop-new-face" />
+                    <marker date="1481048359000" expanded="true" signature="1248:1301" placeholder=".page-title" />
+                    <marker date="1481048359000" expanded="true" signature="1310:2483" placeholder=".queen-list.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="1388:1872" placeholder=".fream" />
+                    <marker date="1481048359000" expanded="true" signature="1409:1438" placeholder=".fream--basic.fream--top-left" />
+                    <marker date="1481048359000" expanded="true" signature="1453:1483" placeholder=".fream--basic.fream--top-right" />
+                    <marker date="1481048359000" expanded="true" signature="1498:1530" placeholder=".fream--basic.fream--bottom-left" />
+                    <marker date="1481048359000" expanded="true" signature="1545:1578" placeholder=".fream--basic.fream--bottom-right" />
+                    <marker date="1481048359000" expanded="true" signature="1885:2483" placeholder=".profile" />
+                    <marker date="1481048359000" expanded="true" signature="1908:2122" placeholder=".name" />
+                    <marker date="1481048359000" expanded="true" signature="2137:2483" placeholder=".body" />
+                    <marker date="1481048359000" expanded="true" signature="2159:2309" placeholder=".support.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="2326:2483" placeholder=".favorid.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="2492:3821" placeholder=".rank-box.shop-cast" />
+                    <marker date="1481048359000" expanded="true" signature="2522:2575" placeholder=".page-title" />
+                    <marker date="1481048359000" expanded="true" signature="2586:3821" placeholder=".queen-list.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="2665:3167" placeholder=".fream" />
+                    <marker date="1481048359000" expanded="true" signature="2688:2717" placeholder=".fream--basic.fream--top-left" />
+                    <marker date="1481048359000" expanded="true" signature="2734:2764" placeholder=".fream--basic.fream--top-right" />
+                    <marker date="1481048359000" expanded="true" signature="2781:2813" placeholder=".fream--basic.fream--bottom-left" />
+                    <marker date="1481048359000" expanded="true" signature="2830:2863" placeholder=".fream--basic.fream--bottom-right" />
+                    <marker date="1481048359000" expanded="true" signature="3182:3821" placeholder=".profile" />
+                    <marker date="1481048359000" expanded="true" signature="3207:3438" placeholder=".name" />
+                    <marker date="1481048359000" expanded="true" signature="3455:3821" placeholder=".body" />
+                    <marker date="1481048359000" expanded="true" signature="3479:3637" placeholder=".support.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="3656:3821" placeholder=".favorid.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="3828:5385" placeholder="#system.rank-box.shop-system" />
+                    <marker date="1481048359000" expanded="true" signature="3865:3916" placeholder=".page-title" />
+                    <marker date="1481048359000" expanded="true" signature="5392:6535" placeholder="#map.rank-box.shop-map.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="5432:5497" placeholder=".page-title" />
+                    <marker date="1481048359000" expanded="true" signature="5506:6535" placeholder=".clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="5526:6535" placeholder=".row" />
+                    <marker date="1481048359000" expanded="true" signature="5543:5900" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
+                    <marker date="1481048359000" expanded="true" signature="5604:5900" placeholder=".col-row-left.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="5913:6535" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
+                    <marker date="1481048359000" expanded="true" signature="5974:6535" placeholder=".col-row-right.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="6014:6535" placeholder=".shop-map--info-box" />
+                    <marker date="1481048359000" expanded="true" signature="6052:6535" placeholder=".shop-map--info-wrap" />
+                    <marker date="1481048359000" expanded="true" signature="6093:6195" placeholder=".shop-name-titlt" />
+                    <marker date="1481048359000" expanded="true" signature="6132:6195" placeholder=".shop-map--info-name" />
+                    <marker date="1481048359000" expanded="true" signature="6542:10617" placeholder="#contact.rank-box.shop-map.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="6586:6638" placeholder=".page-title" />
+                    <marker date="1481048359000" expanded="true" signature="6647:10617" placeholder=".contact" />
+                    <marker date="1481048359000" expanded="true" signature="7295:7815" placeholder=".form-shop.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="7337:7815" placeholder=".col-xs-12" />
+                    <marker date="1481048359000" expanded="true" signature="10358:10488" placeholder=".center-button style=&quot;text-align:center;&quot; ng-show=&quot;vm.canContactSubmited&quot;" />
+                    <marker date="1481048359000" expanded="true" signature="10501:10617" placeholder=".center-button style=&quot;text-align:center;&quot; ng-hide=&quot;vm.canContactSubmited&quot;" />
+                    <marker date="1481048359000" expanded="true" signature="10625:13107" placeholder="#review.rank-box.shop-map.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="10668:10719" placeholder=".page-title" />
+                    <marker date="1481048359000" expanded="true" signature="10762:12955" placeholder=".contact" />
+                    <marker date="1481048359000" expanded="true" signature="12596:12730" placeholder=".error" />
+                    <marker date="1481048359000" expanded="true" signature="12745:12850" placeholder=".center-button  ng-show=&quot;vm.canReviewSubmited&quot;" />
+                    <marker date="1481048359000" expanded="true" signature="12865:12955" placeholder=".center-button ng-hide=&quot;vm.canReviewSubmited&quot;" />
+                    <marker date="1481048359000" expanded="true" signature="13015:13107" placeholder=".center-button style=&quot;text-align:center;&quot;" />
+                    <marker date="1481048359000" expanded="true" signature="13114:13667" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
+                    <marker date="1481048359000" expanded="true" signature="13160:13216" placeholder=".page-title" />
+                    <marker date="1481048359000" expanded="true" signature="13225:13667" placeholder=".shop-list.clearfix" />
+                    <marker date="1481048359000" expanded="true" signature="13603:13667" placeholder=".shop-info" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-11.5">
+                  <caret line="58" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -240,8 +250,8 @@
         <option value="$PROJECT_DIR$/app/views/front/home/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/main.scss" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim" />
       </list>
     </option>
@@ -436,6 +446,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="shops" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="karaoke" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1125,14 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.875">
-          <caret line="52" column="130" selection-start-line="52" selection-start-column="130" selection-end-line="52" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.875">
@@ -1237,14 +1243,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.875">
@@ -1253,93 +1251,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.5">
+          <caret line="58" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.25">
-          <caret line="87" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.875">
+          <caret line="327" column="26" selection-start-line="327" selection-start-column="26" selection-end-line="327" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.0">
+          <caret line="333" column="0" selection-start-line="329" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7364341">
-          <caret line="87" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8062016">
+          <caret line="332" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
           <folding>
-            <marker date="1481048006000" expanded="true" signature="1:13484" placeholder=".main-content.shop-detail-page.clearfix shop-massage-detail-directive=&quot;&quot;" />
-            <marker date="1481048006000" expanded="true" signature="76:132" placeholder=".container" />
-            <marker date="1481048006000" expanded="true" signature="135:290" placeholder=".top-view-box" />
-            <marker date="1481048006000" expanded="true" signature="153:290" placeholder=".shop-cover-wrap style=&quot;background-image:url({{vm.shopMainImg}});&quot;" />
-            <marker date="1481048006000" expanded="true" signature="226:236" placeholder=".shopCover" />
-            <marker date="1481048006000" expanded="true" signature="243:290" placeholder=".container" />
-            <marker date="1481048006000" expanded="true" signature="293:13484" placeholder=".container" />
-            <marker date="1481048006000" expanded="true" signature="324:843" placeholder=".rank-box.shop-top-box" />
-            <marker date="1481048006000" expanded="true" signature="405:490" placeholder=".shop-tags" />
-            <marker date="1481048006000" expanded="true" signature="570:843" placeholder=".shop-button-box.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="606:740" placeholder=".favorite" />
-            <marker date="1481048006000" expanded="true" signature="751:843" placeholder=".support" />
-            <marker date="1481048006000" expanded="true" signature="850:1063" placeholder=".rank-box.shop-new-face" />
-            <marker date="1481048006000" expanded="true" signature="882:936" placeholder=".page-title" />
-            <marker date="1481048006000" expanded="true" signature="1071:1209" placeholder=".rank-box.shop-new-face" />
-            <marker date="1481048006000" expanded="true" signature="1103:1161" placeholder=".page-title" />
-            <marker date="1481048006000" expanded="true" signature="1216:3821" placeholder=".rank-box.shop-new-face" />
-            <marker date="1481048006000" expanded="true" signature="1248:1301" placeholder=".page-title" />
-            <marker date="1481048006000" expanded="true" signature="1310:2483" placeholder=".queen-list.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="1388:1872" placeholder=".fream" />
-            <marker date="1481048006000" expanded="true" signature="1409:1438" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481048006000" expanded="true" signature="1453:1483" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481048006000" expanded="true" signature="1498:1530" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481048006000" expanded="true" signature="1545:1578" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481048006000" expanded="true" signature="1885:2483" placeholder=".profile" />
-            <marker date="1481048006000" expanded="true" signature="1908:2122" placeholder=".name" />
-            <marker date="1481048006000" expanded="true" signature="2137:2483" placeholder=".body" />
-            <marker date="1481048006000" expanded="true" signature="2159:2309" placeholder=".support.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="2326:2483" placeholder=".favorid.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="2492:3821" placeholder=".rank-box.shop-cast" />
-            <marker date="1481048006000" expanded="true" signature="2522:2575" placeholder=".page-title" />
-            <marker date="1481048006000" expanded="true" signature="2586:3821" placeholder=".queen-list.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="2665:3167" placeholder=".fream" />
-            <marker date="1481048006000" expanded="true" signature="2688:2717" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1481048006000" expanded="true" signature="2734:2764" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1481048006000" expanded="true" signature="2781:2813" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1481048006000" expanded="true" signature="2830:2863" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1481048006000" expanded="true" signature="3182:3821" placeholder=".profile" />
-            <marker date="1481048006000" expanded="true" signature="3207:3438" placeholder=".name" />
-            <marker date="1481048006000" expanded="true" signature="3455:3821" placeholder=".body" />
-            <marker date="1481048006000" expanded="true" signature="3479:3637" placeholder=".support.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="3656:3821" placeholder=".favorid.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="3828:5385" placeholder="#system.rank-box.shop-system" />
-            <marker date="1481048006000" expanded="true" signature="3865:3916" placeholder=".page-title" />
-            <marker date="1481048006000" expanded="true" signature="5392:6535" placeholder="#map.rank-box.shop-map.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="5432:5497" placeholder=".page-title" />
-            <marker date="1481048006000" expanded="true" signature="5506:6535" placeholder=".clearfix" />
-            <marker date="1481048006000" expanded="true" signature="5526:6535" placeholder=".row" />
-            <marker date="1481048006000" expanded="true" signature="5543:5900" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
-            <marker date="1481048006000" expanded="true" signature="5604:5900" placeholder=".col-row-left.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="5913:6535" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
-            <marker date="1481048006000" expanded="true" signature="5974:6535" placeholder=".col-row-right.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="6014:6535" placeholder=".shop-map--info-box" />
-            <marker date="1481048006000" expanded="true" signature="6052:6535" placeholder=".shop-map--info-wrap" />
-            <marker date="1481048006000" expanded="true" signature="6093:6195" placeholder=".shop-name-titlt" />
-            <marker date="1481048006000" expanded="true" signature="6132:6195" placeholder=".shop-map--info-name" />
-            <marker date="1481048006000" expanded="true" signature="6542:10617" placeholder="#contact.rank-box.shop-map.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="6586:6638" placeholder=".page-title" />
-            <marker date="1481048006000" expanded="true" signature="6647:10617" placeholder=".contact" />
-            <marker date="1481048006000" expanded="true" signature="7295:7815" placeholder=".form-shop.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="7337:7815" placeholder=".col-xs-12" />
-            <marker date="1481048006000" expanded="true" signature="10358:10488" placeholder=".center-button style=&quot;text-align:center;&quot; ng-show=&quot;vm.canContactSubmited&quot;" />
-            <marker date="1481048006000" expanded="true" signature="10501:10617" placeholder=".center-button style=&quot;text-align:center;&quot; ng-hide=&quot;vm.canContactSubmited&quot;" />
-            <marker date="1481048006000" expanded="true" signature="10625:13107" placeholder="#review.rank-box.shop-map.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="10668:10719" placeholder=".page-title" />
-            <marker date="1481048006000" expanded="true" signature="10762:12955" placeholder=".contact" />
-            <marker date="1481048006000" expanded="true" signature="12596:12730" placeholder=".error" />
-            <marker date="1481048006000" expanded="true" signature="12745:12850" placeholder=".center-button  ng-show=&quot;vm.canReviewSubmited&quot;" />
-            <marker date="1481048006000" expanded="true" signature="12865:12955" placeholder=".center-button ng-hide=&quot;vm.canReviewSubmited&quot;" />
-            <marker date="1481048006000" expanded="true" signature="13015:13107" placeholder=".center-button style=&quot;text-align:center;&quot;" />
-            <marker date="1481048006000" expanded="true" signature="13114:13484" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
-            <marker date="1481048006000" expanded="true" signature="13160:13216" placeholder=".page-title" />
-            <marker date="1481048006000" expanded="true" signature="13225:13484" placeholder=".shop-list.clearfix" />
-            <marker date="1481048006000" expanded="true" signature="13420:13484" placeholder=".shop-info" />
+            <marker date="1481048359000" expanded="true" signature="1:13667" placeholder=".main-content.shop-detail-page.clearfix shop-massage-detail-directive=&quot;&quot;" />
+            <marker date="1481048359000" expanded="true" signature="76:132" placeholder=".container" />
+            <marker date="1481048359000" expanded="true" signature="135:290" placeholder=".top-view-box" />
+            <marker date="1481048359000" expanded="true" signature="153:290" placeholder=".shop-cover-wrap style=&quot;background-image:url({{vm.shopMainImg}});&quot;" />
+            <marker date="1481048359000" expanded="true" signature="226:236" placeholder=".shopCover" />
+            <marker date="1481048359000" expanded="true" signature="243:290" placeholder=".container" />
+            <marker date="1481048359000" expanded="true" signature="293:13667" placeholder=".container" />
+            <marker date="1481048359000" expanded="true" signature="324:843" placeholder=".rank-box.shop-top-box" />
+            <marker date="1481048359000" expanded="true" signature="405:490" placeholder=".shop-tags" />
+            <marker date="1481048359000" expanded="true" signature="570:843" placeholder=".shop-button-box.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="606:740" placeholder=".favorite" />
+            <marker date="1481048359000" expanded="true" signature="751:843" placeholder=".support" />
+            <marker date="1481048359000" expanded="true" signature="850:1063" placeholder=".rank-box.shop-new-face" />
+            <marker date="1481048359000" expanded="true" signature="882:936" placeholder=".page-title" />
+            <marker date="1481048359000" expanded="true" signature="1071:1209" placeholder=".rank-box.shop-new-face" />
+            <marker date="1481048359000" expanded="true" signature="1103:1161" placeholder=".page-title" />
+            <marker date="1481048359000" expanded="true" signature="1216:3821" placeholder=".rank-box.shop-new-face" />
+            <marker date="1481048359000" expanded="true" signature="1248:1301" placeholder=".page-title" />
+            <marker date="1481048359000" expanded="true" signature="1310:2483" placeholder=".queen-list.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="1388:1872" placeholder=".fream" />
+            <marker date="1481048359000" expanded="true" signature="1409:1438" placeholder=".fream--basic.fream--top-left" />
+            <marker date="1481048359000" expanded="true" signature="1453:1483" placeholder=".fream--basic.fream--top-right" />
+            <marker date="1481048359000" expanded="true" signature="1498:1530" placeholder=".fream--basic.fream--bottom-left" />
+            <marker date="1481048359000" expanded="true" signature="1545:1578" placeholder=".fream--basic.fream--bottom-right" />
+            <marker date="1481048359000" expanded="true" signature="1885:2483" placeholder=".profile" />
+            <marker date="1481048359000" expanded="true" signature="1908:2122" placeholder=".name" />
+            <marker date="1481048359000" expanded="true" signature="2137:2483" placeholder=".body" />
+            <marker date="1481048359000" expanded="true" signature="2159:2309" placeholder=".support.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="2326:2483" placeholder=".favorid.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="2492:3821" placeholder=".rank-box.shop-cast" />
+            <marker date="1481048359000" expanded="true" signature="2522:2575" placeholder=".page-title" />
+            <marker date="1481048359000" expanded="true" signature="2586:3821" placeholder=".queen-list.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="2665:3167" placeholder=".fream" />
+            <marker date="1481048359000" expanded="true" signature="2688:2717" placeholder=".fream--basic.fream--top-left" />
+            <marker date="1481048359000" expanded="true" signature="2734:2764" placeholder=".fream--basic.fream--top-right" />
+            <marker date="1481048359000" expanded="true" signature="2781:2813" placeholder=".fream--basic.fream--bottom-left" />
+            <marker date="1481048359000" expanded="true" signature="2830:2863" placeholder=".fream--basic.fream--bottom-right" />
+            <marker date="1481048359000" expanded="true" signature="3182:3821" placeholder=".profile" />
+            <marker date="1481048359000" expanded="true" signature="3207:3438" placeholder=".name" />
+            <marker date="1481048359000" expanded="true" signature="3455:3821" placeholder=".body" />
+            <marker date="1481048359000" expanded="true" signature="3479:3637" placeholder=".support.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="3656:3821" placeholder=".favorid.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="3828:5385" placeholder="#system.rank-box.shop-system" />
+            <marker date="1481048359000" expanded="true" signature="3865:3916" placeholder=".page-title" />
+            <marker date="1481048359000" expanded="true" signature="5392:6535" placeholder="#map.rank-box.shop-map.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="5432:5497" placeholder=".page-title" />
+            <marker date="1481048359000" expanded="true" signature="5506:6535" placeholder=".clearfix" />
+            <marker date="1481048359000" expanded="true" signature="5526:6535" placeholder=".row" />
+            <marker date="1481048359000" expanded="true" signature="5543:5900" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
+            <marker date="1481048359000" expanded="true" signature="5604:5900" placeholder=".col-row-left.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="5913:6535" placeholder=".col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6" />
+            <marker date="1481048359000" expanded="true" signature="5974:6535" placeholder=".col-row-right.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="6014:6535" placeholder=".shop-map--info-box" />
+            <marker date="1481048359000" expanded="true" signature="6052:6535" placeholder=".shop-map--info-wrap" />
+            <marker date="1481048359000" expanded="true" signature="6093:6195" placeholder=".shop-name-titlt" />
+            <marker date="1481048359000" expanded="true" signature="6132:6195" placeholder=".shop-map--info-name" />
+            <marker date="1481048359000" expanded="true" signature="6542:10617" placeholder="#contact.rank-box.shop-map.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="6586:6638" placeholder=".page-title" />
+            <marker date="1481048359000" expanded="true" signature="6647:10617" placeholder=".contact" />
+            <marker date="1481048359000" expanded="true" signature="7295:7815" placeholder=".form-shop.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="7337:7815" placeholder=".col-xs-12" />
+            <marker date="1481048359000" expanded="true" signature="10358:10488" placeholder=".center-button style=&quot;text-align:center;&quot; ng-show=&quot;vm.canContactSubmited&quot;" />
+            <marker date="1481048359000" expanded="true" signature="10501:10617" placeholder=".center-button style=&quot;text-align:center;&quot; ng-hide=&quot;vm.canContactSubmited&quot;" />
+            <marker date="1481048359000" expanded="true" signature="10625:13107" placeholder="#review.rank-box.shop-map.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="10668:10719" placeholder=".page-title" />
+            <marker date="1481048359000" expanded="true" signature="10762:12955" placeholder=".contact" />
+            <marker date="1481048359000" expanded="true" signature="12596:12730" placeholder=".error" />
+            <marker date="1481048359000" expanded="true" signature="12745:12850" placeholder=".center-button  ng-show=&quot;vm.canReviewSubmited&quot;" />
+            <marker date="1481048359000" expanded="true" signature="12865:12955" placeholder=".center-button ng-hide=&quot;vm.canReviewSubmited&quot;" />
+            <marker date="1481048359000" expanded="true" signature="13015:13107" placeholder=".center-button style=&quot;text-align:center;&quot;" />
+            <marker date="1481048359000" expanded="true" signature="13114:13667" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
+            <marker date="1481048359000" expanded="true" signature="13160:13216" placeholder=".page-title" />
+            <marker date="1481048359000" expanded="true" signature="13225:13667" placeholder=".shop-list.clearfix" />
+            <marker date="1481048359000" expanded="true" signature="13603:13667" placeholder=".shop-info" />
           </folding>
         </state>
       </provider>
