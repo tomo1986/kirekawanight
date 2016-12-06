@@ -51,9 +51,23 @@
               <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-2.6078432">
-                      <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
-                      <folding />
+                    <state vertical-scroll-proportion="-3.1960785">
+                      <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+                      <folding>
+                        <marker date="1481028742000" expanded="true" signature="0:2613" placeholder=".main-content.container shop-bar-index-directive=&quot;&quot;" />
+                        <marker date="1481028742000" expanded="true" signature="124:279" placeholder=".rank-box" />
+                        <marker date="1481028742000" expanded="true" signature="284:1002" placeholder=".rank-box ng-if=&quot;vm.push_shops.length &gt; 0 &amp;&amp; vm.filters.page == 1&quot;" />
+                        <marker date="1481028742000" expanded="true" signature="357:416" placeholder=".page-title" />
+                        <marker date="1481028742000" expanded="true" signature="423:1002" placeholder=".shop-list.clearfix" />
+                        <marker date="1481028742000" expanded="true" signature="788:1002" placeholder=".shop-info" />
+                        <marker date="1481028742000" expanded="true" signature="1007:2613" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
+                        <marker date="1481028742000" expanded="true" signature="1023:1068" placeholder=".page-title" />
+                        <marker date="1481028742000" expanded="true" signature="1075:1919" placeholder=".filter-box.clearfix" />
+                        <marker date="1481028742000" expanded="true" signature="1104:1197" placeholder=".total-count-box" />
+                        <marker date="1481028742000" expanded="true" signature="1926:1998" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+                        <marker date="1481028742000" expanded="true" signature="2005:2613" placeholder=".shop-list.clearfix ng-if=&quot;vm.shops &amp;&amp; !vm.isLoading&quot;" />
+                        <marker date="1481028742000" expanded="true" signature="2399:2613" placeholder=".shop-info" />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
@@ -61,9 +75,23 @@
               <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/index.html.slim">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.5760518">
-                      <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-                      <folding />
+                    <state vertical-scroll-proportion="0.61165047">
+                      <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+                      <folding>
+                        <marker date="1481028756000" expanded="true" signature="0:2633" placeholder=".main-content.container shop-massage-index-directive=&quot;&quot;" />
+                        <marker date="1481028756000" expanded="true" signature="128:291" placeholder=".rank-box" />
+                        <marker date="1481028756000" expanded="true" signature="296:1018" placeholder=".rank-box ng-if=&quot;vm.push_shops.length &gt; 0 &amp;&amp; vm.filters.page == 1&quot;" />
+                        <marker date="1481028756000" expanded="true" signature="369:428" placeholder=".page-title" />
+                        <marker date="1481028756000" expanded="true" signature="435:1018" placeholder=".shop-list.clearfix" />
+                        <marker date="1481028756000" expanded="true" signature="804:1018" placeholder=".shop-info" />
+                        <marker date="1481028756000" expanded="true" signature="1023:2633" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
+                        <marker date="1481028756000" expanded="true" signature="1039:1084" placeholder=".page-title" />
+                        <marker date="1481028756000" expanded="true" signature="1091:1935" placeholder=".filter-box.clearfix" />
+                        <marker date="1481028756000" expanded="true" signature="1120:1213" placeholder=".total-count-box" />
+                        <marker date="1481028756000" expanded="true" signature="1942:2014" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+                        <marker date="1481028756000" expanded="true" signature="2021:2633" placeholder=".shop-list.clearfix ng-if=&quot;vm.shops &amp;&amp; !vm.isLoading&quot;" />
+                        <marker date="1481028756000" expanded="true" signature="2419:2633" placeholder=".shop-info" />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
@@ -103,8 +131,8 @@
               <file leaf-file-name="index.directive.coffee" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/karaoke/index.directive.coffee">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.33333334">
-                      <caret line="66" column="26" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="26" />
+                    <state vertical-scroll-proportion="0.04464286">
+                      <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
                       <folding />
                     </state>
                   </provider>
@@ -117,8 +145,18 @@
               <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/index.html.slim">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.26785713">
-                      <caret line="49" column="59" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="59" />
+                    <state vertical-scroll-proportion="0.3125">
+                      <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="index.directive.coffee" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/bar/index.directive.coffee">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="-0.0">
+                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -133,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/massage/index.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/group/group.service.coffee" />
         <option value="$PROJECT_DIR$/db/migrate/20161203162043_add_can_guided_users.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
@@ -182,6 +219,7 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/sexy/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/controllers/front/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/karaoke/index.directive.coffee" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/massage/index.html.slim" />
       </list>
@@ -349,6 +387,10 @@
               <option name="myItemId" value="shops" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="karaoke" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -513,6 +555,116 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="karaoke" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -791,14 +943,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/page_view_type/cast_guide.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="29" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/blog/form.directive.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.5833335">
@@ -1059,11 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/front/facebook.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/front/base.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.125">
@@ -1160,35 +1299,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6078432">
-          <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/front/facebook.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/karaoke/index.directive.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="66" column="26" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.04464286">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/bar/index.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26785713">
-          <caret line="49" column="59" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.3125">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1960785">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding>
+            <marker date="1481028742000" expanded="true" signature="0:2613" placeholder=".main-content.container shop-bar-index-directive=&quot;&quot;" />
+            <marker date="1481028742000" expanded="true" signature="124:279" placeholder=".rank-box" />
+            <marker date="1481028742000" expanded="true" signature="284:1002" placeholder=".rank-box ng-if=&quot;vm.push_shops.length &gt; 0 &amp;&amp; vm.filters.page == 1&quot;" />
+            <marker date="1481028742000" expanded="true" signature="357:416" placeholder=".page-title" />
+            <marker date="1481028742000" expanded="true" signature="423:1002" placeholder=".shop-list.clearfix" />
+            <marker date="1481028742000" expanded="true" signature="788:1002" placeholder=".shop-info" />
+            <marker date="1481028742000" expanded="true" signature="1007:2613" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
+            <marker date="1481028742000" expanded="true" signature="1023:1068" placeholder=".page-title" />
+            <marker date="1481028742000" expanded="true" signature="1075:1919" placeholder=".filter-box.clearfix" />
+            <marker date="1481028742000" expanded="true" signature="1104:1197" placeholder=".total-count-box" />
+            <marker date="1481028742000" expanded="true" signature="1926:1998" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+            <marker date="1481028742000" expanded="true" signature="2005:2613" placeholder=".shop-list.clearfix ng-if=&quot;vm.shops &amp;&amp; !vm.isLoading&quot;" />
+            <marker date="1481028742000" expanded="true" signature="2399:2613" placeholder=".shop-info" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5760518">
-          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-          <folding />
+        <state vertical-scroll-proportion="0.61165047">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding>
+            <marker date="1481028756000" expanded="true" signature="0:2633" placeholder=".main-content.container shop-massage-index-directive=&quot;&quot;" />
+            <marker date="1481028756000" expanded="true" signature="128:291" placeholder=".rank-box" />
+            <marker date="1481028756000" expanded="true" signature="296:1018" placeholder=".rank-box ng-if=&quot;vm.push_shops.length &gt; 0 &amp;&amp; vm.filters.page == 1&quot;" />
+            <marker date="1481028756000" expanded="true" signature="369:428" placeholder=".page-title" />
+            <marker date="1481028756000" expanded="true" signature="435:1018" placeholder=".shop-list.clearfix" />
+            <marker date="1481028756000" expanded="true" signature="804:1018" placeholder=".shop-info" />
+            <marker date="1481028756000" expanded="true" signature="1023:2633" placeholder=".rank-box ng-if=&quot;vm.shops.length &gt; 0&quot;" />
+            <marker date="1481028756000" expanded="true" signature="1039:1084" placeholder=".page-title" />
+            <marker date="1481028756000" expanded="true" signature="1091:1935" placeholder=".filter-box.clearfix" />
+            <marker date="1481028756000" expanded="true" signature="1120:1213" placeholder=".total-count-box" />
+            <marker date="1481028756000" expanded="true" signature="1942:2014" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+            <marker date="1481028756000" expanded="true" signature="2021:2633" placeholder=".shop-list.clearfix ng-if=&quot;vm.shops &amp;&amp; !vm.isLoading&quot;" />
+            <marker date="1481028756000" expanded="true" signature="2419:2633" placeholder=".shop-info" />
+          </folding>
         </state>
       </provider>
     </entry>
