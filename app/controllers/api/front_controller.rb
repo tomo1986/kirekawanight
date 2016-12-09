@@ -233,12 +233,8 @@ class Api::FrontController < ApiController
   def api6
     if params[:type] == 'user_detail'
       contact = ContactType::UserDetail.new
-    elsif params[:type] == 'bar'
-      contact = ContactType::Bar.new
-    elsif params[:type] == 'massage'
-      contact = ContactType::Massage.new
-    elsif params[:type] == 'sexy'
-      contact = ContactType::Sexy.new
+    elsif params[:type] == 'shop_detail'
+      contact = ContactType::ShopDetail.new
     end
 
     contact.attributes = {

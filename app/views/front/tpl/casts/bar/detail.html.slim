@@ -141,41 +141,42 @@
 
               .center-button
                 button.btn.btn-submit type="submit" ng-disabled="contactForm2.$invalid"  この子に会いに行く
-    .some-cast ng-if="vm.casts"
-      .page-title
-        h2.title
-          | SOME SHOP GIRLS
-      .queen-list.clearfix
-        li ng-repeat="cast in vm.casts"
-          .fream
-            .fream--basic.fream--top-left
-            .fream--basic.fream--top-right
-            .fream--basic.fream--bottom-left
-            .fream--basic.fream--bottom-right
-            a href="/casts/karaoke/{{cast.id}}"
-              span ng-if="cast.images[0]"
-                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-              span ng-if="!cast.images[0]"
-                = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-          .profile
-            h3.shop-name
-              span ng-if="cast.shop"
-                | {{cast.shop.name}}
-              span ng-if="!cast.shop"
-                | 所属なし
-            h4.name
-              | {{cast.nick_name}}({{cast.age}})
-            .body
-              .favorid.clearfix
-                h5.title
-                  | お気入り登録数
-                p.count
-                  |  {{cast.favorite_count | number}}
-              .support.clearfix
-                h5.title
-                  | 応援数
-                p.count
-                  | {{cast.support_count | number}}
+    .col-md-12.some-cast.detail ng-if="vm.casts"
+      .row
+        .page-title
+          h2.title
+            | SOME SHOP GIRLS
+        .queen-list.clearfix
+          li ng-repeat="cast in vm.casts"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/karaoke/{{cast.id}}"
+                span ng-if="cast.images[0]"
+                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+                span ng-if="!cast.images[0]"
+                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+            .profile
+              h3.shop-name
+                span ng-if="cast.shop"
+                  | {{cast.shop.name}}
+                span ng-if="!cast.shop"
+                  | 所属なし
+              h4.name
+                | {{cast.nick_name}}({{cast.age}})
+              .body
+                .favorid.clearfix
+                  h5.title
+                    | お気入り登録数
+                  p.count
+                    |  {{cast.favorite_count | number}}
+                .support.clearfix
+                  h5.title
+                    | 応援数
+                  p.count
+                    | {{cast.support_count | number}}
   .cast-page--service
     a href="/shops/bar/{{vm.cast.shop_id}}"
       span.blinking キレカワだけの特別プランは『こちら』
