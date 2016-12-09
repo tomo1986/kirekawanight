@@ -16,6 +16,20 @@
           a.btn ng-repeat="tag in vm.shop.tags"
             | {{tag.name}}
         p.shop-copy ng-bind-html="vm.shop.service | noHTML | newlines"
+
+        .attention
+          span ng-click="vm.onAttention()" 適応されない場合はこちら
+          p ng-class="{'active': vm.isAttention}"
+            | ベトナムではお店に連れてきた人に1人あたり3〜5$払います。
+            br
+            | そのため、こちらのプランは最低価格つまりこれ以上安くできないよというプランですので
+            br
+            | お客様にdiscountするかお店に連れてきた人にお金を支払うかのどちらかしか適応させることしかできません。
+            br
+            | 改めてご了承ください。
+
+
+
         .shop-button-box.clearfix
           .favorite
             a.btn ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()" お気に入り登録

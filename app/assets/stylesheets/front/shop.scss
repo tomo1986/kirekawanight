@@ -423,6 +423,22 @@
   .shop-top-box{
     margin-top: $row-space-biger;
     text-align: center;
+    .attention{
+      span{
+        color: $_sub_text;
+        font-weight: bold;
+        background-color: $_brand-basic;
+        padding: $row-space-half-half $row-space-half;
+      }
+      p{
+        display: none;
+        &.active{
+          display: block;
+        }
+      }
+
+
+    }
     .shop-name {
       color: $_em_text;
       font-size: 2rem;

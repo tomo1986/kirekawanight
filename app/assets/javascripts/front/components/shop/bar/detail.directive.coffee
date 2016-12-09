@@ -4,6 +4,8 @@ angular.module 'bisyoujoZukanNight'
     vm = this
     vm.init = ->
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE SHOP',link:'/shops/bar'}]
+      vm.isAttention = false
+
       vm.displayContent = 'intoroduction'
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
@@ -190,6 +192,8 @@ angular.module 'bisyoujoZukanNight'
           comment: null
         }
       )
+    vm.onAttention = ->
+      vm.isAttention = !vm.isAttention
 
     vm.init()
     return
