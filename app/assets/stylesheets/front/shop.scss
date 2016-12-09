@@ -1,4 +1,7 @@
 .shop-page {
+  .rank-box-last {
+    margin-bottom: $row-space-biger;
+  }
   .rank-box {
     margin-bottom: $row-space-biger;
     .filter-box {
@@ -164,14 +167,44 @@
           }
         }
         .shop-info {
-          padding: $row-space-half;
+          //padding: $row-space-half;
           text-align: center;
           .name {
-            font-size: 1.2rem;
+            margin: 0;
+            font-size: 1rem;
+            border-bottom: 1px solid $_basic-title;
+            padding-bottom: $row-space-half-half;
+            margin-top: $row-space-half;
+            margin-bottom: $row-space-half;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width:100%;
+            height:1.3rem;
           }
           .cast-count {
             font-size: 1rem;
             color:rgb(173,111,221)
+          }
+          .body ,.rank {
+            font-size: .7rem;
+            .favorid,  .support, .has-girls{
+              .title {
+                float:left;
+                text-align: left;
+                font-size: .7rem;
+                margin: 0;
+              }
+              .count {
+                float:right;
+                text-align: right;
+                font-size: 1rem;
+                color: $_em_text_hover;
+                font-weight: bold;
+                margin: 0;
+                line-height: 1;
+              }
+            }
           }
         }
       }
@@ -246,26 +279,44 @@
         }
       }
       .shop-info {
-        padding: $row-space-half;
+        //padding: $row-space-half;
         text-align: center;
         .name {
-          font-size: 1.5rem;
-          > span{
-            padding: .2rem .2rem .1rem .3rem;
-            background-color: #fff;
-            margin-left: .5rem;
-            > i {
-              color: #ddd;
-              text-shadow: -1px -1px 0px #333, 1px 1px 1px #fff;
-              &.active {
-                color: #fd548d;
-              }
-            }
-          }
+          margin: 0;
+          font-size: 1rem;
+          border-bottom: 1px solid $_basic-title;
+          padding-bottom: $row-space-half-half;
+          margin-top: $row-space-half;
+          margin-bottom: $row-space-half;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width:100%;
+          height:1.3rem;
         }
         .cast-count {
           font-size: 1rem;
           color:rgb(173,111,221)
+        }
+        .body ,.rank {
+          font-size: .7rem;
+          .favorid,  .support, .has-girls{
+            .title {
+              float:left;
+              text-align: left;
+              font-size: .7rem;
+              margin: 0;
+            }
+            .count {
+              float:right;
+              text-align: right;
+              font-size: 1rem;
+              color: $_em_text_hover;
+              font-weight: bold;
+              margin: 0;
+              line-height: 1;
+            }
+          }
         }
       }
     }
@@ -623,7 +674,7 @@
   }
   .center-button {
     text-align: center;
-    margin: 2rem auto;
+    margin: $row-space-bog auto 0;
   }
   .btn-submit {
     background-color: $_sub_text;

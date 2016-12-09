@@ -320,10 +320,10 @@
           .center-button style="text-align:center;"
             a.btn.btn-submit href="/login" ログインする
 
-      .rank-box ng-if="vm.shops.length > 0"
+      .rank-box.rank-box-last style="margin-bottom:2rem;" ng-if="vm.shops.length > 0"
         .page-title
           h2.title
-            | Sister shop
+            | SISTER SHOP
         .shop-list.clearfix
           li ng-repeat="shop in vm.shops"
             a href="/shops/karaoke/{{shop.id}}"
@@ -333,4 +333,20 @@
                 = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
             .shop-info
               h3.name
-                | {{shop.name}}
+                | {{shop.name}} ({{shop.name_kana}})
+              .body
+                .has-girls.clearfix
+                  h5.title
+                    | 在籍女性
+                  p.count
+                    | {{shop.girls_count | number}}人
+                .support.clearfix
+                  h5.title
+                    | 応援数
+                  p.count
+                    | {{shop.support_count | number}}件
+                .favorid.clearfix
+                  h5.title
+                    | お気入り登録数
+                  p.count
+                    |  {{shop.favorite_count | number}}件

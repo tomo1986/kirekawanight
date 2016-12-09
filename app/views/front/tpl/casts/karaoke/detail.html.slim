@@ -30,86 +30,11 @@
               li ng-repeat="image in vm.cast.images track by $index"
                 a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
                   img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"
-      .comment
+      .comment.clearfix
         .page-title
           h2.title
             | Introduction
         p ng-bind-html="vm.cast.profile.interview"
-
-      .col-md-12.detail.clearfix
-        .row
-          .page-title
-            h2.title
-              | Contact
-          .contact
-            form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
-              table.res-form-table
-
-                tr
-                  th.clearfix
-                    span.title 氏名
-                    span.btn.required 必須
-                  td
-                    input.form-control type="text" name="name" required='' placeholder="info@first-class.vn" ng-model="vm.contact.name"
-                tr
-                  th.clearfix
-                    span.title 折り返し連絡手段選択
-                    span.btn.required 必須
-                  td
-                    .form-shop.clearfix
-                      .col-xs-12
-                        label.radio-inline
-                          input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
-                        label.radio-inline
-                          input name="return_way" type="radio" value="tel" ng-model="vm.contact.return_way" 電話
-                        label.radio-inline
-                          input name="return_way" type="radio" value="sns" ng-model="vm.contact.return_way" sns
-                tr ng-if="vm.contact.return_way == 'tel'"
-                  th.clearfix
-                    span.title Tel
-                    span.btn.required 必須
-                  td
-                    input.form-control type="text" name="tel" required='' placeholder="例)090123412345" ng-model="vm.contact.tel"
-                    span.is-text-danger ng-if="vm.errors.tel"
-                      | {{vm.errors.tel}}
-                tr ng-if="vm.contact.return_way == 'email'"
-                  th.clearfix
-                    span.title emailアドレス
-                    span.btn.required 必須
-                  td
-                    input.form-control type="email" name="email" required='' placeholder="例)info@kire-kawa.com" ng-model="vm.contact.email"
-                    span.is-text-danger ng-if="vm.errors.email"
-                      | {{vm.errors.email}}
-                tr ng-if="vm.contact.return_way == 'sns'"
-                  th.clearfix
-                    span.title SNSアカウント
-                    span.btn.required どれか一つ必須
-                  td
-                    dl
-                      dt
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="zalo" ng-model="vm.selectSns" Zalo
-                      dt
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="wechat" ng-model="vm.selectSns" WeChat
-                      dt
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="line" ng-model="vm.selectSns" Line
-                      dd
-                        input.form-control type="text" name="zalo" placeholder="例)kirekawa111" ng-model="vm.contact.sns_zalo" ng-if="vm.selectSns == 'zalo'"
-                        input.form-control type="text" name="wechat" placeholder="例)kirekawa111" ng-model="vm.contact.sns_wechat" ng-if="vm.selectSns == 'wechat'"
-                        input.form-control type="text" name="line" placeholder="例)kirekawa111" ng-model="vm.contact.sns_line" ng-if="vm.selectSns == 'line'"
-                    span.is-text-danger ng-if="vm.errors.sns"
-                      | {{vm.errors.sns}}
-                tr
-                  th.clearfix
-                    span.title 内容
-                    span.btn.required 必須
-                  td
-                    textarea.form-control rows="8" name="message" required='' placeholder="いつ、何時ごろ、料金について" ng-model="vm.contact.message"
-
-              .center-button
-                button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  この子に会いに行く
 
       .col-md-12.detail.clearfix
         .row
@@ -139,28 +64,28 @@
                   | {{vm.cast.residence}}
                 dt お気に入り登録数
                 dd
-                  | {{vm.cast.favorite_count}}
+                  | {{vm.cast.favorite_count}}件
                 dt お気に入り数
                 dd
-                  | {{vm.cast.support_count}}
-      .col-md-12.detail.clearfix
-        .row
-          .page-title
-            h2.title
-              | Questionnaire
-          .profile-box.clearfix
-            ul.profile-list masonry=""
-              li.masonry-brick ng-repeat="(key, val) in vm.cast.profile" ng-if="vm.profile[key].is_displayed"
-                h3
-                  | {{vm.profile[key][vm.active_language].name}}
-                p ng-bind-html="val"
+                  | {{vm.cast.support_count}}件
+      /.col-md-12.detail.clearfix
+      /  .row
+      /    .page-title
+      /      h2.title
+      /        | Questionnaire
+      /    .profile-box.clearfix
+      /      ul.profile-list masonry=""
+      /        li.masonry-brick ng-repeat="(key, val) in vm.cast.profile" ng-if="vm.profile[key].is_displayed"
+      /          h3
+      /            | {{vm.profile[key][vm.active_language].name}}
+      /          p ng-bind-html="val"
       .col-md-12.detail.clearfix
         .row
           .page-title
             h2.title
               | Contact
           .contact
-            form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
+            form role="form" ng-submit='vm.submit()' name="contactForm2" novalidate=''
               table.res-form-table
 
                 tr
@@ -168,21 +93,8 @@
                     span.title 氏名
                     span.btn.required 必須
                   td
-                    input.form-control type="text" name="name" required='' placeholder="info@first-class.vn" ng-model="vm.contact.name"
+                    input.form-control type="text" name="name" required='' placeholder="切川 太郎(ニックネーム可)" ng-model="vm.contact.name"
                 tr
-                  th.clearfix
-                    span.title 折り返し連絡手段選択
-                    span.btn.required 必須
-                  td
-                    .form-shop.clearfix
-                      .col-xs-12
-                        label.radio-inline
-                          input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
-                        label.radio-inline
-                          input name="return_way" type="radio" value="tel" ng-model="vm.contact.return_way" 電話
-                        label.radio-inline
-                          input name="return_way" type="radio" value="sns" ng-model="vm.contact.return_way" sns
-                tr ng-if="vm.contact.return_way == 'tel'"
                   th.clearfix
                     span.title Tel
                     span.btn.required 必須
@@ -190,6 +102,17 @@
                     input.form-control type="text" name="tel" required='' placeholder="例)090123412345" ng-model="vm.contact.tel"
                     span.is-text-danger ng-if="vm.errors.tel"
                       | {{vm.errors.tel}}
+
+                tr
+                  th.clearfix
+                    span.title 折り返し連絡手段選択
+                    span.btn.required 必須
+                  td
+                    .form-shop.clearfix style="text-align:left;"
+                      label.radio-inline
+                        input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
+                      label.radio-inline
+                        input name="return_way" type="radio" value="sns" ng-model="vm.contact.return_way" sns
                 tr ng-if="vm.contact.return_way == 'email'"
                   th.clearfix
                     span.title emailアドレス
@@ -224,10 +147,10 @@
                     span.title 内容
                     span.btn.required 必須
                   td
-                    textarea.form-control rows="8" name="message" required='' placeholder="いつ、何時ごろ、料金について" ng-model="vm.contact.message"
+                    textarea.form-control rows="8" style="color:#fff;" name="message" required='' placeholder="いつ、何時ごろ、料金について" ng-model="vm.contact.message"
 
               .center-button
-                button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  この子に会いに行く
+                button.btn.btn-submit type="submit" ng-disabled="contactForm2.$invalid"  この子に会いに行く
 
       .col-md-12.detail.clearfix
         a name="review"
@@ -286,36 +209,41 @@
             .center-button style="text-align:center;"
               a.btn.btn-submit href="/login" ログインする
 
-    .some-cast ng-if="vm.casts"
-      .page-title
-        h2.title
-          | SOME SHOP GIRLS
-      .queen-list.clearfix
-        li ng-repeat="cast in vm.casts"
-          .fream
-            .fream--basic.fream--top-left
-            .fream--basic.fream--top-right
-            .fream--basic.fream--bottom-left
-            .fream--basic.fream--bottom-right
-            a href="/casts/karaoke/{{cast.id}}"
-              span ng-if="cast.images[0]"
-                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-              span ng-if="!cast.images[0]"
-                = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-          .profile
-            .name
-              | {{cast.nick_name}}({{cast.age}})
-            .body
-              .favorid.clearfix
-                h5.title
-                  | お気入り登録数
-                p.count
-                  |  {{cast.favorite_count | number}}
-              .support.clearfix
-                h5.title
-                  | 応援数
-                p.count
-                  | {{cast.support_count | number}}
+      .some-cast.detail ng-if="vm.casts"
+        .page-title
+          h2.title
+            | SOME SHOP GIRLS
+        .queen-list.clearfix
+          li ng-repeat="cast in vm.casts"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/karaoke/{{cast.id}}"
+                span ng-if="cast.images[0]"
+                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+                span ng-if="!cast.images[0]"
+                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+            .profile
+              h3.shop-name
+                span ng-if="cast.shop"
+                  | {{cast.shop.name}}
+                span ng-if="!cast.shop"
+                  | 所属なし
+              h4.name
+                | {{cast.nick_name}}({{cast.age}})
+              .body
+                .favorid.clearfix
+                  h5.title
+                    | お気入り登録数
+                  p.count
+                    |  {{cast.favorite_count | number}}
+                .support.clearfix
+                  h5.title
+                    | 応援数
+                  p.count
+                    | {{cast.support_count | number}}
   .cast-page--service
     a href="/shops/karaoke/{{vm.cast.shop_id}}"
       span.blinking キレカワ特別プランは『こちら』

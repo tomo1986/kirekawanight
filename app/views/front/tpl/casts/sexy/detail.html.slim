@@ -42,52 +42,6 @@
             | Introduction
         p ng-bind-html="vm.cast.profile.interview"
 
-      .col-md-12.detail.clearfix
-        .row
-          .page-title
-            h2.title
-              | Contact
-          .contact
-            form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
-              table.res-form-table
-                tr
-                  th.clearfix
-                    span.title emailアドレス
-                    span.btn.required 必須
-                  td
-                    input.form-control type="email" name="email" required='' placeholder="info@kire-kawa.com" ng-model="vm.contact.email"
-                tr ng-if="vm.contact.return_way == 'sns'"
-                  th.clearfix
-                    span.title SNSアカウント
-                    span.btn.required どれか一つ必須
-                  td
-                    dl
-                      dt ng-if="vm.cast.sns_zalo"
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="zalo" ng-model="vm.selectSns" Zalo
-                      dt ng-if="vm.cast.sns_wechat"
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="wechat" ng-model="vm.selectSns" WeChat
-                      dt ng-if="vm.cast.sns_line"
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="line" ng-model="vm.selectSns" Line
-
-                      dd
-                        input.form-control type="text" name="zalo" placeholder="例)kirekawa111" ng-model="vm.contact.sns_zalo" ng-if="vm.selectSns == 'zalo'"
-                        input.form-control type="text" name="wechat" placeholder="例)kirekawa111" ng-model="vm.contact.sns_wechat" ng-if="vm.selectSns == 'wechat'"
-                        input.form-control type="text" name="line" placeholder="例)kirekawa111" ng-model="vm.contact.sns_line" ng-if="vm.selectSns == 'line'"
-                    span.is-text-danger ng-if="vm.errors.sns"
-                      | {{vm.errors.sns}}
-
-                tr
-                  th.clearfix
-                    span.title 内容
-                  td
-                    textarea.form-control rows="3" name="message" required='' ng-model="vm.contact.message"
-
-              .center-button
-                button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  この子に会いに行く
-
 
       .col-md-12.detail.clearfix
         .row
@@ -129,77 +83,142 @@
                   label
                     span Wechat
                     | {{vm.cast.sns_wechat.length > 0 ? '○' : '×' }}
-      .col-md-12.detail.clearfix
-        .row
-          .page-title
-            h2.title
-              | Questionnaire
-          .profile-box.clearfix
-            ul.profile-list masonry=""
-              li.masonry-brick ng-repeat="(key, val) in vm.cast.profile" ng-if="vm.profile[key].is_displayed"
-                h3
-                  | {{vm.profile[key][vm.active_language].name}}
-                p ng-bind-html="val"
+      /.col-md-12.detail.clearfix
+      /  .row
+      /    .page-title
+      /      h2.title
+      /        | Questionnaire
+      /    .profile-box.clearfix
+      /      ul.profile-list masonry=""
+      /        li.masonry-brick ng-repeat="(key, val) in vm.cast.profile" ng-if="vm.profile[key].is_displayed"
+      /          h3
+      /            | {{vm.profile[key][vm.active_language].name}}
+      /          p ng-bind-html="val"
       .col-md-12.detail.clearfix
         .row
           .page-title
             h2.title
               | Contact
           .contact
-            form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
+            form role="form" ng-submit='vm.submit()' name="contactForm2" novalidate=''
               table.res-form-table
+
                 tr
+                  th.clearfix
+                    span.title 氏名
+                    span.btn.required 必須
+                  td
+                    input.form-control type="text" name="name" required='' placeholder="切川 太郎(ニックネーム可)" ng-model="vm.contact.name"
+                tr
+                  th.clearfix
+                    span.title Tel
+                    span.btn.required 必須
+                  td
+                    input.form-control type="text" name="tel" required='' placeholder="例)090123412345" ng-model="vm.contact.tel"
+                    span.is-text-danger ng-if="vm.errors.tel"
+                      | {{vm.errors.tel}}
+
+                tr
+                  th.clearfix
+                    span.title 折り返し連絡手段選択
+                    span.btn.required 必須
+                  td
+                    .form-shop.clearfix style="text-align:left;"
+                      label.radio-inline
+                        input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
+                      label.radio-inline
+                        input name="return_way" type="radio" value="sns" ng-model="vm.contact.return_way" sns
+                tr ng-if="vm.contact.return_way == 'email'"
                   th.clearfix
                     span.title emailアドレス
                     span.btn.required 必須
                   td
-                    input.form-control type="email" name="email" required='' placeholder="info@kire-kawa.com" ng-model="vm.contact.email"
+                    input.form-control type="email" name="email" required='' placeholder="例)info@kire-kawa.com" ng-model="vm.contact.email"
+                    span.is-text-danger ng-if="vm.errors.email"
+                      | {{vm.errors.email}}
                 tr ng-if="vm.contact.return_way == 'sns'"
                   th.clearfix
                     span.title SNSアカウント
                     span.btn.required どれか一つ必須
                   td
                     dl
-                      dt ng-if="vm.cast.sns_zalo"
+                      dt
                         label.radio-inline
                           input name="select_sns" type="radio" value="zalo" ng-model="vm.selectSns" Zalo
-                      dt ng-if="vm.cast.sns_wechat"
+                      dt
                         label.radio-inline
                           input name="select_sns" type="radio" value="wechat" ng-model="vm.selectSns" WeChat
-                      dt ng-if="vm.cast.sns_line"
+                      dt
                         label.radio-inline
                           input name="select_sns" type="radio" value="line" ng-model="vm.selectSns" Line
-
                       dd
                         input.form-control type="text" name="zalo" placeholder="例)kirekawa111" ng-model="vm.contact.sns_zalo" ng-if="vm.selectSns == 'zalo'"
                         input.form-control type="text" name="wechat" placeholder="例)kirekawa111" ng-model="vm.contact.sns_wechat" ng-if="vm.selectSns == 'wechat'"
                         input.form-control type="text" name="line" placeholder="例)kirekawa111" ng-model="vm.contact.sns_line" ng-if="vm.selectSns == 'line'"
                     span.is-text-danger ng-if="vm.errors.sns"
                       | {{vm.errors.sns}}
-
                 tr
                   th.clearfix
                     span.title 内容
+                    span.btn.required 必須
                   td
-                    textarea.form-control rows="3" name="message" required='' ng-model="vm.contact.message"
+                    textarea.form-control rows="8" style="color:#fff;" name="message" required='' placeholder="いつ、何時ごろ、料金について" ng-model="vm.contact.message"
 
               .center-button
-                button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  この子に会いに行く
-    .some-cast ng-if="vm.casts"
-      .page-title
-        h2.title
-          | SOME work plice CAST
-      .queen-list.clearfix
-        li ng-repeat="cast in vm.casts"
-          .fream
-            .fream--basic.fream--top-left
-            .fream--basic.fream--top-right
-            .fream--basic.fream--bottom-left
-            .fream--basic.fream--bottom-right
-            a href="/casts/karaoke/{{cast.id}}"
-              img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-          .profile
-            .name
-              | {{cast.nick_name}}({{cast.age}})
-            .body
-              | {{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
+                button.btn.btn-submit type="submit" ng-disabled="contactForm2.$invalid"  この子に会いに行く
+      .col-md-12.detail.clearfix
+        a name="review"
+        .row
+          .page-title
+            h2.title
+              | REVIEW
+          -if customer_signed_in?
+            .contact
+              form role="form" ng-submit='vm.reviewSubmit()' name="contactForm" novalidate=''
+                p 1：不満、２：やや不満、３：普通、４：やや満足、５：満足
+                table.res-form-table
+                  tr
+                    th.clearfix
+                      span.title サービスはどうでしたか？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.service_score" rz-slider-options="vm.serviceScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title 接客はどうでしたか？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.serving_score" rz-slider-options="vm.servingScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title 女の子の対応について？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.girl_score" rz-slider-options="vm.girlScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title 女の子の雰囲気はどうでしたか？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.ambience_score" rz-slider-options="vm.ambienceScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title また選びたいと思いますか？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.again_score" rz-slider-options="vm.againScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title 内容
+                      span.btn.required 必須
+                    td
+                      textarea.form-control rows="4" name="comment" required='' placeholder="" ng-model="vm.review.comment"
+                      .error
+                        span.is-text-danger ng-if="vm.reviewErrors.comment"
+                          | {{vm.reviewErrors.comment}}
+                .center-button ng-show="vm.canReviewSubmited"
+                  button.btn.btn-submit type="submit" レビューする
+          - else
+            p REVIEWを書くにはログインが必要です。
+            .center-button style="text-align:center;"
+              a.btn.btn-submit href="/login" ログインする

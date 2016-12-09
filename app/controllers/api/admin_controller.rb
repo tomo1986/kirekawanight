@@ -286,7 +286,7 @@ class Api::AdminController < ApiController
     }
     if params[:tags]
       params[:tags].each do |key,val|
-        user.tag_list.add(val["text"])
+        user.tag_list.add(val["name"])
       end
     end
 
@@ -380,6 +380,7 @@ class Api::AdminController < ApiController
         japanese_level: params[:japanese_level]
     }
 
+
     if params[:images].present?
       params[:images].values.each do |image|
         user.images.where(id: image[:id]).first.update(image: image[:url]) and next if image.present? && image[:id].present? && image[:id] != 'null'
@@ -389,7 +390,7 @@ class Api::AdminController < ApiController
     end
     if params[:tags]
       params[:tags].each do |key,val|
-        user.tag_list.add(val["text"])
+        user.tag_list.add(val["name"])
       end
     end
 
@@ -1029,6 +1030,11 @@ class Api::AdminController < ApiController
         service: params[:service],
         images: params[:images]
     }
+    if params[:tags].present?
+      params[:tags].each do |key,val|
+        shop.tag_list.add(val["name"])
+      end
+    end
 
     if shop.save
       builder = Jbuilder.new do |json|
@@ -1095,7 +1101,7 @@ class Api::AdminController < ApiController
     end
     if params[:tags].present?
       params[:tags].each do |key,val|
-        shop.tag_list.add(val["text"])
+        shop.tag_list.add(val["name"])
       end
     end
 

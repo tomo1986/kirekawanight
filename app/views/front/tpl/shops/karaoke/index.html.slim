@@ -58,4 +58,20 @@
               = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
           .shop-info
             h3.name
-              | {{shop.name}}
+              | {{shop.name}} ({{shop.name_kana}})
+            .body
+              .has-girls.clearfix
+                h5.title
+                  | 在籍女性
+                p.count
+                  | {{shop.girls_count | number}}人
+              .support.clearfix
+                h5.title
+                  | 応援数
+                p.count
+                  | {{shop.support_count | number}}件
+              .favorid.clearfix
+                h5.title
+                  | お気入り登録数
+                p.count
+                  |  {{shop.favorite_count | number}}件

@@ -86,6 +86,11 @@ class Shop < ApplicationRecord
         json.user_count shop.users.count
         # json.note shop.note
         json.images shop.abc
+        json.support_count shop.supports.count
+        json.favorite_count shop.favorites.count
+
+
+
         json.tags shop.tag_list ? shop.tag_list : nil
       end
     end
@@ -127,6 +132,9 @@ class Shop < ApplicationRecord
       json.user_count self.users.count
       # json.note self.note
       json.images self.abc
+      json.support_count self.supports.count
+      json.favorite_count self.favorites.count
+
       json.tags self.tags ? Tag.to_jbuilders(self.tags) : nil
     end
   end

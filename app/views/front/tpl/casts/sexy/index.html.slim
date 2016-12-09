@@ -18,7 +18,7 @@
               span ng-if="!cast.images[0]"
                 = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
           .profile
-            .name
+            h4.name
               | {{cast.nick_name}}({{cast.age}})
               span
                 i.fa.fa-heart  ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
@@ -69,7 +69,7 @@
               span ng-if="!cast.images[0]"
                 = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
           .profile
-            .name
+            h4.name
               | {{cast.nick_name}}({{cast.age}})
               span
                 i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"

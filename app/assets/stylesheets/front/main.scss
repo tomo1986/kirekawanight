@@ -41,6 +41,10 @@ body {
     margin-top:9rem;
   }
 }
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 ul {
   padding: 0;
   margin: 0;
@@ -750,8 +754,21 @@ a, button {
       .profile {
         margin-bottom: $row-space;
         text-align: center;
+        .shop-name {
+          margin: 0;
+          font-size: 1rem;
+          border-bottom: 1px solid $_basic-title;
+          padding-bottom: $row-space-half-half;
+          margin-bottom: $row-space-half;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width:100%;
+          height:1.3rem;
+        }
         .name {
           font-size: 1rem;
+          margin: 0;
           > span{
             padding: .2rem .2rem .1rem .3rem;
             background-color: #fff;
@@ -766,7 +783,7 @@ a, button {
           }
         }
         .body ,.rank {
-          font-size: .7rem;
+          font-size: 1rem;
           .favorid,  .support{
             .title {
               float:left;
