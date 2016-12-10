@@ -91,6 +91,7 @@
         float: left;
         margin-right: $row-space;
         position: relative;
+        margin-bottom: $row-space;
         > span{
           padding: .5rem .5rem .2rem .6rem;
           background-color: #fff;
@@ -254,6 +255,7 @@
     li {
       float: left;
       margin-right: $row-space;
+      margin-bottom: $row-space;
       @media screen and (min-width: 320px) and (max-width: 543px){
         width:calc(50% - 0.46875rem);
         &:nth-child(2n) {

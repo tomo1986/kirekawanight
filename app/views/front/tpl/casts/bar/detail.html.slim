@@ -47,12 +47,12 @@
           .col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10
             .col-row-right.clearfix
               dl.profile.clearfix
+                dt Girls no
+                dd
+                  | {{vm.cast.id}}
                 dt Name
                 dd
                   | {{vm.cast.name}} {{vm.cast.nick_name}}
-                dt Girls no
-                dd
-                  | {{vm.cast.shop.name}}_{{vm.cast.id}}
                 dt Birthday
                 dd
                   | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}（{{vm.cast.age}}歳）
