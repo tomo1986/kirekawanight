@@ -67,7 +67,7 @@ section.main-container.map-form-page shop-form-directive=""
             td.res-form-table__td.input-box
               select.form-control name="group_id" ng-model="vm.shop.group_id"
                 option value=""  -- Please select --
-                option value="{{group.id}}" ng-repeat="group in vm.groups"
+                option value="{{group.id}}" ng-selected="vm.shop.group_id == group.id" ng-repeat="group in vm.groups"
                   | {{group.name}}
               span.is-text-danger ng-if="vm.errors.group_id"
                 | {{vm.errors.group_id}}
