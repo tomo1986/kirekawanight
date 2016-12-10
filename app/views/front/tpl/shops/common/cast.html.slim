@@ -7,7 +7,7 @@ main#main
       .page-title
         h2.title
           | NEW FACE
-      .queen-list.clearfix
+      .queen-list.clearfix ng-if="vm.newCasts.length > 0"
         li ng-repeat="cast in vm.newCasts"
           .fream
             .fream--basic.fream--top-left
@@ -35,12 +35,12 @@ main#main
                   | お気入り登録数
                 p.count
                   |  {{cast.favorite_count | number}}
-
+      .nohave-box ng-if="vm.newCasts.length == 0" 新しいキャストは現在居ません。
       .rank-box.shop-cast
         .page-title
           h2.title
             | CAST
-        .queen-list.clearfix
+        .queen-list.clearfix ng-if="vm.casts.length > 0"
           li ng-repeat="cast in vm.casts"
             .fream
               .fream--basic.fream--top-left
@@ -68,4 +68,4 @@ main#main
                     | お気入り登録数
                   p.count
                     |  {{cast.favorite_count | number}}
-
+      .nohave-box style="margin-bottom:3.75rem;" ng-if="vm.casts.length == 0" ただいま準備中

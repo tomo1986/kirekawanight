@@ -64,6 +64,7 @@ angular.module 'bisyoujoZukanNight'
       }
       castService.getSomeShopCasts(params).then((res) ->
         vm.total = res.data.total
+        console.log(res.data.users)
         angular.forEach(res.data.users, (user) ->
           vm.casts.push(user)
         )
@@ -97,6 +98,7 @@ angular.module 'bisyoujoZukanNight'
         message = res.data.message
         modalService.alert(title,message)
       )
+
     vm.setLoginCustomerToFavorite = (loginUser) ->
       customerService.setLoginCustomer(loginUser)
       vm.loginCustomer = customerService.getLoginCustomer()
@@ -161,11 +163,10 @@ angular.module 'bisyoujoZukanNight'
 
     vm.reviewSubmit = ->
       vm.canReviewSubmited = false
-
       castService.sendReview(vm.review).then((res) ->
         vm.canReviewSubmited = true
         title = '受け付けました。'
-        message = '貴重なreviewありがとうございました改善に努めていきます。'
+        message = '貴重なreviewありがとうございました!!'
         modalService.alert(title,message)
         vm.review = {
           type: 'user'

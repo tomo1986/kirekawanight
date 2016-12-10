@@ -498,13 +498,13 @@ class Api::FrontController < ApiController
 
   def api22
     user = User.find_by(id: params[:id])
-    users = User.where( shop_id: user.shop_id).where.not(id: user.id)
-    total = users.count
+    users = User.where( shop_id: user.shop_id).where.not(id: user.id) if user.shop_id.present?
+    total = users ? users.count : 0
     limit = 10
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
     users = users.page(page).per(limit) if users.present?
     builders = Jbuilder.new do |json|
-      json.users user.shop ? User.to_jbuilders(users) : nil
+      json.users users ? User.to_jbuilders(users) : nil
       json.total total
     end
     render json: builders.target!

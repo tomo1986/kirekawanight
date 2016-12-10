@@ -64,7 +64,7 @@ main#main
       .page-title
         h2.title
           | REVIEW LIST
-      .reviews-list
+      .reviews-list ng-if="vm.reviews.length > 0"
         .review ng-repeat="review in vm.reviews"
           .review--head
             .head--star
@@ -86,3 +86,4 @@ main#main
         a.btn.btn-submit href="javascript:void(0)" ng-click="vm.getSomeShopCasts()" もっと見る
       .center-button style="text-align:center;" ng-if="vm.isLoading"
         loading-directive size="125"
+      .nohave-box ng-if="vm.reviews.length == 0" レビューは現在ありません。

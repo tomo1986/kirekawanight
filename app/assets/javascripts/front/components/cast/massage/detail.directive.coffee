@@ -1,9 +1,11 @@
 angular.module 'bisyoujoZukanNight'
-.directive 'castMassageDetailDirective', ($state,castService, modalService,customerService) ->
+.directive 'castMassageDetailDirective', ($state,castService, modalService,customerService, validationService) ->
   CastMassageDetailController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MASSAGE CAST',link:''}]
+      vm.page = 1
+      vm.casts = []
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MASSAGE CAST',link:'/casts/massage'}]
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
       vm.loginCustomer = customerService.getLoginCustomer()
@@ -41,16 +43,32 @@ angular.module 'bisyoujoZukanNight'
         again_score: 1
         comment: null
       }
+
       vm.getCast()
+      vm.getSomeShopCasts()
 
     vm.getCast = ->
       castService.getCast($state.params.id).then((res) ->
         vm.cast = res.data.user
         vm.breadcrumb.push({name:vm.cast.name, link:''})
         vm.cast['profile'] = res.data.profile
-        vm.casts = res.data.users
         vm.isFavorited = res.data.is_favorited
-        vm.castMainImg = vm.cast.images[0].url
+        vm.castMainImg = vm.cast.images[0].url if vm.cast.images[0]
+      )
+
+    vm.getSomeShopCasts = ->
+      vm.isLoading = true
+      params = {
+        id: $state.params.id
+        page: vm.page++
+      }
+      castService.getSomeShopCasts(params).then((res) ->
+        vm.total = res.data.total
+        console.log(res.data.users)
+        angular.forEach(res.data.users, (user) ->
+          vm.casts.push(user)
+        )
+        vm.isLoading = false
       )
 
     vm.onClickedSupport = ->
@@ -61,6 +79,7 @@ angular.module 'bisyoujoZukanNight'
         modalService.createCustomer(vm.setLoginCustomer)
 
     vm.setLoginCustomer = (loginUser) ->
+      console.log(loginUser)
       customerService.setLoginCustomer(loginUser)
       vm.loginCustomer = customerService.getLoginCustomer()
       vm.CountUpSupport()
@@ -79,6 +98,7 @@ angular.module 'bisyoujoZukanNight'
         message = res.data.message
         modalService.alert(title,message)
       )
+
     vm.setLoginCustomerToFavorite = (loginUser) ->
       customerService.setLoginCustomer(loginUser)
       vm.loginCustomer = customerService.getLoginCustomer()
@@ -129,14 +149,10 @@ angular.module 'bisyoujoZukanNight'
           vm.contact.sns_zalo = null
           vm.contact.sns_line = null
         else if vm.selectSns == 'line'
-          console.log("asdfasdfasd")
           vm.errors['sns'] = 'LINEアカウントを入力してくだい。' if !vm.contact.sns_line
-
           vm.contact.sns_zalo = null
           vm.contact.sns_wechat = null
 
-      console.log(vm.errors,vm.selectSns == 'line')
-      console.log(vm.contact)
       return if Object.keys(vm.errors) && Object.keys(vm.errors).length > 0
 
       castService.sendContact(vm.contact).then((res) ->
@@ -144,13 +160,13 @@ angular.module 'bisyoujoZukanNight'
         message = 'こちらからご連絡させていただきます。その際kirekarwa colection 事務局からご連絡させていただきます。'
         modalService.alert(title,message)
       )
+
     vm.reviewSubmit = ->
       vm.canReviewSubmited = false
-
       castService.sendReview(vm.review).then((res) ->
         vm.canReviewSubmited = true
         title = '受け付けました。'
-        message = '貴重なreviewありがとうございました改善に努めていきます。'
+        message = '貴重なreviewありがとうございました!!'
         modalService.alert(title,message)
         vm.review = {
           type: 'user'

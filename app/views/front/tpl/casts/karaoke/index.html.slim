@@ -7,11 +7,11 @@
           a href="/shops/karaoke?page=1" SHOP
         li
           a.active href="/casts/karaoke?page=1" CAST
-    .rank-box ng-if="vm.push_casts.length > 0 && vm.filters.page == 1"
+    .rank-box
       .page-title
         h2.title
           | TODAY'S POWER PUSH
-      ul.queen-list.clearfix
+      ul.queen-list.clearfix ng-if="vm.push_casts.length > 0 && vm.filters.page == 1"
         li ng-repeat="cast in vm.push_casts"
           .fream
             .fream--basic.fream--top-left
@@ -44,6 +44,7 @@
                   | お気入り登録数
                 p.count
                   |  {{cast.favorite_count | number}}
+      .nohave-box ng-if="vm.push_casts.length == 0" Coming Soon
     .rank-box
       .page-title
         h2.title
@@ -68,7 +69,7 @@
               option value="desc" ng-selected="vm.filters.order == 'desc'" 降順
       .button-center ng-if="vm.isLoading"
         loading-directive size="125"
-      ul.queen-list.clearfix ng-if="vm.casts && !vm.isLoading"
+      ul.queen-list.clearfix ng-if="vm.casts.length > 0 && !vm.isLoading"
         li dir-paginate="cast in vm.casts | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page"
           .fream
             .fream--basic.fream--top-left
@@ -101,4 +102,5 @@
                   | お気入り登録数
                 p.count
                   |  {{cast.favorite_count | number}}
+        .nohave-box ng-if="vm.casts.length == 0" Coming Soon
       dir-pagination-controls boundary-links="true" template-url="/front/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"

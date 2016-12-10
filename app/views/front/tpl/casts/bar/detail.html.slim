@@ -9,24 +9,28 @@
               img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像" ng-class="{'target': vm.castMainImg == image.url}"
             p ng-if="!vm.castMainImg"
               = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
+
         .profile-area
           .name-area
             h3
-              | {{vm.cast.nick_name}}({{vm.cast.age}})
+              | {{vm.cast.name}}({{vm.cast.age}})
             p
-              | {{vm.cast.name}} T{{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
+              | T{{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
             .feature
               a.btn.btn-feature ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()"
                 | お気入り登録
             .feature
               a.btn.btn-feature href="javascript:void(0)" ng-click="vm.onClickedSupport()"
                 | 応援する
+            .shop-tags
+              a.btn ng-repeat="tag in vm.cast.tags"
+                | {{tag}}
           .thumbnail
             ul.thumbnail--list
               li ng-repeat="image in vm.cast.images track by $index"
                 a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
                   img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"
-      .comment
+      .comment.clearfix
         .page-title
           h2.title
             | Introduction
@@ -46,9 +50,12 @@
                 dt Name
                 dd
                   | {{vm.cast.name}} {{vm.cast.nick_name}}
+                dt Girls no
+                dd
+                  | {{vm.cast.shop.name}}_{{vm.cast.id}}
                 dt Birthday
                 dd
-                  | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}/{{vm.cast.age}}({{vm.cast.constellation}})
+                  | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}（{{vm.cast.age}}歳）
                 dt Blood type
                 dd
                   | {{vm.cast.blood_type}}
@@ -58,6 +65,12 @@
                 dt residence
                 dd
                   | {{vm.cast.residence}}
+                dt お気に入り登録数
+                dd
+                  | {{vm.cast.favorite_count}}件
+                dt お気に入り数
+                dd
+                  | {{vm.cast.support_count}}件
       /.col-md-12.detail.clearfix
       /  .row
       /    .page-title
@@ -141,42 +154,108 @@
 
               .center-button
                 button.btn.btn-submit type="submit" ng-disabled="contactForm2.$invalid"  この子に会いに行く
-    .col-md-12.some-cast.detail ng-if="vm.casts"
-      .row
-        .page-title
-          h2.title
-            | SOME SHOP GIRLS
-        .queen-list.clearfix
-          li ng-repeat="cast in vm.casts"
-            .fream
-              .fream--basic.fream--top-left
-              .fream--basic.fream--top-right
-              .fream--basic.fream--bottom-left
-              .fream--basic.fream--bottom-right
-              a href="/casts/karaoke/{{cast.id}}"
-                span ng-if="cast.images[0]"
-                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-                span ng-if="!cast.images[0]"
-                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-            .profile
-              h3.shop-name
-                span ng-if="cast.shop"
-                  | {{cast.shop.name}}
-                span ng-if="!cast.shop"
-                  | 所属なし
-              h4.name
-                | {{cast.nick_name}}({{cast.age}})
-              .body
-                .favorid.clearfix
-                  h5.title
-                    | お気入り登録数
-                  p.count
-                    |  {{cast.favorite_count | number}}
-                .support.clearfix
-                  h5.title
-                    | 応援数
-                  p.count
-                    | {{cast.support_count | number}}
+
+      .col-md-12.detail.clearfix
+        a name="review"
+        .row
+          .page-title
+            h2.title
+              | REVIEW
+          -if customer_signed_in?
+            .contact
+              form role="form" ng-submit='vm.reviewSubmit()' name="contactForm" novalidate=''
+                p 1：不満、２：やや不満、３：普通、４：やや満足、５：満足
+                table.res-form-table
+                  tr
+                    th.clearfix
+                      span.title サービスはどうでしたか？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.service_score" rz-slider-options="vm.serviceScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title 接客はどうでしたか？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.serving_score" rz-slider-options="vm.servingScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title 女の子はどうでしたか？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.girl_score" rz-slider-options="vm.girlScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title お店の雰囲気はどうでしたか？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.ambience_score" rz-slider-options="vm.ambienceScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title また来たいと思いますか？
+                      span.btn.required 必須
+                    td
+                      rzslider rz-slider-model="vm.review.again_score" rz-slider-options="vm.againScoreAange.options"
+                  tr
+                    th.clearfix
+                      span.title 内容
+                      span.btn.required 必須
+                    td
+                      textarea.form-control rows="4" name="comment" required='' placeholder="" ng-model="vm.review.comment"
+                      .error
+                        span.is-text-danger ng-if="vm.reviewErrors.comment"
+                          | {{vm.reviewErrors.comment}}
+                .center-button ng-show="vm.canReviewSubmited"
+                  button.btn.btn-submit type="submit" レビューする
+          - else
+            p REVIEWを書くにはログインが必要です。
+            .center-button style="text-align:center;"
+              a.btn.btn-submit href="/login" ログインする
+
+      .col-md-12.some-cast.detail
+        .row
+          .page-title
+            h2.title
+              | SOME SHOP GIRLS
+          .queen-list.clearfix ng-if="vm.casts.length > 0"
+            li ng-repeat="cast in vm.casts"
+              .fream
+                .fream--basic.fream--top-left
+                .fream--basic.fream--top-right
+                .fream--basic.fream--bottom-left
+                .fream--basic.fream--bottom-right
+                a href="/casts/bar/{{cast.id}}"
+                  span ng-if="cast.images[0]"
+                    img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+                  span ng-if="!cast.images[0]"
+                    = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+              .profile
+                h3.shop-name
+                  span ng-if="cast.shop"
+                    | {{cast.shop.name}}
+                  span ng-if="!cast.shop"
+                    | 所属なし
+                h4.name
+                  | {{cast.shop.name}}_{{cast.id}}
+                  br
+                  | {{cast.nick_name}}({{cast.age}})
+
+                .body
+                  .favorid.clearfix
+                    h5.title
+                      | お気入り登録数
+                    p.count
+                      |  {{cast.favorite_count | number}}
+                  .support.clearfix
+                    h5.title
+                      | 応援数
+                    p.count
+                      | {{cast.support_count | number}}
+          .nohave-box ng-if="vm.casts.length == 0" Coming Soon
+          .center-button style="text-align:center;" ng-if="(vm.total > vm.casts.length) && !vm.isLoading"
+            a.btn.btn-submit href="javascript:void(0)" ng-click="vm.getSomeShopCasts()" もっと見る
+          .center-button style="text-align:center;" ng-if="vm.isLoading"
+            loading-directive size="125"
   .cast-page--service
     a href="/shops/bar/{{vm.cast.shop_id}}"
-      span.blinking キレカワだけの特別プランは『こちら』
+      span.blinking キレカワ特別プランは『こちら』

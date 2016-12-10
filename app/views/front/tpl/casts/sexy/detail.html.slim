@@ -9,39 +9,32 @@
               img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像" ng-class="{'target': vm.castMainImg == image.url}"
             p ng-if="!vm.castMainImg"
               = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
+
         .profile-area
           .name-area
             h3
-              | {{vm.cast.nick_name}}({{vm.cast.age}})
+              | {{vm.cast.name}}({{vm.cast.age}})
             p
-              | {{vm.cast.name}} T{{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
-            dd.sns-btn
-              label
-                span LINE：
-                | {{vm.cast.sns_line.length > 0 ? '○' : '×' }}
-              label
-                span Zalo：
-                | {{vm.cast.sns_zalo.length > 0 ? '○' : '×' }}
-              label.notlabel
-                span Wechat：
-                | {{vm.cast.sns_wechat.length > 0 ? '○' : '×' }}
+              | T{{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
             .feature
-              a.btn.btn-feature  ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()"
+              a.btn.btn-feature ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()"
                 | お気入り登録
             .feature
               a.btn.btn-feature href="javascript:void(0)" ng-click="vm.onClickedSupport()"
                 | 応援する
+            .shop-tags
+              a.btn ng-repeat="tag in vm.cast.tags"
+                | {{tag}}
           .thumbnail
             ul.thumbnail--list
               li ng-repeat="image in vm.cast.images track by $index"
                 a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
                   img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"
-      .comment
+      .comment.clearfix
         .page-title
           h2.title
             | Introduction
         p ng-bind-html="vm.cast.profile.interview"
-
 
       .col-md-12.detail.clearfix
         .row
@@ -56,13 +49,13 @@
               dl.profile.clearfix
                 dt Name
                 dd
-                  | {{vm.cast.name}}
-                dt Nick Name
+                  | {{vm.cast.name}} {{vm.cast.nick_name}}
+                dt Girls no
                 dd
-                  | {{vm.cast.nick_name}}
+                  | {{vm.cast.shop.name}}_{{vm.cast.id}}
                 dt Birthday
                 dd
-                  | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}/{{vm.cast.age}}({{vm.cast.constellation}})
+                  | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}（{{vm.cast.age}}歳）
                 dt Blood type
                 dd
                   | {{vm.cast.blood_type}}
@@ -72,17 +65,12 @@
                 dt residence
                 dd
                   | {{vm.cast.residence}}
-                dt SNS
+                dt お気に入り登録数
                 dd
-                  label
-                    span LINE
-                    | {{vm.cast.sns_line.length > 0 ? '○' : '×' }}
-                  label
-                    span Zalo
-                    | {{vm.cast.sns_zalo.length > 0 ? '○' : '×' }}
-                  label
-                    span Wechat
-                    | {{vm.cast.sns_wechat.length > 0 ? '○' : '×' }}
+                  | {{vm.cast.favorite_count}}件
+                dt お気に入り数
+                dd
+                  | {{vm.cast.support_count}}件
       /.col-md-12.detail.clearfix
       /  .row
       /    .page-title
@@ -166,6 +154,7 @@
 
               .center-button
                 button.btn.btn-submit type="submit" ng-disabled="contactForm2.$invalid"  この子に会いに行く
+
       .col-md-12.detail.clearfix
         a name="review"
         .row
@@ -191,19 +180,19 @@
                       rzslider rz-slider-model="vm.review.serving_score" rz-slider-options="vm.servingScoreAange.options"
                   tr
                     th.clearfix
-                      span.title 女の子の対応について？
+                      span.title 女の子はどうでしたか？
                       span.btn.required 必須
                     td
                       rzslider rz-slider-model="vm.review.girl_score" rz-slider-options="vm.girlScoreAange.options"
                   tr
                     th.clearfix
-                      span.title 女の子の雰囲気はどうでしたか？
+                      span.title お店の雰囲気はどうでしたか？
                       span.btn.required 必須
                     td
                       rzslider rz-slider-model="vm.review.ambience_score" rz-slider-options="vm.ambienceScoreAange.options"
                   tr
                     th.clearfix
-                      span.title また選びたいと思いますか？
+                      span.title また来たいと思いますか？
                       span.btn.required 必須
                     td
                       rzslider rz-slider-model="vm.review.again_score" rz-slider-options="vm.againScoreAange.options"

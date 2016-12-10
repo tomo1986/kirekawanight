@@ -33,16 +33,18 @@ main#main
       .page-title
         h2.title
           | TIME SALE
-      table
+      table ng-if="vm.discounts.length > 0"
         tr ng-repeat="discount in vm.discounts"
           td
            p ng-bind-html="discount.content"
+
+      .nohave-box ng-if="vm.discounts == 0" タイムセールはありません。
 
     .rank-box.shop-new-face
       .page-title
         h2.title
           | INTORODUCTION
-      div ng-bind-html="vm.shop.interview_ja"
+      div ng-bind-html="vm.shop.interview_ja | noHTML | newlines"
 
     #map.rank-box.shop-map.clearfix
       .page-title

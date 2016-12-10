@@ -212,12 +212,12 @@
             .center-button style="text-align:center;"
               a.btn.btn-submit href="/login" ログインする
 
-      .col-md-12.some-cast.detail ng-if="vm.casts"
+      .col-md-12.some-cast.detail
         .row
           .page-title
             h2.title
               | SOME SHOP GIRLS
-          .queen-list.clearfix
+          .queen-list.clearfix ng-if="vm.casts.length > 0"
             li ng-repeat="cast in vm.casts"
               .fream
                 .fream--basic.fream--top-left
@@ -251,6 +251,7 @@
                       | 応援数
                     p.count
                       | {{cast.support_count | number}}
+          .nohave-box ng-if="vm.casts.length == 0" Coming Soon
           .center-button style="text-align:center;" ng-if="(vm.total > vm.casts.length) && !vm.isLoading"
             a.btn.btn-submit href="javascript:void(0)" ng-click="vm.getSomeShopCasts()" もっと見る
           .center-button style="text-align:center;" ng-if="vm.isLoading"
