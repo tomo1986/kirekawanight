@@ -46,26 +46,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="base.html.erb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/layouts/front/base.html.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-4.375">
-                  <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="blog.html.erb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/layouts/front/blog.html.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.0">
-                  <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
@@ -76,12 +56,73 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index_jp.html.slim" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/comsept/index_jp.html.slim">
+          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.49618322">
-                  <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+                <state vertical-scroll-proportion="-20.411764">
+                  <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-9.5">
+                  <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/index.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-9.5">
+                  <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.5801527">
+                  <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+                  <folding>
+                    <marker date="1481384613000" expanded="true" signature="0:4375" placeholder=".main-content.container cast-bar-index-directive=&quot;&quot;" />
+                    <marker date="1481384613000" expanded="true" signature="124:265" placeholder=".rank-box" />
+                    <marker date="1481384613000" expanded="true" signature="270:1753" placeholder=".rank-box" />
+                    <marker date="1481384613000" expanded="true" signature="286:345" placeholder=".page-title" />
+                    <marker date="1481384613000" expanded="true" signature="487:949" placeholder=".fream" />
+                    <marker date="1481384613000" expanded="true" signature="506:535" placeholder=".fream--basic.fream--top-left" />
+                    <marker date="1481384613000" expanded="true" signature="548:578" placeholder=".fream--basic.fream--top-right" />
+                    <marker date="1481384613000" expanded="true" signature="591:623" placeholder=".fream--basic.fream--bottom-left" />
+                    <marker date="1481384613000" expanded="true" signature="636:669" placeholder=".fream--basic.fream--bottom-right" />
+                    <marker date="1481384613000" expanded="true" signature="960:1689" placeholder=".profile" />
+                    <marker date="1481384613000" expanded="true" signature="1364:1689" placeholder=".body" />
+                    <marker date="1481384613000" expanded="true" signature="1384:1526" placeholder=".support.clearfix" />
+                    <marker date="1481384613000" expanded="true" signature="1541:1689" placeholder=".favorid.clearfix" />
+                    <marker date="1481384613000" expanded="true" signature="1696:1753" placeholder=".nohave-box ng-if=&quot;vm.push_casts.length == 0&quot; Coming Soon" />
+                    <marker date="1481384613000" expanded="true" signature="1758:4375" placeholder=".rank-box" />
+                    <marker date="1481384613000" expanded="true" signature="1774:1820" placeholder=".page-title" />
+                    <marker date="1481384613000" expanded="true" signature="1827:2669" placeholder=".filter-box.clearfix" />
+                    <marker date="1481384613000" expanded="true" signature="1857:1947" placeholder=".total-count-box" />
+                    <marker date="1481384613000" expanded="true" signature="2676:2748" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+                    <marker date="1481384613000" expanded="true" signature="2963:3425" placeholder=".fream" />
+                    <marker date="1481384613000" expanded="true" signature="2982:3011" placeholder=".fream--basic.fream--top-left" />
+                    <marker date="1481384613000" expanded="true" signature="3024:3054" placeholder=".fream--basic.fream--top-right" />
+                    <marker date="1481384613000" expanded="true" signature="3067:3099" placeholder=".fream--basic.fream--bottom-left" />
+                    <marker date="1481384613000" expanded="true" signature="3112:3145" placeholder=".fream--basic.fream--bottom-right" />
+                    <marker date="1481384613000" expanded="true" signature="3436:4165" placeholder=".profile" />
+                    <marker date="1481384613000" expanded="true" signature="3840:4165" placeholder=".body" />
+                    <marker date="1481384613000" expanded="true" signature="3860:4002" placeholder=".support.clearfix" />
+                    <marker date="1481384613000" expanded="true" signature="4017:4165" placeholder=".favorid.clearfix" />
+                    <marker date="1481384613000" expanded="true" signature="4051:4087" placeholder="h 5.title" />
+                    <marker date="1481384613000" expanded="true" signature="4174:4226" placeholder=".nohave-box ng-if=&quot;vm.casts.length == 0&quot; Coming Soon" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -93,8 +134,8 @@
           <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.17928287">
-                  <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.3426295">
+                  <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -149,15 +190,15 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/sexy/detail.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/guide/index.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/layouts/front/base.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/front/blog.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/comsept/index_jp.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/guide/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim" />
       </list>
     </option>
   </component>
@@ -300,7 +341,177 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="comsept" />
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sexy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="massage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="karaoke" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="guide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -988,46 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17928287">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2662722">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1331361">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.4615386">
-          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3129771">
-          <caret line="68" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="148" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52671754">
@@ -1060,6 +1231,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/comsept/index_jp.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.49618322">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1068,11 +1247,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/comsept/index_jp.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.49618322">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3426295">
+          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.411764">
+          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5801527">
+          <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+          <folding>
+            <marker date="1481384613000" expanded="true" signature="0:4375" placeholder=".main-content.container cast-bar-index-directive=&quot;&quot;" />
+            <marker date="1481384613000" expanded="true" signature="124:265" placeholder=".rank-box" />
+            <marker date="1481384613000" expanded="true" signature="270:1753" placeholder=".rank-box" />
+            <marker date="1481384613000" expanded="true" signature="286:345" placeholder=".page-title" />
+            <marker date="1481384613000" expanded="true" signature="487:949" placeholder=".fream" />
+            <marker date="1481384613000" expanded="true" signature="506:535" placeholder=".fream--basic.fream--top-left" />
+            <marker date="1481384613000" expanded="true" signature="548:578" placeholder=".fream--basic.fream--top-right" />
+            <marker date="1481384613000" expanded="true" signature="591:623" placeholder=".fream--basic.fream--bottom-left" />
+            <marker date="1481384613000" expanded="true" signature="636:669" placeholder=".fream--basic.fream--bottom-right" />
+            <marker date="1481384613000" expanded="true" signature="960:1689" placeholder=".profile" />
+            <marker date="1481384613000" expanded="true" signature="1364:1689" placeholder=".body" />
+            <marker date="1481384613000" expanded="true" signature="1384:1526" placeholder=".support.clearfix" />
+            <marker date="1481384613000" expanded="true" signature="1541:1689" placeholder=".favorid.clearfix" />
+            <marker date="1481384613000" expanded="true" signature="1696:1753" placeholder=".nohave-box ng-if=&quot;vm.push_casts.length == 0&quot; Coming Soon" />
+            <marker date="1481384613000" expanded="true" signature="1758:4375" placeholder=".rank-box" />
+            <marker date="1481384613000" expanded="true" signature="1774:1820" placeholder=".page-title" />
+            <marker date="1481384613000" expanded="true" signature="1827:2669" placeholder=".filter-box.clearfix" />
+            <marker date="1481384613000" expanded="true" signature="1857:1947" placeholder=".total-count-box" />
+            <marker date="1481384613000" expanded="true" signature="2676:2748" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+            <marker date="1481384613000" expanded="true" signature="2963:3425" placeholder=".fream" />
+            <marker date="1481384613000" expanded="true" signature="2982:3011" placeholder=".fream--basic.fream--top-left" />
+            <marker date="1481384613000" expanded="true" signature="3024:3054" placeholder=".fream--basic.fream--top-right" />
+            <marker date="1481384613000" expanded="true" signature="3067:3099" placeholder=".fream--basic.fream--bottom-left" />
+            <marker date="1481384613000" expanded="true" signature="3112:3145" placeholder=".fream--basic.fream--bottom-right" />
+            <marker date="1481384613000" expanded="true" signature="3436:4165" placeholder=".profile" />
+            <marker date="1481384613000" expanded="true" signature="3840:4165" placeholder=".body" />
+            <marker date="1481384613000" expanded="true" signature="3860:4002" placeholder=".support.clearfix" />
+            <marker date="1481384613000" expanded="true" signature="4017:4165" placeholder=".favorid.clearfix" />
+            <marker date="1481384613000" expanded="true" signature="4051:4087" placeholder="h 5.title" />
+            <marker date="1481384613000" expanded="true" signature="4174:4226" placeholder=".nohave-box ng-if=&quot;vm.casts.length == 0&quot; Coming Soon" />
+          </folding>
         </state>
       </provider>
     </entry>
