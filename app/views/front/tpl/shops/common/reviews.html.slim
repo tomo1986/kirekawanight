@@ -1,0 +1,88 @@
+main#main
+  .container
+    .rank-box.shop-top-box
+      h2.shop-name
+        | {{vm.shop.name}}
+    #review.rank-box.shop-map.clearfix
+      .page-title
+        h2.title
+          | REVIEW
+      -if customer_signed_in?
+        .contact
+          form role="form" ng-submit='vm.reviewSubmit()' name="contactForm" novalidate=''
+            p 1：不満、２：やや不満、３：普通、４：やや満足、５：満足
+            table.res-form-table
+              tr
+                th.clearfix
+                  span.title サービスはどうでしたか？
+                  span.btn.required 必須
+                td
+                  rzslider rz-slider-model="vm.review.service_score" rz-slider-options="vm.serviceScoreAange.options"
+              tr
+                th.clearfix
+                  span.title 接客はどうでしたか？
+                  span.btn.required 必須
+                td
+                  rzslider rz-slider-model="vm.review.serving_score" rz-slider-options="vm.servingScoreAange.options"
+              tr
+                th.clearfix
+                  span.title 女の子はどうでしたか？
+                  span.btn.required 必須
+                td
+                  rzslider rz-slider-model="vm.review.girl_score" rz-slider-options="vm.girlScoreAange.options"
+              tr
+                th.clearfix
+                  span.title お店の雰囲気はどうでしたか？
+                  span.btn.required 必須
+                td
+                  rzslider rz-slider-model="vm.review.ambience_score" rz-slider-options="vm.ambienceScoreAange.options"
+              tr
+                th.clearfix
+                  span.title また来たいと思いますか？
+                  span.btn.required 必須
+                td
+                  rzslider rz-slider-model="vm.review.again_score" rz-slider-options="vm.againScoreAange.options"
+              tr
+                th.clearfix
+                  span.title 内容
+                  span.btn.required 必須
+                td
+                  textarea.form-control rows="4" name="comment" required='' placeholder="" ng-model="vm.review.comment"
+                  .error
+                    span.is-text-danger ng-if="vm.reviewErrors.comment"
+                      | {{vm.reviewErrors.comment}}
+            .center-button  ng-show="vm.canReviewSubmited"
+              button.btn.btn-submit type="submit" レビューする
+            .center-button ng-hide="vm.canReviewSubmited"
+              loading-directive size="125"
+      - else
+        p REVIEWを書くにはログインが必要です。
+        .center-button style="text-align:center;"
+          a.btn.btn-submit href="/login" ログインする
+
+    #review.rank-box.shop-map.clearfix
+      .page-title
+        h2.title
+          | REVIEW LIST
+      .reviews-list
+        .review ng-repeat="review in vm.reviews"
+          .review--head
+            .head--star
+              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 0" ng-class="{'fa-star-half': review.total_score > 0 && review.total_score <= 10,'fa-star': review.total_score > 10 && review.total_score <= 20,'active': review.total_score > 0 }"
+              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 20" ng-class="{'fa-star-half': review.total_score > 20 && review.total_score <= 30,'fa-star': review.total_score > 30 && review.total_score <= 40,'active': review.total_score > 20 }"
+              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 40" ng-class="{'fa-star-half': review.total_score > 40 && review.total_score <= 50,'fa-star': review.total_score > 50 && review.total_score <= 60,'active': review.total_score > 40 }"
+              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 60" ng-class="{'fa-star-half': review.total_score > 60 && review.total_score <= 70,'fa-star': review.total_score > 70 && review.total_score <= 80,'active': review.total_score > 60 }"
+              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 80" ng-class="{'fa-star-half': review.total_score > 80 && review.total_score <= 90,'fa-star': review.total_score > 90 && review.total_score <= 100,'active': review.total_score > 80 }"
+            .head--score
+              | {{review.total_score}}点
+          .review--user
+            h3.user--name
+              | 投稿者 {{review.sender.name || '匿名'}}
+            .user--review_date
+              | 投稿日 {{review.created_at | date: 'yyyy年M月d日' }}
+          p.review--body ng-bind-html="review.comment | noHTML | newlines"
+
+      .center-button style="text-align:center;" ng-if="(vm.total > vm.casts.length) && !vm.isLoading"
+        a.btn.btn-submit href="javascript:void(0)" ng-click="vm.getSomeShopCasts()" もっと見る
+      .center-button style="text-align:center;" ng-if="vm.isLoading"
+        loading-directive size="125"

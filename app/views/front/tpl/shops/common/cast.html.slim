@@ -1,0 +1,71 @@
+main#main
+  .container
+    .rank-box.shop-top-box
+      h2.shop-name
+        | {{vm.shop.name}}
+    .rank-box.shop-new-face
+      .page-title
+        h2.title
+          | NEW FACE
+      .queen-list.clearfix
+        li ng-repeat="cast in vm.newCasts"
+          .fream
+            .fream--basic.fream--top-left
+            .fream--basic.fream--top-right
+            .fream--basic.fream--bottom-left
+            .fream--basic.fream--bottom-right
+            a href="/casts/karaoke/{{cast.id}}"
+              span ng-if="cast.images[0]"
+                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+              span ng-if="!cast.images[0]"
+                = image_tag 'front/cast-no-image.png', alt: "cast no image"
+          .profile
+            .name
+              | {{cast.nick_name}}({{cast.age}})
+              span
+                i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
+            .body
+              .support.clearfix
+                h5.title
+                  | 応援数
+                p.count
+                  | {{cast.support_count | number}}
+              .favorid.clearfix
+                h5.title
+                  | お気入り登録数
+                p.count
+                  |  {{cast.favorite_count | number}}
+
+      .rank-box.shop-cast
+        .page-title
+          h2.title
+            | CAST
+        .queen-list.clearfix
+          li ng-repeat="cast in vm.casts"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/karaoke/{{cast.id}}"
+                span ng-if="cast.images[0]"
+                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+                span ng-if="!cast.images[0]"
+                  = image_tag 'front/cast-no-image.png', alt: "cast no image"
+            .profile
+              .name
+                | {{cast.nick_name}}({{cast.age}}){{cast.id}}
+                span
+                  i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
+              .body
+                .support.clearfix
+                  h5.title
+                    | 応援数
+                  p.count
+                    | {{cast.support_count | number}}
+                .favorid.clearfix
+                  h5.title
+                    | お気入り登録数
+                  p.count
+                    |  {{cast.favorite_count | number}}
+

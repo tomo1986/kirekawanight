@@ -21,4 +21,5 @@ angular.module 'bisyoujoZukanNight', [
   'ngFileUpload'
   'angulartics'
   'angulartics.google.analytics'
+  'angular-loading-bar'
 ]

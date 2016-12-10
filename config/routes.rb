@@ -137,19 +137,33 @@ Rails.application.routes.draw do
 
     get 'shops/karaoke', to: 'home#shop_karaoke'
     get 'shops/karaoke/:id', to: 'home#index'
-
+    get 'shops/karaoke/:id/info', to: 'home#index'
+    get 'shops/karaoke/:id/system', to: 'home#index'
+    get 'shops/karaoke/:id/cast', to: 'home#index'
+    get 'shops/karaoke/:id/contact', to: 'home#index'
+    get 'shops/karaoke/:id/reviews', to: 'home#index'
 
     get 'casts/bar', to: 'home#cast_bar'
     get 'casts/bar/:id', to: 'home#index'
 
     get 'shops/bar', to: 'home#shop_bar'
     get 'shops/bar/:id', to: 'home#index'
+    get 'shops/bar/:id/info', to: 'home#index'
+    get 'shops/bar/:id/system', to: 'home#index'
+    get 'shops/bar/:id/cast', to: 'home#index'
+    get 'shops/bar/:id/contact', to: 'home#index'
+    get 'shops/bar/:id/reviews', to: 'home#index'
 
     get 'casts/massage', to: 'home#cast_massage'
     get 'casts/massage/:id', to: 'home#index'
 
     get 'shops/massage', to: 'home#shop_massage'
     get 'shops/massage/:id', to: 'home#index'
+    get 'shops/massage/:id/info', to: 'home#index'
+    get 'shops/massage/:id/system', to: 'home#index'
+    get 'shops/massage/:id/cast', to: 'home#index'
+    get 'shops/massage/:id/contact', to: 'home#index'
+    get 'shops/massage/:id/reviews', to: 'home#index'
 
     get 'casts/sexy', to: 'home#cast_sexy'
     get 'casts/sexy/:id', to: 'home#index'
@@ -196,6 +210,8 @@ Rails.application.routes.draw do
       post :api15
       get :api20
       get :api21
+      get :api22
+      get :api23
     end
 
     scope :admin, module: 'admin' do

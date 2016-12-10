@@ -147,7 +147,6 @@ class Api::FrontController < ApiController
     shop = Shop.find_by(id: params[:id])
     render_failed(4, t('shop.error.not_find')) and return if shop.blank?
     users = shop.users
-    reviews = shop.reviews.where(is_displayed: true) if shop.reviews
     is_favorited = false
     is_favorited = current_customer.favorites.exists?(receiver_type: 'Shop', receiver_id: params[:id]) if customer_signed_in?
     favorites = {}
@@ -161,7 +160,6 @@ class Api::FrontController < ApiController
       json.code 1
       json.shop shop.to_jbuilder
       json.is_favorited is_favorited
-      json.reviews reviews ? Review.to_jbuilders(reviews) : nil
       json.new_users users ? User.to_jbuilders(users.find_new_user) : nil
       json.users users ? User.to_jbuilders(users) : nil
       json.favorites favorites
@@ -492,6 +490,40 @@ class Api::FrontController < ApiController
       json.users User.to_jbuilders(users)
       json.supports supports
       json.favorites favorites
+      json.total total
+    end
+    render json: builders.target!
+
+  end
+
+  def api22
+    user = User.find_by(id: params[:id])
+    users = User.where( shop_id: user.shop_id).where.not(id: user.id)
+    total = users.count
+    limit = 10
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    users = users.page(page).per(limit) if users.present?
+    builders = Jbuilder.new do |json|
+      json.users user.shop ? User.to_jbuilders(users) : nil
+      json.total total
+    end
+    render json: builders.target!
+
+  end
+
+  def api23
+    shop = Shop.find_by(id: params[:id])
+    reviews = shop.reviews if shop
+    # reviews = shop.reviews.where(is_displayed: true) if shop.reviews
+
+    total = reviews.count if reviews
+
+    limit = 10
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    reviews = reviews.page(page).per(limit) if reviews.present?
+
+    builders = Jbuilder.new do |json|
+      json.reviews Review.to_jbuilders(reviews)
       json.total total
     end
     render json: builders.target!

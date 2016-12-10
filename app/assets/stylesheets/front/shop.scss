@@ -2,6 +2,7 @@
   .rank-box-last {
     margin-bottom: $row-space-biger;
   }
+
   .rank-box {
     margin-bottom: $row-space-biger;
     .filter-box {
@@ -213,6 +214,40 @@
 
 }
 .shop-detail-page {
+  .genre-tag{
+    width:100%;
+    margin-bottom:0.9375rem;
+    @media screen and (min-width: 320px) and (max-width: 543px){
+      margin: 0 -0.9375rem 0.9375rem;
+      width: calc(100% + 1.875rem);
+    }
+    border-bottom: 1px solid $_brand-basic;
+    li{
+      float:left;
+      width:20%;
+      text-align: center;
+      font-size: .7rem;
+      a {
+        display: block;
+        color: #fff;
+        &:hover {
+          color: #E2D39F;
+          text-shadow: 2px 2px 10px #f7cb47;
+          text-decoration: none;
+        }
+        &.active{
+          color: #E2D39F;
+          text-align: center;
+          position: relative;
+          padding-bottom: 0.234375rem;
+          border-bottom: 1px solid #E2D39F;
+          margin: 0;
+          text-shadow: 2px 2px 10px #f7cb47;
+          border-bottom: 3px solid $_em_text_hover;
+        }
+      }
+    }
+  }
   .shop-list{
     padding: 0;
     list-style: none;
@@ -340,6 +375,10 @@
     .shop-cover-wrap {
       position: relative;
       height: 400px;
+      @media screen and (min-width: 320px) and (max-width: 543px){
+        height: auto;
+        background-image: none !important;
+      }
       text-align: center;
       background-position: center;
       background-repeat: repeat, repeat;
@@ -357,6 +396,9 @@
         top: 0;
         height: 100%;
         opacity: 0.7;
+        @media screen and (min-width: 320px) and (max-width: 543px){
+          display: none;
+        }
       }
       img {
         position: absolute;
@@ -371,6 +413,13 @@
         right: 0;
         left: 0;
         margin: 0 auto;
+        @media screen and (min-width: 320px) and (max-width: 543px){
+          margin: 0 -0.9375rem;
+          width: calc(100% + 1.875rem);
+          height:auto;
+          position: static;
+        }
+
       }
     }
   }
@@ -421,7 +470,6 @@
     }
   }
   .shop-top-box{
-    margin-top: $row-space-biger;
     text-align: center;
     .attention{
       span{
@@ -699,6 +747,52 @@
     &:hover {
       opacity: .7;
 
+    }
+  }
+  .reviews-list{
+    .review {
+      margin-bottom: $row-space-bog;
+      .review--head {
+        margin-bottom: $row-space-half;
+        .head--star{
+          font-size: 1.2rem;
+          display: inline-block;
+          margin-right: $row-space;
+          i.active{
+            color: $_em_text;
+            margin-right:.2rem;
+            text-shadow: 0px 0px 10px #f7cb47;
+          }
+        }
+        .head--score {
+          display: inline-block;
+        }
+      }
+      .review--user {
+        margin-bottom: $row-space-half;
+        padding-bottom: $row-space-half;
+        border-bottom: 1px solid #ddd;
+        .user--name {
+          text-align: left;
+          display: inline-block;
+          margin-right: $row-space;
+          font-size: 1.2rem;
+        }
+        .user--review_date {
+          text-align: right;
+          display: inline;
+          font-size: 0.8rem;
+        }
+        @media screen and (min-width: 320px) and (max-width: 543px){
+          .user--name {display: block;}
+          .user--review_date {display: block;text-align: left;}
+        }
+
+      }
+      .review--body {
+        margin-bottom: $row-space-half;
+        line-height: 1.5;
+      }
     }
   }
 

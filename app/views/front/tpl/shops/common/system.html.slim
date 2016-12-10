@@ -1,0 +1,136 @@
+main#main
+  .container
+    .rank-box.shop-top-box
+      h2.shop-name
+        | {{vm.shop.name}}
+    #system.rank-box.shop-system
+      .page-title
+        h2.title
+          | SYSTEM
+      table.res-form-table
+        tr
+          th 予算
+          td
+            | {{vm.shop.budget_yen}}円
+            br
+            | {{vm.shop.budget_vnd}}VND
+            br
+            | {{vm.shop.budget_usd}}USD
+
+        tr
+          th tip有無
+          td
+            div ng-if="vm.shop.tip == 'no_need'"
+              | 無
+            div ng-if="vm.shop.tip == 'need'"
+              | 有
+            div ng-if="vm.shop.tip == 'up_to_you'"
+              | どちらでも
+        tr
+          th OPEN時間
+          td
+            | {{vm.shop.opened_at | date: 'HH:mm'}} 〜 {{vm.shop.closed_at | date: 'HH:mm'}}
+        tr
+          th card
+          td
+            div ng-if="vm.shop.is_credit"
+              = image_tag 'front/card.png', alt:"card list"
+            div ng-if="!vm.shop.is_credit"
+              | 使用できません
+        tr
+          th 在籍女性
+          td
+            | {{vm.shop.girls_count}}名
+        tr
+          th 喫煙
+          td
+            div ng-if="vm.shop.is_smoked"
+              | 可
+            div ng-if="!vm.shop.is_smoked"
+              | 不可
+
+        tr
+          th lungerge
+          td
+            div ng-if="vm.shop.is_japanese"
+              | 日本語
+            div ng-if="vm.shop.is_english"
+              | English
+            div ng-if="vm.shop.is_korean"
+              | Korean
+            div ng-if="vm.shop.is_chinese"
+              | Chinese
+
+    #contact.rank-box.shop-map.clearfix
+      .page-title
+        h2.title
+          | CONTACT
+      .contact
+        form role="form" ng-submit='vm.contactSubmit()' name="contactForm" novalidate=''
+          table.res-form-table
+
+            tr
+              th.clearfix
+                span.title 氏名
+                span.btn.required 必須
+              td
+                input.form-control type="text" name="name" required='' placeholder="切川 太郎(ニックネーム可)" ng-model="vm.contact.name"
+            tr
+              th.clearfix
+                span.title Tel
+                span.btn.required 必須
+              td
+                input.form-control type="text" name="tel" required='' placeholder="例)090123412345" ng-model="vm.contact.tel"
+                span.is-text-danger ng-if="vm.errors.tel"
+                  | {{vm.errors.tel}}
+
+            tr
+              th.clearfix
+                span.title 折り返し連絡手段選択
+                span.btn.required 必須
+              td
+                .form-shop.clearfix style="text-align:left;"
+                  label.radio-inline
+                    input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
+                  label.radio-inline
+                    input name="return_way" type="radio" value="sns" ng-model="vm.contact.return_way" sns
+            tr ng-if="vm.contact.return_way == 'email'"
+              th.clearfix
+                span.title emailアドレス
+                span.btn.required 必須
+              td
+                input.form-control type="email" name="email" required='' placeholder="例)info@kire-kawa.com" ng-model="vm.contact.email"
+                span.is-text-danger ng-if="vm.errors.email"
+                  | {{vm.errors.email}}
+            tr ng-if="vm.contact.return_way == 'sns'"
+              th.clearfix
+                span.title SNSアカウント
+                span.btn.required どれか一つ必須
+              td
+                dl
+                  dt
+                    label.radio-inline
+                      input name="select_sns" type="radio" value="zalo" ng-model="vm.selectSns" Zalo
+                  dt
+                    label.radio-inline
+                      input name="select_sns" type="radio" value="wechat" ng-model="vm.selectSns" WeChat
+                  dt
+                    label.radio-inline
+                      input name="select_sns" type="radio" value="line" ng-model="vm.selectSns" Line
+                  dd
+                    input.form-control type="text" name="zalo" placeholder="例)kirekawa111" ng-model="vm.contact.sns_zalo" ng-if="vm.selectSns == 'zalo'"
+                    input.form-control type="text" name="wechat" placeholder="例)kirekawa111" ng-model="vm.contact.sns_wechat" ng-if="vm.selectSns == 'wechat'"
+                    input.form-control type="text" name="line" placeholder="例)kirekawa111" ng-model="vm.contact.sns_line" ng-if="vm.selectSns == 'line'"
+                span.is-text-danger ng-if="vm.errors.sns"
+                  | {{vm.errors.sns}}
+            tr
+              th.clearfix
+                span.title 内容
+                span.btn.required 必須
+              td
+                textarea.form-control rows="8" style="color:#fff;" name="message" required='' placeholder="いつ、何時ごろ、料金について" ng-model="vm.contact.message"
+          .center-button style="text-align:center;" ng-show="vm.canContactSubmited"
+            button.btn.btn-submit type="submit"  問合わせる
+          .center-button style="text-align:center;" ng-hide="vm.canContactSubmited"
+            loading-directive size="125"
+

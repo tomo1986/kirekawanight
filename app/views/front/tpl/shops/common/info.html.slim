@@ -1,0 +1,103 @@
+main#main
+  .top-view-box
+    .shop-cover-wrap style="background-image:url({{vm.shopMainImg}});"
+      .shopCover
+      .container
+        img src="{{vm.shopMainImg}}"
+  .container
+    .rank-box.shop-top-box
+      h2.shop-name
+        | {{vm.shop.name}}
+      .shop-tags
+        a.btn ng-repeat="tag in vm.shop.tags"
+          | {{tag.name}}
+      p.shop-copy ng-bind-html="vm.shop.service | noHTML | newlines"
+      .attention
+        span ng-click="vm.onAttention()" 適応されない場合はこちら
+        p ng-class="{'active': vm.isAttention}"
+          | ベトナムではお店に連れてきた人に1人あたり3〜5$払います。
+          br
+          | そのため、こちらのプランは最低価格つまりこれ以上安くできないよというプランですので
+          br
+          | お客様にdiscountするかお店に連れてきた人にお金を支払うかのどちらかしか適応させることしかできません。
+          br
+          | 改めてご了承ください。
+
+      .shop-button-box.clearfix
+        .favorite
+          a.btn ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()" お気に入り登録
+        .support
+          a.btn  href="javascript:void(0)" ng-click="vm.onClickedSupport()" 応援する
+
+    .rank-box.shop-new-face
+      .page-title
+        h2.title
+          | TIME SALE
+      table
+        tr ng-repeat="discount in vm.discounts"
+          td
+           p ng-bind-html="discount.content"
+
+    .rank-box.shop-new-face
+      .page-title
+        h2.title
+          | INTORODUCTION
+      div ng-bind-html="vm.shop.interview_ja"
+
+    #map.rank-box.shop-map.clearfix
+      .page-title
+        h2.title
+          | ADDRESS
+      .clearfix
+        .row
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+            .col-row-left.clearfix
+              ng-map zoom="16" default-style="true" center="{{vm.shop.lon}},{{vm.shop.lat}}" styles="{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
+                marker id='{{vm.shop.id}} ' title="{{vm.shop.address}}" position=" {{vm.shop.lon}}, {{vm.shop.lat}}"
+          .col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+            .col-row-right.clearfix
+              .shop-map--info-box
+                .shop-map--info-wrap
+                  .shop-name-titlt
+                    .shop-map--info-name
+                      | {{vm.shop.name}}
+                  dl.profile.clearfix
+                    dt TEL
+                    dd
+                      | {{vm.shop.tel}}
+                    dt EMAIL
+                    dd
+                      | {{vm.shop.email}}
+                    dt ADDRESS
+                    dd
+                      | {{vm.shop.address}}
+    .rank-box.rank-box-last style="margin-bottom:2rem;" ng-if="vm.shops.length > 0"
+      .page-title
+        h2.title
+          | SISTER SHOP
+      .shop-list.clearfix
+        li ng-repeat="shop in vm.shops"
+          a href="/shops/karaoke/{{shop.id}}"
+            span ng-if="shop.images[0]"
+              img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
+            span ng-if="!shop.images[0]"
+              = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
+          .shop-info
+            h3.name
+              | {{shop.name}} ({{shop.name_kana}})
+            .body
+              .has-girls.clearfix
+                h5.title
+                  | 在籍女性
+                p.count
+                  | {{shop.girls_count | number}}人
+              .support.clearfix
+                h5.title
+                  | 応援数
+                p.count
+                  | {{shop.support_count | number}}件
+              .favorid.clearfix
+                h5.title
+                  | お気入り登録数
+                p.count
+                  |  {{shop.favorite_count | number}}件

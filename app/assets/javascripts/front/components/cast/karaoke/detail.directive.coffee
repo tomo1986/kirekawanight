@@ -3,6 +3,8 @@ angular.module 'bisyoujoZukanNight'
   CastKaraokeDetailController = () ->
     vm = this
     vm.init = ->
+      vm.page = 1
+      vm.casts = []
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE CAST',link:'/casts/karaoke'}]
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
@@ -43,15 +45,29 @@ angular.module 'bisyoujoZukanNight'
       }
 
       vm.getCast()
+      vm.getSomeShopCasts()
 
     vm.getCast = ->
       castService.getCast($state.params.id).then((res) ->
         vm.cast = res.data.user
         vm.breadcrumb.push({name:vm.cast.name, link:''})
         vm.cast['profile'] = res.data.profile
-        vm.casts = res.data.users
         vm.isFavorited = res.data.is_favorited
         vm.castMainImg = vm.cast.images[0].url if vm.cast.images[0]
+      )
+
+    vm.getSomeShopCasts = ->
+      vm.isLoading = true
+      params = {
+        id: $state.params.id
+        page: vm.page++
+      }
+      castService.getSomeShopCasts(params).then((res) ->
+        vm.total = res.data.total
+        angular.forEach(res.data.users, (user) ->
+          vm.casts.push(user)
+        )
+        vm.isLoading = false
       )
 
     vm.onClickedSupport = ->

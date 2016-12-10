@@ -26,6 +26,10 @@ angular.module 'bisyoujoZukanNight'
     api.getPromise('/api/front/all_tags',{}).then((res) ->
       return res
     )
+  sm.getReviews = (opt_params) ->
+    api.getPromise('/api/front/api23',opt_params).then((res) ->
+      return res
+    )
 
 
   sm.contactValidations = {
@@ -70,3 +74,4 @@ angular.module 'bisyoujoZukanNight'
     getTags: sm.getTags
     contactValidations: sm.contactValidations
     reviewValidations: sm.reviewValidations
+    getReviews: sm.getReviews

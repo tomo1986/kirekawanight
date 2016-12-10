@@ -48,9 +48,46 @@ angular.module 'bisyoujoZukanNight'
         url: '/shops/karaoke/:id'
         active_menu: 'karaoke'
         active_tab: 'shop'
+        default_url: 'base'
         templateUrl: '/front/tpl/shops/karaoke/detail.html'
 
-      .state '/casts/guide',
+      .state '/shops/karaoke/:id.info',
+        url: '/info',
+        active_menu: 'karaoke'
+        active_tab: 'info'
+        default_url: 'info'
+        templateUrl: '/front/tpl/shops/common/info.html'
+
+      .state '/shops/karaoke/:id.system',
+        url: '/system',
+        active_menu: 'karaoke'
+        active_tab: 'system'
+        default_url: 'system'
+        templateUrl: '/front/tpl/shops/common/system.html'
+
+      .state '/shops/karaoke/:id.cast',
+        url: '/cast',
+        active_menu: 'karaoke'
+        active_tab: 'cast'
+        default_url: 'cast'
+        templateUrl: '/front/tpl/shops/common/cast.html'
+
+      .state '/shops/karaoke/:id.contact',
+        url: '/contact',
+        active_menu: 'karaoke'
+        active_tab: 'contact'
+        default_url: 'contact'
+        templateUrl: '/front/tpl/shops/common/contact.html'
+
+      .state '/shops/karaoke/:id.reviews',
+        url: '/reviews',
+        active_menu: 'karaoke'
+        active_tab: 'reviews'
+        default_url: 'reviews'
+        templateUrl: '/front/tpl/shops/common/reviews.html'
+
+
+    .state '/casts/guide',
         url: '/casts/guide?page&sort&orde'
         active_menu: 'guide'
         active_tab: 'cast'
@@ -93,10 +130,48 @@ angular.module 'bisyoujoZukanNight'
         url: '/casts/bar/:id'
         active_menu: 'bar'
         templateUrl: '/front/tpl/casts/bar/detail.html'
+
       .state '/shops/bar/:id',
         url: '/shops/bar/:id'
         active_menu: 'bar'
+        active_tab: 'shop'
+        default_url: 'base'
         templateUrl: '/front/tpl/shops/bar/detail.html'
+
+      .state '/shops/bar/:id.info',
+        url: '/info',
+        active_menu: 'bar'
+        active_tab: 'info'
+        default_url: 'info'
+        templateUrl: '/front/tpl/shops/common/info.html'
+
+      .state '/shops/bar/:id.system',
+        url: '/system',
+        active_menu: 'bar'
+        active_tab: 'system'
+        default_url: 'system'
+        templateUrl: '/front/tpl/shops/common/system.html'
+
+      .state '/shops/bar/:id.cast',
+        url: '/cast',
+        active_menu: 'bar'
+        active_tab: 'cast'
+        default_url: 'cast'
+        templateUrl: '/front/tpl/shops/common/cast.html'
+
+      .state '/shops/bar/:id.contact',
+        url: '/contact',
+        active_menu: 'bar'
+        active_tab: 'contact'
+        default_url: 'contact'
+        templateUrl: '/front/tpl/shops/common/contact.html'
+
+      .state '/shops/bar/:id.reviews',
+        url: '/reviews',
+        active_menu: 'bar'
+        active_tab: 'reviews'
+        default_url: 'reviews'
+        templateUrl: '/front/tpl/shops/common/reviews.html'
 
 
       .state '/casts/massage',
@@ -124,10 +199,48 @@ angular.module 'bisyoujoZukanNight'
         url: '/casts/massage/:id'
         active_menu: 'massage'
         templateUrl: '/front/tpl/casts/massage/detail.html'
+
       .state '/shops/massage/:id',
         url: '/shops/massage/:id'
         active_menu: 'massage'
+        active_tab: 'shop'
+        default_url: 'base'
         templateUrl: '/front/tpl/shops/massage/detail.html'
+
+      .state '/shops/massage/:id.info',
+        url: '/info',
+        active_menu: 'massage'
+        active_tab: 'info'
+        default_url: 'info'
+        templateUrl: '/front/tpl/shops/common/info.html'
+
+      .state '/shops/massage/:id.system',
+        url: '/system',
+        active_menu: 'massage'
+        active_tab: 'system'
+        default_url: 'system'
+        templateUrl: '/front/tpl/shops/common/system.html'
+
+      .state '/shops/massage/:id.cast',
+        url: '/cast',
+        active_menu: 'massage'
+        active_tab: 'cast'
+        default_url: 'cast'
+        templateUrl: '/front/tpl/shops/common/cast.html'
+
+      .state '/shops/massage/:id.contact',
+        url: '/contact',
+        active_menu: 'massage'
+        active_tab: 'contact'
+        default_url: 'contact'
+        templateUrl: '/front/tpl/shops/common/contact.html'
+
+      .state '/shops/massage/:id.reviews',
+        url: '/reviews',
+        active_menu: 'massage'
+        active_tab: 'reviews'
+        default_url: 'reviews'
+        templateUrl: '/front/tpl/shops/common/reviews.html'
 
       .state '/casts/sexy',
         url: '/casts/sexy?page&sort&order'

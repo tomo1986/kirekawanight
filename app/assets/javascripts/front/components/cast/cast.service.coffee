@@ -44,6 +44,10 @@ angular.module 'bisyoujoZukanNight'
       return res
     )
 
+  sm.getSomeShopCasts = (opt_params) ->
+    api.getPromise('/api/front/api22',opt_params).then((res) ->
+      return res
+    )
 
 
   sm.createProfile =  ->
@@ -839,3 +843,4 @@ angular.module 'bisyoujoZukanNight'
     sendContact: sm.sendContact
     sendReview: sm.sendReview
     getGuideCastList: sm.getGuideCastList
+    getSomeShopCasts: sm.getSomeShopCasts

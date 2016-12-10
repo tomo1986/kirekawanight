@@ -35,8 +35,10 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body class="fadebody">
+<body>
+<div id="loading-bar-container"></div>
 <%= yield %>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];

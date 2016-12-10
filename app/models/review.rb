@@ -19,9 +19,11 @@ class Review < ApplicationRecord
       json.ambience_score self.ambience_score
       json.again_score self.again_score
       json.comment self.comment
+      json.created_at self.created_at
       json.is_displayed self.is_displayed
       json.sender self.sender.to_jbuilder
       json.receiver self.receiver.to_jbuilder
+      json.total_score self.total_score
     end
   end
 
@@ -39,9 +41,12 @@ class Review < ApplicationRecord
         json.ambience_score review.ambience_score
         json.again_score review.again_score
         json.comment review.comment
+        json.total_score review.total_score
+        json.created_at review.created_at
         json.is_displayed review.is_displayed
         json.sender review.sender.to_jbuilder
         json.receiver review.receiver.to_jbuilder
+
       end
     end
   end
