@@ -48,6 +48,10 @@ angular.module 'bisyoujoZukanNight'
       }
       shopService.pushPost(params).then((res) ->
         vm.favorites = res.data.favorites
+        angular.forEach(vm.shops, (shop) ->
+          shop.favorite_count = res.data.favorite_count if shop.id == vm.favoriteShopId
+        )
+
         title = res.data.message
         modalService.alert(title)
       )

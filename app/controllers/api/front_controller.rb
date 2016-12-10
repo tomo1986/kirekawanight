@@ -183,7 +183,7 @@ class Api::FrontController < ApiController
       else
         PostType::Support.create(sender_type:'Customer',sender_id:params[:sender_id],receiver_id:params[:receiver_id],receiver_type:params[:receiver_type])
         title = "応援ありがとうございます。"
-        message = '応援することで女の子が喜びます。'
+        message = '1日1回応援できます。'
       end
     elsif params[:type] == 'favorite'
       if PostType::Favorite.where(sender_id: params[:sender_id], receiver_id: params[:receiver_id]).count > 0

@@ -22,8 +22,6 @@ main#main
           .profile
             .name
               | {{cast.nick_name}}({{cast.age}})
-              span
-                i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
             .body
               .support.clearfix
                 h5.title
@@ -55,8 +53,6 @@ main#main
             .profile
               .name
                 | {{cast.nick_name}}({{cast.age}}){{cast.id}}
-                span
-                  i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
               .body
                 .support.clearfix
                   h5.title
