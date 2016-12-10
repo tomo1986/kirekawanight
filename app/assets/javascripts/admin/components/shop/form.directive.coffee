@@ -31,6 +31,7 @@ angular.module 'bijyoZukanAdmin'
       }
 
       vm.images = []
+      vm.way_images = []
 
       vm.active_tab = 'ja'
       vm.loaded = false
@@ -79,10 +80,20 @@ angular.module 'bijyoZukanAdmin'
             options:{aspectRatio: 2 / 1.1,minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true}
           })
         )
+        angular.forEach(vm.shop.way_images, (image) ->
+          vm.way_images.push({
+            id: image.id
+            url: image.url
+            original_url: image.url
+            options:{aspectRatio: 2 / 1.1,minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true}
+          })
+        )
+
       )
     vm.newShop = ->
       shopService.newShop().then((res) ->
         vm.shop = res.data.shop
+        console.log(vm.shop)
         vm.shop["password"] = ''
         vm.images.push({
           id: null
@@ -91,6 +102,13 @@ angular.module 'bijyoZukanAdmin'
           options:{aspectRatio: 2 / 1.1,minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true}
 #          options:{minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true,zoomable: true,aspectRatio: "NaN"}
         })
+        vm.way_images.push({
+          id: null
+          url: null
+          original_url: null
+          options:{aspectRatio: "NaN",minCropBoxWidth:500,minCropBoxHeight:500,zoomable: true}
+        })
+
       )
     vm.addImage = ->
       vm.images.push({
@@ -98,6 +116,13 @@ angular.module 'bijyoZukanAdmin'
         url: null
         original_url: null
         options:{aspectRatio: 2 / 1.1,minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true}
+      })
+    vm.addWayImage = ->
+      vm.way_images.push({
+        id: null
+        url: null
+        original_url: null
+        options:{aspectRatio: "NaN",minCropBoxWidth:500,minCropBoxHeight:500,zoomable: true}
       })
 
     vm.submit = ->
@@ -117,6 +142,20 @@ angular.module 'bijyoZukanAdmin'
               images.push(vm.images[index].url)
         )
       vm.shop['images'] = images
+      way_images = []
+      imageUploaded = $('.image-box--arry2 image-directive img')
+      if imageUploaded.length > 0
+        $.each(imageUploaded, (index,value)->
+          if vm.way_images[index].original_url != vm.way_images[index].url
+            if vm.action == 'update'
+              way_images.push({id: vm.way_images[index].id, url:vm.way_images[index].url})
+            else
+              way_images.push(vm.way_images[index].url)
+        )
+      vm.shop['way_images'] = way_images
+
+
+
       title = "We saved finish "
       buttons = [
         {name:'一覧へ戻る',link:"/admin/shops"}

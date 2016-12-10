@@ -1028,7 +1028,8 @@ class Api::AdminController < ApiController
         budget_vnd: params[:budget_vnd],
         budget_usd: params[:budget_usd],
         service: params[:service],
-        images: params[:images]
+        images: params[:images],
+        way_images: params[:way_images]
     }
     if params[:tags].present?
       params[:tags].each do |key,val|
@@ -1099,6 +1100,14 @@ class Api::AdminController < ApiController
         shop.images << ImageType::Shop.new(image: image[:url]) if image[:url] != 'null'
       end
     end
+
+    if params[:way_images].present?
+      params[:way_images].values.each do |image|
+        shop.way_images.where(id: image[:id]).first.update(image: image[:url]) and next if image.present? && image[:id].present? && image[:id] != 'null'
+        shop.way_images << ImageType::ShopWay.new(image: image[:url]) if image[:url] != 'null'
+      end
+    end
+
     if params[:tags].present?
       params[:tags].each do |key,val|
         shop.tag_list.add(val["name"])

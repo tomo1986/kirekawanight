@@ -7,6 +7,8 @@ class Shop < ApplicationRecord
   belongs_to :group
 
   has_many  :images, class_name: 'ImageType::Shop', as: :subject, dependent: :destroy, :autosave => true
+  has_many  :way_images, class_name: 'ImageType::ShopWay', as: :subject, dependent: :destroy, :autosave => true
+
   has_many :users
   has_many :time_discounts, class_name: 'DiscountType::Time', as: :subject, dependent: :destroy, :autosave => true
 
@@ -86,7 +88,8 @@ class Shop < ApplicationRecord
         json.service shop.service
         json.user_count shop.users.count
         # json.note shop.note
-        json.images shop.abc
+        json.images shop.set_images
+        json.way_images shop.set_way_images
         json.support_count shop.supports.count
         json.favorite_count shop.favorites.count
 
@@ -133,7 +136,8 @@ class Shop < ApplicationRecord
       json.service self.service
       json.user_count self.users.count
       # json.note self.note
-      json.images self.abc
+      json.images self.set_images
+      json.way_images self.set_way_images
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
 
@@ -149,9 +153,22 @@ class Shop < ApplicationRecord
       end
     end
   end
-  def abc
+
+  def way_images=(images_base64)
+    if !images_base64.nil?
+      images_base64.each do |value|
+        image = self.way_images.new
+        image.image = value and image.save! if value != ''
+      end
+    end
+  end
+
+  def set_images
     self.images.map {|img|{id:img.id,url:img.image.url}}
   end
 
+  def set_way_images
+    self.way_images.map {|img|{id:img.id,url:img.image.url}}
+  end
 
 end

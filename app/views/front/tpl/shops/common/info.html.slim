@@ -73,6 +73,17 @@ main#main
                     dt ADDRESS
                     dd
                       | {{vm.shop.address}}
+
+
+    .rank-box.clearfix style="margin-bottom:2rem;"
+      .col-md-12.clearfix
+        .row
+          .col-xs-12.col-sm-6.col-md-4 ng-repeat="image in vm.shop.way_images track by $index"
+            p style="text-align:center;"
+              | 道順{{$index + 1}}
+            img.img ng-src="{{image.url}}" alt="{{vm.shop.name}}道順の画像"
+
+
     .rank-box.rank-box-last style="margin-bottom:2rem;" ng-if="vm.shops.length > 0"
       .page-title
         h2.title

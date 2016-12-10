@@ -234,6 +234,25 @@ section.main-container.map-form-page shop-form-directive=""
                         | 画像選択
               .button-center
                 button.btn.main-btn type="button" ng-click="vm.addImage()" add image
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.image_url}" shop images
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box.image-box--arry2
+              .row
+                .col-md-4 ng-repeat="image in vm.way_images track by $index"
+                  .pic
+                    image-directive parent-class="pic" img-url="{{vm.way_images[$index].url}}"
+                    .hover-img
+                      input#fileInput.change-img-file type="file" name="image_url" ng-model="vm.way_images[$index].url" options="image.options" image-cropper=""
+                      span
+                        | 画像選択
+              .button-center
+                button.btn.main-btn type="button" ng-click="vm.addWayImage()" add image
+
+
+
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.description}" Interview 日本語
