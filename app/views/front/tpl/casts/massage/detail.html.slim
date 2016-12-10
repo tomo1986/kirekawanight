@@ -12,10 +12,12 @@
 
         .profile-area
           .name-area
+            h5
+              | Girls No.{{vm.cast.id}}
             h3
               | {{vm.cast.name}}({{vm.cast.age}})
             p
-              | T{{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}
+              | T{{vm.cast.height}}/{{vm.cast.weight}}
             .feature
               a.btn.btn-feature ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()"
                 | お気入り登録
