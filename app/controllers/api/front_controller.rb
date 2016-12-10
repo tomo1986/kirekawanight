@@ -1,3 +1,5 @@
+require 'net/https'
+require 'uri'
 class Api::FrontController < ApiController
 
   def logout
@@ -249,6 +251,39 @@ class Api::FrontController < ApiController
     }
 
     if contact.save!
+
+      text = "レビューが書かれました。\n\n"
+      if contact.subject_type == 'Shop'
+        shop = Shop.find(contact.subject_id)
+        text = text + "#{shop.name}\n"
+        text = text + "#{root_url}shops/#{shop.job_type}/#{shop.id}/info\n"
+        text = text + "連絡先折り返しは#{contact.return_way}で電話番号は#{contact.tel}\n"
+        text = text + "#{contact.email}[line:#{contact.sns_line}zalo:#{contact.sns_zalo}wechat:#{contact.sns_wechat}]\n"
+        text = text + "#{contact.message}"
+      elsif contact.subject_type == 'User'
+        user = User.find(contact.subject_id)
+        text = text + "#{user.name}\n"
+        text = text + "#{root_url}/casts/#{user.job_type}/#{user.id}/info\n"
+        text = text + "連絡先折り返しは#{contact.return_way}で電話番号は#{contact.tel}\n"
+        text = text + "#{contact.email}[line:#{contact.sns_line}zalo:#{contact.sns_zalo}wechat:#{contact.sns_wechat}]\n"
+        text = text + "#{contact.message}"
+      end
+
+
+      host = "slack.com"
+      path = "/api/chat.postMessage"
+      query_parameter = {  "token" => "xoxp-109579077938-108903236561-115289736084-4f14c7a90f3fde7555632b40f5288684",
+                           "channel" => "#contact",
+                           "text" => text,
+                           "username" => "contact manager" }
+      query = query_parameter.map do |key,value|
+        "#{URI.encode(key)}=#{URI.encode(value)}"
+      end.join("&")
+      https = Net::HTTP.new(host, 443)
+      https.use_ssl = true
+      res = https.post(path, query)
+
+
       builder = Jbuilder.new do |json|
         json.contact contact.to_jbuilder
         json.code 1
@@ -391,7 +426,39 @@ class Api::FrontController < ApiController
         is_displayed: false
     }
 
+
     if review.save!
+      text = "レビューが書かれました。\n\n"
+      if review.receiver_type == 'Shop'
+        shop = Shop.find(review.receiver_id)
+        text = text + "#{shop.name}\n"
+        text = text + "#{root_url}shops/#{shop.job_type}/#{shop.id}/info\n"
+        text = text + "スコア#{review.total_score}点\n"
+        text = text + "#{review.comment}"
+      elsif review.receiver_type == 'User'
+        user = User.find(review.receiver_id)
+        text = text + "#{user.name}\n"
+        text = text + "#{root_url}/casts/#{user.job_type}/#{user.id}/info\n"
+        text = text + "スコア#{review.total_score}点\n"
+        text = text + "#{review.comment}"
+      end
+
+
+      host = "slack.com"
+      path = "/api/chat.postMessage"
+      query_parameter = {  "token" => "xoxp-109579077938-108903236561-115289736084-4f14c7a90f3fde7555632b40f5288684",
+                           "channel" => "#review",
+                           "text" => text,
+                           "username" => "review manager" }
+      query = query_parameter.map do |key,value|
+        "#{URI.encode(key)}=#{URI.encode(value)}"
+      end.join("&")
+      https = Net::HTTP.new(host, 443)
+      https.use_ssl = true
+      res = https.post(path, query)
+
+
+
       builder = Jbuilder.new do |json|
         json.review review.to_jbuilder
         json.code 1
