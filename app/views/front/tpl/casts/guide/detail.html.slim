@@ -192,7 +192,7 @@
       .row
         .page-title
           h2.title
-            | SOME work plice CAST
+            | SOME WORK PLICE CAST
         .queen-list.clearfix
           li ng-repeat="cast in vm.casts"
             .fream
@@ -207,6 +207,6 @@
                   = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
             .profile
               .name
-                | {{cast.nick_name}}({{cast.age}})
+                | NO.{{cast.id}}　{{cast.nick_name}}({{cast.age}})
               .body
                 | {{vm.cast.height}}/{{vm.cast.weight}} B{{vm.cast.bust}}({{vm.cast.bust_size}}) W{{vm.cast.waist}} H{{vm.cast.hip}}

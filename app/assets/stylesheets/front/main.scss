@@ -768,10 +768,14 @@ a, button {
         .name {
           font-size: 1rem;
           margin: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
           > span{
             padding: .2rem .2rem .1rem .3rem;
             background-color: #fff;
             margin-left: .5rem;
+            display: inline-block;
             > i {
               color: #ddd;
               text-shadow: -1px -1px 0px #333, 1px 1px 1px #fff;
