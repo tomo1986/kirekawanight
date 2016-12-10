@@ -54,6 +54,7 @@ class Shop < ApplicationRecord
     Jbuilder.new do |json|
       json.array! shops do |shop|
         json.id shop.id
+        json.group_id shop.group_id
         json.name shop.name
         json.name_kana shop.name_kana
         json.job_type shop.job_type
@@ -101,6 +102,7 @@ class Shop < ApplicationRecord
   def to_jbuilder
     Jbuilder.new do |json|
       json.id self.id
+      json.group_id self.group_id
       json.name self.name
       json.name_kana self.name_kana
       json.job_type self.job_type
