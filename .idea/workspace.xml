@@ -36,71 +36,11 @@
     <splitter split-orientation="vertical" split-proportion="0.7422935">
       <split-first>
         <leaf>
-          <file leaf-file-name="shop.scss" pinned="false" current-in-tab="false">
+          <file leaf-file-name="shop.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-12.196078">
-                  <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.0">
-                  <caret line="18" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.22099447">
-                  <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.25">
-                  <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/sexy/detail.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.875">
-                  <caret line="19" column="131" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="131" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.875">
-                  <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.0">
-                  <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+                <state vertical-scroll-proportion="0.42054263">
+                  <caret line="233" column="6" selection-start-line="233" selection-start-column="6" selection-end-line="233" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -172,12 +112,12 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/guide/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/sexy/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss" />
       </list>
     </option>
   </component>
@@ -1211,22 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.196078">
-          <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="18" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.0">
@@ -1261,8 +1185,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22099447">
+        <state vertical-scroll-proportion="-5.0">
           <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44198895">
+          <caret line="18" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42054263">
+          <caret line="233" column="6" selection-start-line="233" selection-start-column="6" selection-end-line="233" selection-end-column="6" />
           <folding />
         </state>
       </provider>
