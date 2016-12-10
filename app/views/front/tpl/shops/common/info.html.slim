@@ -12,7 +12,7 @@ main#main
         a.btn ng-repeat="tag in vm.shop.tags"
           | {{tag.name}}
       p.shop-copy ng-bind-html="vm.shop.service | noHTML | newlines"
-      .attention
+      .attention ng-if="vm.shop.service"
         p
           | スタッフにこのページを見せるか、「キレカワ」を見たと伝えてください。
           br
