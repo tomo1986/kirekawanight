@@ -478,20 +478,10 @@
   .shop-top-box{
     text-align: center;
     .attention{
-      span{
-        color: $_sub_text;
-        font-weight: bold;
-        background-color: $_brand-basic;
-        padding: $row-space-half-half $row-space-half;
-      }
       p{
-        display: none;
-        &.active{
-          display: block;
-        }
+        border: 1px solid #720e0a;
+        padding: 1rem;
       }
-
-
     }
     .shop-name {
       color: $_em_text;
