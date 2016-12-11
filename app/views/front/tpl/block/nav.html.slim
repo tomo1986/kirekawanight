@@ -41,10 +41,11 @@ div
             span.sub QUESTION
 
         -if customer_signed_in?
-          li
+          li.display-mobile
             a href="/mypage/show" ng-click="vm.onClickedLogout()"
               h2.main マイページ
               span.sub MYPAGE
+          li
             a href="javascript:void(0)" ng-click="vm.onClickedLogout()"
               h2.main ログアウト
               span.sub LOGOUT
