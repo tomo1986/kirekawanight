@@ -104,6 +104,13 @@
         color: $_em_text;
       }
       dd{
+        a {
+          color:#fff;
+          &:hover{
+            color: $_em_text;
+          }
+        }
+
         label {
           margin-right:$row-space;
           span{margin-right:$row-space-half}
@@ -135,6 +142,12 @@
       }
       dd {
         padding : .5rem;
+        a {
+          color:#fff;
+          &:hover{
+            color: $_em_text;
+          }
+        }
         label {
           margin-right:$row-space;
           span{margin-right:$row-space-half}
@@ -152,6 +165,13 @@
       }
       dd {
         padding : .5rem;
+        a {
+          color:#fff;
+          &:hover{
+            color: $_em_text;
+          }
+        }
+
         label {
           margin-right:$row-space;
           span{margin-right:$row-space-half}
@@ -173,6 +193,13 @@
       dd {
         margin-left : 30%;
         padding : .5rem;
+        a {
+          color:#fff;
+          &:hover{
+            color: $_em_text;
+          }
+        }
+
         label {
           margin-right:$row-space;
           span{margin-right:$row-space-half}
@@ -195,6 +222,13 @@
       dd {
         margin-left : 20%;
         padding : .5rem;
+        a {
+          color:#fff;
+          &:hover{
+            color: $_em_text;
+          }
+        }
+
         label {
           margin-right:$row-space;
           span{margin-right:$row-space-half}
@@ -217,6 +251,13 @@
       dd {
         margin-left : 20%;
         padding : .5rem;
+        a {
+          color:#fff;
+          &:hover{
+            color: $_em_text;
+          }
+        }
+
         label {
           margin-right:$row-space;
           span{margin-right:$row-space-half}

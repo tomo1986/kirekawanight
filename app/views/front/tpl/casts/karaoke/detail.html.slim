@@ -13,11 +13,14 @@
         .profile-area
           .name-area
             h5
-              | Girls No.{{vm.cast.id}}
+              | Cast No.{{vm.cast.id}}
             h3
               | {{vm.cast.name}}({{vm.cast.age}})
             p
-              | T{{vm.cast.height}}/{{vm.cast.weight}}
+              span ng-if="vm.cast.shop"
+                | {{vm.cast.shop.name}}所属
+              span ng-if="!vm.cast.shop"
+                | 所属なし
             .feature
               a.btn.btn-feature  ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()"
                 | お気入り登録
@@ -53,12 +56,21 @@
           .col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10
             .col-row-right.clearfix
               dl.profile.clearfix
-                dt Girls no
+                dt Cast No
                 dd
                   | {{vm.cast.id}}
                 dt Name
                 dd
                   | {{vm.cast.name}} {{vm.cast.nick_name}}
+                dt Shop Name
+                dd
+                  a href="/shops/karaoke/{{vm.cast.shop.id}}/info" ng-if="vm.cast.shop"
+                    | {{vm.cast.shop.name}}
+                  span ng-if="!vm.cast.shop"
+                    | 所属なし
+                dt height / weight
+                dd
+                  | {{vm.cast.height}} / {{vm.cast.weight}}
                 dt Birthday
                 dd
                   | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}（{{vm.cast.age}}歳）
@@ -237,7 +249,7 @@
                     = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
               .profile
                 h3.shop-name
-                  span ng-if="cast.shop"
+                  a href="/shops/karaoke/{{cast.shop.id}}/info" ng-if="cast.shop"
                     | {{cast.shop.name}}
                   span ng-if="!cast.shop"
                     | 所属なし
