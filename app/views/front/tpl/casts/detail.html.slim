@@ -81,28 +81,28 @@
             form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
               table.res-form-table
                 tr
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title 氏名
                     span.btn.required 必須
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     input.form-control type="text" name="name" required='' placeholder="info@first-class.vn" ng-model="vm.contact.name"
                 tr
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title Tel
                     span.btn.required 必須
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     input.form-control type="text" name="tel" required='' placeholder="info@first-class.vn" ng-model="vm.contact.tel"
                 tr
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title emailアドレス
                     span.btn.required 必須
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     input.form-control type="email" name="email" required='' placeholder="info@first-class.vn" ng-model="vm.contact.email"
                 tr
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title 内容
                     span.btn.required 必須
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     textarea.form-control rows="8" name="message" required='' placeholder="いつ、何時ごろ、料金についてや他の女の子の名前などなんでも質問してください" ng-model="vm.contact.message"
 
               .center-button

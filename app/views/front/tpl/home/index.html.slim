@@ -45,11 +45,11 @@
         .news-list
           table.res-form-table ng-if="vm.timeServices.length > 0"
             tr.news-list__item ng-repeat="discount in vm.timeServices"
-              td
+              td.res-form-table__td.parent-td.parent-td.input-box
                 | {{discount.subject.job_type}}
-              td
+              td.res-form-table__td.parent-td.parent-td.input-box
                 p ng-bind-html="discount.content"
-              td
+              td.res-form-table__td.parent-td.parent-td.input-box
                 a href="/shops/{{discount.shop.job_type}}/{{discount.shop.id}}"
                   | {{discount.subject.name}}
 

@@ -10,38 +10,38 @@
           form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
             table.res-form-table
               tr
-                th.clearfix
+                th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                   span.title 氏名
                   span.btn.required 必須
-                td.clearfix
+                td.res-form-table__td.parent-td.parent-td.input-box
                   input.form-control type="text" name="name" required='' placeholder="切川 太郎(nick name 可)" ng-model="vm.contact.name"
               tr
-                th.clearfix
+                th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                   span.title emailアドレス
                   span.btn.required 必須
                 td
                   input.form-control type="email" name="email" required='' placeholder="info@kire-kawa.com" ng-model="vm.contact.email"
               tr
-                th.clearfix
+                th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                   span.title TEL
                   span.btn.required 必須
-                td.clearfix
+                td.res-form-table__td.parent-td.parent-td.input-box
                   input.form-control type="text" name="tel" required='' placeholder="09012341234" ng-model="vm.contact.tel"
               tr
-                th.clearfix
+                th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                   span.title 問い合わせ内容
                   span.btn.required 必須
-                td.clearfix
+                td.res-form-table__td.parent-td.parent-td.input-box
                   select.form-control name="type" ng-model="vm.contact.type"
                     option value=""  -- Please select --
                     option value="model" ng-selected="vm.contact.type == 'model'" モデル掲載
                     option value="tie-up" ng-selected="vm.contact.type == 'tie-up'" タイアップ
                     option value="post" ng-selected="vm.contact.type == 'post'" 取材
               tr
-                th.clearfix
+                th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                   span.title 問い合わせ内容
                   span.btn.required 必須
-                td.clearfix
+                td.res-form-table__td.parent-td.parent-td.input-box
                   textarea.form-control rows="8" name="message" required='' placeholder="料金について" ng-model="vm.contact.message"
             .center-button
               button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  問い合わせ

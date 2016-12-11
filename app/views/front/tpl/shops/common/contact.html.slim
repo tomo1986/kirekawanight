@@ -12,43 +12,43 @@ main#main
           table.res-form-table
 
             tr
-              th.clearfix
+              th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                 span.title 氏名
                 span.btn.required 必須
-              td
+              td.res-form-table__td.parent-td.input-box
                 input.form-control type="text" name="name" required='' placeholder="切川 太郎(ニックネーム可)" ng-model="vm.contact.name"
             tr
-              th.clearfix
+              th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                 span.title Tel
                 span.btn.required 必須
-              td
+              td.res-form-table__td.parent-td.input-box
                 input.form-control type="text" name="tel" required='' placeholder="例)090123412345" ng-model="vm.contact.tel"
                 span.is-text-danger ng-if="vm.errors.tel"
                   | {{vm.errors.tel}}
 
             tr
-              th.clearfix
+              th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                 span.title 折り返し連絡手段選択
                 span.btn.required 必須
-              td
+              td.res-form-table__td.parent-td.input-box
                 .form-shop.clearfix style="text-align:left;"
                   label.radio-inline
                     input name="return_way" type="radio" value="email" ng-model="vm.contact.return_way" email
                   label.radio-inline
                     input name="return_way" type="radio" value="sns" ng-model="vm.contact.return_way" sns
             tr ng-if="vm.contact.return_way == 'email'"
-              th.clearfix
+              th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                 span.title emailアドレス
                 span.btn.required 必須
-              td
+              td.res-form-table__td.parent-td.input-box
                 input.form-control type="email" name="email" required='' placeholder="例)info@kire-kawa.com" ng-model="vm.contact.email"
                 span.is-text-danger ng-if="vm.errors.email"
                   | {{vm.errors.email}}
             tr ng-if="vm.contact.return_way == 'sns'"
-              th.clearfix
+              th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                 span.title SNSアカウント
                 span.btn.required どれか一つ必須
-              td
+              td.res-form-table__td.parent-td.input-box
                 dl
                   dt
                     label.radio-inline
@@ -66,10 +66,10 @@ main#main
                 span.is-text-danger ng-if="vm.errors.sns"
                   | {{vm.errors.sns}}
             tr
-              th.clearfix
+              th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                 span.title 内容
                 span.btn.required 必須
-              td
+              td.res-form-table__td.parent-td.input-box
                 textarea.form-control rows="8" style="color:#fff;" name="message" required='' placeholder="いつ、何時ごろ、料金について" ng-model="vm.contact.message"
           .center-button style="text-align:center;" ng-show="vm.canContactSubmited"
             button.btn.btn-submit type="submit"  問合わせる

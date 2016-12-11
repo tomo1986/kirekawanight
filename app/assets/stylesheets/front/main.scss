@@ -244,6 +244,7 @@ a, button {
   }
 }
 
+
 .res-form-table,
 .data-table {
   border-collapse: collapse;
@@ -334,11 +335,11 @@ a, button {
       border-bottom: 1px solid $_basic-border;
       border-left: none;
     }
-    & td {
+    & td.parent-td {
       display: block;
       width: 100% !important;
     }
-    & th {
+    & th.parent-th {
       display: block;
       width: 100% !important;
     }

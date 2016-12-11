@@ -53,16 +53,16 @@
             form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
               table.res-form-table
                 tr
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title emailアドレス
                     span.btn.required 必須
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     input.form-control type="email" name="email" required='' placeholder="info@kire-kawa.com" ng-model="vm.contact.email"
                 tr ng-if="vm.contact.return_way == 'sns'"
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title SNSアカウント
                     span.btn.required どれか一つ必須
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     dl
                       dt ng-if="vm.cast.sns_zalo"
                         label.radio-inline
@@ -82,9 +82,9 @@
                       | {{vm.errors.sns}}
 
                 tr
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title 内容
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     textarea.form-control rows="3" name="message" required='' ng-model="vm.contact.message"
 
               .center-button
@@ -154,16 +154,16 @@
             form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
               table.res-form-table
                 tr
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title emailアドレス
                     span.btn.required 必須
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     input.form-control type="email" name="email" required='' placeholder="info@kire-kawa.com" ng-model="vm.contact.email"
                 tr ng-if="vm.contact.return_way == 'sns'"
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title SNSアカウント
                     span.btn.required どれか一つ必須
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     dl
                       dt ng-if="vm.cast.sns_zalo"
                         label.radio-inline
@@ -183,9 +183,9 @@
                       | {{vm.errors.sns}}
 
                 tr
-                  th.clearfix
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title 内容
-                  td
+                  td.res-form-table__td.parent-td.parent-td.input-box
                     textarea.form-control rows="3" name="message" required='' ng-model="vm.contact.message"
 
               .center-button
