@@ -19,7 +19,7 @@
                 = image_tag 'front/cast-no-image.png', alt: "cast no image"
           .profile
             h3.shop-name
-              span ng-if="cast.shop"
+              a href="/shops/karaoke/{{cast.shop.id}}/info" ng-if="cast.shop"
                 | {{cast.shop.name}}
               span ng-if="!cast.shop"
                 | 所属なし
@@ -77,7 +77,7 @@
                 = image_tag 'front/cast-no-image.png', alt: "cast no image"
           .profile
             h3.shop-name
-              span ng-if="cast.shop"
+              a href="/shops/karaoke/{{cast.shop.id}}/info" ng-if="cast.shop"
                 | {{cast.shop.name}}
               span ng-if="!cast.shop"
                 | 所属なし

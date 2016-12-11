@@ -125,9 +125,9 @@ Rails.application.routes.draw do
     get 'index', to: 'home#index'
     get 'login',to: 'home#login'
     get 'logout', to: 'home#logout'
-    get 'mypage',to: 'home#index'
-    get 'mypage/edit', to: 'home#index'
-    get 'mypage/show',to: 'home#index'
+    get 'mypage',to: 'home#mypage'
+    get 'mypage/edit', to: 'home#mypage_edit'
+    get 'mypage/show',to: 'home#mypage_show'
     get 'mypage/contacts', to: 'home#index'
     get 'mypage/reviews', to: 'home#index'
 
