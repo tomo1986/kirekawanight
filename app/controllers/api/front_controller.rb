@@ -12,6 +12,9 @@ class Api::FrontController < ApiController
   end
 
   def connect
+    p "============"
+    p current_customer
+    p "============"
     if customer_signed_in?
       builder = Jbuilder.new do |json|
         json.code 1
@@ -19,7 +22,7 @@ class Api::FrontController < ApiController
       end
     else
       builder = Jbuilder.new do |json|
-        json.code 1
+        json.code 0
         json.customer nil
       end
     end
@@ -597,6 +600,34 @@ class Api::FrontController < ApiController
 
   end
 
+  def api24
+    p "========"
+    p current_customer
+    p "========"
+    if customer_signed_in?
+      customer = current_customer
+      customer.attributes = {
+        name: params[:name],
+        tel: params[:tel],
+        sns_line: params[:sns_line],
+        sns_zalo: params[:sns_zalo],
+        sns_wechat: params[:sns_wechat],
+        birthday: params[:birthday]
+      }
+    end
+    if customer.save!
+      builder = Jbuilder.new do |json|
+        json.customer customer.to_jbuilder
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.error "errorが発生しました。"
+        json.code 0
+      end
+    end
+    render json: builder.target!
+  end
 
 end
 

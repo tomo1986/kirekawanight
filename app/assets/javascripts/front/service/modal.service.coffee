@@ -59,6 +59,9 @@ angular.module 'bisyoujoZukanNight'
           $state.go('/')
           modalInstance.dismiss('cancel')
 
+        self.onChangePage = ()->
+          modalInstance.dismiss('cancel')
+
     )
 
   sm.createCustomer = (callback) ->

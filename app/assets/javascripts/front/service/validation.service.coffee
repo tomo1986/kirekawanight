@@ -7,7 +7,7 @@ angular.module 'bisyoujoZukanNight'
       if validations.rules[parent_key]
         angular.forEach(validations.rules[parent_key],(child_val,child_key) ->
           if child_key == 'required' && errors[parent_key] == undefined
-            errors[parent_key] =  validations.messages[parent_key][child_key] if parent_val == null || parent_val.length == 0
+            errors[parent_key] =  validations.messages[parent_key][child_key] if parent_val == null || parent_val == undefined || parent_val.length == 0
           if child_key == 'max' && errors[parent_key] == undefined
             errors[parent_key] =  validations.messages[parent_key][child_key] if parent_val.length > child_val
           if child_key == 'min' && errors[parent_key] == undefined
@@ -39,7 +39,6 @@ angular.module 'bisyoujoZukanNight'
     return error
   sm.checkQuizImageAnswers = (answers) ->
     error = {}
-    console.log("soeya",answers)
     if answers != undefined
       error['quiz_answers'] = '解答を設定してください。' if answers[0] && answers[0].data == null
       error['quiz_answers'] = '解答を設定してください。' if answers[1] && answers[1].data == null

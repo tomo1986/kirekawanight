@@ -8,6 +8,10 @@ header#header
             a href="/visitor" 初めての方へ
           li
             a href="/question" よくある質問
+          -if customer_signed_in?
+            li
+              a href="/mypage/show" マイページ
+
     .container
       .site.clearfix
         .site--logo

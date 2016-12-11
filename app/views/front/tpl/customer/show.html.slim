@@ -1,0 +1,85 @@
+.top-box style="margin: 0 0 3rem;" ng-if="vm.karaokeUsers.length > 0"
+  .page-title
+    h2.title
+      | FAVORITE KARAOKE GIRLS
+  .queen-list.clearfix
+    li ng-repeat="cast in vm.karaokeUsers"
+      .fream
+        .fream--basic.fream--top-left
+        .fream--basic.fream--top-right
+        .fream--basic.fream--bottom-left
+        .fream--basic.fream--bottom-right
+        a href="/casts/karaoke/{{cast.id}}"
+          span ng-if="cast.images[0]"
+            img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+          span ng-if="!cast.images[0]"
+            = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+      .profile
+        .name
+          | {{cast.nick_name}}({{cast.age}})
+        .body
+          | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+  .top-box style="margin: 3rem 0;" ng-if="vm.barUsers.length > 0"
+    .page-title
+      h2.title
+        | FAVORITE BAR GIRLS
+    .queen-list.clearfix
+      li ng-repeat="cast in vm.barUsers"
+        .fream
+          .fream--basic.fream--top-left
+          .fream--basic.fream--top-right
+          .fream--basic.fream--bottom-left
+          .fream--basic.fream--bottom-right
+          a href="/casts/bar/{{cast.id}}"
+            span ng-if="cast.images[0]"
+              img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            span ng-if="!cast.images[0]"
+              = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+        .profile
+          .name
+            | {{cast.nick_name}}({{cast.age}})
+          .body
+            | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+
+  .top-box style="margin: 3rem 0;" ng-if="vm.massageUsers.length > 0"
+    .page-title
+      h2.title
+        | FAVORITE MASSAGE GIRLS
+    .queen-list.clearfix
+      li ng-repeat="cast in vm.massageUsers"
+        .fream
+          .fream--basic.fream--top-left
+          .fream--basic.fream--top-right
+          .fream--basic.fream--bottom-left
+          .fream--basic.fream--bottom-right
+          a href="/casts/massage/{{cast.id}}"
+            span ng-if="cast.images[0]"
+              img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            span ng-if="!cast.images[0]"
+              = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+        .profile
+          .name
+            | {{cast.nick_name}}({{cast.age}})
+          .body
+            | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+  .top-box style="margin: 3rem 0;" ng-if="vm.sexyUsers.length > 0"
+    .page-title
+      h2.title
+        | FAVORITE SEXY GIRLS
+    .queen-list.clearfix
+      li ng-repeat="cast in vm.sexyUsers"
+        .fream
+          .fream--basic.fream--top-left
+          .fream--basic.fream--top-right
+          .fream--basic.fream--bottom-left
+          .fream--basic.fream--bottom-right
+          a href="/casts/sexy/{{cast.id}}"
+            span ng-if="cast.images[0]"
+              img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+            span ng-if="!cast.images[0]"
+              = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+        .profile
+          .name
+            | {{cast.nick_name}}({{cast.age}})
+          .body
+            | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}

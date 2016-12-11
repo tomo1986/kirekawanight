@@ -3,6 +3,7 @@
 @import "home";
 @import "cast";
 @import "shop";
+@import "customer";
 @import "system";
 @import "comsept";
 @import "contact";
@@ -167,6 +168,81 @@ a, button {
     }
   }
 }
+.uib-daypicker,.uib-timepicker{
+  padding:5px;
+  & > tbody > tr > td > a{padding:0;}
+  th,td{padding:0;text-align: center;
+    .btn-default{background-color: #fff;color:#555;
+      &:hover{background-color: #eee;}
+    }
+    .uib-left{
+      .glyphicon-chevron-left{
+        &:before{font-family: FontAwesome;content: "\f104";display: inline-block;padding-right: 10px;vertical-align: middle;}
+      }
+    }
+    .uib-right{
+      .glyphicon-chevron-right{
+        &:before{font-family: FontAwesome;content: "\f105";display: inline-block;padding-right: 10px;vertical-align: middle;}
+      }
+    }
+  }
+  .hours,.minutes, .uib-separator{text-align: center;padding-right:5px;
+    .glyphicon-chevron-up{
+      &:before{font-family: FontAwesome;content: "\f106";display: inline-block;padding-right: 10px;vertical-align: middle;}
+    }
+    .glyphicon-chevron-down{
+      &:before{font-family: FontAwesome;content: "\f107";display: inline-block;padding-right: 10px;vertical-align: middle;}
+    }
+  }
+}
+.uib-yearpicker > table > tbody > tr > td > button{padding:0.375rem .2rem;}
+.uib-yearpicker, .uib-monthpicker{
+  & > table{width:100%;
+
+    th{
+      .uib-left{
+        .glyphicon-chevron-left{
+          &:before{font-family: FontAwesome;content: "\f104";display: inline-block;padding-right: 10px;vertical-align: middle;}
+        }
+      }
+      .uib-right{
+        .glyphicon-chevron-right{
+          &:before{font-family: FontAwesome;content: "\f105";display: inline-block;padding-right: 10px;vertical-align: middle;}
+        }
+      }
+
+    }
+    td,th{
+      .btn-default{background-color: #fff;color:#555;
+        &:hover{background-color: #eee;}
+      }
+    }
+    th,td{padding:5px;text-align: center;
+      .btn-default{background-color: #fff;color:#555;
+        &:hover{background-color: #eee;}
+      }
+      .uib-left{
+        .glyphicon-chevron-left{
+          &:before{font-family: FontAwesome;content: "\f104";display: inline-block;padding-right: 10px;vertical-align: middle;}
+        }
+      }
+      .uib-right{
+        .glyphicon-chevron-right{
+          &:before{font-family: FontAwesome;content: "\f105";display: inline-block;padding-right: 10px;vertical-align: middle;}
+        }
+      }
+    }
+    .hours,.minutes, .uib-separator{text-align: center;padding-right:5px;
+      .glyphicon-chevron-up{
+        &:before{font-family: FontAwesome;content: "\f106";display: inline-block;padding-right: 10px;vertical-align: middle;}
+      }
+      .glyphicon-chevron-down{
+        &:before{font-family: FontAwesome;content: "\f107";display: inline-block;padding-right: 10px;vertical-align: middle;}
+      }
+    }
+
+  }
+}
 
 .res-form-table,
 .data-table {
@@ -224,6 +300,31 @@ a, button {
       text-align: left;
       margin-top:$row-space-half;
       color: $_em_text;
+    }
+  }
+  & .res-form-table__th{
+   .title{float: left;}
+    .absolutely{float: right;}
+  }
+  & td.res-form-table__td{
+    .dropdown-menu{
+      .uib-daypicker{padding:5px;th,td{padding:0;
+        .btn-default{background-color: #fff;color:#555;
+          &:hover{background-color: #eee;}
+        }
+      }
+      }
+    }
+
+    .icon-location_image{
+      background-image:image-url('business/ico_location_map_opend.png');
+      background-size:80%;
+      background-repeat: no-repeat;
+      width:90px;
+      height:90px;
+      position: relative;
+      margin:0 auto;
+      > .capsule-image{width: 50px;height: 50px;padding: 1px;border-radius: 100%;position: absolute;top:10px;left:11px;}
     }
   }
   @media screen and (max-width: 767px) {
@@ -1370,4 +1471,16 @@ input[type="color"]:focus,
 @keyframes loading-bar-spinner {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .input-group-btn:last-child > .btn-group:not(:last-child) > .btn{
+  height: 2.4rem;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
+  height: 2.4rem;
+}
+.btn-xs{padding: 0.1rem 0.5rem;font-size: 0.5rem;line-height: 1.5;border-radius: 0.2rem;}
+.btn-danger{
+  color: #fff;
+  background-color: $_sub_text;
+  border-color: $_sub_text;
 }

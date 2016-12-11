@@ -12,6 +12,24 @@ angular.module 'bisyoujoZukanNight'
       sm.login_user = null
       return true
     )
+  sm.update = (params) ->
+    api.postPromise('/api/front/api24',params).then((res) ->
+      return res
+    )
+
+  sm.getValidationRule = -> return sm.validations
+  sm.validations = {
+    rules:{
+      name:{required: true}
+      tel:{required: true}
+      birthday:{required: true}
+    }
+    messages:{
+      name:{required: '名前を入力してください'}
+      tel:{required: '電話番号を入力してください'}
+      birthday:{required: '誕生日を入力してください。'}
+    }
+  }
 
 
   service =
@@ -20,3 +38,6 @@ angular.module 'bisyoujoZukanNight'
     setLoginCustomer: sm.setLoginCustomer
     getLoginCustomer: sm.getLoginCustomer
     clear:sm.clear
+    update: sm.update
+    getValidationRule: sm.getValidationRule
+    validations: sm.validations

@@ -1,0 +1,31 @@
+.customer-page {
+  .side {
+    .side--menu-block {
+      margin-bottom: $row-space-half;
+      padding: $row-space-half-half;
+      border: 1px solid $_em_text;
+      .side--menu-inner {
+        border: 1px solid $_em_text;
+        margin-bottom: $row-space-half-half;
+        a {
+          color: $_brand-basic;
+          display: block;
+          padding: $row-space-half-half;
+
+          &:hover{
+            background-color: #fff;
+            text-decoration: none;
+          }
+          &.active {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+
+  .rank-box {
+    margin-bottom: $row-space-biger;
+  }
+}

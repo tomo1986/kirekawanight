@@ -17,6 +17,7 @@ class Customer < ApplicationRecord
       json.name self.name
       json.email self.email
       json.tel self.tel
+      json.birthday self.birthday
       json.sns_line self.sns_line
       json.sns_zalo self.sns_zalo
       json.sns_wechat self.sns_wechat
@@ -30,6 +31,7 @@ class Customer < ApplicationRecord
         json.name customer.name
         json.email customer.email
         json.tel customer.tel
+        json.birthday customer.birthday
         json.sns_line customer.sns_line
         json.sns_zalo customer.sns_zalo
         json.sns_wechat customer.sns_wechat

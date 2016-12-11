@@ -127,7 +127,9 @@ Rails.application.routes.draw do
     get 'logout', to: 'home#logout'
     get 'mypage',to: 'home#index'
     get 'mypage/edit', to: 'home#index'
-
+    get 'mypage/show',to: 'home#index'
+    get 'mypage/contacts', to: 'home#index'
+    get 'mypage/reviews', to: 'home#index'
 
     get 'casts/karaoke', to: 'home#cast_karaoke'
     get 'casts/karaoke/:id', to: 'home#index'
@@ -212,6 +214,7 @@ Rails.application.routes.draw do
       get :api21
       get :api22
       get :api23
+      post :api24
     end
 
     scope :admin, module: 'admin' do

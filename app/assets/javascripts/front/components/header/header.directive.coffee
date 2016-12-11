@@ -34,7 +34,6 @@ angular.module 'bisyoujoZukanNight'
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
-    console.log("=========",scope, el, attr, vm)
     scope.vm.userCount = vm.userCount
     scope.vm.shopCount = vm.shopCount
     return

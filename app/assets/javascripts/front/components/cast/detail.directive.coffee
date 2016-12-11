@@ -18,7 +18,6 @@ angular.module 'bisyoujoZukanNight'
       castService.getCast($state.params.id).then((res) ->
         vm.cast = res.data.user
         vm.cast['profile'] = res.data.profile
-        console.log(vm.cast)
         vm.castMainImg = vm.cast.images[0]
       )
     vm.onClickedImage = (opt_no) ->

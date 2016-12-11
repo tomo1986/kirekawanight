@@ -292,8 +292,33 @@ angular.module 'bisyoujoZukanNight'
 
       .state '/mypage',
         url: '/mypage'
+        default_url: 'base'
         templateUrl: '/front/tpl/customer/detail.html'
 
-      .state '/mypage/edit',
-        url: '/mypage/edit'
-        templateUrl: '/front/tpl/customer/from.html'
+      .state '/mypage.show',
+        url: '/show'
+        active_menu: 'mypage'
+        active_tab: 'show'
+        default_url: 'show'
+        templateUrl: '/front/tpl/customer/show.html'
+
+      .state '/mypage.edit',
+        url: '/edit',
+        active_menu: 'mypage'
+        active_tab: 'edit'
+        default_url: 'edit'
+        templateUrl: '/front/tpl/customer/form.html'
+
+      .state '/mypage.contacts',
+        url: '/contacts',
+        active_menu: 'mypage'
+        active_tab: 'contacts'
+        default_url: 'contacts'
+        templateUrl: '/front/tpl/customer/contacts.html'
+
+      .state '/mypage.reviews',
+        url: '/reviews',
+        active_menu: 'mypage'
+        active_tab: 'reviews'
+        default_url: 'reviews'
+        templateUrl: '/front/tpl/customer/reviews.html'
