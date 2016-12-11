@@ -68,7 +68,7 @@ a, button {
   display: none;
   position: fixed;
   right: 1.5rem;
-  z-index: 100000;
+  z-index: 888;
   background: #222;
   @include border-radius(100%);
   width: 50px;
@@ -756,7 +756,7 @@ a, button {
       a {
         padding:.2rem .2rem;
         @media screen and (min-width: 320px) and (max-width: 767px){
-          padding: 1rem 2.58rem;
+          padding: .5rem 2.58rem;
 
         }
 
@@ -787,8 +787,8 @@ a, button {
   @media screen and (min-width: 320px) and (max-width: 767px){
     .close {
       background: #777;
-      width: 4rem;
-      height: 4rem;
+      width: 3rem;
+      height: 3rem;
       position: absolute;
       z-index: 3;
       top: 0;

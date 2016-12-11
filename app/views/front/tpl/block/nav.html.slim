@@ -31,16 +31,6 @@ div
           a href="/contact" ng-class="{'active': vm.active == 'contact'}" ng-click="vm.eventCalled()"
             h2.main お問合せ
             span.sub CONTACT
-        -if customer_signed_in?
-          li
-            a href="javascript:void(0)" ng-click="vm.onClickedLogout()"
-              h2.main ログアウト
-              span.sub LOGOUT
-        - else
-          li
-            a href="/login" ng-click="vm.eventCalled()"
-              h2.main ログイン/登録
-              span.sub LOGIN/NEW
         li.display-mobile
           a href="/visitor"
             h2.main 初めての方へ
@@ -49,6 +39,20 @@ div
           a href="/question"
             h2.main よくある質問
             span.sub QUESTION
+
+        -if customer_signed_in?
+          li
+            a href="/mypage/show" ng-click="vm.onClickedLogout()"
+              h2.main マイページ
+              span.sub MYPAGE
+            a href="javascript:void(0)" ng-click="vm.onClickedLogout()"
+              h2.main ログアウト
+              span.sub LOGOUT
+        - else
+          li
+            a href="/login" ng-click="vm.eventCalled()"
+              h2.main ログイン/登録
+              span.sub LOGIN/NEW
 
       button.close type="button" ng-click="vm.onClosed()"
         i.fa.fa-times aria-hidden="true"
