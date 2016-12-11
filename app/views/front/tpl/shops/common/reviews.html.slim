@@ -82,7 +82,7 @@ main#main
               | 投稿日 {{review.created_at | date: 'yyyy年M月d日' }}
           p.review--body ng-bind-html="review.comment | noHTML | newlines"
 
-      .center-button style="text-align:center;" ng-if="(vm.total > vm.casts.length) && !vm.isLoading"
+      .center-button style="text-align:center;" ng-if="(vm.total > vm.reviews.length) && !vm.isLoading"
         a.btn.btn-submit href="javascript:void(0)" ng-click="vm.getSomeShopCasts()" もっと見る
       .center-button style="text-align:center;" ng-if="vm.isLoading"
         loading-directive size="125"
