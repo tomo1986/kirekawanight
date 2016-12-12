@@ -63,6 +63,13 @@ section.main-container.map-form-page discount-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
+              span.title how many peaple?
+              span.btn.btn-danger.btn-xs.absolutely.absolutely 必須
+            td.res-form-table__td.input-box
+
+
+          tr
+            th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" start_at
             td.res-form-table__td.input-box
               date-picker-directive input-name="start_at" data="vm.discount" options="vm.start_at_options" ng-model="vm.discount.start_at"

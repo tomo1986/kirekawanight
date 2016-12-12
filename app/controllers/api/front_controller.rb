@@ -601,9 +601,6 @@ class Api::FrontController < ApiController
   end
 
   def api24
-    p "========"
-    p current_customer
-    p "========"
     if customer_signed_in?
       customer = current_customer
       customer.attributes = {
@@ -627,6 +624,15 @@ class Api::FrontController < ApiController
       end
     end
     render json: builder.target!
+  end
+
+  def api25
+    users = User.where(shop_id: params[:id]) if params[:id]
+    builders = Jbuilder.new do |json|
+      json.code 1
+      json.users users ? User.to_jbuilders(users) : nil
+    end
+    render json: builders.target!
   end
 
 end

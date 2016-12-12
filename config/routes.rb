@@ -167,8 +167,8 @@ Rails.application.routes.draw do
     get 'shops/massage/:id/contact', to: 'home#index'
     get 'shops/massage/:id/reviews', to: 'home#index'
 
-    get 'casts/sexy', to: 'home#cast_sexy'
-    get 'casts/sexy/:id', to: 'home#index'
+    # get 'casts/sexy', to: 'home#cast_sexy'
+    # get 'casts/sexy/:id', to: 'home#index'
 
     get 'system', to: 'home#index'
     get 'comsept', to: 'home#index'
@@ -215,6 +215,7 @@ Rails.application.routes.draw do
       get :api22
       get :api23
       post :api24
+      get :api25
     end
 
     scope :admin, module: 'admin' do

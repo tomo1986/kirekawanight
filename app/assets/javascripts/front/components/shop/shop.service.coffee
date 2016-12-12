@@ -30,6 +30,10 @@ angular.module 'bisyoujoZukanNight'
     api.getPromise('/api/front/api23',opt_params).then((res) ->
       return res
     )
+  sm.getCasts = (id) ->
+    api.getPromise('/api/front/api25',{id:id}).then((res) ->
+      return res
+    )
 
 
   sm.contactValidations = {
@@ -75,3 +79,4 @@ angular.module 'bisyoujoZukanNight'
     contactValidations: sm.contactValidations
     reviewValidations: sm.reviewValidations
     getReviews: sm.getReviews
+    getCasts: sm.getCasts

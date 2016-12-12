@@ -14,7 +14,6 @@ angular.module 'bisyoujoZukanNight'
         format: 'yyyy-MM-dd'
         is_required:true
         placeholder:'必須'
-
       }
       vm.getFavorited()
 

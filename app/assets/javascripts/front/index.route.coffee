@@ -242,19 +242,19 @@ angular.module 'bisyoujoZukanNight'
         default_url: 'reviews'
         templateUrl: '/front/tpl/shops/common/reviews.html'
 
-      .state '/casts/sexy',
-        url: '/casts/sexy?page&sort&order'
-        active_menu: 'sexy'
-        templateUrl: '/front/tpl/casts/sexy/index.html'
-        params: {
-          page: null
-          sort: null
-          order: null
-        }
-      .state '/casts/sexy/:id',
-        url: '/casts/sexy/:id'
-        active_menu: 'sexy'
-        templateUrl: '/front/tpl/casts/sexy/detail.html'
+#      .state '/casts/sexy',
+#        url: '/casts/sexy?page&sort&order'
+#        active_menu: 'sexy'
+#        templateUrl: '/front/tpl/casts/sexy/index.html'
+#        params: {
+#          page: null
+#          sort: null
+#          order: null
+#        }
+#      .state '/casts/sexy/:id',
+#        url: '/casts/sexy/:id'
+#        active_menu: 'sexy'
+#        templateUrl: '/front/tpl/casts/sexy/detail.html'
 
       .state '/system',
         url: '/system'

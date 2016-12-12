@@ -8,9 +8,7 @@ angular.module 'bisyoujoZukanNight'
       vm.makeBreadCrumb()
       vm.page = 1
       vm.reviews = []
-
       vm.isAttention = false
-
       vm.activeTab = $state.current.active_tab
 
       vm.displayContent = 'intoroduction'
@@ -25,6 +23,22 @@ angular.module 'bisyoujoZukanNight'
       vm.loginCustomer = customerService.getLoginCustomer()
       vm.canContactSubmited = true
       vm.canReviewSubmited = true
+      vm.reservationDate={
+        from:{is_from:true,date:null}
+        enable_time: true
+        format: 'yyyy-MM-dd HH:mm'
+        is_required:true
+        placeholder:'必須'
+      }
+
+      vm.contactData = {
+        contact_type: 'reservation'
+        peoples: null
+        selectCasts:[{image:null,title: "選択してください",isOpened:false}]
+        reservation_date: null
+      }
+
+
       vm.contact = {
         type: 'shop_detail'
         subject_type: 'Shop'
@@ -36,7 +50,7 @@ angular.module 'bisyoujoZukanNight'
         sns_zalo: if vm.loginCustomer then vm.loginCustomer.sns_zalo else null
         sns_wechat: if vm.loginCustomer then vm.loginCustomer.sns_wechat else null
         sns_line: if vm.loginCustomer then vm.loginCustomer.sns_line else null
-        message: '何かあれば書いてください'
+        message: 'そのほか'
       }
       vm.review = {
         type: 'shop'
@@ -54,6 +68,7 @@ angular.module 'bisyoujoZukanNight'
 
       vm.getShop()
       vm.getReviews()
+      vm.getCasts()
 
     vm.changeContents = (opt_content) ->
       vm.displayContent = opt_content
@@ -62,6 +77,11 @@ angular.module 'bisyoujoZukanNight'
       vm.ngMap = map
     )
 
+    vm.getCasts = ->
+      shopService.getCasts($state.params.id).then((res) ->
+        if res.data.code == 1
+          vm.casts = res.data.users
+      )
     vm.getReviews = ->
       vm.isLoading = true
       params = {
@@ -93,7 +113,6 @@ angular.module 'bisyoujoZukanNight'
           vm.isFavorited = res.data.is_favorited
           vm.breadcrumb.push({name:vm.shop.name, link:''})
           vm.newCasts = res.data.new_users
-          vm.casts = res.data.users
           vm.favorites = res.data.favorites
           vm.discounts  = res.data.discounts
           vm.shops = res.data.shops
@@ -147,9 +166,7 @@ angular.module 'bisyoujoZukanNight'
         vm.favorites = res.data.favorites
         title = res.data.message
         message = res.data.message
-
         vm.isFavorited = res.data.is_favorited
-        console.log("fasdfa",vm.isFavorited)
         modalService.alert(title,message)
       )
 
@@ -161,23 +178,26 @@ angular.module 'bisyoujoZukanNight'
       vm.contactErrors['name'] = '氏名を入力してくだい。' if !vm.contact.name
       if vm.contact.return_way == 'email'
         vm.contactErrors['email'] = 'emailを入力してくだい。' if !vm.contact.email
-      else if vm.contact.return_way == 'tel'
-        vm.contactErrors['tel'] = 'TELを入力してくだい。' if !vm.contact.tel
       else if vm.contact.return_way == 'sns'
-        if vm.selectSns == 'zalo'
-          vm.contactErrors['sns'] = 'Zaloアカウントを入力してくだい。' if !vm.contact.sns_zalo
-          vm.contact.sns_wechat = null
-          vm.contact.sns_line = null
-        else if vm.selectSns == 'wechat'
-          vm.contactErrors['sns'] = 'Wechatアカウントを入力してくだい。' if !vm.contact.sns_wechat
-          vm.contact.sns_zalo = null
-          vm.contact.sns_line = null
-        else if vm.selectSns == 'line'
-          vm.contactErrors['sns'] = 'LINEアカウントを入力してくだい。' if !vm.contact.sns_line
-          vm.contact.sns_zalo = null
-          vm.contact.sns_wechat = null
+        vm.contactErrors['sns'] = 'LINEアカウントを入力してくだい。' if !vm.contact.sns_line
       return if Object.keys(vm.contactErrors) && Object.keys(vm.contactErrors).length > 0
+
+      message = ''
+      message = message + "Customer Name： #{vm.contact.name}\n"
+      message = message + "Return way： #{vm.contact.return_way}\n"
+      message = message + "Email： #{vm.contact.email}\n"
+      message = message + "LINE #{vm.contact.sns_line}\n"
+      if vm.contactData.contact_type == 'reservation'
+        message = message + "number of reservable：　#{vm.contactData.peoples}peaples\n"
+        message = message + "reservation time：　#{vm.contactData.reservation_date}\n"
+        message = message + "reservation casts\n"
+        angular.forEach(vm.contactData.selectCasts, (cast) ->
+          message = message + "#{cast.title}\n"
+        )
+        message = message + "\n\n"
+      vm.contact.message = message + vm.contact.message
       vm.canContactSubmited = false
+
       shopService.sendContact(vm.contact).then((res) ->
         vm.canContactSubmited = true
         title = '受け付けました。'
@@ -194,7 +214,7 @@ angular.module 'bisyoujoZukanNight'
           sns_zalo: if vm.loginCustomer then vm.loginCustomer.sns_zalo else null
           sns_wechat: if vm.loginCustomer then vm.loginCustomer.sns_wechat else null
           sns_line: if vm.loginCustomer then vm.loginCustomer.sns_line else null
-          message: '何かあれば書いてください'
+          message: 'そのほか'
         }
       )
 
@@ -226,6 +246,22 @@ angular.module 'bisyoujoZukanNight'
       )
     vm.onAttention = ->
       vm.isAttention = !vm.isAttention
+
+    vm.onSelectCast = (cast) ->
+      url = if cast.images[0] then cast.images[0].url else null
+      vm.contactData.selectCasts[vm.selectDropDownNo] = {
+        image:url,title:"Cast.No#{cast.id}/#{cast.name}",isOpened: false
+      }
+
+    vm.onClickDropDown = (cast, index) ->
+      vm.selectDropDownNo = index
+      vm.contactData.selectCasts[vm.selectDropDownNo].isOpened = !cast.isOpened
+
+    vm.onAdd = ->
+      vm.contactData.selectCasts[vm.selectDropDownNo].isOpened = false
+      vm.selectDropDownNo = null
+      vm.contactData.selectCasts.push({image:null,title: "選択してください",isOpened:false})
+
 
     vm.init()
     return

@@ -215,6 +215,54 @@
 
 }
 .shop-detail-page {
+  .cast-select{
+    margin-bottom: $row-space-half-half;
+    .cast-group{
+      float: left;
+      width:calc(100% - 3rem);
+      .drop-down-cast{
+        height:3rem;
+        padding:.3rem;
+        border: 1px solid #ddd;
+        .select-img{width:1.6rem;margin-right:.5rem;}
+        h4.name{
+          display: inline-block;
+          vertical-align: middle;
+          margin:0;
+        }
+
+      }
+      .cast-lists {
+        &.open{
+          display: block;
+        }
+        width:100%;
+        display: none;
+        .item{
+          width:100%;
+          padding: .3rem;
+          border-bottom:1px solid #ddd;
+          img{
+            width:2rem;
+            margin-right:.5rem;
+          }
+          h4.name{
+            display: inline-block;
+            vertical-align: middle;
+            margin:0;
+          }
+        }
+      }
+    }
+    .add-btn{
+      width:3rem;
+      height:3rem;
+      background-color: $_brand-basic;
+      color: #ddd;
+      border: 1px solid #ddd;
+    }
+  }
+
   .genre-tag{
     width:100%;
     margin-bottom:0.9375rem;
