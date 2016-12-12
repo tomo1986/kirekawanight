@@ -449,9 +449,12 @@
             width: 45px;
             float: left;
             a {
+              outline: none;
+              opacity: .3;
               &.active,
               &:hover
               {
+                opacity: 1;
               }
               img {
               }
