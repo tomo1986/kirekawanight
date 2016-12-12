@@ -435,6 +435,31 @@
     }
     .photo-area {
       float:left;
+      position: relative;
+      .thumbnail {
+        margin: 0;
+        width: calc(100% - 182px);
+        position: absolute;
+        top: 10%;
+        right: 0px;
+        text-align: center;
+        padding: 0 $row-space;
+        .thumbnail--list {
+          li {
+            width: 45px;
+            float: left;
+            a {
+              &.active,
+              &:hover
+              {
+              }
+              img {
+              }
+
+            }
+          }
+        }
+      }
       .fream {
         overflow: hidden;
         position: relative;
@@ -531,6 +556,9 @@
             }
           }
 
+        }
+        .mobile-nodisplayed{
+          display: none;
         }
         .thumbnail {
           margin: 0;
@@ -691,7 +719,6 @@
 @media screen and (min-width: 768px) and (max-width: 991px){
   .cast-detail-page .cast-detail .profile-area .thumbnail{
     text-align: left;
-
   }
 }
 
@@ -737,3 +764,14 @@
   0% {opacity:0;}
   100% {opacity:1;}
 }
+@media screen and (min-width: 320px) and (max-width: 544px){
+  .mobile-ondisplayed {
+    display: block;
+  }
+}
+@media screen and (min-width: 545px){
+  .mobile-ondisplayed {
+    display: none;
+  }
+}
+

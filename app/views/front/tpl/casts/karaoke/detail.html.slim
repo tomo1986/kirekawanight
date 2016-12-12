@@ -9,7 +9,11 @@
               img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"  ng-class="{'target': vm.castMainImg == image.url}"
             p ng-if="!vm.castMainImg"
               = image_tag 'front/cast-no-image.png', class:"target img", alt: "kirekawa collection cast no-image"
-
+          .thumbnail.mobile-ondisplayed
+            ul.thumbnail--list
+              li ng-repeat="image in vm.cast.images track by $index"
+                a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
+                  img.img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"
         .profile-area
           .name-area
             h5
@@ -30,7 +34,7 @@
             .shop-tags
               a.btn ng-repeat="tag in vm.cast.tags"
                 | {{tag}}
-          .thumbnail
+          .thumbnail.mobile-nodisplayed
             ul.thumbnail--list
               li ng-repeat="image in vm.cast.images track by $index"
                 a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
