@@ -135,29 +135,11 @@ angular.module 'bisyoujoZukanNight'
     vm.submit = ->
       vm.errors = {}
       vm.errors['name'] = '氏名を入力してくだい。' if !vm.contact.name
-      if vm.contact.return_way == 'email'
-        vm.errors['email'] = 'emailを入力してくだい。' if !vm.contact.email
-      else if vm.contact.return_way == 'tel'
-        vm.errors['tel'] = 'TELを入力してくだい。' if !vm.contact.tel
-      else if vm.contact.return_way == 'sns'
-        if vm.selectSns == 'zalo'
-          vm.errors['sns'] = 'Zaloアカウントを入力してくだい。' if !vm.contact.sns_zalo
-          vm.contact.sns_wechat = null
-          vm.contact.sns_line = null
-        else if vm.selectSns == 'wechat'
-          vm.errors['sns'] = 'Wechatアカウントを入力してくだい。' if !vm.contact.sns_wechat
-          vm.contact.sns_zalo = null
-          vm.contact.sns_line = null
-        else if vm.selectSns == 'line'
-          vm.errors['sns'] = 'LINEアカウントを入力してくだい。' if !vm.contact.sns_line
-          vm.contact.sns_zalo = null
-          vm.contact.sns_wechat = null
-
       return if Object.keys(vm.errors) && Object.keys(vm.errors).length > 0
 
       castService.sendContact(vm.contact).then((res) ->
-        title = 'ありがとうざいました。'
-        message = 'こちらからご連絡させていただきます。その際kirekarwa colection 事務局からご連絡させていただきます。'
+        title = 'お問い合わせありがとうざいました。'
+        message = '女性からの連絡をお待ちください'
         modalService.alert(title,message)
       )
 

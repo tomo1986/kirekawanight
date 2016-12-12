@@ -53,41 +53,24 @@
               table.res-form-table
                 tr
                   th.res-form-table__th.parent-th.parent-th.title-box.clearfix
+                    span.title 氏名
+                    span.btn.required 必須
+                  td.res-form-table__td.parent-td.parent-td.input-box
+                    input.form-control type="text" name="name" required='' placeholder="切川 太郎(ニックネーム可)" ng-model="vm.contact.name"
+                tr
+                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title emailアドレス
                     span.btn.required 必須
                   td.res-form-table__td.parent-td.parent-td.input-box
                     input.form-control type="email" name="email" required='' placeholder="info@kire-kawa.com" ng-model="vm.contact.email"
-                tr ng-if="vm.contact.return_way == 'sns'"
-                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
-                    span.title SNSアカウント
-                    span.btn.required どれか一つ必須
-                  td.res-form-table__td.parent-td.parent-td.input-box
-                    dl
-                      dt ng-if="vm.cast.sns_zalo"
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="zalo" ng-model="vm.selectSns" Zalo
-                      dt ng-if="vm.cast.sns_wechat"
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="wechat" ng-model="vm.selectSns" WeChat
-                      dt ng-if="vm.cast.sns_line"
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="line" ng-model="vm.selectSns" Line
-
-                      dd
-                        input.form-control type="text" name="zalo" placeholder="例)kirekawa111" ng-model="vm.contact.sns_zalo" ng-if="vm.selectSns == 'zalo'"
-                        input.form-control type="text" name="wechat" placeholder="例)kirekawa111" ng-model="vm.contact.sns_wechat" ng-if="vm.selectSns == 'wechat'"
-                        input.form-control type="text" name="line" placeholder="例)kirekawa111" ng-model="vm.contact.sns_line" ng-if="vm.selectSns == 'line'"
-                    span.is-text-danger ng-if="vm.errors.sns"
-                      | {{vm.errors.sns}}
-
                 tr
                   th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                     span.title 内容
                   td.res-form-table__td.parent-td.parent-td.input-box
-                    textarea.form-control rows="3" name="message" required='' ng-model="vm.contact.message"
+                    textarea.form-control rows="5" name="message" required='' ng-model="vm.contact.message"
 
               .center-button
-                button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  この子に会いに行く
+                button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  この子にガイドを依頼する
 
 
       .col-md-12.detail.clearfix
@@ -155,51 +138,6 @@
                 h3
                   | {{vm.profile[key][vm.active_language].name}}
                 p ng-bind-html="val"
-      .col-md-12.detail.clearfix
-        .row
-          .page-title
-            h2.title
-              | Contact
-          .contact
-            form role="form" ng-submit='vm.submit()' name="contactForm" novalidate=''
-              table.res-form-table
-                tr
-                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
-                    span.title emailアドレス
-                    span.btn.required 必須
-                  td.res-form-table__td.parent-td.parent-td.input-box
-                    input.form-control type="email" name="email" required='' placeholder="info@kire-kawa.com" ng-model="vm.contact.email"
-                tr ng-if="vm.contact.return_way == 'sns'"
-                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
-                    span.title SNSアカウント
-                    span.btn.required どれか一つ必須
-                  td.res-form-table__td.parent-td.parent-td.input-box
-                    dl
-                      dt ng-if="vm.cast.sns_zalo"
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="zalo" ng-model="vm.selectSns" Zalo
-                      dt ng-if="vm.cast.sns_wechat"
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="wechat" ng-model="vm.selectSns" WeChat
-                      dt ng-if="vm.cast.sns_line"
-                        label.radio-inline
-                          input name="select_sns" type="radio" value="line" ng-model="vm.selectSns" Line
-
-                      dd
-                        input.form-control type="text" name="zalo" placeholder="例)kirekawa111" ng-model="vm.contact.sns_zalo" ng-if="vm.selectSns == 'zalo'"
-                        input.form-control type="text" name="wechat" placeholder="例)kirekawa111" ng-model="vm.contact.sns_wechat" ng-if="vm.selectSns == 'wechat'"
-                        input.form-control type="text" name="line" placeholder="例)kirekawa111" ng-model="vm.contact.sns_line" ng-if="vm.selectSns == 'line'"
-                    span.is-text-danger ng-if="vm.errors.sns"
-                      | {{vm.errors.sns}}
-
-                tr
-                  th.res-form-table__th.parent-th.parent-th.title-box.clearfix
-                    span.title 内容
-                  td.res-form-table__td.parent-td.parent-td.input-box
-                    textarea.form-control rows="3" name="message" required='' ng-model="vm.contact.message"
-
-              .center-button
-                button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  この子に会いに行く
     .col-md-12.some-cast.detail ng-if="vm.casts"
       .row
         .page-title

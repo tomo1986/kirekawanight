@@ -27,7 +27,7 @@ angular.module 'bisyoujoZukanNight'
         sns_zalo: if vm.loginCustomer then vm.loginCustomer.sns_zalo else null
         sns_wechat: if vm.loginCustomer then vm.loginCustomer.sns_wechat else null
         sns_line: if vm.loginCustomer then vm.loginCustomer.sns_line else null
-        message: '何日何時ごろ\n\n人数\n\n料金について\n\n他の女の子の名前\n\n'
+        message: ''
       }
       vm.getCast()
 
