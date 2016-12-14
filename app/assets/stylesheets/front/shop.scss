@@ -293,10 +293,17 @@
         padding:.3rem;
         border: 1px solid #ddd;
         .select-img{width:1.6rem;margin-right:.5rem;}
+        div{
+          white-space: nowrap;
+          overflow: hidden;
+          -ms-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+        }
         h4.name{
           display: inline-block;
           vertical-align: middle;
           margin:0;
+          font-size: 1rem;
         }
 
       }
@@ -304,12 +311,13 @@
         &.open{
           display: block;
         }
-        width:100%;
+        width:calc(100% + 3rem);
         display: none;
         .item{
           width:100%;
           padding: .3rem;
           border-bottom:1px solid #ddd;
+
           img{
             width:2rem;
             margin-right:.5rem;
@@ -318,6 +326,11 @@
             display: inline-block;
             vertical-align: middle;
             margin:0;
+            font-size: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
           }
         }
       }

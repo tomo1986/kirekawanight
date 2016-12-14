@@ -23,6 +23,7 @@ main#main
                 span.btn.required 必須
               td.res-form-table__td.parent-td.input-box
                 textarea.form-control rows="6" name="comment" required='' placeholder="ご自身の体験について教えてください。 安心、雰囲気、サービスはいかがでしたか？" ng-model="vm.review.comment"
+
                 span.is-text-danger 口コミは少なくても50文字以上ご記入ください。詳しい情報は他の方に必ず役に立ちます。
                 .error
                   span.is-text-danger ng-if="vm.reviewErrors.comment"
