@@ -6,8 +6,6 @@ main#main
         img src="{{vm.shopMainImg}}"
   .container
     .rank-box.shop-top-box
-      h2.shop-name
-        | {{vm.shop.name}}
       .shop-tags
         a.btn ng-repeat="tag in vm.shop.tags"
           | {{tag.name}}

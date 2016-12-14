@@ -1,6 +1,27 @@
 .main-content.shop-detail-page.clearfix shop-detail-directive=""
   .container
     breadcrumb-directive data="vm.breadcrumb"
+  .container
+    .shop-header.clearfix  ng-if="vm.shop"
+      .col-xs-12.col-sm-12.col-md-5.col-lg-5.col-xl-5
+        .col-row-left.clearfix
+          h2.shop-name-box
+            .shop-name-kana
+              | {{vm.shop.name_kana}}
+            .shop-name
+              | {{vm.shop.name}}
+      .col-xs-12.col-sm-12.col-md-7.col-lg-7.col-xl-7
+        .row.clearfix
+          .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
+            .row.clearfix
+              .shop--tel
+                i.fa.fa-mobile aria-hidden="true"
+                | {{vm.shop.tel}}
+              .text--kirekawa
+                | お問合わせの際は「キレカワを見た」というとスムーズです。
+          .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
+            .row.clearfix
+              a.btn.btn-review href="/shops/karaoke/{{vm.shop.id}}/write_review" レビューを書く
 
   .container
     ul.genre-tag

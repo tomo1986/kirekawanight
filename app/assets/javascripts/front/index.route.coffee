@@ -85,9 +85,15 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'reviews'
         default_url: 'reviews'
         templateUrl: '/front/tpl/shops/common/reviews.html'
+      .state '/shops/karaoke/:id.write_review',
+        url: '/write_review',
+        active_menu: 'karaoke'
+        active_tab: 'write_review'
+        default_url: 'write_review'
+        templateUrl: '/front/tpl/shops/common/write_review.html'
 
 
-    .state '/casts/guide',
+      .state '/casts/guide',
         url: '/casts/guide?page&sort&orde'
         active_menu: 'guide'
         active_tab: 'cast'

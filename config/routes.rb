@@ -144,6 +144,7 @@ Rails.application.routes.draw do
     get 'shops/karaoke/:id/cast', to: 'home#index'
     get 'shops/karaoke/:id/contact', to: 'home#index'
     get 'shops/karaoke/:id/reviews', to: 'home#index'
+    get 'shops/karaoke/:id/write_review', to: 'home#index'
 
     get 'casts/bar', to: 'home#cast_bar'
     get 'casts/bar/:id', to: 'home#index'

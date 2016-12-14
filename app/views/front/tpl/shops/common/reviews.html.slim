@@ -1,69 +1,9 @@
 main#main
   .container
-    .rank-box.shop-top-box
-      h2.shop-name
-        | {{vm.shop.name}}
-    #review.rank-box.shop-map.clearfix
+    #review.rank-box.clearfix
       .page-title
         h2.title
-          | REVIEW
-      -if customer_signed_in?
-        .contact
-          form role="form" ng-submit='vm.reviewSubmit()' name="contactForm" novalidate=''
-            p 1：不満、２：やや不満、３：普通、４：やや満足、５：満足
-            table.res-form-table
-              tr
-                th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title サービスはどうでしたか？
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.input-box
-                  rzslider rz-slider-model="vm.review.service_score" rz-slider-options="vm.serviceScoreAange.options"
-              tr
-                th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title 接客はどうでしたか？
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.input-box
-                  rzslider rz-slider-model="vm.review.serving_score" rz-slider-options="vm.servingScoreAange.options"
-              tr
-                th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title 女の子はどうでしたか？
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.input-box
-                  rzslider rz-slider-model="vm.review.girl_score" rz-slider-options="vm.girlScoreAange.options"
-              tr
-                th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title お店の雰囲気はどうでしたか？
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.input-box
-                  rzslider rz-slider-model="vm.review.ambience_score" rz-slider-options="vm.ambienceScoreAange.options"
-              tr
-                th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title また来たいと思いますか？
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.input-box
-                  rzslider rz-slider-model="vm.review.again_score" rz-slider-options="vm.againScoreAange.options"
-              tr
-                th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title 内容
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.input-box
-                  textarea.form-control rows="6" name="comment" required='' placeholder="" ng-model="vm.review.comment"
-                  .error
-                    span.is-text-danger ng-if="vm.reviewErrors.comment"
-                      | {{vm.reviewErrors.comment}}
-            .center-button  ng-show="vm.canReviewSubmited"
-              button.btn.btn-submit type="submit" レビューする
-            .center-button ng-hide="vm.canReviewSubmited"
-              loading-directive size="125"
-      - else
-        p REVIEWを書くにはログインが必要です。
-        .center-button style="text-align:center;"
-          a.btn.btn-submit href="/login" ログインする
-
-    #review.rank-box.shop-map.clearfix
-      .page-title
-        h2.title
-          | REVIEW LIST
+          | 口コミ
       .reviews-list ng-if="vm.reviews.length > 0"
         .review ng-repeat="review in vm.reviews"
           .review--head
@@ -75,6 +15,8 @@ main#main
               i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 80" ng-class="{'fa-star-half': review.total_score > 80 && review.total_score <= 90,'fa-star': review.total_score > 90 && review.total_score <= 100,'active': review.total_score > 80 }"
             .head--score
               | {{review.total_score}}点
+          h3
+            | {{review.title}}
           .review--user
             h3.user--name
               | 投稿者 {{review.sender.name || '匿名'}}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161211073918) do
+ActiveRecord::Schema.define(version: 20161214141731) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -297,17 +297,24 @@ ActiveRecord::Schema.define(version: 20161211073918) do
     t.string   "sender_type"
     t.integer  "receiver_id"
     t.string   "receiver_type"
-    t.integer  "service_score"
-    t.integer  "serving_score"
-    t.integer  "girl_score"
-    t.integer  "ambience_score"
-    t.integer  "again_score"
-    t.text     "comment",        limit: 65535
+    t.text     "comment",       limit: 65535
     t.boolean  "is_displayed"
     t.datetime "repaired_at"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.float    "total_score",    limit: 24
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.float    "total_score",   limit: 24
+    t.string   "title"
+    t.string   "info1"
+    t.string   "info2"
+    t.string   "info3"
+    t.string   "info4"
+    t.string   "info5"
+    t.integer  "score1"
+    t.integer  "score2"
+    t.integer  "score3"
+    t.integer  "score4"
+    t.integer  "score5"
+    t.boolean  "is_draft"
     t.index ["receiver_id"], name: "index_reviews_on_receiver_id", using: :btree
     t.index ["sender_id"], name: "index_reviews_on_sender_id", using: :btree
   end

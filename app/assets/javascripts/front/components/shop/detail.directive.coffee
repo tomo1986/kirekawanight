@@ -58,12 +58,19 @@ angular.module 'bisyoujoZukanNight'
         sender_id: if vm.loginCustomer then vm.loginCustomer.id else null
         receiver_type: 'Shop'
         receiver_id: $state.params.id
-        service_score: 1
-        serving_score: 1
-        girl_score: 1
-        ambience_score: 1
-        again_score: 1
+        score1: 1
+        score2: 1
+        score3: 1
+        score4: 1
+        score5: 1
+        info1: ""
+        info2: ""
+        info3: ""
+        info4: ""
+        info5: ""
+        title: null
         comment: null
+        is_draft: false
       }
 
       vm.getShop()
@@ -233,15 +240,22 @@ angular.module 'bisyoujoZukanNight'
         vm.review = {
           type: 'shop'
           sender_type: 'Customer'
-          sender_id: vm.loginCustomer.id
+          sender_id: if vm.loginCustomer then vm.loginCustomer.id else null
           receiver_type: 'Shop'
           receiver_id: $state.params.id
-          service_score: 1
-          serving_score: 1
-          girl_score: 1
-          ambience_score: 1
-          again_score: 1
+          score1: 1
+          score2: 1
+          score3: 1
+          score4: 1
+          score5: 1
+          info1: ""
+          info2: ""
+          info3: ""
+          info4: ""
+          info5: ""
+          title: null
           comment: null
+          is_draft: false
         }
       )
     vm.onAttention = ->
@@ -261,6 +275,12 @@ angular.module 'bisyoujoZukanNight'
       vm.contactData.selectCasts[vm.selectDropDownNo].isOpened = false
       vm.selectDropDownNo = null
       vm.contactData.selectCasts.push({image:null,title: "選択してください",isOpened:false})
+
+    vm.onInfo1 = (val) -> vm.review.info1 = val
+    vm.onInfo2 = (val) -> vm.review.info2 = val
+    vm.onInfo3 = (val) -> vm.review.info3 = val
+    vm.onInfo4 = (val) -> vm.review.info4 = val
+    vm.onInfo5 = (val) -> vm.review.info5 = val
 
 
     vm.init()
