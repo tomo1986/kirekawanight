@@ -1,6 +1,8 @@
 class Review < ApplicationRecord
   belongs_to :sender, polymorphic: true
   belongs_to :receiver, polymorphic: true
+  has_many  :references, class_name: 'PostType::Reference', as: :receiver, dependent: :destroy, :autosave => true
+  has_many  :not_references, class_name: 'PostType::NotReference', as: :receiver, dependent: :destroy, :autosave => true
 
   before_save do
     self.total_score = (self.score1 + self.score2 + self.score3 + self.score4 + self.score5)
@@ -32,6 +34,10 @@ class Review < ApplicationRecord
       json.sender self.sender.to_jbuilder
       json.receiver self.receiver.to_jbuilder
       json.total_score self.total_score
+      json.sender_review_count (self.sender.review_shops.count + self.sender.review_users.count)
+      json.reference_count self.references.count
+      json.not_reference_count self.not_references.count
+
     end
   end
 
@@ -61,6 +67,9 @@ class Review < ApplicationRecord
         json.created_at review.created_at
         json.is_displayed review.is_displayed
         json.sender review.sender.to_jbuilder
+        json.sender_review_count (review.sender.review_shops.count + review.sender.review_users.count)
+        json.reference_count review.references.count
+        json.not_reference_count review.not_references.count
         json.receiver review.receiver.to_jbuilder
 
       end

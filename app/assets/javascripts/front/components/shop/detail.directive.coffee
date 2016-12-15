@@ -135,6 +135,48 @@ angular.module 'bisyoujoZukanNight'
       else
         modalService.createCustomer(vm.setLoginCustomer)
 
+
+    vm.onClickedReference = (review,answer) ->
+      vm.review = review
+      console.log(vm.review)
+
+      if customerService.isLogin()
+        vm.loginCustomer = customerService.getLoginCustomer()
+        vm.CountUpReference(review,answer)
+      else
+        modalService.createCustomer(vm.setLoginCustomer)
+
+    vm.CountUpReference = (review,answer) ->
+      params = {
+        type: if answer == 'yes' then 'reference' else 'not_reference'
+        sender_type: 'Customer'
+        sender_id: vm.loginCustomer.id
+        receiver_id: review.id
+        receiver_type: 'Review'
+      }
+      shopService.pushPost(params).then((res) ->
+        vm.getReview(review)
+        title = res.data.title
+        message = res.data.message
+        vm.isFavorited = res.data.is_favorited
+        modalService.alert(title,message)
+      )
+    vm.getReview = (review) ->
+      vm.isLoading = true
+      params = {
+        id: $state.params.id
+        page: vm.page
+      }
+      shopService.getReviews(params).then((res) ->
+        vm.total = res.data.total
+        angular.forEach(res.data.reviews, (review) ->
+          vm.reviews.push(review)
+        )
+        vm.isLoading = false
+      )
+
+
+
     vm.setLoginCustomer = (loginUser) ->
       customerService.setLoginCustomer(loginUser)
       vm.loginCustomer = customerService.getLoginCustomer()

@@ -7,7 +7,7 @@ class Customer < ApplicationRecord
 
   has_many  :supports, class_name: 'PostType::Support', as: :sender, dependent: :destroy, :autosave => true
   has_many  :favorites, class_name: 'PostType::Favorite', as: :sender, dependent: :destroy, :autosave => true
-  has_many  :review_groups, class_name: 'ReviewType::Group', as: :sender, dependent: :destroy, :autosave => true
+  has_many  :review_shops, class_name: 'ReviewType::Shop', as: :sender, dependent: :destroy, :autosave => true
   has_many  :review_users, class_name: 'ReviewType::User', as: :sender, dependent: :destroy, :autosave => true
 
 

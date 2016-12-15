@@ -899,7 +899,16 @@
   .btn-submit {
     background-color: $_sub_text;
     color: $_em_text_hover;
+    width:14rem;
     font-weight: bold;
+    @media screen and (min-width: 320px) and (max-width: 543px){
+      margin-bottom:1rem;
+    }
+    @media screen and (min-width: 544px){
+      margin-right:1rem;
+    }
+
+
     &:hover {
       opacity: .7;
 
@@ -910,29 +919,55 @@
       margin-bottom: $row-space-bog;
       .review--head {
         margin-bottom: $row-space-half;
-        .head--star{
-          font-size: 1.2rem;
-          display: inline-block;
-          margin-right: $row-space;
-          i.active{
-            color: $_em_text;
-            margin-right:.2rem;
-            text-shadow: 0px 0px 10px #f7cb47;
+        h2.head--title {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #E2D39F;
+          text-shadow: 2px 2px 10px #f7cb47;
+        }
+        .head-star-box{
+          float:left;
+          .head--star{
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-right: $row-space-half;
+            i.active{
+              color: $_em_text;
+              margin-right:.2rem;
+              text-shadow: 0px 0px 10px #f7cb47;
+            }
+          }
+          .head--score {
+            display: inline-block;
           }
         }
-        .head--score {
-          display: inline-block;
+        .user--review_date {
+          text-align: right;
+          float:right;
+          display: inline;
+          font-size: 0.8rem;
+          line-height: 2.5;
+        }
+        @media screen and (min-width: 320px) and (max-width: 543px){
+          .user--name {display: block;}
+          .user--review_date {display: block;text-align: left;}
         }
       }
       .review--user {
         margin-bottom: $row-space-half;
-        padding-bottom: $row-space-half;
         border-bottom: 1px solid #ddd;
         .user--name {
-          text-align: left;
-          display: inline-block;
-          margin-right: $row-space;
-          font-size: 1.2rem;
+          background:#222;
+          margin-bottom:0;
+          a {
+            color: #ddd;
+            padding:.3rem;
+            font-size: 1rem;
+            display:table;
+            width:100%;
+            i{margin-right:.5rem;font-size: 2rem;display:table-cell;width:2.5rem;}
+            span{display: table-cell;vertical-align: middle;}
+          }
         }
         .user--review_date {
           text-align: right;
@@ -946,8 +981,63 @@
 
       }
       .review--body {
-        margin-bottom: $row-space-half;
+        margin-bottom: $row-space;
+
         line-height: 1.5;
+      }
+      .review--footer {
+        .footer-text {
+          display:inline-block;
+          font-size:.9rem;
+          color:#999;
+          @media screen and (min-width: 544px){
+            margin-right:1rem;
+          }
+        }
+        .footer-btn {
+          display:inline-block;
+          .reference-btn{
+            background: #eff0f3;
+            background: -webkit-linear-gradient(top,#f7f8fa,#e7e9ec);
+            background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+            color:#555;
+            font-weight: bold;
+            border-radius: 0;
+            width: 100%;
+            font-size: .7rem;
+          }
+
+          @media screen and (min-width: 320px) and (max-width: 543px){
+            display:block;
+            .reference-btn{
+              width:49%;
+              &.top{
+                margin-bottom: .5rem;
+              }
+              &.left{
+               float:left;
+              }
+              &.right{
+                float:right;
+              }
+            }
+          }
+          @media screen and (min-width: 544px){
+            display:inline-block;
+            .reference-btn{
+              width:60px;
+              &.left{
+                margin-right:1rem;
+                marign-bottom:0;
+              }
+              &.right{
+
+              }
+            }
+          }
+
+
+        }
       }
     }
   }

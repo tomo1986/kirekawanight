@@ -7,22 +7,67 @@ main#main
       .reviews-list ng-if="vm.reviews.length > 0"
         .review ng-repeat="review in vm.reviews"
           .review--head
-            .head--star
-              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 0" ng-class="{'fa-star-half': review.total_score > 0 && review.total_score <= 10,'fa-star': review.total_score > 10 && review.total_score <= 20,'active': review.total_score > 0 }"
-              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 20" ng-class="{'fa-star-half': review.total_score > 20 && review.total_score <= 30,'fa-star': review.total_score > 30 && review.total_score <= 40,'active': review.total_score > 20 }"
-              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 40" ng-class="{'fa-star-half': review.total_score > 40 && review.total_score <= 50,'fa-star': review.total_score > 50 && review.total_score <= 60,'active': review.total_score > 40 }"
-              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 60" ng-class="{'fa-star-half': review.total_score > 60 && review.total_score <= 70,'fa-star': review.total_score > 70 && review.total_score <= 80,'active': review.total_score > 60 }"
-              i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 80" ng-class="{'fa-star-half': review.total_score > 80 && review.total_score <= 90,'fa-star': review.total_score > 90 && review.total_score <= 100,'active': review.total_score > 80 }"
-            .head--score
-              | {{review.total_score}}点
-          h3
-            | {{review.title}}
+            h2.head--title
+              | {{review.title}}
+            .clearfix
+              .head-star-box
+                .head--star
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 0" ng-class="{'fa-star-half': review.total_score > 0 && review.total_score <= 10,'fa-star': review.total_score > 10 && review.total_score <= 20,'active': review.total_score > 0 }"
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 20" ng-class="{'fa-star-half': review.total_score > 20 && review.total_score <= 30,'fa-star': review.total_score > 30 && review.total_score <= 40,'active': review.total_score > 20 }"
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 40" ng-class="{'fa-star-half': review.total_score > 40 && review.total_score <= 50,'fa-star': review.total_score > 50 && review.total_score <= 60,'active': review.total_score > 40 }"
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 60" ng-class="{'fa-star-half': review.total_score > 60 && review.total_score <= 70,'fa-star': review.total_score > 70 && review.total_score <= 80,'active': review.total_score > 60 }"
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 80" ng-class="{'fa-star-half': review.total_score > 80 && review.total_score <= 90,'fa-star': review.total_score > 90 && review.total_score <= 100,'active': review.total_score > 80 }"
+                .head--score
+                  | {{review.total_score}}点
+              .user--review_date
+                | {{review.created_at | date: 'yyyy年M月d日' }}
           .review--user
-            h3.user--name
-              | 投稿者 {{review.sender.name || '匿名'}}
-            .user--review_date
-              | 投稿日 {{review.created_at | date: 'yyyy年M月d日' }}
+            h3.user--name.clearfix
+              a href="#"
+                i.fa.fa-user-secret aria-hidden="true"
+                span
+                  | {{review.sender.name || '匿名'}} ({{review.sender_review_count || 0}}件の口コミ)
           p.review--body ng-bind-html="review.comment | noHTML | newlines"
+          p ng-if="review.info1"
+            | トイレは
+            span ng-if="review.info1 == 'yes'" 綺麗でした
+            span ng-if="review.info1 == 'no'" 綺麗ではありませんでした。
+            span ng-if="review.info1 == 'not'" 綺麗でもなければ、汚くもありません。
+          p ng-if="review.info2"
+            | スタッフの対応は
+            span ng-if="review.info2 == 'yes'" 良かったです。
+            span ng-if="review.info2 == 'no'" 良くありませんでした。
+            span ng-if="review.info2 == 'not'" どちらとも言えません。
+
+          p ng-if="review.info3"
+            | お店のカラオケ機器は
+            span ng-if="review.info3 == 'yes'" 良かったです。
+            span ng-if="review.info3 == 'no'" 良くありませんでした。
+            span ng-if="review.info3 == 'not'" どちらとも言えません。
+
+          p ng-if="review.info4"
+            | お店のキャストのTip要求は
+            span ng-if="review.info4 == 'yes'" あります。
+            span ng-if="review.info4 == 'no'" ありません。
+            span ng-if="review.info4 == 'not'" どちらとも言えません。
+
+          p ng-if="review.info5"
+            | このお店は他の方におすすめは
+            span ng-if="review.info4 == 'yes'" できます。
+            span ng-if="review.info4 == 'no'" できません。
+            span ng-if="review.info4 == 'not'" どちらとも言えません。
+
+          .review--footer.clearfix ng-if="vm.loginCustomer.id != review.sender.id && vm.review.id != review.id"
+            .footer-text
+              | {{review.reference_count}}人のお客様がこれが役に立ったと考えています. この口コミは参考になりましたか？
+            .footer-btn
+              a.btn.reference-btn.top.left href="javascript:void(0)" ng-click="vm.onClickedReference(review,'yes')" はい
+              a.btn.reference-btn.right href="javascript:void(0)" ng-click="vm.onClickedReference(review,'no')" いいえ
+          .review--footer.clearfix ng-if="vm.loginCustomer.id != review.sender.id && vm.review.id == review.id"
+            .footer-text style="color:#f00;"
+              i.fa.fa-check aria-hidden="true"
+              | フィードバックありがとうございました。
+
 
       .center-button style="text-align:center;" ng-if="(vm.total > vm.reviews.length) && !vm.isLoading"
         a.btn.btn-submit href="javascript:void(0)" ng-click="vm.getSomeShopCasts()" もっと見る

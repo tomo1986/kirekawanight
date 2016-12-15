@@ -198,6 +198,26 @@ class Api::FrontController < ApiController
         title = 'お気に入り登録しました。'
         message = 'お気に入り登録しました。'
       end
+    elsif params[:type] == 'reference'
+      if PostType::Reference.where(sender_id: params[:sender_id], receiver_id: params[:receiver_id]).count > 0
+        title = "フィードバックを受け付けました。"
+        message = 'フィードバックありがとうございます。'
+      else
+        PostType::Reference.create(sender_type:'Customer',sender_id:params[:sender_id],receiver_id:params[:receiver_id],receiver_type:params[:receiver_type])
+        title = "フィードバックを受け付けました。"
+        message = 'フィードバックありがとうございます。'
+      end
+
+    elsif params[:type] == 'not_reference'
+      if PostType::NotReference.where(sender_id: params[:sender_id], receiver_id: params[:receiver_id]).count > 0
+        title = "フィードバックを受け付けました。"
+        message = 'フィードバックありがとうございます。'
+      else
+        PostType::NotReference.create(sender_type:'Customer',sender_id:params[:sender_id],receiver_id:params[:receiver_id],receiver_type:params[:receiver_type])
+        title = "フィードバックを受け付けました。"
+        message = 'フィードバックありがとうございます。'
+      end
+
     end
     if params[:receiver_type] == 'User'
       user = User.find_by(id: params[:receiver_id])
@@ -591,14 +611,10 @@ class Api::FrontController < ApiController
   def api23
     shop = Shop.find_by(id: params[:id])
     reviews = shop.reviews if shop
-    # reviews = shop.reviews.where(is_displayed: true) if shop.reviews
-
     total = reviews.count if reviews
-
     limit = 10
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
     reviews = reviews.page(page).per(limit) if reviews.present?
-
     builders = Jbuilder.new do |json|
       json.reviews Review.to_jbuilders(reviews)
       json.total total
@@ -640,6 +656,15 @@ class Api::FrontController < ApiController
       json.users users ? User.to_jbuilders(users) : nil
     end
     render json: builders.target!
+  end
+
+  def api26
+    review = Review.find_by(id: params[:id]) if params[:id]
+    builder = Jbuilder.new do |json|
+      json.code 1
+      json.review review.to_jbuilder
+    end
+    render json: builder.target!
   end
 
 end

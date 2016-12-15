@@ -5,7 +5,7 @@ main#main
         h2.title
           | REVIEW
       .contact
-        form role="form" name="contactForm" novalidate=''
+        form role="form" name="reviewForm" novalidate=''
           table.res-form-table
             caption 口コミを書く
             tr
@@ -23,8 +23,9 @@ main#main
                 span.btn.required 必須
               td.res-form-table__td.parent-td.input-box
                 textarea.form-control rows="6" name="comment" required='' placeholder="ご自身の体験について教えてください。 安心、雰囲気、サービスはいかがでしたか？" ng-model="vm.review.comment"
-
-                span.is-text-danger 口コミは少なくても50文字以上ご記入ください。詳しい情報は他の方に必ず役に立ちます。
+                div style="text-align:right;"
+                  | {{vm.review.comment.length || 0}}文字 (50 文字以上)
+                span style="color: #f00;" 口コミは少なくても50文字以上ご記入ください。詳しい情報は他の方に必ず役に立ちます。
                 .error
                   span.is-text-danger ng-if="vm.reviewErrors.comment"
                     | {{vm.reviewErrors.comment}}
@@ -158,7 +159,6 @@ main#main
 
 
           .center-button  ng-show="vm.canReviewSubmited"
-            button.btn.btn-submit style="margin-right:1rem;margin-bottom:1rem;" type="submit" ng-click="vm.reviewSubmit()" 口コミを投稿する
-            button.btn.btn-submit style="margin-left:1rem;margin-bottom:1rem;" type="submit" ng-click="vm.reviewDraft()" 口コミを下書き保存する
+            button.btn.btn-submit.left type="submit" ng-disabled="reviewForm.$invalid" ng-click="vm.reviewSubmit()" 口コミを投稿する
           .center-button ng-hide="vm.canReviewSubmited"
             loading-directive size="125"
