@@ -7,14 +7,16 @@
   .data-table-box
     table.data-table ng-if="isCreateFormDisplayed || isLoginFormDisplayed"
       tr
-        th.res-form-table__th.title-box.clearfix
+        th.res-form-table__th.parent-th.title-box.clearfix
           span.title email
-        td.res-form-table__td.input-box
+          span.btn.required 必須
+        td.res-form-table__td.parent-td.input-box
           input.form-control type="email" name="email" required='' placeholder="aiueo" ng-model="customer.email"
       tr
-        th.res-form-table__th.title-box.clearfix
+        th.res-form-table__th.parent-th.title-box.clearfix
           span.title password
-        td.res-form-table__td.input-box
+          span.btn.required 必須
+        td.res-form-table__td.parent-td.input-box
           input.form-control type="password" name="password" required='' placeholder="aiueo" ng-model="customer.password"
     .clearfix ng-if="error"
       | {{error}}

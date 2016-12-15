@@ -1142,15 +1142,107 @@ input[type="color"]:focus,
   .modal-body {
     padding: $row-space;
     .data-table-box {
+      .res-form-table,
       .data-table {
-        margin: 0;
-        th {
-          width: 30%;
+        border-collapse: collapse;
+        width: 100%;
+        border:1px solid $_basic-border;
+        margin-bottom: $row-space-bog;
+        & > caption {
+          padding: 0.75rem;
+          color: $_brand-basic;
+          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#720e0a+0,020202+100,020202+100,f4f4f4+100 */
+          background: #720e0a; /* Old browsers */
+          background: -moz-linear-gradient(left,  #720e0a 0%, #020202 100%, #020202 100%, #f4f4f4 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(left,  #720e0a 0%,#020202 100%,#020202 100%,#f4f4f4 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to right,  #720e0a 0%,#020202 100%,#020202 100%,#f4f4f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#720e0a', endColorstr='#f4f4f4',GradientType=1 ); /* IE6-9 */
+          margin-bottom: $row-space-half;
+          border-left: 3px solid $_brand-basic;
+          font-size: 1rem;
+          font-weight: 600;
+          letter-spacing: .3px;
+          line-height: normal;
+          text-transform: uppercase;
+          caption-side: top;
         }
-        td {
-          text-align: left;
+
+        & th, & td {
+          padding: $row-space;
+          border: 1px solid $_basic-border;
+          text-align: center;
+          font-weight: normal;
+
+        }
+        & th {
+          background-color: #222;
+          color: $_em_text_hover;
+          text-align: center;
+          width: 50%;
+          vertical-align: middle;
+          font-weight: normal;
+          .title {
+            float: left;
+          }
+          .required {
+            float:right;
+            background-color: $_sub_text;
+            //color: #fff;
+            padding: .2rem .5rem;
+            font-size: 0.7rem;
+            border-radius: 0.2rem;
+          }
+        }
+        td{
+          .error{
+            text-align: left;
+            margin-top:$row-space-half;
+            color: $_em_text;
+          }
+        }
+        & .res-form-table__th{
+          .title{float: left;}
+          .absolutely{float: right;}
+        }
+        & td.res-form-table__td{
+          .dropdown-menu{
+            .uib-daypicker{padding:5px;th,td{padding:0;
+              .btn-default{background-color: #fff;color:#555;
+                &:hover{background-color: #eee;}
+              }
+            }
+            }
+          }
+
+          .icon-location_image{
+            background-image:image-url('business/ico_location_map_opend.png');
+            background-size:80%;
+            background-repeat: no-repeat;
+            width:90px;
+            height:90px;
+            position: relative;
+            margin:0 auto;
+            > .capsule-image{width: 50px;height: 50px;padding: 1px;border-radius: 100%;position: absolute;top:10px;left:11px;}
+          }
+        }
+        @media screen and (max-width: 767px) {
+          & th, & td {
+            border-top: 1px solid $_basic-border;
+            border-right: none;
+            border-bottom: 1px solid $_basic-border;
+            border-left: none;
+          }
+          & td.parent-td {
+            display: block;
+            width: 100% !important;
+          }
+          & th.parent-th {
+            display: block;
+            width: 100% !important;
+          }
         }
       }
+
       .login-customer-left,
       .login-customer-right {
         width: 48%;

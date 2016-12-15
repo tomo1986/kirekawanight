@@ -24,14 +24,14 @@
                       span.is-text-danger ng-if="vm.errors.password"
                         | {{vm.errors.password}}
                   div.center-button
-                    button.btn.btn-submit type="submit" ログイン
+                    button.btn.btn-submit type="submit"  ng-disabled="loginForm.$invalid" ログイン
         .col-md-6 style="margin-bottom:2rem;"
           .row
             .option
               .page-title
                 h2.title
                   | 新規登録
-              form role="form" ng-submit='vm.makeNewCustomer()' name="loginForm" novalidate=''
+              form role="form" ng-submit='vm.makeNewCustomer()' name="newCustomerForm" novalidate=''
                 .form-content.clearfix style="background-color:#222; padding:0.9375rem 0.9375rem 0;"
                   .form-shop.clearfix
                     label.input-label for="email" 登録メールアドレス
@@ -46,4 +46,4 @@
                       span.is-text-danger ng-if="vm.errors.password"
                         | {{vm.errors.password}}
                   div.center-button
-                    button.btn.btn-submit type="submit" 新規登録
+                    button.btn.btn-submit type="submit" ng-disabled="newCustomerForm.$invalid" 新規登録
