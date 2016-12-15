@@ -63,7 +63,7 @@ main#main
             .footer-btn
               a.btn.reference-btn.top.left href="javascript:void(0)" ng-click="vm.onClickedReference(review,'yes')" はい
               a.btn.reference-btn.right href="javascript:void(0)" ng-click="vm.onClickedReference(review,'no')" いいえ
-          .review--footer.clearfix ng-if="vm.loginCustomer.id != review.sender.id && vm.review.id == review.id"
+          .review--footer.clearfix ng-if="vm.loginCustomer && vm.loginCustomer.id != review.sender.id && vm.review.id == review.id"
             .footer-text style="color:#f00;"
               i.fa.fa-check aria-hidden="true"
               | フィードバックありがとうございました。
