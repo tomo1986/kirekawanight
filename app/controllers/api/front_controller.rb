@@ -295,7 +295,7 @@ class Api::FrontController < ApiController
 
       host = "slack.com"
       path = "/api/chat.postMessage"
-      query_parameter = {  "token" => "xoxp-109579077938-108903236561-115289736084-4f14c7a90f3fde7555632b40f5288684",
+      query_parameter = {  "token" => "xoxp-109579077938-108903236561-118073279111-cdfee3063e0b9c1436ae480ca349784c",
                            "channel" => "#contact",
                            "text" => text,
                            "username" => "contact manager" }
@@ -452,6 +452,7 @@ class Api::FrontController < ApiController
         score5: params[:score5].to_i * 4,
         title: params[:title],
         comment: params[:comment],
+        opinion: params[:opinion],
         is_draft: params[:is_draft],
         is_displayed: false
     }
@@ -464,6 +465,7 @@ class Api::FrontController < ApiController
         text = text + "#{shop.name}\n"
         text = text + "#{root_url}shops/#{shop.job_type}/#{shop.id}/info\n"
         text = text + "スコア#{review.total_score}点\n"
+        text = text + "タイトル:#{review.title}\n"
         text = text + "#{review.comment}"
       elsif review.receiver_type == 'User'
         user = User.find(review.receiver_id)
@@ -476,7 +478,7 @@ class Api::FrontController < ApiController
 
       host = "slack.com"
       path = "/api/chat.postMessage"
-      query_parameter = {  "token" => "xoxp-109579077938-108903236561-115289736084-4f14c7a90f3fde7555632b40f5288684",
+      query_parameter = {  "token" => "xoxp-109579077938-108903236561-118073279111-cdfee3063e0b9c1436ae480ca349784c",
                            "channel" => "#review",
                            "text" => text,
                            "username" => "review manager" }

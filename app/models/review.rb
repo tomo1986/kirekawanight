@@ -29,6 +29,7 @@ class Review < ApplicationRecord
       json.is_draft self.is_draft
       json.title self.title
       json.comment self.comment
+      json.opinion self.opinion
       json.created_at self.created_at
       json.is_displayed self.is_displayed
       json.sender self.sender.to_jbuilder
@@ -63,6 +64,7 @@ class Review < ApplicationRecord
         json.is_draft review.is_draft
         json.title review.title
         json.comment review.comment
+        json.opinion review.opinion
         json.total_score review.total_score
         json.created_at review.created_at
         json.is_displayed review.is_displayed

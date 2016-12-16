@@ -76,7 +76,6 @@ class Shop < ApplicationRecord
         json.is_english shop.is_english
         json.is_chinese shop.is_chinese
         json.is_korean shop.is_korean
-        json.score shop.score
         json.tip shop.tip
         json.girls_count shop.girls_count
         json.is_smoked shop.is_smoked

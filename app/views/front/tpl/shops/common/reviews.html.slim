@@ -21,6 +21,13 @@ main#main
                   | {{review.total_score}}点
               .user--review_date
                 | {{review.created_at | date: 'yyyy年M月d日' }}
+
+              table
+                tr
+                  th 安心：
+                  td
+                    div style="width:80px; bacground:#f00;"
+
           .review--user
             h3.user--name.clearfix
               a href="#"

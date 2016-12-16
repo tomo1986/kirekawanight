@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214141731) do
+ActiveRecord::Schema.define(version: 20161216044729) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -315,6 +315,7 @@ ActiveRecord::Schema.define(version: 20161214141731) do
     t.integer  "score4"
     t.integer  "score5"
     t.boolean  "is_draft"
+    t.text     "opinion",       limit: 65535
     t.index ["receiver_id"], name: "index_reviews_on_receiver_id", using: :btree
     t.index ["sender_id"], name: "index_reviews_on_sender_id", using: :btree
   end
@@ -364,9 +365,14 @@ ActiveRecord::Schema.define(version: 20161214141731) do
     t.integer  "budget_vnd"
     t.integer  "budget_usd"
     t.text     "service",                limit: 65535
-    t.float    "score",                  limit: 24
     t.integer  "broker_id"
     t.string   "tip"
+    t.float    "score1",                 limit: 24
+    t.float    "score2",                 limit: 24
+    t.float    "score3",                 limit: 24
+    t.float    "score4",                 limit: 24
+    t.float    "score5",                 limit: 24
+    t.float    "total_score",            limit: 24
     t.index ["email"], name: "index_shops_on_email", unique: true, using: :btree
     t.index ["group_id"], name: "index_shops_on_group_id", using: :btree
     t.index ["is_chinese"], name: "index_shops_on_is_chinese", using: :btree

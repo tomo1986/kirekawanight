@@ -150,13 +150,30 @@ main#main
                   span.title 口コミの本文
                   span.btn.required 必須
                 td.res-form-table__td.parent-td.input-box
-                  textarea.form-control rows="6" name="comment" required='' placeholder="ご自身の体験について教えてください。 安心、雰囲気、サービスはいかがでしたか？" ng-model="vm.review.comment"
+                  textarea.form-control rows="6" name="comment" required='' ng-minlength="50" placeholder="ご自身の体験について教えてください。 安心、雰囲気、サービスはいかがでしたか？" ng-model="vm.review.comment"
                   div style="text-align:right;"
                     | {{vm.review.comment.length || 0}}文字 (50 文字以上)
                   span style="color: #f00;" 口コミは少なくても50文字以上ご記入ください。詳しい情報は他の方に必ず役に立ちます。
                   .error
                     span.is-text-danger ng-if="vm.reviewErrors.comment"
                       | {{vm.reviewErrors.comment}}
+
+
+
+            table.res-form-table
+              caption あなたの一言がお店を変える
+              tr
+                th.res-form-table__th.parent-th.title-box.clearfix
+                  span.title アドバイスや要望
+                  span.btn.required 気持ち
+                td.res-form-table__td.parent-td.input-box
+                  textarea.form-control rows="6" name="opinion" placeholder="お店に対しての、アドバイスや要望をお書きください" ng-model="vm.review.opinion"
+                  span style="color: #f00;"
+                    | お客様のために、少しでもお店を改善したいと考えています。
+                    br
+                    | ちょっとしたアドバイス、要望、なんでも結構ですので、記載していただけると幸いです。
+                    br
+                    | ※こちらのコメントは口コミには表示されません。
 
             .center-button  ng-show="vm.canReviewSubmited"
               button.btn.btn-submit.left type="submit" ng-disabled="reviewForm.$invalid" ng-click="vm.reviewSubmit()" 口コミを投稿する

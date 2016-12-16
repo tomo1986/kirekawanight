@@ -225,17 +225,11 @@ angular.module 'bisyoujoZukanNight'
     vm.contactSubmit = ->
       vm.contactErrors = {}
       vm.contactErrors['name'] = '氏名を入力してくだい。' if !vm.contact.name
-      if vm.contact.return_way == 'email'
-        vm.contactErrors['email'] = 'emailを入力してくだい。' if !vm.contact.email
-      else if vm.contact.return_way == 'sns'
-        vm.contactErrors['sns'] = 'LINEアカウントを入力してくだい。' if !vm.contact.sns_line
       return if Object.keys(vm.contactErrors) && Object.keys(vm.contactErrors).length > 0
 
       message = ''
       message = message + "Customer Name： #{vm.contact.name}\n"
-      message = message + "Return way： #{vm.contact.return_way}\n"
       message = message + "Email： #{vm.contact.email}\n"
-      message = message + "LINE #{vm.contact.sns_line}\n"
       if vm.contactData.contact_type == 'reservation'
         message = message + "number of reservable：　#{vm.contactData.peoples}peaples\n"
         message = message + "reservation time：　#{vm.contactData.reservation_date}\n"
