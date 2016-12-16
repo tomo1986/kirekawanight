@@ -22,11 +22,43 @@ main#main
               .user--review_date
                 | {{review.created_at | date: 'yyyy年M月d日' }}
 
-              table
-                tr
-                  th 安心：
-                  td
-                    div style="width:80px; bacground:#f00;"
+            table.score-table
+              tr
+                th 女の子
+                td.meter
+                  .meter--out
+                    .meter--bar style="width:{{review.score1 * 5}}%;"
+                td.score
+                  | {{review.score1 / 4}}
+              tr
+                th サービス
+                td.meter
+                  .meter--out
+                    .meter--bar style="width:{{review.score2 * 5}}%;"
+                td.score
+                  | {{review.score2 / 4}}
+              tr
+                th 雰囲気
+                td.meter
+                  .meter--out
+                    .meter--bar style="width:{{review.score3 * 5}}%;"
+                td.score
+                  | {{review.score3 / 4}}
+              tr
+                th 安心
+                td.meter
+                  .meter--out
+                    .meter--bar style="width:{{review.score4 * 5}}%;"
+                td.score
+                  | {{review.score4 / 4}}
+              tr
+                th リピート
+                td.meter
+                  .meter--out
+                    .meter--bar style="width:{{review.score5 * 5}}%;"
+                td.score
+                  | {{review.score5 / 4}}
+
 
           .review--user
             h3.user--name.clearfix
