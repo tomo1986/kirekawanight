@@ -8,11 +8,11 @@ main#main
         tr
           th.res-form-table__th.parent-th.title-box.clearfix 予算
           td.res-form-table__td.parent-td.input-box
-            | {{vm.shop.budget_yen}}円
+            | {{vm.shop.budget_yen | number}}円
             br
-            | {{vm.shop.budget_vnd}}VND
+            | {{vm.shop.budget_vnd | number}}VND
             br
-            | {{vm.shop.budget_usd}}USD
+            | {{vm.shop.budget_usd | number}}USD
 
         tr
           th.res-form-table__th.parent-th.title-box.clearfix tip有無

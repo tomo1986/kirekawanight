@@ -28,12 +28,5 @@ angular.module 'bisyoujoZukanNight'
       $timeout (->
         $rootScope.okSaveScroll = true
       ), 100
-#      $('body').addClass('fade-layer-off')
-#      $('<div class="fade-layer"/>').prependTo('body').fadeOut(1000, ->
-#        $(this).remove();
-#      )
-#      $(window).on("beforeunload",(e) ->
-#        $('body').fadeOut()
-#      )
       return
 

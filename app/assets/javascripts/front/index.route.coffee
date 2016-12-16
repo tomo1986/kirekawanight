@@ -44,6 +44,13 @@ angular.module 'bisyoujoZukanNight'
         active_menu: 'karaoke'
         templateUrl: '/front/tpl/casts/karaoke/detail.html'
 
+      .state '/casts/karaoke/:id.info',
+        url: '/info',
+        active_menu: 'karaoke'
+        active_tab: 'info'
+        default_url: 'info'
+        templateUrl: '/front/tpl/casts/common/info.html'
+
       .state '/shops/karaoke/:id',
         url: '/shops/karaoke/:id'
         active_menu: 'karaoke'
@@ -66,7 +73,7 @@ angular.module 'bisyoujoZukanNight'
         templateUrl: '/front/tpl/shops/common/system.html'
 
       .state '/shops/karaoke/:id.cast',
-        url: '/cast',
+        url: '/cast?page&sort&order',
         active_menu: 'karaoke'
         active_tab: 'cast'
         default_url: 'cast'

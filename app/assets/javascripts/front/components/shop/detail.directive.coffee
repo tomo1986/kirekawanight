@@ -7,75 +7,14 @@ angular.module 'bisyoujoZukanNight'
       vm.breadcrumb = [{name:'キレカワ',link:'/'}]
       vm.makeBreadCrumb()
       vm.page = 1
-      vm.reviews = []
+      vm.pageId = $state.params.id
+      vm.selectCasts = []
       vm.isAttention = false
       vm.activeTab = $state.current.active_tab
-
       vm.displayContent = 'intoroduction'
-      vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
-      vm.serviceScoreAange = {minValue: 1,maxValue: 5,options: {floor: 1,ceil: 5,showTicks: true,showTicks: 1,step: 1}}
-      vm.servingScoreAange = {minValue: 1,maxValue: 5,options: {floor: 1,ceil: 5,showTicks: true,showTicks: 1,step: 1}}
-      vm.girlScoreAange = {minValue: 1,maxValue: 5,options: {floor: 1,ceil: 5,showTicks: true,showTicks: 1,step: 1}}
-      vm.ambienceScoreAange = {minValue: 1,maxValue: 5,options: {floor: 1,ceil: 5,showTicks: true,showTicks: 1,step: 1}}
-      vm.againScoreAange = {minValue: 1,maxValue: 5,options: {floor: 1,ceil: 5,showTicks: true,showTicks: 1,step: 1}}
-
       vm.loginCustomer = customerService.getLoginCustomer()
-      vm.canContactSubmited = true
-      vm.canReviewSubmited = true
-      vm.reservationDate={
-        from:{is_from:true,date:null}
-        enable_time: true
-        format: 'yyyy-MM-dd HH:mm'
-        is_required:true
-        placeholder:'必須'
-      }
-
-      vm.contactData = {
-        contact_type: 'reservation'
-        peoples: null
-        selectCasts:[{image:null,title: "選択してください",isOpened:false}]
-        reservation_date: null
-      }
-
-
-      vm.contact = {
-        type: 'shop_detail'
-        subject_type: 'Shop'
-        subject_id: $state.params.id
-        return_way: 'email'
-        name: if vm.loginCustomer then vm.loginCustomer.name else null
-        email: if vm.loginCustomer then vm.loginCustomer.email else null
-        tel: if vm.loginCustomer then vm.loginCustomer.tel else null
-        sns_zalo: if vm.loginCustomer then vm.loginCustomer.sns_zalo else null
-        sns_wechat: if vm.loginCustomer then vm.loginCustomer.sns_wechat else null
-        sns_line: if vm.loginCustomer then vm.loginCustomer.sns_line else null
-        message: 'そのほか'
-      }
-      vm.review = {
-        type: 'shop'
-        sender_type: 'Customer'
-        sender_id: if vm.loginCustomer then vm.loginCustomer.id else null
-        receiver_type: 'Shop'
-        receiver_id: $state.params.id
-        score1: 1
-        score2: 1
-        score3: 1
-        score4: 1
-        score5: 1
-        info1: ""
-        info2: ""
-        info3: ""
-        info4: ""
-        info5: ""
-        title: null
-        comment: null
-        is_draft: false
-      }
-
       vm.getShop()
-      vm.getReviews()
-      vm.getCasts()
 
     vm.changeContents = (opt_content) ->
       vm.displayContent = opt_content
@@ -83,26 +22,6 @@ angular.module 'bisyoujoZukanNight'
     NgMap.getMap().then((map) ->
       vm.ngMap = map
     )
-
-    vm.getCasts = ->
-      shopService.getCasts($state.params.id).then((res) ->
-        if res.data.code == 1
-          vm.casts = res.data.users
-      )
-    vm.getReviews = ->
-      vm.isLoading = true
-      params = {
-        id: $state.params.id
-        page: vm.page++
-      }
-      shopService.getReviews(params).then((res) ->
-        vm.total = res.data.total
-        angular.forEach(res.data.reviews, (review) ->
-          vm.reviews.push(review)
-        )
-
-        vm.isLoading = false
-      )
 
     vm.makeBreadCrumb = ->
       if $state.current.active_menu == 'karaoke'
@@ -119,7 +38,6 @@ angular.module 'bisyoujoZukanNight'
           vm.shop = res.data.shop
           vm.isFavorited = res.data.is_favorited
           vm.breadcrumb.push({name:vm.shop.name, link:''})
-          vm.newCasts = res.data.new_users
           vm.favorites = res.data.favorites
           vm.discounts  = res.data.discounts
           vm.shops = res.data.shops
@@ -134,48 +52,6 @@ angular.module 'bisyoujoZukanNight'
         vm.CountUpSupport()
       else
         modalService.createCustomer(vm.setLoginCustomer)
-
-
-    vm.onClickedReference = (review,answer) ->
-      vm.review = review
-      console.log(vm.review)
-
-      if customerService.isLogin()
-        vm.loginCustomer = customerService.getLoginCustomer()
-        vm.CountUpReference(review,answer)
-      else
-        modalService.createCustomer(vm.setLoginCustomer)
-
-    vm.CountUpReference = (review,answer) ->
-      params = {
-        type: if answer == 'yes' then 'reference' else 'not_reference'
-        sender_type: 'Customer'
-        sender_id: vm.loginCustomer.id
-        receiver_id: review.id
-        receiver_type: 'Review'
-      }
-      shopService.pushPost(params).then((res) ->
-        vm.getReview(review)
-        title = res.data.title
-        message = res.data.message
-        vm.isFavorited = res.data.is_favorited
-        modalService.alert(title,message)
-      )
-    vm.getReview = (review) ->
-      vm.isLoading = true
-      params = {
-        id: $state.params.id
-        page: vm.page
-      }
-      shopService.getReviews(params).then((res) ->
-        vm.total = res.data.total
-        angular.forEach(res.data.reviews, (review) ->
-          vm.reviews.push(review)
-        )
-        vm.isLoading = false
-      )
-
-
 
     vm.setLoginCustomer = (loginUser) ->
       customerService.setLoginCustomer(loginUser)
@@ -222,102 +98,9 @@ angular.module 'bisyoujoZukanNight'
     vm.onClickedImage = (opt_no) ->
       vm.shopMainImg = vm.shop.images[opt_no].url
 
-    vm.contactSubmit = ->
-      vm.contactErrors = {}
-      vm.contactErrors['name'] = '氏名を入力してくだい。' if !vm.contact.name
-      return if Object.keys(vm.contactErrors) && Object.keys(vm.contactErrors).length > 0
 
-      message = ''
-      message = message + "Customer Name： #{vm.contact.name}\n"
-      message = message + "Email： #{vm.contact.email}\n"
-      if vm.contactData.contact_type == 'reservation'
-        message = message + "number of reservable：　#{vm.contactData.peoples}peaples\n"
-        message = message + "reservation time：　#{vm.contactData.reservation_date}\n"
-        message = message + "reservation casts\n"
-        angular.forEach(vm.contactData.selectCasts, (cast) ->
-          message = message + "#{cast.title}\n"
-        )
-        message = message + "\n\n"
-      vm.contact.message = message + vm.contact.message
-      vm.canContactSubmited = false
-
-      shopService.sendContact(vm.contact).then((res) ->
-        vm.canContactSubmited = true
-        title = '受け付けました。'
-        message = '回答を授時行っております。今しばらくお待ちください。'
-        modalService.alert(title,message)
-        vm.contact = {
-          type: 'shop_detail'
-          subject_type: 'Shop'
-          subject_id: $state.params.id
-          return_way: 'email'
-          name: if vm.loginCustomer then vm.loginCustomer.name else null
-          email: if vm.loginCustomer then vm.loginCustomer.email else null
-          tel: if vm.loginCustomer then vm.loginCustomer.tel else null
-          sns_zalo: if vm.loginCustomer then vm.loginCustomer.sns_zalo else null
-          sns_wechat: if vm.loginCustomer then vm.loginCustomer.sns_wechat else null
-          sns_line: if vm.loginCustomer then vm.loginCustomer.sns_line else null
-          message: 'そのほか'
-        }
-      )
-
-    vm.reviewSubmit = ->
-      vm.reviewErrors = null
-      vm.reviewErrors = validationService.checks(vm.review, shopService.reviewValidations)
-      console.log(vm.reviewErrors)
-      return if Object.keys(vm.reviewErrors) && Object.keys(vm.reviewErrors).length > 0
-
-      vm.canReviewSubmited = false
-      shopService.sendReview(vm.review).then((res) ->
-        vm.canReviewSubmited = true
-        title = '受け付けました。'
-        message = '貴重なreviewありがとうございました改善に努めていきます。'
-        modalService.alert(title,message)
-        vm.review = {
-          type: 'shop'
-          sender_type: 'Customer'
-          sender_id: if vm.loginCustomer then vm.loginCustomer.id else null
-          receiver_type: 'Shop'
-          receiver_id: $state.params.id
-          score1: 1
-          score2: 1
-          score3: 1
-          score4: 1
-          score5: 1
-          info1: ""
-          info2: ""
-          info3: ""
-          info4: ""
-          info5: ""
-          title: null
-          comment: null
-          is_draft: false
-        }
-      )
     vm.onAttention = ->
       vm.isAttention = !vm.isAttention
-
-    vm.onSelectCast = (cast) ->
-      url = if cast.images[0] then cast.images[0].url else null
-      vm.contactData.selectCasts[vm.selectDropDownNo] = {
-        image:url,title:"Cast.No#{cast.id}/#{cast.name}",isOpened: false
-      }
-
-    vm.onClickDropDown = (cast, index) ->
-      vm.selectDropDownNo = index
-      vm.contactData.selectCasts[vm.selectDropDownNo].isOpened = !cast.isOpened
-
-    vm.onAdd = ->
-      vm.contactData.selectCasts[vm.selectDropDownNo].isOpened = false
-      vm.selectDropDownNo = null
-      vm.contactData.selectCasts.push({image:null,title: "選択してください",isOpened:false})
-
-    vm.onInfo1 = (val) -> vm.review.info1 = val
-    vm.onInfo2 = (val) -> vm.review.info2 = val
-    vm.onInfo3 = (val) -> vm.review.info3 = val
-    vm.onInfo4 = (val) -> vm.review.info4 = val
-    vm.onInfo5 = (val) -> vm.review.info5 = val
-
 
     vm.init()
     return

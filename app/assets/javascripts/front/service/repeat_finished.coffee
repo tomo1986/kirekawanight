@@ -5,7 +5,7 @@ angular.module 'bisyoujoZukanNight'
     link: (scope, element, attrs) ->
       if scope.$last
         $timeout ->
-          scope.$parent[attrs.repeatFinished]()
+          scope.$parent.$parent.vm[attrs.repeatFinished]()
           return
       return
   }
