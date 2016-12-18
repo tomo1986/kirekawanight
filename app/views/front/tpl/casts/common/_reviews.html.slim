@@ -190,6 +190,8 @@ main#main
       .reviews-list ng-if="vm.reviews.length > 0"
         .review ng-repeat="review in vm.reviews"
           .review--head
+            h2.head--title
+              | {{review.title}}
             .clearfix
               .head-star-box
                 .head--star
@@ -248,6 +250,7 @@ main#main
                       i.fa.fa-user-secret aria-hidden="true"
                       span
                         | {{review.sender.name || '匿名'}} ({{review.sender_review_count || 0}}件の口コミ)
+          p.review--body ng-bind-html="review.comment | noHTML | newlines"
           p ng-if="review.info1"
             | トイレは
             span ng-if="review.info1 == 'yes'" 綺麗でした
