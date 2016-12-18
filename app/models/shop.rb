@@ -52,6 +52,31 @@ class Shop < ApplicationRecord
     return self.time_discounts.where('start_at <= ? and end_at > ?',now, now)
   end
 
+  def self.avg_shop_score
+    shops =  Shop.where(deleted_at:nil)
+    shops.each do |shop|
+      count = shop.reviews.count
+      reviews = shop.reviews.where(is_displayed: true)
+      shop.score1 = reviews.sum(:score1) > 0 ? (reviews.sum(:score1) / count).round(1) : 0
+      shop.score2 = reviews.sum(:score2) > 0 ? (reviews.sum(:score2) / count).round(1) : 0
+      shop.score3 = reviews.sum(:score3) > 0 ? (reviews.sum(:score3) / count).round(1) : 0
+      shop.score4 = reviews.sum(:score4) > 0 ? (reviews.sum(:score4) / count).round(1) : 0
+      shop.score5 = reviews.sum(:score5) > 0 ? (reviews.sum(:score5) / count).round(1) : 0
+      shop.total_score = reviews.sum(:total_score) > 0 ? (reviews.sum(:total_score) / count).round(1) : 0
+      shop.save!
+    end
+  end
+  def self.score_ranking
+    ["karaoke","bar","massage"].each do |job|
+      shops =  Shop.where(deleted_at:nil,job_type: job).order("total_score desc")
+      shops.each.with_index(1) do |shop,i|
+        shop.ranking = i
+        shop.save!
+      end
+    end
+  end
+
+
   def self.to_jbuilders(shops)
     Jbuilder.new do |json|
       json.array! shops do |shop|
@@ -65,6 +90,8 @@ class Shop < ApplicationRecord
         json.address shop.address
         json.lat shop.lat
         json.lon shop.lon
+        json.total_score shop.total_score
+        json.ranking shop.ranking
         json.interview_ja shop.interview_ja
         json.interview_vn shop.interview_vn
         json.interview_en shop.interview_en
@@ -113,6 +140,8 @@ class Shop < ApplicationRecord
       json.address self.address
       json.lat self.lat
       json.lon self.lon
+      json.total_score self.total_score
+      json.ranking self.ranking
       json.interview_ja self.interview_ja
       json.interview_vn self.interview_vn
       json.interview_en self.interview_en

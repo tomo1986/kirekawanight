@@ -3,6 +3,12 @@
     breadcrumb-directive data="vm.breadcrumb"
   .container
     .shop-header.clearfix  ng-if="vm.shop"
+      .ranking
+        span.score
+          | スコア{{vm.shop.total_score}}
+        |  現在{{vm.all_shop_count}}店舗中
+        span.ranking-no
+          | {{vm.shop.ranking}}位
       .col-xs-12.col-sm-12.col-md-4.col-lg-5.col-xl-5
         .col-row-left.clearfix
           h2.shop-name-box

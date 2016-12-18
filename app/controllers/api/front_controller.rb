@@ -183,7 +183,7 @@ class Api::FrontController < ApiController
       json.favorites favorites
       json.discounts Discount.to_jbuilders(shop.open_discounts)
       json.shops Shop.to_jbuilders(shops)
-
+      json.all_shop_count Shop.where(job_type: shop.job_type,deleted_at:nil).count
     end
     render json: builder.target!
 

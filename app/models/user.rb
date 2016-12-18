@@ -76,6 +76,34 @@ class User < ApplicationRecord
     return 'マッサージ' if self.job_type == "massage"
     return 'xxx' if self.job_type == "sexy"
   end
+
+  def self.avg_user_score
+    users =  User.where(deleted_at:nil)
+    users.each do |user|
+      count = user.reviews.count
+      reviews = user.reviews.where(is_displayed: true)
+      user.score1 = reviews.sum(:score1) > 0 ? (reviews.sum(:score1) / count).round(1) : 0
+      user.score2 = reviews.sum(:score2) > 0 ? (reviews.sum(:score2) / count).round(1) : 0
+      user.score3 = reviews.sum(:score3) > 0 ? (reviews.sum(:score3) / count).round(1) : 0
+      user.score4 = reviews.sum(:score4) > 0 ? (reviews.sum(:score4) / count).round(1) : 0
+      user.score5 = reviews.sum(:score5) > 0 ? (reviews.sum(:score5) / count).round(1) : 0
+      user.total_score = reviews.sum(:total_score) > 0 ? (reviews.sum(:total_score) / count).round(1) : 0
+      user.save!
+    end
+  end
+
+  def self.score_ranking
+    ["karaoke","bar","massage"].each do |job|
+      users =  User.where(deleted_at:nil,job_type: job).order("total_score desc")
+      users.each.with_index(1) do |user,i|
+        user.ranking = i
+        user.save!
+      end
+    end
+  end
+
+
+
   def self.to_jbuilders(users)
     Jbuilder.new do |json|
       json.array! users do |user|
