@@ -265,6 +265,24 @@
   }
   .shop-header {
     .ranking {
+      .head-star-box{
+        margin-bottom: .7rem;
+        .head--star{
+          font-size: 1.2rem;
+          display: inline-block;
+          margin-right: $row-space-half;
+          i.active{
+            color: $_em_text;
+            margin-right:.2rem;
+            text-shadow: 0px 0px 10px #f7cb47;
+          }
+        }
+        .head--score {
+          display: inline-block;
+        }
+
+      }
+
       margin-bottom: 1rem;
       padding-bottom: .5rem;
       border-bottom: 1px solid #ddd;
