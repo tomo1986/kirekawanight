@@ -61,12 +61,38 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
+          <file leaf-file-name="shop_reviews.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/customer/shop_reviews.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6818182">
-                  <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-                  <folding />
+                <state vertical-scroll-proportion="-8.041667">
+                  <caret line="69" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+                  <folding>
+                    <marker date="1482076465000" expanded="true" signature="12:5127" placeholder=".container" />
+                    <marker date="1482076465000" expanded="true" signature="27:5127" placeholder="#review.rank-box.clearfix" />
+                    <marker date="1482076465000" expanded="true" signature="59:103" placeholder=".page-title" />
+                    <marker date="1482076465000" expanded="true" signature="110:4726" placeholder=".reviews-list ng-if=&quot;vm.review_shops.length &gt; 0&quot;" />
+                    <marker date="1482076465000" expanded="true" signature="167:4726" placeholder=".review ng-repeat=&quot;review in vm.review_shops&quot;" />
+                    <marker date="1482076465000" expanded="true" signature="223:3429" placeholder=".review--head" />
+                    <marker date="1482076465000" expanded="true" signature="249:3429" placeholder=".clearfix" />
+                    <marker date="1482076465000" expanded="true" signature="273:3030" placeholder=".head-star-box" />
+                    <marker date="1482076465000" expanded="true" signature="304:1618" placeholder=".head--star" />
+                    <marker date="1482076465000" expanded="true" signature="1635:1692" placeholder=".head--score" />
+                    <marker date="1482076465000" expanded="true" signature="1826:1911" placeholder=".meter--out" />
+                    <marker date="1482076465000" expanded="true" signature="1862:1911" placeholder=".meter--bar style=&quot;width:{{review.score1 * 5}}%;&quot;" />
+                    <marker date="1482076465000" expanded="true" signature="2087:2172" placeholder=".meter--out" />
+                    <marker date="1482076465000" expanded="true" signature="2123:2172" placeholder=".meter--bar style=&quot;width:{{review.score2 * 5}}%;&quot;" />
+                    <marker date="1482076465000" expanded="true" signature="2347:2432" placeholder=".meter--out" />
+                    <marker date="1482076465000" expanded="true" signature="2383:2432" placeholder=".meter--bar style=&quot;width:{{review.score3 * 5}}%;&quot;" />
+                    <marker date="1482076465000" expanded="true" signature="2606:2691" placeholder=".meter--out" />
+                    <marker date="1482076465000" expanded="true" signature="2642:2691" placeholder=".meter--bar style=&quot;width:{{review.score4 * 5}}%;&quot;" />
+                    <marker date="1482076465000" expanded="true" signature="2867:2952" placeholder=".meter--out" />
+                    <marker date="1482076465000" expanded="true" signature="2903:2952" placeholder=".meter--bar style=&quot;width:{{review.score5 * 5}}%;&quot;" />
+                    <marker date="1482076465000" expanded="true" signature="3045:3429" placeholder=".user--review_date" />
+                    <marker date="1482076465000" expanded="true" signature="3143:3429" placeholder=".review--user" />
+                    <marker date="1482076465000" expanded="true" signature="4733:4805" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+                    <marker date="1482076465000" expanded="true" signature="4812:5032" placeholder=".button-center style=&quot;text-align: center;margin: 2rem 0;&quot; ng-if=&quot;vm.review_shop_total &gt; vm.review_shops.length &amp;&amp; !vm.isReviewShopLoading&quot;" />
+                    <marker date="1482076465000" expanded="true" signature="5039:5127" placeholder=".nohave-box style=&quot;margin-bottom:2rem;&quot; ng-if=&quot;vm.review_shops.length == 0&quot; 口コミは現在ありません。" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -77,6 +103,98 @@
                 <state vertical-scroll-proportion="-3.8888888">
                   <caret line="7" column="37" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="37" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="cast_reviews.html.slim" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/customer/cast_reviews.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-8.125">
+                  <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+                  <folding>
+                    <marker date="1482076605000" expanded="true" signature="12:5128" placeholder=".container" />
+                    <marker date="1482076605000" expanded="true" signature="27:5128" placeholder="#review.rank-box.clearfix" />
+                    <marker date="1482076605000" expanded="true" signature="59:103" placeholder=".page-title" />
+                    <marker date="1482076605000" expanded="true" signature="110:4727" placeholder=".reviews-list ng-if=&quot;vm.review_users.length &gt; 0&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="167:4727" placeholder=".review ng-repeat=&quot;review in vm.review_users&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="223:3429" placeholder=".review--head" />
+                    <marker date="1482076605000" expanded="true" signature="249:3429" placeholder=".clearfix" />
+                    <marker date="1482076605000" expanded="true" signature="273:3030" placeholder=".head-star-box" />
+                    <marker date="1482076605000" expanded="true" signature="304:1618" placeholder=".head--star" />
+                    <marker date="1482076605000" expanded="true" signature="1635:1692" placeholder=".head--score" />
+                    <marker date="1482076605000" expanded="true" signature="1826:1911" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="1862:1911" placeholder=".meter--bar style=&quot;width:{{review.score1 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="2087:2172" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="2123:2172" placeholder=".meter--bar style=&quot;width:{{review.score2 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="2347:2432" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="2383:2432" placeholder=".meter--bar style=&quot;width:{{review.score3 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="2606:2691" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="2642:2691" placeholder=".meter--bar style=&quot;width:{{review.score4 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="2867:2952" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="2903:2952" placeholder=".meter--bar style=&quot;width:{{review.score5 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="3045:3429" placeholder=".user--review_date" />
+                    <marker date="1482076605000" expanded="true" signature="3143:3429" placeholder=".review--user" />
+                    <marker date="1482076605000" expanded="true" signature="4734:4806" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="4813:5033" placeholder=".button-center style=&quot;text-align: center;margin: 2rem 0;&quot; ng-if=&quot;vm.review_user_total &gt; vm.review_users.length &amp;&amp; !vm.isReviewUserLoading&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="5040:5128" placeholder=".nohave-box style=&quot;margin-bottom:2rem;&quot; ng-if=&quot;vm.review_users.length == 0&quot; 口コミは現在ありません。" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_reviews.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/_reviews.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.29467085">
+                  <caret line="153" column="121" selection-start-line="153" selection-start-column="121" selection-end-line="153" selection-end-column="121" />
+                  <folding>
+                    <marker date="1482076605000" expanded="true" signature="12:9529" placeholder=".container" />
+                    <marker date="1482076605000" expanded="true" signature="27:9529" placeholder="#review.rank-box.clearfix style=&quot;margin-bottom: 2rem;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="88:135" placeholder=".page-title" />
+                    <marker date="1482076605000" expanded="true" signature="142:9529" placeholder=".contact" />
+                    <marker date="1482076605000" expanded="true" signature="2379:3063" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="3355:4040" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="4348:5050" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="5378:6098" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="6422:7143" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="7559:7685" placeholder=".error" />
+                    <marker date="1482076605000" expanded="true" signature="8308:8438" placeholder=".error" />
+                    <marker date="1482076605000" expanded="true" signature="8409:8438" placeholder="| {{vm.reviewErrors.comment}}" />
+                    <marker date="1482076605000" expanded="true" signature="9133:9305" placeholder=".center-button ng-show=&quot;vm.canReviewSubmited&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="9318:9406" placeholder=".center-button ng-hide=&quot;vm.canReviewSubmited&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="9432:9529" placeholder=".center-button" />
+                    <marker date="1482076605000" expanded="true" signature="9532:15210" placeholder=".container" />
+                    <marker date="1482076605000" expanded="true" signature="9547:15210" placeholder="#review.rank-box.clearfix" />
+                    <marker date="1482076605000" expanded="true" signature="9579:9623" placeholder=".page-title" />
+                    <marker date="1482076605000" expanded="true" signature="9630:14845" placeholder=".reviews-list ng-if=&quot;vm.reviews.length &gt; 0&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="9682:14845" placeholder=".review ng-repeat=&quot;review in vm.reviews&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="9733:12926" placeholder=".review--head" />
+                    <marker date="1482076605000" expanded="true" signature="9759:12926" placeholder=".clearfix" />
+                    <marker date="1482076605000" expanded="true" signature="9783:12540" placeholder=".head-star-box" />
+                    <marker date="1482076605000" expanded="true" signature="9814:11128" placeholder=".head--star" />
+                    <marker date="1482076605000" expanded="true" signature="11145:11202" placeholder=".head--score" />
+                    <marker date="1482076605000" expanded="true" signature="11336:11421" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="11372:11421" placeholder=".meter--bar style=&quot;width:{{review.score1 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="11597:11682" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="11633:11682" placeholder=".meter--bar style=&quot;width:{{review.score2 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="11857:11942" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="11893:11942" placeholder=".meter--bar style=&quot;width:{{review.score3 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="12116:12201" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="12152:12201" placeholder=".meter--bar style=&quot;width:{{review.score4 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="12377:12462" placeholder=".meter--out" />
+                    <marker date="1482076605000" expanded="true" signature="12413:12462" placeholder=".meter--bar style=&quot;width:{{review.score5 * 5}}%;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="12555:12926" placeholder=".user--review_date" />
+                    <marker date="1482076605000" expanded="true" signature="12653:12926" placeholder=".review--user" />
+                    <marker date="1482076605000" expanded="true" signature="14084:14562" placeholder=".review--footer.clearfix ng-if=&quot;vm.parentCtrl.loginCustomer.id != review.sender.id &amp;&amp; vm.review.id != review.id&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="14209:14303" placeholder=".footer-text" />
+                    <marker date="1482076605000" expanded="true" signature="14316:14562" placeholder=".footer-btn" />
+                    <marker date="1482076605000" expanded="true" signature="14573:14845" placeholder=".review--footer.clearfix ng-if=&quot;vm.parentCtrl.loginCustomer &amp;&amp; vm.parentCtrl.loginCustomer.id != review.sender.id &amp;&amp; vm.review.id == review.id&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="14729:14845" placeholder=".footer-text style=&quot;color:#f00;&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="14852:14924" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="14931:15120" placeholder=".button-center style=&quot;text-align: center;margin: 2rem 0;&quot; ng-if=&quot;vm.total &gt; vm.reviews.length &amp;&amp; !vm.isLoading&quot;" />
+                    <marker date="1482076605000" expanded="true" signature="15127:15210" placeholder=".nohave-box style=&quot;margin-bottom:2rem;&quot; ng-if=&quot;vm.reviews.length == 0&quot; 口コミは現在ありません。" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -125,11 +243,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="shop.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="shop.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.66005665">
-                  <caret line="284" column="0" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
+                <state vertical-scroll-proportion="-3.0980392">
+                  <caret line="279" column="13" selection-start-line="279" selection-start-column="13" selection-end-line="279" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -138,8 +256,18 @@
           <file leaf-file-name="_reviews.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/_reviews.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-13.125">
-                  <caret line="21" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                <state vertical-scroll-proportion="-4.375">
+                  <caret line="69" column="74" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="74" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_write_review.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/_write_review.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.8815789">
+                  <caret line="159" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -163,7 +291,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/common/cast.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/cast.service.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/main.scss" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/common/_reviews.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/common/review.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/detail.directive.coffee" />
@@ -190,9 +317,7 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/customer/user_reviews.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/index.route.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/customer.scss" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/customer/shop_reviews.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/common/review.directive.coffee" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/customer/cast_reviews.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/customer/mypage.directive.coffee" />
         <option value="$PROJECT_DIR$/db/migrate/20161218131508_add_score1_users.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20161218133827_add_ranking_shops.rb" />
@@ -203,6 +328,9 @@
         <option value="$PROJECT_DIR$/app/models/shop.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/customer/shop_reviews.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/customer/cast_reviews.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/common/_reviews.html.slim" />
       </list>
     </option>
   </component>
@@ -412,7 +540,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="karaoke" />
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -442,7 +570,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="shops" />
+              <option name="myItemId" value="customer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -821,14 +1009,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/review_type/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/detail.directive.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.0588236">
@@ -1079,30 +1259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/customer/cast_reviews.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6666665">
-          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/customer/shop_reviews.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.291667">
-          <caret line="98" column="143" selection-start-line="98" selection-start-column="124" selection-end-line="98" selection-end-column="143" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/_reviews.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="225" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Capfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.331565">
@@ -1167,19 +1323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.090909">
-          <caret line="185" column="47" selection-start-line="185" selection-start-column="47" selection-end-line="185" selection-end-column="47" />
-          <folding>
-            <element signature="e#376#404#0" expanded="true" />
-            <element signature="e#1860#1888#0" expanded="true" />
-            <element signature="e#2019#2047#0" expanded="true" />
-            <element signature="e#11537#11567#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/schedule.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1204,6 +1347,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6818182">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/shop.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1212,27 +1363,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/_reviews.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="21" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66005665">
-          <caret line="284" column="0" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.0980392">
+          <caret line="279" column="13" selection-start-line="279" selection-start-column="13" selection-end-line="279" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/_reviews.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6818182">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state vertical-scroll-proportion="-4.375">
+          <caret line="69" column="74" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="74" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/customer/shop_reviews.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.041667">
+          <caret line="69" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <marker date="1482076465000" expanded="true" signature="12:5127" placeholder=".container" />
+            <marker date="1482076465000" expanded="true" signature="27:5127" placeholder="#review.rank-box.clearfix" />
+            <marker date="1482076465000" expanded="true" signature="59:103" placeholder=".page-title" />
+            <marker date="1482076465000" expanded="true" signature="110:4726" placeholder=".reviews-list ng-if=&quot;vm.review_shops.length &gt; 0&quot;" />
+            <marker date="1482076465000" expanded="true" signature="167:4726" placeholder=".review ng-repeat=&quot;review in vm.review_shops&quot;" />
+            <marker date="1482076465000" expanded="true" signature="223:3429" placeholder=".review--head" />
+            <marker date="1482076465000" expanded="true" signature="249:3429" placeholder=".clearfix" />
+            <marker date="1482076465000" expanded="true" signature="273:3030" placeholder=".head-star-box" />
+            <marker date="1482076465000" expanded="true" signature="304:1618" placeholder=".head--star" />
+            <marker date="1482076465000" expanded="true" signature="1635:1692" placeholder=".head--score" />
+            <marker date="1482076465000" expanded="true" signature="1826:1911" placeholder=".meter--out" />
+            <marker date="1482076465000" expanded="true" signature="1862:1911" placeholder=".meter--bar style=&quot;width:{{review.score1 * 5}}%;&quot;" />
+            <marker date="1482076465000" expanded="true" signature="2087:2172" placeholder=".meter--out" />
+            <marker date="1482076465000" expanded="true" signature="2123:2172" placeholder=".meter--bar style=&quot;width:{{review.score2 * 5}}%;&quot;" />
+            <marker date="1482076465000" expanded="true" signature="2347:2432" placeholder=".meter--out" />
+            <marker date="1482076465000" expanded="true" signature="2383:2432" placeholder=".meter--bar style=&quot;width:{{review.score3 * 5}}%;&quot;" />
+            <marker date="1482076465000" expanded="true" signature="2606:2691" placeholder=".meter--out" />
+            <marker date="1482076465000" expanded="true" signature="2642:2691" placeholder=".meter--bar style=&quot;width:{{review.score4 * 5}}%;&quot;" />
+            <marker date="1482076465000" expanded="true" signature="2867:2952" placeholder=".meter--out" />
+            <marker date="1482076465000" expanded="true" signature="2903:2952" placeholder=".meter--bar style=&quot;width:{{review.score5 * 5}}%;&quot;" />
+            <marker date="1482076465000" expanded="true" signature="3045:3429" placeholder=".user--review_date" />
+            <marker date="1482076465000" expanded="true" signature="3143:3429" placeholder=".review--user" />
+            <marker date="1482076465000" expanded="true" signature="4733:4805" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+            <marker date="1482076465000" expanded="true" signature="4812:5032" placeholder=".button-center style=&quot;text-align: center;margin: 2rem 0;&quot; ng-if=&quot;vm.review_shop_total &gt; vm.review_shops.length &amp;&amp; !vm.isReviewShopLoading&quot;" />
+            <marker date="1482076465000" expanded="true" signature="5039:5127" placeholder=".nohave-box style=&quot;margin-bottom:2rem;&quot; ng-if=&quot;vm.review_shops.length == 0&quot; 口コミは現在ありません。" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/customer/cast_reviews.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <marker date="1482076605000" expanded="true" signature="12:5128" placeholder=".container" />
+            <marker date="1482076605000" expanded="true" signature="27:5128" placeholder="#review.rank-box.clearfix" />
+            <marker date="1482076605000" expanded="true" signature="59:103" placeholder=".page-title" />
+            <marker date="1482076605000" expanded="true" signature="110:4727" placeholder=".reviews-list ng-if=&quot;vm.review_users.length &gt; 0&quot;" />
+            <marker date="1482076605000" expanded="true" signature="167:4727" placeholder=".review ng-repeat=&quot;review in vm.review_users&quot;" />
+            <marker date="1482076605000" expanded="true" signature="223:3429" placeholder=".review--head" />
+            <marker date="1482076605000" expanded="true" signature="249:3429" placeholder=".clearfix" />
+            <marker date="1482076605000" expanded="true" signature="273:3030" placeholder=".head-star-box" />
+            <marker date="1482076605000" expanded="true" signature="304:1618" placeholder=".head--star" />
+            <marker date="1482076605000" expanded="true" signature="1635:1692" placeholder=".head--score" />
+            <marker date="1482076605000" expanded="true" signature="1826:1911" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="1862:1911" placeholder=".meter--bar style=&quot;width:{{review.score1 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="2087:2172" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="2123:2172" placeholder=".meter--bar style=&quot;width:{{review.score2 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="2347:2432" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="2383:2432" placeholder=".meter--bar style=&quot;width:{{review.score3 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="2606:2691" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="2642:2691" placeholder=".meter--bar style=&quot;width:{{review.score4 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="2867:2952" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="2903:2952" placeholder=".meter--bar style=&quot;width:{{review.score5 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="3045:3429" placeholder=".user--review_date" />
+            <marker date="1482076605000" expanded="true" signature="3143:3429" placeholder=".review--user" />
+            <marker date="1482076605000" expanded="true" signature="4734:4806" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+            <marker date="1482076605000" expanded="true" signature="4813:5033" placeholder=".button-center style=&quot;text-align: center;margin: 2rem 0;&quot; ng-if=&quot;vm.review_user_total &gt; vm.review_users.length &amp;&amp; !vm.isReviewUserLoading&quot;" />
+            <marker date="1482076605000" expanded="true" signature="5040:5128" placeholder=".nohave-box style=&quot;margin-bottom:2rem;&quot; ng-if=&quot;vm.review_users.length == 0&quot; 口コミは現在ありません。" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.090909">
+          <caret line="185" column="47" selection-start-line="185" selection-start-column="47" selection-end-line="185" selection-end-column="47" />
+          <folding>
+            <element signature="e#376#404#0" expanded="true" />
+            <element signature="e#1860#1888#0" expanded="true" />
+            <element signature="e#2019#2047#0" expanded="true" />
+            <element signature="e#11537#11567#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/_write_review.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8815789">
+          <caret line="159" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/_reviews.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29467085">
+          <caret line="153" column="121" selection-start-line="153" selection-start-column="121" selection-end-line="153" selection-end-column="121" />
+          <folding>
+            <marker date="1482076605000" expanded="true" signature="12:9529" placeholder=".container" />
+            <marker date="1482076605000" expanded="true" signature="27:9529" placeholder="#review.rank-box.clearfix style=&quot;margin-bottom: 2rem;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="88:135" placeholder=".page-title" />
+            <marker date="1482076605000" expanded="true" signature="142:9529" placeholder=".contact" />
+            <marker date="1482076605000" expanded="true" signature="2379:3063" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+            <marker date="1482076605000" expanded="true" signature="3355:4040" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+            <marker date="1482076605000" expanded="true" signature="4348:5050" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+            <marker date="1482076605000" expanded="true" signature="5378:6098" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+            <marker date="1482076605000" expanded="true" signature="6422:7143" placeholder=".btn-group data-toggle=&quot;buttons&quot;" />
+            <marker date="1482076605000" expanded="true" signature="7559:7685" placeholder=".error" />
+            <marker date="1482076605000" expanded="true" signature="8308:8438" placeholder=".error" />
+            <marker date="1482076605000" expanded="true" signature="8409:8438" placeholder="| {{vm.reviewErrors.comment}}" />
+            <marker date="1482076605000" expanded="true" signature="9133:9305" placeholder=".center-button ng-show=&quot;vm.canReviewSubmited&quot;" />
+            <marker date="1482076605000" expanded="true" signature="9318:9406" placeholder=".center-button ng-hide=&quot;vm.canReviewSubmited&quot;" />
+            <marker date="1482076605000" expanded="true" signature="9432:9529" placeholder=".center-button" />
+            <marker date="1482076605000" expanded="true" signature="9532:15210" placeholder=".container" />
+            <marker date="1482076605000" expanded="true" signature="9547:15210" placeholder="#review.rank-box.clearfix" />
+            <marker date="1482076605000" expanded="true" signature="9579:9623" placeholder=".page-title" />
+            <marker date="1482076605000" expanded="true" signature="9630:14845" placeholder=".reviews-list ng-if=&quot;vm.reviews.length &gt; 0&quot;" />
+            <marker date="1482076605000" expanded="true" signature="9682:14845" placeholder=".review ng-repeat=&quot;review in vm.reviews&quot;" />
+            <marker date="1482076605000" expanded="true" signature="9733:12926" placeholder=".review--head" />
+            <marker date="1482076605000" expanded="true" signature="9759:12926" placeholder=".clearfix" />
+            <marker date="1482076605000" expanded="true" signature="9783:12540" placeholder=".head-star-box" />
+            <marker date="1482076605000" expanded="true" signature="9814:11128" placeholder=".head--star" />
+            <marker date="1482076605000" expanded="true" signature="11145:11202" placeholder=".head--score" />
+            <marker date="1482076605000" expanded="true" signature="11336:11421" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="11372:11421" placeholder=".meter--bar style=&quot;width:{{review.score1 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="11597:11682" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="11633:11682" placeholder=".meter--bar style=&quot;width:{{review.score2 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="11857:11942" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="11893:11942" placeholder=".meter--bar style=&quot;width:{{review.score3 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="12116:12201" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="12152:12201" placeholder=".meter--bar style=&quot;width:{{review.score4 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="12377:12462" placeholder=".meter--out" />
+            <marker date="1482076605000" expanded="true" signature="12413:12462" placeholder=".meter--bar style=&quot;width:{{review.score5 * 5}}%;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="12555:12926" placeholder=".user--review_date" />
+            <marker date="1482076605000" expanded="true" signature="12653:12926" placeholder=".review--user" />
+            <marker date="1482076605000" expanded="true" signature="14084:14562" placeholder=".review--footer.clearfix ng-if=&quot;vm.parentCtrl.loginCustomer.id != review.sender.id &amp;&amp; vm.review.id != review.id&quot;" />
+            <marker date="1482076605000" expanded="true" signature="14209:14303" placeholder=".footer-text" />
+            <marker date="1482076605000" expanded="true" signature="14316:14562" placeholder=".footer-btn" />
+            <marker date="1482076605000" expanded="true" signature="14573:14845" placeholder=".review--footer.clearfix ng-if=&quot;vm.parentCtrl.loginCustomer &amp;&amp; vm.parentCtrl.loginCustomer.id != review.sender.id &amp;&amp; vm.review.id == review.id&quot;" />
+            <marker date="1482076605000" expanded="true" signature="14729:14845" placeholder=".footer-text style=&quot;color:#f00;&quot;" />
+            <marker date="1482076605000" expanded="true" signature="14852:14924" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
+            <marker date="1482076605000" expanded="true" signature="14931:15120" placeholder=".button-center style=&quot;text-align: center;margin: 2rem 0;&quot; ng-if=&quot;vm.total &gt; vm.reviews.length &amp;&amp; !vm.isLoading&quot;" />
+            <marker date="1482076605000" expanded="true" signature="15127:15210" placeholder=".nohave-box style=&quot;margin-bottom:2rem;&quot; ng-if=&quot;vm.reviews.length == 0&quot; 口コミは現在ありません。" />
+          </folding>
         </state>
       </provider>
     </entry>

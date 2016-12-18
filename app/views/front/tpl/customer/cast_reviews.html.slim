@@ -65,6 +65,8 @@ main#main
                       i.fa.fa-user-secret aria-hidden="true"
                       span
                         | {{review.receiver.name}}
+          p.review--body ng-bind-html="review.comment | noHTML | newlines"
+          p.review--body ng-bind-html="review.opinion | noHTML | newlines"
 
           p ng-if="review.info1"
             | トイレは
