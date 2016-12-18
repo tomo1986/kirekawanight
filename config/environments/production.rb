@@ -1,6 +1,19 @@
+ActionMailer::Base.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "kire-kawa.com",
+    :authentication => :login,
+    :user_name => "info",
+    :password => "kirekawa2016",
+}
+
+ActionMailer::Base.default :from => 'info@kire-kawa.com'
+
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.action_mailer.default_url_options = { host: 'night.kire-kawa.com' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 

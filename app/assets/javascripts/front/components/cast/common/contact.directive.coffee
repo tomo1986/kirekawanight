@@ -1,6 +1,6 @@
 angular.module 'bisyoujoZukanNight'
-.directive 'shopDetailContactDirective', (shopService, modalService, customerService, $state) ->
-  ShopDetailContactController = () ->
+.directive 'castDetailContactDirective', (castService, modalService, customerService, $state) ->
+  CastDetailContactController = () ->
     vm = this
     vm.init = ->
       vm.canContactSubmited = true
@@ -21,8 +21,8 @@ angular.module 'bisyoujoZukanNight'
       }
 
       vm.contact = {
-        type: 'shop_detail'
-        subject_type: 'Shop'
+        type: 'cast_detail'
+        subject_type: 'Cast'
         subject_id: $state.params.id
         return_way: 'email'
         name: if vm.parentCtrl.loginCustomer then vm.parentCtrl.loginCustomer.name else null
@@ -33,7 +33,7 @@ angular.module 'bisyoujoZukanNight'
       }
       vm.getCasts()
     vm.getCasts = ->
-      shopService.getAllCasts({id: vm.parentCtrl.pageId}).then((res) ->
+      castService.getAllCasts({id: vm.parentCtrl.pageId}).then((res) ->
         if res.data.code == 1
           angular.forEach(res.data.users, (cast) ->
             vm.casts.push(cast)
@@ -59,14 +59,14 @@ angular.module 'bisyoujoZukanNight'
       vm.contact.message = message + vm.contact.message
       vm.canContactSubmited = false
 
-      shopService.sendContact(vm.contact).then((res) ->
+      castService.sendContact(vm.contact).then((res) ->
         vm.canContactSubmited = true
         title = '受け付けました。'
         message = '回答を授時行っております。今しばらくお待ちください。'
         modalService.alert(title,message)
         vm.contact = {
-          type: 'shop_detail'
-          subject_type: 'Shop'
+          type: 'cast_detail'
+          subject_type: 'Cast'
           subject_id: $state.params.id
           return_way: 'email'
           name: if vm.parentCtrl.loginCustomer then vm.parentCtrl.loginCustomer.name else null
@@ -106,9 +106,9 @@ angular.module 'bisyoujoZukanNight'
     scope:{
       parentCtrl: "="
     }
-    controller: ShopDetailContactController
+    controller: CastDetailContactController
     controllerAs: 'vm'
     link: linkFunc
-    templateUrl: "#{location.protocol + '//' + location.host}/front/tpl/shops/common/_contact.html"
+    templateUrl: "#{location.protocol + '//' + location.host}/front/tpl/casts/common/_contact.html"
     bindToController: true
 

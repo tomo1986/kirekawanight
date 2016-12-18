@@ -1,0 +1,60 @@
+main#main
+  .cast-detail-page.clearfix
+    .col-md-12.some-cast.detail
+      .row
+        .page-title
+          h2.title
+            | SOME SHOP Casts
+        .filter-box.clearfix
+          .total-count-box
+            span
+              | {{vm.total | number}}
+            | 件のキャストが見つかりました。
+          ul.filter-list
+            li.sort
+              select.form-control name="constellation" ng-model="vm.filters.sort"
+                option value="new" ng-selected="vm.filters.sort == 'new'" 新着順
+                option value="support" ng-selected="vm.filters.sort == 'support'" 応援されている順
+                option value="favorite" ng-selected="vm.filters.sort == 'favorite'" お気に入り登録されている順
+                option value="review" ng-selected="vm.filters.sort == 'review'" スコアが高い順
+            li.order
+              select.form-control name="constellation" ng-model="vm.filters.order"
+                option value="asc" ng-selected="vm.filters.order == 'asc'" 昇順
+                option value="desc" ng-selected="vm.filters.order == 'desc'" 降順
+        .queen-list.clearfix ng-if="vm.casts.length > 0"
+          li ng-repeat="cast in vm.casts"
+            .fream
+              .fream--basic.fream--top-left
+              .fream--basic.fream--top-right
+              .fream--basic.fream--bottom-left
+              .fream--basic.fream--bottom-right
+              a href="/casts/karaoke/{{cast.id}}"
+                span ng-if="cast.images[0]"
+                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+                span ng-if="!cast.images[0]"
+                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+            .profile
+              h3.shop-name
+                a href="/shops/karaoke/{{cast.shop.id}}/info" ng-if="cast.shop"
+                  | {{cast.shop.name}}
+                span ng-if="!cast.shop"
+                  | 所属なし
+              h4.name
+                | NO.{{cast.id}}　{{cast.nick_name}}({{cast.age}})
+
+              .body
+                .favorid.clearfix
+                  h5.title
+                    | お気入り登録数
+                  p.count
+                    |  {{cast.favorite_count | number}}
+                .support.clearfix
+                  h5.title
+                    | 応援数
+                  p.count
+                    | {{cast.support_count | number}}
+        .button-center ng-if="vm.isLoading"
+          loading-directive size="125"
+        .button-center style="text-align: center;margin: 2rem 0;" ng-if="vm.total > vm.casts.length && !vm.isLoading"
+          button.btn.btn-submit type="button" ng-click="vm.onAddCasts()" 読み込む
+        .nohave-box ng-if="vm.casts.length == 0" Coming Soon

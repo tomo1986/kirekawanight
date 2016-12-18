@@ -121,21 +121,32 @@ Rails.application.routes.draw do
       get 'customers/sign_out' => 'devise/sessions#destroy',
           :via => Devise.mappings[:customer].sign_out_via
     end
-
     get 'index', to: 'home#index'
     get 'login',to: 'home#login'
+    get 'login/password', to: 'home#login'
     get 'logout', to: 'home#logout'
     get 'mypage',to: 'home#mypage'
     get 'mypage/edit', to: 'home#mypage_edit'
     get 'mypage/show',to: 'home#mypage_show'
     get 'mypage/contacts', to: 'home#index'
-    get 'mypage/reviews', to: 'home#index'
+    get 'mypage/shop_reviews', to: 'home#index'
+    get 'mypage/cast_reviews', to: 'home#index'
 
     get 'casts/karaoke', to: 'home#cast_karaoke'
     get 'casts/karaoke/:id', to: 'home#index'
+    get 'casts/karaoke/:id/info', to: 'home#index'
+    get 'casts/karaoke/:id/system', to: 'home#index'
+    get 'casts/karaoke/:id/cast', to: 'home#index'
+    get 'casts/karaoke/:id/contact', to: 'home#index'
+    get 'casts/karaoke/:id/reviews', to: 'home#index'
 
     get 'casts/guide', to: 'home#index'
     get 'casts/guide/:id', to: 'home#index'
+    get 'casts/guide/:id/info', to: 'home#index'
+    get 'casts/guide/:id/system', to: 'home#index'
+    get 'casts/guide/:id/cast', to: 'home#index'
+    get 'casts/guide/:id/contact', to: 'home#index'
+    get 'casts/guide/:id/reviews', to: 'home#index'
 
     get 'shops/karaoke', to: 'home#shop_karaoke'
     get 'shops/karaoke/:id', to: 'home#index'
@@ -148,6 +159,11 @@ Rails.application.routes.draw do
 
     get 'casts/bar', to: 'home#cast_bar'
     get 'casts/bar/:id', to: 'home#index'
+    get 'casts/bar/:id/info', to: 'home#index'
+    get 'casts/bar/:id/system', to: 'home#index'
+    get 'casts/bar/:id/cast', to: 'home#index'
+    get 'casts/bar/:id/contact', to: 'home#index'
+    get 'casts/bar/:id/reviews', to: 'home#index'
 
     get 'shops/bar', to: 'home#shop_bar'
     get 'shops/bar/:id', to: 'home#index'
@@ -159,6 +175,11 @@ Rails.application.routes.draw do
 
     get 'casts/massage', to: 'home#cast_massage'
     get 'casts/massage/:id', to: 'home#index'
+    get 'casts/massage/:id/info', to: 'home#index'
+    get 'casts/massage/:id/system', to: 'home#index'
+    get 'casts/massage/:id/cast', to: 'home#index'
+    get 'casts/massage/:id/contact', to: 'home#index'
+    get 'casts/massage/:id/reviews', to: 'home#index'
 
     get 'shops/massage', to: 'home#shop_massage'
     get 'shops/massage/:id', to: 'home#index'
@@ -189,6 +210,7 @@ Rails.application.routes.draw do
   namespace :api do
     scope :front, module: 'front' do
       post :logout
+      post :change_password
       get :connect
       get :all_users
       get :all_shops

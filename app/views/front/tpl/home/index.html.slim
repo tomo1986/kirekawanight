@@ -39,7 +39,7 @@
       .top-box style="margin: 3rem 0;" ng-if="vm.karaokeUsers.length > 0"
         .page-title
           h2.title
-            | YOUR FAVORITE KARAOKE GIRLS
+            | YOUR FAVORITE KARAOKE Casts
         .queen-list.clearfix
           li ng-repeat="cast in vm.karaokeUsers"
             .fream
@@ -53,10 +53,25 @@
                 span ng-if="!cast.images[0]"
                   = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
             .profile
-              .name
+              h3.shop-name
+                a href="/shops/karaoke/{{cast.shop.id}}/info" ng-if="cast.shop"
+                  | {{cast.shop.name}}
+                span ng-if="!cast.shop"
+                  | 所属なし
+              h4.name
                 | {{cast.nick_name}}({{cast.age}})
               .body
-                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+                .support.clearfix
+                  h5.title
+                    | 応援数
+                  p.count
+                    | {{cast.support_count | number}}
+                .favorid.clearfix
+                  h5.title
+                    | お気入り登録数
+                  p.count
+                    |  {{cast.favorite_count | number}}
+
       .top-box style="margin: 3rem 0;" ng-if="vm.barUsers.length > 0"
         .page-title
           h2.title
@@ -74,135 +89,24 @@
                 span ng-if="!cast.images[0]"
                   = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
             .profile
-              .name
+              h3.shop-name
+                a href="/shops/karaoke/{{cast.shop.id}}/info" ng-if="cast.shop"
+                  | {{cast.shop.name}}
+                span ng-if="!cast.shop"
+                  | 所属なし
+              h4.name
                 | {{cast.nick_name}}({{cast.age}})
               .body
-                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
-
-      .top-box style="margin: 3rem 0;" ng-if="vm.massageUsers.length > 0"
-        .page-title
-          h2.title
-            | YOUR FAVORITE MASSAGE GIRLS
-        .queen-list.clearfix
-          li ng-repeat="cast in vm.massageUsers"
-            .fream
-              .fream--basic.fream--top-left
-              .fream--basic.fream--top-right
-              .fream--basic.fream--bottom-left
-              .fream--basic.fream--bottom-right
-              a href="/casts/massage/{{cast.id}}"
-                span ng-if="cast.images[0]"
-                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-                span ng-if="!cast.images[0]"
-                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-            .profile
-              .name
-                | {{cast.nick_name}}({{cast.age}})
-              .body
-                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
-      .top-box style="margin: 3rem 0;" ng-if="vm.sexyUsers.length > 0"
-        .page-title
-          h2.title
-            | YOUR FAVORITE SEXY GIRLS
-        .queen-list.clearfix
-          li ng-repeat="cast in vm.sexyUsers"
-            .fream
-              .fream--basic.fream--top-left
-              .fream--basic.fream--top-right
-              .fream--basic.fream--bottom-left
-              .fream--basic.fream--bottom-right
-              a href="/casts/sexy/{{cast.id}}"
-                span ng-if="cast.images[0]"
-                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-                span ng-if="!cast.images[0]"
-                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-            .profile
-              .name
-                | {{cast.nick_name}}({{cast.age}})
-              .body
-                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
-
-      .top-box style="margin: 3rem 0;" ng-if="vm.newKaraokeUsers.length > 0"
-        .page-title
-          h2.title
-            | NEW KARAOKE GIRLS
-        .queen-list.clearfix
-          li ng-repeat="cast in vm.newKaraokeUsers"
-            .fream
-              .fream--basic.fream--top-left
-              .fream--basic.fream--top-right
-              .fream--basic.fream--bottom-left
-              .fream--basic.fream--bottom-right
-              a href="/casts/karaoke/{{cast.id}}"
-                span ng-if="cast.images[0]"
-                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-                span ng-if="!cast.images[0]"
-                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-            .profile
-              .name
-                | {{cast.nick_name}}({{cast.age}})
-      .top-box style="margin: 3rem 0;" ng-if="vm.newBarUsers.length > 0"
-        .page-title
-          h2.title
-            | NEW BAR GIRLS
-        .queen-list.clearfix
-          li ng-repeat="cast in vm.newBarUsers"
-            .fream
-              .fream--basic.fream--top-left
-              .fream--basic.fream--top-right
-              .fream--basic.fream--bottom-left
-              .fream--basic.fream--bottom-right
-              a href="/casts/bar/{{cast.id}}"
-                span ng-if="cast.images[0]"
-                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-                span ng-if="!cast.images[0]"
-                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-            .profile
-              .name
-                | {{cast.nick_name}}({{cast.age}})
-
-      .top-box style="margin: 3rem 0;" ng-if="vm.newMassageUsers.length > 0"
-        .page-title
-          h2.title
-            | NEW MASSAGE GIRLS
-        .queen-list.clearfix
-          li ng-repeat="cast in vm.newMassageUsers"
-            .fream
-              .fream--basic.fream--top-left
-              .fream--basic.fream--top-right
-              .fream--basic.fream--bottom-left
-              .fream--basic.fream--bottom-right
-              a href="/casts/massage/{{cast.id}}"
-                span ng-if="cast.images[0]"
-                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-                span ng-if="!cast.images[0]"
-                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-            .profile
-              .name
-                | {{cast.nick_name}}({{cast.age}})
-              .body
-                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
-      .top-box style="margin: 3rem 0;" ng-if="vm.newSexyUsers.length > 0"
-        .page-title
-          h2.title
-            | NEW SEXY GIRLS
-        .queen-list.clearfix
-          li ng-repeat="cast in vm.newSexyUsers"
-            .fream
-              .fream--basic.fream--top-left
-              .fream--basic.fream--top-right
-              .fream--basic.fream--bottom-left
-              .fream--basic.fream--bottom-right
-              a href="/casts/sexy/{{cast.id}}"
-                span ng-if="cast.images[0]"
-                  img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-                span ng-if="!cast.images[0]"
-                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-            .profile
-              .name
-                | {{cast.nick_name}}({{cast.age}})
-              .body
-                | {{cast.height}}/{{cast.weight}} B{{cast.bust}}({{cast.bust_size}}) W{{cast.waist}} H{{cast.hip}}
+                .support.clearfix
+                  h5.title
+                    | 応援数
+                  p.count
+                    | {{cast.support_count | number}}
+                .favorid.clearfix
+                  h5.title
+                    | お気入り登録数
+                  p.count
+                    |  {{cast.favorite_count | number}}
 
       .comsept-box--detail
         h3.sub-title 会員登録について
@@ -211,12 +115,12 @@
 
         h3.sub-title キレカワ -night-とは
         p
-          | キレカワナイトは「綺麗」「可愛い」ベトナムのカラオケ、ガールズバー、マッサージ、セクシーな女の子を集め、
+          | キレカワナイトは「綺麗」「可愛い」ベトナムのカラオケ、ガールズバーの女の子を集め、
           br
           | あなたと女の子をマッチングさせるサービスです。
           br
           | ベトナムへ旅行に来る方もあらかじめ連絡を取っていれば安心して遊ぶことができます。
           br
-          | また、駐在の方もカラオケに行ったけど、なかなか本命に当たらないかと思います。
+          | また、駐在の方もカラオケに行ったけど、なかなか本命に当たらないということを解消したいと思っています。
           br
           |

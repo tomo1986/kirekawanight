@@ -11,10 +11,25 @@ class Api::FrontController < ApiController
     render json: builder.target!
   end
 
+  def change_password
+    email = params[:email]
+    password = params[:password]
+    render_failed(4, t('customer.error.not_find')) and return if email.blank? || password.blank?
+    customer = Customer.where(:email => params[:email]).first
+    customer.password = password
+    if customer.save!
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.customer customer.to_jbuilder
+      end
+
+    end
+
+    render json: builder.target!
+
+  end
+
   def connect
-    p "============"
-    p current_customer
-    p "============"
     if customer_signed_in?
       builder = Jbuilder.new do |json|
         json.code 1
@@ -66,9 +81,9 @@ class Api::FrontController < ApiController
   def api0
     email = params[:email]
     password = params[:password]
-    render_failed(4, t('admin.error.not_find')) and return if email.blank? || password.blank?
+    render_failed(4, t('customer.error.not_find')) and return if email.blank? || password.blank?
     customer = Customer.where(:email => params[:email]).first
-    render_failed(4, t('admin.error.not_find')) and return  unless customer && customer.valid_password?(params[:password])
+    render_failed(4, t('customer.error.not_find')) and return  unless customer && customer.valid_password?(params[:password])
     customer.remember_me = params[:remember_me]
     sign_in customer
     builder = Jbuilder.new do |json|
@@ -429,7 +444,7 @@ class Api::FrontController < ApiController
   def api13
     if params[:type] == 'shop'
       review = ReviewType::Shop.new
-    elsif params[:type] == 'user'
+    elsif params[:type] == 'cast'
       review = ReviewType::User.new
     end
 
@@ -597,9 +612,17 @@ class Api::FrontController < ApiController
     user = User.find_by(id: params[:id])
     users = User.where( shop_id: user.shop_id).where.not(id: user.id) if user.shop_id.present?
     total = users ? users.count : 0
-    limit = 10
+    if params[:sort] == 'new'
+      users = users.sort_new(params[:order])
+    elsif params[:sort] == 'support'
+      users = users.sort_support(params[:order])
+    elsif params[:sort] == 'favorite'
+      users = users.sort_favorite(params[:order])
+    end
+    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 1
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
     users = users.page(page).per(limit) if users.present?
+
     builders = Jbuilder.new do |json|
       json.users users ? User.to_jbuilders(users) : nil
       json.total total
@@ -610,14 +633,14 @@ class Api::FrontController < ApiController
 
   def api23
     shop = Shop.find_by(id: params[:id])
-    reviews = shop.reviews if shop
+    reviews = shop.reviews.order("created_at desc") if shop
     total = reviews.count if reviews
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 1
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
     reviews = reviews.page(page).per(limit) if reviews.present?
     builders = Jbuilder.new do |json|
       json.code 1
-      json.reviews Review.to_jbuilders(reviews)
+      json.reviews reviews ? Review.to_jbuilders(reviews) : nil
       json.total total
     end
     render json: builders.target!
@@ -687,6 +710,44 @@ class Api::FrontController < ApiController
     builders = Jbuilder.new do |json|
       json.code 1
       json.users users ? User.to_jbuilders(users) : nil
+    end
+    render json: builders.target!
+  end
+
+  def api28
+    user = User.find_by(id: params[:id])
+    reviews = user.reviews.order("created_at desc") if user
+    total = reviews.count if reviews
+    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 1
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    reviews = reviews.page(page).per(limit) if reviews.present?
+    builders = Jbuilder.new do |json|
+      json.code 1
+      json.reviews reviews ? Review.to_jbuilders(reviews) : nil
+      json.total total
+    end
+    render json: builders.target!
+  end
+
+  def api29
+    customer = Customer.find_by(id: params[:id])
+    review_shops = customer.review_shops.order("created_at desc") if customer
+    review_users = customer.review_users.order("created_at desc") if customer
+
+    review_shop_total = review_shops.count if review_shops
+    review_user_total = review_users.count if review_users
+
+    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 1
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    review_shops = review_shops.page(page).per(limit) if review_shops.present?
+    review_users = review_users.page(page).per(limit) if review_users.present?
+
+    builders = Jbuilder.new do |json|
+      json.code 1
+      json.review_shops review_shops ? Review.to_jbuilders(review_shops) : nil
+      json.review_users review_users ? Review.to_jbuilders(review_users) : nil
+      json.review_shop_total review_shop_total
+      json.review_user_total review_user_total
     end
     render json: builders.target!
   end

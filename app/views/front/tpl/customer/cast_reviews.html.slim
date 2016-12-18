@@ -4,11 +4,9 @@ main#main
       .page-title
         h2.title
           | 口コミ
-      .reviews-list ng-if="vm.reviews.length > 0"
-        .review ng-repeat="review in vm.reviews"
+      .reviews-list ng-if="vm.review_users.length > 0"
+        .review ng-repeat="review in vm.review_users"
           .review--head
-            h2.head--title
-              | {{review.title}}
             .clearfix
               .head-star-box
                 .head--star
@@ -63,11 +61,11 @@ main#main
                 div　{{review.created_at | date: 'yyyy年M月d日' }}
                 .review--user
                   h3.user--name.clearfix
-                    a href="#"
+                    a href="/casts/{{review.receiver.job_type}}/{{review.receiver.id}}/info"
                       i.fa.fa-user-secret aria-hidden="true"
                       span
-                        | {{review.sender.name || '匿名'}} ({{review.sender_review_count || 0}}件の口コミ)
-          p.review--body ng-bind-html="review.comment | noHTML | newlines"
+                        | {{review.receiver.name}}
+
           p ng-if="review.info1"
             | トイレは
             span ng-if="review.info1 == 'yes'" 綺麗でした
@@ -97,19 +95,8 @@ main#main
             span ng-if="review.info4 == 'no'" できません。
             span ng-if="review.info4 == 'not'" どちらとも言えません。
 
-          .review--footer.clearfix ng-if="vm.parentCtrl.loginCustomer.id != review.sender.id && vm.review.id != review.id"
-            .footer-text
-              | {{review.reference_count}}人のお客様がこれが役に立ったと考えています. この口コミは参考になりましたか？
-            .footer-btn
-              a.btn.reference-btn.top.left href="javascript:void(0)" ng-click="vm.onClickedReference(review,'yes')" はい
-              a.btn.reference-btn.right href="javascript:void(0)" ng-click="vm.onClickedReference(review,'no')" いいえ
-          .review--footer.clearfix ng-if="vm.parentCtrl.loginCustomer && vm.parentCtrl.loginCustomer.id != review.sender.id && vm.review.id == review.id"
-            .footer-text style="color:#f00;"
-              i.fa.fa-check aria-hidden="true"
-              | フィードバックありがとうございました。
-
       .button-center ng-if="vm.isLoading"
         loading-directive size="125"
-      .button-center style="text-align: center;margin: 2rem 0;" ng-if="vm.total > vm.reviews.length && !vm.isLoading"
-        button.btn.btn-submit type="button" ng-click="vm.onAddReviews()" 読み込む
-      .nohave-box ng-if="vm.reviews.length == 0" レビューは現在ありません。
+      .button-center style="text-align: center;margin: 2rem 0;" ng-if="vm.review_user_total > vm.review_users.length && !vm.isReviewUserLoading"
+        button.btn.btn-submit type="button" ng-click="vm.onAddCastReviews()" 読み込む
+      .nohave-box style="margin-bottom:2rem;" ng-if="vm.review_users.length == 0" 口コミは現在ありません。

@@ -1,6 +1,31 @@
 .main-content.shop-detail-page.clearfix shop-detail-directive=""
   .container
     breadcrumb-directive data="vm.breadcrumb"
+  .container
+    .shop-header.clearfix ng-if="vm.shop"
+      .col-xs-12.col-sm-12.col-md-4.col-lg-5.col-xl-5
+        .col-row-left.clearfix
+          h2.shop-name-box
+            .shop-name-kana
+              | {{vm.shop.name_kana}}
+            .shop-name
+              | {{vm.shop.name}}
+      .col-xs-12.col-sm-12.col-md-8.col-lg-7.col-xl-7
+        .row.clearfix
+          .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
+            .row.clearfix
+              .shop--tel
+                i.fa.fa-mobile aria-hidden="true"
+                a href="tel:{{vm.shop.tel}}"
+                  | {{vm.shop.tel}}
+              .text--kirekawa
+                | お問合わせの際は「キレカワを見た」というとスムーズです。
+          .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
+            .row.clearfix
+              .review-btn-box
+                a.btn.btn-review href="/shops/massage/{{vm.shop.id}}/write_review" レビューを書く
+              .contact-btn-box
+                a.btn.btn-review href="/shops/massage/{{vm.shop.id}}/contact" 問い合わせ
 
   .container
     ul.genre-tag
@@ -10,8 +35,6 @@
         a ng-class="{'active': vm.activeTab == 'system'}" href="/shops/massage/{{vm.shop.id}}/system" SYSTEM
       li
         a ng-class="{'active': vm.activeTab == 'cast'}" href="/shops/massage/{{vm.shop.id}}/cast" CAST
-      li
-        a ng-class="{'active': vm.activeTab == 'contact'}" href="/shops/massage/{{vm.shop.id}}/contact" CONTACT
       li
         a ng-class="{'active': vm.activeTab == 'reviews'}" href="/shops/massage/{{vm.shop.id}}/reviews" REVIEWS
   ui-view=""

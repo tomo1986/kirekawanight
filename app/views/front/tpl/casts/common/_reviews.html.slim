@@ -1,0 +1,270 @@
+main#main
+  .container
+    #review.rank-box.clearfix style="margin-bottom: 2rem;"
+      .page-title
+        h2.title
+          | REVIEW
+      .contact
+        -if customer_signed_in?
+          form role="form" name="reviewForm" novalidate=''
+
+            p 1：不満、２：やや不満、３：普通、４：やや満足、５：満足
+            table.res-form-table
+              caption あなたの総合評価
+              tr
+                th.res-form-table__th.parent-th.title-box.clearfix
+                  span.title 接客はどうでしたか？
+                  span.btn.required 必須
+                td.res-form-table__td.parent-td.input-box
+                  rzslider rz-slider-model="vm.review.score1" rz-slider-options="vm.serviceScoreAange.options"
+              tr
+                th.res-form-table__th.parent-th.title-box.clearfix
+                  span.title 仕事意識は高いですか？
+                  span.btn.required 必須
+                td.res-form-table__td.parent-td.input-box
+                  rzslider rz-slider-model="vm.review.score2" rz-slider-options="vm.servingScoreAange.options"
+              tr
+                th.res-form-table__th.parent-th.title-box.clearfix
+                  span.title トーク上手ですか？
+                  span.btn.required 必須
+                td.res-form-table__td.parent-td.input-box
+                  rzslider rz-slider-model="vm.review.score3" rz-slider-options="vm.girlScoreAange.options"
+              tr
+                th.res-form-table__th.parent-th.title-box.clearfix
+                  span.title 女の子の雰囲気はどうでしたか？
+                  span.btn.required 必須
+                td.res-form-table__td.parent-td.input-box
+                  rzslider rz-slider-model="vm.review.score4" rz-slider-options="vm.ambienceScoreAange.options"
+              tr
+                th.res-form-table__th.parent-th.title-box.clearfix
+                  span.title また会いたいと思いましたか？
+                  span.btn.required 必須
+                td.res-form-table__td.parent-td.input-box
+                  rzslider rz-slider-model="vm.review.score5" rz-slider-options="vm.againScoreAange.options"
+            table.res-form-table
+              caption 更に詳しい情報をご提供ください。（任意）
+              tr
+                th.res-form-table__th.parent-th.title-box.clearfix
+                  span.title
+                    | このお店の
+                    span.attention トイレ
+                    | はきれいですか？
+
+                td.res-form-table__td.parent-td.input-box
+                  .btn-group data-toggle="buttons"
+                    label.btn.btn-default ng-class="{'active': vm.review.info1 == 'yes'}" ng-click="vm.onInfo1('yes')"
+                      input autocomplete="off" type="radio" value="yes"
+                      | はい
+                    label.btn.btn-default ng-class="{'active': vm.review.info1 == 'no'}" ng-click="vm.onInfo1('no')"
+                      input autocomplete="off" type="radio" value="no"
+                      | いいえ
+                    label.btn.btn-default ng-class="{'active': vm.review.info1 == 'not'}" ng-click="vm.onInfo1('not')"
+                      input autocomplete="off" type="radio" value="not"
+                      | 不明
+              tr
+                th.res-form-table__th.parent-th.title-box.clearfix
+                  span.title
+                    | このお店の
+                    span.attention スタッフの対応
+                    | は良いですか？
+
+                td.res-form-table__td.parent-td.input-box
+                  .btn-group data-toggle="buttons"
+                    label.btn.btn-default ng-class="{'active': vm.review.info2 == 'yes'}" ng-click="vm.onInfo2('yes')"
+                      input autocomplete="off" type="radio" value="yes"
+                      | はい
+                    label.btn.btn-default ng-class="{'active': vm.review.info2 == 'no'}" ng-click="vm.onInfo2('no')"
+                      input autocomplete="off" type="radio" value="no"
+                      | いいえ
+                    label.btn.btn-default ng-class="{'active': vm.review.info2 == 'not'}" ng-click="vm.onInfo2('not')"
+                      input autocomplete="off" type="radio" value="not"
+                      | 不明
+
+                tr
+                  th.res-form-table__th.parent-th.title-box.clearfix
+                    span.title
+                      | このお店の
+                      span.attention カラオケの機器
+                      | は良いですか？
+
+                  td.res-form-table__td.parent-td.input-box
+                    .btn-group data-toggle="buttons"
+                      label.btn.btn-default ng-class="{'active': vm.review.info3 == 'yes'}" ng-click="vm.onInfo3('yes')"
+                        input autocomplete="off" type="radio" value="yes"
+                        | はい
+                      label.btn.btn-default ng-class="{'active': vm.review.info3 == 'no'}" ng-click="vm.onInfo3('no')"
+                        input autocomplete="off" type="radio" value="no"
+                        | いいえ
+                      label.btn.btn-default ng-class="{'active': vm.review.info3 == 'not'}" ng-click="vm.onInfo3('not')"
+                        input autocomplete="off" type="radio" value="not"
+                        | 不明
+                  tr
+                    th.res-form-table__th.parent-th.title-box.clearfix
+                      span.title
+                        | このお店のキャストの
+                        span.attention Tip要求
+                        | は激しいですか？
+
+                    td.res-form-table__td.parent-td.input-box
+                      .btn-group data-toggle="buttons"
+                        label.btn.btn-default ng-class="{'active': vm.review.info4 == 'yes'}" ng-click="vm.onInfo4('yes')"
+                          input autocomplete="off" type="radio" value="yes"
+                          | はい
+                        label.btn.btn-default ng-class="{'active': vm.review.info4 == 'no'}" ng-click="vm.onInfo4('no')"
+                          input autocomplete="off" type="radio" value="no"
+                          | いいえ
+                        label.btn.btn-default ng-class="{'active': vm.review.info4 == 'not'}" ng-click="vm.onInfo4('not')"
+                          input autocomplete="off" type="radio" value="not"
+                          | 不明
+                  tr
+                    th.res-form-table__th.parent-th.title-box.clearfix
+                      span.title
+                        | このお店は
+                        span.attention 他の方
+                        | におすすめできますか？
+
+                    td.res-form-table__td.parent-td.input-box
+                      .btn-group data-toggle="buttons"
+                        label.btn.btn-default ng-class="{'active': vm.review.info5 == 'yes'}" ng-click="vm.onInfo5('yes')"
+                          input autocomplete="off" type="radio" value="yes"
+                          | はい
+                        label.btn.btn-default ng-class="{'active': vm.review.info5 == 'no'}" ng-click="vm.onInfo5('no')"
+                          input autocomplete="off" type="radio" value="no"
+                          | いいえ
+                        label.btn.btn-default ng-class="{'active': vm.review.info5 == 'not'}" ng-click="vm.onInfo5('not')"
+                          input autocomplete="off" type="radio" value="not"
+                          | 不明
+            table.res-form-table
+              caption あなたの一言がキャストを変える
+              tr
+                th.res-form-table__th.parent-th.title-box.clearfix
+                  span.title アドバイス
+                  span.btn.required 気持ち
+                td.res-form-table__td.parent-td.input-box
+                  textarea.form-control rows="6" name="opinion" placeholder="キャストに対しての、アドバイスをお書きください" ng-model="vm.review.opinion"
+                  span
+                    | お客様のために、少しでも楽しんでいただけるために改善したいと思っています。
+                    br
+                    | ちょっとしたアドバイス等、なんでも結構ですので、記載していただけると幸いです。
+                    br
+                    span style="color: #f00;" ※こちらのコメントは口コミには表示されません。
+
+            .center-button ng-show="vm.canReviewSubmited"
+              button.btn.btn-submit.left type="submit" ng-disabled="reviewForm.$invalid" ng-click="vm.reviewSubmit()" 口コミを投稿する
+            .center-button ng-hide="vm.canReviewSubmited"
+              loading-directive size="125"
+        - else
+          .center-button
+            p 口コミを書くにはログインが必要です。
+            a.btn.btn-submit href="/login" ログインする
+  .container
+    #review.rank-box.clearfix
+      .page-title
+        h2.title
+          | 口コミ
+      .reviews-list ng-if="vm.reviews.length > 0"
+        .review ng-repeat="review in vm.reviews"
+          .review--head
+            .clearfix
+              .head-star-box
+                .head--star
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 0" ng-class="{'fa-star-half': review.total_score > 0 && review.total_score <= 10,'fa-star': review.total_score > 10 && review.total_score <= 20,'active': review.total_score > 0 }"
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 20" ng-class="{'fa-star-half': review.total_score > 20 && review.total_score <= 30,'fa-star': review.total_score > 30 && review.total_score <= 40,'active': review.total_score > 20 }"
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 40" ng-class="{'fa-star-half': review.total_score > 40 && review.total_score <= 50,'fa-star': review.total_score > 50 && review.total_score <= 60,'active': review.total_score > 40 }"
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 60" ng-class="{'fa-star-half': review.total_score > 60 && review.total_score <= 70,'fa-star': review.total_score > 70 && review.total_score <= 80,'active': review.total_score > 60 }"
+                  i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 80" ng-class="{'fa-star-half': review.total_score > 80 && review.total_score <= 90,'fa-star': review.total_score > 90 && review.total_score <= 100,'active': review.total_score > 80 }"
+                .head--score
+                  | {{review.total_score}}点
+
+                table.score-table
+                  tr
+                    th 女の子
+                    td.meter
+                      .meter--out
+                        .meter--bar style="width:{{review.score1 * 5}}%;"
+                    td.score
+                      | {{review.score1 / 4}}
+                  tr
+                    th サービス
+                    td.meter
+                      .meter--out
+                        .meter--bar style="width:{{review.score2 * 5}}%;"
+                    td.score
+                      | {{review.score2 / 4}}
+                  tr
+                    th 雰囲気
+                    td.meter
+                      .meter--out
+                        .meter--bar style="width:{{review.score3 * 5}}%;"
+                    td.score
+                      | {{review.score3 / 4}}
+                  tr
+                    th 安心
+                    td.meter
+                      .meter--out
+                        .meter--bar style="width:{{review.score4 * 5}}%;"
+                    td.score
+                      | {{review.score4 / 4}}
+                  tr
+                    th リピート
+                    td.meter
+                      .meter--out
+                        .meter--bar style="width:{{review.score5 * 5}}%;"
+                    td.score
+                      | {{review.score5 / 4}}
+
+
+
+              .user--review_date
+                div　{{review.created_at | date: 'yyyy年M月d日' }}
+                .review--user
+                  h3.user--name.clearfix
+                    a href="#"
+                      i.fa.fa-user-secret aria-hidden="true"
+                      span
+                        | {{review.sender.name || '匿名'}} ({{review.sender_review_count || 0}}件の口コミ)
+          p ng-if="review.info1"
+            | トイレは
+            span ng-if="review.info1 == 'yes'" 綺麗でした
+            span ng-if="review.info1 == 'no'" 綺麗ではありませんでした。
+            span ng-if="review.info1 == 'not'" 綺麗でもなければ、汚くもありません。
+          p ng-if="review.info2"
+            | スタッフの対応は
+            span ng-if="review.info2 == 'yes'" 良かったです。
+            span ng-if="review.info2 == 'no'" 良くありませんでした。
+            span ng-if="review.info2 == 'not'" どちらとも言えません。
+
+          p ng-if="review.info3"
+            | お店のカラオケ機器は
+            span ng-if="review.info3 == 'yes'" 良かったです。
+            span ng-if="review.info3 == 'no'" 良くありませんでした。
+            span ng-if="review.info3 == 'not'" どちらとも言えません。
+
+          p ng-if="review.info4"
+            | お店のキャストのTip要求は
+            span ng-if="review.info4 == 'yes'" あります。
+            span ng-if="review.info4 == 'no'" ありません。
+            span ng-if="review.info4 == 'not'" どちらとも言えません。
+
+          p ng-if="review.info5"
+            | このお店は他の方におすすめは
+            span ng-if="review.info4 == 'yes'" できます。
+            span ng-if="review.info4 == 'no'" できません。
+            span ng-if="review.info4 == 'not'" どちらとも言えません。
+
+          .review--footer.clearfix ng-if="vm.parentCtrl.loginCustomer.id != review.sender.id && vm.review.id != review.id"
+            .footer-text
+              | {{review.reference_count}}人のお客様がこれが役に立ったと考えています. この口コミは参考になりましたか？
+            .footer-btn
+              a.btn.reference-btn.top.left href="javascript:void(0)" ng-click="vm.onClickedReference(review,'yes')" はい
+              a.btn.reference-btn.right href="javascript:void(0)" ng-click="vm.onClickedReference(review,'no')" いいえ
+          .review--footer.clearfix ng-if="vm.parentCtrl.loginCustomer && vm.parentCtrl.loginCustomer.id != review.sender.id && vm.review.id == review.id"
+            .footer-text style="color:#f00;"
+              i.fa.fa-check aria-hidden="true"
+              | フィードバックありがとうございました。
+
+      .button-center ng-if="vm.isLoading"
+        loading-directive size="125"
+      .button-center style="text-align: center;margin: 2rem 0;" ng-if="vm.total > vm.reviews.length && !vm.isLoading"
+        button.btn.btn-submit type="button" ng-click="vm.onAddReviews()" 読み込む
+      .nohave-box style="margin-bottom:2rem;" ng-if="vm.reviews.length == 0" 口コミは現在ありません。

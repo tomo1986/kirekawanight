@@ -7,6 +7,10 @@ angular.module 'bisyoujoZukanNight'
       $state.go '.show' if $state.current.default_url == 'base'
       vm.activeTab = $state.current.active_tab
       vm.canReviewSubmited = true
+      vm.isReviewShopLoading = true
+      vm.isReviewUserLoading = true
+      vm.review_shops = []
+      vm.review_users = []
       vm.loginCustomer = customerService.getLoginCustomer()
       vm.birthday_options={
         from:{is_from:true,date:null}
@@ -15,7 +19,63 @@ angular.module 'bisyoujoZukanNight'
         is_required:true
         placeholder:'必須'
       }
+      vm.shopReviweFilters = {
+        id: vm.loginCustomer.id
+        limit: 10
+        page: if $state.params.page then $state.params.page else 1
+      }
+      vm.castReviweFilters = {
+        id: vm.loginCustomer.id
+        limit: 10
+        page: if $state.params.page then $state.params.page else 1
+      }
+
       vm.getFavorited()
+      vm.getReviews()
+
+    vm.getReviews = ->
+      vm.isReviewShopLoading = true
+      vm.isReviewUserLoading = true
+      customerService.getReviews(vm.shopReviweFilters).then((res) ->
+        if res.data.code == 1
+          vm.review_shop_total = res.data.review_shop_total
+          vm.review_user_total = res.data.review_user_total
+          angular.forEach(res.data.review_shops, (review) ->
+            vm.review_shops.push(review)
+          )
+          angular.forEach(res.data.review_users, (review) ->
+            vm.review_users.push(review)
+          )
+        vm.isReviewShopLoading = false
+        vm.isReviewUserLoading = false
+      )
+    vm.getShopReviews = ->
+      vm.isReviewShopLoading = true
+      customerService.getReviews(vm.shopReviweFilters).then((res) ->
+        if res.data.code == 1
+          angular.forEach(res.data.review_shops, (review) ->
+            vm.review_shops.push(review)
+          )
+        vm.isReviewShopLoading = false
+      )
+    vm.getCastReviews = ->
+      vm.isReviewUserLoading = true
+      customerService.getReviews(vm.castReviweFilters).then((res) ->
+        if res.data.code == 1
+          angular.forEach(res.data.review_shops, (review) ->
+            vm.review_shops.push(review)
+          )
+        vm.isReviewUserLoading = false
+      )
+    vm.onAddShopReviews = ->
+      vm.shopReviweFilters.page++
+      vm.getShopReviews()
+    vm.onAddCastReviews = ->
+      vm.castReviweFilters.page++
+      vm.getCastReviews()
+
+
+
 
     vm.submit = ->
       vm.errors = null

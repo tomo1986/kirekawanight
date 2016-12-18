@@ -17,6 +17,11 @@ angular.module 'bisyoujoZukanNight'
       return res
     )
 
+  sm.getReviews = (params) ->
+    api.getPromise('/api/front/api29',params).then((res) ->
+      return res
+    )
+
   sm.getValidationRule = -> return sm.validations
   sm.validations = {
     rules:{
@@ -39,5 +44,6 @@ angular.module 'bisyoujoZukanNight'
     getLoginCustomer: sm.getLoginCustomer
     clear:sm.clear
     update: sm.update
+    getReviews: sm.getReviews
     getValidationRule: sm.getValidationRule
     validations: sm.validations
