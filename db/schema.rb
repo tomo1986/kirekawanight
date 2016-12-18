@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161218133827) do
+ActiveRecord::Schema.define(version: 20161218161956) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -374,6 +374,7 @@ ActiveRecord::Schema.define(version: 20161218133827) do
     t.float    "score5",                 limit: 24
     t.float    "total_score",            limit: 24
     t.integer  "ranking"
+    t.string   "authentication_code"
     t.index ["email"], name: "index_shops_on_email", unique: true, using: :btree
     t.index ["group_id"], name: "index_shops_on_group_id", using: :btree
     t.index ["is_chinese"], name: "index_shops_on_is_chinese", using: :btree

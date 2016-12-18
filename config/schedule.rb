@@ -22,3 +22,7 @@ every :day, :at => '1:15 am' do
   runner "User.score_ranking"
 end
 
+every :day, :at => '1:00 pm' do
+  runner "Shop.make_daily_authentication_code"
+end
+

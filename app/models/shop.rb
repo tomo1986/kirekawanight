@@ -52,6 +52,15 @@ class Shop < ApplicationRecord
     return self.time_discounts.where('start_at <= ? and end_at > ?',now, now)
   end
 
+  def self.make_daily_authentication_code
+    shops =  Shop.where(deleted_at:nil)
+    shops.each do |shop|
+      code = (("a".."z").to_a + (0..9).to_a).shuffle[0..3].join
+      shop.authentication_code = code unless Shop.exists?(authentication_code: code)
+      shop.save!
+    end
+  end
+
   def self.avg_shop_score
     shops =  Shop.where(deleted_at:nil)
     shops.each do |shop|
