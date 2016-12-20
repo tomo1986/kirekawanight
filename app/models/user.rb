@@ -111,7 +111,7 @@ class User < ApplicationRecord
         json.name user.name
         json.nick_name user.nick_name
         json.birthday user.birthday
-        json.age user.birthday ? user.age : nil
+        json.age user.birthday ? user.age : '秘密'
         json.height user.height
         json.weight user.weight
         json.bust user.bust
@@ -165,7 +165,7 @@ class User < ApplicationRecord
       json.birthplace self.birthplace
       json.residence self.residence
       json.birthday self.birthday
-      json.age self.birthday ? self.age : nil
+      json.age self.birthday ? self.age : '秘密'
       json.constellation self.constellation
       json.job_type self.job_type
       json.blood_type self.blood_type
