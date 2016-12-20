@@ -57,7 +57,7 @@ class User < ApplicationRecord
   }
   scope :find_new_user, -> (){
     now = Time.zone.now
-    return self.where(created_at: now.beginning_of_month...now.end_of_month).sort_new
+    return self.where(created_at: now.beginning_of_month...now.end_of_month).limit(5).sort_new
   }
   scope :find_open, -> () {
     return self.where(deleted_at: nil)
