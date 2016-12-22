@@ -188,6 +188,7 @@ Rails.application.routes.draw do
     get 'shops/massage/:id/cast', to: 'home#index'
     get 'shops/massage/:id/contact', to: 'home#index'
     get 'shops/massage/:id/reviews', to: 'home#index'
+    get 'feature/trip', to: 'home#index'
 
     # get 'casts/sexy', to: 'home#cast_sexy'
     # get 'casts/sexy/:id', to: 'home#index'
@@ -201,6 +202,7 @@ Rails.application.routes.draw do
     get 'sitemap', to: 'home#index'
     get 'blogs/', to: 'blogs#index'
     get 'blogs/:id', to: 'blogs#show'
+
   end
   namespace :front do
     get 'tpl/:name.html' => 'home#templates'

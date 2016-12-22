@@ -429,3 +429,9 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'cast_reviews'
         default_url: 'cast_reviews'
         templateUrl: '/front/tpl/customer/cast_reviews.html'
+
+      .state '/feature/trip',
+        url: '/feature/trip',
+        templateUrl: '/front/tpl/feature/trip.html'
+
+
