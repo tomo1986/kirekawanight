@@ -104,6 +104,14 @@ angular.module 'bisyoujoZukanNight'
     vm.onAttention = ->
       vm.isAttention = !vm.isAttention
 
+    vm.carouselInitializer = ->
+
+      $('.slick-slider').slick
+        dots: true
+        infinite: true
+        speed: 500
+        fade: true
+        cssEase: 'linear'
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->

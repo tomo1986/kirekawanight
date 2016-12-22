@@ -31,6 +31,11 @@ angular.module 'bisyoujoZukanNight'
     api.postPromise('/api/front/api5',opt_params).then((res) ->
       return res
     )
+  sm.pushPost = (opt_params) ->
+    api.postPromise('/api/front/api5',opt_params).then((res) ->
+      return res
+    )
+
   sm.sendContact = (opt_params) ->
     api.postPromise('/api/front/api6',opt_params).then((res) ->
       return res
@@ -848,3 +853,4 @@ angular.module 'bisyoujoZukanNight'
     getGuideCastList: sm.getGuideCastList
     getSomeShopCasts: sm.getSomeShopCasts
     getReviews: sm.getReviews
+    pushPost: sm.pushPost

@@ -8,12 +8,6 @@ angular.module 'bisyoujoZukanNight'
 
     vm.getFavorited = ->
       api.getPromise('/api/front/api11',{}).then((res) ->
-        console.log(res.data)
-        vm.karaokeUsers = res.data.favorite_karaoke_users
-        vm.barUsers = res.data.favorite_bar_users
-        vm.massageUsers = res.data.favorite_massage_users
-        vm.sexyUsers = res.data.favorite_sexy_users
-
         vm.newKaraokeUsers = res.data.new_karaoke_users
         vm.newBarUsers = res.data.new_bar_users
         vm.newMassageUsers = res.data.new_massage_users

@@ -69,8 +69,21 @@ main#main
                     dd
                       | {{vm.shop.address}}
 
+    .rank-box.clearfix style="margin-bottom:2rem;"
+      .page-title
+        h2.title
+          | SHOP IMAGE
+      .col-md-12.clearfix
+        .row.slick-slider
+          .col-xs-12.col-sm-6.col-md-4 ng-repeat="image in vm.shop.images" repeat-finished="carouselInitializer"
+            .slider-link
+              img.img ng-src="{{image.url}}" alt="{{vm.shop.name}}道順の画像"
+
 
     .rank-box.clearfix style="margin-bottom:2rem;"
+      .page-title
+        h2.title
+          | HOW TO WAY
       .col-md-12.clearfix
         .row
           .col-xs-12.col-sm-6.col-md-4 ng-repeat="image in vm.shop.way_images track by $index"

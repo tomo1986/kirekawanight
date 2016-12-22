@@ -19,7 +19,7 @@
                         | {{vm.errors.email}}
                   .form-shop.clearfix
                     label.input-label for="password" パスワード
-                    input#password.form-control type="password" name="password" ng-model="vm.loginCustomer.password" required='' placeholder="半角英数字8文字以上"
+                    input#password.form-control type="password" name="password" ng-model="vm.loginCustomer.password" required='' ng-minlength="8" placeholder="半角英数字8文字以上"
                     .error
                       span.is-text-danger ng-if="vm.errors.password"
                         | {{vm.errors.password}}

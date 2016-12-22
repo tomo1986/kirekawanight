@@ -384,10 +384,6 @@ class Api::FrontController < ApiController
     end
 
     builders = Jbuilder.new do |json|
-      json.favorite_karaoke_users favorite_users ? User.to_jbuilders(favorite_users.where(job_type: 'karaoke')) : nil
-      json.favorite_bar_users favorite_users ? User.to_jbuilders(users.where(job_type: 'bar')) : nil
-      json.favorite_massage_users favorite_users ? User.to_jbuilders(users.where(job_type: 'massage')) : nil
-      json.favorite_sexy_users favorite_users ? User.to_jbuilders(users.where(job_type: 'sexy')) : nil
       json.favorites favorites
       json.new_karaoke_users User.to_jbuilders(users.where(job_type: 'karaoke',created_at: from...to).order("id desc").limit(5))
       json.new_bar_users User.to_jbuilders(users.where(job_type: 'bar',created_at: from...to).order("id desc").limit(5))

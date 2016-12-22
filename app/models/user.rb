@@ -111,17 +111,15 @@ class User < ApplicationRecord
         json.name user.name
         json.nick_name user.nick_name
         json.birthday user.birthday
-        json.age user.birthday ? user.age : '秘密'
-        json.height user.height
-        json.weight user.weight
+        json.age user.birthday ? user.age : '-'
+        json.height user.height ? user.height : '-'
+        json.weight user.weight ? user.weight : '-'
         json.bust user.bust
         json.bust_size user.bust_size
         json.waist user.waist
         json.hip user.hip
-
         json.can_guided user.can_guided
         json.japanese_level user.japanese_level
-
         json.dayly_count PageView.counts_period(user.page_views)
         json.weekly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_week,Time.zone.now.end_of_week)
         json.monthly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_month,Time.zone.now.end_of_month)
