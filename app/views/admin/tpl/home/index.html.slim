@@ -9,16 +9,16 @@ section.main-container.home-page home-directive=""
         .row
           .top-card
             .top-card__title
-              | カプセル数
+              | ショップ数
             .top-card__body
-              | {{vm.capsule_count | number}}
+              | {{vm.shop_count | number}}
       .col-xl-4.col-md-4
         .row
           .top-card
             .top-card__title
-              | ダウンロード数
+              | ユーザ数
             .top-card__body
-              | {{vm.download_capsule_count | number}}
+              | {{vm.user_count | number}}
       .col-xl-4.col-md-4
         .row
           .top-card
@@ -26,27 +26,33 @@ section.main-container.home-page home-directive=""
               | マップビュー数
             .top-card__body
               | {{vm.map_view_count | number}}
-
-
     .row
-      h2.page-header
-        | ユーザーアクション
-      .notification-box
-        table.notification-box__table
-          tr ng-repeat="log in vm.log_actions"
-            td
-              | {{log.created_at | date: 'yyyy年M月d日'}}
-            td
-              | {{log.message}}
-            td
-              | {{log.sender.nickname}}
-            td
-              | {{log.category.name}}
+      table.res-separate-table
+        thead
+          tr
+            th id
+            th title
+            th comment
+            th edit
+            th delete
+        tbody
+          tr(dir-paginate="review in vm.reviews | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="id"  {{review.id}}
+            td.clearfix data-label="title"
+              a href="/admin/users/{{review.id}}/detail"
+                | {{review.title}}
+            td.clearfix data-label="comment"
+              | {{review.comment}}
+            td.clearfix data-label="edit"
+              .btn-group data-toggle="buttons"
+                label.btn.btn-default ng-class="{'active': vm.review.info1 == 'yes'}" ng-click="vm.onInfo1('yes')"
+                  input autocomplete="off" type="radio" value="yes"
+                  | はい
+                label.btn.btn-default ng-class="{'active': vm.review.info1 == 'no'}" ng-click="vm.onInfo1('no')"
+                  input autocomplete="off" type="radio" value="no"
+                  | いいえ
 
-    /div style="height:1000px;"
-    /.row
-    /  .input-group style="margin-bottom:2rem;"
-    /    input.form-control type="text" name="address" required='' disabled="true" placeholder="マス指定" ng-model="vm.selected_cell"
-    /    span.input-group-btn
-    /      button.btn.btn-default.main-btn-color ng-click="vm.openModal()" type="button"
-    /        i.fa.fa-table
+              a.btn.action-btn href="/admin/users/{{review.id}}/edit" 編集
+            td.clearfix data-label="delete"
+              a.btn.action-btn ng-click="vm.onCancelButtonClicked(item)" 削除
+

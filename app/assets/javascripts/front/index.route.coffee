@@ -119,13 +119,13 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'reviews'
         default_url: 'reviews'
         templateUrl: '/front/tpl/shops/common/reviews.html'
+
       .state '/shops/karaoke/:id.write_review',
         url: '/write_review',
         active_menu: 'karaoke'
         active_tab: 'write_review'
         default_url: 'write_review'
         templateUrl: '/front/tpl/shops/common/write_review.html'
-
 
       .state '/casts/guide',
         url: '/casts/guide?page&sort&orde'
@@ -140,8 +140,37 @@ angular.module 'bisyoujoZukanNight'
       .state '/casts/guide/:id',
         url: '/casts/guide/:id'
         active_menu: 'guide'
+        active_tab: 'cast'
+        default_url: 'base'
         templateUrl: '/front/tpl/casts/guide/detail.html'
 
+      .state '/casts/guide/:id.info',
+        url: '/info',
+        active_menu: 'guide'
+        active_tab: 'info'
+        default_url: 'info'
+        templateUrl: '/front/tpl/casts/common/info.html'
+
+      .state '/casts/guide/:id.cast',
+        url: '/cast?page&sort&order',
+        active_menu: 'guide'
+        active_tab: 'cast'
+        default_url: 'cast'
+        templateUrl: '/front/tpl/casts/common/cast.html'
+
+      .state '/casts/guide/:id.contact',
+        url: '/contact',
+        active_menu: 'guide'
+        active_tab: 'contact'
+        default_url: 'contact'
+        templateUrl: '/front/tpl/casts/common/contact.html'
+
+      .state '/casts/guide/:id.reviews',
+        url: '/reviews',
+        active_menu: 'guide'
+        active_tab: 'reviews'
+        default_url: 'reviews'
+        templateUrl: '/front/tpl/casts/common/reviews.html'
 
       .state '/casts/bar',
         url: '/casts/bar?page&sort&order'
@@ -153,8 +182,6 @@ angular.module 'bisyoujoZukanNight'
           order: null
         }
 
-
-
       .state '/shops/bar',
         url: '/shops/bar?page&sort&order'
         active_menu: 'bar'
@@ -165,10 +192,11 @@ angular.module 'bisyoujoZukanNight'
           order: null
         }
 
-
       .state '/casts/bar/:id',
         url: '/casts/bar/:id'
         active_menu: 'bar'
+        active_tab: 'cast'
+        default_url: 'base'
         templateUrl: '/front/tpl/casts/bar/detail.html'
 
       .state '/casts/bar/:id.info',
@@ -177,7 +205,6 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'info'
         default_url: 'info'
         templateUrl: '/front/tpl/casts/common/info.html'
-
 
       .state '/casts/bar/:id.cast',
         url: '/cast?page&sort&order',
@@ -242,7 +269,6 @@ angular.module 'bisyoujoZukanNight'
         default_url: 'reviews'
         templateUrl: '/front/tpl/shops/common/reviews.html'
 
-
       .state '/casts/massage',
         url: '/casts/massage?page&sort&order'
         active_menu: 'massage'
@@ -252,7 +278,6 @@ angular.module 'bisyoujoZukanNight'
           sort: null
           order: null
         }
-
 
       .state '/shops/massage',
         url: '/shops/massage?page&sort&order'
@@ -267,8 +292,9 @@ angular.module 'bisyoujoZukanNight'
       .state '/casts/massage/:id',
         url: '/casts/massage/:id'
         active_menu: 'massage'
+        active_tab: 'cast'
+        default_url: 'base'
         templateUrl: '/front/tpl/casts/massage/detail.html'
-
 
       .state '/casts/massage/:id.info',
         url: '/info',
@@ -276,7 +302,6 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'info'
         default_url: 'info'
         templateUrl: '/front/tpl/casts/common/info.html'
-
 
       .state '/casts/massage/:id.cast',
         url: '/cast?page&sort&order',
@@ -298,8 +323,6 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'reviews'
         default_url: 'reviews'
         templateUrl: '/front/tpl/casts/common/reviews.html'
-
-
 
       .state '/shops/massage/:id',
         url: '/shops/massage/:id'
@@ -374,12 +397,10 @@ angular.module 'bisyoujoZukanNight'
         url: '/visitor'
         templateUrl: '/front/tpl/visitor/index_jp.html'
 
-
       .state '/contact',
         url: '/contact?type'
         active_menu: 'contact'
         templateUrl: '/front/tpl/contact/index_jp.html'
-
 
       .state '/reserve',
         url: '/reserve'
@@ -389,7 +410,6 @@ angular.module 'bisyoujoZukanNight'
       .state '/sitemap',
         url: '/sitemap'
         templateUrl: '/front/tpl/sitemap/index_jp.html'
-
 
       .state '/mypage',
         url: '/mypage'
@@ -423,6 +443,7 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'shop_reviews'
         default_url: 'shop_reviews'
         templateUrl: '/front/tpl/customer/shop_reviews.html'
+
       .state '/mypage.user_reviews',
         url: '/cast_reviews',
         active_menu: 'mypage'
@@ -433,5 +454,3 @@ angular.module 'bisyoujoZukanNight'
       .state '/feature/trip',
         url: '/feature/trip',
         templateUrl: '/front/tpl/feature/trip.html'
-
-

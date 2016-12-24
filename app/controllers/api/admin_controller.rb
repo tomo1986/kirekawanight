@@ -1146,6 +1146,21 @@ class Api::AdminController < ApiController
 
   end
 
+  #top page
+  def api56
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    reviews = Review.where(is_displayed: false).limit(10)
+    shop_count = Shop.where(deleted_at: nil).count
+    user_count = User.where(deleted_at: nil).count
+
+    builders = Jbuilder.new do |json|
+      json.code 1
+      json.reviews Review.to_jbuilders(reviews)
+      json.shop_count shop_count
+      json.user_count user_count
+    end
+    render json: builders.target!
+  end
 
 
 end

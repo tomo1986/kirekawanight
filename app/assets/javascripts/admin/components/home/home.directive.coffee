@@ -8,18 +8,20 @@ angular.module 'bijyoZukanAdmin'
       vm.capsule_count = null
       vm.map_view_count = null
       vm.log_actions = null
-      vm.getCount()
+      vm.getDatas()
 
-    vm.getCount = () ->
-      api.getPromise('/api/admin_page/api21',{}).then((res) ->
+    vm.getDatas = () ->
+      api.getPromise('/api/admin/api56',{}).then((res) ->
         if res.data.code == 1
-          vm.capsule_count = res.data.data.capsule_count
-          vm.map_view_count = res.data.data.admin_view_count
-          vm.download_capsule_count = res.data.data.download_count
-          vm.log_actions = res.data.data.log_action
+          vm.reviews = res.data.reviews
+          vm.shop_count = res.data.shop_count
+          vm.user_count = res.data.user_count
         else
+
           modalService.error(res.data.message)
       )
+
+
     vm.init()
     return
   directive =

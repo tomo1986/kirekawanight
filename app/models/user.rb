@@ -94,10 +94,24 @@ class User < ApplicationRecord
 
   def self.score_ranking
     ["karaoke","bar","massage"].each do |job|
+      before_user = nil
       users =  User.where(deleted_at:nil,job_type: job).order("total_score desc")
       users.each.with_index(1) do |user,i|
-        user.ranking = i
-        user.save!
+        if before_user
+          if before_user.total_score != user.total_score
+            user.ranking = i
+            user.save!
+            before_user = user
+          else
+            user.ranking = before_user.ranking
+            user.save!
+            before_user = user
+          end
+        else
+          user.ranking = i
+          user.save!
+          before_user = user
+        end
       end
     end
   end

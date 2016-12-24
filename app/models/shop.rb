@@ -77,10 +77,24 @@ class Shop < ApplicationRecord
   end
   def self.score_ranking
     ["karaoke","bar","massage"].each do |job|
+      before_shop = nil
       shops =  Shop.where(deleted_at:nil,job_type: job).order("total_score desc")
       shops.each.with_index(1) do |shop,i|
-        shop.ranking = i
-        shop.save!
+        if before_shop
+          if before_shop.total_score != shop.total_score
+            shop.ranking = i
+            shop.save!
+            before_shop = shop
+          else
+            shop.ranking = before_shop.ranking
+            shop.save!
+            before_shop = shop
+          end
+        else
+          shop.ranking = i
+          shop.save!
+          before_shop = shop
+        end
       end
     end
   end

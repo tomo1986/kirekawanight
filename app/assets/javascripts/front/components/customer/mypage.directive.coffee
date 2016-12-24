@@ -33,6 +33,8 @@ angular.module 'bisyoujoZukanNight'
       vm.getFavorited()
       vm.getReviews()
 
+    vm.getContcts = ->
+
     vm.getReviews = ->
       vm.isReviewShopLoading = true
       vm.isReviewUserLoading = true
