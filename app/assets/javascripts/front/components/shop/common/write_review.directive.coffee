@@ -75,6 +75,15 @@ angular.module 'bisyoujoZukanNight'
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
+    $ ->
+      min = 50
+      $('#kuchikomi').bind 'keyup', ->
+        thisValueLength = $('#kuchikomi').val().replace(/\s+/g, '').length
+        $(".kuchikomi-count").html(thisValueLength);
+#        if min >= thisValueLength
+#          $("#submit").prop("disabled", true)
+#        else
+#          $("#submit").prop("disabled", false)
     return
   directive =
     restrict: 'E'

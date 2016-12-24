@@ -142,7 +142,7 @@ main#main
                   span.title 口コミのタイトル
                   span.btn.required 必須
                 td.res-form-table__td.parent-td.input-box
-                  input.form-control type="text" name="title" required='' placeholder="" ng-model="vm.review.title"
+                  input.form-control type="text" name="title" ng-required="true" placeholder="" ng-model="vm.review.title"
                   .error
                     span.is-text-danger ng-if="vm.reviewErrors.title"
                       | {{vm.reviewErrors.title}}
@@ -151,9 +151,10 @@ main#main
                   span.title 口コミの本文
                   span.btn.required 必須
                 td.res-form-table__td.parent-td.input-box
-                  textarea.form-control rows="6" name="comment" ng-required="true" ng-minlength="20" placeholder="ご自身の体験について教えてください。 安心、雰囲気、サービスはいかがでしたか？" ng-model="vm.review.comment"
+                  textarea#kuchikomi.form-control rows="6" name="comment" ng-required="true" ng-minlength="20" placeholder="ご自身の体験について教えてください。 安心、雰囲気、サービスはいかがでしたか？" ng-model="vm.review.comment"
                   div style="text-align:right;"
-                    | {{vm.review.comment.length || 0}}文字 (20 文字以上)
+                    span.kuchikomi-count
+                    | 文字 (20 文字以上)
                   span style="color: #f00;" 口コミは少なくても20文字以上ご記入ください。詳しい情報は他の方に必ず役に立ちます。
                   .error
                     span.is-text-danger ng-if="vm.reviewErrors.comment"
@@ -175,7 +176,7 @@ main#main
                     span style="color: #f00;" ※こちらのコメントは口コミには表示されません。
 
             .center-button ng-show="vm.canReviewSubmited"
-              button.btn.btn-submit.left type="submit" ng-disabled="reviewForm.$invalid" ng-click="vm.reviewSubmit()" 口コミを投稿する
+              button#submit.btn.btn-submit.left type="submit" ng-disabled="reviewForm.$invalid" ng-click="vm.reviewSubmit()" 口コミを投稿する
             .center-button ng-hide="vm.canReviewSubmited"
               loading-directive size="125"
         - else
