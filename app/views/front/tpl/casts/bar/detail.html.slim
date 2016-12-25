@@ -1,12 +1,11 @@
 .main-content.cast-detail-page.container cast-detail-directive=""
   .container
     breadcrumb-directive data="vm.breadcrumb"
-  .container
-    ul.genre-tag
-      li
-        a ng-class="{'active': vm.activeTab == 'info'}" href="/casts/bar/{{vm.cast.id}}/info" INFO
-      li
-        a ng-class="{'active': vm.activeTab == 'cast'}" href="/casts/bar/{{vm.cast.id}}/cast" CAST
-      li
-        a ng-class="{'active': vm.activeTab == 'reviews'}" href="/casts/bar/{{vm.cast.id}}/reviews" REVIEWS
+  ul.genre-tag
+    li
+      a ng-class="{'active': vm.activeTab == 'info'}" href="/casts/bar/{{vm.cast.id}}/info" INFO
+    li
+      a ng-class="{'active': vm.activeTab == 'cast'}" href="/casts/bar/{{vm.cast.id}}/cast" CAST
+    li
+      a ng-class="{'active': vm.activeTab == 'reviews'}" href="/casts/bar/{{vm.cast.id}}/reviews" REVIEWS
   ui-view=""
