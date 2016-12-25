@@ -72,32 +72,9 @@
           <file leaf-file-name="info.html.slim" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.44354838">
-                  <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-                  <folding>
-                    <marker date="1482649493000" expanded="true" signature="12:3793" placeholder=".cast-detail-page.clearfix" />
-                    <marker date="1482649493000" expanded="true" signature="43:1892" placeholder=".cast-detail.clearfix" />
-                    <marker date="1482649493000" expanded="true" signature="71:795" placeholder=".photo-area" />
-                    <marker date="1482649493000" expanded="true" signature="91:459" placeholder=".fream" />
-                    <marker date="1482649493000" expanded="true" signature="468:795" placeholder=".thumbnail.mobile-ondisplayed" />
-                    <marker date="1482649493000" expanded="true" signature="802:1892" placeholder=".profile-area" />
-                    <marker date="1482649493000" expanded="true" signature="824:1560" placeholder=".name-area" />
-                    <marker date="1482649493000" expanded="true" signature="1176:1336" placeholder=".feature" />
-                    <marker date="1482649493000" expanded="true" signature="1347:1465" placeholder=".feature" />
-                    <marker date="1482649493000" expanded="true" signature="1476:1560" placeholder=".shop-tags" />
-                    <marker date="1482649493000" expanded="true" signature="1569:1892" placeholder=".thumbnail.mobile-nodisplayed" />
-                    <marker date="1482649493000" expanded="true" signature="1897:2023" placeholder=".comment.clearfix" />
-                    <marker date="1482649493000" expanded="true" signature="1921:1974" placeholder=".page-title" />
-                    <marker date="1482649493000" expanded="true" signature="2029:3793" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1482649493000" expanded="true" signature="2062:3793" placeholder=".row" />
-                    <marker date="1482649493000" expanded="true" signature="2075:2127" placeholder=".page-title" />
-                    <marker date="1482649493000" expanded="true" signature="2136:2581" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
-                    <marker date="1482649493000" expanded="true" signature="2257:2382" placeholder=".col-row-left.clearfix ng-if=&quot;vm.cast.images[0] &amp;&amp; vm.cast.images[0].url&quot;" />
-                    <marker date="1482649493000" expanded="true" signature="2393:2581" placeholder=".col-row-left.clearfix ng-if=&quot;!vm.cast.images[0] &amp;&amp; !vm.cast.images[0].url&quot;" />
-                    <marker date="1482649493000" expanded="true" signature="2592:3793" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
-                    <marker date="1482649493000" expanded="true" signature="2651:3793" placeholder=".col-row-right.clearfix" />
-                    <marker date="1482649493000" expanded="true" signature="3796:3923" placeholder=".cast-page--service ng-if=&quot;vm.cast.shop_id&quot;" />
-                  </folding>
+                <state vertical-scroll-proportion="0.2016129">
+                  <caret line="79" column="81" selection-start-line="79" selection-start-column="81" selection-end-line="79" selection-end-column="81" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -1151,32 +1128,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44354838">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <marker date="1482649493000" expanded="true" signature="12:3793" placeholder=".cast-detail-page.clearfix" />
-            <marker date="1482649493000" expanded="true" signature="43:1892" placeholder=".cast-detail.clearfix" />
-            <marker date="1482649493000" expanded="true" signature="71:795" placeholder=".photo-area" />
-            <marker date="1482649493000" expanded="true" signature="91:459" placeholder=".fream" />
-            <marker date="1482649493000" expanded="true" signature="468:795" placeholder=".thumbnail.mobile-ondisplayed" />
-            <marker date="1482649493000" expanded="true" signature="802:1892" placeholder=".profile-area" />
-            <marker date="1482649493000" expanded="true" signature="824:1560" placeholder=".name-area" />
-            <marker date="1482649493000" expanded="true" signature="1176:1336" placeholder=".feature" />
-            <marker date="1482649493000" expanded="true" signature="1347:1465" placeholder=".feature" />
-            <marker date="1482649493000" expanded="true" signature="1476:1560" placeholder=".shop-tags" />
-            <marker date="1482649493000" expanded="true" signature="1569:1892" placeholder=".thumbnail.mobile-nodisplayed" />
-            <marker date="1482649493000" expanded="true" signature="1897:2023" placeholder=".comment.clearfix" />
-            <marker date="1482649493000" expanded="true" signature="1921:1974" placeholder=".page-title" />
-            <marker date="1482649493000" expanded="true" signature="2029:3793" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1482649493000" expanded="true" signature="2062:3793" placeholder=".row" />
-            <marker date="1482649493000" expanded="true" signature="2075:2127" placeholder=".page-title" />
-            <marker date="1482649493000" expanded="true" signature="2136:2581" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
-            <marker date="1482649493000" expanded="true" signature="2257:2382" placeholder=".col-row-left.clearfix ng-if=&quot;vm.cast.images[0] &amp;&amp; vm.cast.images[0].url&quot;" />
-            <marker date="1482649493000" expanded="true" signature="2393:2581" placeholder=".col-row-left.clearfix ng-if=&quot;!vm.cast.images[0] &amp;&amp; !vm.cast.images[0].url&quot;" />
-            <marker date="1482649493000" expanded="true" signature="2592:3793" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
-            <marker date="1482649493000" expanded="true" signature="2651:3793" placeholder=".col-row-right.clearfix" />
-            <marker date="1482649493000" expanded="true" signature="3796:3923" placeholder=".cast-page--service ng-if=&quot;vm.cast.shop_id&quot;" />
-          </folding>
+        <state vertical-scroll-proportion="0.2016129">
+          <caret line="79" column="81" selection-start-line="79" selection-start-column="81" selection-end-line="79" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
