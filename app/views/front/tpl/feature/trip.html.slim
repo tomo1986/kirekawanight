@@ -1,17 +1,147 @@
-.main-content.feature-page
+.main-content.feature-page feature-trip-directive=""
   main#main
-
   .main-wrap.container
     .comsept-box--detail
       h3.sub-title ベトナムホーチミンの旅行の価格
       p
-        | 普通にツアーできた時の値段を貼り付け内訳やいろいろガイドつけたらこんだけの値段ですよー的な。
-
+        | 行きたいけどいくらかかるかわからない方のために大体この位あればベトナム旅行できますよ。というのを紹介
+      p
+        | 3泊4日の場合
+      table.res-form-table
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix
+            span.title 空港使用料
+          td.res-form-table__td.parent-td.input-box
+            | 片道平均 15,000　〜 25,000
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix
+            span.title 宿泊費
+          td.res-form-table__td.parent-td.input-box
+            | 一泊あたり平均 3,000　〜 15,000
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix
+            span.title 食事代
+          td.res-form-table__td.parent-td.input-box
+            | 1食あたり 500〜 2,000
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix
+            span.title ガイド費
+          td.res-form-table__td.parent-td.input-box
+            | 10,000　〜 15,000円
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix
+            span.title 遊び代
+          td.res-form-table__td.parent-td.input-box
+            div カラオケ：3,500〜5,000円
+            div マッサージ: 2,500円
+            div ♡高級マッサージ♡: 5,000 〜 15,000円
+            div カウンターバー： 2,000円
 
     .comsept-box--detail
-      h3.sub-title キレカワだったら。
+      h3.sub-title 3泊4日のシュミレーション
+      table.res-form-table
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix
+            span.title 1日目
+          td.res-form-table__td.parent-td.input-box
+            | 11:00 ホーチミン　タンソンニャット空港到着
+            br
+            | 11:30 キレカワで出会った女性と会いお昼を食べる
+            br
+            | 13:00 〜 18:00 ホーチミンをガイドしてもらう。
+            br
+            | 19:00 女の子のカラオケに行きます。
+            br
+            | ※日本人向けカラオケならそこで次の日ガイドしてくれる女の子を探せます。
+            br
+            | 23:30 お店終わりの女の子と遊びます。
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix
+            span.title 2日目
+          td.res-form-table__td.parent-td.input-box
+            | 10:00 女の子と待ち合わせ
+            br
+            | 11:30 メコン川に行く
+            br
+            | ※メコン川は有名な観光地です。
+            br
+            | 19:00 ホーチミンに帰ってきます。
+            br
+            | 20:00 カウンターバーでベトナムの女の子と話しながらお酒を飲みます。
+            br
+            | 22:00 ♡高級マッサージ♡をします。
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix
+            span.title 3日目
+          td.res-form-table__td.parent-td.input-box
+            | 10:00 女の子と待ち合わせ
+            br
+            | 11:30
+            br
+            | ※メコン川は有名な観光地です。
+            br
+            | 19:00 ホーチミンに帰ってきます。
+            br
+            | 20:00 カウンターバーでベトナムの女の子と話しながらお酒を飲みます。
+            br
+            | 16:00 疲れた体を癒すため、マッサージを受けます。
+            br
+            | 21:00 ホーチミン　タンソンニャット空港到着
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix
+            span.title 合計
+          td.res-form-table__td.parent-td.input-box
+            p
+              | 食事　約8回
+              br
+              | 宿泊　2回
+              br
+              | ガイド 2回
+              br
+              | カラオケ 1回
+              br
+              | カウンターバー 1回
+              br
+              | ♡高級マッサージ♡ 1回
+              br
+              | マッサージ 1回
+              br
+              | その他、お土産
+              hr
+            div
+              span.attention 合計 約8万円
+              br
+              | ※一人のみの計算にしております。複数人の場合ガイド代やホテル代を割ることができるので、もっとお安くなります。
+    .comsept-box--detail
+      h3.sub-title バニラエアならこんなに安い！！
+      section.center.slick-slider
+        div.slider-link
+          .img-box
+            = image_tag "front/2017/201701.png", alt: "お得な情報発信！キレカワのfacebookページはこちら", class: "img"
+        div.slider-link
+          .img-box
+            = image_tag "front/2017/201702.png", alt: "お得な情報発信！キレカワのfacebookページはこちら", class: "img"
+        div.slider-link
+          .img-box
+            = image_tag "front/2017/201703.png", alt: "お得な情報発信！キレカワのfacebookページはこちら", class: "img"
+        div.slider-link
+          .img-box
+            = image_tag "front/2017/201704.png", alt: "お得な情報発信！キレカワのfacebookページはこちら", class: "img"
+        div.slider-link
+          .img-box
+            = image_tag "front/2017/201705.png", alt: "お得な情報発信！キレカワのfacebookページはこちら", class: "img"
+        div.slider-link
+          .img-box
+            = image_tag "front/2017/201706.png", alt: "お得な情報発信！キレカワのfacebookページはこちら", class: "img"
+        div.slider-link
+          .img-box
+            = image_tag "front/2017/201707.png", alt: "お得な情報発信！キレカワのfacebookページはこちら", class: "img"
+        div.slider-link
+          .img-box
+            = image_tag "front/2017/201708.png", alt: "お得な情報発信！キレカワのfacebookページはこちら", class: "img"
       p
-        | 大体こんな感じですよーという説明と金額の内訳を書く
+        a href="https://www.vanilla-air.com/jp/" target="_blank"
+          | バニラエアでの予約はこちらから
 
     .comsept-box--detail
       h3.sub-title ガイドについての流れ
