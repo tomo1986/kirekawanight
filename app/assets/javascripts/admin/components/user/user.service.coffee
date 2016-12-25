@@ -780,13 +780,11 @@ angular.module 'bijyoZukanAdmin'
       name:{required: true}
       nick_name:{required: true}
       job_type:{required: true}
-      birthday:{required: true}
     }
     messages:{
       name:{required: 'name is required entry'}
       name_kana:{required: 'name kana is required entry'}
       job_type:{required: 'job type is required entry'}
-      birthday:{required: 'birthday is required entry'}
     }
   }
   sm.getDate = (opt_id) ->

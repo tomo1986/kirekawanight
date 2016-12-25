@@ -39,12 +39,16 @@ class Shop < ApplicationRecord
     return self.order("created_at #{order}")
   }
   scope :sort_support, -> (order= 'desc'){
-    return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Support' and posts.receiver_type = 'User'").group("shops.id")
+    return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Support' and posts.receiver_type = 'Shop'").group("shops.id")
                .order("count(posts.receiver_id) #{order}, shops.id desc")
   }
   scope :sort_favorite, -> (order= 'desc'){
-    return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'User'").group("shops.id")
+    return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'Shop'").group("shops.id")
                .order("count(posts.receiver_id) #{order}, shops.id desc")
+  }
+
+  scope :sort_ranking, -> (order= 'desc'){
+    return self.order("total_score #{order}")
   }
 
   def open_discounts
@@ -135,6 +139,8 @@ class Shop < ApplicationRecord
         json.budget_vnd shop.budget_vnd
         json.budget_usd shop.budget_usd
         json.service shop.service
+        json.ranking shop.ranking
+        json.total_score shop.total_score
         json.user_count shop.users.count
         # json.note shop.note
         json.images shop.set_images

@@ -116,6 +116,9 @@ class Api::FrontController < ApiController
       users = users.sort_support(params[:order])
     elsif params[:sort] == 'favorite'
       users = users.sort_favorite(params[:order])
+    elsif params[:sort] == 'review'
+      users = users.sort_ranking(params[:order])
+
     end
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
@@ -271,6 +274,8 @@ class Api::FrontController < ApiController
       contact = ContactType::UserDetail.new
     elsif params[:type] == 'shop_detail'
       contact = ContactType::ShopDetail.new
+    elsif  params[:type] == 'contact'
+      contact = ContactType::Contact.new
     end
 
     contact.attributes = {
@@ -416,6 +421,8 @@ class Api::FrontController < ApiController
       shops = shops.sort_support(params[:order])
     elsif params[:sort] == 'favorite'
       shops = shops.sort_favorite(params[:order])
+    elsif params[:sort] == 'review'
+      shops = shops.sort_ranking(params[:order])
     end
       shops = shops.page(page).per(limit) if shops.present?
 

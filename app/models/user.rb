@@ -55,6 +55,10 @@ class User < ApplicationRecord
     return self.joins("left join posts on posts.receiver_id = users.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'User'").group("users.id")
                .order("count(posts.receiver_id) #{order}, users.id desc")
   }
+  scope :sort_ranking, -> (order= 'desc'){
+    return self.order("total_score #{order}")
+  }
+
   scope :find_new_user, -> (){
     now = Time.zone.now
     return self.where(created_at: now.beginning_of_month...now.end_of_month).limit(5).sort_new
@@ -132,6 +136,8 @@ class User < ApplicationRecord
         json.bust_size user.bust_size
         json.waist user.waist
         json.hip user.hip
+        json.ranking user.ranking
+        json.total_score user.total_score
         json.can_guided user.can_guided
         json.japanese_level user.japanese_level
         json.dayly_count PageView.counts_period(user.page_views)
@@ -191,6 +197,8 @@ class User < ApplicationRecord
       json.bust_size self.bust_size
       json.waist self.waist
       json.hip self.hip
+      json.ranking self.ranking
+      json.total_score self.total_score
       json.can_guided self.can_guided
       json.japanese_level self.japanese_level
       json.is_japanese self.is_japanese

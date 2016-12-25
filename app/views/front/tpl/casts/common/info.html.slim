@@ -23,6 +23,8 @@ main#main
               | {{vm.cast.shop.name}}所属
             span ng-if="!vm.cast.shop"
               | 所属なし
+          p
+            | スコア{{vm.cast.total_score}}点
           .feature
             a.btn.btn-feature ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()"
               | お気入り登録
