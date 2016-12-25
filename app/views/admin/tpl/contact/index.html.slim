@@ -18,10 +18,8 @@ section.main-container.notification-index-page contact-directive=""
             th id
             th sub_id
             th name
-            th return_way
             th tel
             th email
-            th sns
             th message
         tbody
           tr(dir-paginate="item in vm.contacts | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page")
@@ -30,25 +28,8 @@ section.main-container.notification-index-page contact-directive=""
             td.clearfix data-label="sub_id"
               a href="/admin/users/{{item.subject.id}}/detail" {{item.subject.name}}
             td.clearfix data-label="name"  {{item.name}}
-            td.clearfix data-label="name"  {{item.return_way}}
             td.clearfix data-label="tel"  {{item.tel}}
             td.clearfix data-label="email"  {{item.email}}
-            td.clearfix data-label="sns"
-              dl
-                dt
-                  | Zalo
-                dd
-                  | {{item.sns_zalo}}
-                  hr
-                dt
-                  | WeChat
-                dd
-                  | {{item.sns_wechat}}
-                  hr
-                dt
-                  | Line
-                dd
-                  | {{item.sns_line}}
             td.clearfix data-label="message"  {{item.message}}
     .row
       dir-pagination-controls boundary-links="true" template-url="/admin/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"

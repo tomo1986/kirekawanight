@@ -7,6 +7,7 @@ class Contact < ApplicationRecord
       json.subject_type self.subject_type
       json.subject_id self.subject_id
       json.name self.name
+      json.tel self.tel
       json.email self.email
       json.sns_line self.sns_line
       json.sns_zalo self.sns_zalo
@@ -30,6 +31,7 @@ class Contact < ApplicationRecord
         json.sns_line contact.sns_line
         json.sns_zalo contact.sns_zalo
         json.sns_wechat contact.sns_wechat
+        json.tel contact.tel
         json.message contact.message
         json.created_at contact.created_at
         json.return_way contact.return_way
