@@ -183,7 +183,7 @@ class User < ApplicationRecord
       json.birthplace self.birthplace
       json.residence self.residence
       json.birthday self.birthday
-      json.age self.birthday ? self.age : '秘密'
+      json.age self.birthday ? self.age : nil
       json.constellation self.constellation
       json.job_type self.job_type
       json.blood_type self.blood_type
