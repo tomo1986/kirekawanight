@@ -50,49 +50,49 @@ main#main
         .page-title
           h2.title
             | Profile
-        .col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0
-          .col-row-left.clearfix ng-if="vm.cast.images[0] && vm.cast.images[0].url"
-            img.img src="{{vm.cast.images[0].url}}"
-          .col-row-left.clearfix ng-if="!vm.cast.images[0] && !vm.cast.images[0].url"
-            = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
-
-
-        .col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10
-          .col-row-right.clearfix
-            dl.profile.clearfix
-              dt Cast No
-              dd
-                | {{vm.cast.id}}
-              dt Name
-              dd
-                | {{vm.cast.name}} {{vm.cast.nick_name}}
-              dt Shop Name
-              dd
-                a href="/shops/karaoke/{{vm.cast.shop.id}}/info" ng-if="vm.cast.shop"
-                  | {{vm.cast.shop.name}}
-                span ng-if="!vm.cast.shop"
-                  | 所属なし
-              dt height / weight
-              dd
-                | {{vm.cast.height || '-'}} / {{vm.cast.weight || '-'}}
-              dt Birthday
-              dd
-                | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}（{{vm.cast.age || '-'}}歳）
-              dt Blood type
-              dd
-                | {{vm.cast.blood_type}}
-              dt birthplace
-              dd
-                | {{vm.cast.birthplace}}
-              dt residence
-              dd
-                | {{vm.cast.residence}}
-              dt お気に入り登録数
-              dd
-                | {{vm.cast.favorite_count}}件
-              dt お気に入り数
-              dd
-                | {{vm.cast.support_count}}件
+        .row
+          .col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0
+            .col-row-left.clearfix ng-if="vm.cast.images[0] && vm.cast.images[0].url"
+              img.img src="{{vm.cast.images[0].url}}"
+            .col-row-left.clearfix ng-if="!vm.cast.images[0] && !vm.cast.images[0].url"
+              = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
+              
+          .col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10
+            .col-row-right.clearfix
+              dl.profile.clearfix
+                dt Cast No
+                dd
+                  | {{vm.cast.id}}
+                dt Name
+                dd
+                  | {{vm.cast.name}} {{vm.cast.nick_name}}
+                dt Shop Name
+                dd
+                  a href="/shops/karaoke/{{vm.cast.shop.id}}/info" ng-if="vm.cast.shop"
+                    | {{vm.cast.shop.name}}
+                  span ng-if="!vm.cast.shop"
+                    | 所属なし
+                dt height / weight
+                dd
+                  | {{vm.cast.height || '-'}} / {{vm.cast.weight || '-'}}
+                dt Birthday
+                dd
+                  | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}（{{vm.cast.age || '-'}}歳）
+                dt Blood type
+                dd
+                  | {{vm.cast.blood_type}}
+                dt birthplace
+                dd
+                  | {{vm.cast.birthplace}}
+                dt residence
+                dd
+                  | {{vm.cast.residence}}
+                dt お気に入り登録数
+                dd
+                  | {{vm.cast.favorite_count}}件
+                dt お気に入り数
+                dd
+                  | {{vm.cast.support_count}}件
 
   .cast-page--service ng-if="vm.cast.shop_id"
     a href="/shops/karaoke/{{vm.cast.shop_id}}"
