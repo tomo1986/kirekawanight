@@ -105,13 +105,40 @@ angular.module 'bisyoujoZukanNight'
       vm.isAttention = !vm.isAttention
 
     vm.carouselInitializer = ->
-
       $('.slick-slider').slick
         dots: true
+        accessibility: true
         infinite: true
-        speed: 500
-        fade: true
-        cssEase: 'linear'
+        centerMode: true
+        autoplay: true,
+        autoplaySpeed: 4000
+        slidesToShow: 2
+        slidesToScroll: 2
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 568,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
