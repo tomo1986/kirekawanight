@@ -103,4 +103,4 @@
                 p.count
                   |  {{cast.favorite_count | number}}
         .nohave-box ng-if="vm.casts.length == 0" Coming Soon
-      dir-pagination-controls boundary-links="true" template-url="/front/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+      dir-pagination-controls boundary-links="true" template-url="/front/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)" ng-if="vm.casts.length > 0"
