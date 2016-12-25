@@ -68,45 +68,45 @@ class Blog < ApplicationRecord
     article = article + "Q:#{user.nick_name}さんの性格を教えてください<br>"
     article = article + "A:#{user.ja_profile.character}<br><br>"
 
-    article = article + "Q:#{user.nick_name}さんの趣味は?<br>"
-    article = article + "A:#{user.ja_profile.hobby}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんの特技は?<br>"
-    article = article + "A:#{user.ja_profile.skill}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんの休日の過ごし方は?<br>"
-    article = article + "A:#{user.ja_profile.how_to_holiday}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんの好きな映画は?<br>"
-    article = article + "A:#{user.ja_profile.like_movie}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんの好きな料理は?<br>"
-    article = article + "A:#{user.ja_profile.like_food}<br><br>"
-
-
-    article = article + "Q:#{user.nick_name}さんのチャームポイントは?<br>"
-    article = article + "A:#{user.ja_profile.best_feature}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんの「ドキッ」とする異性の仕草はなんですか?<br>"
-    article = article + "A:#{user.ja_profile.gesture}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんがもし一目惚れしたらどうアプローチする?<br>"
-    article = article + "A:#{user.ja_profile.how_to_approach}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんはこんな異性に惹かれる?<br>"
-    article = article + "A:#{user.ja_profile.attracted}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんの今一番欲しいものは?<br>"
-    article = article + "A:#{user.ja_profile.want}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんの今行きたいところは？<br>"
-    article = article + "A:#{user.ja_profile.go}<br><br>"
-
-    article = article + "Q:#{user.nick_name}さんの夢は？<br>"
-    article = article + "A:#{user.ja_profile.dream}<br><br>"
-
-    article = article + "Q:ここだけの話を教えてください<br>"
-    article = article + "A:#{user.ja_profile.secret_talk}<br><br>"
+    # article = article + "Q:#{user.nick_name}さんの趣味は?<br>"
+    # article = article + "A:#{user.ja_profile.hobby}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんの特技は?<br>"
+    # article = article + "A:#{user.ja_profile.skill}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんの休日の過ごし方は?<br>"
+    # article = article + "A:#{user.ja_profile.how_to_holiday}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんの好きな映画は?<br>"
+    # article = article + "A:#{user.ja_profile.like_movie}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんの好きな料理は?<br>"
+    # article = article + "A:#{user.ja_profile.like_food}<br><br>"
+    #
+    #
+    # article = article + "Q:#{user.nick_name}さんのチャームポイントは?<br>"
+    # article = article + "A:#{user.ja_profile.best_feature}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんの「ドキッ」とする異性の仕草はなんですか?<br>"
+    # article = article + "A:#{user.ja_profile.gesture}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんがもし一目惚れしたらどうアプローチする?<br>"
+    # article = article + "A:#{user.ja_profile.how_to_approach}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんはこんな異性に惹かれる?<br>"
+    # article = article + "A:#{user.ja_profile.attracted}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんの今一番欲しいものは?<br>"
+    # article = article + "A:#{user.ja_profile.want}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんの今行きたいところは？<br>"
+    # article = article + "A:#{user.ja_profile.go}<br><br>"
+    #
+    # article = article + "Q:#{user.nick_name}さんの夢は？<br>"
+    # article = article + "A:#{user.ja_profile.dream}<br><br>"
+    #
+    # article = article + "Q:ここだけの話を教えてください<br>"
+    # article = article + "A:#{user.ja_profile.secret_talk}<br><br>"
 
     article = article + "キレカワ事務局:#{user.nick_name}さんありがとうございました。<br><br>"
 

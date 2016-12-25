@@ -14,12 +14,13 @@
                 = link_to "/blogs/#{blog.id}"
                   | 続きを読む
             .article-footer.clearfix
-              .tags
-                | dfads
+              /.tags
+              /  | dfads
               .date
                 = blog.created_at.strftime('%Y/%m/%d')
                 | 更新
-    = paginate @blogs
+    div style="text-align:center;"
+      = paginate @blogs
 = render partial: 'front/layouts/footer'
 
 

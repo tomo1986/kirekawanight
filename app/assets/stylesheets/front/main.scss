@@ -1722,3 +1722,23 @@ textarea {
 .btn-sm {
   padding: 0.25rem 0.5rem !important;
 }
+.pagination{
+  a{
+    padding: 0.275rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0 !important;
+    margin: 0 .1rem;
+    color: #ad9a58;
+    background-color: transparent;
+    border: 1px solid #ad9a58;
+  }
+  .current{
+    background-color: #720e0a;
+    border-color: #720e0a;
+    display: inline-block;
+    padding: 0.275rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}

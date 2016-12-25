@@ -26,25 +26,25 @@ svg.defs style=("display: none;") version="1.1" xmlns="http://www.w3.org/2000/sv
   = render partial: 'front/layouts/nav'
 .main-content.container
   main#main.blog-page
-    .sidebar-box.clearfix
+    .sidebar-box.clearfix style="margin-bottom:1rem;"
       ul.footer-share__btns.clearfix
         li
-          a.btn--share.btn--share--facebook data-action-share="facebook" href="http://www.facebook.com/share.php?u=http://recruit.5smile.com/" target="_blank"
+          a.btn--share.btn--share--facebook data-action-share="facebook" href="http://www.facebook.com/share.php?u=#{request.url}" target="_blank"
             svg
               title Facebook
               use xlink:href="#symbol-facebook" xmlns:xlink="http://www.w3.org/1999/xlink"
         li
-          a.btn--share.btn--share--twitter data-action-share="twitter" href="https://twitter.com/share?url=http://recruit.5smile.com/&amp;text=株式会社シンクスマイル-新卒採用サイト" target="_blank"
+          a.btn--share.btn--share--twitter data-action-share="twitter" href="https://twitter.com/share?url=#{request.url}&amp;text=#{@head_title}" target="_blank"
             svg
               title Twitter
               use xlink:href="#symbol-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"
         li
-          a.btn--share.btn--share--line data-action-share="line" href=("http://line.me/R/msg/text/?株式会社シンクスマイル-新卒採用サイト http://recruit.5smile.com/") target="_blank"
+          a.btn--share.btn--share--line data-action-share="line" href=("http://line.me/R/msg/text/?#{@head_title} #{request.url}") target="_blank"
             svg
               title LINE
               use xlink:href="#symbol-line" xmlns:xlink="http://www.w3.org/1999/xlink"
         li
-          a.btn--share.btn--share--google_plus data-action-share="google_plus" href="https://plus.google.com/share?url=http://recruit.5smile.com/" target="_blank"
+          a.btn--share.btn--share--google_plus data-action-share="google_plus" href="https://plus.google.com/share?url=#{request.url}" target="_blank"
             svg
               title Google+
               use xlink:href="#symbol-google_plus" xmlns:xlink="http://www.w3.org/1999/xlink"
