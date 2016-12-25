@@ -2,7 +2,7 @@
   main#main
     breadcrumb-directive data="vm.breadcrumb"
     .cast-detail-page.clearfix
-      .col-md-12.detail.clearfix
+      .detail.clearfix
         .col-md-6 style="margin-bottom:2rem;"
           .row
             .schedule
@@ -25,7 +25,7 @@
                         | {{vm.errors.password}}
                   .control-checkbox.clearfix
                     input.checkbox style="display: inline-block;margin: 1rem .5rem 0 0;" id="remember_me" type="checkbox" name="remember_me" ng-model='vm.loginCustomer.remember_me' /
-                    label.label-checkbox for="remember_me" 次回から自動的にログインする
+                    label.label-checkbox for="remember_me" 次回から自動的にログイン
                   div.center-button
                     button.btn.btn-submit type="submit"  ng-disabled="loginForm.$invalid" ログイン
                   div.center-button
