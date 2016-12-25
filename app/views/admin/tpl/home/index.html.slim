@@ -45,12 +45,9 @@ section.main-container.home-page home-directive=""
               | {{review.comment}}
             td.clearfix data-label="edit"
               .btn-group data-toggle="buttons"
-                label.btn.btn-default ng-class="{'active': vm.review.info1 == 'yes'}" ng-click="vm.onInfo1('yes')"
+                label.btn.btn-default ng-click="vm.onClickDisplayed(review)"
                   input autocomplete="off" type="radio" value="yes"
                   | はい
-                label.btn.btn-default ng-class="{'active': vm.review.info1 == 'no'}" ng-click="vm.onInfo1('no')"
-                  input autocomplete="off" type="radio" value="no"
-                  | いいえ
             td.clearfix data-label="delete"
               a.btn.action-btn ng-click="vm.onCancelButtonClicked(item)" 削除
 

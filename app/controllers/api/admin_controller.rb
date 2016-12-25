@@ -1161,6 +1161,20 @@ class Api::AdminController < ApiController
     end
     render json: builders.target!
   end
+  def api57
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    review = Review.find_by(id: params[:id])
+    review.is_displayed = true
+
+    if review.save
+      reviews = Review.where(is_displayed: false).limit(10)
+      builders = Jbuilder.new do |json|
+        json.code 1
+        json.reviews Review.to_jbuilders(reviews)
+      end
+    end
+    render json: builders.target!
+  end
 
 
 end

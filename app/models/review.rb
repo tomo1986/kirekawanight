@@ -35,7 +35,7 @@ class Review < ApplicationRecord
       json.sender self.sender.to_jbuilder
       json.receiver self.receiver.to_jbuilder
       json.total_score self.total_score
-      json.sender_review_count (self.sender.review_shops.count + self.sender.review_users.count)
+      json.sender_review_count self.sender.review_shops ? (self.sender.review_shops.count + self.sender.review_users.count) : 0
       json.reference_count self.references.count
       json.not_reference_count self.not_references.count
 
