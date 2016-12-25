@@ -60,6 +60,7 @@
         a {
           display: block;
           color: #fff;
+          transition: none;
           &:hover {
             color: #E2D39F;
             text-shadow: 2px 2px 10px #f7cb47;
@@ -325,6 +326,7 @@
       a {
         display: block;
         color: #fff;
+        transition: none;
         &:hover {
           color: #E2D39F;
           text-shadow: 2px 2px 10px #f7cb47;

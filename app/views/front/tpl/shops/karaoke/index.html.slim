@@ -9,11 +9,11 @@
         li
           a href="/casts/karaoke"
             | CAST
-    .rank-box ng-if="vm.push_shops.length > 0 && vm.filters.page == 1"
+    .rank-box ng-if="vm.filters.page == 1"
       .page-title
         h2.title
           | TODAY'S POWER PUSH
-      .shop-list.clearfix
+      .shop-list.clearfix ng-if="vm.push_shops.length > 0"
         li ng-repeat="shop in vm.push_shops"
           span
             i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"

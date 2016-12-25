@@ -51,8 +51,6 @@ section.main-container.home-page home-directive=""
                 label.btn.btn-default ng-class="{'active': vm.review.info1 == 'no'}" ng-click="vm.onInfo1('no')"
                   input autocomplete="off" type="radio" value="no"
                   | いいえ
-
-              a.btn.action-btn href="/admin/users/{{review.id}}/edit" 編集
             td.clearfix data-label="delete"
               a.btn.action-btn ng-click="vm.onCancelButtonClicked(item)" 削除
 

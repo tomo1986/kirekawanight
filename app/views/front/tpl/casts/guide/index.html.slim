@@ -1,11 +1,11 @@
 .main-content.container cast-guide-index-directive=""
   main#main.cast-page
     breadcrumb-directive data="vm.breadcrumb"
-    .rank-box
+    .rank-box ng-if="vm.filters.page == 1"
       .page-title
         h2.title
           | TODAY'S POWER PUSH
-      ul.queen-list.clearfix ng-if="vm.push_casts.length > 0 && vm.filters.page == 1"
+      ul.queen-list.clearfix ng-if="vm.push_casts.length > 0"
         li ng-repeat="cast in vm.push_casts"
           .fream
             .fream--basic.fream--top-left
