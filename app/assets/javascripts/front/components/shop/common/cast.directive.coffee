@@ -53,6 +53,7 @@ angular.module 'bisyoujoZukanNight'
         scope.vm.casts = []
         scope.vm.isLoading = true
         scope.vm.filters.sort = newVal
+        scope.vm.filters.page = 1
         scope.vm.changePageFunk()
 
     )
@@ -61,6 +62,7 @@ angular.module 'bisyoujoZukanNight'
         scope.vm.casts = []
         scope.vm.isLoading = true
         scope.vm.filters.order = newVal
+        scope.vm.filters.page = 1
         scope.vm.changePageFunk()
     )
 
