@@ -17,7 +17,7 @@
         li ng-repeat="shop in vm.push_shops"
           span
             i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
-          a href="/shops/karaoke/{{shop.id}}"
+          a href="/shops/karaoke/{{shop.id}}/info"
             span ng-if="shop.images[0]"
               img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
             span ng-if="!shop.images[0]"
@@ -51,7 +51,7 @@
         li ng-repeat="shop in vm.shops"
           span
             i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
-          a href="/shops/karaoke/{{shop.id}}"
+          a href="/shops/karaoke/{{shop.id}}/info"
             span ng-if="shop.images[0]"
               img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
             span ng-if="!shop.images[0]"
