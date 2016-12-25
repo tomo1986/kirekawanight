@@ -17,14 +17,14 @@ main#main
           h5
             | Cast No.{{vm.cast.id}}
           h3
-            | {{vm.cast.name}}({{vm.cast.age}})
+            | {{vm.cast.name}}({{vm.cast.age || '-'}})
           p
             span ng-if="vm.cast.shop"
               | {{vm.cast.shop.name}}所属
             span ng-if="!vm.cast.shop"
               | 所属なし
           p
-            | スコア{{vm.cast.total_score}}点
+            | スコア {{vm.cast.total_score || '-'}} 点
           .feature
             a.btn.btn-feature ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()"
               | お気入り登録
@@ -74,7 +74,7 @@ main#main
                   | 所属なし
               dt height / weight
               dd
-                | {{vm.cast.height}} / {{vm.cast.weight}}
+                | {{vm.cast.height || '-'}} / {{vm.cast.weight || '-'}}
               dt Birthday
               dd
                 | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}（{{vm.cast.age}}歳）
@@ -93,46 +93,6 @@ main#main
               dt お気に入り数
               dd
                 | {{vm.cast.support_count}}件
-    .col-md-12.detail.clearfix ng-if="vm.cast.can_guided"
-      .row
-        .page-title
-          h2.title
-            | Contact
-        .contact
-          form role="form" ng-submit='vm.submit()' name="contactForm2" novalidate=''
-            table.res-form-table
-
-              tr
-                th.res-form-table__th.parent-th.parent-th.title-box.clearfix
-                  span.title 氏名
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.parent-td.input-box
-                  input.form-control type="text" name="name" required='' placeholder="切川 太郎(ニックネーム可)" ng-model="vm.contact.name"
-              tr
-                th.res-form-table__th.parent-th.parent-th.title-box.clearfix
-                  span.title Tel
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.parent-td.input-box
-                  input.form-control type="text" name="tel" required='' placeholder="例)090123412345" ng-model="vm.contact.tel"
-                  span.is-text-danger ng-if="vm.errors.tel"
-                    | {{vm.errors.tel}}
-              tr
-                th.res-form-table__th.parent-th.parent-th.title-box.clearfix
-                  span.title emailアドレス
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.parent-td.input-box
-                  input.form-control type="email" name="email" required='' placeholder="例)info@kire-kawa.com" ng-model="vm.contact.email"
-                  span.is-text-danger ng-if="vm.errors.email"
-                    | {{vm.errors.email}}
-              tr
-                th.res-form-table__th.parent-th.parent-th.title-box.clearfix
-                  span.title 内容
-                  span.btn.required 必須
-                td.res-form-table__td.parent-td.parent-td.input-box
-                  textarea.form-control rows="8" style="color:#fff;" name="message" required='' placeholder="ガイドについて" ng-model="vm.contact.message"
-
-            .center-button
-              button.btn.btn-submit type="submit" ng-disabled="contactForm2.$invalid"  問い合わせ
 
   .cast-page--service ng-if="vm.cast.shop_id"
     a href="/shops/karaoke/{{vm.cast.shop_id}}"
