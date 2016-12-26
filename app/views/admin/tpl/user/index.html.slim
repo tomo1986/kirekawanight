@@ -94,7 +94,9 @@ section.main-container.notification-index-page user-index-directive=""
             td.clearfix data-label="編集"
               a.btn.action-btn href="/admin/users/{{user.id}}/edit" 編集
             td.clearfix data-label="削除"
-              a.btn.action-btn ng-click="vm.onCancelButtonClicked(item)" 削除
+              a.btn.action-btn ng-click="vm.executeDeletion(user.id)"
+                span ng-if="!user.deleted_at" 削除
+                span ng-if="user.deleted_at" 戻す
     .row
       dir-pagination-controls boundary-links="true" template-url="/admin/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
 

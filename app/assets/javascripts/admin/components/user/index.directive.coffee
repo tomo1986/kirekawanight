@@ -37,13 +37,13 @@ angular.module 'bijyoZukanAdmin'
           window.scrollTo(0, 0)
       )
 
-    vm.executeDeletion = () ->
-      user.deleteUser(vm.delete_map_id).then((res) ->
+    vm.executeDeletion = (opt_id) ->
+      user.deleteUser({id: opt_id}).then((res) ->
         if res.data.code == 1
-          modalService.alert('削除しました。')
+          modalService.alert('完了しました')
           vm.getUsers()
         else
-          modalService.error(res.data.message)
+          modalService.error("error",res.data.message)
       )
 
     vm.submit = ->

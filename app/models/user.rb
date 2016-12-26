@@ -150,6 +150,7 @@ class User < ApplicationRecord
         json.ranking user.ranking
         json.total_score user.total_score
         json.can_guided user.can_guided
+        json.deleted_at user.deleted_at
         json.japanese_level user.japanese_level
         json.dayly_count PageView.counts_period(user.page_views)
         json.weekly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_week,Time.zone.now.end_of_week)
@@ -209,6 +210,7 @@ class User < ApplicationRecord
       json.waist self.waist
       json.hip self.hip
       json.ranking self.ranking
+      json.deleted_at self.deleted_at
       json.total_score self.total_score
       json.can_guided self.can_guided
       json.japanese_level self.japanese_level

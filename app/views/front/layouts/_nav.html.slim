@@ -8,21 +8,25 @@ div
             h2.main トップ
             span.sub TOP
         li
-          a href="/casts/karaoke?page=1" ng-class="{'active': vm.active == 'karaoke'}" ng-click="vm.eventCalled()"
-            h2.main カラオケ美女
+          a href="/shops/karaoke?page=1" ng-class="{'active': vm.active == 'karaoke'}" ng-click="vm.eventCalled()"
+            h2.main カラオケ
             span.sub KARAOKE GIRL
         li
-          a href="/casts/bar?page=1" ng-class="{'active': vm.active == 'bar'}" ng-click="vm.eventCalled()"
-            h2.main バー美女
+          a href="/shops/bar?page=1" ng-class="{'active': vm.active == 'bar'}" ng-click="vm.eventCalled()"
+            h2.main バー
             span.sub BAR GIRL
         li
-          a href="/casts/massage?page=1" ng-class="{'active': vm.active == 'massage'}" ng-click="vm.eventCalled()"
-            h2.main マッサー美女
+          a href="/shops/massage?page=1" ng-class="{'active': vm.active == 'massage'}" ng-click="vm.eventCalled()"
+            h2.main マッサージ
             span.sub MASSAGE GIRL
         li
-          a href="/casts/sexy?page=1" ng-class="{'active': vm.active == 'sexy'}" ng-click="vm.eventCalled()"
-            h2.main SEXY美女
-            span.sub SEXY GIRL
+          a href="/casts/guide?page=1" ng-class="{'active': vm.active == 'guide'}" ng-click="vm.eventCalled()"
+            h2.main ガイド
+            span.sub GUIDE GIRL
+        /li
+        /  a href="/casts/sexy?page=1" ng-class="{'active': vm.active == 'sexy'}" ng-click="vm.eventCalled()"
+        /    h2.main セクシー
+        /    span.sub SEXY GIRL
         li
           a href="/comsept" ng-class="{'active': vm.active == 'comsept'}" ng-click="vm.eventCalled()"
             h2.main kirekawa??
@@ -31,7 +35,20 @@ div
           a href="/contact" ng-class="{'active': vm.active == 'contact'}" ng-click="vm.eventCalled()"
             h2.main お問合せ
             span.sub CONTACT
+        li.display-mobile
+          a href="/visitor"
+            h2.main 初めての方へ
+            span.sub VISITOR
+        li.display-mobile
+          a href="/question"
+            h2.main よくある質問
+            span.sub QUESTION
+
         -if customer_signed_in?
+          li.display-mobile
+            a href="/mypage/show" ng-click="vm.onClickedLogout()"
+              h2.main マイページ
+              span.sub MYPAGE
           li
             a href="javascript:void(0)" ng-click="vm.onClickedLogout()"
               h2.main ログアウト
@@ -41,14 +58,6 @@ div
             a href="/login" ng-click="vm.eventCalled()"
               h2.main ログイン/登録
               span.sub LOGIN/NEW
-        li.display-mobile
-          a href="/visitor"
-            h2.main 初めての方へ
-            span.sub VISITOR
-        li.display-mobile
-          a href="/question"
-            h2.main よくある質問
-            span.sub QUESTION
 
       button.close type="button" ng-click="vm.onClosed()"
         i.fa.fa-times aria-hidden="true"

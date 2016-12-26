@@ -38,64 +38,22 @@ section.main-container.map-form-page blog-form-directive=""
               span.title ng-class="{'is-text-danger': vm.errors.name}" head_title_ja
             td.res-form-table__td.input-box
               input.form-control type="text" name="head_title_ja" required='' placeholder="aiueo" ng-model="vm.blog.head_title_ja"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" head_title_vn
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="head_title_vn" required='' placeholder="aiueo" ng-model="vm.blog.head_title_vn"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" head_title_en
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="head_title_en" required='' placeholder="aiueo" ng-model="vm.blog.head_title_en"
 
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" head_keyword_ja
             td.res-form-table__td.input-box
-              input.form-control type="text" name="head_keyword_ja" required='' placeholder="aiueo" ng-model="vm.blog.head_keyword_ja"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" head_keyword_vn
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="head_keyword_vn" required='' placeholder="aiueo" ng-model="vm.blog.head_keyword_vn"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" head_keyword_en
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="head_keyword_en" required='' placeholder="aiueo" ng-model="vm.blog.head_keyword_en"
-
+              input.form-control type="text" name="head_keyword_ja" required='' placeholder="区切りは「、」最大8個まで 例：夜遊び、風俗、旅行" ng-model="vm.blog.head_keyword_ja"
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" head_description_ja
             td.res-form-table__td.input-box
-              input.form-control type="text" name="head_description_ja" required='' placeholder="aiueo" ng-model="vm.blog.head_description_ja"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" head_keyword_vn
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="head_description_vn" required='' placeholder="aiueo" ng-model="vm.blog.head_description_vn"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" head_description_en
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="head_description_en" required='' placeholder="aiueo" ng-model="vm.blog.head_description_en"
-
+              input.form-control type="text" name="head_description_ja" required='' placeholder="このページの説明を書きましょう" ng-model="vm.blog.head_description_ja"
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" title_ja
             td.res-form-table__td.input-box
               input.form-control type="text" name="title_ja" required='' placeholder="aiueo" ng-model="vm.blog.title_ja"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" title_vn
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="title_vn" required='' placeholder="aiueo" ng-model="vm.blog.title_vn"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" title_en
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="title_en" required='' placeholder="aiueo" ng-model="vm.blog.title_en"
 
 
           tr
@@ -104,19 +62,6 @@ section.main-container.map-form-page blog-form-directive=""
               span.btn.btn-danger.btn-xs.absolutely 必須
             td.res-form-table__td.input-box
               textarea.form-control ckeditor="vm.options" ng-model="vm.blog.article_ja"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.description}" Interview vietnamese
-              span.btn.btn-danger.btn-xs.absolutely 必須
-            td.res-form-table__td.input-box
-              textarea.form-control ckeditor="vm.options" ng-model="vm.blog.article_vn"
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.description}" Interview english
-              span.btn.btn-danger.btn-xs.absolutely 必須
-            td.res-form-table__td.input-box
-              textarea.form-control ckeditor="vm.options" ng-model="vm.blog.article_en"
-
         .button-center ng-show="vm.canSubmit"
           button.btn.main-btn type="submit" 登録する
         .button-center ng-hide="vm.canSubmit"

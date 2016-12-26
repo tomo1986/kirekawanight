@@ -178,9 +178,7 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-
-    users = User.where(deleted_at: nil)
-    users = users.keyword_filter(params[:keyword],params[:group_id],params[:shop_id],params[:job_type])
+    users = User.keyword_filter(params[:keyword],params[:group_id],params[:shop_id],params[:job_type])
     total = users.count
     users = users.page(page).per(limit) if users.present?
     builders = Jbuilder.new do |json|
@@ -415,7 +413,7 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     user = User.find_by(id: params[:id])
     render_failed(4, t('admin.error.no_user')) and return unless user
-    user.deleted_at = Time.zone.now
+    user.deleted_at = user && user.deleted_at ? nil : Time.zone.now
     if user.save
       builder = Jbuilder.new do |json|
         json.code 1

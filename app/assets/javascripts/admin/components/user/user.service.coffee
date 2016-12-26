@@ -28,7 +28,7 @@ angular.module 'bijyoZukanAdmin'
       return res
     )
   sm.deleteUser = (opt_user_id) ->
-    api.postPromise('/api/group/api13',opt_user_id).then((res) ->
+    api.postPromise('/api/admin/api13',opt_user_id).then((res) ->
       return res
     )
 
