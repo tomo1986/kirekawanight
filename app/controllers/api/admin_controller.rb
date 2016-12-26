@@ -22,6 +22,7 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     shops = Shop.where(deleted_at: nil)
     builders = Jbuilder.new do |json|
+      json.code 1
       json.shops Shop.to_jbuilders(shops)
     end
     render json: builders.target!
@@ -32,6 +33,7 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     groups = Group.where(deleted_at: nil)
     builders = Jbuilder.new do |json|
+      json.code 1
       json.groups Group.to_jbuilders(groups)
     end
     render json: builders.target!
@@ -178,9 +180,7 @@ class Api::AdminController < ApiController
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
 
     users = User.where(deleted_at: nil)
-    users = users.keyword_filter(params[:keyword]) if params[:keyword]
-    users = users.job_type_filter(params[:job_type]) if params[:job_type]
-    users = users.sex_filter(params[:sex]) if params[:sex]
+    users = users.keyword_filter(params[:keyword],params[:group_id],params[:shop_id],params[:job_type])
     total = users.count
     users = users.page(page).per(limit) if users.present?
     builders = Jbuilder.new do |json|
@@ -975,7 +975,7 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    shops = Shop.where(deleted_at: nil)
+    shops = Shop.all
     total = shops.count
     shops = shops.page(page).per(limit) if shops.present?
     builders = Jbuilder.new do |json|
@@ -1131,7 +1131,8 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     shop = Shop.find_by(id: params[:id])
     render_failed(4, t('admin.error.no_shop')) and return unless shop
-    shop.deleted_at = Time.zone.now
+    shop.deleted_at = shop && shop.deleted_at ? nil : Time.zone.now
+
     if shop.save
       builder = Jbuilder.new do |json|
         json.code 1

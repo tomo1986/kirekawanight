@@ -29,7 +29,9 @@ section.main-container.notification-index-page shop-index-directive=""
             td.clearfix data-label="edit"
               a.btn.action-btn href="/admin/shops/{{shop.id}}/edit" 編集
             td.clearfix data-label="delete"
-              a.btn.action-btn ng-click="vm.executeDeletion(shop.id)" 削除
+              a.btn.action-btn ng-click="vm.executeDeletion(shop.id)"
+                span ng-if="!shop.deleted_at" 削除
+                span ng-if="shop.deleted_at" 戻す
     .row
       dir-pagination-controls boundary-links="true" template-url="/admin/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
 

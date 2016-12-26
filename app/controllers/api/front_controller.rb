@@ -170,14 +170,14 @@ class Api::FrontController < ApiController
     render_failed(4, t('shop.error.not_find')) and return if shop.blank?
     users = shop.users
     is_favorited = false
-    is_favorited = current_customer.favorites.exists?(receiver_type: 'Shop', receiver_id: params[:id]) if customer_signed_in?
+    is_favorited = current_customer.favorites.exists?(receiver_type: 'Shop', receiver_id: params[:id],deleted_at: nil) if customer_signed_in?
     favorites = {}
     if customer_signed_in?
       current_customer.favorites.each do |favorite|
         favorites[favorite.receiver_id] = favorite
       end
     end
-    shops = Shop.where(group_id: shop.group_id).where.not(id: shop.id)
+    shops = Shop.where(group_id: shop.group_id,deleted_at: nil).where.not(id: shop.id)
     builder = Jbuilder.new do |json|
       json.code 1
       json.shop shop.to_jbuilder
@@ -412,7 +412,7 @@ class Api::FrontController < ApiController
 
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    shops = Shop.where(job_type: params[:job_type])
+    shops = Shop.where(job_type: params[:job_type],deleted_at: nil)
     total = shops.count
 
     if params[:sort] == 'new'

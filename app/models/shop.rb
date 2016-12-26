@@ -131,6 +131,7 @@ class Shop < ApplicationRecord
         json.is_chinese shop.is_chinese
         json.is_korean shop.is_korean
         json.tip shop.tip
+        json.deleted_at shop.deleted_at
         json.girls_count shop.girls_count
         json.is_smoked shop.is_smoked
         json.opened_at shop.opened_at
@@ -192,6 +193,7 @@ class Shop < ApplicationRecord
       json.budget_usd self.budget_usd
       json.service self.service
       json.user_count self.users.count
+      json.deleted_at self.deleted_at
       # json.note self.note
       json.images self.set_images
       json.way_images self.set_way_images

@@ -16,7 +16,7 @@ angular.module 'bijyoZukanAdmin'
     vm.executeDeletion = (opt_id) ->
       shopService.deleteShop({id: opt_id}).then((res) ->
         if res.data.code == 1
-          modalService.alert('削除しました。')
+          modalService.alert('完了しました')
           vm.getShops()
         else
           modalService.error("error",res.data.message)

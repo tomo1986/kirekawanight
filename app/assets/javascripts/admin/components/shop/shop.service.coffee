@@ -34,6 +34,10 @@ angular.module 'bijyoZukanAdmin'
       return res
     )
 
+  sm.allGetShops = ->
+    api.getPromise('/api/admin/all_shops',{}).then((res) ->
+      return res
+    )
 
   sm.getTags = ->
     api.getPromise('/api/admin/all_tags',{}).then((res) ->
@@ -97,3 +101,4 @@ angular.module 'bijyoZukanAdmin'
     deleteShop: sm.deleteShop
     getTags: sm.getTags
     getGroups: sm.getGroups
+    allGetShops: sm.allGetShops

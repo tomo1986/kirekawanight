@@ -28,13 +28,24 @@ class User < ApplicationRecord
 
 
 
-  scope :keyword_filter, ->(keyword=nil) {
-    users = self
+  scope :keyword_filter, ->(keyword=nil,group_id=nil, shop_id=nil, job_type=nil) {
+    users = self.joins('left join shops on users.shop_id = shops.id left join groups on shops.group_id = groups.id')
     if keyword && keyword.strip.length > 0
       tokens = keyword.gsub('　', ' ').split(' ').collect {|c| "%#{c.downcase}%"}
-      arrColumns = ["`users`.`sns_line`","`users`.`sns_zalo`","`users`.`sns_wechat`","`users`.`birthplace`"]# define column search in this array
+      arrColumns = ["`users`.`name`","`users`.`nick_name`","`shops`.`name`"]# define column search in this array
       users = users.where(((["CONCAT_WS(' ', " + arrColumns.join(', ') + ') LIKE ?']*tokens.size).join(' AND ')),*(tokens).collect{ |token| [token] }.flatten)
     end
+    if group_id
+      users = users.where(shops:{group_id: group_id} )
+    end
+    if shop_id
+      users = users.where(users:{shop_id: shop_id} )
+    end
+    if job_type
+      users = users.where(users:{job_type: job_type} )
+    end
+    return users
+
   }
   scope :job_type_filter, -> (opt_type= nil) {
     return if opt_type.blank?

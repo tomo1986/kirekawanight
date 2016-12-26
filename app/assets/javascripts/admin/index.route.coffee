@@ -27,9 +27,19 @@ angular.module 'bijyoZukanAdmin'
         templateUrl: '/admin/tpl/login/new_password.html'
 
       .state '/users',
-        url: '/admin/users?page'
+        url: '/admin/users?page&sort&orde&keyword&group_id&shop_id&job_type'
         active_menu: 'user'
         templateUrl: '/admin/tpl/user/index.html'
+        params: {
+          page: null
+          sort: null
+          order: null
+          keyword: null
+          group_id: null
+          shop_id: null
+          job_type: null
+        }
+
       .state '/users/:id/detail',
         url: '/admin/users/:id/detail'
         active_menu: 'user'

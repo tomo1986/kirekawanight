@@ -22,65 +22,39 @@ section.main-container.notification-index-page user-index-directive=""
               .form-group.clearfix.clearfix
                 label.col-xs-12.col-md-2 for="inputPassword"  KeyWord
                 .col-xs-12.col-md-10
-                  input#inputPassword.form-control type="text" ng-model="vm.filters.keywords"
+                  input#inputPassword.form-control type="text" ng-model="vm.filters.keyword"
           .col-md-12
             .row
-              .col-md-6
+              .col-md-4
                 .row
                   .form-group.clearfix.clearfix
                     label.col-xs-12.col-md-4 for="inputPassword"  Group
                     .col-xs-12.col-md-8
-                      select.form-control.form-control-ls
-                        option value=""  -- 選択してください --
-                        option ng-repeat="group in vm.groups" ng-value="group.id"
-                          | {{group.name}}
+                      select.form-control.form-control-ls name="filters.group_id" ng-model="vm.filters.group_id" ng-options="group.id as group.name for group in vm.groups"
 
-              .col-md-6
+              .col-md-4
                 .row
                   .form-group.clearfix.clearfix
-                    label.col-xs-12.col-md-4 for="inputPassword" SEX
+                    label.col-xs-12.col-md-4 for="inputPassword" Shop
                     .col-xs-12.col-md-8
-                      select.form-control.form-control-ls
+                      select.form-control.form-control-ls  ng-model="vm.filters.shop_id"
                         option value=""  -- 選択してください --
-                        option value="0" Boy
-                        option value="1" girl
-
-          .col-md-12
-            .row
-              .col-md-6
+                        option ng-repeat="shop in vm.shops" ng-value="shop.id"
+                          | {{shop.name}}
+              .col-md-4
                 .row
                   .form-group.clearfix.clearfix
-                    label.col-xs-12.col-md-4 for="inputPassword" 担当者
+                    label.col-xs-12.col-md-4 for="inputPassword" Job Type
                     .col-xs-12.col-md-8
-                      select.form-control.form-control-ls
+                      select.form-control.form-control-ls  ng-model="vm.filters.job_type"
                         option value=""  -- 選択してください --
-                        option value="0" ng-selected="vm.parentCtrl.capsule.quiz_result == 0"  A
-                        option value="1" ng-selected="vm.parentCtrl.capsule.quiz_result == 1"  B
-                        option value="2" ng-selected="vm.parentCtrl.capsule.quiz_result == 2"  C
-              .col-md-6
-                .row
-                  .form-group.clearfix.clearfix
-                    label.col-xs-12.col-md-4 for="inputPassword" 担当者
-                    .col-xs-12.col-md-8
-                      select.form-control.form-control-ls
-                        option value=""  -- 選択してください --
-                        option value="0" ng-selected="vm.parentCtrl.capsule.quiz_result == 0"  A
-                        option value="1" ng-selected="vm.parentCtrl.capsule.quiz_result == 1"  B
-                        option value="2" ng-selected="vm.parentCtrl.capsule.quiz_result == 2"  C
-          .col-md-12
-            .row
-              .form-group.clearfix.clearfix
-                label.col-xs-12.col-md-2 for="inputPassword"  都道府県
-                #js-check-prefecture.col-xs-12.col-md-10
-                  label.checkbox-space ng-repeat="prefecture in vm.prefectures"
-                    input id="{{prefecture.en}}" type="checkbox" name="prefectures" value="{{prefecture.name}}"
-                    span
-                      | {{prefecture.name}}
+                        option ng-value="karaoke" karaoke
+                        option ng-value="bar" bar
+                        option ng-value="massage" massage
 
-          .col-md-12
-            .btn-center
+          .col-md-12 style="margin-bottom:1rem;"
+            .btn-center style="text-align:center;"
               button.btn.rounded-btn type="submit" 検索
-              button.btn.rounded-btn type="button" ng-click="vm.resetFilter()" 条件クリア
 
     .row
       table.res-separate-table
@@ -101,7 +75,7 @@ section.main-container.notification-index-page user-index-directive=""
             th edit
             th delete
         tbody
-          tr(dir-paginate="user in vm.users | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+          tr(dir-paginate="user in vm.users | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page")
             td.clearfix data-label="id"  {{user.id}}
             td.clearfix data-label="name"
               a href="/admin/users/{{user.id}}/detail"

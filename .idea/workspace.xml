@@ -39,21 +39,11 @@
     <splitter split-orientation="vertical" split-proportion="0.4401973">
       <split-first>
         <leaf>
-          <file leaf-file-name="front_controller.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="front_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.888889">
-                  <caret line="276" column="33" selection-start-line="276" selection-start-column="33" selection-end-line="276" selection-end-column="33" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.rb" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.1388889">
-                  <caret line="185" column="45" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="45" />
+                <state vertical-scroll-proportion="2.0">
+                  <caret line="281" column="6" selection-start-line="281" selection-start-column="6" selection-end-line="281" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -63,95 +53,31 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/main.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2016129">
-                  <caret line="488" column="0" selection-start-line="488" selection-start-column="0" selection-end-line="488" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/home/index.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.375">
-                  <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="info.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-14.75">
-                  <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-                  <folding>
-                    <marker date="1482682334000" expanded="true" signature="12:3894" placeholder=".cast-detail-page.clearfix" />
-                    <marker date="1482682334000" expanded="true" signature="43:1892" placeholder=".cast-detail.clearfix" />
-                    <marker date="1482682334000" expanded="true" signature="71:795" placeholder=".photo-area" />
-                    <marker date="1482682334000" expanded="true" signature="91:459" placeholder=".fream" />
-                    <marker date="1482682334000" expanded="true" signature="468:795" placeholder=".thumbnail.mobile-ondisplayed" />
-                    <marker date="1482682334000" expanded="true" signature="802:1892" placeholder=".profile-area" />
-                    <marker date="1482682334000" expanded="true" signature="824:1560" placeholder=".name-area" />
-                    <marker date="1482682334000" expanded="true" signature="1176:1336" placeholder=".feature" />
-                    <marker date="1482682334000" expanded="true" signature="1347:1465" placeholder=".feature" />
-                    <marker date="1482682334000" expanded="true" signature="1476:1560" placeholder=".shop-tags" />
-                    <marker date="1482682334000" expanded="true" signature="1569:1892" placeholder=".thumbnail.mobile-nodisplayed" />
-                    <marker date="1482682334000" expanded="true" signature="1897:2023" placeholder=".comment.clearfix" />
-                    <marker date="1482682334000" expanded="true" signature="1921:1974" placeholder=".page-title" />
-                    <marker date="1482682334000" expanded="true" signature="2029:3894" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1482682334000" expanded="true" signature="2062:3894" placeholder=".row" />
-                    <marker date="1482682334000" expanded="true" signature="2075:2127" placeholder=".page-title" />
-                    <marker date="1482682334000" expanded="true" signature="2136:3894" placeholder=".row" />
-                    <marker date="1482682334000" expanded="true" signature="2151:2604" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
-                    <marker date="1482682334000" expanded="true" signature="2274:2401" placeholder=".col-row-left.clearfix ng-if=&quot;vm.cast.images[0] &amp;&amp; vm.cast.images[0].url&quot;" />
-                    <marker date="1482682334000" expanded="true" signature="2414:2604" placeholder=".col-row-left.clearfix ng-if=&quot;!vm.cast.images[0] &amp;&amp; !vm.cast.images[0].url&quot;" />
-                    <marker date="1482682334000" expanded="true" signature="2616:3894" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
-                    <marker date="1482682334000" expanded="true" signature="2677:3894" placeholder=".col-row-right.clearfix" />
-                    <marker date="1482682334000" expanded="true" signature="3897:4024" placeholder=".cast-page--service ng-if=&quot;vm.cast.shop_id&quot;" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="shop.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.625">
-                  <caret line="1216" column="18" selection-start-line="1216" selection-start-column="18" selection-end-line="1216" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="login.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/login/login.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-5.625">
-                  <caret line="27" column="71" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
+                  <caret line="497" column="17" selection-start-line="497" selection-start-column="17" selection-end-line="497" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_reviews.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/_reviews.html.slim">
+          <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/models/user.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.25">
-                  <caret line="275" column="17" selection-start-line="275" selection-start-column="17" selection-end-line="275" selection-end-column="17" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cast.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss">
+          <file leaf-file-name="nav.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/block/nav.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.4166667">
-                  <caret line="349" column="18" selection-start-line="349" selection-start-column="18" selection-end-line="349" selection-end-column="18" />
+                <state vertical-scroll-proportion="0.6616541">
+                  <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -164,18 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/user/user.service.coffee" />
-        <option value="$PROJECT_DIR$/app/models/contact_type/guide.rb" />
-        <option value="$PROJECT_DIR$/app/models/contact_type/contact.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/contact/contact.directive.coffee" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/contact/index_jp.html.slim" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/karaoke/index.directive.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/guide/index.directive.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/bar/index.directive.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/massage/index.directive.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/sexy/index.directive.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/karaoke/index.directive.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/bar/index.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/massage/index.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/common/cast.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/common/cast.directive.coffee" />
@@ -200,21 +114,33 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/home/home.directive.coffee" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/detail.directive.coffee" />
-        <option value="$PROJECT_DIR$/app/controllers/api/admin_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/tpl/contact/index.html.slim" />
         <option value="$PROJECT_DIR$/app/models/contact.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim" />
-        <option value="$PROJECT_DIR$/app/controllers/api/front_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/common/_reviews.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/login/login.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/main.scss" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/front/service/make_date.directive.coffee" />
+        <option value="$PROJECT_DIR$/app/views/admin/tpl/shop/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/models/shop.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/index.directive.coffee" />
+        <option value="$PROJECT_DIR$/app/controllers/api/front_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee" />
+        <option value="$PROJECT_DIR$/app/controllers/api/admin_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/front/index.route.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/index.route.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/user/index.directive.coffee" />
+        <option value="$PROJECT_DIR$/app/views/admin/tpl/user/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/tpl/block/nav.html.slim" />
       </list>
     </option>
   </component>
@@ -226,9 +152,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
+    <option name="x" value="65" />
     <option name="y" value="23" />
-    <option name="width" value="1436" />
+    <option name="width" value="1244" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -254,8 +180,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -284,20 +208,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -324,7 +234,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -350,7 +260,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -358,7 +268,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
+              <option name="myItemId" value="block" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -380,7 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,72 +305,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -484,7 +328,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,9 +341,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/javascripts/front/service" />
       <recent name="$PROJECT_DIR$/app/assets/javascripts/front/components/feature" />
       <recent name="$PROJECT_DIR$/app/models/contact_type" />
-      <recent name="$PROJECT_DIR$/app/assets/javascripts/front/service" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets/front" />
       <recent name="$PROJECT_DIR$/app/views/front/tpl/feature" />
     </key>
@@ -707,7 +553,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1436" height="877" extended-state="6" />
+    <frame x="65" y="23" width="1244" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -716,7 +562,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22238164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20382695" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -756,155 +602,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/sexy/index.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.875">
-          <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/karaoke/index.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.75">
-          <caret line="81" column="33" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/bar/index.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.75">
-          <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/massage/index.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.375">
-          <caret line="81" column="33" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/common/cast.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0">
-          <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/common/cast.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78494626">
-          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="69" column="45" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="69" column="49" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/karaoke/index.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/sexy/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.875">
-          <caret line="99" column="176" selection-start-line="99" selection-start-column="176" selection-end-line="99" selection-end-column="176" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.875">
-          <caret line="105" column="176" selection-start-line="105" selection-start-column="176" selection-end-line="105" selection-end-column="176" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.875">
-          <caret line="99" column="176" selection-start-line="99" selection-start-column="176" selection-end-line="99" selection-end-column="176" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.875">
-          <caret line="105" column="49" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/home/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/bar/index.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1538461">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/comsept/comsept.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/api_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,7 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,7 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.625">
           <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,7 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.25">
           <caret line="18" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -944,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -952,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.25">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.92907804">
           <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24822696">
           <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,7 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31829575">
           <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,7 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7">
           <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,7 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8571428">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.85">
           <caret line="42" column="5" selection-start-line="9" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,6 +697,182 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3007519">
           <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/contact/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71428573">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6363636">
+          <caret line="308" column="17" selection-start-line="308" selection-start-column="17" selection-end-line="308" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/home/home.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/home/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="10" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37593985">
+          <caret line="10" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37593985">
+          <caret line="10" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37593985">
+          <caret line="10" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/_reviews.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="275" column="17" selection-start-line="275" selection-start-column="17" selection-end-line="275" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="349" column="18" selection-start-line="349" selection-start-column="18" selection-end-line="349" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1216" column="18" selection-start-line="1216" selection-start-column="18" selection-end-line="1216" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/login/login.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="71" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/service/validation.service.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/service/make_date.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/index.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8823528">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/_reviews.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1804512">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/shop/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/shop.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17730497">
+          <caret line="191" column="37" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875">
+          <caret line="54" column="110" selection-start-line="54" selection-start-column="110" selection-end-line="54" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/system.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.375">
+          <caret line="60" column="0" selection-start-line="2" selection-start-column="4" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="112" column="23" selection-start-line="112" selection-start-column="23" selection-end-line="112" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/shop/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1020,177 +885,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/admin_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0">
-          <caret line="439" column="40" selection-start-line="439" selection-start-column="28" selection-end-line="439" selection-end-column="40" />
-          <folding>
-            <element signature="e#245#270#0" expanded="false" />
-            <element signature="e#1740#1765#0" expanded="false" />
-            <element signature="e#9809#9833#0" expanded="false" />
-            <element signature="e#15699#15723#0" expanded="false" />
-            <element signature="e#18463#18488#0" expanded="false" />
-            <element signature="e#33915#33940#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/contact/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71428573">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/contact.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8148148">
+        <state vertical-scroll-proportion="1.1702127">
           <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6363636">
-          <caret line="308" column="17" selection-start-line="308" selection-start-column="17" selection-end-line="308" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/home/home.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/home/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.375">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="10" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.888889">
-          <caret line="276" column="33" selection-start-line="276" selection-start-column="33" selection-end-line="276" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1388889">
-          <caret line="185" column="45" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37593985">
-          <caret line="10" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/guide/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37593985">
-          <caret line="10" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37593985">
-          <caret line="10" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.75">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding>
-            <marker date="1482682334000" expanded="true" signature="12:3894" placeholder=".cast-detail-page.clearfix" />
-            <marker date="1482682334000" expanded="true" signature="43:1892" placeholder=".cast-detail.clearfix" />
-            <marker date="1482682334000" expanded="true" signature="71:795" placeholder=".photo-area" />
-            <marker date="1482682334000" expanded="true" signature="91:459" placeholder=".fream" />
-            <marker date="1482682334000" expanded="true" signature="468:795" placeholder=".thumbnail.mobile-ondisplayed" />
-            <marker date="1482682334000" expanded="true" signature="802:1892" placeholder=".profile-area" />
-            <marker date="1482682334000" expanded="true" signature="824:1560" placeholder=".name-area" />
-            <marker date="1482682334000" expanded="true" signature="1176:1336" placeholder=".feature" />
-            <marker date="1482682334000" expanded="true" signature="1347:1465" placeholder=".feature" />
-            <marker date="1482682334000" expanded="true" signature="1476:1560" placeholder=".shop-tags" />
-            <marker date="1482682334000" expanded="true" signature="1569:1892" placeholder=".thumbnail.mobile-nodisplayed" />
-            <marker date="1482682334000" expanded="true" signature="1897:2023" placeholder=".comment.clearfix" />
-            <marker date="1482682334000" expanded="true" signature="1921:1974" placeholder=".page-title" />
-            <marker date="1482682334000" expanded="true" signature="2029:3894" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1482682334000" expanded="true" signature="2062:3894" placeholder=".row" />
-            <marker date="1482682334000" expanded="true" signature="2075:2127" placeholder=".page-title" />
-            <marker date="1482682334000" expanded="true" signature="2136:3894" placeholder=".row" />
-            <marker date="1482682334000" expanded="true" signature="2151:2604" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-2.col-lg-offset-0.col-xl-2.col-xl-offset-0" />
-            <marker date="1482682334000" expanded="true" signature="2274:2401" placeholder=".col-row-left.clearfix ng-if=&quot;vm.cast.images[0] &amp;&amp; vm.cast.images[0].url&quot;" />
-            <marker date="1482682334000" expanded="true" signature="2414:2604" placeholder=".col-row-left.clearfix ng-if=&quot;!vm.cast.images[0] &amp;&amp; !vm.cast.images[0].url&quot;" />
-            <marker date="1482682334000" expanded="true" signature="2616:3894" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-10.col-xl-10" />
-            <marker date="1482682334000" expanded="true" signature="2677:3894" placeholder=".col-row-right.clearfix" />
-            <marker date="1482682334000" expanded="true" signature="3897:4024" placeholder=".cast-page--service ng-if=&quot;vm.cast.shop_id&quot;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/_reviews.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.25">
-          <caret line="275" column="17" selection-start-line="275" selection-start-column="17" selection-end-line="275" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4166667">
-          <caret line="349" column="18" selection-start-line="349" selection-start-column="18" selection-end-line="349" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.625">
-          <caret line="1216" column="18" selection-start-line="1216" selection-start-column="18" selection-end-line="1216" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/login/login.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="27" column="71" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2016129">
-          <caret line="488" column="0" selection-start-line="488" selection-start-column="0" selection-end-line="488" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="497" column="17" selection-start-line="497" selection-start-column="17" selection-end-line="497" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/karaoke/index.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7">
+          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/index.route.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/index.route.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="29" column="75" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/user/index.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5294118">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/user/user.service.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1764706">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.05882353">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/user/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8901099">
+          <caret line="50" column="57" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/admin_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.0">
+          <caret line="182" column="32" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="32" />
+          <folding>
+            <element signature="e#245#270#0" expanded="true" />
+            <element signature="e#802#827#0" expanded="true" />
+            <element signature="e#1776#1801#0" expanded="true" />
+            <element signature="e#2291#2316#0" expanded="true" />
+            <element signature="e#4603#4627#0" expanded="true" />
+            <element signature="e#5000#5025#0" expanded="true" />
+            <element signature="e#5735#5759#0" expanded="true" />
+            <element signature="e#5955#5980#0" expanded="true" />
+            <element signature="e#18271#18296#0" expanded="true" />
+            <element signature="e#18629#18654#0" expanded="true" />
+            <element signature="e#33851#33876#0" expanded="true" />
+            <element signature="e#34339#34364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.0">
+          <caret line="281" column="6" selection-start-line="281" selection-start-column="6" selection-end-line="281" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/block/nav.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6616541">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>

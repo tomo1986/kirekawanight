@@ -18,18 +18,16 @@ nav.sidebar ng-class="{'sidebarPushRight': vm.isActive}"
         .menu-icon
           i.fa.fa-fw.fa-building
         span.menu-text Shops
-
-
     li
       a.list-group-item ng-class="{'router-link-active': vm.active == 'user'}" href="/admin/users" ng-click="vm.eventCalled()"
         .menu-icon
           i.fa.fa-fw.fa-users
         span.menu-text Users
-    li
-      a.list-group-item ng-class="{'router-link-active': vm.active == 'bannar'}" href="/admin/banners" ng-click="vm.eventCalled()"
-        .menu-icon
-          i.fa.fa-fw.fa-newspaper-o
-        span.menu-text Banners
+    /li
+    /  a.list-group-item ng-class="{'router-link-active': vm.active == 'bannar'}" href="/admin/banners" ng-click="vm.eventCalled()"
+    /    .menu-icon
+    /      i.fa.fa-fw.fa-newspaper-o
+    /    span.menu-text Banners
     li
       a.list-group-item ng-class="{'router-link-active': vm.active == 'pickup'}" href="/admin/pickups" ng-click="vm.eventCalled()"
         .menu-icon
