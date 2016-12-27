@@ -97,7 +97,7 @@ main#main
             span ng-if="review.info4 == 'no'" できません。
             span ng-if="review.info4 == 'not'" どちらとも言えません。
 
-          .review--footer.clearfix ng-if="vm.parentCtrl.loginCustomer.id != review.sender.id && vm.review.id != review.id"
+          .review--footer.clearfix ng-if="!vm.parentCtrl.loginCustomer || (vm.parentCtrl.loginCustomer.id != review.sender.id && vm.review.id != review.id)"
             .footer-text
               | {{review.reference_count}}人のお客様がこれが役に立ったと考えています. この口コミは参考になりましたか？
             .footer-btn
