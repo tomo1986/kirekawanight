@@ -109,31 +109,35 @@ angular.module 'bisyoujoZukanNight'
         dots: true
         accessibility: true
         infinite: true
-        centerMode: true
         autoplay: true,
         autoplaySpeed: 4000
-        slidesToShow: 2
-        slidesToScroll: 2
+        slidesToShow: 3
+        slidesToScroll: 3
         responsive: [
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2,
-              infinite: true,
-              dots: true
+              slidesToScroll: 2
             }
           },
           {
             breakpoint: 768,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToShow: 2,
+              slidesToScroll: 2
             }
           },
           {
             breakpoint: 568,
             settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 414,
+            settings:{
               slidesToShow: 1,
               slidesToScroll: 1
             }
