@@ -59,15 +59,14 @@ main#main
                     .shop-map--info-name
                       | {{vm.shop.name}}
                   dl.profile.clearfix
-                    dt TEL
-                    dd
-                      | {{vm.shop.tel}}
-                    dt EMAIL
-                    dd
-                      | {{vm.shop.email}}
                     dt ADDRESS
                     dd
                       | {{vm.shop.address}}
+                    dt POINT
+                    dd
+                      .shop-tags
+                        a.btn ng-repeat="tag in vm.shop.tags"
+                          | {{tag.name}}
 
     .rank-box.clearfix style="margin-bottom:2rem;"
       .page-title

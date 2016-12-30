@@ -758,5 +758,31 @@ class Api::FrontController < ApiController
     render json: builders.target!
   end
 
+  def api30
+    shop = Shop.find_by(id: params[:id])
+    render_failed(4, t('shop.error.not_find')) and return if shop.blank?
+    users = shop.users.where(deleted_at: nil)
+    ids = params[:cast_ids].split(',') if params[:cast_ids]
+    users = users.where.not(id: ids) if users && ids
+    builders = Jbuilder.new do |json|
+      json.code 1
+      json.users users ? User.to_jbuilders(users) : nil
+    end
+    render json: builders.target!
+  end
+  def api31
+    shop = Shop.find_by(id: params[:id])
+    render_failed(4, t('shop.error.not_find')) and return if shop.blank?
+    users = shop.users.where(deleted_at: nil)
+    users = users.where.not(id: params[:cast_id]) if users
+    builders = Jbuilder.new do |json|
+      json.code 1
+      json.users users ? User.to_jbuilders(users) : nil
+    end
+    render json: builder.target!
+  end
+
+
+
 end
 

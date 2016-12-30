@@ -44,6 +44,10 @@ angular.module 'bisyoujoZukanNight'
     api.getPromise('/api/front/api27',params).then((res) ->
       return res
     )
+  sm.getContactCasts = (opt_shop_id,opt_cast_ids) ->
+    api.postPromise('/api/front/api30',{id: opt_shop_id, cast_ids: opt_cast_ids}).then((res) ->
+      return res
+    )
 
 
 
@@ -93,3 +97,4 @@ angular.module 'bisyoujoZukanNight'
     getReview: sm.getReview
     getCasts: sm.getCasts
     getAllCasts: sm.getAllCasts
+    getContactCasts: sm.getContactCasts

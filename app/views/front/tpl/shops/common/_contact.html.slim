@@ -44,7 +44,7 @@ main#main
                 span.title 人数
                 span.btn.required 必須
               td.res-form-table__td.parent-td.input-box
-                select.form-control name="type" ng-model="vm.contactData.peoples"
+                select.form-control name="type" ng-model="vm.contactData.peoples" required=''
                   option value=""  -- Please select --
                   option value="1" ng-selected="vm.contactData.peoples == '1'" 1人
                   option value="2" ng-selected="vm.contactData.peoples == '2'" 2人
@@ -75,7 +75,7 @@ main#main
                 .error
                   span.is-text-danger ng-if="vm.errors.reservation"
                     | {{vm.errors.reservation}}
-            tr ng-if="vm.contactData.contact_type == 'reservation' && vm.casts"
+            tr ng-if="vm.contactData.contact_type == 'reservation' && vm.casts.length > 0"
               th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                 span.title キャスト選択
               td.res-form-table__td.parent-td.parent-td.input-box
@@ -101,17 +101,17 @@ main#main
                           = image_tag 'front/cast-no-image.png', alt: "cast no image"
                         h4.name
                           | Cast.No {{cast.id}} / {{cast.name}}
-                  button.add-btn ng-click="vm.onAdd()" type="button"
-                    i.fa.fa-plus aria-hidden="true"
+                  button.add-btn ng-click="vm.onAdd(vm.contactData.selectCasts[$index],$index)" type="button"
+                    i.fa aria-hidden="true" ng-class="{'fa-plus': selectCast.canAdded, 'fa-minus': !selectCast.canAdded}"
 
 
             tr
               th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                 span.title 内容
               td.res-form-table__td.parent-td.input-box
-                textarea.form-control rows="8" style="color:#fff;" name="message" placeholder="その他なにか" ng-model="vm.contact.message"
+                textarea.form-control rows="8" style="color:#fff;" name="message" placeholder="その他なにかございましたら、お書きください" ng-model="vm.contact.message"
 
           .center-button style="text-align:center;margin-bottom:1rem;" ng-show="vm.canContactSubmited"
-            button.btn.btn-submit type="submit"  問合わせる
+            button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  問合わせる
           .center-button style="text-align:center;margin-bottom:1rem;" ng-hide="vm.canContactSubmited"
             loading-directive size="125"

@@ -26,11 +26,13 @@ section.main-container.notification-index-page contact-directive=""
             td.clearfix data-label="id"
               a href="/admin/contacts/{{item.id}}/detail" {{item.id}}
             td.clearfix data-label="sub_id"
-              a href="/admin/users/{{item.subject.id}}/detail" {{item.subject.name}}
+              a href="/admin/users/{{item.subject.id}}/detail" ng-if="item.subject_type == 'User'" {{item.subject.name}}
+              a href="/admin/shops/{{item.subject.id}}/detail" ng-if="item.subject_type == 'Shop'" {{item.subject.name}}
             td.clearfix data-label="name"  {{item.name}}
             td.clearfix data-label="tel"  {{item.tel}}
             td.clearfix data-label="email"  {{item.email}}
-            td.clearfix data-label="message"  {{item.message}}
+            td.clearfix data-label="message" style="text-align:left;"
+              p ng-bind-html="item.message | noHTML | newlines"
     .row
       dir-pagination-controls boundary-links="true" template-url="/admin/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
 

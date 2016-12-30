@@ -12,19 +12,10 @@
               | {{vm.shop.name}}
       .col-xs-12.col-sm-12.col-md-8.col-lg-7.col-xl-7
         .row.clearfix
-          .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
-            .row.clearfix
-              .shop--tel
-                i.fa.fa-mobile aria-hidden="true"
-                a href="tel:{{vm.shop.tel}}"
-                  | {{vm.shop.tel}}
-            .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xl-6
-            .row.clearfix
-              .review-btn-box
-                a.btn.btn-review href="/shops/massage/{{vm.shop.id}}/write_review" レビューを書く
-              /.contact-btn-box
-              /  a.btn.btn-review href="/shops/massage/{{vm.shop.id}}/contact" 問い合わせ
-
+          .review-btn-box
+            a.btn.btn-review href="/shops/massage/{{vm.shop.id}}/write_review" レビューを書く
+          .contact-btn-box
+            a.btn.btn-review href="/shops/massage/{{vm.shop.id}}/contact" 問い合わせ
   .container
     ul.genre-tag
       li
