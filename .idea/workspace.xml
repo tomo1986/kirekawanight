@@ -132,8 +132,8 @@
           <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/main.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.53846157">
-                  <caret line="669" column="43" selection-start-line="669" selection-start-column="43" selection-end-line="669" selection-end-column="43" />
+                <state vertical-scroll-proportion="0.75">
+                  <caret line="653" column="38" selection-start-line="653" selection-start-column="38" selection-end-line="653" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -1211,8 +1211,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53846157">
-          <caret line="669" column="43" selection-start-line="669" selection-start-column="43" selection-end-line="669" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.75">
+          <caret line="653" column="38" selection-start-line="653" selection-start-column="38" selection-end-line="653" selection-end-column="38" />
           <folding />
         </state>
       </provider>

@@ -650,6 +650,10 @@ a, button {
       .site--logo {
         display: inline-block;
         margin-bottom: $row-space-half-half;
+        @media screen and (min-width: 320px) and (max-width: 492px){
+          margin-bottom: 0 !important;
+        }
+
         img {
           height:3rem;
         }
@@ -664,7 +668,7 @@ a, button {
           display: inline-block;
           img{height:2rem;}
           @media screen and (min-width: 320px) and (max-width: 492px){
-            margin: 0;
+            margin: 0 0 $row-space-half-half;
             img{height:1.2rem;}
           }
           @media screen and (min-width: 493px) and (max-width: 767px){
