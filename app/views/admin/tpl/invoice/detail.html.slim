@@ -1,0 +1,77 @@
+section.main-container.map-form-page invoice-detail-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | 会社新規登録
+    .row
+      table.res-form-table style="margin-bottom: 4rem;"
+        caption 詳細データ
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title ショップ名
+          td.res-form-table__td.input-box
+            a.btn.action-btn href="/admin/shops/{{vm.invoice.shop.id}}/detail"
+              | {{vm.invoice.shop.name}}({{vm.invoice.shop.name_kana}})
+
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 担当者名(窓口)
+          td.res-form-table__td.input-box
+            | {{vm.invoice.shop.contract_person}}
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 担当連絡先
+          td.res-form-table__td.input-box
+            | 電話番号：{{vm.invoice.shop.tel}}
+            br
+            | Email：{{vm.invoice.shop.email}}
+
+
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 契約をとった人
+          td.res-form-table__td.input-box
+            | {{vm.invoice.staff.name}}
+
+
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 請求額
+          td.res-form-table__td.input-box
+            span ng-if="vm.invoice.total"
+              | ${{vm.invoice.total | number}}
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 入金金額
+          td.res-form-table__td.input-box
+            span ng-if="vm.invoice.transfer_amount"
+              | ${{vm.invoice.transfer_amount | number}}
+
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 請求期間
+          td.res-form-table__td.input-box
+            | {{vm.invoice.period_from | date: 'yyyy年M月d日'}}
+            br
+            | から
+            br
+            | {{vm.invoice.period_to | date: 'yyyy年M月d日'}}
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 支払期日
+          td.res-form-table__td.input-box
+            | {{vm.invoice.due_date | date: 'yyyy年M月d日'}}
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title 入金日
+          td.res-form-table__td.input-box
+            | {{vm.invoice.paid_at | date: 'yyyy年M月d日'}}
+
+
+
+        tr
+          th.res-form-table__th.title-box.clearfix
+            span.title Interview english
+          td.res-form-table__td.input-box
+            p ng-bind-html="vm.shop.interview_en | noHTML | newlines"

@@ -1,0 +1,305 @@
+css:
+  page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+  }
+
+  page[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+  }
+
+  page[size="A4"][layout="portrait"] {
+    width: 29.7cm;
+    height: 21cm;
+  }
+  @media print {
+    body, page {
+      margin: 0;
+      box-shadow: 0;
+    }
+  }
+  body {
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, 'ＭＳ Ｐゴシック', Osaka, sans-serif;
+    margin: 0px auto;
+    padding: 0;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .print-container {
+    display: table;
+    width: 100%;
+    margin: 0;
+    page-break-before: always;
+    padding: 1.5cm 0 0;
+  }
+
+  .print-container:last-child {
+    page-break-after: auto; /* 最後のページの改ページを防ぐ */
+  }
+  .print-container .header {
+    width: 100%;
+    margin-bottom: 0;
+    height: 150px;
+  }
+
+  /* line 45, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .header .md-date {
+    width: 200px;
+    margin-bottom: 40px;
+  }
+
+  /* line 48, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .header .md-date .txt-date {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  /* line 52, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .header .md-date p {
+    font-size: 12px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* line 58, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .header h1.title-pg {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100%;
+    margin-top: -10px;
+  }
+
+  /* line 67, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-info {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* line 70, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-info .txt-info {
+    min-width: 265px;
+    max-width: 100%;
+    padding: 0 5px;
+    margin-bottom: 0;
+  }
+
+  /* line 75, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-info .txt-info p {
+    font-size: 14px;
+    padding-bottom: 1px;
+  }
+
+  /* line 80, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-info .md-contact {
+    min-width: 275px;
+    clear: left;
+    position: relative;
+  }
+
+  /* line 84, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-info .md-contact p {
+    font-size: 12px;
+    font-weight: bold;
+    margin:0;
+  }
+
+  /* line 88, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-info .md-contact .hanko {
+    position: absolute;
+    right: 0;
+    top: 50px;
+  }
+
+  /* line 95, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-sy {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  /* line 98, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-sy > p {
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  /* line 102, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-sy table {
+    margin-top: 2px;
+  }
+
+  /* line 104, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-sy table tr td {
+    height: 41px;
+  }
+
+  /* line 107, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-sy table p {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  /* line 113, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-table {
+    width: 100%;
+    position: relative;
+    /* padding-bottom: 30px; */
+    margin-bottom: 20px;
+  }
+
+  /* line 119, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-table table tr td {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    border: 1px solid #000;
+    border-left: 0;
+    border-top: 1px solid #000;
+  }
+
+  /* line 126, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-table table tr td:first-child {
+    border-left: 1px solid #000;
+  }
+
+  /* line 130, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-table table thead tr td {
+    border-top: 1px solid #000;
+    padding: 2px 5px;
+  }
+
+  /* line 135, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-table table tr.tr-sy td {
+    font-weight: bold;
+  }
+
+  /* line 136, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-table table tr.tr-sy td:first-child {
+    border-left-color: #fff;
+    border-bottom-color: #fff;
+  }
+
+  /* line 142, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-table table tr td p.p-nm {
+    display: inline-block;
+    margin-right: 35px;
+  }
+
+  /* line 148, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-table .md-sy-note {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 395px;
+    border: 1px solid #000;
+    padding: 5px;
+    float: left;
+    margin-top: -63px;
+  }
+
+  /* line 157, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-table .md-sy-note p {
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  /* line 165, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-bot-txt {
+    width: 100%;
+  }
+
+  /* line 167, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-bot-txt br {
+    content: "";
+    width: 100%;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #000;
+    display: block;
+  }
+
+  /* line 168, /Users/cinqsmile/work/bisyoujo_zukan_night/app/assets/stylesheets/admin/print.scss */
+  .print-container .md-bot-txt p {
+    font-size: 12px;
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    display: block;
+  }
+
+#main invoice-print-directive=""
+  page size="A4" ng-repeat="invoice in vm.invoices"
+    .print-container
+      .header.col.clearfix
+        .pull-left style=("clear:both;padding: 0 20px;border-bottom:1px solid #000;width:300px;")
+          p ng-bind-html="invoice.shop.address | noHTML | newlines"
+          .txt-info.clearfix style=("padding: 0 0;width:280px;")
+            p.pull-left  {invoice.shop.name}
+            p.pull-right
+              | {{invoice.shop.contract_person}}
+        .md-date.pull-right
+          .txt-date.col
+            p.p-dc.pull-left 発行日：
+            p.p-dt.pull-right
+              | {{vm.today | date: 'yyyy年M月d日' }}
+          .txt-date.col
+            p.p-dc.pull-left お支払期限：
+            p.p-dt.pull-right
+              | {{invoice.due_date | date: 'yyyy年M月d日'}}
+      h1.title-pg.col style="margin-bottom:10px;width:100%;text-align:center;"  御　請　求　書
+      .col.md-sy
+        p 毎度お引き立て賜りありがとうございます。
+        p 下記のとおり御請求いたします。
+        p 宜しくお願い申し上げます。
+        table border="1" cellpadding="0" cellspacing="0" width="495"
+          tbody
+            tr
+              td align="center" bgcolor="#8b8b8b" height="45" width="50%"
+                p 請求金額
+              td align="center" height="45" width="50%"
+                p
+                  | ¥ {{invoice.total| number}}  -
+      .md-table.col
+        table border="0" cellpadding="0" cellspacing="0" width="100%"
+          tr
+            td align="center" bgcolor="#8b8b8b" height="20" width="30"  NO
+            td align="center" bgcolor="#8b8b8b" height="20" width="365"  品名
+            td align="center" bgcolor="#8b8b8b" height="20" width="63"  数量
+            td align="center" bgcolor="#8b8b8b" height="20" width="63"  単価
+            td align="center" bgcolor="#8b8b8b" height="20" width="172"  金額
+          tr ng-repeat="i in [0,1,2,3,4,5,6,7,8,9]"
+            td align="center" height="30" width="30" {{i + 1}}
+            td align="left" height="30" width="365"
+              p.p-nm ng-if="invoice.invoice_details[i]" {{invoice.invoice_details[i].name}}
+            td align="center" height="30" width="63"
+              span ng-if="invoice.invoice_details[i]" {{invoice.invoice_details[i].quantilty}}
+            td align="center" height="30" width="63"
+              span ng-if="invoice.invoice_details[i]" {{invoice.invoice_details[i].unit_price| number}}
+            td align="center" height="30" width="172"
+              span ng-if="invoice.invoice_details[i]" {{invoice.invoice_details[i].quantilty * invoice.invoice_details[i].unit_price| number}}
+          tr.tr-sy
+            td align="center" colspan="3" height="30" width="30"
+            td align="center" bgcolor="#8b8b8b" height="30" width="63" x=""  小計
+            td align="right" height="30" width="172" {{invoice.sub_amount| number}}
+          tr.tr-sy
+            td align="center" colspan="3" height="30" width="30"
+            td align="center" bgcolor="#8b8b8b" height="30" width="63" x=""  合計
+            td align="right" height="30" width="172" {{invoice.total | number}}
+        .md-sy-note ng-if=("invoice.bank == 1")
+          p 振 込 先 ：三菱東京UFJ銀行　 船場中央支店
+          p 普通　1400200
+          p 株式会社シンクスマイル
+        .md-sy-note ng-if=("invoice.bank == 2")
+          p 振 込 先 ：楽天銀行　 第一営業支店（251）
+          p 普通　7410651
+          p 株式会社シンクスマイル
+      .col.md-bot-txt
+        p （備　　考）
+        p ng-bind-html=("invoice.note | noHTML | newlines")

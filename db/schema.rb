@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161218161956) do
+ActiveRecord::Schema.define(version: 20161228155506) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -234,19 +234,26 @@ ActiveRecord::Schema.define(version: 20161218161956) do
     t.integer  "unit_price", default: 0,  null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "category"
+    t.string   "tax_rate"
     t.index ["invoice_id"], name: "index_invoice_details_on_invoice_id", using: :btree
   end
 
   create_table "invoices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "total",       default: 0, null: false
+    t.integer  "total",                         default: 0, null: false
     t.datetime "period_from"
     t.datetime "period_to"
     t.datetime "due_date"
     t.datetime "issued_at"
     t.datetime "paid_at"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.integer  "shop_id"
+    t.integer  "sub_amount"
+    t.integer  "transfer_amount"
+    t.string   "sales_person"
+    t.text     "note",            limit: 65535
+    t.integer  "admin_id"
   end
 
   create_table "page_views", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -373,8 +380,14 @@ ActiveRecord::Schema.define(version: 20161218161956) do
     t.float    "score4",                 limit: 24
     t.float    "score5",                 limit: 24
     t.float    "total_score",            limit: 24
+    t.text     "invoice_sql",            limit: 65535
+    t.integer  "room_count"
+    t.integer  "seat_count"
     t.integer  "ranking"
     t.string   "authentication_code"
+    t.integer  "admin_id"
+    t.string   "contract_person"
+    t.index ["admin_id"], name: "index_shops_on_admin_id", using: :btree
     t.index ["email"], name: "index_shops_on_email", unique: true, using: :btree
     t.index ["group_id"], name: "index_shops_on_group_id", using: :btree
     t.index ["is_chinese"], name: "index_shops_on_is_chinese", using: :btree

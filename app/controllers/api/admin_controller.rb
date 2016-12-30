@@ -8,6 +8,12 @@ class Api::AdminController < ApiController
     render json: builder.target!
   end
 
+  def all_admins
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    admins = Admin.all
+    render json: admins
+  end
+
   def all_users
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     users = User.where(deleted_at: nil)
@@ -15,7 +21,6 @@ class Api::AdminController < ApiController
       json.users User.to_jbuilders(users)
     end
     render json: builders.target!
-
   end
 
   def all_shops
@@ -882,54 +887,54 @@ class Api::AdminController < ApiController
     make_result.unshift('x')
     dates << make_result
 
-    select_sql = "select (select count(1) from page_views where type = 'PageViewType::GroupDetail' and subject_type = 'Group' and subject_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
+    select_sql = "select (select count(1) from page_views where type = 'PageViewType::ShopDetail' and subject_type = 'Shop' and subject_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
     pvcount_sql = select_sql + basic_sql
     result = con.select_all(pvcount_sql)
     make_result = result.rows.map{|r| r[0]}
     make_result.unshift('pv_count')
     dates << make_result
 
-    select_sql = "select (select count(1) from posts where type = 'PostType::Support' and receiver_type = 'Group' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
+    select_sql = "select (select count(1) from posts where type = 'PostType::Support' and receiver_type = 'Shop' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
     suportcount_sql = select_sql + basic_sql
     result = con.select_all(suportcount_sql)
     make_result = result.rows.map{|r| r[0]}
     make_result.unshift('support_count')
     dates << make_result
 
-    select_sql = "select (select count(1) from posts where type = 'PostType::Favorite' and receiver_type = 'Group' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
+    select_sql = "select (select count(1) from posts where type = 'PostType::Favorite' and receiver_type = 'Shop' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
     favoritecount_sql = select_sql + basic_sql
     result = con.select_all(favoritecount_sql)
     make_result = result.rows.map{|r| r[0]}
     make_result.unshift('favoritecount_count')
     dates << make_result
 
-    select_sql = "select (select count(1) from contacts where type = 'ContactType::GroupDetail' and subject_type = 'Group' and subject_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
+    select_sql = "select (select count(1) from contacts where type = 'ContactType::ShopDetail' and subject_type = 'Shop' and subject_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
     contacttcount_sql = select_sql + basic_sql
     result = con.select_all(contacttcount_sql)
     make_result = result.rows.map{|r| r[0]}
     make_result.unshift('contacttcount_count')
     dates << make_result
 
-    select_sql = "select (select count(1) from reviews where type = 'ReviewType::Group' and receiver_type = 'Group' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
+    select_sql = "select (select count(1) from reviews where type = 'ReviewType::Shop' and receiver_type = 'Shop' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
     review_sql = select_sql + basic_sql
     result = con.select_all(review_sql)
     make_result = result.rows.map{|r| r[0]}
     make_result.unshift('review_count')
     dates << make_result
 
-    result = con.select_all("select count(1) from page_views where type = 'PageViewType::GroupDetail' and subject_type = 'Group' and subject_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
+    result = con.select_all("select count(1) from page_views where type = 'PageViewType::ShopDetail' and subject_type = 'Shop' and subject_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
     monthly_pv_count = result.rows[0][0]
 
-    result = con.select_all("select count(1) from posts where type = 'PostType::Support' and receiver_type = 'Group' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
+    result = con.select_all("select count(1) from posts where type = 'PostType::Support' and receiver_type = 'Shop' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
     monthly_support_count = result.rows[0][0]
 
-    result = con.select_all("select count(1) from posts where type = 'PostType::Favorite' and receiver_type = 'Group' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
+    result = con.select_all("select count(1) from posts where type = 'PostType::Favorite' and receiver_type = 'Shop' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
     monthly_favorite_count = result.rows[0][0]
 
-    result = con.select_all("select count(1) from contacts where type = 'ContactType::GroupDetail' and subject_type = 'Group' and subject_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
+    result = con.select_all("select count(1) from contacts where type = 'ContactType::ShopDetail' and subject_type = 'Shop' and subject_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
     monthly_contact_count = result.rows[0][0]
 
-    result = con.select_all("select count(1) from reviews where type = 'ReviewType::Group' and receiver_type = 'Group' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
+    result = con.select_all("select count(1) from reviews where type = 'ReviewType::Shop' and receiver_type = 'Shop' and receiver_id = #{group_id} and DATE_FORMAT(created_at, '%Y-%m') = '#{now.beginning_of_month.strftime('%Y-%m')}'")
     monthly_review_count = result.rows[0][0]
 
     render json: {chart_date: dates, monthly_pv_count: monthly_pv_count, monthly_support_count: monthly_support_count, monthly_favorite_count: monthly_favorite_count, monthly_contact_count: monthly_contact_count, monthly_review_count: monthly_review_count}
@@ -949,10 +954,10 @@ class Api::AdminController < ApiController
   end
 
   def api43
-    group = Group.find_by(id: params[:id])
+    shop = Shop.find_by(id: params[:id])
     builders = Jbuilder.new do |json|
-      json.contacts group.contacts ? Contact.to_jbuilders(group.contacts.order('id desc')) : nil
-      json.reviews Review.to_jbuilders(group.reviews.order('id desc'))
+      json.contacts shop.contacts ? Contact.to_jbuilders(shop.contacts.order('id desc')) : nil
+      json.reviews Review.to_jbuilders(shop.reviews.order('id desc'))
     end
     render json: builders.target!
   end
@@ -998,8 +1003,10 @@ class Api::AdminController < ApiController
     shop = Shop.new
     shop.attributes = {
         group_id: params[:group_id],
+        admin_id: params[:admin_id],
         name: params[:name],
         name_kana: params[:name_kana],
+        contract_person: params[:contract_person],
         job_type: params[:job_type],
         tel: params[:tel],
         email: params[:email],
@@ -1027,6 +1034,8 @@ class Api::AdminController < ApiController
         budget_vnd: params[:budget_vnd],
         budget_usd: params[:budget_usd],
         service: params[:service],
+        room_count: params[:room_count],
+        seat_count: params[:seat_count],
         images: params[:images],
         way_images: params[:way_images]
     }
@@ -1063,8 +1072,10 @@ class Api::AdminController < ApiController
     shop = Shop.find_by(id: params[:id])
     shop.attributes = {
         group_id: params[:group_id],
+        admin_id: params[:admin_id],
         name: params[:name],
         name_kana: params[:name_kana],
+        contract_person: params[:contract_person],
         job_type: params[:job_type],
         tel: params[:tel],
         email: params[:email],
@@ -1089,6 +1100,8 @@ class Api::AdminController < ApiController
         service: params[:service],
         opened_at: params[:opened_at],
         closed_at: params[:closed_at],
+        room_count: params[:room_count],
+        seat_count: params[:seat_count],
         budget_yen: params[:budget_yen],
         budget_vnd: params[:budget_vnd],
         budget_usd: params[:budget_usd]
@@ -1176,5 +1189,158 @@ class Api::AdminController < ApiController
     render json: builders.target!
   end
 
+  def api58
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    invoices = Invoice.all
+    total = invoices.count
+    invoices = invoices.page(page).per(limit) if invoices.present?
+
+    builders = Jbuilder.new do |json|
+      json.code 1
+      json.invoices Invoice.to_jbuilders(invoices)
+      json.total total
+    end
+    render json: builders.target!
+  end
+
+  def api59
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    invoice = Invoice.find_by(id: params[:id])
+    builder = Jbuilder.new do |json|
+      json.invoice invoice.to_jbuilder
+    end
+    render json: builder.target!
+  end
+
+  def api60
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    invoice = Invoice.new
+    builder = Jbuilder.new do |json|
+      json.invoice invoice.to_jbuilder
+    end
+    render json: builder.target!
+  end
+
+  def api61
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    invoice = Invoice.new
+    invoice.attributes = {
+        shop_id: params[:shop_id],
+        admin_id: params[:admin_id],
+        period_from: params[:period_from],
+        period_to: params[:period_to],
+        due_date: params[:due_date],
+        issued_at: params[:issued_at],
+        paid_at: params[:paid_at],
+        note: params[:note]
+    }
+
+    if invoice.save
+      builder = Jbuilder.new do |json|
+        json.invoice invoice.to_jbuilder
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors invoice.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+
+  def api62
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    invoice = Invoice.find_by(id: params[:id])
+    invoice.attributes = {
+        shop_id: params[:shop_id],
+        admin_id: params[:admin_id],
+        period_from: params[:period_from],
+        period_to: params[:period_to],
+        due_date: params[:due_date],
+        issued_at: params[:issued_at],
+        paid_at: params[:paid_at],
+        note: params[:note]
+    }
+
+    if invoice.save
+      builder = Jbuilder.new do |json|
+        json.invoice invoice.to_jbuilder
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors invoice.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+
+  def api63
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    invoice_detail = InvoiceDetail.find_by(id: params[:id]) if params[:id]
+    invoice_detail = InvoiceDetail.new unless invoice_detail
+    invoice_detail.attributes ={
+        invoice_id: params[:invoice_id],
+        name: params[:name],
+        quantilty: params[:quantilty],
+        unit_price: params[:unit_price],
+        category: params[:category],
+        tax_rate: params[:tax_rate]
+    }
+
+
+    if invoice_detail.save
+      sub_amount = 0
+      total = 0
+      invoice = Invoice.find_by(id: invoice_detail.invoice_id)
+      sub_amount = InvoiceDetail.put_total_sub_amount(invoice.invoice_details)
+      total = InvoiceDetail.put_total_amount(invoice.invoice_details)
+      invoice.attributes={sub_amount: sub_amount,total: total}
+      invoice.save
+
+      builder = Jbuilder.new do |json|
+        json.invoice_details InvoiceDetail.to_jbuilders(InvoiceDetail.where(invoice_id: invoice_detail.invoice_id))
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors invoice_detail.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+
+  def api64
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    invoice_detail = InvoiceDetail.find_by(id: params[:id])
+
+    invoice_detail.delete if invoice_detail.present?
+
+    sub_amount = 0
+    total = 0
+    invoice = Invoice.find_by(id: params[:id])
+    sub_amount = InvoiceDetail.put_total_sub_amount(invoice.invoice_details)
+    total = InvoiceDetail.put_total_amount(invoice.invoice_details)
+    invoice.attributes={sub_amount: sub_amount,total: total}
+    invoice.save
+
+    builder = Jbuilder.new do |json|
+      json.invoice_details InvoiceDetail.to_jbuilders(InvoiceDetail.where(invoice_id: invoice_detail.invoice_id))
+      json.code 1
+    end
+    render json: builder.target!
+  end
+  def api65
+    ids = params[:ids].split(',')
+    invoices = Invoice.where(id: ids)
+
+    builders = Jbuilder.new do |json|
+      json.invoices Invoice.to_jbuilders(invoices)
+      json.code 1
+    end
+    render json: builders.target!
+  end
 
 end

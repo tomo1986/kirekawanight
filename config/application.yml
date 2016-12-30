@@ -1,0 +1,18 @@
+defaults: &defaults
+  tax_rate: 0
+  sales_person: 'Kire Kawa事務局'
+  production_begin_on: '2014-11-11'
+development:
+  <<: *defaults
+  hooop_host: 'http://localhost:3000/api/kanri/'
+  other_division_id: 9
+test:
+  <<: *defaults
+staging:
+  <<: *defaults
+  hooop_host: 'http://st.hooop.me/api/kanri/'
+  other_division_id: 16
+production:
+  <<: *defaults
+  hooop_host: 'https://www.hooop.me/api/kanri/'
+  other_division_id: 16

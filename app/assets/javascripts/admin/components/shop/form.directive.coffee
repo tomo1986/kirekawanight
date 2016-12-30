@@ -40,12 +40,18 @@ angular.module 'bijyoZukanAdmin'
         entities: false
       vm.getTags()
       vm.getGroups()
+      vm.getAdmins()
+
       vm.action = $state.current.action
       if vm.action == 'update'
         vm.getShop()
       else
         vm.newShop()
         vm.breadcrumb.push({name:'New Shop',link:''})
+    vm.getAdmins = ->
+      shopService.getAdmins().then((res) ->
+        vm.admins = res.data
+      )
 
     vm.getGroups = ->
       shopService.getGroups().then((res) ->

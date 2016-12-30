@@ -29,10 +29,8 @@ section.main-container.map-form-page user-form-directive=""
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" shop select
             td.res-form-table__td.input-box
-              select.form-control name="shop_id" ng-model="vm.user.shop_id"
-                option value=""  -- Please select --
-                option value="{{shop.id}}" ng-repeat="shop in vm.shops"
-                  | {{shop.name}}
+              select.form-control name="shop_id" ng-model="vm.user.shop_id" ng-options="shop.id as shop.name for shop in vm.shops"
+                option value=""  -- 選択してください --
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" Job type

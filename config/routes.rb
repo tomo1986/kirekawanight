@@ -108,6 +108,12 @@ Rails.application.routes.draw do
     get 'pickups/:id/edit',to: 'pages#index'
     get 'pickups/new',to: 'pages#index'
 
+    get 'invoices',to: 'pages#index'
+    get 'invoices/:id/detail',to: 'pages#index'
+    get 'invoices/:id/edit',to: 'pages#index'
+    get 'invoices/new',to: 'pages#index'
+    get 'invoices/prints',to: 'pages#prints'
+
 
     get 'tpl/:name.html' => 'pages#templates'
     get 'tpl/:path1/:name.html' => 'pages#templates'
@@ -250,6 +256,7 @@ Rails.application.routes.draw do
 
     scope :admin, module: 'admin' do
       post :logout
+      get :all_admins
       get :all_users
       get :all_shops
       get :all_groups
@@ -307,6 +314,14 @@ Rails.application.routes.draw do
       post :api55
       get :api56
       post :api57
+      get :api58
+      get :api59
+      get :api60
+      post :api61
+      post :api62
+      post :api63
+      post :api64
+      get :api65
     end
     scope :group, module: 'group' do
       post :logout

@@ -13,7 +13,9 @@ angular.module 'bijyoZukanAdmin'
           if child_key == 'min' && errors[parent_key] == undefined
             errors[parent_key] =  validations.messages[parent_key][child_key] if parent_val.length < child_val
           if child_key == 'regexp' && errors[parent_key] == undefined
+            console.log(parent_val,child_val,child_val.test(parent_val))
             errors[parent_key] =  validations.messages[parent_key][child_key] if !child_val.test(parent_val)
+
           if child_key == 'appraise' && errors[parent_key] == undefined
             return errors if values[parent_key] && values[parent_key].length == 0
             errors[parent_key] = validations.messages[parent_key][child_key] if values[parent_key] != values[validations.rules[parent_key].appraise.target]

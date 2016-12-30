@@ -38,6 +38,14 @@ main#main
           th.res-form-table__th.parent-th.title-box.clearfix 在籍女性
           td.res-form-table__td.parent-td.input-box
             | {{vm.shop.girls_count}}名
+        tr ng-if="vm.shop.seat_count"
+          th.res-form-table__th.parent-th.title-box.clearfix 最大収容人数
+          td.res-form-table__td.parent-td.input-box
+            | {{vm.shop.seat_count}}名
+        tr ng-if="vm.shop.room_count"
+          th.res-form-table__th.parent-th.title-box.clearfix 部屋数
+          td.res-form-table__td.parent-td.input-box
+            | {{vm.shop.room_count}}部屋
         tr
           th.res-form-table__th.parent-th.title-box.clearfix 喫煙
           td.res-form-table__td.parent-td.input-box

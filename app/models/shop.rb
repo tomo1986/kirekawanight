@@ -109,7 +109,10 @@ class Shop < ApplicationRecord
       json.array! shops do |shop|
         json.id shop.id
         json.group_id shop.group_id
+        json.admin_id shop.admin_id
+        json.staff shop.admin_id ? Admin.find_by(id: shop.admin_id) : nil
         json.name shop.name
+        json.contract_person shop.contract_person
         json.name_kana shop.name_kana
         json.job_type shop.job_type
         json.tel shop.tel
@@ -143,6 +146,8 @@ class Shop < ApplicationRecord
         json.ranking shop.ranking
         json.total_score shop.total_score
         json.user_count shop.users.count
+        json.room_count shop.room_count
+        json.seat_count shop.seat_count
         # json.note shop.note
         json.images shop.set_images
         json.way_images shop.set_way_images
@@ -162,8 +167,11 @@ class Shop < ApplicationRecord
     Jbuilder.new do |json|
       json.id self.id
       json.group_id self.group_id
+      json.admin_id self.admin_id
+      json.staff self.admin_id ? Admin.find_by(id: self.admin_id) : nil
       json.name self.name
       json.name_kana self.name_kana
+      json.contract_person self.contract_person
       json.job_type self.job_type
       json.tel self.tel
       json.email self.email
@@ -191,6 +199,9 @@ class Shop < ApplicationRecord
       json.budget_yen self.budget_yen
       json.budget_vnd self.budget_vnd
       json.budget_usd self.budget_usd
+      json.room_count self.room_count
+      json.seat_count self.seat_count
+
       json.service self.service
       json.user_count self.users.count
       json.deleted_at self.deleted_at

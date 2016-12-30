@@ -1,0 +1,113 @@
+section.main-container.map-form-page invoice-form-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | new invoice
+    .row
+      form role="form" ng-submit='vm.submit()' name="invoiceForm" novalidate=''
+        table.res-form-table style="margin-bottom: 2rem;"
+          caption basic
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title Staff
+            td.res-form-table__td.input-box
+              select.form-control name="admin_id" ng-model="vm.invoice.admin_id"
+                option value=""  -- Please select --
+                option value="{{admin.id}}" ng-selected="vm.invoice.admin_id == admin.id" ng-repeat="admin in vm.admins"
+                  | {{admin.name}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title Shop
+            td.res-form-table__td.input-box
+              select.form-control name="shop_id" ng-required='true' ng-model="vm.invoice.shop_id"
+                option value=""  -- Please select --
+                option value="{{shop.id}}" ng-selected="vm.invoice.shop_id == shop.id" ng-repeat="shop in vm.shops"
+                  | {{shop.name}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 集計期間(始まり)
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="period_from" data="vm.invoice" options="vm.period_from_options" ng-model="vm.invoice.period_from"
+              span.is-text-danger ng-if="vm.errors.period_from"
+                | {{vm.errors.period_from}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 集計期間(終わり)
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="period_to" data="vm.invoice" options="vm.period_to_options" ng-model="vm.invoice.period_to"
+              span.is-text-danger ng-if="vm.errors.period_to"
+                | {{vm.errors.period_to}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 支払期日
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="due_date" data="vm.invoice" options="vm.due_date_options" ng-model="vm.invoice.due_date"
+              span.is-text-danger ng-if="vm.errors.due_date"
+                | {{vm.errors.due_date}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 入金日
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="paid_at" data="vm.invoice" options="vm.paid_at_options" ng-model="vm.invoice.paid_at"
+              span.is-text-danger ng-if="vm.errors.paid_at"
+                | {{vm.errors.paid_at}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 備考
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              textarea.form-control row="3" placeholder="" ng-model="vm.invoice.note"
+
+        .button-center ng-show="vm.canSubmit" style="margin-bottom: 2rem;"
+          button.btn.main-btn type="submit" ng-disabled="invoiceForm.$invalid" 登録する
+        .button-center ng-hide="vm.canSubmit" style="margin-bottom: 2rem;"
+          loading-directive size="125"
+
+      table.res-form-table style="margin-bottom: 2rem;" ng-if="vm.action == 'update'"
+        caption basic
+        tr ng-repeat="detail in vm.invoice.invoice_details track by $index"
+          th.res-form-table__th.title-box.clearfix
+            span.title Staff
+          td.res-form-table__td.input-box
+            table.res-form-table
+              tr
+                td.res-form-table__td.input-box
+                  label 品名(必須)
+                  input.form-control type="text" name="name" placeholder="aiueo" ng-model="detail.name"
+                  span.is-text-danger ng-if="vm.errors[$index].name"
+                    | {{vm.errors[$index].name}}
+                td.res-form-table__td.input-box
+                  label 個数(必須)
+                  input.form-control type="text" name="quantilty" placeholder="aiueo" ng-model="detail.quantilty"
+                  span.is-text-danger ng-if="vm.errors[$index].quantilty"
+                    | {{vm.errors[$index].quantilty}}
+                td.res-form-table__td.input-box
+                  label 単価(必須)
+                  input.form-control type="text" name="unit_price" placeholder="aiueo" ng-model="detail.unit_price"
+                  span.is-text-danger ng-if="vm.errors[$index].unit_price"
+                    | {{vm.errors[$index].unit_price}}
+                td.res-form-table__td.input-box
+                  label 種別(必須)
+                  select.form-control name="category" ng-model="detail.category"
+                    option value=""  -- Please select --
+                    option value="karaoke" ng-selected="detail.category == '初期費用'"  cost
+                    option value="bar" ng-selected="detail.category == '月額'" monthly
+                  span.is-text-danger ng-if="vm.errors[$index].category"
+                    | {{vm.errors[$index].category}}
+
+            .row
+              .col-md-6 style="margin-top:1rem;"
+                .button-center ng-click="vm.updateInvoiceDetail(detail,$index)"
+                  button.btn.main-btn type="button" 更新
+              .col-md-6 style="margin-top:1rem;"
+                .button-center ng-click="vm.deleteInvoiceDetail(detail)"
+                  button.btn.main-btn type="button" 削除
+
+      .button-center style="margin-bottom:1rem;" ng-click="vm.addInvoiceDetail()"  ng-if="vm.action == 'update'"
+        button.btn.main-btn type="button" 追加する
+

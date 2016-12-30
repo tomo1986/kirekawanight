@@ -30,17 +30,15 @@ section.main-container.notification-index-page user-index-directive=""
                   .form-group.clearfix.clearfix
                     label.col-xs-12.col-md-4 for="inputPassword"  Group
                     .col-xs-12.col-md-8
-                      select.form-control.form-control-ls name="filters.group_id" ng-model="vm.filters.group_id" ng-options="group.id as group.name for group in vm.groups"
-
+                      select.form-control.form-control-ls ng-model="vm.filters.group_id" ng-options="group.id as group.name for group in vm.groups"
+                        option value=""  -- 選択してください --
               .col-md-4
                 .row
                   .form-group.clearfix.clearfix
                     label.col-xs-12.col-md-4 for="inputPassword" Shop
                     .col-xs-12.col-md-8
-                      select.form-control.form-control-ls  ng-model="vm.filters.shop_id"
+                      select.form-control.form-control-ls  ng-model="vm.filters.shop_id" ng-options="shop.id as shop.name for shop in vm.shops"
                         option value=""  -- 選択してください --
-                        option ng-repeat="shop in vm.shops" ng-value="shop.id"
-                          | {{shop.name}}
               .col-md-4
                 .row
                   .form-group.clearfix.clearfix

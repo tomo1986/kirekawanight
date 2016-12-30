@@ -17,6 +17,7 @@ class Admin::PagesController < Admin::BaseController
   end
 
   def index
+    redirect_to action: "prints" if request.path == '/admin/invoices/prints'
     redirect_to action: "login" and return unless admin_signed_in?
   end
 
@@ -43,6 +44,9 @@ class Admin::PagesController < Admin::BaseController
     admin_user.update(reset_password_token: nil, reset_password_sent_at: nil)
 
     redirect_to action: "new_password"
+  end
+
+  def prints
   end
 
   def new_password

@@ -1,0 +1,60 @@
+section.main-container.notification-index-page invoice-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | Group List
+    .row
+      .make-new-map
+        a.btn.make-btn href="/admin/invoices/new"
+          | 新規登録
+      .make-new-map
+        a.btn.make-btn href="javascript:void(0)" ng-click="vm.onclickSetPrintIds()"
+          | 全て印刷する
+      .make-new-map
+        a.btn.make-btn href="javascript:void(0)" ng-click="vm.onclickSetPrintIds()"
+          | 印刷する
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th
+              input.checkbox type="checkbox" name="make_invoice" ng-click="vm.onclickAllPrint()"
+            th ID
+            th Shop
+            th staff
+            th total
+            th term
+            th paid_at
+            th detail
+            th edit
+        tbody
+          tr(dir-paginate="invoice in vm.invoices | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+            td.clearfix data-label="make invoice"
+              input.checkbox type="checkbox" name="make_invoice" ng-checked="vm.isSettingAll" ng-click="vm.onclickPrint(invoice.id)"
+            td.clearfix data-label="ID"  {{invoice.id}}
+            td.clearfix data-label="shop"
+              a.btn.action-btn href="/admin/shops/{{invoice.shop.id}}/detail"
+                | {{invoice.shop.name}}
+            td.clearfix data-label="staff"
+              span  ng-if="invoice.staff"
+                | {{invoice.staff.name}}
+            td.clearfix data-label="total" ${{invoice.total | number}}
+            td.clearfix data-label="term"
+              | {{invoice.period_from | date: 'yyyy年M月d日'}}
+              br
+              | から
+              br
+              | {{invoice.period_to | date: 'yyyy年M月d日'}}
+            td.clearfix data-label="paid_at" {{invoice.paid_at | date: 'yyyy年M月d日'}}
+            td.clearfix data-label="show"
+              a.btn.action-btn href="/admin/invoices/{{invoice.id}}/detail" detail
+            td.clearfix data-label="edit"
+              a.btn.action-btn href="/admin/invoices/{{invoice.id}}/edit" edit
+    .row
+      dir-pagination-controls boundary-links="true" template-url="/admin/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+
+
+

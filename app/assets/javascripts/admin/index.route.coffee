@@ -200,3 +200,42 @@ angular.module 'bijyoZukanAdmin'
       active_menu: 'blog'
       action: 'update'
       templateUrl: '/admin/tpl/blog/form.html'
+
+
+
+    .state '/invoices',
+      url: '/admin/invoices?page'
+      active_menu: 'invoice'
+      templateUrl: '/admin/tpl/invoice/index.html'
+      params: {
+        page: null
+        sort: null
+        order: null
+        keyword: null
+        group_id: null
+        shop_id: null
+        job_type: null
+      }
+
+    .state '/invoices/:id/detail',
+      url: '/admin/invoices/:id/detail'
+      active_menu: 'invoice'
+      templateUrl: '/admin/tpl/invoice/detail.html'
+
+    .state '/invoices/new',
+      url: '/admin/invoices/new'
+      active_menu: 'invoice'
+      action: 'create'
+      templateUrl: '/admin/tpl/invoice/form.html'
+
+    .state '/invoices/:id/edit',
+      url: '/admin/invoices/:id/edit'
+      active_menu: 'invoice'
+      action: 'update'
+      templateUrl: '/admin/tpl/invoice/form.html'
+
+    .state '/invoices/prints',
+      url: '/admin/invoices/prints?ids'
+      active_menu: 'invoice'
+      action: 'update'
+      templateUrl: '/admin/tpl/invoice/prints.html'

@@ -16,6 +16,7 @@ section.main-container.notification-index-page shop-index-directive=""
           tr
             th ID
             th name
+            th staff
             th member_count
             th edit
             th delete
@@ -25,6 +26,9 @@ section.main-container.notification-index-page shop-index-directive=""
             td.clearfix data-label="name"
               a.btn.action-btn href="/admin/shops/{{shop.id}}/detail"
                 | {{shop.name}}
+            td.clearfix data-label="staff"
+              span  ng-if="shop.staff"
+                | {{shop.staff.name}}
             td.clearfix data-label="member_count" {{shop.user_count}}
             td.clearfix data-label="edit"
               a.btn.action-btn href="/admin/shops/{{shop.id}}/edit" 編集

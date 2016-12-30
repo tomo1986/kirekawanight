@@ -7,8 +7,8 @@ angular.module 'bijyoZukanAdmin'
       vm.users = []
       vm.filters ={
         keyword: if $state.params.keyword then $state.params.keyword else null
-        group_id: if $state.params.group_id then $state.params.group_id else null
-        shop_id: if $state.params.shop_id then $state.params.shop_id else null
+        group_id: if $state.params.group_id then Number($state.params.group_id) else null
+        shop_id: if $state.params.shop_id then Number($state.params.shop_id) else null
         job_type: if $state.params.job_type then $state.params.job_type else null
         limit: 10
         page: if $state.params.page then $state.params.page else 1
