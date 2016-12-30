@@ -274,8 +274,8 @@ angular.module 'bijyoZukanAdmin'
                     self.keido = data.longitude
                     self.settings()
                   ), ((error) ->
-                    self.ido = 106.70478600000001
-                    self.keido = 10.780465
+                    self.ido = 10.780465
+                    self.keido = 106.70478600000001
                     self.settings()
                     return
                   ),
@@ -283,8 +283,8 @@ angular.module 'bijyoZukanAdmin'
                   'timeout': 8000
                   'maximumAge': 2000
               else
-                self.ido = 106.70478600000001
-                self.keido = 10.780465
+                self.ido = 10.780465
+                self.keido = 106.70478600000001
                 self.settings()
     )
 
