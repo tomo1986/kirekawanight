@@ -12,12 +12,14 @@ header#header
             li
               a href="/mypage/show" マイページ
 
-    .container
+    .container.header-container
       .site.clearfix
         .site--logo
           a href="/"
             = image_tag 'front/logo.png', alt:"kirekawa collection"
         .site--count
+          a.tel-number href="tel:+84938971366"
+            = image_tag 'front/tel.png', alt: "コールセンター　+84938971366"
           ul.site--count-list
             li
               span.count--title 登録店舗数：
