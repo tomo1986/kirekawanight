@@ -4,11 +4,16 @@
     margin-bottom: $row-space-bigest;
     .contact-box--detail {
       margin-bottom: $row-space-biger;
-      .res-form-table {
-        th {
+      .res-form-table{
+        th{
           width:30%;
+          text-align: left;
         }
-        td {
+        td{
+          text-align: left;
+          img{
+            width: 8rem;
+          }
         }
       }
     }
