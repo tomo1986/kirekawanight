@@ -1,14 +1,14 @@
 .main-content.container shop-karaoke-index-directive=""
   main#main.shop-page
     breadcrumb-directive data="vm.breadcrumb"
-    /.rank-box
-    /  ul.genre-tag
-    /    li
-    /      a.active href="/shops/karaoke"
-    /        | SHOP
-    /    li
-    /      a href="/casts/karaoke"
-    /        | CAST
+    .rank-box
+      ul.genre-tag
+        li
+          a.active href="/shops/karaoke"
+            | SHOP
+        li
+          a href="/casts/karaoke"
+            | CAST
     /.rank-box ng-if="vm.filters.page == 1"
     /  .page-title
     /    h2.title
