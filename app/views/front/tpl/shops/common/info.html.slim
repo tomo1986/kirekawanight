@@ -24,11 +24,11 @@ main#main
         .support
           a.btn  href="javascript:void(0)" ng-click="vm.onClickedSupport()" 応援する
 
-    .rank-box.shop-new-face
+    .rank-box.shop-new-face ng-if="vm.discounts.length > 0"
       .page-title
         h2.title
           | TIME SALE
-      table ng-if="vm.discounts.length > 0"
+      table
         tr ng-repeat="discount in vm.discounts"
           td
            p ng-bind-html="discount.content"

@@ -454,3 +454,6 @@ angular.module 'bisyoujoZukanNight'
       .state '/feature/trip',
         url: '/feature/trip',
         templateUrl: '/front/tpl/feature/trip.html'
+    .state '/feature/rankinginfo',
+      url: '/feature/rankinginfo',
+      templateUrl: '/front/tpl/feature/rankinginfo.html'

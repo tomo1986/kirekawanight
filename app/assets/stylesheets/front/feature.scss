@@ -2,3 +2,17 @@
 
 
 }
+.rankinginfo-page {
+  h4{
+    margin:1rem 1rem 1rem 0;
+    text-align: center;
+    .no{
+      color: $_em_text;
+      display: inline;
+      font-size:3rem;
+    }
+  }
+  p{
+    text-align: center;
+  }
+}

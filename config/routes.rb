@@ -195,7 +195,7 @@ Rails.application.routes.draw do
     get 'shops/massage/:id/contact', to: 'home#index'
     get 'shops/massage/:id/reviews', to: 'home#index'
     get 'feature/trip', to: 'home#index'
-
+    get 'feature/rankinginfo', to: 'home#index'
     # get 'casts/sexy', to: 'home#cast_sexy'
     # get 'casts/sexy/:id', to: 'home#index'
 
