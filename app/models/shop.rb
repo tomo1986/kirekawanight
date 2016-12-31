@@ -31,6 +31,30 @@ class Shop < ApplicationRecord
   acts_as_taggable_on :labels
   acts_as_taggable
 
+
+  scope :keyword_filter, ->(keyword=nil) {
+    shops = self.joins('left join users on users.shop_id = shops.id left join groups on shops.group_id = groups.id')
+    if keyword && keyword.strip.length > 0
+      tokens = keyword.gsub('　', ' ').split(' ').collect {|c| "%#{c.downcase}%"}
+      arrColumns = ["`shops`.`name`","`shops`.`name_kana`"]# define column search in this array
+      shops = shops.where(((["CONCAT_WS(' ', " + arrColumns.join(', ') + ') LIKE ?']*tokens.size).join(' AND ')),*(tokens).collect{ |token| [token] }.flatten)
+    end
+    return shops
+  }
+
+  scope :find_girls_count, -> (count) {
+    return self.where("shops.girls_count >= ?", count)
+  }
+
+  scope :find_user_card, -> () {
+    return self.where("shops.is_card = ?", true)
+  }
+  scope :find_tip, -> (tip) {
+    return self.where("shops.tip = ?", tip)
+  }
+
+
+
   scope :find_open, -> () {
     return self.where(deleted_at: nil)
   }
@@ -45,6 +69,10 @@ class Shop < ApplicationRecord
   scope :sort_favorite, -> (order= 'desc'){
     return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'Shop'").group("shops.id")
                .order("count(posts.receiver_id) #{order}, shops.id desc")
+  }
+  scope :sort_review, -> (order= 'desc'){
+    return self.joins("left join reviews on reviews.receiver_id = shops.id and reviews.type = 'ReviewType::Shop' and reviews.receiver_type = 'Shop'").group("shops.id")
+               .order("count(reviews.receiver_id) #{order}, shops.id desc")
   }
 
   scope :sort_ranking, -> (order= 'desc'){
@@ -153,7 +181,7 @@ class Shop < ApplicationRecord
         json.way_images shop.set_way_images
         json.support_count shop.supports.count
         json.favorite_count shop.favorites.count
-
+        json.review_count shop.reviews.count
 
 
         json.tags shop.tag_list ? shop.tag_list : nil
@@ -210,6 +238,7 @@ class Shop < ApplicationRecord
       json.way_images self.set_way_images
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
+      json.review_count self.reviews.count
 
       json.tags self.tags ? Tag.to_jbuilders(self.tags) : nil
     end

@@ -421,8 +421,11 @@ class Api::FrontController < ApiController
       shops = shops.sort_support(params[:order])
     elsif params[:sort] == 'favorite'
       shops = shops.sort_favorite(params[:order])
-    elsif params[:sort] == 'review'
+    elsif params[:sort] == 'ranking'
       shops = shops.sort_ranking(params[:order])
+    elsif params[:sort] == 'review'
+      shops = shops.sort_review(params[:order])
+
     end
 
     shops = shops.page(page).per(limit) if shops.present?

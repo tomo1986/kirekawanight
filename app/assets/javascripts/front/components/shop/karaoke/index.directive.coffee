@@ -61,28 +61,16 @@ angular.module 'bisyoujoZukanNight'
 
     vm.changePageFunk = ->
       $state.go('/shops/karaoke',{page:vm.filters.page, sort: vm.filters.sort, order: vm.filters.order})
+    vm.changeFilterSort = (sort) ->
+      vm.casts = null
+      vm.isLoading = true
+      vm.filters.sort = sort
+      vm.filters.page = 1
+      vm.changePageFunk()
 
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
-    scope.$watch("vm.filters.sort",(newVal,oldVal) ->
-      if newVal != oldVal
-        scope.vm.casts = null
-        scope.vm.isLoading = true
-        scope.vm.filters.sort = newVal
-        scope.vm.filters.page = 1
-        scope.vm.changePageFunk()
-
-    )
-    scope.$watch("vm.filters.order",(newVal,oldVal) ->
-      if newVal != oldVal
-        scope.vm.casts = null
-        scope.vm.isLoading = true
-        scope.vm.filters.order = newVal
-        scope.vm.filters.page = 1
-        scope.vm.changePageFunk()
-    )
-
     return
   directive =
     restrict: 'A'

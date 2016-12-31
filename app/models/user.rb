@@ -45,7 +45,6 @@ class User < ApplicationRecord
       users = users.where(users:{job_type: job_type} )
     end
     return users
-
   }
   scope :job_type_filter, -> (opt_type= nil) {
     return if opt_type.blank?
