@@ -412,7 +412,8 @@ class Api::FrontController < ApiController
 
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    shops = Shop.where(job_type: params[:job_type],deleted_at: nil)
+    now = Time.zone.now
+    shops = Shop.joins("left join pickups on shops.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'Shop' and shops.deleted_at = null").where("shops.job_type = ? or (pickups.start_at <= ? and pickups.end_at > ?)",params[:job_type], now,now).order("pickups.number_place is null asc, pickups.number_place asc")
     total = shops.count
 
     if params[:sort] == 'new'
@@ -425,12 +426,9 @@ class Api::FrontController < ApiController
       shops = shops.sort_ranking(params[:order])
     elsif params[:sort] == 'review'
       shops = shops.sort_review(params[:order])
-
     end
 
     shops = shops.page(page).per(limit) if shops.present?
-    now = Time.zone.now
-    push_shops = Shop.joins("join pickups on shops.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'Shop'").where("shops.job_type = ? and (pickups.start_at <= ? and pickups.end_at > ?)",params[:job_type], now,now).order("pickups.number_place asc")
     favorites = {}
     if customer_signed_in?
       customer = Customer.find_by(id: current_customer.id)
@@ -441,7 +439,6 @@ class Api::FrontController < ApiController
 
     builders = Jbuilder.new do |json|
       json.shops Shop.to_jbuilders(shops)
-      json.push_shops Shop.to_jbuilders(push_shops)
       json.favorites favorites
       json.total total
     end

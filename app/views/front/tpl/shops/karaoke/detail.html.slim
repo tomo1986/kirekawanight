@@ -33,7 +33,7 @@
           .contact-btn-box
             a.btn.btn-review href="/shops/karaoke/{{vm.shop.id}}/contact" 問い合わせ
 
-  .container
+  .container ng-if="vm.shop"
     ul.genre-tag
       li
         a ng-class="{'active': vm.activeTab == 'info'}" href="/shops/karaoke/{{vm.shop.id}}/info" INFO
