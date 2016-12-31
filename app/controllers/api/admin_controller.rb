@@ -1162,15 +1162,32 @@ class Api::AdminController < ApiController
   #top page
   def api56
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
-    reviews = Review.where(is_displayed: false).limit(10)
+    reviews = Review.where(is_displayed: false).order('id desc').limit(10)
+    contacts = Contact.order('id desc').limit(10)
     shop_count = Shop.where(deleted_at: nil).count
     user_count = User.where(deleted_at: nil).count
+    now = Time.zone.now
+    from = now.beginning_of_day
+    to = now.end_of_day
+    last_month = now.prev_month
+    last_month_from = last_month.beginning_of_month
+    last_month_to = last_month.end_of_month
+    todays_review_count = Review.where(created_at: from...to).count
+    todays_contact_count = Contact.where(created_at: from...to).count
+
+    last_month_review_count = Review.where(created_at: last_month_from...last_month_to).count
+    last_month_contact_count = Contact.where(created_at: last_month_from...last_month_to).count
 
     builders = Jbuilder.new do |json|
       json.code 1
       json.reviews Review.to_jbuilders(reviews)
+      json.contacts Contact.to_jbuilders(contacts)
       json.shop_count shop_count
       json.user_count user_count
+      json.todays_review_count todays_review_count
+      json.todays_contact_count todays_contact_count
+      json.last_month_review_count last_month_review_count
+      json.last_month_contact_count last_month_contact_count
     end
     render json: builders.target!
   end
@@ -1342,5 +1359,36 @@ class Api::AdminController < ApiController
     end
     render json: builders.target!
   end
+
+  def api66
+    now = Time.zone.now
+    dates = []
+
+    basic_sql = "from (select ('#{now.beginning_of_month.strftime('%Y-%m-%d')}') + interval (id - 1) day date from page_views limit 30) d"
+    select_sql = "select d.date "
+    date_sql = select_sql + basic_sql
+    con = ActiveRecord::Base.connection
+    result = con.select_all(date_sql)
+    make_result = result.rows.map{|r| r[0]}
+    make_result.unshift('x')
+    dates << make_result
+
+    select_sql = "select (select count(1) from contacts where DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
+    pvcount_sql = select_sql + basic_sql
+    result = con.select_all(pvcount_sql)
+    make_result = result.rows.map{|r| r[0]}
+    make_result.unshift('contact_count')
+    dates << make_result
+
+    select_sql = "select (select count(1) from reviews where DATE_FORMAT(created_at, '%Y-%m-%d') = d.date) "
+    suportcount_sql = select_sql + basic_sql
+    result = con.select_all(suportcount_sql)
+    make_result = result.rows.map{|r| r[0]}
+    make_result.unshift('review_count')
+    dates << make_result
+
+    render json: {code: 1,chart_date: dates}
+  end
+
 
 end

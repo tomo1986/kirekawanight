@@ -284,10 +284,6 @@ Rails.application.routes.draw do
       post :api21
       get :api22
       post :api23
-
-
-
-
       post :api24
       get :api25
       get :api26
@@ -305,7 +301,6 @@ Rails.application.routes.draw do
       get :api43
       get :api44
       get :api45
-
       get :api50
       get :api51
       post :api52
@@ -322,6 +317,7 @@ Rails.application.routes.draw do
       post :api63
       post :api64
       get :api65
+      get :api66
     end
     scope :group, module: 'group' do
       post :logout

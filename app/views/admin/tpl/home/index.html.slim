@@ -6,28 +6,50 @@ section.main-container.home-page home-directive=""
         | MAP登録一覧
     .row.content-margin
       .col-xl-4.col-md-4
-        .row
-          .top-card
-            .top-card__title
-              | ショップ数
-            .top-card__body
+        .card
+          .inner
+            h6 現在ショップ数
+            p
               | {{vm.shop_count | number}}
       .col-xl-4.col-md-4
-        .row
-          .top-card
-            .top-card__title
-              | ユーザ数
-            .top-card__body
+        .card
+          .inner
+            h6 現在キャスト数
+            p
               | {{vm.user_count | number}}
       .col-xl-4.col-md-4
-        .row
-          .top-card
-            .top-card__title
-              | マップビュー数
-            .top-card__body
-              | {{vm.map_view_count | number}}
+        .card
+          .inner
+            h6 今日の問い合わせ数
+            p
+              | {{vm.todays_contact_count | number}}
+      .col-xl-4.col-md-4
+        .card
+          .inner
+            h6 今日の口コミ数
+            p
+              | {{vm.todays_review_count | number}}
+      .col-xl-4.col-md-4
+        .card
+          .inner
+            h6 先月の問い合わせ数
+            p
+              | {{vm.last_month_contact_count | number}}
+      .col-xl-4.col-md-4
+        .card
+          .inner
+            h6 先月の口コミ数
+            p
+              | {{vm.last_month_review_count | number}}
+
+
+
+    .row
+      chart-line-directive options="vm.chartLineOptions" date="vm.chartLine1" id="chartLine1"
     .row
       table.res-separate-table
+        caption
+          | 新着レビュー一覧
         thead
           tr
             th id
@@ -50,4 +72,29 @@ section.main-container.home-page home-directive=""
                   | はい
             td.clearfix data-label="delete"
               a.btn.action-btn ng-click="vm.onCancelButtonClicked(item)" 削除
+    .row
+      table.res-separate-table
+        caption
+          | 新着問い合わせ一覧
+        thead
+          tr
+            th id
+            th 問い合わせ者名
+            th 電話番号
+            th Email
+            th message
+            th 問い合わせ時間
+        tbody
+          tr(ng-repeat="contact in vm.contacts")
+            td.clearfix data-label="id"  {{contact.id}}
+            td.clearfix data-label="問い合わせ者名"
+              | {{contact.name}}
+            td.clearfix data-label="電話番号"
+              | {{contact.tel}}
+            td.clearfix data-label="Email"
+              | {{contact.email}}
+            td.clearfix data-label="message" style="text-align:left;"
+              p ng-bind-html="contact.message | noHTML | newlines"
+            td.clearfix data-label="問い合わせ時間"
+              | {{contact.created_at | date: 'yyyy-M-d'}}
 
