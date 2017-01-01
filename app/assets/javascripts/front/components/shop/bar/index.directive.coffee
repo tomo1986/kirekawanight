@@ -4,7 +4,7 @@ angular.module 'bisyoujoZukanNight'
     vm = this
     vm.init = ->
       vm.isLoading = true
-      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'BAR GROUP',link:''}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE GROUP',link:''}]
       vm.filters ={
         limit: 20
         page: if $state.params.page then $state.params.page else 1
@@ -12,7 +12,6 @@ angular.module 'bisyoujoZukanNight'
         order: if $state.params.order then $state.params.order else 'desc'
         job_type: 'bar'
       }
-
 
       vm.getShops()
 
@@ -25,13 +24,13 @@ angular.module 'bisyoujoZukanNight'
         vm.isLoading = false
       )
 
-    vm.onClickedFavorite = (opt_cast_id)->
-      vm.favoriteShopId = opt_cast_id
-      if customerService.isLogin()
-        vm.loginCustomer = customerService.getLoginCustomer()
-        vm.CountUpFavorite()
-      else
-        modalService.createCustomer(vm.setLoginCustomer)
+      vm.onClickedFavorite = (opt_cast_id)->
+        vm.favoriteShopId = opt_cast_id
+        if customerService.isLogin()
+          vm.loginCustomer = customerService.getLoginCustomer()
+          vm.CountUpFavorite()
+        else
+          modalService.createCustomer(vm.setLoginCustomer)
 
     vm.setLoginCustomer = (loginUser) ->
       customerService.setLoginCustomer(loginUser)
@@ -49,38 +48,29 @@ angular.module 'bisyoujoZukanNight'
       }
       shopService.pushPost(params).then((res) ->
         vm.favorites = res.data.favorites
+        angular.forEach(vm.shops, (shop) ->
+          shop.favorite_count = res.data.favorite_count if shop.id == vm.favoriteShopId
+        )
+
         title = res.data.message
         modalService.alert(title)
       )
-
     vm.onPageChanged = (page) ->
       vm.filters.page = page
       vm.changePageFunk()
 
     vm.changePageFunk = ->
       $state.go('/shops/bar',{page:vm.filters.page, sort: vm.filters.sort, order: vm.filters.order})
-
+    vm.changeFilterSort = (sort) ->
+      vm.casts = null
+      vm.isLoading = true
+      vm.filters.sort = sort
+      vm.filters.page = 1
+      vm.changePageFunk()
 
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
-    scope.$watch("vm.filters.sort",(newVal,oldVal) ->
-      if newVal != oldVal
-        scope.vm.casts = null
-        scope.vm.isLoading = true
-        scope.vm.filters.sort = newVal
-        scope.vm.filters.page = 1
-        scope.vm.changePageFunk()
-
-    )
-    scope.$watch("vm.filters.order",(newVal,oldVal) ->
-      if newVal != oldVal
-        scope.vm.casts = null
-        scope.vm.isLoading = true
-        scope.vm.filters.order = newVal
-        scope.vm.filters.page = 1
-        scope.vm.changePageFunk()
-    )
     return
   directive =
     restrict: 'A'
