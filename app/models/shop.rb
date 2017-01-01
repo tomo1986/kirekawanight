@@ -182,14 +182,20 @@ class Shop < ApplicationRecord
         json.support_count shop.supports.count
         json.favorite_count shop.favorites.count
         json.review_count shop.reviews.count
-
-
+        json.is_new shop.new_shop?
         json.tags shop.tag_list ? shop.tag_list : nil
       end
     end
   end
 
-
+  def new_shop?
+    now = Time.zone.now
+    if self.created_at >= now - 1.months
+      return true
+    else
+      return false
+    end
+  end
 
   def to_jbuilder
     Jbuilder.new do |json|

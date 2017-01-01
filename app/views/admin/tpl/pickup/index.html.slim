@@ -22,6 +22,7 @@ section.main-container.notification-index-page pickup-index-directive=""
             th subject_type
             th subject_id
             th price
+            th number_place
             th start_at
             th end_at
             th 編集
@@ -34,6 +35,7 @@ section.main-container.notification-index-page pickup-index-directive=""
               a href="/admin/shops/{{item.subject.id}}/detail" ng-if="item.subject_type == 'Shop'"  {{item.subject.name}}
               a href="/admin/users/{{item.subject.id}}/detail" ng-if="item.subject_type == 'User'"  {{item.subject.name}}
             td.clearfix data-label="price"  {{item.price}}
+            td.clearfix data-label="number_place"  {{item.number_place}}
             td.clearfix data-label="start_at"  {{item.start_at | date: 'yyyy年M月d日 HH:mm'}}
             td.clearfix data-label="end_at"  {{item.end_at | date: 'yyyy年M月d日 HH:mm'}}
             td.clearfix data-label="編集"

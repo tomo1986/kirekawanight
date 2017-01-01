@@ -413,7 +413,11 @@ class Api::FrontController < ApiController
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
     now = Time.zone.now
-    shops = Shop.joins("left join pickups on shops.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'Shop' and shops.deleted_at is null").where("shops.job_type = ? or (pickups.start_at <= ? and pickups.end_at > ?)",params[:job_type], now,now).order("pickups.number_place is null asc, pickups.number_place asc")
+    if params[:sort] == 'new'
+      shops = Shop.joins("left join pickups on shops.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'Shop' and shops.deleted_at is null").where("shops.job_type = ? or (pickups.start_at <= ? and pickups.end_at > ?)",params[:job_type], now,now).order("pickups.number_place is null asc, pickups.number_place asc")
+    else
+      shops = Shop.where(job_type: params[:job_type],deleted_at: nil)
+    end
     total = shops.count
 
     if params[:sort] == 'new'
