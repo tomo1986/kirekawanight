@@ -99,6 +99,9 @@
                   .shop-header--wrap
                     .shop-name
                       a href="/shops/bar/{{shop.id}}/info"
+                        img src="/assets/front/ran{{shop.ranking}}.png" ng-if="vm.filters.sort == 'ranking' && shop.ranking < 4"
+                        span.rank ng-if="vm.filters.sort == 'ranking' && shop.ranking > 3"
+                          | {{shop.ranking}}
                         | {{shop.name}}
                 .shop-content-box
                   .row

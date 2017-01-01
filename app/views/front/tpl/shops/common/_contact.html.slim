@@ -115,3 +115,9 @@ main#main
             button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  問合わせる
           .center-button style="text-align:center;margin-bottom:1rem;" ng-hide="vm.canContactSubmited"
             loading-directive size="125"
+        .call-box
+          .call-text
+            | 電話で問い合わせる方はこちら
+          a.tel-number href="tel:+84938971366"
+            = image_tag 'front/tel.png',class:"img" , alt: "コールセンター　+84938971366"
+
