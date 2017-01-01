@@ -1350,6 +1350,8 @@ class Api::AdminController < ApiController
     render json: builder.target!
   end
   def api65
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+
     ids = params[:ids].split(',')
     invoices = Invoice.where(id: ids)
 
@@ -1361,6 +1363,8 @@ class Api::AdminController < ApiController
   end
 
   def api66
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+
     now = Time.zone.now
     dates = []
 
@@ -1389,6 +1393,17 @@ class Api::AdminController < ApiController
 
     render json: {code: 1,chart_date: dates}
   end
+  def api67
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    users = User.where(shop_id: params[:shop_id]) if params[:shop_id]
+
+    builders = Jbuilder.new do |json|
+      json.users User.to_jbuilders(users)
+      json.code 1
+    end
+    render json: builders.target!
+  end
+
 
 
 end

@@ -88,6 +88,11 @@ angular.module 'bijyoZukanAdmin'
     api.getPromise('/api/admin/api43',{id: opt_id}).then((res) ->
       return res
     )
+  sm.getUsers = (params) ->
+    api.getPromise('/api/admin/api67',params).then((res) ->
+      return res
+    )
+
 
 
   service =
@@ -105,3 +110,4 @@ angular.module 'bijyoZukanAdmin'
     getAdmins: sm.getAdmins
     getGroups: sm.getGroups
     allGetShops: sm.allGetShops
+    getUsers: sm.getUsers

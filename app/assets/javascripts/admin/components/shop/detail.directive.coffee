@@ -19,6 +19,7 @@ angular.module 'bijyoZukanAdmin'
       }
 
       vm.getShop()
+      vm.getUsers()
       vm.getDate()
       vm.getContacts()
 
@@ -31,6 +32,12 @@ angular.module 'bijyoZukanAdmin'
         vm.monthly_support_count = res.data.monthly_support_count
         vm.monthly_review_count = res.data.monthly_review_count
       )
+    vm.getUsers = ->
+      shopService.getUsers({shop_id: $state.params.id}).then((res) ->
+        if res.data.code == 1
+          vm.users = res.data.users
+      )
+
     vm.getContacts = ->
       shopService.getContacts($state.params.id).then((res) ->
         vm.contacts = res.data.contacts

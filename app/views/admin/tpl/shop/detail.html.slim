@@ -126,3 +126,36 @@ section.main-container.map-form-page shop-detail-directive=""
             span.title Interview english
           td.res-form-table__td.input-box
             p ng-bind-html="vm.shop.interview_en | noHTML | newlines"
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th
+              | Cast No
+              i.fa ng-class="{'fa-arrow-down': vm.filters.ordered == '-id', 'fa-arrow-up': vm.filters.ordered == 'id'}"
+            th name
+            th image
+            th belong
+            th dayly PV
+            th weekly PV
+            th monthly PV
+            th support count
+            th favorite count
+            th contact count
+        tbody
+          tr(dir-paginate="user in vm.users | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page")
+            td.clearfix data-label="Cast No"  {{user.id}}
+            td.clearfix data-label="name"
+              a href="/admin/users/{{user.id}}/detail"
+                | {{user.name}}
+            td.clearfix data-label="image"
+              img ng-src="{{user.images[0].url}}" style="width:50px;" ng-if="user.images &&  user.images[0]"
+            td.clearfix data-label="belong"
+              a href="/admin/shops/{{user.shop.id}}/detail"
+                | {{user.shop.name}}
+            td.clearfix data-label="dayly PV"  {{user.dayly_count}}
+            td.clearfix data-label="weekly PV"  {{user.weekly_count}}
+            td.clearfix data-label="monthly PV"  {{user.monthly_count}}
+            td.clearfix data-label="support count"  {{user.support_count}}
+            td.clearfix data-label="favorite count"  {{user.favorite_count}}
+            td.clearfix data-label="contact count"  {{user.contact_count}}

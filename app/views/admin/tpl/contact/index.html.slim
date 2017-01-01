@@ -26,8 +26,8 @@ section.main-container.notification-index-page contact-directive=""
             td.clearfix data-label="id"
               a href="/admin/contacts/{{item.id}}/detail" {{item.id}}
             td.clearfix data-label="sub_id"
-              a href="/admin/users/{{item.subject.id}}/detail" ng-if="item.subject_type == 'User'" {{item.subject.name}}
-              a href="/admin/shops/{{item.subject.id}}/detail" ng-if="item.subject_type == 'Shop'" {{item.subject.name}}
+              a href="/admin/users/{{item.subject.id}}/detail" target="_blank" ng-if="item.subject_type == 'User'" {{item.subject.name}}
+              a href="/admin/shops/{{item.subject.id}}/detail" target="_blank" ng-if="item.subject_type == 'Shop'" {{item.subject.name}}
             td.clearfix data-label="name"  {{item.name}}
             td.clearfix data-label="tel"  {{item.tel}}
             td.clearfix data-label="email"  {{item.email}}
