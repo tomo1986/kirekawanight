@@ -31,7 +31,7 @@ section.main-container.notification-index-page pickup-index-directive=""
             td.clearfix data-label="type"  {{item.type}}
             td.clearfix data-label="subject_type"  {{item.subject_type}}
             td.clearfix data-label="subject_id"
-              a href="/admin/groups/{{item.subject.id}}/detail" ng-if="item.subject_type == 'Group'"  {{item.subject.name}}
+              a href="/admin/shops/{{item.subject.id}}/detail" ng-if="item.subject_type == 'Shop'"  {{item.subject.name}}
               a href="/admin/users/{{item.subject.id}}/detail" ng-if="item.subject_type == 'User'"  {{item.subject.name}}
             td.clearfix data-label="price"  {{item.price}}
             td.clearfix data-label="start_at"  {{item.start_at | date: 'yyyy年M月d日 HH:mm'}}
