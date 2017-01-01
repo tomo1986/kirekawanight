@@ -93,7 +93,11 @@ main#main
                 dt お気に入り数
                 dd
                   | {{vm.cast.support_count}}件
-
+                dt POINT
+                dd
+                  .shop-tags
+                    a.btn ng-repeat="tag in vm.cast.tags"
+                      | {{tag}}
   .cast-page--service ng-if="vm.cast.shop_id"
     a href="/shops/karaoke/{{vm.cast.shop_id}}"
       span.blinking キレカワ特別プランは『こちら』
