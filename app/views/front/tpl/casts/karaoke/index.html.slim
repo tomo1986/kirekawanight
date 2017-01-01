@@ -7,51 +7,12 @@
           a href="/shops/karaoke?page=1" SHOP
         li
           a.active href="/casts/karaoke?page=1" CAST
-    .rank-box ng-if="vm.filters.page == 1"
-      .page-title
-        h2.title
-          | TODAY'S POWER PUSH
-      ul.queen-list.clearfix ng-if="vm.push_casts.length > 0"
-        li ng-repeat="cast in vm.push_casts"
-          .fream
-            .fream--basic.fream--top-left
-            .fream--basic.fream--top-right
-            .fream--basic.fream--bottom-left
-            .fream--basic.fream--bottom-right
-            a href="/casts/karaoke/{{cast.id}}/info"
-              span ng-if="cast.images[0]"
-                img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-              span ng-if="!cast.images[0]"
-                = image_tag 'front/cast-no-image.png', alt: "cast no image"
-          .profile
-            h3.shop-name
-              a href="/shops/karaoke/{{cast.shop.id}}/info" ng-if="cast.shop"
-                | {{cast.shop.name}}
-              span ng-if="!cast.shop"
-                | 所属なし
-            h4.name
-              | {{cast.nick_name}}({{cast.age}})
-              span
-                i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
-            .body
-              .support.clearfix
-                h5.title
-                  | 応援数
-                p.count
-                  | {{cast.support_count | number}}
-              .favorid.clearfix
-                h5.title
-                  | お気入り登録数
-                p.count
-                  |  {{cast.favorite_count | number}}
-      .nohave-box ng-if="vm.push_casts.length == 0" Coming Soon
+
     .rank-box
       .page-title
         h2.title
           | CAST
-
       .filter-box.clearfix
-
         .total-count-box
           span
             | {{vm.total | number}}

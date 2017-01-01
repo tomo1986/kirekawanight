@@ -238,7 +238,7 @@
       }
       .review--body {
         margin-bottom: $row-space;
-
+        word-break: break-all;
         line-height: 1.5;
       }
       .review--footer {
