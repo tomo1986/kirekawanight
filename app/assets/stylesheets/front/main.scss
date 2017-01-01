@@ -1737,7 +1737,7 @@ textarea {
   }
 }
 .sub-title {
-  padding: 0.75rem;
+  padding: 0.3rem;
   color: $_brand-basic;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#720e0a+0,020202+100,020202+100,f4f4f4+100 */
   background: #720e0a; /* Old browsers */
@@ -1747,7 +1747,7 @@ textarea {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#720e0a', endColorstr='#f4f4f4',GradientType=1 ); /* IE6-9 */
   margin-bottom: $row-space-half;
   border-left: 3px solid $_brand-basic;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: .3px;
   line-height: normal;

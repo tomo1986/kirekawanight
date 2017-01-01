@@ -141,7 +141,7 @@
                         .content-info
                           .info-budget
                             span.title 予算：
-                            | ${{shop.budget_usd}}USD, {{shop.budget_vnd}}VND
+                            | ${{shop.budget_usd | number}}USD, {{shop.budget_vnd | number}}VND
                           .info-girls-count
                             span.title キャスト：
                             span ng-if="shop.girls_count"

@@ -70,6 +70,7 @@ class Review < ApplicationRecord
         json.is_displayed review.is_displayed
         json.sender review.sender.to_jbuilder
         json.sender_review_count (review.sender.review_shops.count + review.sender.review_users.count)
+        json.receiver review.receiver.to_jbuilder
         json.reference_count review.references.count
         json.not_reference_count review.not_references.count
         # json.receiver review.receiver.to_jbuilder

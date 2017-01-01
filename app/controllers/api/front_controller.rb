@@ -378,6 +378,7 @@ class Api::FrontController < ApiController
       favorite_users = User.where(id: customer.favorites.pluck(:receiver_id))
     end
     users = User.all
+    shops = Shop.where(deleted_at: nil)
     now = Time.zone.now
     from = now.beginning_of_month
     to = now.end_of_month
@@ -388,12 +389,22 @@ class Api::FrontController < ApiController
       end
     end
 
+    reviews = Review.joins("join shops on reviews.receiver_id = shops.id and reviews.receiver_type = 'Shop'").where("reviews.is_displayed = 1 and shops.deleted_at is null").order("reviews.id desc").limit(5)
+
     builders = Jbuilder.new do |json|
+      json.reviews Review.to_jbuilders(reviews)
       json.favorites favorites
-      json.new_karaoke_users User.to_jbuilders(users.where(job_type: 'karaoke',created_at: from...to).order("id desc").limit(5))
-      json.new_bar_users User.to_jbuilders(users.where(job_type: 'bar',created_at: from...to).order("id desc").limit(5))
-      json.new_massage_users User.to_jbuilders(users.where(job_type: 'massage',created_at: from...to).order("id desc").limit(5))
+      json.new_karaoke_users User.to_jbuilders(users.where(job_type: 'karaoke').order("id desc").limit(5))
+      json.new_bar_users User.to_jbuilders(users.where(job_type: 'bar').order("id desc").limit(5))
+      json.new_massage_users User.to_jbuilders(users.where(job_type: 'massage').order("id desc").limit(5))
       json.new_sexy_users User.to_jbuilders(users.where(job_type: 'sexy',created_at: from...to).order("id desc").limit(5))
+
+      json.new_karaoke_shops Shop.to_jbuilders(shops.where(job_type: 'karaoke').order("id desc").limit(5))
+      json.new_bar_shops Shop.to_jbuilders(shops.where(job_type: 'bar').order("id desc").limit(5))
+      json.new_massage_shops Shop.to_jbuilders(shops.where(job_type: 'massage').order("id desc").limit(5))
+
+
+
       json.time_services Discount.to_jbuilders(Discount.open_time_discounts)
     end
     render json: builders.target!
