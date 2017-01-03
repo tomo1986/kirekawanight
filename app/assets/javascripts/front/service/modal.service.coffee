@@ -41,6 +41,34 @@ angular.module 'bisyoujoZukanNight'
         self.close = ()->
           modalInstance.dismiss('cancel')
     )
+
+  sm.modalSelectCasts = (casts,selectCasts,callback) ->
+    modalInstance = $uibModal.open(
+      templateUrl: "#{location.protocol + '//' + location.host}/front/tpl/modal/cast.html"
+      animation: true
+      controller: ($scope)->
+        self = $scope
+        self.callbackFunc = callback
+        self.casts = casts
+        self.count = 0
+        self.selectCasts = selectCasts
+
+        self.onClickselectCasts = () ->
+          self.callbackFunc(self.selectCasts)
+          modalInstance.dismiss('cancel')
+        self.onselectCast = (cast) ->
+          if self.selectCasts["cast#{cast.id}"]
+            delete self.selectCasts["cast#{cast.id}"]
+          else
+            self.selectCasts["cast#{cast.id}"] = cast
+          self.count = Object.keys(self.selectCasts).length
+
+        self.close = ()->
+          self.selectCasts = {}
+          self.callbackFunc(self.selectCasts)
+          modalInstance.dismiss('cancel')
+    )
+
   sm.confirm = (title,datas,buttons) ->
     modalInstance = $uibModal.open(
       templateUrl: "#{location.protocol + '//' + location.host}/front/tpl/modal/confirm.html"
@@ -114,4 +142,5 @@ angular.module 'bisyoujoZukanNight'
     alert: sm.alert
     confirm: sm.confirm
     delete: sm.delete
+    modalSelectCasts: sm.modalSelectCasts
     createCustomer: sm.createCustomer

@@ -75,35 +75,21 @@ main#main
                 .error
                   span.is-text-danger ng-if="vm.errors.reservation"
                     | {{vm.errors.reservation}}
-            tr ng-if="vm.contactData.contact_type == 'reservation' && vm.casts.length > 0"
+            tr ng-if="vm.contactData.contact_type == 'reservation'"
               th.res-form-table__th.parent-th.parent-th.title-box.clearfix
                 span.title キャスト選択
               td.res-form-table__td.parent-td.parent-td.input-box
-                .cast-select ng-repeat="selectCast in vm.contactData.selectCasts track by $index"
+                .cast-select ng-repeat="(key,val) in vm.selectCasts "
                   .cast-group.clearfix
-                    .drop-down-cast ng-click="vm.onClickDropDown(selectCast,$index)"
+                    .drop-down-cast
                       div
-                        span ng-if="vm.contactData.selectCasts[$index] && vm.contactData.selectCasts[$index].image"
-                          img.select-img src="{{vm.contactData.selectCasts[$index].image}}"
-                        span ng-if="!vm.contactData.selectCasts[$index].image"
+                        span ng-if="val && val.images.length > 0"
+                          img.select-img src="{{val.images[0].url}}"
+                        span ng-if="val.images.length == 0 "
                           = image_tag 'front/cast-no-image.png', alt: "cast no image", class:"select-img"
-
                         h4.name
-                          | {{vm.contactData.selectCasts[$index].title}}
-                      div ng-if="!vm.contactData.selectCasts[$index]"
-                        h4.name
-                          | 選択してください。
-                    ul.cast-lists ng-class="{'open':selectCast.isOpened}"
-                      li.item ng-repeat="cast in vm.casts" ng-click="vm.onSelectCast(cast)"
-                        span ng-if="cast.images[0]"
-                          img src="{{cast.images[0].url}}"
-                        span ng-if="!cast.images[0]"
-                          = image_tag 'front/cast-no-image.png', alt: "cast no image"
-                        h4.name
-                          | Cast.No {{cast.id}} / {{cast.name}}
-                  button.add-btn ng-click="vm.onAdd(vm.contactData.selectCasts[$index],$index)" type="button"
-                    i.fa aria-hidden="true" ng-class="{'fa-plus': selectCast.canAdded, 'fa-minus': !selectCast.canAdded}"
-
+                          | Cast No.{{val.id}} {{val.name}}
+                button.btn.btn-submit style="width:100%;margin-top:1rem;" type="button" ng-click="vm.onClickCastModal()" ng-if="vm.casts.length > 0"  キャストを選ぶ
 
             tr
               th.res-form-table__th.parent-th.parent-th.title-box.clearfix

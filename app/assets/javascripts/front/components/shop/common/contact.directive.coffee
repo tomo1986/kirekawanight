@@ -6,6 +6,7 @@ angular.module 'bisyoujoZukanNight'
       vm.canContactSubmited = true
       vm.casts = []
       vm.castIds = []
+      vm.selectCasts ={}
 
       vm.reservationDate={
         from:{is_from:true,date:null}
@@ -14,6 +15,7 @@ angular.module 'bisyoujoZukanNight'
         is_required:true
         placeholder:'必須'
       }
+
 
       vm.contactData = {
         contact_type: 'reservation'
@@ -54,8 +56,8 @@ angular.module 'bisyoujoZukanNight'
         message = message + "予約人数：　#{vm.contactData.peoples}peaples\n"
         message = message + "予約時間：　#{vm.contactData.reservation_date}\n"
         message = message + "============ 予約キャスト ============\n"
-        angular.forEach(vm.contactData.selectCasts, (cast) ->
-          message = message + "#{cast.title}\n"
+        angular.forEach(vm.selectCasts, (val,key) ->
+          message = message + "Cast No.#{val.id} #{val.name}\n"
         )
         message = message + "============ 予約キャスト ============\n"
         message = message + "\n\n"
@@ -101,36 +103,11 @@ angular.module 'bisyoujoZukanNight'
         }
 
       )
-    vm.onSelectCast = (cast) ->
-      vm.selectCastNow = cast
-      url = if cast.images[0] then cast.images[0].url else null
-      vm.contactData.selectCasts[vm.selectDropDownNo] = {
-        id: cast.id, image:url,title:"Cast.No#{cast.id}/#{cast.name}",isOpened: false,canAdded: true
-      }
+    vm.onClickCastModal = () ->
+      modalService.modalSelectCasts(vm.casts,vm.selectCasts,vm.callbackselectCasts)
 
-
-    vm.onClickDropDown = (cast, index) ->
-      vm.selectDropDownNo = index
-      vm.contactData.selectCasts[vm.selectDropDownNo].isOpened = !cast.isOpened
-
-    vm.onAdd = (cast,index) ->
-      return if !cast.id
-      vm.contactData.selectCasts[index].isOpened = false
-      vm.contactData.selectCasts[index].canAdded = false
-      if vm.castIds.indexOf(cast.id) == -1
-        vm.castIds.push(cast.id)
-        vm.contactData.selectCasts.push({id:null,image:null,title: "選択してください",isOpened:false,canAdded:true})
-      else
-        angular.forEach(vm.castIds,(value,i) ->
-          vm.castIds.splice(i,1) if value == cast.id
-          vm.contactData.selectCasts.splice(i,1) if vm.contactData.selectCasts[i].id == cast.id
-        )
-      shopService.getContactCasts($state.params.id, vm.castIds).then((res) ->
-        vm.casts = []
-        angular.forEach(res.data.users, (cast) ->
-          vm.casts.push(cast)
-        )
-      )
+    vm.callbackselectCasts = (casts) ->
+      vm.selectCasts = casts
 
 
     vm.init()

@@ -1,0 +1,31 @@
+.modal-header
+  button.close aria-label="Close" data-dismiss="modal" type="button" ng-click="close()"
+    i.fa.fa-times aria-hidden="true"
+  h2.modal-title
+    span
+      | キャスト選択
+.modal-body
+  .clearfix style="height: 500px;overflow-y: scroll;margin-bottom:11rem;"
+    .col-xs-6.col-sm-4.col-md-4 style="margin-bottom:1rem;padding:.5rem;" ng-class="{'cast-select-active': selectCasts['cast'+cast.id]}" ng-click="onselectCast(cast)" ng-repeat="cast in casts"
+      div style="margin-bottom:.5rem;"
+        span ng-if="cast.images[0]"
+          img.img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
+        span ng-if="!cast.images[0]"
+          = image_tag 'front/cast-no-image.png', alt: "cast no image",class:"img"
+      div
+        div style="text-align:center;"
+          | Cast No.{{cast.id}}
+        div style="text-align:center;"
+          | {{cast.name}}
+
+  .clearfix style="padding:1rem 0;position: fixed;bottom: 0;width: 100%;left: 0;background: #000;height:11rem;"
+    p style="text-align:center;"
+      | 現在{{count}}名選択中
+    p.col-xs-12.col-sm-6
+      a.btn.main-btn style="color: #ad9a58;background-color: #720e0a;width:100%;" href="javascript:void(0)" ng-click="onClickselectCasts()"
+        span
+          | 決定する
+    p.col-xs-12.col-sm-6
+      a.btn.main-btn style="color: #ad9a58;background-color: #720e0a;width:100%;" href="javascript:void(0)"  ng-click="close()"
+        span
+          | キャンセルする
