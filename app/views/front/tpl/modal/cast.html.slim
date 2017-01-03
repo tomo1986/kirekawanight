@@ -5,18 +5,7 @@
     span
       | キャスト選択
 .modal-body
-  .clearfix style="padding:1rem 0;position: fixed;bottom: 0;width: 100%;left: 0;background: #000;height:7rem;"
-    p style="text-align:center;"
-      | 現在{{count}}名選択中
-    p.col-xs-6.col-sm-6
-      a.btn.main-btn style="color: #ad9a58;background-color: #720e0a;width:100%;" href="javascript:void(0)" ng-click="onClickselectCasts()"
-        span
-          | 決定
-    p.col-xs-6.col-sm-6
-      a.btn.main-btn style="color: #ad9a58;background-color: #720e0a;width:100%;" href="javascript:void(0)" ng-click="close()"
-        span
-          | キャンセル
-  .clearfix style="height: 400px;overflow-y: scroll;margin-bottom:7rem;"
+  .clearfix style="height: 400px;overflow-y: scroll;"
     .col-xs-6.col-sm-4.col-md-4 style="margin-bottom:1rem;padding:.5rem;" ng-class="{'cast-select-active': selectCasts['cast'+cast.id]}" ng-click="onselectCast(cast)" ng-repeat="cast in casts"
       div style="margin-bottom:.5rem;"
         span ng-if="cast.images[0]"
@@ -28,4 +17,14 @@
           | Cast No.{{cast.id}}
         div style="text-align:center;"
           | {{cast.name}}
-
+  .row style="padding:1rem 0;"
+    p style="text-align:center;"
+      | 現在{{count}}名選択中
+    p.col-xs-6.col-sm-6
+      a.btn.main-btn style="color: #ad9a58;background-color: #720e0a;width:100%;" href="javascript:void(0)" ng-click="onClickselectCasts()"
+        span
+          | 決定
+    p.col-xs-6.col-sm-6
+      a.btn.main-btn style="color: #ad9a58;background-color: #720e0a;width:100%;" href="javascript:void(0)" ng-click="close()"
+        span
+          | キャンセル
