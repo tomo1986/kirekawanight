@@ -5,13 +5,14 @@ angular.module 'bisyoujoZukanNight'
     vm.init = ->
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MYPAGE',link:''}]
       $state.go '.show' if $state.current.default_url == 'base'
+      vm.loginCustomer = customerService.getLoginCustomer()
+
       vm.activeTab = $state.current.active_tab
       vm.canReviewSubmited = true
       vm.isReviewShopLoading = true
       vm.isReviewUserLoading = true
       vm.review_shops = []
       vm.review_users = []
-      vm.loginCustomer = customerService.getLoginCustomer()
       vm.birthday_options={
         from:{is_from:true,date:null}
         enable_time: false
@@ -19,19 +20,25 @@ angular.module 'bisyoujoZukanNight'
         is_required:true
         placeholder:'必須'
       }
-      vm.shopReviweFilters = {
-        id: vm.loginCustomer.id
-        limit: 10
-        page: if $state.params.page then $state.params.page else 1
-      }
-      vm.castReviweFilters = {
-        id: vm.loginCustomer.id
-        limit: 10
-        page: if $state.params.page then $state.params.page else 1
-      }
 
       vm.getFavorited()
-      vm.getReviews()
+#      vm.getReviews()
+
+    vm.getFavorited = ->
+      api.getPromise('/api/front/api32',{}).then((res) ->
+        if res.data.code == 1
+          vm.loginCustomer = res.data.customer
+          vm.shopReviweFilters = {
+            id: vm.loginCustomer.id
+            limit: 10
+            page: if $state.params.page then $state.params.page else 1
+          }
+          vm.castReviweFilters = {
+            id: vm.loginCustomer.id
+            limit: 10
+            page: if $state.params.page then $state.params.page else 1
+          }
+      )
 
     vm.getContcts = ->
 
@@ -113,22 +120,13 @@ angular.module 'bisyoujoZukanNight'
 
 
 
-    vm.getFavorited = ->
-      api.getPromise('/api/front/api11',{}).then((res) ->
-        vm.karaokeUsers = res.data.favorite_karaoke_users
-        vm.barUsers = res.data.favorite_bar_users
-        vm.massageUsers = res.data.favorite_massage_users
-        vm.sexyUsers = res.data.favorite_sexy_users
-        vm.favorites = res.data.favorites
-      )
 
-    vm.onClickedFavorite = (opt_cast_id)->
-      vm.favoriteCastId = opt_cast_id
-      if customerService.isLogin()
-        vm.loginCustomer = customerService.getLoginCustomer()
-        vm.CountUpFavorite()
-      else
-        modalService.createCustomer(vm.setLoginCustomer)
+    vm.onClickedDeleteFavorite = (opt_cast_id,type)->
+      api.postPromise('/api/front/api33',{sender_id: vm.loginCustomer.id,receiver_id:opt_cast_id,delete_type: type}).then((res) ->
+        if res.data.code == 1
+          vm.loginCustomer = res.data.customer
+          modalService.alert('削除しました。','')
+      )
     vm.CountUpFavorite = ->
       params = {
         type: 'favorite'

@@ -785,6 +785,7 @@ class Api::FrontController < ApiController
     end
     render json: builders.target!
   end
+
   def api31
     shop = Shop.find_by(id: params[:id])
     render_failed(4, t('shop.error.not_find')) and return if shop.blank?
@@ -797,6 +798,28 @@ class Api::FrontController < ApiController
     render json: builder.target!
   end
 
+  def api32
+    if customer_signed_in?
+      builders = Jbuilder.new do |json|
+        json.code 1
+        json.customer current_customer.to_jbuilder
+      end
+    end
+    render json: builders.target!
+  end
+
+  def api33
+    if customer_signed_in?
+      post = current_customer.favorites.where(sender_id:params[:sender_id],receiver_id: params[:receiver_id],receiver_type: 'User' ).first if params[:delete_type] == 'user'
+      post = current_customer.favorites.where(sender_id:params[:sender_id],receiver_id: params[:receiver_id],receiver_type: 'Shop' ).first if params[:delete_type] == 'shop'
+      post.delete
+      builders = Jbuilder.new do |json|
+        json.code 1
+        json.customer current_customer.to_jbuilder
+      end
+    end
+    render json: builders.target!
+  end
 
 
 end

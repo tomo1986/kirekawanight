@@ -252,6 +252,9 @@ Rails.application.routes.draw do
       get :api28
       get :api29
       post :api30
+      get :api31
+      get :api32
+      post :api33
     end
 
     scope :admin, module: 'admin' do

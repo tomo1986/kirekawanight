@@ -146,6 +146,7 @@ class User < ApplicationRecord
         json.bust_size user.bust_size
         json.waist user.waist
         json.hip user.hip
+        json.job_type user.job_type
         json.ranking user.ranking
         json.total_score user.total_score
         json.can_guided user.can_guided

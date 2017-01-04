@@ -1,15 +1,15 @@
-.top-box style="margin: 0 0 3rem;"
+.top-box style="margin: 0 0 2rem;"
   .page-title
     h2.title
-      | FAVORITE KARAOKE GIRLS
-  .queen-list.clearfix ng-if="vm.karaokeUsers.length > 0"
-    li ng-repeat="cast in vm.karaokeUsers"
+      | お気に入りキャスト
+  .queen-list.clearfix ng-if="vm.loginCustomer.favorite_users.length > 0"
+    li ng-repeat="cast in vm.loginCustomer.favorite_users"
       .fream
         .fream--basic.fream--top-left
         .fream--basic.fream--top-right
         .fream--basic.fream--bottom-left
         .fream--basic.fream--bottom-right
-        a href="/casts/karaoke/{{cast.id}}"
+        a href="/casts/{{cast.job_type}}/{{cast.id}}/info"
           span ng-if="cast.images[0]"
             img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
           span ng-if="!cast.images[0]"
@@ -22,34 +22,74 @@
             | 所属なし
         h4.name
           | {{cast.nick_name}}({{cast.age}})
-          span
-            i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
-  .nohave-box ng-if="!vm.karaokeUsers" 登録されていません。
+          span ng-click="vm.onClickedDeleteFavorite(cast.id,'user')"
+            i.fa.fa-heart.active aria-hidden="true"
 
-.top-box style="margin: 3rem 0;"
+.top-box style="margin: 0 0 2rem;"
   .page-title
     h2.title
-      | FAVORITE BAR GIRLS
-  .queen-list.clearfix ng-if="vm.barUsers.length > 0"
-    li ng-repeat="cast in vm.barUsers"
-      .fream
-        .fream--basic.fream--top-left
-        .fream--basic.fream--top-right
-        .fream--basic.fream--bottom-left
-        .fream--basic.fream--bottom-right
-        a href="/casts/bar/{{cast.id}}"
-          span ng-if="cast.images[0]"
-            img ng-src="{{cast.images[0].url}}" alt="{{cast.name}}の画像"
-          span ng-if="!cast.images[0]"
-            = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-      .profile
-        h3.shop-name
-          span ng-if="cast.shop"
-            | {{cast.shop.name}}
-          span ng-if="!cast.shop"
-            | 所属なし
-        h4.name
-          | {{cast.nick_name}}({{cast.age}})
-          span
-            i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
-  .nohave-box ng-if="!vm.barUsers" 登録されていません。
+      | お気に入りショップ
+  .shop-list--main ng-if="vm.loginCustomer.favorite_shops.length > 0"
+    ul.shop-list
+      li ng-repeat="shop in vm.loginCustomer.favorite_shops"
+        .shop-header.clearfix
+          .shop-header--wrap
+            .shop-name
+              a href="/shops/karaoke/{{shop.id}}/info"
+                img src="/assets/front/ran{{shop.ranking}}.png" ng-if="vm.filters.sort == 'ranking' && shop.ranking < 4"
+                span.rank  ng-if="vm.filters.sort == 'ranking' && shop.ranking > 3"
+                  | {{shop.ranking}}
+                | {{shop.name}}
+        .shop-content-box
+          .row
+            .col-xs-12.col-sm-5.col-md-4.col-xl-4
+              .col-row-left.clearfix
+                .shop-image
+                  span.favorite-btn ng-click="vm.onClickedDeleteFavorite(shop.id,'shop')"
+                    i.fa.fa-heart.active
+                  a href="/shops/karaoke/{{shop.id}}/info"
+                    .is-new ng-if="shop.is_new" NEW
+                    span ng-if="shop.images[0]"
+                      img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像" style="width:100%;"
+                    span ng-if="!shop.images[0]"
+                      = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image",style:"width:100%;"
+            .col-xs-12.col-sm-7.col-md-8.col-xl-8
+              .col-row-right
+                .content-header.clearfix
+                  .star-box
+                    .head--star
+                      i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 0" ng-class="{'fa-star-half': shop.total_score > 0 && shop.total_score <= 10,'fa-star': shop.total_score > 10 && shop.total_score <= 20,'active': shop.total_score > 0 }"
+                      i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 20" ng-class="{'fa-star-half': shop.total_score > 20 && shop.total_score <= 30,'fa-star': shop.total_score > 30 && shop.total_score <= 40,'active': shop.total_score > 20 }"
+                      i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 40" ng-class="{'fa-star-half': shop.total_score > 40 && shop.total_score <= 50,'fa-star': shop.total_score > 50 && shop.total_score <= 60,'active': shop.total_score > 40 }"
+                      i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 60" ng-class="{'fa-star-half': shop.total_score > 60 && shop.total_score <= 70,'fa-star': shop.total_score > 70 && shop.total_score <= 80,'active': shop.total_score > 60 }"
+                      i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 80" ng-class="{'fa-star-half': shop.total_score > 80 && shop.total_score <= 90,'fa-star': shop.total_score > 90 && shop.total_score <= 100,'active': shop.total_score > 80 }"
+                    .head--score
+                      span ng-class="{'active': vm.filters.sort == 'ranking'}" {{shop.total_score}}点
+                  .count-box.clearfix
+                    .review-count-box
+                      a.header-review-count href="/shops/karaoke/{{shop.id}}/reviews"
+                        i.fa.fa-commenting aria-hidden="true"
+                        span ng-class="{'active': vm.filters.sort == 'review'}" {{shop.review_count}}件
+                    .support-count-box
+                      span.header-review-count
+                        i.fa.fa-thumbs-o-up aria-hidden="true"
+                        span ng-class="{'active': vm.filters.sort == 'support'}" {{shop.support_count}}件
+                    .favorite-count-box
+                      span.header-review-count
+                        i.fa.fa-star-o aria-hidden="true"
+                        span ng-class="{'active': vm.filters.sort == 'favorite'}" {{shop.favorite_count}}件
+                .content-info
+                  .info-budget
+                    span.title 予算：
+                    | ${{shop.budget_usd | number}}USD, {{shop.budget_vnd | number}}VND
+                  .info-girls-count
+                    span.title キャスト：
+                    span ng-if="shop.girls_count"
+                      | {{shop.girls_count}}人
+                .content-point
+                  .shop-tags
+                    span.title ポイント：
+                    a.btn ng-repeat="tag in shop.tags"
+                      | {{tag}}
+                p.content-service ng-if="shop.service"
+                  | {{shop.service}}

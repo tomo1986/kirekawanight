@@ -21,6 +21,8 @@ class Customer < ApplicationRecord
       json.sns_line self.sns_line
       json.sns_zalo self.sns_zalo
       json.sns_wechat self.sns_wechat
+      json.favorite_users self.favorites ? User.to_jbuilders(User.where(id: User.where(id: Post.where(receiver_id: self.favorites.pluck(:receiver_id),receiver_type: 'User').pluck(:receiver_id).uniq))) : nil
+      json.favorite_shops self.favorites ? Shop.to_jbuilders(Shop.where(id: Shop.where(id: Post.where(receiver_id: self.favorites.pluck(:receiver_id),receiver_type: 'Shop').pluck(:receiver_id).uniq))) : nil
     end
   end
 
