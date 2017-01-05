@@ -1,5 +1,9 @@
 class Blog < ApplicationRecord
 
+
+  has_many  :intoroduction_shops, class_name: 'BlogType::Shop', as: :subject, dependent: :destroy, :autosave => true
+  has_many  :intoroduction_users, class_name: 'BlogType::User', as: :subject, dependent: :destroy, :autosave => true
+
   def previous
     Blog.where("id < ?", self.id).last
   end
@@ -121,6 +125,7 @@ class Blog < ApplicationRecord
   def to_jbuilder
     Jbuilder.new do |json|
       json.id self.id
+      json.type self.type
       json.head_title_ja self.head_title_ja
       json.head_title_vn self.head_title_vn
       json.head_title_en self.head_title_en
@@ -148,6 +153,7 @@ class Blog < ApplicationRecord
     Jbuilder.new do |json|
       json.array! blogs do |blog|
         json.id blog.id
+        json.type blog.type
         json.head_title_ja blog.head_title_ja
         json.head_title_vn blog.head_title_vn
         json.head_title_en blog.head_title_en

@@ -732,7 +732,13 @@ class Api::AdminController < ApiController
     render json: builder.target!
   end
   def api33
-    blog = Blog.new
+    if params[:type] == 'Shop'
+      blog = BlogType::Shop.new
+    elsif  params[:type] == 'User'
+      blog = BlogType::User.new
+    elsif params[:type] == 'Play'
+      blog = BlogType::Play.new
+    end
     blog.attributes = {
         subject_type: params[:subject_type],
         subject_id: params[:subject_id],
@@ -1403,6 +1409,29 @@ class Api::AdminController < ApiController
     end
     render json: builders.target!
   end
+
+  def api68
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    users = User.where(job_type: params[:job_type], deleted_at: nil) if params[:job_type]
+
+    builders = Jbuilder.new do |json|
+      json.users User.to_jbuilders(users)
+      json.code 1
+    end
+    render json: builders.target!
+  end
+
+  def api69
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    shops = Shop.where(job_type: params[:job_type], deleted_at: nil) if params[:job_type]
+
+    builders = Jbuilder.new do |json|
+      json.shops Shop.to_jbuilders(shops)
+      json.code 1
+    end
+    render json: builders.target!
+  end
+
 
 
 

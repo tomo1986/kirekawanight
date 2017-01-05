@@ -14,30 +14,41 @@ section.main-container.map-form-page blog-form-directive=""
             td.res-form-table__td.input-box
               select.form-control name="type" ng-model="vm.blog.type"
                 option value=""  -- Please select --
-                option value="introduce" ng-selected="vm.blog.type == 'introduce'" 女の子紹介
-                option value="play" ng-selected="vm.blog.type == 'play'" 遊び
-          tr
+                option value="User" ng-selected="vm.blog.type == 'User'" 女の子紹介
+                option value="Shop" ng-selected="vm.blog.type == 'Shop'" お店紹介
+                option value="Play" ng-selected="vm.blog.type == 'Play'" 遊び
+          tr ng-if="vm.blog.type == 'User' || vm.blog.type == 'Shop'"
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" subject_type
             td.res-form-table__td.input-box
               select.form-control name="subject_type" ng-model="vm.blog.subject_type"
                 option value=""  -- Please select --
-                option value="Group" Group
-                option value="User" User
+                option value="Karaoke" ng-selected="vm.blog.subject_type == 'Karaoke'" Karaoke
+                option value="Bar" ng-selected="vm.blog.subject_type == 'Bar'" Bar
+                option value="Massage" ng-selected="vm.blog.subject_type == 'Massage'" Massage
+          tr ng-if="vm.blog.type == 'Play'"
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" subject_type
+            td.res-form-table__td.input-box
+              select.form-control name="subject_type" ng-model="vm.blog.subject_type"
+                option value=""  -- Please select --
+                option value="Karaoke" ng-selected="vm.blog.subject_type == 'Karaoke'" Karaoke
+                option value="Bar" ng-selected="vm.blog.subject_type == 'Bar'" Bar
+                option value="Massage" ng-selected="vm.blog.subject_type == 'Massage'" Massage
+                option value="Club" ng-selected="vm.blog.subject_type == 'Club'" Club
+
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" subject_id
             td.res-form-table__td.input-box
-              select.form-control name="subject_id" ng-model="vm.blog.subject_id"
+              select.form-control name="subject_id" ng-model="vm.blog.subject_id" ng-options="item.id as item.name for item in vm.items"
                 option value=""  -- Please select --
-                option value="{{item.id}}" ng-selected="item.id == vm.blog.subject_id" ng-repeat="item in vm.subjectList"
-                  | {{item.name}}
 
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" head_title_ja
             td.res-form-table__td.input-box
-              input.form-control type="text" name="head_title_ja" required='' placeholder="aiueo" ng-model="vm.blog.head_title_ja"
+              input.form-control type="text" name="head_title_ja" required='' placeholder="タイトル" ng-model="vm.blog.head_title_ja"
 
           tr
             th.res-form-table__th.title-box.clearfix
@@ -61,7 +72,7 @@ section.main-container.map-form-page blog-form-directive=""
               span.title ng-class="{'is-text-danger': vm.errors.description}" Interview 日本語
               span.btn.btn-danger.btn-xs.absolutely 必須
             td.res-form-table__td.input-box
-              textarea.form-control ckeditor="vm.options" ng-model="vm.blog.article_ja"
+              textarea.form-control style="height:10rem;" required='' ng-model="vm.blog.article_ja"
         .button-center ng-show="vm.canSubmit"
           button.btn.main-btn type="submit" 登録する
         .button-center ng-hide="vm.canSubmit"

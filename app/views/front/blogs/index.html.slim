@@ -4,10 +4,11 @@
 .main-content.container
   main#main.blog-page
     .profile-box.clearfix
-      ul.profile-list
+      ul.profile-list style="width:100%;"
         - @blogs.each do |blog|
           li
-            = blog.title_ja.html_safe
+            h3.sub-title
+              = blog.title_ja
             .article
               = blog.article_ja.truncate(200).html_safe
               .more

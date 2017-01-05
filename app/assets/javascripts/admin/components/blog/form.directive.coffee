@@ -1,5 +1,5 @@
 angular.module 'bijyoZukanAdmin'
-.directive 'blogFormDirective',  ->
+.directive 'blogFormDirective', ->
   BlogFormController = (blogService, modalService,datePickerService,$state,validationService) ->
     vm = this
     self = vm
@@ -21,6 +21,7 @@ angular.module 'bijyoZukanAdmin'
       else
         vm.newBlog()
         vm.breadcrumb.push({name:'MAP新規作成',link:''})
+
     vm.getBlog = ->
       blogService.getBlog($state.params.id).then((res) ->
         vm.blog = res.data.blog
@@ -54,7 +55,6 @@ angular.module 'bijyoZukanAdmin'
       })
 
     vm.submit = ->
-
       images = []
       imageUploaded = $('.image-box--arry image-directive img')
       if imageUploaded.length > 0
@@ -81,7 +81,7 @@ angular.module 'bijyoZukanAdmin'
         )
       else
         blogService.createBlog(vm.blog).then((res) ->
-          if res.status == 1
+          if res.code == 1
             vm.blog = res.data.blog
             datas = vm.makeDataForModal()
             modalService.confirm(title,datas,buttons)
@@ -92,36 +92,46 @@ angular.module 'bijyoZukanAdmin'
 
     vm.makeDataForModal = ->
       return [
-        {name:"blog name",val:vm.blog.name,kind:"string"}
-        {name:"tel",val:vm.blog.tel,kind:"string"}
-        {name:"email",val:vm.blog.email,kind:"string"}
+        {name:"ブログタイトル",val:vm.blog.title_ja,kind:"string"}
+        {name:"タイトル",val:vm.blog.head_title_ja,kind:"string"}
+        {name:"キーワード",val:vm.blog.head_keyword_ja,kind:"string"}
         {name:"job_type",val:vm.blog.job_type,kind:"string"}
-        {name:"interview(japanese)",val:vm.blog.interview_ja,kind:"text"}
+        {name:"本文",val:vm.blog.article_ja,kind:"text"}
       ]
 
-    vm.onReady = ->
-      vm.loaded = true
-      return
 
-    vm.onChangeTab = (opt_tab) ->
-      vm.active_tab = opt_tab
-
-    vm.callbackGetLocationAddress = (ido,keido,address) ->
-      vm.blog.lon = parseFloat(ido)
-      vm.blog.lat = parseFloat(keido)
-      vm.blog.address = address
-
-    vm.getAddressFromMap = () ->
-      position = {
-        location: [vm.blog.lon,vm.blog.lat]
-        address: vm.blog.address
-      }
-      modalService.getAddress(position, vm.callbackGetLocationAddress)
-
+    vm.getUsers = (type) ->
+      blogService.getUsers({job_type: type}).then((res) ->
+        if res.data.code == 1
+          vm.items = res.data.users
+        else
+          modalService.error(res.data.errors)
+      )
+    vm.getShops = (type) ->
+      blogService.getUsers({job_type: type}).then((res) ->
+        if res.data.code == 1
+          vm.items = res.data.users
+        else
+          modalService.error(res.data.errors)
+      )
 
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
+    scope.$watch("vm.blog.subject_type",(val) ->
+      if val == 'Karaoke'
+        type = 'karaoke'
+      else if val == 'Bar'
+        type = 'bar'
+      else if val == 'Massage'
+        type = 'massage'
+      if scope.vm.blog && scope.vm.blog.type == 'User'
+        scope.vm.getUsers(type)
+      else if  scope.vm.blog && scope.vm.blog.type == 'Shop'
+        scope.vm.getShops(type)
+    )
+
+
     return
 
   directive =

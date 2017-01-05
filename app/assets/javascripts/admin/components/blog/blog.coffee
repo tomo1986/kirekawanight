@@ -22,6 +22,14 @@ angular.module 'bijyoZukanAdmin'
     api.postPromise('/api/admin/api34',opt_blog).then((res) ->
       return res
     )
+  sm.getUsers = (params) ->
+    api.getPromise('/api/admin/api68',params).then((res) ->
+      return res
+    )
+  sm.getShops = (params) ->
+    api.getPromise('/api/admin/api69',params).then((res) ->
+      return res
+    )
 
 
   service =
@@ -30,3 +38,5 @@ angular.module 'bijyoZukanAdmin'
     createBlog: sm.createBlog
     getBlogs: sm.getBlogs
     updateBlog: sm.updateBlog
+    getUsers: sm.getUsers
+    getShops: sm.getShops

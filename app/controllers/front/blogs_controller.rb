@@ -7,7 +7,7 @@ class Front::BlogsController < ApplicationController
     @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛い女の子がきっと見つかる夜遊びサイトのブログ。カラオケ/マッサージ/バーの女の子を探すなら、キレカワ"
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 10
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    @blogs = Blog.page(page).per(limit)
+    @blogs = Blog.order("id desc").page(page).per(limit)
     @total = @blogs.count
   end
 
