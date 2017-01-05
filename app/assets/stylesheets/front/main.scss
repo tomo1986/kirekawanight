@@ -1751,6 +1751,9 @@ textarea {
   font-weight: 600;
   letter-spacing: .3px;
   line-height: normal;
+  a{
+    color: $_brand-basic;
+  }
 }
 
 .btn-sm {

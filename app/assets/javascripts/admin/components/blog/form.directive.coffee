@@ -68,7 +68,7 @@ angular.module 'bijyoZukanAdmin'
         {name:'一覧へ戻る',link:"/admin/blogs"}
         {name:'新しいカプセル追加',link:"/admin/blogs/new",callbackFunc: vm.init}
       ]
-
+      vm.canSubmit = false
       if vm.action == 'update'
         blogService.updateBlog(vm.blog).then((res) ->
           if res.data.code == 1
@@ -81,10 +81,11 @@ angular.module 'bijyoZukanAdmin'
         )
       else
         blogService.createBlog(vm.blog).then((res) ->
-          if res.code == 1
+          if res.data.code == 1
             vm.blog = res.data.blog
             datas = vm.makeDataForModal()
             modalService.confirm(title,datas,buttons)
+            vm.canSubmit = true
           else
             modalService.error(res.data.errors)
         )

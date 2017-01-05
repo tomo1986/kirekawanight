@@ -8,20 +8,16 @@
         - @blogs.each do |blog|
           li
             h3.sub-title
-              = blog.title_ja
-            .article
-              = blog.article_ja.truncate(200).html_safe
-              .more
-                = link_to "/blogs/#{blog.id}"
-                  | 続きを読む
+              = link_to "/blogs/#{blog.id}"
+                = blog.title_ja
             .article-footer.clearfix
               /.tags
               /  | dfads
               .date
                 = blog.created_at.strftime('%Y/%m/%d')
                 | 更新
-    div style="text-align:center;"
-      = paginate @blogs
+      div style="text-align:center;"
+        = paginate @blogs
 = render partial: 'front/layouts/footer'
 
 
