@@ -14,6 +14,7 @@ angular.module 'bisyoujoZukanNight'
         format: 'yyyy-MM-dd HH:mm'
         is_required:true
         placeholder:'必須'
+        approval:null
       }
 
 
@@ -86,6 +87,7 @@ angular.module 'bisyoujoZukanNight'
           email: if vm.parentCtrl.loginCustomer then vm.parentCtrl.loginCustomer.email else null
           tel: if vm.parentCtrl.loginCustomer then vm.parentCtrl.loginCustomer.tel else null
           message: ''
+          approval:null
         }
         vm.reservationDate={
           from:{is_from:true,date:null}

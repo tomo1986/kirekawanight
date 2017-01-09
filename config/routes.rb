@@ -203,6 +203,7 @@ Rails.application.routes.draw do
     get 'comsept', to: 'home#index'
     get 'question', to: 'home#index'
     get 'visitor', to: 'home#index'
+    get 'policy', to: 'home#index'
     get 'contact', to: 'home#index'
     get 'reserve', to: 'home#index'
     get 'sitemap', to: 'home#index'

@@ -29,6 +29,7 @@ angular.module 'bisyoujoZukanNight'
         title: null
         comment: null
         is_draft: false
+        review: null
       }
 
 
@@ -62,6 +63,7 @@ angular.module 'bisyoujoZukanNight'
           title: null
           comment: null
           is_draft: false
+          review: null
         }
       )
 

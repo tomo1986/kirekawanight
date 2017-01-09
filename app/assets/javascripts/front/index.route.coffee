@@ -457,3 +457,7 @@ angular.module 'bisyoujoZukanNight'
     .state '/feature/rankinginfo',
       url: '/feature/rankinginfo',
       templateUrl: '/front/tpl/feature/rankinginfo.html'
+    .state '/policy',
+      url: '/policy'
+      active_menu: 'policy'
+      templateUrl: '/front/tpl/policy/index_jp.html'
