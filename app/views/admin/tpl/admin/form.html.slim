@@ -1,0 +1,33 @@
+section.main-container.map-form-page admin-form-directive=""
+  .container-fluid
+    form role="form" ng-submit='vm.submit()' name="mapForm" novalidate=''
+      .row
+        breadcrumb-directive data="vm.breadcrumb"
+        h2.page-header
+          | アドミンユーザー作成
+      .row
+        table.res-form-table style="margin-bottom: 4rem;"
+          caption Profile
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title  name
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="name" required='' placeholder="ソエヤともゆき" ng-model="vm.admin.name"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title Email
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="email" name="email" required='' placeholder="soeya@5smile.com" ng-model="vm.admin.email"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title パスワード
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              input.form-control type="password" name="password" required='' ng-model="vm.admin.password"
+
+        .button-center ng-show="vm.canSubmit"
+          button.btn.main-btn type="submit" 登録する
+        .button-center ng-hide="vm.canSubmit"
+          loading-directive size="125"

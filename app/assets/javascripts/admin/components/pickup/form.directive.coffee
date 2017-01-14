@@ -59,15 +59,22 @@ angular.module 'bijyoZukanAdmin'
       if vm.action == 'update'
         pickupService.updatePickup(vm.pickup).then((res) ->
           vm.pickup = res.data.pickup
-          modalService.confirm("hozonsiha")
+          datas = vm.makeDataForModal(vm.pickup)
+          modalService.confirm("保存しました。",datas,buttons)
+
         )
       else
         pickupService.createPickup(vm.pickup).then((res) ->
           vm.pickup = res.data.pickup
-          modalService.confirm("hozonsiha")
+          datas = vm.makeDataForModal(vm.pickup)
+          modalService.confirm("保存しました。",datas,buttons)
 
         )
 
+    vm.makeDataForModal = (pickup)->
+      return [
+        {name:"price", val: pickup.price, kind:"string"}
+      ]
 
     vm.init()
     return

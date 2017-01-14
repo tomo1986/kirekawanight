@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :shops
   devise_for :groups
-  devise_for :admins
+  devise_for :admin
   devise_for :customers
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -69,12 +69,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'pages#index', via: :get
-    devise_for :admins, path_prefix: '/admin',controllers: {},:skip => [:sessions,:passwords]
+    devise_for :admin, path_prefix: '/admin',controllers: {},:skip => [:sessions,:passwords]
     as :admin do
       match '/sign_out' => 'sessions#destroy', :as => :destroy_admin_session,
             :via => Devise.mappings[:admin].sign_out_via
     end
     get 'login',to: 'pages#login'
+    get 'admins',to: 'pages#index'
+    get 'admins/new',to: 'pages#index'
+    get 'admins/:id/edit',to: 'pages#index'
+
     get 'users',to: 'pages#index'
     get 'users/:id/detail',to: 'pages#index'
     get 'users/:id/edit',to: 'pages#index'
@@ -325,6 +329,10 @@ Rails.application.routes.draw do
       get :api67
       get :api68
       get :api69
+      get :api70
+      get :api71
+      post :api72
+
     end
     scope :group, module: 'group' do
       post :logout

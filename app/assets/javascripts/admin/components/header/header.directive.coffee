@@ -1,10 +1,10 @@
 angular.module 'bijyoZukanAdmin'
 .directive 'headerDirective',  ->
-  HeaderController = ($state,api,user) ->
+  HeaderController = ($state,api) ->
     vm = this
 
     vm.onLogout = ->
-      user.clear().then((res)->
+      api.postPromise('/api/admin/logout',{}).then((res) ->
         window.location.reload()
       )
 

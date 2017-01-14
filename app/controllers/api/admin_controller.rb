@@ -1432,7 +1432,41 @@ class Api::AdminController < ApiController
     render json: builders.target!
   end
 
+  def api70
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    admins = Admin.all
 
+    builders = Jbuilder.new do |json|
+      json.admins admins
+      json.code 1
+    end
+    render json: builders.target!
+  end
+  def api71
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    admin = Admin.find_by(id: params[:id])
+
+    builder = Jbuilder.new do |json|
+      json.admin admin
+      json.code 1
+    end
+    render json: builder.target!
+  end
+
+  def api72
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    admin = Admin.find_by(id: params[:id]) if params[:id]
+    admin = Admin.new unless admin
+    admin.name = params[:name]
+    admin.email = params[:email]
+    admin.password = params[:password] if params[:password]
+    admin.save!
+    builder = Jbuilder.new do |json|
+      json.admin admin
+      json.code 1
+    end
+    render json: builder.target!
+  end
 
 
 end

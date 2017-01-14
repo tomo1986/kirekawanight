@@ -13,11 +13,8 @@ nav.navbar.navbar-dark.bg-inverse.navbar-fixed-top.topnav
           b.caret
         ul.header-dropdown-menu ng-class="{'accordionPushDown': vm.isParentChild}"
           li
-            a href="/business/settings/account" ng-click="vm.eventOpenParent()"
-              | アカウント編集
-          li
-            a href="/business/settings/company" ng-click="vm.eventOpenParent()"
-              | 会社情報編集
+            a href="/admin/admins" ng-click="vm.eventOpenParent()"
+              | アカウント一覧
           li
             a href="javascript:void(0);" ng-click="vm.onLogout()"
               | ログアウト

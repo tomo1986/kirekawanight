@@ -1,0 +1,26 @@
+section.main-container.notification-index-page admin-index-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | アドミンユーザー一覧
+      .make-new-map
+        a.btn.make-btn href="/admin/admins/new"
+          | 新規登録
+    .row
+      hr
+    .row
+      table.res-separate-table
+        thead
+          tr
+            th id
+            th name
+        tbody
+          tr ng-repeat="admin in vm.admins"
+            td.clearfix data-label="id"  {{admin.id}}
+            td.clearfix data-label="name"
+              a href="/admin/users/{{admin.id}}/edit"
+                | {{admin.name}}
+
+
+

@@ -23,7 +23,6 @@ angular.module 'bijyoZukanAdmin'
       return window.scrollTo(0, 0) if Object.keys(vm.errors) && Object.keys(vm.errors).length > 0
       api.postPromise('/api/admin/api1',vm.user).then((res) ->
         if res.data.code == 1
-          user.setLoginUser(res.data.data)
           window.location.reload()
         else
           modalService.error(res.data.message)

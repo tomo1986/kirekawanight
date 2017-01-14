@@ -1,5 +1,5 @@
 angular.module 'bijyoZukanAdmin'
-.directive 'navDirective', ($state,$rootScope,user) ->
+.directive 'navDirective', ($state,$rootScope,user,api) ->
   NavController = () ->
     vm = this
     vm.isActive = false
@@ -14,7 +14,7 @@ angular.module 'bijyoZukanAdmin'
     vm.eventCalled = ->
       vm.isActive = !vm.isActive
     vm.onLogout = ->
-      user.clear().then((res)->
+      api.postPromise('/api/admin/logout',{}).then((res) ->
         window.location.reload()
       )
 
