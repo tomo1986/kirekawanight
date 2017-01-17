@@ -165,8 +165,8 @@ angular.module 'bijyoZukanAdmin'
       title = "We saved finish "
       buttons = [
         {name:'一覧へ戻る',link:"/admin/shops"}
-        {name:'新しいカプセル追加',link:"/admin/shops/new",callbackFunc: vm.init}
       ]
+      vm.canSubmit = false
 
       if vm.action == 'update'
 
@@ -174,7 +174,7 @@ angular.module 'bijyoZukanAdmin'
           if res.data.code == 1
             vm.shop = res.data.shop
             datas = vm.makeDataForModal(vm.shop)
-            console.log(title,datas,buttons)
+            vm.canSubmit = true
             modalService.confirm(title,datas,buttons)
           else
             modalService.error(res.data.errors)
@@ -184,6 +184,7 @@ angular.module 'bijyoZukanAdmin'
           if res.data.code == 1
             vm.shop = res.data.shop
             datas = vm.makeDataForModal(vm.shop)
+            vm.canSubmit = true
             modalService.confirm(title,datas,buttons)
           else
             modalService.error(res.data.errors)
