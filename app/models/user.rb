@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :user_profiles
   has_many  :images, class_name: 'ImageType::User', as: :subject, dependent: :destroy, :autosave => true
+  has_many  :face_images, class_name: 'ImageType::UserAll', as: :subject, dependent: :destroy, :autosave => true
   has_many  :page_views, class_name: 'PageViewType::UserDetail', as: :subject, dependent: :destroy, :autosave => true
   # has_many  :supports, class_name: 'SupportType::UserDetail', as: :subject, dependent: :destroy, :autosave => true
   has_many  :contacts, class_name: 'ContactType::UserDetail', as: :subject, dependent: :destroy, :autosave => true
@@ -164,6 +165,39 @@ class User < ApplicationRecord
       end
     end
   end
+  def self.to_jbuilders_for_admin(users)
+    Jbuilder.new do |json|
+      json.array! users do |user|
+        json.id user.id
+        json.name user.name
+        json.nick_name user.nick_name
+        json.birthday user.birthday
+        json.age user.birthday ? user.age : '-'
+        json.height user.height ? user.height : '-'
+        json.weight user.weight ? user.weight : '-'
+        json.bust user.bust
+        json.bust_size user.bust_size
+        json.waist user.waist
+        json.hip user.hip
+        json.job_type user.job_type
+        json.ranking user.ranking
+        json.total_score user.total_score
+        json.can_guided user.can_guided
+        json.deleted_at user.deleted_at
+        json.japanese_level user.japanese_level
+        json.dayly_count PageView.counts_period(user.page_views)
+        json.weekly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_week,Time.zone.now.end_of_week)
+        json.monthly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_month,Time.zone.now.end_of_month)
+        json.support_count user.supports.count
+        json.favorite_count user.favorites.count
+        json.contact_count user.contacts.count
+        json.images user.abc
+        json.face_images user.set_face_images
+        json.shop user.shop ? user.shop.to_jbuilder : nil
+        json.tags user.tag_list ? user.tag_list : nil
+      end
+    end
+  end
 
   def self.to_jbuilders2(users)
     Jbuilder.new do |json|
@@ -229,6 +263,50 @@ class User < ApplicationRecord
       json.tags self.tag_list ? self.tag_list : nil
     end
   end
+  def to_jbuilder_for_admin
+    Jbuilder.new do |json|
+      json.id self.id
+      json.shop_id self.shop_id
+      json.name self.name
+      json.nick_name self.nick_name
+      json.birthplace self.birthplace
+      json.residence self.residence
+      json.birthday self.birthday
+      json.age self.birthday ? self.age : nil
+      json.constellation self.constellation
+      json.job_type self.job_type
+      json.blood_type self.blood_type
+      json.sex self.sex
+      json.sns_line self.sns_line
+      json.sns_zalo self.sns_zalo
+      json.sns_wechat self.sns_wechat
+      json.height self.height
+      json.weight self.weight
+      json.bust self.bust
+      json.bust_size self.bust_size
+      json.waist self.waist
+      json.hip self.hip
+      json.ranking self.ranking
+      json.deleted_at self.deleted_at
+      json.total_score self.total_score
+      json.can_guided self.can_guided
+      json.japanese_level self.japanese_level
+      json.is_japanese self.is_japanese
+      json.is_english self.is_english
+      json.is_chinese self.is_chinese
+      json.is_korean self.is_korean
+      json.images self.abc
+      json.face_images self.set_face_images
+      json.support_count self.supports.count
+      json.favorite_count self.favorites.count
+      json.contact_count self.contacts.count
+      json.shop self.shop ? self.shop.to_jbuilder : nil
+      json.ja self.ja_profile ? self.ja_profile.to_jbuilder : UserProfile.new.to_jbuilder
+      json.vn self.vn_profile ? self.vn_profile.to_jbuilder : UserProfile.new.to_jbuilder
+      json.en self.en_profile ? self.en_profile.to_jbuilder : UserProfile.new.to_jbuilder
+      json.tags self.tag_list ? self.tag_list : nil
+    end
+  end
 
   def images=(images_base64)
     if !images_base64.nil?
@@ -241,6 +319,19 @@ class User < ApplicationRecord
 
   def abc
     self.images.map {|img|{id:img.id,url:img.image.url}}
+  end
+
+  def face_images=(images_base64)
+    if !images_base64.nil?
+      images_base64.each do |value|
+        image = self.face_images.new
+        image.image = value and image.save! if value != ''
+      end
+    end
+  end
+
+  def set_face_images
+    self.face_images.map {|img|{id:img.id,url:img.image.url}}
   end
 
 end

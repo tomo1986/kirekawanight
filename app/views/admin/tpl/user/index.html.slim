@@ -79,7 +79,7 @@ section.main-container.notification-index-page user-index-directive=""
               a href="/admin/users/{{user.id}}/detail"
                 | {{user.name}}
             td.clearfix data-label="image"
-              img ng-src="{{user.images[0].url}}" style="width:50px;" ng-if="user.images &&  user.images[0]"
+              img ng-src="{{user.face_images[0].url}}" style="width:50px;" ng-if="user.face_images &&  user.face_images[0]"
             td.clearfix data-label="belong"
               a href="/admin/shops/{{user.shop.id}}/detail"
                 | {{user.shop.name}}

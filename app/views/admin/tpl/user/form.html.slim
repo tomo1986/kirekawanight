@@ -162,7 +162,7 @@ section.main-container.map-form-page user-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.image_url}" MAP画像
+              span.title ng-class="{'is-text-danger': vm.errors.image_url}" 無料会員向け画像
               span.btn.btn-danger.btn-xs.absolutely 必須
             td.res-form-table__td.input-box.image-box--arry
               .row
@@ -175,6 +175,21 @@ section.main-container.map-form-page user-form-directive=""
                         | 画像選択
               .button-center
                 button.btn.main-btn type="button" ng-click="vm.addImage()" add image
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.image_url}" 有料会員向け画像
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box.image-box--arry2
+              .row
+                .col-md-4 ng-repeat="image in vm.face_images track by $index"
+                  .pic
+                    image-directive parent-class="pic" img-url="{{vm.face_images[$index].url}}"
+                    .hover-img
+                      input#fileInput.change-img-file type="file" name="image_url" ng-model="vm.face_images[$index].url" options="image.options" image-cropper=""
+                      span
+                        | 画像選択
+              .button-center
+                button.btn.main-btn type="button" ng-click="vm.addFaceImage()" add image
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.description}" blog

@@ -740,6 +740,21 @@ a:hover{
                 filter: alpha(opacity=1);-moz-opacity: 0.01;opacity: 0.01;position: absolute;right: 0;}
             }
           }
+          .cast_pic{height: 480px;width: 100%;overflow: hidden;display: table;border: 2px solid #ccc;
+            image-directive {
+              position: relative;
+              display: table-cell;
+              vertical-align: middle;
+              text-align: center;
+              & > img {width: auto;margin: auto;display: table-cell;position: absolute;top: 0;left: 0;bottom: 0;}
+            }
+
+            .hover-img{position: absolute;width: calc(100% - 1.885rem);height: 35px;background: #887567;opacity: 0.7;color: #fff;bottom: 0;margin: 0 auto;font-size: 16px;
+              text-align: center;padding: 7px;left: 0.9375rem;
+              & > .change-img-file{border-radius: 0;-webkit-border-radius: 0;border-color: #9c9c9c;height: 35px;width: 100%;cursor: pointer;top:0;
+                filter: alpha(opacity=1);-moz-opacity: 0.01;opacity: 0.01;position: absolute;right: 0;}
+            }
+          }
         }
         & td.input-box{
           .dropdown-menu{

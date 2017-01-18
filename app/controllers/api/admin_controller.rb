@@ -187,7 +187,7 @@ class Api::AdminController < ApiController
     total = users.count
     users = users.page(page).per(limit) if users.present?
     builders = Jbuilder.new do |json|
-      json.users User.to_jbuilders(users)
+      json.users User.to_jbuilders_for_admin(users)
       json.total total
     end
     render json: builders.target!
@@ -199,7 +199,7 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_user')) and return unless user
     builders = Jbuilder.new do |json|
       json.code 1
-      json.user user.to_jbuilder
+      json.user user.to_jbuilder_for_admin
     end
     render json: builders.target!
   end
@@ -209,7 +209,7 @@ class Api::AdminController < ApiController
     user = User.new
     builder = Jbuilder.new do |json|
       json.code 1
-      json.user user.to_jbuilder
+      json.user user.to_jbuilder_for_admin
     end
     render json: builder.target!
   end
@@ -285,7 +285,8 @@ class Api::AdminController < ApiController
 
         can_guided: params[:can_guided],
         japanese_level: params[:japanese_level],
-        images: params[:images]
+        images: params[:images],
+        face_images: params[:face_images]
     }
     if params[:tags]
       params[:tags].each do |key,val|
@@ -299,7 +300,7 @@ class Api::AdminController < ApiController
         blog.auto_save_user(user)
       end
       builder = Jbuilder.new do |json|
-        json.user user.to_jbuilder
+        json.user user.to_jbuilder_for_admin
         json.code 1
       end
     else
@@ -392,6 +393,13 @@ class Api::AdminController < ApiController
         image.image = image[:url] and image.save! if image[:url] != 'null'
       end
     end
+    if params[:face_images].present?
+      params[:face_images].values.each do |image|
+        user.face_images.where(id: image[:id]).first.update(image: image[:url]) and next if image.present? && image[:id].present? && image[:id] != 'null'
+        image = user.face_images.new
+        image.image = image[:url] and image.save! if image[:url] != 'null'
+      end
+    end
     if params[:tags]
       params[:tags].each do |key,val|
         user.tag_list.add(val["name"])
@@ -404,7 +412,7 @@ class Api::AdminController < ApiController
         blog.auto_save_user(user)
       end
       builder = Jbuilder.new do |json|
-        json.user user.to_jbuilder
+        json.user user.to_jbuilder_for_admin
         json.code 1
       end
     else

@@ -8,6 +8,7 @@ angular.module 'bijyoZukanAdmin'
       vm.image_url = null
       vm.breadcrumb = [{name:'Dashboard',link:'/business'},{name:'MAP編集',link:'/business/maps'}]
       vm.images = []
+      vm.face_images = []
       vm.active_tab = 'ja'
       vm.profile = user.profile
       vm.birthday_options={
@@ -69,6 +70,16 @@ angular.module 'bijyoZukanAdmin'
             options:{aspectRatio: 1.4 / 2,minCropBoxWidth:336,minCropBoxHeight:481,zoomable: true}
           })
         )
+
+        angular.forEach(vm.user.face_images, (image) ->
+          vm.face_images.push({
+            id: image.id
+            url: image.url
+            original_url: image.url
+            options:{aspectRatio: 1.4 / 2,minCropBoxWidth:336,minCropBoxHeight:481,zoomable: true}
+          })
+        )
+
       )
 
     vm.newUser = () ->
@@ -76,6 +87,12 @@ angular.module 'bijyoZukanAdmin'
         vm.user = res.data.user
         vm.user["is_blog"] = 0
         vm.images.push({
+          id: null
+          url: null
+          original_url: null
+          options:{aspectRatio: 1.4 / 2,minCropBoxWidth:336,minCropBoxHeight:481,zoomable: true}
+        })
+        vm.face_images.push({
           id: null
           url: null
           original_url: null
@@ -93,6 +110,13 @@ angular.module 'bijyoZukanAdmin'
 
     vm.addImage = ->
       vm.images.push({
+        id: null
+        url: null
+        original_url: null
+        options:{aspectRatio: 1.4 / 2,minCropBoxWidth:336,minCropBoxHeight:481,zoomable: true}
+      })
+    vm.addFaceImage = ->
+      vm.face_images.push({
         id: null
         url: null
         original_url: null
@@ -117,6 +141,20 @@ angular.module 'bijyoZukanAdmin'
               images.push(vm.images[index].url)
         )
       vm.user['images'] = images
+
+      face_images = []
+      imageUploaded = $('.image-box--arry2 image-directive img')
+      if imageUploaded.length > 0
+        $.each(imageUploaded, (index,value)->
+          if vm.face_images[index].original_url != vm.face_images[index].url
+            if vm.action == 'update'
+              face_images.push({id: vm.face_images[index].id, url:vm.face_images[index].url})
+            else
+              face_images.push(vm.face_images[index].url)
+        )
+      vm.user['face_images'] = face_images
+
+      vm.canSubmit = false
       console.log(vm.user)
       title = "We saved finish"
       buttons = [
@@ -127,10 +165,11 @@ angular.module 'bijyoZukanAdmin'
         user.updateUser(vm.user).then((res) ->
           if res.data.code == 1
             vm.user = res.data.user
-
+            vm.canSubmit = true
             datas = vm.makeDataForModal(vm.user)
             modalService.confirm(title,datas,buttons)
           else
+            vm.canSubmit = true
             modalService.error(res.data.errors)
         )
       else
@@ -138,8 +177,10 @@ angular.module 'bijyoZukanAdmin'
           if res.data.code == 1
             vm.user = res.data.user
             datas = vm.makeDataForModal(vm.user)
+            vm.canSubmit = true
             modalService.confirm(title,datas,buttons)
           else
+            vm.canSubmit = true
             modalService.error(res.data.errors)
         )
     vm.makeDataForModal = (user)->

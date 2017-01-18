@@ -95,6 +95,15 @@ section.main-container.map-form-page user-detail-directive=""
                 .col-md-4 style="margin-bottom:1rem;" ng-repeat="image in vm.images track by $index"
                   .pic
                     image-directive parent-class="pic" img-url="{{vm.images[$index].url}}"
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.image_url}" 有料会員向け画像
+              td.res-form-table__td.input-box.image-box--arry
+                .row
+                  .col-md-4 style="margin-bottom:1rem;" ng-repeat="image in vm.face_images track by $index"
+                    .cast_pic
+                      image-directive parent-class="cast_pic" img-url="{{vm.face_images[$index].url}}"
         tr
           th.res-form-table__th.title-box.clearfix
             span.title birthplace

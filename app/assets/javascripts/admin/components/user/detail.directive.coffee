@@ -6,6 +6,7 @@ angular.module 'bijyoZukanAdmin'
     vm.init = ->
       vm.breadcrumb = [{name:'Dashboard',link:'/business'},{name:'MAP編集',link:'/business/maps'}]
       vm.images = []
+      vm.face_images = []
       vm.active_tab = 'ja'
       vm.profile = user.profile
       vm.action = $state.current.action
@@ -48,6 +49,15 @@ angular.module 'bijyoZukanAdmin'
             options:{aspectRatio: 1.4 / 2,minCropBoxWidth:336,minCropBoxHeight:481,zoomable: true}
           })
         )
+        angular.forEach(vm.user.face_images, (image) ->
+          vm.face_images.push({
+            id: image.id
+            url: image.url
+            original_url: image.url
+            options:{aspectRatio: 1.4 / 2,minCropBoxWidth:336,minCropBoxHeight:481,zoomable: true}
+          })
+        )
+
       )
 
     vm.onChangeTab = (opt_tab) ->
