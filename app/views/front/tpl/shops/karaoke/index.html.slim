@@ -9,41 +9,6 @@
         li
           a href="/casts/karaoke"
             | CAST
-    /.rank-box ng-if="vm.filters.page == 1"
-    /  .page-title
-    /    h2.title
-    /      | TODAY'S POWER PUSH
-    /  .shop-list.clearfix ng-if="vm.push_shops.length > 0"
-    /    li ng-repeat="shop in vm.push_shops"
-    /      span
-    /        i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
-    /      a href="/shops/karaoke/{{shop.id}}/info"
-    /        span ng-if="shop.images[0]"
-    /          img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
-    /        span ng-if="!shop.images[0]"
-    /          = image_tag 'front/shop-no-image.png', alt:"kirekawa collection shop no-image"
-    /      .shop-info
-    /        h3.name
-    /          | {{shop.name}} ({{shop.name_kana}})
-    /        .body
-    /          .has-girls.clearfix
-    /            h5.title
-    /              | 在籍女性
-    /            p.count
-    /              | {{shop.girls_count | number}}人
-    /          .support.clearfix
-    /            h5.title
-    /              | 応援数
-    /            p.count
-    /              | {{shop.support_count | number}}件
-    /          .favorid.clearfix
-    /            h5.title
-    /              | お気入り登録数
-    /            p.count
-    /              |  {{shop.favorite_count | number}}件
-
-
-
     .row.shop-list-box
       .col-xs-12.col-sm-12.col-md-3.col-xl-3.side
         .col-row-left.clearfix
@@ -94,7 +59,7 @@
         .col-row-right
           .shop-list--main
             ul.shop-list
-              li dir-paginate="shop in vm.shops | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page"
+              li dir-paginate="shop in vm.shops | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page"
                 .shop-header.clearfix
                   .shop-header--wrap
                     .shop-name
@@ -156,6 +121,5 @@
                               | {{tag}}
                         p.content-service ng-if="shop.service"
                           | {{shop.service}}
-            .row
-              dir-pagination-controls boundary-links="true" template-url="/group/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
+            dir-pagination-controls boundary-links="true" template-url="/front/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)" ng-if="vm.shops.length > 0"
 
