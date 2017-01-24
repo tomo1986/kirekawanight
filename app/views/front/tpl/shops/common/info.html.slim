@@ -33,11 +33,11 @@ main#main
 
       .nohave-box ng-if="vm.discounts == 0" タイムセールはありません。
 
-    .rank-box.shop-new-face
+    .rank-box.shop-new-face ng-if="vm.shop && vm.shop.interview_ja"
       .page-title
         h2.title
           | INTORODUCTION
-      div ng-bind-html="vm.shop.interview_ja | noHTML | newlines"
+      p style="font-size:1.2rem;line-height:2.2rem;" ng-bind-html="vm.shop.interview_ja | noHTML | newlines"
 
     #map.rank-box.shop-map.clearfix
       .page-title
@@ -80,7 +80,7 @@ main#main
               img.img ng-src="{{image.url}}" alt="{{vm.shop.name}}道順の画像"
 
 
-    .rank-box.clearfix style="margin-bottom:2rem;"
+    .rank-box.clearfix style="margin-bottom:2rem;" ng-if="vm.shop && vm.shop.way_images"
       .page-title
         h2.title
           | HOW TO WAY
