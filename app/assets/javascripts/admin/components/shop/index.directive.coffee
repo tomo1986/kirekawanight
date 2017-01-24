@@ -8,8 +8,9 @@ angular.module 'bijyoZukanAdmin'
       vm.getShops()
 
     vm.getShops = ->
-      shopService.getShops(vm.filter).then((res) ->
+      shopService.getShops(vm.filters).then((res) ->
         vm.shops = res.data.shops
+        vm.total = res.data.total
         window.scrollTo(0, 0)
       )
 
@@ -22,7 +23,7 @@ angular.module 'bijyoZukanAdmin'
           modalService.error("error",res.data.message)
       )
 
-    vm.pageChanged = (page) ->
+    vm.onPageChanged = (page) ->
       $state.go('/shops',{page:page})
       return
 

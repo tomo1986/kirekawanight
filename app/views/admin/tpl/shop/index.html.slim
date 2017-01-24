@@ -21,7 +21,7 @@ section.main-container.notification-index-page shop-index-directive=""
             th edit
             th delete
         tbody
-          tr(dir-paginate="shop in vm.shops | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
+          tr(dir-paginate="shop in vm.shops | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page")
             td.clearfix data-label="ID"  {{shop.id}}
             td.clearfix data-label="name"
               a.btn.action-btn href="/admin/shops/{{shop.id}}/detail"
@@ -36,8 +36,7 @@ section.main-container.notification-index-page shop-index-directive=""
               a.btn.action-btn ng-click="vm.executeDeletion(shop.id)"
                 span ng-if="!shop.deleted_at" 削除
                 span ng-if="shop.deleted_at" 戻す
-    .row
-      dir-pagination-controls boundary-links="true" template-url="/admin/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)"
 
+      dir-pagination-controls boundary-links="true" template-url="/admin/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)" ng-if="vm.shops.length > 0"
 
 

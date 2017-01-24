@@ -4,6 +4,8 @@ angular.module 'bisyoujoZukanNight'
     api.connect().then((res) ->
       if res.code == 1
         customerService.setLoginCustomer(res.customer)
+        $rootScope.loginCustomer = res.customer
+        console.log("connect",$rootScope.loginCustomer)
     )
     $rootScope.$on("$routeChangeSuccess",  (event, current, previous, rejection) ->
       ga('send', 'pageview')

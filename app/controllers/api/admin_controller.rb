@@ -317,6 +317,9 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_user')) and return unless user
     if params[:ja]
       user.user_profiles << ProfileType::Ja.new if user.ja_profile.nil?
+      p "============"
+      p user.user_profiles
+      p "============"
       user.ja_profile.attributes = {
           like_boy: params[:ja]['like_boy'],
           like_girl: params[:ja]['like_girl'],

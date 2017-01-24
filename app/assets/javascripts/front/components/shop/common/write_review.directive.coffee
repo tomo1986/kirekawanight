@@ -1,5 +1,5 @@
 angular.module 'bisyoujoZukanNight'
-.directive 'shopDetailWriteReviewDirective', (shopService, modalService, customerService,validationService, $state) ->
+.directive 'shopDetailWriteReviewDirective', (shopService, modalService, customerService,validationService, $state,$rootScope) ->
   ShopDetailWriteReviewController = () ->
     vm = this
     vm.init = ->
@@ -13,7 +13,7 @@ angular.module 'bisyoujoZukanNight'
       vm.review = {
         type: 'shop'
         sender_type: 'Customer'
-        sender_id: if vm.parentCtrl.loginCustomer then vm.parentCtrl.loginCustomer.id else null
+        sender_id: if $rootScope.loginCustomer then $rootScope.loginCustomer.id else null
         receiver_type: 'Shop'
         receiver_id: $state.params.id
         score1: 1
@@ -39,6 +39,8 @@ angular.module 'bisyoujoZukanNight'
       return if Object.keys(vm.reviewErrors) && Object.keys(vm.reviewErrors).length > 0
 
       vm.canReviewSubmited = false
+      console.log(vm.review)
+      vm.review.sender_id = $rootScope.loginCustomer.id
       shopService.sendReview(vm.review).then((res) ->
         vm.canReviewSubmited = true
         title = '受け付けました。'
@@ -47,7 +49,7 @@ angular.module 'bisyoujoZukanNight'
         vm.review = {
           type: 'shop'
           sender_type: 'Customer'
-          sender_id: if vm.parentCtrl.loginCustomer then vm.parentCtrl.loginCustomer.id else null
+          sender_id: $rootScope.loginCustomer.id
           receiver_type: 'Shop'
           receiver_id: $state.params.id
           score1: 1

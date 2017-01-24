@@ -1,5 +1,5 @@
 angular.module 'bisyoujoZukanNight'
-.directive 'shopDetailReviewDirective', (shopService, modalService, customerService, $state) ->
+.directive 'shopDetailReviewDirective', (shopService, modalService, customerService, $state,$rootScope) ->
   ShopDetailReviewController = () ->
     vm = this
     vm.init = ->
@@ -49,10 +49,11 @@ angular.module 'bisyoujoZukanNight'
         modalService.createCustomer(vm.setLoginCustomer)
 
     vm.CountUpReference = (review,answer) ->
+      vm.loginCustomer = customerService.getLoginCustomer()
       params = {
         type: if answer == 'yes' then 'reference' else 'not_reference'
         sender_type: 'Customer'
-        sender_id: vm.parentCtrl.loginCustomer.id
+        sender_id: vm.loginCustomer
         receiver_id: review.id
         receiver_type: 'Review'
       }
