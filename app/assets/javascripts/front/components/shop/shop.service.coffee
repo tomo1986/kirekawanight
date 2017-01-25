@@ -49,7 +49,46 @@ angular.module 'bisyoujoZukanNight'
       return res
     )
 
-
+  sm.reaviewQuestions = {
+    karaoke:{
+      score1: '女の子の対応は良いですか?'
+      score2: 'サービスは満足しましたか？'
+      score3: '価格に満足してますか?'
+      score4: 'お店の雰囲気は良いですか?'
+      score5: 'また来たいと思いましたか?'
+      info1: 'カラオケの機器は最新の曲でしたか?'
+      info2: 'スタッフお対応は良いですか?'
+      info3: 'キャストのTip要求は激しいですか'
+      info4: '会計時安心しできましたか?'
+      info5: '他の方にオススメできますか?'
+    },
+    bar:{
+      score1: '女の子の対応は良いですか?'
+      score2: 'サービスは満足しましたか？'
+      score3: '価格に満足してますか?'
+      score4: 'お店の雰囲気は良いですか?'
+      score5: 'また来たいと思いましたか?'
+      info1: 'カラオケの機器は最新の曲でしたか?'
+      info2: 'スタッフお対応は良いですか?'
+      info3: 'キャストのTip要求は激しいですか'
+      info4: '会計時安心しできましたか?'
+      info5: '他の方にオススメできますか?'
+    },
+    massage:{
+      score1: '女の子の対応は良いですか?'
+      score2: 'サービスは満足しましたか？'
+      score3: '価格に満足してますか?'
+      score4: 'お店の雰囲気は良いですか?'
+      score5: 'また来たいと思いましたか?'
+      info1: 'リラックスできましたか?'
+      info2: 'スタッフお対応は良いですか?'
+      info3: 'キャストのTip要求は激しいですか'
+      info4: '会計時安心しできましたか?'
+      info5: '他の方にオススメできますか?'
+    }
+  }
+  sm.setReaviewQuestion = (job_type) ->
+    return sm.reaviewQuestions[job_type]
 
   sm.contactValidations = {
     rules: {
@@ -98,3 +137,5 @@ angular.module 'bisyoujoZukanNight'
     getCasts: sm.getCasts
     getAllCasts: sm.getAllCasts
     getContactCasts: sm.getContactCasts
+    reaviewQuestions: sm.reaviewQuestions
+    setReaviewQuestion: sm.setReaviewQuestion

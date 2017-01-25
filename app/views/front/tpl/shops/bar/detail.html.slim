@@ -3,6 +3,22 @@
     breadcrumb-directive data="vm.breadcrumb"
   .container
     .shop-header.clearfix ng-if="vm.shop"
+      .ranking
+        .clearfix
+          .head-star-box
+            .head--star
+              i.fa.fa-star aria-hidden="true" ng-if="vm.shop.total_score > 0" ng-class="{'fa-star-half': vm.shop.total_score > 0 && vm.shop.total_score <= 10,'fa-star': vm.shop.total_score > 10 && vm.shop.total_score <= 20,'active': vm.shop.total_score > 0 }"
+              i.fa.fa-star aria-hidden="true" ng-if="vm.shop.total_score > 20" ng-class="{'fa-star-half': vm.shop.total_score > 20 && vm.shop.total_score <= 30,'fa-star': vm.shop.total_score > 30 && vm.shop.total_score <= 40,'active': vm.shop.total_score > 20 }"
+              i.fa.fa-star aria-hidden="true" ng-if="vm.shop.total_score > 40" ng-class="{'fa-star-half': vm.shop.total_score > 40 && vm.shop.total_score <= 50,'fa-star': vm.shop.total_score > 50 && vm.shop.total_score <= 60,'active': vm.shop.total_score > 40 }"
+              i.fa.fa-star aria-hidden="true" ng-if="vm.shop.total_score > 60" ng-class="{'fa-star-half': vm.shop.total_score > 60 && vm.shop.total_score <= 70,'fa-star': vm.shop.total_score > 70 && vm.shop.total_score <= 80,'active': vm.shop.total_score > 60 }"
+              i.fa.fa-star aria-hidden="true" ng-if="vm.shop.total_score > 80" ng-class="{'fa-star-half': vm.shop.total_score > 80 && vm.shop.total_score <= 90,'fa-star': vm.shop.total_score > 90 && vm.shop.total_score <= 100,'active': vm.shop.total_score > 80 }"
+            .head--score
+              | {{vm.shop.total_score}}点
+
+        span.score
+        | {{vm.all_shop_count}}店舗中
+        span.ranking-no
+          | {{vm.shop.ranking}}位
       .col-xs-12.col-sm-12.col-md-4.col-lg-5.col-xl-5
         .col-row-left.clearfix
           h2.shop-name-box
@@ -16,7 +32,8 @@
             a.btn.btn-review href="/shops/bar/{{vm.shop.id}}/write_review" レビューを書く
           .contact-btn-box
             a.btn.btn-review href="/shops/bar/{{vm.shop.id}}/contact" 問い合わせ
-  .container
+
+  .container ng-if="vm.shop"
     ul.genre-tag
       li
         a ng-class="{'active': vm.activeTab == 'info'}" href="/shops/bar/{{vm.shop.id}}/info" INFO

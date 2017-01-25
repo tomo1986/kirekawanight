@@ -182,6 +182,7 @@ Rails.application.routes.draw do
     get 'shops/bar/:id/cast', to: 'home#index'
     get 'shops/bar/:id/contact', to: 'home#index'
     get 'shops/bar/:id/reviews', to: 'home#index'
+    get 'shops/bar/:id/write_review', to: 'home#index'
 
     get 'casts/massage', to: 'home#cast_massage'
     get 'casts/massage/:id', to: 'home#index'
@@ -198,8 +199,12 @@ Rails.application.routes.draw do
     get 'shops/massage/:id/cast', to: 'home#index'
     get 'shops/massage/:id/contact', to: 'home#index'
     get 'shops/massage/:id/reviews', to: 'home#index'
+    get 'shops/massage/:id/write_review', to: 'home#index'
+
+
     get 'feature/trip', to: 'home#index'
     get 'feature/rankinginfo', to: 'home#index'
+
     # get 'casts/sexy', to: 'home#cast_sexy'
     # get 'casts/sexy/:id', to: 'home#index'
 

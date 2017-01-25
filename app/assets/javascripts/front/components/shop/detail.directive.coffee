@@ -43,7 +43,7 @@ angular.module 'bisyoujoZukanNight'
           vm.shops = res.data.shops
           vm.all_shop_count = res.data.all_shop_count
           vm.shopMainImg = vm.shop.images[0].url
-
+          vm.reviewQuestion = shopService.setReaviewQuestion(vm.shop.job_type)
         else
           modalService.error('エラー',res.data.message)
       )

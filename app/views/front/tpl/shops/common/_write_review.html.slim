@@ -13,31 +13,36 @@ main#main
               caption あなたの総合評価
               tr
                 th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title 女の子はどうでしたか？
+                  span.title
+                    | {{vm.reviewQuestion.score1}}
                   span.btn.required 必須
                 td.res-form-table__td.parent-td.input-box
                   rzslider rz-slider-model="vm.review.score1" rz-slider-options="vm.serviceScoreAange.options"
               tr
                 th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title サービスはどうでしたか？
+                  span.title
+                    | {{vm.reviewQuestion.score2}}
                   span.btn.required 必須
                 td.res-form-table__td.parent-td.input-box
                   rzslider rz-slider-model="vm.review.score2" rz-slider-options="vm.servingScoreAange.options"
               tr
                 th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title お会計時など安心できましたか？
+                  span.title
+                    | {{vm.reviewQuestion.score3}}
                   span.btn.required 必須
                 td.res-form-table__td.parent-td.input-box
                   rzslider rz-slider-model="vm.review.score3" rz-slider-options="vm.girlScoreAange.options"
               tr
                 th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title お店の雰囲気はどうでしたか？
+                  span.title
+                    | {{vm.reviewQuestion.score4}}
                   span.btn.required 必須
                 td.res-form-table__td.parent-td.input-box
                   rzslider rz-slider-model="vm.review.score4" rz-slider-options="vm.ambienceScoreAange.options"
               tr
                 th.res-form-table__th.parent-th.title-box.clearfix
-                  span.title また来たいと思いましたか？
+                  span.title
+                    | {{vm.reviewQuestion.score5}}
                   span.btn.required 必須
                 td.res-form-table__td.parent-td.input-box
                   rzslider rz-slider-model="vm.review.score5" rz-slider-options="vm.againScoreAange.options"
@@ -46,10 +51,7 @@ main#main
               tr
                 th.res-form-table__th.parent-th.title-box.clearfix
                   span.title
-                    | このお店の
-                    span.attention トイレ
-                    | はきれいですか？
-
+                    | {{vm.reviewQuestion.info1}}
                 td.res-form-table__td.parent-td.input-box
                   .btn-group data-toggle="buttons"
                     label.btn.btn-default ng-class="{'active': vm.review.info1 == 'yes'}" ng-click="vm.onInfo1('yes')"
@@ -64,9 +66,7 @@ main#main
               tr
                 th.res-form-table__th.parent-th.title-box.clearfix
                   span.title
-                    | このお店の
-                    span.attention スタッフの対応
-                    | は良いですか？
+                    | {{vm.reviewQuestion.info2}}
 
                 td.res-form-table__td.parent-td.input-box
                   .btn-group data-toggle="buttons"
@@ -83,9 +83,7 @@ main#main
                 tr
                   th.res-form-table__th.parent-th.title-box.clearfix
                     span.title
-                      | このお店の
-                      span.attention カラオケの機器
-                      | は良いですか？
+                      | {{vm.reviewQuestion.info3}}
 
                   td.res-form-table__td.parent-td.input-box
                     .btn-group data-toggle="buttons"
@@ -101,9 +99,7 @@ main#main
                   tr
                     th.res-form-table__th.parent-th.title-box.clearfix
                       span.title
-                        | このお店のキャストの
-                        span.attention Tip要求
-                        | は激しいですか？
+                        | {{vm.reviewQuestion.info4}}
 
                     td.res-form-table__td.parent-td.input-box
                       .btn-group data-toggle="buttons"
@@ -119,9 +115,7 @@ main#main
                   tr
                     th.res-form-table__th.parent-th.title-box.clearfix
                       span.title
-                        | このお店は
-                        span.attention 他の方
-                        | におすすめできますか？
+                        | {{vm.reviewQuestion.info5}}
 
                     td.res-form-table__td.parent-td.input-box
                       .btn-group data-toggle="buttons"

@@ -10,6 +10,7 @@ angular.module 'bisyoujoZukanNight'
       vm.ambienceScoreAange = {minValue: 1,maxValue: 5,options: {floor: 1,ceil: 5,showTicks: true,showTicks: 1,step: 1}}
       vm.againScoreAange = {minValue: 1,maxValue: 5,options: {floor: 1,ceil: 5,showTicks: true,showTicks: 1,step: 1}}
       vm.canReviewSubmited = true
+      vm.reviewQuestion = shopService.setReaviewQuestion(vm.parentCtrl.shop.job_type) if vm.parentCtrl && vm.parentCtrl.shop
       vm.review = {
         type: 'shop'
         sender_type: 'Customer'
@@ -39,12 +40,11 @@ angular.module 'bisyoujoZukanNight'
       return if Object.keys(vm.reviewErrors) && Object.keys(vm.reviewErrors).length > 0
 
       vm.canReviewSubmited = false
-      console.log(vm.review)
       vm.review.sender_id = $rootScope.loginCustomer.id
       shopService.sendReview(vm.review).then((res) ->
         vm.canReviewSubmited = true
         title = '受け付けました。'
-        message = '貴重なreviewありがとうございました改善に努めていきます。'
+        message = '貴重なレビューありがとうございました。'
         modalService.alert(title,message)
         vm.review = {
           type: 'shop'
@@ -84,10 +84,11 @@ angular.module 'bisyoujoZukanNight'
       $('#kuchikomi').bind 'keyup', ->
         thisValueLength = $('#kuchikomi').val().replace(/\s+/g, '').length
         $(".kuchikomi-count").html(thisValueLength);
-#        if min >= thisValueLength
-#          $("#submit").prop("disabled", true)
-#        else
-#          $("#submit").prop("disabled", false)
+    scope.$watch('vm.parentCtrl.reviewQuestion',(newVal,oldVal) ->
+      console.log(newVal,oldVal)
+      if newVal != oldVal
+        scope.vm.reviewQuestion = newVal
+    )
     return
   directive =
     restrict: 'E'

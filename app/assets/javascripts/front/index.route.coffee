@@ -227,6 +227,9 @@ angular.module 'bisyoujoZukanNight'
         default_url: 'reviews'
         templateUrl: '/front/tpl/casts/common/reviews.html'
 
+
+
+
       .state '/shops/bar/:id',
         url: '/shops/bar/:id'
         active_menu: 'bar'
@@ -268,6 +271,15 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'reviews'
         default_url: 'reviews'
         templateUrl: '/front/tpl/shops/common/reviews.html'
+
+      .state '/shops/bar/:id.write_review',
+        url: '/write_review',
+        active_menu: 'bar'
+        active_tab: 'write_review'
+        default_url: 'write_review'
+        templateUrl: '/front/tpl/shops/common/write_review.html'
+
+
 
       .state '/casts/massage',
         url: '/casts/massage?page&sort&order'
@@ -365,6 +377,13 @@ angular.module 'bisyoujoZukanNight'
         active_tab: 'reviews'
         default_url: 'reviews'
         templateUrl: '/front/tpl/shops/common/reviews.html'
+
+      .state '/shops/massage/:id.write_review',
+        url: '/write_review',
+        active_menu: 'massage'
+        active_tab: 'write_review'
+        default_url: 'write_review'
+        templateUrl: '/front/tpl/shops/common/write_review.html'
 
 #      .state '/casts/sexy',
 #        url: '/casts/sexy?page&sort&order'
