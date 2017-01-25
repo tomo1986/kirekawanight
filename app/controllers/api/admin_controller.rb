@@ -18,7 +18,7 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     users = User.where(deleted_at: nil)
     builders = Jbuilder.new do |json|
-      json.users User.to_jbuilders(users)
+      json.users User.to_jbuilders_for_admin(users)
     end
     render json: builders.target!
   end
@@ -1415,7 +1415,7 @@ class Api::AdminController < ApiController
     users = User.where(shop_id: params[:shop_id]) if params[:shop_id]
 
     builders = Jbuilder.new do |json|
-      json.users User.to_jbuilders(users)
+      json.users User.to_jbuilders_for_admin(users)
       json.code 1
     end
     render json: builders.target!
@@ -1426,7 +1426,7 @@ class Api::AdminController < ApiController
     users = User.where(job_type: params[:job_type], deleted_at: nil) if params[:job_type]
 
     builders = Jbuilder.new do |json|
-      json.users User.to_jbuilders(users)
+      json.users User.to_jbuilders_for_admin(users)
       json.code 1
     end
     render json: builders.target!
