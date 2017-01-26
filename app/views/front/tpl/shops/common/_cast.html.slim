@@ -20,16 +20,13 @@ main#main
             .name
               | {{cast.nick_name}}({{cast.age}})
             .body
-              .support.clearfix
-                h5.title
-                  | 応援数
-                p.count
-                  | {{cast.support_count | number}}
-              .favorid.clearfix
-                h5.title
-                  | お気入り登録数
-                p.count
-                  |  {{cast.favorite_count | number}}
+              h5 style="margin:.3rem 0;font-size:1rem;text-align:left;"
+                - if customer_signed_in?
+                  | T{{cast.height || '-'}} W{{cast.weight || '-'}} B{{cast.bust || '-'}}({{cast.bust_size || '-'}}) W{{cast.waist || '-'}} H{{cast.hip || '-'}}
+                - else
+                  | 3サイズは
+                  br
+                  |  ログイン後閲覧可能
       .nohave-box ng-if="vm.newCasts.length == 0" 新しいキャストは現在居ません。
       .rank-box.shop-cast style="margin-bottom:3.75rem;"
         .page-title
@@ -67,16 +64,13 @@ main#main
               .name
                 | {{cast.nick_name}}({{cast.age}})
               .body
-                .support.clearfix
-                  h5.title
-                    | 応援数
-                  p.count
-                    | {{cast.support_count | number}}
-                .favorid.clearfix
-                  h5.title
-                    | お気入り登録数
-                  p.count
-                    |  {{cast.favorite_count | number}}
+                h5 style="margin:.3rem 0;font-size:1rem;text-align:left;"
+                  - if customer_signed_in?
+                    | T{{cast.height || '-'}} W{{cast.weight || '-'}} B{{cast.bust || '-'}}({{cast.bust_size || '-'}}) W{{cast.waist || '-'}} H{{cast.hip || '-'}}
+                  - else
+                    | 3サイズは
+                    br
+                    |  ログイン後閲覧可能
         .button-center ng-if="vm.isLoading"
           loading-directive size="125"
         .button-center style="text-align: center;margin: 2rem 0;" ng-if="vm.total > vm.casts.length && !vm.isLoading"

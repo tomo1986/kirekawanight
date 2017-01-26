@@ -75,6 +75,12 @@ main#main
                 dt height / weight
                 dd
                   | {{vm.cast.height || '-'}} / {{vm.cast.weight || '-'}}
+                dt 3サイズ
+                dd
+                  - if customer_signed_in?
+                    | B{{vm.cast.bust || '-'}}({{vm.cast.bust_size || '-'}}) W{{vm.cast.waist || '-'}} H{{vm.cast.hip || '-'}}
+                  - else
+                    | 記載ありのキャストはログイン後閲覧可能です。
                 dt Birthday
                 dd
                   | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}（{{vm.cast.age || '-'}}歳）

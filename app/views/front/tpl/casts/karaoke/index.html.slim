@@ -53,15 +53,13 @@
               span
                 i.fa.fa-heart ng-class="{'active': vm.favorites[cast.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(cast.id)"
             .body
-              .support.clearfix
-                h5.title
-                  | 応援数
-                p.count
-                  | {{cast.support_count | number}}
-              .favorid.clearfix
-                h5.title
-                  | お気入り登録数
-                p.count
-                  |  {{cast.favorite_count | number}}
+              h5 style="margin:.3rem 0;font-size:1rem;text-align:left;"
+                - if customer_signed_in?
+                  | T{{cast.height || '-'}} W{{cast.weight || '-'}} B{{cast.bust || '-'}}({{cast.bust_size || '-'}}) W{{cast.waist || '-'}} H{{cast.hip || '-'}}
+                - else
+                  | 3サイズは
+                  br
+                  |  ログイン後閲覧可能
+
         .nohave-box ng-if="vm.casts.length == 0" Coming Soon
       dir-pagination-controls boundary-links="true" template-url="/front/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)" ng-if="vm.casts.length > 0"
