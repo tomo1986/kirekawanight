@@ -59,7 +59,7 @@
                 - if customer_signed_in?
                   | T{{cast.height || '-'}} W{{cast.weight || '-'}} B{{cast.bust || '-'}}({{cast.bust_size || '-'}}) W{{cast.waist || '-'}} H{{cast.hip || '-'}}
                 - else
-                  | 3サイズは
+                  | スタイルは
                   br
                   |  ログイン後閲覧可能
         .nohave-box ng-if="vm.casts.length == 0" Coming Soon

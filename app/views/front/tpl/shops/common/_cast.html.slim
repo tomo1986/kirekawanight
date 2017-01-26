@@ -24,7 +24,7 @@ main#main
                 - if customer_signed_in?
                   | T{{cast.height || '-'}} W{{cast.weight || '-'}} B{{cast.bust || '-'}}({{cast.bust_size || '-'}}) W{{cast.waist || '-'}} H{{cast.hip || '-'}}
                 - else
-                  | 3サイズは
+                  | スタイルは
                   br
                   |  ログイン後閲覧可能
       .nohave-box ng-if="vm.newCasts.length == 0" 新しいキャストは現在居ません。
@@ -68,7 +68,7 @@ main#main
                   - if customer_signed_in?
                     | T{{cast.height || '-'}} W{{cast.weight || '-'}} B{{cast.bust || '-'}}({{cast.bust_size || '-'}}) W{{cast.waist || '-'}} H{{cast.hip || '-'}}
                   - else
-                    | 3サイズは
+                    | スタイルは
                     br
                     |  ログイン後閲覧可能
         .button-center ng-if="vm.isLoading"
