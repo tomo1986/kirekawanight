@@ -2,8 +2,6 @@ section.main-container.map-form-page user-detail-directive=""
   .container-fluid
     .row
       breadcrumb-directive data="vm.breadcrumb"
-      h2.page-header
-        | user profile Page
     .row
       .col-xs-12
         .row
@@ -47,6 +45,9 @@ section.main-container.map-form-page user-detail-directive=""
     .row
       chart-line-directive options="vm.chartLineOptions" date="vm.chartLine1" id="chartLine1"
     .row
+      h2.page-header
+        a.btn.action-btn href="/admin/users/{{vm.user.id}}/edit"
+          | {{vm.user.name}}を編集する
       table.res-form-table
         tr ng-if="vm.user.group && vm.user.group.name"
           th.res-form-table__th.title-box.clearfix

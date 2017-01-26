@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228155506) do
+ActiveRecord::Schema.define(version: 20170126114213) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -235,7 +235,7 @@ ActiveRecord::Schema.define(version: 20161228155506) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.string   "category"
-    t.string   "tax_rate"
+    t.integer  "tax_rate"
     t.index ["invoice_id"], name: "index_invoice_details_on_invoice_id", using: :btree
   end
 
@@ -323,6 +323,7 @@ ActiveRecord::Schema.define(version: 20161228155506) do
     t.integer  "score5"
     t.boolean  "is_draft"
     t.text     "opinion",       limit: 65535
+    t.datetime "deleted_at"
     t.index ["receiver_id"], name: "index_reviews_on_receiver_id", using: :btree
     t.index ["sender_id"], name: "index_reviews_on_sender_id", using: :btree
   end

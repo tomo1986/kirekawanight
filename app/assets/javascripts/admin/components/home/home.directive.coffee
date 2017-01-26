@@ -46,8 +46,17 @@ angular.module 'bijyoZukanAdmin'
       )
 
 
+    vm.onCancelButtonClicked = (review) ->
+      api.postPromise('/api/admin/api73',review).then((res) ->
+        if res.data.code == 1
+          vm.reviews = res.data.reviews
+        else
+          modalService.error(res.data.message)
+      )
+
 
     vm.onClickDisplayed = (review) ->
+
       api.postPromise('/api/admin/api57',review).then((res) ->
         if res.data.code == 1
           vm.reviews = res.data.reviews

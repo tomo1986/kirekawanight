@@ -53,6 +53,7 @@ section.main-container.home-page home-directive=""
         thead
           tr
             th id
+            th receiver
             th title
             th comment
             th edit
@@ -60,9 +61,14 @@ section.main-container.home-page home-directive=""
         tbody
           tr(dir-paginate="review in vm.reviews | itemsPerPage: vm.filter.limit" total-items="vm.total" current-page="vm.filter.page")
             td.clearfix data-label="id"  {{review.id}}
+            td.clearfix data-label="receiver"
+              a href="/admin/shops/{{review.receiver.id}}/detail" ng-if="review.receiver_type == 'Shop'"
+                | {{review.receiver.name}}
+              a href="/admin/users/{{review.receiver.id}}/detail" ng-if="review.receiver_type == 'User'"
+                | {{review.receiver.name}}
+
             td.clearfix data-label="title"
-              a href="/admin/users/{{review.id}}/detail"
-                | {{review.title}}
+              | {{review.title}}
             td.clearfix data-label="comment"
               | {{review.comment}}
             td.clearfix data-label="edit"
@@ -71,7 +77,7 @@ section.main-container.home-page home-directive=""
                   input autocomplete="off" type="radio" value="yes"
                   | はい
             td.clearfix data-label="delete"
-              a.btn.action-btn ng-click="vm.onCancelButtonClicked(item)" 削除
+              a.btn.action-btn ng-click="vm.onCancelButtonClicked(review)" 削除
     .row
       table.res-separate-table
         caption
