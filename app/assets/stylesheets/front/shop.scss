@@ -1056,11 +1056,14 @@
     }
 
   }
+  ng-map{
+    height:500px !important;
+  }
   .shop-new-face, .shop-cast, .shop-system, .shop-map {
-    margin-top: $row-space-bigest;
+    margin-top: $row-space;
   }
   .shop-map {
-    margin-bottom: $row-space-bigest;
+    margin-bottom: $row-space;
     .shop-map--info-box {
       padding: $row-space-half-half;
       border: 1px solid $_em_text;

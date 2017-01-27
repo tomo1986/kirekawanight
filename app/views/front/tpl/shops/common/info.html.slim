@@ -38,6 +38,28 @@ main#main
         h2.title
           | INTORODUCTION
       .intoroduction-box ng-bind-html="vm.shop.interview_ja"
+    .shop-new-face.shop-map.clearfix
+      .shop-map--info-box
+        .shop-map--info-wrap
+          .shop-name-titlt
+            .shop-map--info-name
+              | {{vm.shop.name}}
+          dl.profile.clearfix
+            dt Shop No
+            dd
+              | {{vm.shop.id}}
+            dt ADDRESS
+            dd
+              | {{vm.shop.address}}
+            dt POINT
+            dd
+              .shop-tags
+                a.btn ng-repeat="tag in vm.shop.tags"
+                  | {{tag.name}}
+
+    #map.rank-box.shop-map.clearfix
+      ng-map zoom="16" center="{{vm.shop.lon}},{{vm.shop.lat}}" styles="{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
+        marker id='{{vm.shop.id}} ' title="{{vm.shop.address}}" position=" {{vm.shop.lon}}, {{vm.shop.lat}}"
 
     #map.rank-box.shop-map.clearfix
       .page-title
