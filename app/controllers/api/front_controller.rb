@@ -177,7 +177,7 @@ class Api::FrontController < ApiController
         favorites[favorite.receiver_id] = favorite
       end
     end
-    shops = Shop.where(group_id: shop.group_id, deleted_at: nil).where.not(id: shop.id)
+    shops = Shop.where(group_id: shop.group_id, deleted_at: nil).where.not(id: shop.id) if shop.group_id
     builder = Jbuilder.new do |json|
       json.code 1
       json.shop shop.to_jbuilder

@@ -59,6 +59,17 @@
 //= require bower_components/d3/d3
 //= require bower_components/c3/c3
 //= require bower_components/c3-angular/c3-angular.min
+//= require bower_components/angular-spectrum-colorpicker/dist/angular-spectrum-colorpicker
+//= require bower_components/rangy/rangy-core
+//= require bower_components/rangy/rangy-classapplier
+//= require bower_components/rangy/rangy-highlighter
+//= require bower_components/rangy/rangy-selectionsaverestore
+//= require bower_components/rangy/rangy-serializer
+//= require bower_components/rangy/rangy-textrange
+
+//= require bower_components/textAngular/dist/textAngular
+//= require bower_components/textAngular/dist/textAngular-sanitize
+//= require bower_components/textAngular/dist/textAngularSetup
 
 //= require ./index.module
 //= require ./index.filter

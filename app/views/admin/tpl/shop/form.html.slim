@@ -270,7 +270,8 @@ section.main-container.map-form-page shop-form-directive=""
               span.title ng-class="{'is-text-danger': vm.errors.description}" 紹介文(日本語)
               span.btn.btn-danger.btn-xs.absolutely 必須
             td.res-form-table__td.input-box
-              textarea.form-control ng-model="vm.shop.interview_ja"
+              div text-angular='' ng-model='vm.shop.interview_ja'
+              /textarea.form-control ng-model="vm.shop.interview_ja"
 
 
         .button-center ng-show="vm.canSubmit"

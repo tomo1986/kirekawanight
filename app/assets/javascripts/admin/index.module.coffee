@@ -18,7 +18,7 @@ angular.module 'bijyoZukanAdmin', [
   'angularLazyImg'
   'ui.sortable'
   'ngFileUpload'
-  'ckeditor'
   'ngTagsInput'
   'gridshore.c3js.chart'
+  'textAngular'
 ]
