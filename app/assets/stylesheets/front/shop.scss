@@ -446,6 +446,7 @@
   .info-box{
     margin-bottom: $row-space-biger;
     .intoroduction-box {
+
       h3{
         padding: 0.3rem;
         color: #ad9a58;
@@ -454,7 +455,7 @@
         background: -webkit-linear-gradient(left, #720e0a 0%, #020202 100%, #020202 100%, #f4f4f4 100%);
         background: linear-gradient(to right, #720e0a 0%, #020202 100%, #020202 100%, #f4f4f4 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#720e0a', endColorstr='#f4f4f4',GradientType=1 );
-        margin-bottom: 0.46875rem;
+        margin: 1rem 0;
         border-left: 3px solid #ad9a58;
         font-size: 1.2rem;
         font-weight: 600;
@@ -466,12 +467,13 @@
         line-height:2.2rem;
         margin:0;
         > img{
-          @media (max-width: 544px){width:100%;}
-          @media (min-width: 768px){width:49%;}
+          @media (max-width: 544px){width:100%;margin: 1rem 0;}
+          @media (min-width: 768px){width:49%;margin: 1rem 0;}
         }
       }
       img{
         width:100%;
+        margin: 1rem 0;
       }
     }
   }
