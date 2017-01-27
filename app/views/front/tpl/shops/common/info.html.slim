@@ -48,10 +48,31 @@ main#main
             dt Shop No
             dd
               | {{vm.shop.id}}
-            dt ADDRESS
+            dt 住所
             dd
               | {{vm.shop.address}}
-            dt POINT
+            dt 在籍キャスト
+            dd
+              | {{vm.shop.girls_count}}
+            dt 部屋数
+            dd
+              | {{vm.shop.room_count}}
+            dt 最大収容人数
+            dd
+              | {{vm.shop.seat_count}}
+            dt 使用可言語
+            dd
+              span style="margin-right:.5rem;" ng-if="vm.shop.is_japanese"
+                | 日本語
+              span style="margin-right:.5rem;" ng-if="vm.shop.is_english"
+                | 英語
+              span style="margin-right:.5rem;" ng-if="vm.shop.is_korean"
+                | 韓国語
+              span style="margin-right:.5rem;" ng-if="vm.shop.is_chinese"
+                | 中国語
+              span
+                | ベトナム語
+            dt ポイント
             dd
               .shop-tags
                 a.btn ng-repeat="tag in vm.shop.tags"

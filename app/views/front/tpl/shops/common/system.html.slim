@@ -13,7 +13,13 @@ main#main
             | {{vm.shop.budget_vnd | number}}VND
             br
             | {{vm.shop.budget_usd | number}}USD
-
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix 喫煙
+          td.res-form-table__td.parent-td.input-box
+            div ng-if="vm.shop.is_smoked"
+              | 可
+            div ng-if="!vm.shop.is_smoked"
+              | 不可
         tr
           th.res-form-table__th.parent-th.title-box.clearfix tip有無
           td.res-form-table__td.parent-td.input-box
@@ -36,35 +42,3 @@ main#main
               = image_tag 'front/card.png', alt:"card list"
             div ng-if="!vm.shop.is_credit"
               | 使用できません
-        tr
-          th.res-form-table__th.parent-th.title-box.clearfix 在籍女性
-          td.res-form-table__td.parent-td.input-box
-            | {{vm.shop.girls_count}}名
-        tr ng-if="vm.shop.seat_count"
-          th.res-form-table__th.parent-th.title-box.clearfix 最大収容人数
-          td.res-form-table__td.parent-td.input-box
-            | {{vm.shop.seat_count}}名
-        tr ng-if="vm.shop.room_count"
-          th.res-form-table__th.parent-th.title-box.clearfix 部屋数
-          td.res-form-table__td.parent-td.input-box
-            | {{vm.shop.room_count}}部屋
-        tr
-          th.res-form-table__th.parent-th.title-box.clearfix 喫煙
-          td.res-form-table__td.parent-td.input-box
-            div ng-if="vm.shop.is_smoked"
-              | 可
-            div ng-if="!vm.shop.is_smoked"
-              | 不可
-
-        tr
-          th.res-form-table__th.parent-th.title-box.clearfix lungerge
-          td.res-form-table__td.parent-td.input-box
-            div ng-if="vm.shop.is_japanese"
-              | 日本語
-            div ng-if="vm.shop.is_english"
-              | English
-            div ng-if="vm.shop.is_korean"
-              | Korean
-            div ng-if="vm.shop.is_chinese"
-              | Chinese
-
