@@ -63,7 +63,7 @@ class Shop < ApplicationRecord
           sql = sql + "or " if count > i
         end
       else
-        sql = sql + "taggings.tag_id = #{tags}"
+        sql = sql + "taggings.tag_id = #{tags.to_i}"
       end
       shops = shops.where(sql)
     end
