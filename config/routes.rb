@@ -247,7 +247,7 @@ Rails.application.routes.draw do
       post :api9
       post :api10
       get :api11
-      get :api12
+      post :api12
       post :api13
       post :api14
       post :api15

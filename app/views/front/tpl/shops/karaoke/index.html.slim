@@ -33,6 +33,16 @@
                       a href="javascript:void(0)" ng-click="vm.changeFilterSort('support')" ng-class="{'active': vm.filters.sort == 'support'}" いいね順
                     li
                       a href="javascript:void(0)" ng-click="vm.changeFilterSort('favorite')" ng-class="{'active': vm.filters.sort == 'favorite'}" お気に入り登録順
+            .side--menu-block
+              .side--menu-inner
+                span.title.active ng-click="vm.onClickDisplayedPoint()" ポイント
+                .box ng-show="vm.displayedPoint"
+                  ul.lists.reset--card
+                    li ng-repeat="tag in vm.tags"
+                      label ng-class="{'active': vm.points['tags'+tag.id]}"
+                        input ng-click="vm.onSelectTag(tag.id)" type="checkbox" name="checkbox" value="{{tag.id}}"
+                          | {{tag.name}}
+
             /.side--menu-block
             /  .side--menu-inner
             /    span.title.active 予算

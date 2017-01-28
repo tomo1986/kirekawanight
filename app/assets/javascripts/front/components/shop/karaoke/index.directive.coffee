@@ -1,9 +1,16 @@
 angular.module 'bisyoujoZukanNight'
 .directive 'shopKaraokeIndexDirective', ($state) ->
-  ShopKaraokeIndexController = (shopService, customerService, modalService) ->
+  ShopKaraokeIndexController = (shopService, customerService, modalService,api) ->
     vm = this
     vm.init = ->
       vm.isLoading = true
+      vm.displayedPoint = false
+      vm.points = {}
+      angular.forEach($state.params.tags, (value) ->
+        vm.points["tags#{value}"] = value
+      )
+      console.log($state.params.tags)
+
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE GROUP',link:''}]
       vm.filters ={
         limit: 10
@@ -11,18 +18,55 @@ angular.module 'bisyoujoZukanNight'
         sort: if $state.params.sort then $state.params.sort else 'new'
         order: if $state.params.order then $state.params.order else 'desc'
         job_type: 'karaoke'
+        tags:if $state.params.tags then $state.params.tags else []
+        conditions: null
       }
 
       vm.getShops()
+      vm.tags()
+    vm.onClickDisplayedPoint = ->
+      vm.displayedPoint = !vm.displayedPoint
+
+
+
+    vm.tags = ->
+      shopService.getTags().then((res) ->
+        vm.tags = res.data.tags
+      )
+    vm.onSelectTag = (tag_id) ->
+      flag = false
+      vm.filters.tags = []
+      angular.forEach(vm.points, (value, key) ->
+        if value == tag_id
+          flag = true
+          delete vm.points[key]
+      )
+      vm.points["tags#{tag_id}"] = tag_id if !flag
+      angular.forEach(vm.points, (value, key) ->
+        vm.filters.tags.push(value)
+        console.log(value,vm.filters.tags)
+      )
+      vm.filters.page = 1
+      vm.changePageFunk()
+
 
     vm.getShops = ->
-      shopService.getShopList(vm.filters).then((res) ->
+      api.postPromise('/api/front/api12',vm.filters).then((res) ->
         vm.push_shops = res.data.push_shops
         vm.shops = res.data.shops
         vm.total = res.data.total
         vm.favorites = res.data.favorites
         vm.isLoading = false
       )
+
+
+#      shopService.getShopList(vm.filters).then((res) ->
+#          vm.push_shops = res.data.push_shops
+#          vm.shops = res.data.shops
+#          vm.total = res.data.total
+#          vm.favorites = res.data.favorites
+#          vm.isLoading = false
+#        )
 
       vm.onClickedFavorite = (opt_cast_id)->
         vm.favoriteShopId = opt_cast_id
@@ -60,7 +104,11 @@ angular.module 'bisyoujoZukanNight'
       vm.changePageFunk()
 
     vm.changePageFunk = ->
-      $state.go('/shops/karaoke',{page:vm.filters.page, sort: vm.filters.sort, order: vm.filters.order})
+      console.log(vm.filters)
+      $state.go('/shops/karaoke',{page:vm.filters.page, sort: vm.filters.sort, order: vm.filters.order,tags: vm.filters.tags})
+
+
+
     vm.changeFilterSort = (sort) ->
       vm.casts = null
       vm.isLoading = true

@@ -31,6 +31,21 @@
             padding: $row-space-half-half;
             background-color: #fff;
           }
+          .searchSelect{
+            width:100%;
+            li {
+              width:50%;
+              text-align: center;
+              display: inline-block;
+              vertical-align: middle;
+              padding: 1rem;
+              cursor: pointer;
+              &.active{
+                background-color: #222 !important;
+                color:$_brand-basic !important;
+              }
+            }
+          }
           .box {
             .lists{
               width:100%;
@@ -46,6 +61,19 @@
                   &.active{
                     background-color: #222 !important;
                     color:$_brand-basic !important;
+                  }
+                }
+                label{
+                  display: block;
+                  padding:.5rem;
+                  color:#ddd;
+                  margin-bottom:1px;
+                  &.active{
+                    background-color: #222 !important;
+                    color:$_brand-basic !important;
+                  }
+                  input{
+                    display: none;
                   }
                 }
               }

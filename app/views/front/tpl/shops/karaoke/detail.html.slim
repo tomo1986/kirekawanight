@@ -3,7 +3,7 @@
     breadcrumb-directive data="vm.breadcrumb"
   .container
     .shop-header.clearfix  ng-if="vm.shop"
-      .ranking
+      .ranking ng-if="vm.shop.review_count > 0"
         .clearfix
           .head-star-box
             .head--star

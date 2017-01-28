@@ -31,6 +31,49 @@ class Shop < ApplicationRecord
   acts_as_taggable_on :labels
   acts_as_taggable
 
+  scope :global_search, ->(sort=nil,job=nil,tags=nil,conditions=nil){
+    now = Time.zone.now
+    shops = Shop.joins(
+        "join taggings on shops.id = taggings.taggable_id and taggable_type = 'Shop' left join pickups on shops.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'Shop' and shops.deleted_at is null "
+    ).group('shops.id')
+    if sort == 'new'
+      shops = shops.where("(shops.job_type = ? and (pickups.start_at <= ? and pickups.end_at > ?)) or (shops.job_type = ?) ",job, now,now, job).order("pickups.number_place is null asc, pickups.number_place asc")
+    else
+      shops = shops.where(job_type: job,deleted_at: nil)
+    end
+
+    if sort == 'new'
+      shops = shops.sort_new('desc')
+    elsif sort == 'support'
+      shops = shops.sort_support('desc')
+    elsif sort == 'favorite'
+      shops = shops.sort_favorite('desc')
+    elsif sort == 'ranking'
+      shops = shops.sort_ranking('desc')
+    elsif sort == 'review'
+      shops = shops.sort_review('desc')
+    end
+
+    if tags && tags.length > 0
+      sql = ""
+      count = tags.length
+      if count > 1
+        tags.each.with_index(1) do |tag,i|
+          sql = sql + "taggings.tag_id = #{tag} "
+          sql = sql + "or " if count > i
+        end
+      else
+        sql = sql + "taggings.tag_id = #{tags}"
+      end
+      shops = shops.where(sql)
+    end
+
+    return shops
+
+  }
+
+
+
 
   scope :keyword_filter, ->(keyword=nil) {
     shops = self.joins('left join users on users.shop_id = shops.id left join groups on shops.group_id = groups.id')
@@ -60,7 +103,7 @@ class Shop < ApplicationRecord
   }
 
   scope :sort_new, -> (order= 'desc'){
-    return self.order("created_at #{order}")
+    return self.order("shops.created_at #{order}")
   }
   scope :sort_support, -> (order= 'desc'){
     return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Support' and posts.receiver_type = 'Shop'").group("shops.id")
@@ -76,7 +119,7 @@ class Shop < ApplicationRecord
   }
 
   scope :sort_ranking, -> (order= 'desc'){
-    return self.order("total_score #{order}")
+    return self.order("shops.total_score #{order}")
   }
 
   def open_discounts

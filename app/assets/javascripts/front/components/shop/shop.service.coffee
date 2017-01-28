@@ -48,6 +48,10 @@ angular.module 'bisyoujoZukanNight'
     api.postPromise('/api/front/api30',{id: opt_shop_id, cast_ids: opt_cast_ids}).then((res) ->
       return res
     )
+  sm.gatTags = ->
+    api.getPromise('/api/front/all_tags',params).then((res) ->
+      return res
+    )
 
   sm.reaviewQuestions = {
     karaoke:{
@@ -137,5 +141,6 @@ angular.module 'bisyoujoZukanNight'
     getCasts: sm.getCasts
     getAllCasts: sm.getAllCasts
     getContactCasts: sm.getContactCasts
+    gatTags: sm.gatTags
     reaviewQuestions: sm.reaviewQuestions
     setReaviewQuestion: sm.setReaviewQuestion

@@ -32,7 +32,7 @@ angular.module 'bisyoujoZukanNight'
         }
 
       .state '/shops/karaoke',
-        url: '/shops/karaoke?page&sort&order'
+        url: '/shops/karaoke?page&sort&order&tags'
         active_menu: 'karaoke'
         active_tab: 'shop'
         templateUrl: '/front/tpl/shops/karaoke/index.html'
@@ -40,6 +40,8 @@ angular.module 'bisyoujoZukanNight'
           page: null
           sort: null
           order: null
+          conditions:null
+          tags: null
         }
 
       .state '/casts/karaoke/:id',
