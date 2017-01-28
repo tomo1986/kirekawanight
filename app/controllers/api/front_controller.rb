@@ -420,10 +420,28 @@ class Api::FrontController < ApiController
     elsif params[:job_type] == 'sexy'
       PageViewType::ShopSexy.create
     end
+
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    shops = Shop.global_search(params[:sort],params[:job_type],params[:tags],params[:conditions])
-    total = shops.length
+    now = Time.zone.now
+    if params[:sort] == 'new'
+      shops = Shop.joins("left join pickups on shops.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'Shop' and shops.deleted_at is null").where("(shops.job_type = ? and (pickups.start_at <= ? and pickups.end_at > ?)) or (shops.job_type = ?) ",params[:job_type], now,now, params[:job_type]).order("pickups.number_place is null asc, pickups.number_place asc")
+    else
+      shops = Shop.where(job_type: params[:job_type],deleted_at: nil)
+    end
+    total = shops.count
+
+    if params[:sort] == 'new'
+      shops = shops.sort_new(params[:order])
+    elsif params[:sort] == 'support'
+      shops = shops.sort_support(params[:order])
+    elsif params[:sort] == 'favorite'
+      shops = shops.sort_favorite(params[:order])
+    elsif params[:sort] == 'ranking'
+      shops = shops.sort_ranking(params[:order])
+    elsif params[:sort] == 'review'
+      shops = shops.sort_review(params[:order])
+    end
 
     shops = shops.page(page).per(limit) if shops.present?
     favorites = {}
