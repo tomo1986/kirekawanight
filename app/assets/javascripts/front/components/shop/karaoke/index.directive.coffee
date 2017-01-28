@@ -7,7 +7,7 @@ angular.module 'bisyoujoZukanNight'
       vm.displayedPoint = false
       vm.points = {}
       angular.forEach($state.params.tags, (value) ->
-        vm.points["tags#{value}"] = value
+        vm.points["tags#{value}"] = Number(value)
       )
       console.log($state.params.tags)
 
@@ -37,18 +37,18 @@ angular.module 'bisyoujoZukanNight'
       flag = false
       vm.filters.tags = []
       angular.forEach(vm.points, (value, key) ->
-        if value == tag_id
+        if Number(value) == Number(tag_id)
           flag = true
           delete vm.points[key]
       )
-      vm.points["tags#{tag_id}"] = tag_id if !flag
+      vm.points["tags#{tag_id}"] = Number(tag_id) if !flag
       angular.forEach(vm.points, (value, key) ->
-        vm.filters.tags.push(value)
-        console.log(value,vm.filters.tags)
+        vm.filters.tags.push(Number(value))
       )
+      console.log(vm.points)
+    vm.submitTags = ->
       vm.filters.page = 1
       vm.changePageFunk()
-
 
     vm.getShops = ->
       api.postPromise('/api/front/api12',vm.filters).then((res) ->

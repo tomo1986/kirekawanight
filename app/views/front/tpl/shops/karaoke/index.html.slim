@@ -42,6 +42,8 @@
                       label ng-class="{'active': vm.points['tags'+tag.id]}"
                         input ng-click="vm.onSelectTag(tag.id)" type="checkbox" name="checkbox" value="{{tag.id}}"
                           | {{tag.name}}
+                  .search-btn-box
+                    a.btn.btn-review href="javascript:void(0)" ng-click="vm.submitTags()" 検索する
 
             /.side--menu-block
             /  .side--menu-inner

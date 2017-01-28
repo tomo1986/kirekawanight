@@ -78,6 +78,21 @@
                 }
               }
             }
+            .search-btn-box{
+              margin:0;
+              a{
+                background-color: #720e0a;
+                padding:1rem;
+                color: #ad9a58;
+                font-weight: bold;
+                border-radius: 0;
+                width: 100%;
+                display: block;
+                &:hover{
+                  opacity: .7;
+                }
+              }
+            }
 
           }
         }
