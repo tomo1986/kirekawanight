@@ -25,11 +25,11 @@ angular.module 'bisyoujoZukanNight'
 
     vm.makeBreadCrumb = ->
       if $state.current.active_menu == 'karaoke'
-        vm.breadcrumb.push({name:'KARAOKE SHOP',link:'/shops/karaoke'})
+        vm.breadcrumb.push({name:'KARAOKE',link:'/shops/karaoke'})
       else if $state.current.active_menu == 'bar'
-        vm.breadcrumb.push({name:'BAR SHOP',link:'/shops/bar'})
+        vm.breadcrumb.push({name:'BAR',link:'/shops/bar'})
       else if $state.current.active_menu == 'massage'
-        vm.breadcrumb.push({name:'MASSAGE SHOP',link:'/shops/massage'})
+        vm.breadcrumb.push({name:'MASSAGE',link:'/shops/massage'})
 
 
     vm.getShop = ->
