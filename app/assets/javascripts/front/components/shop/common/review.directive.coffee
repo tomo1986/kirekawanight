@@ -7,7 +7,7 @@ angular.module 'bisyoujoZukanNight'
       vm.reviews = []
       vm.filters ={
         id: vm.parentCtrl.pageId
-        limit: 10
+        limit: 5
         page: if $state.params.page then $state.params.page else 1
         sort: if $state.params.sort then $state.params.sort else 'new'
         order: if $state.params.order then $state.params.order else 'desc'

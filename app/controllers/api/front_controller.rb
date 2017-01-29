@@ -636,7 +636,7 @@ class Api::FrontController < ApiController
 
   def api23
     shop = Shop.find_by(id: params[:id])
-    reviews = shop.reviews.order("created_at desc") if shop
+    reviews = shop.reviews.where(reviews:{is_displayed: true}).order("created_at desc") if shop
     total = reviews.count if reviews
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 1
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1

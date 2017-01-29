@@ -224,7 +224,7 @@ class Shop < ApplicationRecord
         json.way_images shop.set_way_images
         json.support_count shop.supports.count
         json.favorite_count shop.favorites.count
-        json.review_count shop.reviews.count
+        json.review_count shop.reviews.where(reviews:{is_displayed: true}).count
         json.is_new shop.new_shop?
         json.tags shop.tag_list ? shop.tag_list : nil
       end
@@ -287,7 +287,7 @@ class Shop < ApplicationRecord
       json.way_images self.set_way_images
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
-      json.review_count self.reviews.count
+      json.review_count self.reviews.where(reviews:{is_displayed: true}).count
 
       json.tags self.tags ? Tag.to_jbuilders(self.tags) : nil
     end
