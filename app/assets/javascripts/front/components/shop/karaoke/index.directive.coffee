@@ -5,6 +5,7 @@ angular.module 'bisyoujoZukanNight'
     vm.init = ->
       vm.isLoading = true
       vm.displayedPoint = false
+      vm.displayedSort = true
       vm.points = {}
       angular.forEach($state.params.tags, (value) ->
         vm.points["tags#{value}"] = Number(value)
@@ -26,6 +27,9 @@ angular.module 'bisyoujoZukanNight'
       vm.tags()
     vm.onClickDisplayedPoint = ->
       vm.displayedPoint = !vm.displayedPoint
+    vm.onClickDisplayedSort = ->
+      vm.displayedSort = !vm.displayedSort
+
 
 
 

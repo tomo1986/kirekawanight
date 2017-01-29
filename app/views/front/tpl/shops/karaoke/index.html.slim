@@ -20,8 +20,8 @@
           .side
             .side--menu-block
               .side--menu-inner
-                span.title.active 並び替え
-                .box
+                span.title.active ng-click="vm.onClickDisplayedSort()" 並び替え
+                .box ng-show="vm.displayedSort"
                   ul.lists.reset--card
                     li
                       a href="javascript:void(0)" ng-click="vm.changeFilterSort('new')" ng-class="{'active': vm.filters.sort == 'new'}" 標準【広告優先】
