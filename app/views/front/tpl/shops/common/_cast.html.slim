@@ -27,7 +27,9 @@ main#main
                   | スタイルは
                   br
                   |  ログイン後閲覧可能
-      .nohave-box ng-if="vm.newCasts.length == 0" 新しいキャストは現在居ません。
+      .button-center ng-if="vm.isLoading"
+        loading-directive size="125"
+      .nohave-box ng-if="vm.newCasts.length == 0  && !vm.isLoading" 新しいキャストは現在居ません。
       .rank-box.shop-cast style="margin-bottom:3.75rem;"
         .page-title
           h2.title
@@ -75,4 +77,4 @@ main#main
           loading-directive size="125"
         .button-center style="text-align: center;margin: 2rem 0;" ng-if="vm.total > vm.casts.length && !vm.isLoading"
           button.btn.btn-submit type="button" ng-click="vm.onAddCasts()" 読み込む
-      .nohave-box style="margin-bottom:3.75rem;" ng-if="vm.casts.length == 0" ただいま準備中
+      .nohave-box style="margin-bottom:3.75rem;" ng-if="vm.casts.length == 0 && !vm.isLoading" ただいま準備中

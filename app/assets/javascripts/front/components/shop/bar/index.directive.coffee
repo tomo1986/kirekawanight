@@ -10,7 +10,7 @@ angular.module 'bisyoujoZukanNight'
       angular.forEach($state.params.tags, (value) ->
         vm.points["tags#{value}"] = Number(value)
       )
-      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE GROUP',link:''}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'BAR',link:''}]
       vm.filters ={
         limit: 10
         page: if $state.params.page then $state.params.page else 1
