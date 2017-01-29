@@ -139,8 +139,8 @@ class Shop < ApplicationRecord
   def self.avg_shop_score
     shops =  Shop.where(deleted_at:nil)
     shops.each do |shop|
-      count = shop.reviews.count
-      reviews = shop.reviews.where(is_displayed: true)
+      count = shop.reviews.where(reviews:{is_displayed: true}).count
+      reviews = shop.reviews.where(reviews:{is_displayed: true})
       shop.score1 = reviews.sum(:score1) > 0 ? (reviews.sum(:score1) / count).round(1) : 0
       shop.score2 = reviews.sum(:score2) > 0 ? (reviews.sum(:score2) / count).round(1) : 0
       shop.score3 = reviews.sum(:score3) > 0 ? (reviews.sum(:score3) / count).round(1) : 0

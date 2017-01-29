@@ -3,7 +3,7 @@ angular.module 'bisyoujoZukanNight'
   ShopMassageDetailController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE SHOP',link:'/shops/massage'}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MASSAGE',link:'/shops/massage'}]
       vm.isAttention = false
 
       vm.displayContent = 'intoroduction'
