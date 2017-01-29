@@ -10,8 +10,6 @@ angular.module 'bisyoujoZukanNight'
       angular.forEach($state.params.tags, (value) ->
         vm.points["tags#{value}"] = Number(value)
       )
-      console.log($state.params.tags)
-
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE GROUP',link:''}]
       vm.filters ={
         limit: 10
@@ -29,10 +27,6 @@ angular.module 'bisyoujoZukanNight'
       vm.displayedPoint = !vm.displayedPoint
     vm.onClickDisplayedSort = ->
       vm.displayedSort = !vm.displayedSort
-
-
-
-
     vm.tags = ->
       shopService.getTags().then((res) ->
         vm.tags = res.data.tags

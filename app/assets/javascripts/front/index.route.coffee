@@ -185,13 +185,15 @@ angular.module 'bisyoujoZukanNight'
         }
 
       .state '/shops/bar',
-        url: '/shops/bar?page&sort&order'
+        url: '/shops/bar?page&sort&order&tags'
         active_menu: 'bar'
         templateUrl: '/front/tpl/shops/bar/index.html'
         params: {
           page: null
           sort: null
           order: null
+          conditions:null
+          tags: null
         }
 
       .state '/casts/bar/:id',
@@ -294,13 +296,15 @@ angular.module 'bisyoujoZukanNight'
         }
 
       .state '/shops/massage',
-        url: '/shops/massage?page&sort&order'
+        url: '/shops/massage?page&sort&order&tags'
         active_menu: 'massage'
         templateUrl: '/front/tpl/shops/massage/index.html'
         params: {
           page: null
           sort: null
           order: null
+          conditions:null
+          tags: null
         }
 
       .state '/casts/massage/:id',

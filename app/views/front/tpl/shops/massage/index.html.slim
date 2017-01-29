@@ -21,8 +21,8 @@
           .side
             .side--menu-block
               .side--menu-inner
-                span.title.active 並び替え
-                .box
+                span.title.active ng-click="vm.onClickDisplayedSort()" 並び替え
+                .box ng-show="vm.displayedSort"
                   ul.lists.reset--card
                     li
                       a href="javascript:void(0)" ng-click="vm.changeFilterSort('new')" ng-class="{'active': vm.filters.sort == 'new'}" 標準【広告優先】
@@ -34,6 +34,18 @@
                       a href="javascript:void(0)" ng-click="vm.changeFilterSort('support')" ng-class="{'active': vm.filters.sort == 'support'}" いいね順
                     li
                       a href="javascript:void(0)" ng-click="vm.changeFilterSort('favorite')" ng-class="{'active': vm.filters.sort == 'favorite'}" お気に入り登録順
+            .side--menu-block
+              .side--menu-inner
+                span.title.active ng-click="vm.onClickDisplayedPoint()" ポイント
+                .box ng-show="vm.displayedPoint"
+                  ul.lists.reset--card
+                    li ng-repeat="tag in vm.tags"
+                      label ng-class="{'active': vm.points['tags'+tag.id]}"
+                        input ng-click="vm.onSelectTag(tag.id)" type="checkbox" name="checkbox" value="{{tag.id}}"
+                          | {{tag.name}}
+                  .search-btn-box
+                    a.btn.btn-review href="javascript:void(0)" ng-click="vm.submitTags()" 検索する
+
       /.side--menu-block
       /  .side--menu-inner
       /    span.title.active 予算
