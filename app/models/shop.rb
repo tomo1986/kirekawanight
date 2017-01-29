@@ -63,9 +63,9 @@ class Shop < ApplicationRecord
           sql = sql + "or " if count > i
         end
       else
-        sql = sql + "taggings.tag_id = #{tags.to_i}"
+        sql = sql + "taggings.tag_id = #{tags.to_i}" if tags.to_i != 0
       end
-      shops = shops.where(sql)
+      shops = shops.where(sql) if sql.present?
     end
 
     return shops
