@@ -89,43 +89,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_cast.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_cast.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/_cast.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.90228015">
+                <state vertical-scroll-proportion="16.583334">
                   <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-                  <folding>
-                    <marker date="1485700171000" expanded="true" signature="12:3791" placeholder=".container" />
-                    <marker date="1485700171000" expanded="true" signature="27:3791" placeholder=".rank-box" />
-                    <marker date="1485700171000" expanded="true" signature="43:92" placeholder=".page-title" />
-                    <marker date="1485700171000" expanded="true" signature="99:1149" placeholder=".queen-list.clearfix ng-if=&quot;vm.newCasts.length &gt; 0&quot;" />
-                    <marker date="1485700171000" expanded="true" signature="204:670" placeholder=".fream" />
-                    <marker date="1485700171000" expanded="true" signature="223:252" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1485700171000" expanded="true" signature="265:295" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1485700171000" expanded="true" signature="308:340" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1485700171000" expanded="true" signature="353:386" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1485700171000" expanded="true" signature="681:1149" placeholder=".profile" />
-                    <marker date="1485700171000" expanded="true" signature="702:756" placeholder=".name" />
-                    <marker date="1485700171000" expanded="true" signature="769:1149" placeholder=".body" />
-                    <marker date="1485700171000" expanded="true" signature="1156:1228" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
-                    <marker date="1485700171000" expanded="true" signature="1235:1312" placeholder=".nohave-box ng-if=&quot;vm.newCasts.length == 0  &amp;&amp; !vm.isLoading&quot; 新しいキャストは現在居ません。" />
-                    <marker date="1485700171000" expanded="true" signature="1319:3688" placeholder=".rank-box.shop-cast style=&quot;margin-bottom:3.75rem;&quot;" />
-                    <marker date="1485700171000" expanded="true" signature="1378:1427" placeholder=".page-title" />
-                    <marker date="1485700171000" expanded="true" signature="1436:2312" placeholder=".filter-box.clearfix" />
-                    <marker date="1485700171000" expanded="true" signature="1467:1568" placeholder=".total-count-box" />
-                    <marker date="1485700171000" expanded="true" signature="2321:3409" placeholder=".queen-list.clearfix ng-if=&quot;vm.casts.length &gt; 0&quot;" />
-                    <marker date="1485700171000" expanded="true" signature="2424:2908" placeholder=".fream" />
-                    <marker date="1485700171000" expanded="true" signature="2445:2474" placeholder=".fream--basic.fream--top-left" />
-                    <marker date="1485700171000" expanded="true" signature="2489:2519" placeholder=".fream--basic.fream--top-right" />
-                    <marker date="1485700171000" expanded="true" signature="2534:2566" placeholder=".fream--basic.fream--bottom-left" />
-                    <marker date="1485700171000" expanded="true" signature="2581:2614" placeholder=".fream--basic.fream--bottom-right" />
-                    <marker date="1485700171000" expanded="true" signature="2921:3409" placeholder=".profile" />
-                    <marker date="1485700171000" expanded="true" signature="2944:3000" placeholder=".name" />
-                    <marker date="1485700171000" expanded="true" signature="3015:3409" placeholder=".body" />
-                    <marker date="1485700171000" expanded="true" signature="3418:3492" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
-                    <marker date="1485700171000" expanded="true" signature="3501:3688" placeholder=".button-center style=&quot;text-align: center;margin: 2rem 0;&quot; ng-if=&quot;vm.total &gt; vm.casts.length &amp;&amp; !vm.isLoading&quot;" />
-                    <marker date="1485700171000" expanded="true" signature="3695:3791" placeholder=".nohave-box style=&quot;margin-bottom:3.75rem;&quot; ng-if=&quot;vm.casts.length == 0 &amp;&amp; !vm.isLoading&quot; ただいま準備中" />
-                  </folding>
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="base.html.erb" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/admin/base.html.erb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.48859936">
+                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -161,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/tpl/shop/index.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/index.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/index.run.coffee" />
@@ -212,6 +190,7 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/comsept/index_jp.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/block/header.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/common/_cast.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/layouts/admin/base.html.erb" />
       </list>
     </option>
   </component>
@@ -321,11 +300,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -347,135 +322,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shops" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shops" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="casts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="casts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="karaoke" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -897,13 +748,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/front/blog.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.17928287">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.20762712">
@@ -1273,40 +1117,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/_cast.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90228015">
+        <state vertical-scroll-proportion="16.583334">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <marker date="1485700171000" expanded="true" signature="12:3791" placeholder=".container" />
-            <marker date="1485700171000" expanded="true" signature="27:3791" placeholder=".rank-box" />
-            <marker date="1485700171000" expanded="true" signature="43:92" placeholder=".page-title" />
-            <marker date="1485700171000" expanded="true" signature="99:1149" placeholder=".queen-list.clearfix ng-if=&quot;vm.newCasts.length &gt; 0&quot;" />
-            <marker date="1485700171000" expanded="true" signature="204:670" placeholder=".fream" />
-            <marker date="1485700171000" expanded="true" signature="223:252" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1485700171000" expanded="true" signature="265:295" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1485700171000" expanded="true" signature="308:340" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1485700171000" expanded="true" signature="353:386" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1485700171000" expanded="true" signature="681:1149" placeholder=".profile" />
-            <marker date="1485700171000" expanded="true" signature="702:756" placeholder=".name" />
-            <marker date="1485700171000" expanded="true" signature="769:1149" placeholder=".body" />
-            <marker date="1485700171000" expanded="true" signature="1156:1228" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
-            <marker date="1485700171000" expanded="true" signature="1235:1312" placeholder=".nohave-box ng-if=&quot;vm.newCasts.length == 0  &amp;&amp; !vm.isLoading&quot; 新しいキャストは現在居ません。" />
-            <marker date="1485700171000" expanded="true" signature="1319:3688" placeholder=".rank-box.shop-cast style=&quot;margin-bottom:3.75rem;&quot;" />
-            <marker date="1485700171000" expanded="true" signature="1378:1427" placeholder=".page-title" />
-            <marker date="1485700171000" expanded="true" signature="1436:2312" placeholder=".filter-box.clearfix" />
-            <marker date="1485700171000" expanded="true" signature="1467:1568" placeholder=".total-count-box" />
-            <marker date="1485700171000" expanded="true" signature="2321:3409" placeholder=".queen-list.clearfix ng-if=&quot;vm.casts.length &gt; 0&quot;" />
-            <marker date="1485700171000" expanded="true" signature="2424:2908" placeholder=".fream" />
-            <marker date="1485700171000" expanded="true" signature="2445:2474" placeholder=".fream--basic.fream--top-left" />
-            <marker date="1485700171000" expanded="true" signature="2489:2519" placeholder=".fream--basic.fream--top-right" />
-            <marker date="1485700171000" expanded="true" signature="2534:2566" placeholder=".fream--basic.fream--bottom-left" />
-            <marker date="1485700171000" expanded="true" signature="2581:2614" placeholder=".fream--basic.fream--bottom-right" />
-            <marker date="1485700171000" expanded="true" signature="2921:3409" placeholder=".profile" />
-            <marker date="1485700171000" expanded="true" signature="2944:3000" placeholder=".name" />
-            <marker date="1485700171000" expanded="true" signature="3015:3409" placeholder=".body" />
-            <marker date="1485700171000" expanded="true" signature="3418:3492" placeholder=".button-center ng-if=&quot;vm.isLoading&quot;" />
-            <marker date="1485700171000" expanded="true" signature="3501:3688" placeholder=".button-center style=&quot;text-align: center;margin: 2rem 0;&quot; ng-if=&quot;vm.total &gt; vm.casts.length &amp;&amp; !vm.isLoading&quot;" />
-            <marker date="1485700171000" expanded="true" signature="3695:3791" placeholder=".nohave-box style=&quot;margin-bottom:3.75rem;&quot; ng-if=&quot;vm.casts.length == 0 &amp;&amp; !vm.isLoading&quot; ただいま準備中" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/admin/base.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48859936">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
