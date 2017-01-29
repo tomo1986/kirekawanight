@@ -35,7 +35,7 @@ class Shop < ApplicationRecord
     now = Time.zone.now
     shops = Shop.joins(
         "left join taggings on shops.id = taggings.taggable_id and taggable_type = 'Shop' left join pickups on shops.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'Shop' and shops.deleted_at is null "
-    ).group("shops.id")
+    ).uniq
     if sort == 'new'
       shops = shops.where("(shops.job_type = ? and (pickups.start_at <= ? and pickups.end_at > ?)) or (shops.job_type = ?) ",job, now,now, job).order("pickups.number_place is null asc, pickups.number_place asc")
     else
