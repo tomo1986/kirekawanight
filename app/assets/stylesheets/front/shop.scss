@@ -143,6 +143,10 @@
               position: relative;
               border: 1px solid #E2D39F;
               a {
+                display: block;
+                &:hover {
+                  opacity: .7;
+                }
                 @media (max-width: 543px){
                   .main-image {
                     width:100%;
