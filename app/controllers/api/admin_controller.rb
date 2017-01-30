@@ -1185,7 +1185,7 @@ class Api::AdminController < ApiController
   #top page
   def api56
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
-    reviews = Review.where(is_displayed: false).order('id desc').limit(10)
+    reviews = Review.where(is_displayed: false,deleted_at:nil).order('id desc').limit(10)
     contacts = Contact.order('id desc').limit(10)
     shop_count = Shop.where(deleted_at: nil).count
     user_count = User.where(deleted_at: nil).count
