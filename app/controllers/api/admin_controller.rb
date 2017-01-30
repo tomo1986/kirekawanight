@@ -565,12 +565,15 @@ class Api::AdminController < ApiController
       pickup = PickupType::Top.new
     elsif params[:type] == 'push'
       pickup = PickupType::Push.new
+    elsif params[:type] == 'introduction'
+      pickup = PickupType::Introduction.new
     end
 
     pickup.attributes = {
         subject_type: params[:subject_type],
         subject_id: params[:subject_id],
         price: params[:price],
+        quantilty: params[:quantilty],
         start_at: params[:start_at],
         end_at: params[:end_at],
         number_place: params[:number_place]
@@ -610,6 +613,7 @@ class Api::AdminController < ApiController
         subject_type: params[:subject_type],
         subject_id: params[:subject_id],
         price: params[:price],
+        quantilty: params[:quantilty],
         start_at: params[:start_at],
         end_at: params[:end_at],
         number_place: params[:number_place]
@@ -618,6 +622,8 @@ class Api::AdminController < ApiController
       pickup.type = 'PickupType::Top'
     elsif params[:type] == 'push'
       pickup.type = 'PickupType::Push'
+    elsif params[:type] == 'introduction'
+      pickup = 'PickupType::Introduction'
     end
 
     if pickup.save!

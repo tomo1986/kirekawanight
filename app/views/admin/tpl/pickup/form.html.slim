@@ -14,21 +14,21 @@ section.main-container.map-form-page pickup-form-directive=""
             td.res-form-table__td.input-box
               select.form-control name="type" ng-model="vm.pickup.type"
                 option value=""  -- Please select --
-                option value="top" ng-selected="vm.pickup.type == 'PickupType::Top'" TOP
                 option value="push" ng-selected="vm.pickup.type == 'PickupType::Push'" TODAY'S POWER PUSH
+                option value="introduction" ng-selected="vm.pickup.type == 'PickupType::Introduction'" 紹介
           tr
             th.res-form-table__th.title-box.clearfix
               span.title 内容
             td.res-form-table__td.input-box
-              select.form-control name="subject_type" ng-model="vm.pickup.subject_type"
+              select.form-control name="subject_type" ng-model="vm.pickup.subject_type" required=''
                 option value=""  -- Please select --
                 option value="Shop" Shop
                 option value="User" User
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title 内容
+              span.title お店 or キャスト
             td.res-form-table__td.input-box
-              select.form-control name="subject_id" ng-model="vm.pickup.subject_id"
+              select.form-control name="subject_id" ng-model="vm.pickup.subject_id" required=''
                 option value=""  -- Please select --
                 option value="{{item.id}}" ng-selected="item.id == vm.pickup.subject_id" ng-repeat="item in vm.subjectList"
                   | {{item.name}}
@@ -37,7 +37,14 @@ section.main-container.map-form-page pickup-form-directive=""
               span.title ng-class="{'is-text-danger': vm.errors.description}" 価格
               span.btn.btn-danger.btn-xs.absolutely 必須
             td.res-form-table__td.input-box
-              input.form-control type="text" ng-model="vm.pickup.price"
+              input.form-control type="text" required='' ng-model="vm.pickup.price"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" 個数
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              input.form-control type="text" required='' ng-model="vm.pickup.quantilty"
+
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" start_at
@@ -51,7 +58,6 @@ section.main-container.map-form-page pickup-form-directive=""
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.description}" 表示順
-              span.btn.btn-danger.btn-xs.absolutely 必須
             td.res-form-table__td.input-box
               input.form-control type="text" ng-model="vm.pickup.number_place"
 

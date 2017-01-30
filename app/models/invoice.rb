@@ -6,7 +6,7 @@ class Invoice < ApplicationRecord
   before_create do
     now = Time.zone.now
     if self.note.blank?
-      note = "\n※アカウント #{Time.zone.local(now.year,now.month,25).strftime('%m月%d日')} 時点のものとなります。"
+      note = "※アカウント #{Time.zone.local(now.year,now.month,25).strftime('%m月%d日')} 時点のものとなります。"
       self.note = note
     end
     self.sales_person =  Settings.sales_person if self.sales_person.blank?

@@ -6,7 +6,7 @@ angular.module 'bijyoZukanAdmin'
 
     vm.init = ->
       vm.canSubmit = true
-      vm.breadcrumb = [{name:'Dashboard',link:'/business'},{name:'MAP編集',link:'/business/maps'}]
+      vm.breadcrumb = [{name:'Dashboard',link:'/admin'}]
       vm.subjectList = []
       vm.start_at_options={
         from:{is_from:true,date:null}

@@ -25,16 +25,22 @@ class Hoge < ActiveRecord::Base
             name: row[0],quantilty: row[1],unit_price: row[2],category: row[3],tax_rate: row[4]
         )
         sub_amount = sub_amount + (row[1] * row[2])
-        total_amount = total_amount + ((row[1] * row[2]) * ((100 + row[4].to_i) / 100.0)).round
+        total_amount = total_amount + (row[1] * row[2])
       end
       shop_pickups = Pickup.where(subject_type: 'Shop', subject_id: shop.id, start_at: from...to)
       shop_pickups.each do |pickup|
         next if pickup.price.blank? || pickup.price == 0
-        invoice.invoice_details.build(
-            name: "Shop pickup cost(#{pickup.start_at.strftime('%Y/%m/%d')}〜)", quantilty: 1,unit_price: pickup.price ,category: 'pickup',tax_rate: Settings.tax_rate
-        )
-        sub_amount = sub_amount + (pickup.price * 1)
-        total_amount = total_amount + ((pickup.price * 1) * ((100 + Settings.tax_rate.to_i) / 100.0)).round
+        if pickup.type == 'PickupType::Push'
+          invoice.invoice_details.build(
+              name: "Shop pickup cost(#{pickup.start_at.strftime('%Y/%m/%d')}〜)", quantilty: pickup.quantilty,unit_price: pickup.price ,category: 'pickup',tax_rate: Settings.tax_rate
+          )
+        elsif pickup.type == 'PickupType::Introduction'
+          invoice.invoice_details.build(
+              name: "紹介料(#{pickup.start_at.strftime('%Y/%m/%d')})", quantilty: pickup.quantilty,unit_price: pickup.price ,category: 'pickup',tax_rate: Settings.tax_rate
+          )
+        end
+        sub_amount = sub_amount + (pickup.price * pickup.quantilty)
+        total_amount = total_amount + (pickup.price * pickup.quantilty)
       end
 
       user_ids = shop.users.ids if shop.users
@@ -44,8 +50,8 @@ class Hoge < ActiveRecord::Base
         invoice.invoice_details.build(
             name: "#{User.find_by(id: pickup.subject_id).name} pickup cost(#{pickup.start_at.strftime('%Y/%m/%d')}〜)", quantilty: 1,unit_price: pickup.price ,category: 'pickup',tax_rate: Settings.tax_rate
         )
-        sub_amount = sub_amount + (pickup.price * 1)
-        total_amount = total_amount + ((pickup.price * 1) * ((100 + Settings.tax_rate.to_i) / 100.0)).round
+        sub_amount = sub_amount + (pickup.price * pickup.quantilty)
+        total_amount = total_amount + (pickup.price * pickup.quantilty)
       end
 
 

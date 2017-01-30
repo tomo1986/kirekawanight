@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126114213) do
+ActiveRecord::Schema.define(version: 20170130131349) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -274,6 +274,7 @@ ActiveRecord::Schema.define(version: 20170126114213) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "number_place"
+    t.integer  "quantilty"
   end
 
   create_table "plans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -330,20 +331,20 @@ ActiveRecord::Schema.define(version: 20170126114213) do
 
   create_table "shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.string   "email",                                default: "", null: false
-    t.string   "encrypted_password",                   default: "", null: false
+    t.string   "email",                                     default: "", null: false
+    t.string   "encrypted_password",                        default: "", null: false
     t.integer  "group_id"
-    t.string   "job_type",                             default: ""
-    t.string   "tel",                                  default: ""
+    t.string   "job_type",                                  default: ""
+    t.string   "tel",                                       default: ""
     t.integer  "min_budget"
     t.integer  "max_budget"
-    t.string   "sns_line",                             default: ""
-    t.string   "sns_zalo",                             default: ""
-    t.string   "sns_wechat",                           default: ""
-    t.string   "address",                              default: ""
-    t.string   "lat",                                  default: ""
-    t.string   "lon",                                  default: ""
-    t.text     "interview_ja",           limit: 65535
+    t.string   "sns_line",                                  default: ""
+    t.string   "sns_zalo",                                  default: ""
+    t.string   "sns_wechat",                                default: ""
+    t.string   "address",                                   default: ""
+    t.string   "lat",                                       default: ""
+    t.string   "lon",                                       default: ""
+    t.text     "interview_ja",           limit: 4294967295
     t.text     "interview_vn",           limit: 65535
     t.text     "interview_en",           limit: 65535
     t.boolean  "is_credit"
@@ -356,13 +357,13 @@ ActiveRecord::Schema.define(version: 20170126114213) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                        default: 0,  null: false
+    t.integer  "sign_in_count",                             default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.string   "name_kana"
     t.boolean  "is_smoked"
     t.datetime "opened_at"
