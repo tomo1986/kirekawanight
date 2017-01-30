@@ -231,7 +231,7 @@ class Shop < ApplicationRecord
         json.favorite_count shop.favorites.count
         json.review_count shop.reviews.where(reviews:{is_displayed: true}).count
         json.is_new shop.new_shop?
-        json.tags shop.tag_list ? shop.tag_list : nil
+        json.tags shop.tags ? Tag.to_jbuilders(shop.tags) : nil
       end
     end
   end

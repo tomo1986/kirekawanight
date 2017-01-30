@@ -151,11 +151,11 @@
                             span.title キャスト：
                             span ng-if="shop.girls_count"
                               | {{shop.girls_count}}人
-                        .content-point
+                        .content-point style="margin-bottom:.3rem;"
                           .shop-tags
                             span.title ポイント：
-                            a.btn ng-repeat="tag in shop.tags"
-                              | {{tag}}
+                            a.btn href="/shops/{{shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in shop.tags"
+                              | {{tag.name}}
                         p.content-service ng-if="shop.service"
                           | {{shop.service}}
             dir-pagination-controls boundary-links="true" template-url="/front/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)" ng-if="vm.shops.length > 0"

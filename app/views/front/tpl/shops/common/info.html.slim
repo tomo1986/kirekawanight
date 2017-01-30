@@ -6,9 +6,6 @@ main#main
         img src="{{vm.shopMainImg}}"
   .container
     .rank-box.shop-top-box
-      .shop-tags
-        a.btn ng-repeat="tag in vm.shop.tags"
-          | {{tag.name}}
       p.shop-copy ng-bind-html="vm.shop.service | noHTML | newlines"
       .attention ng-if="vm.shop.service"
         p
@@ -33,7 +30,7 @@ main#main
 
       .nohave-box ng-if="vm.discounts == 0" タイムセールはありません。
 
-    .info-box.shop-new-face ng-if="vm.shop && vm.shop.interview_ja"
+    .info-box ng-if="vm.shop && vm.shop.interview_ja"
       .page-title
         h2.title
           | INTORODUCTION
@@ -78,7 +75,7 @@ main#main
             dt ポイント
             dd
               .shop-tags
-                a.btn ng-repeat="tag in vm.shop.tags"
+                a.btn href="/shops/{{vm.shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in vm.shop.tags"
                   | {{tag.name}}
 
     #map.rank-box.shop-map.clearfix
