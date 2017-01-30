@@ -169,7 +169,7 @@ angular.module 'bijyoZukanAdmin'
       vm.canSubmit = false
 
       if vm.action == 'update'
-
+        console.log("soeya",vm.shop)
         shopService.updateShop(vm.shop).then((res) ->
           if res.data.code == 1
             vm.shop = res.data.shop

@@ -1059,6 +1059,11 @@ class Api::AdminController < ApiController
         service: params[:service],
         room_count: params[:room_count],
         seat_count: params[:seat_count],
+
+        catch_copy: params[:catch_copy],
+        access: params[:access],
+        tip_avg: params[:tip_avg],
+
         images: params[:images],
         way_images: params[:way_images]
     }
@@ -1127,7 +1132,10 @@ class Api::AdminController < ApiController
         seat_count: params[:seat_count],
         budget_yen: params[:budget_yen],
         budget_vnd: params[:budget_vnd],
-        budget_usd: params[:budget_usd]
+        budget_usd: params[:budget_usd],
+        catch_copy: params[:catch_copy],
+        access: params[:access],
+        tip_avg: params[:tip_avg]
     }
     if params[:images].present?
       params[:images].values.each do |image|

@@ -21,16 +21,21 @@ main#main
             div ng-if="!vm.shop.is_smoked"
               | 不可
         tr
-          th.res-form-table__th.parent-th.title-box.clearfix tip有無
+          th.res-form-table__th.parent-th.title-box.clearfix チップ有無
           td.res-form-table__td.parent-td.input-box
             div ng-if="vm.shop.tip == 'no_need'"
               | 無
             div ng-if="vm.shop.tip == 'need'"
               | 有
             div ng-if="vm.shop.tip == 'up_to_you'"
-              | 気持ちで
+              | 気持ち
             div style="color:red;" ng-if="vm.shop.tip == 'no_need'"
-              | ※キャストによってはTipを要求するキャストもいます。払ってしまった場合、自己責任でお願いいたします。
+              | ※キャストによってはチップを要求するキャストもいます。チップは自己責任でお願いいたします。
+        tr
+          th.res-form-table__th.parent-th.title-box.clearfix チップ平均
+          td.res-form-table__td.parent-td.input-box
+            div ng-if="vm.shop.tip_avg"
+              | {{vm.shop.tip_avg | number}}VND
         tr
           th.res-form-table__th.parent-th.title-box.clearfix OPEN時間
           td.res-form-table__td.parent-td.input-box

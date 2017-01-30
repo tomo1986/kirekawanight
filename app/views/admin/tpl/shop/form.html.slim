@@ -22,6 +22,13 @@ section.main-container.map-form-page shop-form-directive=""
             td.res-form-table__td.input-box
               select.form-control name="group_id" ng-model="vm.shop.group_id" ng-options="group.id as group.name for group in vm.groups"
                 option value=""  -- 選択してください --
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title キャッチコピー
+            td.res-form-table__td.input-box
+              textarea.form-control ng-model="vm.shop.catch_copy"
+
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" 職種
@@ -65,6 +72,11 @@ section.main-container.map-form-page shop-form-directive=""
                     i.fa.fa-map-marker
                 span.is-text-danger ng-if="vm.errors.address"
                   | {{vm.errors.address}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title アクセス
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="access" placeholder="アクセス方法入力" ng-model="vm.shop.access"
 
           tr
             th.res-form-table__th.title-box.clearfix
@@ -169,6 +181,14 @@ section.main-container.map-form-page shop-form-directive=""
                   input name="tip" type="radio" value="up_to_you" ng-model="vm.shop.tip" 気持ちで
               span.is-text-danger ng-if="vm.errors.tip"
                 | {{vm.errors.tip}}
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 平均チップ
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="tip_avg" placeholder="平均チップ" ng-model="vm.shop.tip_avg"
+
+
           tr
             th.res-form-table__th.title-box.clearfix
               span.title 予算(円)
@@ -214,8 +234,6 @@ section.main-container.map-form-page shop-form-directive=""
               input.form-control type="text" name="seat_count" required='' placeholder="45" ng-model="vm.shop.seat_count"
               span.is-text-danger ng-if="vm.errors.seat_count"
                 | {{vm.errors.seat_count}}
-
-
 
           tr
             th.res-form-table__th.title-box.clearfix

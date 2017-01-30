@@ -213,6 +213,11 @@ class Shop < ApplicationRecord
         json.budget_yen shop.budget_yen
         json.budget_vnd shop.budget_vnd
         json.budget_usd shop.budget_usd
+
+        json.catch_copy shop.catch_copy
+        json.access shop.access
+        json.tip_avg shop.tip_avg
+
         json.service shop.service
         json.ranking shop.ranking
         json.total_score shop.total_score
@@ -278,6 +283,9 @@ class Shop < ApplicationRecord
       json.budget_usd self.budget_usd
       json.room_count self.room_count
       json.seat_count self.seat_count
+      json.catch_copy self.catch_copy
+      json.access self.access
+      json.tip_avg self.tip_avg
 
       json.service self.service
       json.user_count self.users.count

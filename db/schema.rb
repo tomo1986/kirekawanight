@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130131349) do
+ActiveRecord::Schema.define(version: 20170130150308) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -256,6 +256,17 @@ ActiveRecord::Schema.define(version: 20170130131349) do
     t.integer  "admin_id"
   end
 
+  create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "type"
+    t.string   "shop_id"
+    t.string   "title"
+    t.string   "sub_title"
+    t.integer  "price"
+    t.integer  "sort_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "page_views", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "type"
     t.string   "subject_type"
@@ -389,6 +400,9 @@ ActiveRecord::Schema.define(version: 20170130131349) do
     t.string   "authentication_code"
     t.integer  "admin_id"
     t.string   "contract_person"
+    t.text     "catch_copy",             limit: 65535
+    t.string   "access"
+    t.integer  "tip_avg"
     t.index ["admin_id"], name: "index_shops_on_admin_id", using: :btree
     t.index ["email"], name: "index_shops_on_email", unique: true, using: :btree
     t.index ["group_id"], name: "index_shops_on_group_id", using: :btree
