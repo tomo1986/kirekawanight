@@ -12,13 +12,10 @@ angular.module 'bisyoujoZukanNight'
         vm.newKaraokeUsers = res.data.new_karaoke_users
         vm.newBarUsers = res.data.new_bar_users
         vm.newMassageUsers = res.data.new_massage_users
-        vm.newSexyUsers = res.data.new_sexy_users
         vm.timeServices = res.data.time_services
-
         vm.newKaraokeShops = res.data.new_karaoke_shops
         vm.newBarShops = res.data.new_bar_shops
         vm.newMassageShops = res.data.new_massage_shops
-
       )
 
 

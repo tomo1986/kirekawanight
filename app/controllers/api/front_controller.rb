@@ -394,17 +394,12 @@ class Api::FrontController < ApiController
     builders = Jbuilder.new do |json|
       json.reviews Review.to_jbuilders(reviews)
       json.favorites favorites
-      json.new_karaoke_users User.to_jbuilders(users.where(job_type: 'karaoke').order("id desc").limit(5))
-      json.new_bar_users User.to_jbuilders(users.where(job_type: 'bar').order("id desc").limit(5))
-      json.new_massage_users User.to_jbuilders(users.where(job_type: 'massage').order("id desc").limit(5))
-      json.new_sexy_users User.to_jbuilders(users.where(job_type: 'sexy',created_at: from...to).order("id desc").limit(5))
-
-      json.new_karaoke_shops Shop.to_jbuilders(shops.where(job_type: 'karaoke').order("id desc").limit(5))
-      json.new_bar_shops Shop.to_jbuilders(shops.where(job_type: 'bar').order("id desc").limit(5))
-      json.new_massage_shops Shop.to_jbuilders(shops.where(job_type: 'massage').order("id desc").limit(5))
-
-
-
+      json.new_karaoke_users User.to_jbuilders(users.where(job_type: 'karaoke').order("id desc").limit(1))
+      json.new_bar_users User.to_jbuilders(users.where(job_type: 'bar').order("id desc").limit(1))
+      json.new_massage_users User.to_jbuilders(users.where(job_type: 'massage').order("id desc").limit(1))
+      json.new_karaoke_shops Shop.to_jbuilders(shops.where(job_type: 'karaoke').order("id desc").limit(1))
+      json.new_bar_shops Shop.to_jbuilders(shops.where(job_type: 'bar').order("id desc").limit(1))
+      json.new_massage_shops Shop.to_jbuilders(shops.where(job_type: 'massage').order("id desc").limit(1))
       json.time_services Discount.to_jbuilders(Discount.open_time_discounts)
     end
     render json: builders.target!
