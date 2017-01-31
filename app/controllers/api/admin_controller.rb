@@ -1507,5 +1507,66 @@ class Api::AdminController < ApiController
     render json: builders.target!
   end
 
+  def api74
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    menus = Menu.where(shop_id: params[:shop_id])
+    builders = Jbuilder.new do |json|
+      json.code 1
+      json.menus Menu.to_jbuilders(menus)
+    end
+    render json: builders.target!
+  end
+
+  def api75
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    menu = Menu.new
+    builder = Jbuilder.new do |json|
+      json.code 1
+      json.menu menu.to_jbuilder
+    end
+    render json: builder.target!
+  end
+
+  def api76
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    menu = Menu.find_by(id: params[:id]) if params[:id].present?
+    menu = Menu.new if menu.blank?
+    if params[:type] == 'drink'
+      type = 'MenuType::Drink'
+    elsif params[:type] == 'food'
+      type = 'MenuType::Food'
+    elsif params[:type] == 'basic'
+      type = 'MenuType::Basic'
+    end
+
+    menu.type = type
+    menu.shop_id = params[:shop_id]
+    menu.title = params[:title]
+    menu.sub_title = params[:sub_title]
+    menu.price = params[:price]
+    menu.sort_no = params[:sort_no]
+    if menu.save!
+      builder = Jbuilder.new do |json|
+        json.menu menu.to_jbuilder
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors menu.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+  def api77
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    menu = Menu.find_by(id: params[:id]) if params[:id]
+    menu.destroy if menu.present?
+    builder = Jbuilder.new do |json|
+      json.code 1
+    end
+    render json: builder.target!
+  end
+
+
 
 end

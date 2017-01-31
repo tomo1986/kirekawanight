@@ -6,6 +6,7 @@ angular.module 'bijyoZukanAdmin'
 
     vm.init = ->
       vm.canSubmit = true
+      vm.menus = []
       vm.breadcrumb = [{name:'Dashboard',link:'/admin'},{name:'Shop',link:''}]
       vm.open_options={
         from:{is_from:true,date:null}
@@ -45,9 +46,53 @@ angular.module 'bijyoZukanAdmin'
       vm.action = $state.current.action
       if vm.action == 'update'
         vm.getShop()
+        vm.getMenus()
       else
         vm.newShop()
+        vm.getNewMenu()
         vm.breadcrumb.push({name:'New Shop',link:''})
+    vm.getMenus = ->
+      shopService.getMenus({shop_id: $state.params.id }).then((res) ->
+        if res.data.code == 1
+          angular.forEach(res.data.menus,(menu)->
+            vm.menus.push(menu)
+          )
+          vm.getNewMenu() if vm.menus.length == 0
+
+      )
+
+    vm.getNewMenu = ->
+      shopService.getNewMenu().then((res) ->
+        if res.data.code == 1
+          vm.menus.push(res.data.menu)
+      )
+    vm.setMenu = (menu,index) ->
+      params = {
+        id: if menu.id then menu.id else null
+        type: menu.type
+        shop_id: $state.params.id
+        title: menu.title
+        sub_title: menu.sub_title
+        price: menu.price
+        sort_no: menu.sort_no
+      }
+      shopService.getUpdateMenu(params).then((res) ->
+        if res.data.code == 1
+          vm.menus[index] = res.data.menu
+          modalService.error('保存しました。')
+      )
+    vm.deleteMenu = (menu,index) ->
+      if menu.id
+        shopService.getDeleteMenu(menu).then((res) ->
+          if res.data.code == 1
+            vm.menus.splice(index, 1)
+            modalService.error('削除しました。')
+        )
+      else
+        vm.menus.splice(index, 1)
+    vm.addMenu = ->
+      vm.getNewMenu()
+
     vm.getAdmins = ->
       shopService.getAdmins().then((res) ->
         vm.admins = res.data

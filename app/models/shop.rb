@@ -10,6 +10,10 @@ class Shop < ApplicationRecord
   has_many  :way_images, class_name: 'ImageType::ShopWay', as: :subject, dependent: :destroy, :autosave => true
 
   has_many :users
+  has_many :basic_menus, class_name: 'MenuType::Basic', dependent: :destroy, :autosave => true
+  has_many :drink_menus, class_name: 'MenuType::Drink', dependent: :destroy, :autosave => true
+  has_many :food_menus, class_name: 'MenuType::Food', dependent: :destroy, :autosave => true
+
   has_many :time_discounts, class_name: 'DiscountType::Time', as: :subject, dependent: :destroy, :autosave => true
 
   has_many  :contacts, class_name: 'ContactType::ShopDetail', as: :subject, dependent: :destroy, :autosave => true
@@ -286,13 +290,15 @@ class Shop < ApplicationRecord
       json.catch_copy self.catch_copy
       json.access self.access
       json.tip_avg self.tip_avg
-
       json.service self.service
       json.user_count self.users.count
       json.deleted_at self.deleted_at
       # json.note self.note
       json.images self.set_images
       json.way_images self.set_way_images
+      json.drink_menus self.drink_menus
+      json.food_menus self.food_menus
+      json.basic_menus self.basic_menus
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
       json.review_count self.reviews.where(reviews:{is_displayed: true}).count

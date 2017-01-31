@@ -80,6 +80,8 @@
                         span.rank ng-if="vm.filters.sort == 'ranking' && shop.ranking > 3"
                           | {{shop.ranking}}
                         | {{shop.name}}
+                        span style="font-size:.7rem;margin-left:.5rem;"
+                          | {{shop.name_kana}}
                 .shop-content-box
                   .row
                     .col-xs-12.col-sm-5.col-md-4.col-xl-4
@@ -89,10 +91,23 @@
                             i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
                           a href="/shops/bar/{{shop.id}}/info"
                             .is-new ng-if="shop.is_new" NEW
-                            span ng-if="shop.images[0]"
-                              img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像" style="width:100%;"
-                            span ng-if="!shop.images[0]"
-                              = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image", style: "width:100%;"
+                            .main-image ng-if="shop.images[0]"
+                              img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
+                            .main-image ng-if="!shop.images[0]"
+                              = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
+                            .clearfix
+                              .sub-image-left
+                                span ng-if="shop.images[1]"
+                                  img ng-src="{{shop.images[1].url}}" alt="{{shop.name}}の画像"
+                                span ng-if="!shop.images[1]"
+                                  = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
+                              .sub-image-right
+                                span ng-if="shop.images[2]"
+                                  img ng-src="{{shop.images[2].url}}" alt="{{shop.name}}の画像"
+                                span ng-if="!shop.images[2]"
+                                  = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
+
+
                     .col-xs-12.col-sm-7.col-md-8.col-xl-8
                       .col-row-right
                         .content-header.clearfix
@@ -119,18 +134,24 @@
                                 i.fa.fa-star-o aria-hidden="true"
                                 span ng-class="{'active': vm.filters.sort == 'favorite'}" {{shop.favorite_count}}件
                         .content-info
+                          h3.info-catch-copy ng-bind-html="shop.catch_copy | noHTML | newlines"
+
                           .info-budget
                             span.title 予算：
                             | ${{shop.budget_usd | number}}USD, {{shop.budget_vnd | number}}VND
+                          .info-address
+                            span.title アクセス：
+                            span
+                              | {{shop.access}}
                           .info-girls-count
                             span.title キャスト：
                             span ng-if="shop.girls_count"
                               | {{shop.girls_count}}人
-                        .content-point
+                        .content-point style="margin-bottom:.3rem;"
                           .shop-tags
                             span.title ポイント：
-                            a.btn ng-repeat="tag in shop.tags"
-                              | {{tag}}
+                            a.btn href="/shops/{{shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in shop.tags"
+                              | {{tag.name}}
                         p.content-service ng-if="shop.service"
                           | {{shop.service}}
             dir-pagination-controls boundary-links="true" template-url="/front/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)" ng-if="vm.shops.length > 0"

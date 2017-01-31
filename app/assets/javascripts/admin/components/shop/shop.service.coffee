@@ -93,6 +93,26 @@ angular.module 'bijyoZukanAdmin'
       return res
     )
 
+  sm.getMenus = (opt_params) ->
+    api.getPromise('/api/admin/api74',opt_params).then((res) ->
+      return res
+    )
+
+  sm.getNewMenu = () ->
+    api.getPromise('/api/admin/api75',{}).then((res) ->
+      return res
+    )
+
+  sm.getUpdateMenu = (menu) ->
+    api.postPromise('/api/admin/api76',menu).then((res) ->
+      return res
+    )
+
+  sm.getDeleteMenu = (menu) ->
+    api.postPromise('/api/admin/api77',menu).then((res) ->
+      return res
+    )
+
 
 
   service =
@@ -111,3 +131,7 @@ angular.module 'bijyoZukanAdmin'
     getGroups: sm.getGroups
     allGetShops: sm.allGetShops
     getUsers: sm.getUsers
+    getMenus: sm.getMenus
+    getNewMenu: sm.getNewMenu
+    getUpdateMenu: sm.getUpdateMenu
+    getDeleteMenu: sm.getDeleteMenu

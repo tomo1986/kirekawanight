@@ -47,3 +47,27 @@ main#main
               = image_tag 'front/card.png', alt:"card list"
             div ng-if="!vm.shop.is_credit"
               | 使用できません
+      .page-title ng-if="vm.shop.basic_menus.length > 0"
+        h2.title BASIC MENU
+      table.res-form-table ng-if="vm.shop.basic_menus.length > 0"
+        tr ng-repeat="menu in vm.shop.basic_menus"
+          th.res-form-table__th.parent-th.title-box.clearfix
+            | {{menu.title}}
+          td.res-form-table__td.parent-td.input-box
+            | {{menu.price | number}} VND
+      .page-title ng-if="vm.shop.drink_menus.length > 0"
+        h2.title DRINK MENU
+      table.res-form-table ng-if="vm.shop.drink_menus.length > 0"
+        tr ng-repeat="menu in vm.shop.drink_menus"
+          th.res-form-table__th.parent-th.title-box.clearfix
+            | {{menu.title}}
+          td.res-form-table__td.parent-td.input-box
+            | {{menu.price | number}} VND
+      .page-title ng-if="vm.shop.food_menus.length > 0"
+        h2.title FOOD MENU
+      table.res-form-table ng-if="vm.shop.food_menus.length > 0"
+        tr ng-repeat="menu in vm.shop.food_menus"
+          th.res-form-table__th.parent-th.title-box.clearfix
+            | {{menu.title}}
+          td.res-form-table__td.parent-td.input-box
+            | {{menu.price | number}} VND

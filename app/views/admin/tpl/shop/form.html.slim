@@ -296,3 +296,37 @@ section.main-container.map-form-page shop-form-directive=""
           button.btn.main-btn type="submit" 登録する
         .button-center ng-hide="vm.canSubmit"
           loading-directive size="125"
+
+    .row ng-if="vm.action == 'update'"
+      table.res-separate-table style="margin:2rem 0;"
+        thead
+          tr
+            th type
+            th menu
+            th sub_title
+            th price
+            th sort
+            th create
+            th delete
+        tbody
+          tr ng-repeat="menu in vm.menus track by $index"
+            td.clearfix data-label="type"
+              select.form-control name="type" ng-model="menu.type"
+                option value=""  -- 選択してください --
+                option value="basic" ng-selected="menu.type == 'MenuType::Basic'" 基本料金
+                option value="drink" ng-selected="menu.type == 'MenuType::Drink'" ドリンク
+                option value="food" ng-selected="menu.type == 'MenuType::Food'" フード
+            td.clearfix data-label="menu"
+              input.form-control type="text" name="menu" required='' placeholder="例）飲み放題" ng-model="menu.title"
+            td.clearfix data-label="sub_title"
+              input.form-control type="text" name="menu" required='' placeholder="例）混雑時はお時間頂きます" ng-model="menu.sub_title"
+            td.clearfix data-label="price"
+              input.form-control type="text" name="menu" required='' placeholder="例）200000" ng-model="menu.price" vnd
+            td.clearfix data-label="sort"
+              input.form-control type="text" name="menu" required='' placeholder="例）1" ng-model="menu.sort_no"
+            td.clearfix data-label="create"
+              a.btn.action-btn href="javascript:void(0)" ng-click="vm.setMenu(menu,$index)" 保存
+            td.clearfix data-label="delete"
+              a.btn.action-btn href="javascript:void(0)" ng-click="vm.deleteMenu(menu,$index)" 削除
+      .button-center
+        button.btn.main-btn type="button" ng-click="vm.addMenu()"  Menu 追加
