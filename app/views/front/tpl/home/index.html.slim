@@ -300,8 +300,8 @@
                       .content-point
                         .shop-tags
                           span.title ポイント：
-                          a.btn ng-repeat="tag in shop.tags"
-                            | {{tag}}
+                          a.btn href="/shops/{{shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in shop.tags"
+                            | {{tag.name}}
                       p.content-service ng-if="shop.service"
                         | {{shop.service}}
         .top-box style="margin: 1rem 0;"
@@ -362,8 +362,8 @@
                       .content-point
                         .shop-tags
                           span.title ポイント：
-                          a.btn ng-repeat="tag in shop.tags"
-                            | {{tag}}
+                          a.btn href="/shops/{{shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in shop.tags"
+                            | {{tag.name}}
                       p.content-service ng-if="shop.service"
                         | {{shop.service}}
         .top-box style="margin: 1rem 0;"
@@ -424,8 +424,8 @@
                       .content-point
                         .shop-tags
                           span.title ポイント：
-                          a.btn ng-repeat="tag in shop.tags"
-                            | {{tag}}
+                          a.btn href="/shops/{{shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in shop.tags"
+                            | {{tag.name}}
                       p.content-service ng-if="shop.service"
                         | {{shop.service}}
 
