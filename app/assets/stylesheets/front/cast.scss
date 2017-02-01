@@ -398,9 +398,12 @@
       dd {
         padding : .5rem;
         a {
-          color:#fff;
+          color: #E2D39F;
+          border-radius: 0;
           &:hover{
-            color: $_em_text;
+            color: #E2D39F;
+            text-shadow: 2px 2px 10px #f7cb47;
+            background-color: #333;
           }
         }
         label {
@@ -507,9 +510,12 @@
         margin-left : 20%;
         padding : .5rem;
         a {
-          color:#fff;
+          color: #E2D39F;
+          border-radius: 0;
           &:hover{
-            color: $_em_text;
+            color: #E2D39F;
+            text-shadow: 2px 2px 10px #f7cb47;
+            background-color: #333;
           }
         }
 
@@ -757,7 +763,7 @@
     p {
       font-size: 1.2rem;
       line-height: 2rem;
-      color: #ddd;
+      color: #aaa;
       word-wrap: break-word;
       margin: 0;
     }
