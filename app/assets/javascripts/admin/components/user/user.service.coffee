@@ -57,19 +57,57 @@ angular.module 'bijyoZukanAdmin'
         placeholder: '優しい人'
       }
     }
+    character: {
+      is_displayed: true
+      ja:{
+        name: '自分の性格は？'
+        placeholder: 'マイペース'
+
+      }
+      vn:{
+        name: '自分の性格は？'
+        placeholder: 'マイペース'
+
+      }
+      en:{
+        name: '自分の性格は？'
+        placeholder: 'マイペース'
+
+      }
+
+    }
+    best_feature:{
+      is_displayed: true
+      ja:{
+        name: 'チャームポイントは？'
+        placeholder: 'えくぼ'
+
+      }
+      vn:{
+        name: 'チャームポイントは？'
+        placeholder: 'えくぼ'
+
+      }
+      en:{
+        name: 'チャームポイントは？'
+        placeholder: 'えくぼ'
+
+      }
+
+    }
 
     like_boy:{
-      is_displayed: false
+      is_displayed: true
       ja:{
-        name: '好きな男のタイプ'
+        name: '好みの男性のタイプは？'
         placeholder: '優しい人'
       }
       vn:{
-        name: '好きな男のタイプ'
+        name: '好みの男性のタイプは？'
         placeholder: '優しい人'
       }
       en:{
-        name: '好きな男のタイプ'
+        name: '好みの男性のタイプは？'
         placeholder: '優しい人'
       }
     }
@@ -92,7 +130,7 @@ angular.module 'bijyoZukanAdmin'
       }
     }
     my_color:{
-      is_displayed: false
+      is_displayed: true
       ja:{
         name: '自分を色で例えると？'
         placeholder: '青'
@@ -126,19 +164,19 @@ angular.module 'bijyoZukanAdmin'
       }
     }
     love_situation: {
-      is_displayed: false
+      is_displayed: true
       ja:{
-        name: '理想の告白シチュエーション'
+        name: 'どんな誘われ方をしたい？'
         placeholder: '聞き逃しそうなくらい、さらっと言われる。'
 
       }
       vn:{
-        name: '理想の告白シチュエーション'
+        name: 'どんな誘われ方をしたい？'
         placeholder: '聞き逃しそうなくらい、さらっと言われる。'
 
       }
       en:{
-        name: '理想の告白シチュエーション'
+        name: 'どんな誘われ方をしたい？'
         placeholder: '聞き逃しそうなくらい、さらっと言われる。'
 
       }
@@ -164,7 +202,7 @@ angular.module 'bijyoZukanAdmin'
 
     }
     how_to_approach: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: 'how_to_approach?'
         placeholder: '好きな人には、結構積極的になれるタイプだと思います。「会いたい！」と真っ直ぐ気持ちを伝えます。'
@@ -185,7 +223,7 @@ angular.module 'bijyoZukanAdmin'
     how_to_holiday: {
       is_displayed: true
       ja:{
-        name: ' how one spends a day off'
+        name: ' 休日の過ごし方'
         placeholder: 'フルートを練習したり、読書をしたり、のんびりまったり過ごす事が多いです。'
 
       }
@@ -257,9 +295,9 @@ angular.module 'bijyoZukanAdmin'
 
     }
     like_music: {
-      is_displayed: false
+      is_displayed: true
       ja:{
-        name: '好きな音楽'
+        name: '好きな音は?'
         placeholder: 'exile'
 
       }
@@ -276,7 +314,7 @@ angular.module 'bijyoZukanAdmin'
 
     }
     like_movie: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: 'What is your favorite movie?'
         placeholder: 'タイタニック'
@@ -295,19 +333,19 @@ angular.module 'bijyoZukanAdmin'
 
     }
     like_place: {
-      is_displayed: false
+      is_displayed: true
       ja:{
-        name: '好きな場所'
+        name: 'デートしたい場所は？'
         placeholder: '自分の部屋'
 
       }
       vn:{
-        name: '好きな場所'
+        name: 'デートしたい場所は？'
         placeholder: '自分の部屋'
 
       }
       en:{
-        name: '好きな場所'
+        name: 'デートしたい場所は？'
         placeholder: '自分の部屋'
 
       }
@@ -335,8 +373,8 @@ angular.module 'bijyoZukanAdmin'
     like_food: {
       is_displayed: true
       ja:{
-        name: 'What is your favorite food?'
-        placeholder: 'カレー'
+        name: '好きな食べ物は？'
+        placeholder: 'りんご'
 
       }
       vn:{
@@ -352,44 +390,25 @@ angular.module 'bijyoZukanAdmin'
 
     }
     like_drink: {
-      is_displayed: false
-      ja:{
-        name: '好きな飲み物'
-        placeholder: 'コーラ'
-
-      }
-      vn:{
-        name: '好きな飲み物'
-        placeholder: 'コーラ'
-
-      }
-      en:{
-        name: '好きな飲み物'
-        placeholder: 'コーラ'
-
-      }
-
-    }
-
-    best_feature:{
       is_displayed: true
       ja:{
-        name: 'best feature point'
-        placeholder: 'えくぼ'
+        name: '好きなお酒は？'
+        placeholder: 'ビール'
 
       }
       vn:{
-        name: 'チャームポイント'
-        placeholder: 'えくぼ'
+        name: '好きなお酒は？'
+        placeholder: 'ビール'
 
       }
       en:{
-        name: 'チャームポイント'
-        placeholder: 'えくぼ'
+        name: '好きなお酒は？'
+        placeholder: 'ビール'
 
       }
 
     }
+
     love_tips: {
       is_displayed: false
       ja:{
@@ -409,25 +428,6 @@ angular.module 'bijyoZukanAdmin'
       }
 
     }
-    character: {
-      is_displayed: true
-      ja:{
-        name: 'Character'
-        placeholder: 'マイペース'
-
-      }
-      vn:{
-        name: '性格は？'
-        placeholder: 'マイペース'
-
-      }
-      en:{
-        name: '性格は？'
-        placeholder: 'マイペース'
-
-      }
-
-    }
 
 
 
@@ -438,7 +438,7 @@ angular.module 'bijyoZukanAdmin'
     hobby: {
       is_displayed: true
       ja:{
-        name: 'Hobby'
+        name: '趣味・特技'
         placeholder: '半身浴　生花'
 
       }
@@ -457,8 +457,8 @@ angular.module 'bijyoZukanAdmin'
     skill: {
       is_displayed: true
       ja:{
-        name: 'Skill'
-        placeholder: '目で殺す'
+        name: 'お酒は強いですか？'
+        placeholder: 'お勉強中です。'
 
       }
       vn:{
@@ -474,7 +474,7 @@ angular.module 'bijyoZukanAdmin'
 
     }
     gesture: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: 'Heterosexuality you like'
         placeholder: '幸せそうにご飯を食べるひと'
@@ -489,7 +489,7 @@ angular.module 'bijyoZukanAdmin'
       }
     }
     attracted: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: 'How do you like man?'
         placeholder: '私は結構おっちょこちょいで ぬけている所が多いからか、しっかりしているお兄ちゃんみたいな人がタイプです（笑）'
@@ -547,7 +547,7 @@ angular.module 'bijyoZukanAdmin'
 
     }
     my_fad: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: 'マイブーム'
         placeholder: 'NARUTOを見ること'
@@ -567,7 +567,7 @@ angular.module 'bijyoZukanAdmin'
     go: {
       is_displayed: true
       ja:{
-        name: 'Now I want to go no.1'
+        name: '今一番行きたい場所は？'
         placeholder: '東京ディズニーランド'
 
       }
@@ -586,7 +586,7 @@ angular.module 'bijyoZukanAdmin'
     want: {
       is_displayed: true
       ja:{
-        name: 'Now I want something '
+        name: '今一番欲しいものは？'
         placeholder: 'あなたの心'
 
       }
@@ -700,7 +700,7 @@ angular.module 'bijyoZukanAdmin'
     dream: {
       is_displayed: true
       ja:{
-        name: 'My dream'
+        name: '将来の夢は？'
         placeholder: 'お金持ち'
 
       }
@@ -719,7 +719,7 @@ angular.module 'bijyoZukanAdmin'
     secret_talk: {
       is_displayed: true
       ja:{
-        name: 'Secret talk'
+        name: 'ここだけの話'
         placeholder: '実は私パイパンです。'
 
       }

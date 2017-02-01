@@ -36,7 +36,7 @@
     <favorites_list name="bisyoujo_zukan_night" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.4488286">
+    <splitter split-orientation="vertical" split-proportion="0.4512947">
       <split-first>
         <leaf>
           <file leaf-file-name="menu.rb" pinned="false" current-in-tab="false">
@@ -55,8 +55,69 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
                   <folding>
-                    <element signature="e#246#271#0" expanded="true" />
-                    <element signature="e#399#424#0" expanded="true" />
+                    <element signature="e#677#702#0" expanded="false" />
+                    <element signature="e#965#990#0" expanded="false" />
+                    <element signature="e#1905#1930#0" expanded="false" />
+                    <element signature="e#2055#2080#0" expanded="false" />
+                    <element signature="e#2374#2399#0" expanded="false" />
+                    <element signature="e#2889#2914#0" expanded="false" />
+                    <element signature="e#3125#3150#0" expanded="false" />
+                    <element signature="e#3785#3810#0" expanded="false" />
+                    <element signature="e#4042#4067#0" expanded="false" />
+                    <element signature="e#5075#5100#0" expanded="false" />
+                    <element signature="e#5201#5225#0" expanded="false" />
+                    <element signature="e#5598#5623#0" expanded="false" />
+                    <element signature="e#6177#6202#0" expanded="false" />
+                    <element signature="e#6301#6325#0" expanded="false" />
+                    <element signature="e#6531#6556#0" expanded="false" />
+                    <element signature="e#6792#6817#0" expanded="false" />
+                    <element signature="e#10260#10285#0" expanded="false" />
+                    <element signature="e#10384#10408#0" expanded="false" />
+                    <element signature="e#14596#14621#0" expanded="false" />
+                    <element signature="e#14720#14744#0" expanded="false" />
+                    <element signature="e#15143#15168#0" expanded="false" />
+                    <element signature="e#15674#15699#0" expanded="false" />
+                    <element signature="e#15922#15947#0" expanded="false" />
+                    <element signature="e#16702#16727#0" expanded="false" />
+                    <element signature="e#16832#16856#0" expanded="false" />
+                    <element signature="e#17041#17066#0" expanded="false" />
+                    <element signature="e#17171#17195#0" expanded="false" />
+                    <element signature="e#17915#17940#0" expanded="false" />
+                    <element signature="e#18420#18445#0" expanded="false" />
+                    <element signature="e#18664#18689#0" expanded="false" />
+                    <element signature="e#19593#19618#0" expanded="false" />
+                    <element signature="e#19721#19746#0" expanded="false" />
+                    <element signature="e#19951#19976#0" expanded="false" />
+                    <element signature="e#20079#20104#0" expanded="false" />
+                    <element signature="e#35459#35484#0" expanded="false" />
+                    <element signature="e#35947#35972#0" expanded="false" />
+                    <element signature="e#36180#36205#0" expanded="false" />
+                    <element signature="e#38202#38227#0" expanded="false" />
+                    <element signature="e#38456#38481#0" expanded="false" />
+                    <element signature="e#41109#41134#0" expanded="false" />
+                    <element signature="e#41233#41257#0" expanded="false" />
+                    <element signature="e#41670#41695#0" expanded="false" />
+                    <element signature="e#43038#43063#0" expanded="false" />
+                    <element signature="e#43474#43499#0" expanded="false" />
+                    <element signature="e#44008#44033#0" expanded="false" />
+                    <element signature="e#44274#44299#0" expanded="false" />
+                    <element signature="e#44519#44544#0" expanded="false" />
+                    <element signature="e#45252#45277#0" expanded="false" />
+                    <element signature="e#46006#46031#0" expanded="false" />
+                    <element signature="e#47207#47232#0" expanded="false" />
+                    <element signature="e#47937#47962#0" expanded="false" />
+                    <element signature="e#48262#48287#0" expanded="false" />
+                    <element signature="e#49449#49474#0" expanded="false" />
+                    <element signature="e#49772#49797#0" expanded="false" />
+                    <element signature="e#50115#50140#0" expanded="false" />
+                    <element signature="e#50448#50473#0" expanded="false" />
+                    <element signature="e#50696#50721#0" expanded="false" />
+                    <element signature="e#50961#50986#0" expanded="false" />
+                    <element signature="e#51414#51439#0" expanded="false" />
+                    <element signature="e#51857#51882#0" expanded="false" />
+                    <element signature="e#52149#52174#0" expanded="false" />
+                    <element signature="e#52400#52425#0" expanded="false" />
+                    <element signature="e#53267#53292#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -65,78 +126,38 @@
           <file leaf-file-name="shop.service.coffee" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.75">
+                <state vertical-scroll-proportion="-0.0">
                   <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user.service.coffee" pinned="false" current-in-tab="true">
+          <file leaf-file-name="user.service.coffee" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/user/user.service.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.37373737">
-                  <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+                <state vertical-scroll-proportion="-4.7843137">
+                  <caret line="775" column="3" selection-start-line="43" selection-start-column="0" selection-end-line="775" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="form.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/shop/form.html.slim">
+            <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/user/form.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="315" column="82" selection-start-line="315" selection-start-column="82" selection-end-line="315" selection-end-column="82" />
+                <state vertical-scroll-proportion="-14.583333">
+                  <caret line="223" column="143" selection-start-line="223" selection-start-column="143" selection-end-line="223" selection-end-column="170" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="basic.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/menu_type/basic.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/index.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/routes.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="277" column="19" selection-start-line="277" selection-start-column="11" selection-end-line="277" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cast.service.coffee" pinned="false" current-in-tab="false">
+          <file leaf-file-name="cast.service.coffee" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/cast.service.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="shop.service.coffee" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/shop.service.coffee">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.75">
-                  <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+                <state vertical-scroll-proportion="0.1262136">
+                  <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -151,7 +172,18 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="95" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-                  <folding />
+                  <folding>
+                    <element signature="e#376#404#0" expanded="false" />
+                    <element signature="e#2297#2325#0" expanded="false" />
+                    <element signature="e#2456#2484#0" expanded="false" />
+                    <element signature="e#5489#5513#0" expanded="false" />
+                    <element signature="e#12173#12203#0" expanded="false" />
+                    <element signature="e#12773#12803#0" expanded="false" />
+                    <element signature="e#12935#12970#0" expanded="false" />
+                    <element signature="e#18303#18333#0" expanded="false" />
+                    <element signature="e#25685#25709#0" expanded="false" />
+                    <element signature="e#26131#26155#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -176,11 +208,41 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/unicorn/production.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.053380784">
-                  <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="info.html.slim" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.9230769">
+                  <caret line="113" column="35" selection-start-line="113" selection-start-column="35" selection-end-line="113" selection-end-column="35" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="cast.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.3137255">
+                  <caret line="570" column="0" selection-start-line="570" selection-start-column="0" selection-end-line="570" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="detail.directive.coffee" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/karaoke/detail.directive.coffee">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="1.875">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -216,8 +278,6 @@
         <option value="$PROJECT_DIR$/app/models/pickup.rb" />
         <option value="$PROJECT_DIR$/app/models/hoge.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/tpl/user/form.html.slim" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim" />
         <option value="$PROJECT_DIR$/db/migrate/20170130145001_add_catch_copy_shops.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20170130150308_create_menus.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss" />
@@ -237,13 +297,15 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/massage/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/home/index.html.slim" />
         <option value="$PROJECT_DIR$/app/controllers/api/front_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/cast.service.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/shop.service.coffee" />
         <option value="$PROJECT_DIR$/app/controllers/api/admin_controller.rb" />
         <option value="$PROJECT_DIR$/config/unicorn/production.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/user/user.service.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/cast.service.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim" />
       </list>
     </option>
   </component>
@@ -260,7 +322,7 @@
     <option name="width" value="1436" />
     <option name="height" value="877" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -283,6 +345,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -328,22 +392,8 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,11 +411,211 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,6 +658,10 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -427,15 +681,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="RailsProjectView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,6 +717,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -658,16 +934,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1436" height="877" extended-state="6" />
+    <frame x="4" y="23" width="1436" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30086315" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17575322" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1779053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -676,6 +951,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30086315" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292232" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -707,14 +983,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/invoice/invoice.service.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1764706">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20170130131349_add_quantilty_pickups.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -726,6 +994,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8235294">
           <caret line="13" column="17" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -733,6 +1002,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -747,6 +1017,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="14.375">
           <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -772,13 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1035" column="0" selection-start-line="1035" selection-start-column="0" selection-end-line="1035" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20170126114213_add_deleted_at_reviews.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -797,20 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18028846">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15306123">
-          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/user/form.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.502551">
-          <caret line="222" column="85" selection-start-line="222" selection-start-column="85" selection-end-line="222" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -924,7 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="21" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +1195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="315" column="82" selection-start-line="315" selection-start-column="82" selection-end-line="315" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,21 +1263,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/cast.service.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-          <folding />
+          <folding>
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".main-content.container shop-karaoke-index-directive=&quot;&quot;" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".rank-box" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".row.shop-list-box" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".col-xs-12.col-sm-12.col-md-3.col-xl-3.side" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".col-row-left.clearfix" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".total-count-box" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".side" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".side--menu-block" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".side--menu-inner" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".box ng-show=&quot;vm.displayedSort&quot;" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".side--menu-block" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".side--menu-inner" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".box ng-show=&quot;vm.displayedPoint&quot;" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".search-btn-box" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".col-xs-12.col-sm-12.col-md-9.col-xl-9" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".col-row-right" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".shop-list--main" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".shop-header.clearfix" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".shop-header--wrap" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".shop-name" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".shop-content-box" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".row" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".col-xs-12.col-sm-5.col-md-4.col-xl-4" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".col-row-left.clearfix" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".shop-image" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".is-new ng-if=&quot;shop.is_new&quot; NEW" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".main-image ng-if=&quot;shop.images[0]&quot;" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".main-image ng-if=&quot;!shop.images[0]&quot;" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".clearfix" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".sub-image-left" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".sub-image-right" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".col-xs-12.col-sm-7.col-md-8.col-xl-8" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".col-row-right" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".content-header.clearfix" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".star-box" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".head--star" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".head--score" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".count-box.clearfix" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".review-count-box" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".support-count-box" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".favorite-count-box" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".content-info" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".info-budget" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".info-address" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".info-girls-count" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".content-point style=&quot;margin-bottom:.3rem;&quot;" />
+            <marker date="1485872147000" expanded="true" signature="-1:-1" placeholder=".shop-tags" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/shop.service.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
+        <state vertical-scroll-proportion="0.0">
           <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
           <folding />
         </state>
@@ -1039,15 +1327,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="95" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/unicorn/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053380784">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="e#376#404#0" expanded="false" />
+            <element signature="e#2297#2325#0" expanded="false" />
+            <element signature="e#2456#2484#0" expanded="false" />
+            <element signature="e#5489#5513#0" expanded="false" />
+            <element signature="e#12173#12203#0" expanded="false" />
+            <element signature="e#12773#12803#0" expanded="false" />
+            <element signature="e#12935#12970#0" expanded="false" />
+            <element signature="e#18303#18333#0" expanded="false" />
+            <element signature="e#25685#25709#0" expanded="false" />
+            <element signature="e#26131#26155#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1056,8 +1347,69 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
-            <element signature="e#246#271#0" expanded="true" />
-            <element signature="e#399#424#0" expanded="true" />
+            <element signature="e#677#702#0" expanded="false" />
+            <element signature="e#965#990#0" expanded="false" />
+            <element signature="e#1905#1930#0" expanded="false" />
+            <element signature="e#2055#2080#0" expanded="false" />
+            <element signature="e#2374#2399#0" expanded="false" />
+            <element signature="e#2889#2914#0" expanded="false" />
+            <element signature="e#3125#3150#0" expanded="false" />
+            <element signature="e#3785#3810#0" expanded="false" />
+            <element signature="e#4042#4067#0" expanded="false" />
+            <element signature="e#5075#5100#0" expanded="false" />
+            <element signature="e#5201#5225#0" expanded="false" />
+            <element signature="e#5598#5623#0" expanded="false" />
+            <element signature="e#6177#6202#0" expanded="false" />
+            <element signature="e#6301#6325#0" expanded="false" />
+            <element signature="e#6531#6556#0" expanded="false" />
+            <element signature="e#6792#6817#0" expanded="false" />
+            <element signature="e#10260#10285#0" expanded="false" />
+            <element signature="e#10384#10408#0" expanded="false" />
+            <element signature="e#14596#14621#0" expanded="false" />
+            <element signature="e#14720#14744#0" expanded="false" />
+            <element signature="e#15143#15168#0" expanded="false" />
+            <element signature="e#15674#15699#0" expanded="false" />
+            <element signature="e#15922#15947#0" expanded="false" />
+            <element signature="e#16702#16727#0" expanded="false" />
+            <element signature="e#16832#16856#0" expanded="false" />
+            <element signature="e#17041#17066#0" expanded="false" />
+            <element signature="e#17171#17195#0" expanded="false" />
+            <element signature="e#17915#17940#0" expanded="false" />
+            <element signature="e#18420#18445#0" expanded="false" />
+            <element signature="e#18664#18689#0" expanded="false" />
+            <element signature="e#19593#19618#0" expanded="false" />
+            <element signature="e#19721#19746#0" expanded="false" />
+            <element signature="e#19951#19976#0" expanded="false" />
+            <element signature="e#20079#20104#0" expanded="false" />
+            <element signature="e#35459#35484#0" expanded="false" />
+            <element signature="e#35947#35972#0" expanded="false" />
+            <element signature="e#36180#36205#0" expanded="false" />
+            <element signature="e#38202#38227#0" expanded="false" />
+            <element signature="e#38456#38481#0" expanded="false" />
+            <element signature="e#41109#41134#0" expanded="false" />
+            <element signature="e#41233#41257#0" expanded="false" />
+            <element signature="e#41670#41695#0" expanded="false" />
+            <element signature="e#43038#43063#0" expanded="false" />
+            <element signature="e#43474#43499#0" expanded="false" />
+            <element signature="e#44008#44033#0" expanded="false" />
+            <element signature="e#44274#44299#0" expanded="false" />
+            <element signature="e#44519#44544#0" expanded="false" />
+            <element signature="e#45252#45277#0" expanded="false" />
+            <element signature="e#46006#46031#0" expanded="false" />
+            <element signature="e#47207#47232#0" expanded="false" />
+            <element signature="e#47937#47962#0" expanded="false" />
+            <element signature="e#48262#48287#0" expanded="false" />
+            <element signature="e#49449#49474#0" expanded="false" />
+            <element signature="e#49772#49797#0" expanded="false" />
+            <element signature="e#50115#50140#0" expanded="false" />
+            <element signature="e#50448#50473#0" expanded="false" />
+            <element signature="e#50696#50721#0" expanded="false" />
+            <element signature="e#50961#50986#0" expanded="false" />
+            <element signature="e#51414#51439#0" expanded="false" />
+            <element signature="e#51857#51882#0" expanded="false" />
+            <element signature="e#52149#52174#0" expanded="false" />
+            <element signature="e#52400#52425#0" expanded="false" />
+            <element signature="e#53267#53292#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1072,16 +1424,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.75">
+        <state vertical-scroll-proportion="0.0">
           <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/user/form.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.583333">
+          <caret line="223" column="143" selection-start-line="223" selection-start-column="143" selection-end-line="223" selection-end-column="170" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/unicorn/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/user/user.service.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37373737">
-          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        <state vertical-scroll-proportion="-4.7843137">
+          <caret line="775" column="3" selection-start-line="43" selection-start-column="0" selection-end-line="775" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/karaoke/detail.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.875">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/cast.service.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1262136">
+          <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3137255">
+          <caret line="570" column="0" selection-start-line="570" selection-start-column="0" selection-end-line="570" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9230769">
+          <caret line="113" column="35" selection-start-line="113" selection-start-column="35" selection-end-line="113" selection-end-column="35" />
           <folding />
         </state>
       </provider>
