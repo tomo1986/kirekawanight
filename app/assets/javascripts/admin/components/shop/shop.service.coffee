@@ -45,7 +45,7 @@ angular.module 'bijyoZukanAdmin'
     )
 
   sm.getTags = ->
-    api.getPromise('/api/admin/all_tags',{}).then((res) ->
+    api.getPromise('/api/admin/shop_tags',{}).then((res) ->
       return res
     )
 

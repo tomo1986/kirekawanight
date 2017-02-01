@@ -234,6 +234,8 @@ Rails.application.routes.draw do
       get :all_shops
       get :all_groups
       get :all_tags
+      get :shop_tags
+      get :user_tags
       post :api0
       post :api0_1
       get :api1
@@ -274,6 +276,8 @@ Rails.application.routes.draw do
       get :all_shops
       get :all_groups
       get :all_tags
+      get :shop_tags
+      get :user_tags
       post :api1
       get :api2
       get :api3

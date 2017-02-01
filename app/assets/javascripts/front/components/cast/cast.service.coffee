@@ -45,7 +45,7 @@ angular.module 'bisyoujoZukanNight'
       return res
     )
   sm.getTags = ->
-    api.getPromise('/api/front/all_tags',{}).then((res) ->
+    api.getPromise('/api/front/user_tags',{}).then((res) ->
       return res
     )
 

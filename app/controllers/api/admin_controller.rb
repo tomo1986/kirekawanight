@@ -50,6 +50,21 @@ class Api::AdminController < ApiController
     end
     render json: builders.target!
   end
+  def shop_tags
+    tags = Tag.joins(:taggings).where(taggings:{taggable_type:'Shop'}).uniq
+    builders = Jbuilder.new do |json|
+      json.tags Tag.to_jbuilders(tags)
+    end
+    render json: builders.target!
+  end
+
+  def user_tags
+    tags = Tag.joins(:taggings).where(taggings:{taggable_type:'User'}).uniq
+    builders = Jbuilder.new do |json|
+      json.tags Tag.to_jbuilders(tags)
+    end
+    render json: builders.target!
+  end
 
   def api1
     email = params[:email]

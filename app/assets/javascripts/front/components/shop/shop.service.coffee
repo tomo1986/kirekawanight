@@ -23,7 +23,7 @@ angular.module 'bisyoujoZukanNight'
       return res
     )
   sm.getTags = ->
-    api.getPromise('/api/front/all_tags',{}).then((res) ->
+    api.getPromise('/api/front/shop_tags',{}).then((res) ->
       return res
     )
   sm.getReviews = (opt_params) ->
@@ -49,7 +49,7 @@ angular.module 'bisyoujoZukanNight'
       return res
     )
   sm.gatTags = ->
-    api.getPromise('/api/front/all_tags',params).then((res) ->
+    api.getPromise('/api/front/shop_tags',params).then((res) ->
       return res
     )
 
