@@ -28,6 +28,13 @@ section.main-container.map-form-page shop-form-directive=""
               span.title キャッチコピー
             td.res-form-table__td.input-box
               textarea.form-control ng-model="vm.shop.catch_copy"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title お店からの一言
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="one_point" required='' placeholder="スタッフ一同心よりお待ちしています。" ng-model="vm.shop.one_point"
+
+
 
           tr
             th.res-form-table__th.title-box.clearfix
@@ -121,13 +128,36 @@ section.main-container.map-form-page shop-form-directive=""
               label.form-check-inline
                 input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.shop.is_english"
                 | english
-              label.form-check-inline
-                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.shop.is_chinese"
-                | chinese
-              label.form-check-inline
-                input#inlineCheckbox1.form-check-input type="checkbox" value="true" ng-model="vm.shop.is_korean"
-                | korean
-
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 日本のカラオケ機器か？
+            td.res-form-table__td.input-box
+              label.radio-inline
+                input type="radio" ng-model="vm.shop.karaoke_machine" value="1"
+                | はい
+              label.radio-inline
+                input type="radio" ng-model="vm.shop.karaoke_machine" value="0"
+                | いいえ
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title チャージ料金は？
+            td.res-form-table__td.input-box
+              label.radio-inline
+                input type="radio" ng-model="vm.shop.charge" value="1"
+                | あり
+              label.radio-inline
+                input type="radio" ng-model="vm.shop.charge" value="0"
+                | なし
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ママさんチップは？
+            td.res-form-table__td.input-box
+              label.radio-inline
+                input type="radio" ng-model="vm.shop.mama_tip" value="1"
+                | あり
+              label.radio-inline
+                input type="radio" ng-model="vm.shop.mama_tip" value="0"
+                | なし
           tr
             th.res-form-table__th.title-box.clearfix
               span.title 喫煙

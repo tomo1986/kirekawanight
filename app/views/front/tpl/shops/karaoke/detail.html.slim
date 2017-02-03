@@ -1,8 +1,8 @@
 .main-content.shop-detail-page.clearfix shop-detail-directive=""
   .container
     breadcrumb-directive data="vm.breadcrumb"
-  .container
-    .shop-header.clearfix  ng-if="vm.shop"
+  .container ng-if="vm.shop"
+    .shop-header.clearfix
       .ranking ng-if="vm.shop.review_count > 0"
         .clearfix
           .head-star-box

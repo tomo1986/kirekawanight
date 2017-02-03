@@ -218,6 +218,11 @@ class Shop < ApplicationRecord
         json.budget_vnd shop.budget_vnd
         json.budget_usd shop.budget_usd
 
+        json.one_point shop.one_point
+        json.charge shop.charge
+        json.mama_tip shop.mama_tip
+        json.karaoke_machine shop.karaoke_machine
+
         json.catch_copy shop.catch_copy
         json.access shop.access
         json.tip_avg shop.tip_avg
@@ -285,6 +290,11 @@ class Shop < ApplicationRecord
       json.budget_yen self.budget_yen
       json.budget_vnd self.budget_vnd
       json.budget_usd self.budget_usd
+      json.one_point self.one_point
+      json.charge self.charge
+      json.mama_tip self.mama_tip
+      json.karaoke_machine self.karaoke_machine
+
       json.room_count self.room_count
       json.seat_count self.seat_count
       json.catch_copy self.catch_copy

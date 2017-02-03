@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130150308) do
+ActiveRecord::Schema.define(version: 20170203143832) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -403,6 +403,10 @@ ActiveRecord::Schema.define(version: 20170130150308) do
     t.text     "catch_copy",             limit: 65535
     t.string   "access"
     t.integer  "tip_avg"
+    t.boolean  "mama_tip"
+    t.boolean  "charge"
+    t.boolean  "karaoke_machine"
+    t.string   "one_point"
     t.index ["admin_id"], name: "index_shops_on_admin_id", using: :btree
     t.index ["email"], name: "index_shops_on_email", unique: true, using: :btree
     t.index ["group_id"], name: "index_shops_on_group_id", using: :btree
@@ -533,6 +537,7 @@ ActiveRecord::Schema.define(version: 20170130150308) do
     t.float    "score5",         limit: 24
     t.float    "total_score",    limit: 24
     t.integer  "ranking"
+    t.string   "one_point"
     t.index ["is_chinese"], name: "index_users_on_is_chinese", using: :btree
     t.index ["is_english"], name: "index_users_on_is_english", using: :btree
     t.index ["is_japanese"], name: "index_users_on_is_japanese", using: :btree

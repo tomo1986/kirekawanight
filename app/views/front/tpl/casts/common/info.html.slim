@@ -1,5 +1,5 @@
 main#main
-  .cast-detail-page.clearfix
+  .cast-detail-page.clearfix ng-if="vm.cast"
     .cast-detail.clearfix
       .photo-area
         .fream
@@ -39,17 +39,14 @@ main#main
             li ng-repeat="image in vm.cast.images track by $index"
               a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
                 img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"
-    .comment.info-box.clearfix ng-if="vm.cast && vm.cast.profile && vm.cast.profile.interview"
-      .page-title
-        h2.title
-          | Introduction
-      .intoroduction-box ng-bind-html="vm.cast.profile.interview"
-
     .col-md-12.detail.clearfix.info-box
       .row
         .page-title
           h2.title
             | PROFILE
+        .intoroduction-box
+          h3
+            | {{vm.cast.one_point}}
         .row
           .col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-3.col-lg-offset-0.col-xl-3.col-xl-offset-0
             .col-row-left.clearfix ng-if="vm.cast.images[0] && vm.cast.images[0].url"
@@ -59,56 +56,54 @@ main#main
 
           .col-xs-12.col-sm-8.col-md-8.col-lg-9.col-xl-9
             .col-row-right.clearfix
-              dl.profile.clearfix
-                dt キャスト No
-                dd
-                  | {{vm.cast.id}}
-                dt 名前
-                dd
-                  | {{vm.cast.name}} {{vm.cast.nick_name}}
-                dt ショップ名
-                dd
-                  a href="/shops/karaoke/{{vm.cast.shop.id}}/info" ng-if="vm.cast.shop"
-                    | {{vm.cast.shop.name}}
-                  span ng-if="!vm.cast.shop"
-                    | 所属なし
-                dt スタイル
-                dd
-                  - if customer_signed_in?
-                    | T{{vm.cast.height || '-'}} W{{vm.cast.weight || '-'}} B{{vm.cast.bust || '-'}}({{vm.cast.bust_size || '-'}}) W{{vm.cast.waist || '-'}} H{{vm.cast.hip || '-'}}
-                  - else
-                    | スタイルはログイン後閲覧可能
-                dt 誕生日
-                dd
-                  | {{vm.cast.birthday | date: 'yyyy-MM-dd' }}（{{vm.cast.age || '-'}}歳）
-                dt 血液型
-                dd
-                  | {{vm.cast.blood_type}}
-                dt 出身地
-                dd
-                  | {{vm.cast.birthplace}}
-                dt お気に入り登録数
-                dd
-                  | {{vm.cast.favorite_count}}件
-                dt お気に入り数
-                dd
-                  | {{vm.cast.support_count}}件
-                dt キーワード
-                dd
-                  .shop-tags
-                    a.btn ng-repeat="tag in vm.cast.tags"
-                      | {{tag}}
-    .col-md-12.detail.clearfix.info-box
-      .row
-        .profile-box.clearfix
-          .page-title
-            h2.title
-              | INTERVIEW
-          ul.profile-list masonry=""
-            li.masonry-brick ng-if="vm.profile[key].is_displayed" ng-repeat="(key, val) in vm.cast.ja"
-              h3
-                | {{vm.profile[key][vm.active_language].name}}
-              p ng-bind-html="val"
+              .col-xs-12.col-sm-12.col-md-12.col-lg-7.col-xl-7
+                .row
+                  dl.profile.clearfix
+                    dt キャスト番号
+                    dd
+                      | {{vm.cast.id}}
+                    dt 名前
+                    dd
+                      | {{vm.cast.name}} {{vm.cast.nick_name}}
+                    dt ショップ名
+                    dd
+                      a href="/shops/karaoke/{{vm.cast.shop.id}}/info" ng-if="vm.cast.shop"
+                        | {{vm.cast.shop.name}}
+                      span ng-if="!vm.cast.shop"
+                        | 所属なし
+                    dt スタイル
+                    dd
+                      - if customer_signed_in?
+                        | T{{vm.cast.height || '-'}} W{{vm.cast.weight || '-'}} B{{vm.cast.bust || '-'}}({{vm.cast.bust_size || '-'}}) W{{vm.cast.waist || '-'}} H{{vm.cast.hip || '-'}}
+                      - else
+                        | スタイルはログイン後閲覧可能
+                    dt 誕生日
+                    dd
+                      | {{vm.cast.birthday | date: 'yyyy年MM月dd日' }}（{{vm.cast.age || '-'}}歳）
+                    dt 血液型
+                    dd
+                      | {{vm.cast.blood_type}}型
+                    dt 出身地
+                    dd
+                      | {{vm.cast.birthplace}}
+                    dt お気に入り登録数
+                    dd
+                      | {{vm.cast.favorite_count}}件
+                    dt style="margin-bottom:.5rem;" 応援数
+                    dd
+                      | {{vm.cast.support_count}}件
+
+
+              .col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5
+                .row.clearfix
+                  ul.interview-list
+                    li ng-if="vm.profile[key].is_displayed" ng-repeat="(key, val) in vm.cast.ja"
+                      h3
+                        | {{vm.profile[key][vm.active_language].name}}
+                      p
+                        i.fa.fa-heart
+                        span ng-bind-html="val"
+
   .cast-page--service ng-if="vm.cast.shop_id"
     a href="/shops/karaoke/{{vm.cast.shop_id}}"
       span.blinking キレカワ特別プランは『こちら』

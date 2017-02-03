@@ -442,14 +442,14 @@
       dt {
         float : left;
         clear : both;
-        width : 30%;
+        width : 50%;
         font-weight : bold;
         padding : .5rem;
         background-color:#222 ;
         color: $_em_text;
       }
       dd {
-        margin-left : 30%;
+        margin-left : 50%;
         padding : .5rem;
         a {
           color:#fff;
@@ -471,14 +471,14 @@
       dt {
         float : left;
         clear : both;
-        width : 20%;
+        width : 50%;
         font-weight : bold;
         padding : .5rem;
         background-color:#222 ;
         color: $_em_text;
       }
       dd {
-        margin-left : 20%;
+        margin-left : 50%;
         padding : .5rem;
         a {
           color:#fff;
@@ -500,14 +500,14 @@
       dt {
         float : left;
         clear : both;
-        width : 20%;
+        width : 50%;
         font-weight : bold;
         padding : .5rem;
         background-color:#222 ;
         color: $_em_text;
       }
       dd {
-        margin-left : 20%;
+        margin-left : 50%;
         padding : .5rem;
         a {
           color: #E2D39F;
@@ -528,57 +528,31 @@
 
     }
   }
-  .profile-box {
-    position: relative;
-    overflow: hidden;
-    .profile-list {
-      position: relative;
-      overflow: hidden;
-      width:100%;
-      li {
-        @media screen and (min-width: 320px) and (max-width: 543px){
-          width: calc(100% - 2px);
+  .interview-list {
+    width:100%;
+    list-style: none;
+    background-color:#222;
+    padding:1rem 0;
+    li{
+      h3{
+        margin-left:1rem;
+        margin-bottom:0;
+        font-size: 1rem;
+      }
+      p{
+        i {
+          color:#fd548d;
         }
-
-        @media screen and (min-width: 545px) and (max-width: 767px){
-          width: calc(50% - 4px);
-        }
-        @media screen and (min-width: 768px) and (max-width: 991px){
-          width: calc(50% - 4px);
-        }
-
-        @media screen and (min-width: 992px) and (max-width: 1199px){
-          width: calc(33.3333% - 4px);
-        }
-
-        @media (min-width: 1200px) {
-          width: calc(33.3333% - 4px);
-        }
-
-
-        margin: 2px;
-        display: block;
-        padding: $row-space;
-        border: 1px solid #999;
-        h3 {
-          font-size: 1.1rem;
-          font-weight: bold;
-          border-bottom: 1px solid #999;
-          padding: $row-space-half;
-          margin-bottom: $row-space-half;
-          background-color: #222;
-          color: $_brand-basic;
-          position: relative;
-
-        }
-        p {
-          font-size: 1rem;
-          line-height: 1.4em;
-          padding: 4px;
-          margin:0;
+        margin-top: .3rem;
+        margin-bottom: .3rem;
+        margin-left:2rem;
+        span{
+          margin-left:.3rem;
+          color:#fd548d;
         }
       }
     }
+
   }
 
   .cast-detail {

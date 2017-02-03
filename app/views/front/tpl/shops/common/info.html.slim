@@ -1,4 +1,4 @@
-main#main
+main#main ng-if="vm.shop"
   .top-view-box
     .shop-cover-wrap style="background-image:url({{vm.shopMainImg}});"
       .shopCover
@@ -42,36 +42,43 @@ main#main
             .shop-map--info-name
               | {{vm.shop.name}}
           dl.profile.clearfix
-            dt Shop No
+            dt ショップ番号
             dd
               | {{vm.shop.id}}
             dt 住所
             dd
-              | {{vm.shop.address}}
+              | {{vm.shop.address}}なし
             dt アクセス
             dd
               | {{vm.shop.access}}
-            dt 在籍キャスト
+            dt 在籍キャスト数
             dd
-              | {{vm.shop.girls_count}}
+              | {{vm.shop.girls_count}}人
+            dt ng-if="vm.shop.job_type == 'karaoke'" 日本のカラオケの機器
+            dd ng-if="vm.shop.job_type == 'karaoke'"
+              span ng-if="vm.shop.karaoke_machine == 1" あり
+              span ng-if="vm.shop.karaoke_machine == 0" なし
+            dt ng-if="vm.shop.job_type == 'bar'" チャージ
+            dd ng-if="vm.shop.job_type == 'bar'"
+              span ng-if="vm.shop.charge == 1" あり
+              span ng-if="vm.shop.charge == 0" なし
+            dt ng-if="vm.shop.job_type == 'karaoke'" ママにチップ
+            dd ng-if="vm.shop.job_type == 'karaoke'"
+              span ng-if="vm.shop.mama_tip == 1" あり
+              span ng-if="vm.shop.mama_tip == 0" なし
+
             dt 部屋数
             dd
-              | {{vm.shop.room_count}}
+              | {{vm.shop.room_count}}数
             dt 最大収容人数
             dd
-              | {{vm.shop.seat_count}}
+              | {{vm.shop.seat_count}}人
             dt 使用可言語
             dd
               span style="margin-right:.5rem;" ng-if="vm.shop.is_japanese"
                 | 日本語
               span style="margin-right:.5rem;" ng-if="vm.shop.is_english"
                 | 英語
-              span style="margin-right:.5rem;" ng-if="vm.shop.is_korean"
-                | 韓国語
-              span style="margin-right:.5rem;" ng-if="vm.shop.is_chinese"
-                | 中国語
-              span
-                | ベトナム語
             dt ポイント
             dd
               .shop-tags

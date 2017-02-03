@@ -297,7 +297,7 @@ class Api::AdminController < ApiController
         is_english: params[:is_english],
         is_chinese: params[:is_chinese],
         is_korean: params[:is_korean],
-
+        one_point: params[:one_point],
         can_guided: params[:can_guided],
         japanese_level: params[:japanese_level],
         images: params[:images],
@@ -399,6 +399,7 @@ class Api::AdminController < ApiController
         is_english: params[:is_english],
         is_chinese: params[:is_chinese],
         is_korean: params[:is_korean],
+        one_point: params[:one_point],
         can_guided: params[:can_guided],
         japanese_level: params[:japanese_level]
     }
@@ -1075,6 +1076,11 @@ class Api::AdminController < ApiController
         room_count: params[:room_count],
         seat_count: params[:seat_count],
 
+        mama_tip: params[:mama_tip],
+        charge: params[:charge],
+        karaoke_machine: params[:karaoke_machine],
+        one_point: params[:one_point],
+
         catch_copy: params[:catch_copy],
         access: params[:access],
         tip_avg: params[:tip_avg],
@@ -1139,6 +1145,11 @@ class Api::AdminController < ApiController
         is_korean: params[:is_korean],
         girls_count: params[:girls_count],
         tip: params[:tip],
+        mama_tip: params[:mama_tip],
+        charge: params[:charge],
+        karaoke_machine: params[:karaoke_machine],
+        one_point: params[:one_point],
+
         is_smoked: params[:is_smoked],
         service: params[:service],
         opened_at: params[:opened_at],

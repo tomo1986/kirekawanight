@@ -1,7 +1,7 @@
 .main-content.cast-detail-page.container cast-detail-directive=""
   .container
     breadcrumb-directive data="vm.breadcrumb"
-  ul.genre-tag
+  ul.genre-tag ng-if="vm.cast"
     li
       a ng-class="{'active': vm.activeTab == 'info'}" href="/casts/guide/{{vm.cast.id}}/info" INFO
     li
