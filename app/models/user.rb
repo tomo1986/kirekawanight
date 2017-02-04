@@ -181,6 +181,7 @@ class User < ApplicationRecord
         json.bust_size user.bust_size
         json.waist user.waist
         json.hip user.hip
+        json.blood_type user.blood_type
         json.job_type user.job_type
         json.is_pickuped user.is_pickuped
         json.ranking user.ranking
