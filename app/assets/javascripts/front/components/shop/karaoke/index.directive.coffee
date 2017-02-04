@@ -5,11 +5,14 @@ angular.module 'bisyoujoZukanNight'
     vm.init = ->
       vm.isLoading = true
       vm.displayedPoint = false
+      vm.displayedDetail = false
       vm.displayedSort = true
       vm.points = {}
+      vm.details = {}
       angular.forEach($state.params.tags, (value) ->
         vm.points["tags#{value}"] = Number(value)
       )
+
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE',link:''}]
       vm.filters ={
         limit: 10
@@ -18,13 +21,23 @@ angular.module 'bisyoujoZukanNight'
         order: if $state.params.order then $state.params.order else 'desc'
         job_type: 'karaoke'
         tags:if $state.params.tags then $state.params.tags else []
-        conditions: null
+        budget:if $state.params.budget then $state.params.budget else null
+        mama_tip:if $state.params.mama_tip then $state.params.mama_tip else null
+        tip:if $state.params.tip then $state.params.tip else null
+        charge:if $state.params.charge then $state.params.charge else null
+        karaoke_machine:if $state.params.karaoke_machine then $state.params.karaoke_machine else null
+        japanese:if $state.params.japanese then true else null
+        english:if $state.params.english then true else null
       }
 
       vm.getShops()
       vm.tags()
     vm.onClickDisplayedPoint = ->
       vm.displayedPoint = !vm.displayedPoint
+
+    vm.onClickDisplayedDetail = ->
+      vm.displayedDetail = !vm.displayedDetail
+
     vm.onClickDisplayedSort = ->
       vm.displayedSort = !vm.displayedSort
     vm.tags = ->
@@ -45,6 +58,9 @@ angular.module 'bisyoujoZukanNight'
       )
       console.log(vm.points)
     vm.submitTags = ->
+      vm.filters.page = 1
+      vm.changePageFunk()
+    vm.submitDetails = ->
       vm.filters.page = 1
       vm.changePageFunk()
 
@@ -103,7 +119,19 @@ angular.module 'bisyoujoZukanNight'
 
     vm.changePageFunk = ->
       console.log(vm.filters)
-      $state.go('/shops/karaoke',{page:vm.filters.page, sort: vm.filters.sort, order: vm.filters.order,tags: vm.filters.tags})
+      $state.go('/shops/karaoke',{
+        page:vm.filters.page
+        sort: vm.filters.sort
+        order: vm.filters.order
+        tags: vm.filters.tags
+        budget:vm.filters.budget
+        mama_tip:vm.filters.mama_tip
+        tip:vm.filters.tip
+        charge:vm.filters.charge
+        karaoke_machine:vm.filters.karaoke_machine
+        japanese:vm.filters.japanese
+        english:vm.filters.english
+      })
 
 
 

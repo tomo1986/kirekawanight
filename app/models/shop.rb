@@ -35,7 +35,7 @@ class Shop < ApplicationRecord
   acts_as_taggable_on :labels
   acts_as_taggable
 
-  scope :global_search, ->(sort=nil,job=nil,tags=nil,conditions=nil){
+  scope :global_search, ->(sort=nil,job=nil,tags=nil,budget=nil,mama_tip=nil,tip=nil,charge=nil,karaoke_machine=nil,japanese=nil,english=nil){
     now = Time.zone.now
     shops = Shop.joins(
         "left join taggings on shops.id = taggings.taggable_id and taggable_type = 'Shop' left join pickups on shops.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'Shop' and shops.deleted_at is null "
@@ -71,6 +71,19 @@ class Shop < ApplicationRecord
       end
       shops = shops.where(sql) if sql.present?
     end
+
+    if budget
+      shops = shops.where("shops.budget_vnd >= 300000 and shops.budget_vnd < 500000") if budget.to_i == 1
+      shops = shops.where("shops.budget_vnd >= 600000 and shops.budget_vnd < 800000") if budget.to_i == 2
+      shops = shops.where("shops.budget_vnd >= 900000 and shops.budget_vnd < 1200000") if budget.to_i == 3
+      shops = shops.where("shops.budget_vnd >= 1300000 and shops.budget_vnd < 1500000") if budget.to_i == 4
+    end
+    shops = shops.where("shops.mama_tip = false") if mama_tip
+    shops = shops.where("shops.tip = false") if tip
+    shops = shops.where("shops.charge = false") if charge
+    shops = shops.where("shops.karaoke_machine = true") if karaoke_machine
+    shops = shops.where("shops.is_japanese = true") if japanese
+    shops = shops.where("shops.is_english = true") if english
 
     return shops
 
@@ -217,25 +230,20 @@ class Shop < ApplicationRecord
         json.budget_yen shop.budget_yen
         json.budget_vnd shop.budget_vnd
         json.budget_usd shop.budget_usd
-
         json.one_point shop.one_point
         json.charge shop.charge
         json.mama_tip shop.mama_tip
         json.karaoke_machine shop.karaoke_machine
-
         json.catch_copy shop.catch_copy
         json.access shop.access
         json.tip_avg shop.tip_avg
-
         json.service shop.service
         json.ranking shop.ranking
         json.total_score shop.total_score
         json.user_count shop.users.count
         json.room_count shop.room_count
         json.seat_count shop.seat_count
-        # json.note shop.note
         json.images shop.set_images
-        json.way_images shop.set_way_images
         json.support_count shop.supports.count
         json.favorite_count shop.favorites.count
         json.review_count shop.reviews.where(reviews:{is_displayed: true}).count

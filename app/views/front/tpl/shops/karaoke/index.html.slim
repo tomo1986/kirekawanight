@@ -35,7 +35,46 @@
                       a href="javascript:void(0)" ng-click="vm.changeFilterSort('favorite')" ng-class="{'active': vm.filters.sort == 'favorite'}" お気に入り登録順
             .side--menu-block
               .side--menu-inner
-                span.title.active ng-click="vm.onClickDisplayedPoint()" ポイント
+                span.title.active ng-click="vm.onClickDisplayedDetail()" 詳細検索
+                .box ng-show="vm.displayedDetail"
+                  ul.lists.reset--card
+                    li style="padding:.5rem;"
+                      select.form-control name="type" ng-model="vm.filters.budget"
+                        option value=""  -- 予算 --
+                        option value="1" ng-selected="vm.filters.budget == '1'" 300,000 〜 500,000VND
+                        option value="2" ng-selected="vm.filters.budget == '2'" 600,000 〜 800,000VND
+                        option value="3" ng-selected="vm.filters.budget == '3'" 900,000 〜 1,200,000VND
+                        option value="4" ng-selected="vm.filters.budget == '4'" 1,300,000 〜 1,500,000VND
+                    li
+                      label ng-class="{'active': vm.filters.mama_tip}"
+                        input.checkbox type="checkbox" name="mama_tip" ng-model='vm.filters.mama_tip'
+                          | ママチップなし
+                    li
+                      label ng-class="{'active': vm.filters.tip}"
+                        input.checkbox type="checkbox" name="tip" ng-model='vm.filters.tip'
+                          | キャストチップなし
+                    li
+                      label ng-class="{'active': vm.filters.charge}"
+                        input.checkbox type="checkbox" name="charge" ng-model='vm.filters.charge'
+                          | チャージなし
+                    li
+                      label ng-class="{'active': vm.filters.karaoke_machine}"
+                        input.checkbox type="checkbox" name="karaoke_machine" ng-model='vm.filters.karaoke_machine'
+                          | 日本のカラオケ機器有り
+                    li
+                      label ng-class="{'active': vm.filters.japanese}"
+                        input.checkbox type="checkbox" name="japanese" ng-model='vm.filters.japanese'
+                          | 日本語
+                      label ng-class="{'active': vm.filters.english}"
+                        input.checkbox type="checkbox" name="english" ng-model='vm.filters.english'
+                          | 英語
+
+                  .search-btn-box
+                    a.btn.btn-review href="javascript:void(0)" ng-click="vm.submitDetails()" 検索する
+
+            .side--menu-block
+              .side--menu-inner
+                span.title.active ng-click="vm.onClickDisplayedPoint()" ポイント検索
                 .box ng-show="vm.displayedPoint"
                   ul.lists.reset--card
                     li ng-repeat="tag in vm.tags"
@@ -45,30 +84,11 @@
                   .search-btn-box
                     a.btn.btn-review href="javascript:void(0)" ng-click="vm.submitTags()" 検索する
 
-            /.side--menu-block
-            /  .side--menu-inner
-            /    span.title.active 予算
-            /    .box
-            /      | 予算〜予算
-            /  .side--menu-inner
-            /    span.title 席数
-            /    .box
-            /      | 予算〜予算
-            /  .side--menu-inner
-            /    span.title 禁煙・喫煙
-            /    .box
-            /      div 禁煙
-            /      div 喫煙可
-            /  .side--menu-inner
-            /    span.title こだわり
-            /      div 禁煙
-            /      div 喫煙可
-            /  .side--menu-inner
-            /    span.title キーワード
-            /      div 禁煙
-
       .col-xs-12.col-sm-12.col-md-9.col-xl-9
         .col-row-right
+          /.search-result-text-box
+          /  span ng-repeat="tag in vm.filters.tags"
+          /    | {{tag}}
           .shop-list--main
             ul.shop-list
               li dir-paginate="shop in vm.shops | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page"

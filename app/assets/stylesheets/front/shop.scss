@@ -1,4 +1,9 @@
 .shop-page {
+  .search-result-text-box{
+    border: 1px solid #720e0a;
+    padding: 1rem;
+    font-size: .9rem;
+  }
   .shop-list-box{
     .total-count-box {
       line-height: 1;
@@ -95,9 +100,22 @@
             }
 
           }
+          .beack-box{
+            padding:.5rem;
+          }
         }
       }
     }
+    .search-btn-box a {
+      background-color: #720e0a;
+      padding: 1rem;
+      color: #ad9a58;
+      font-weight: bold;
+      border-radius: 0;
+      width: 100%;
+      display: block;
+    }
+
     .shop-list--main{
       margin-bottom: 2rem;
       .shop-list{

@@ -5,11 +5,14 @@ angular.module 'bisyoujoZukanNight'
     vm.init = ->
       vm.isLoading = true
       vm.displayedPoint = false
+      vm.displayedDetail = false
       vm.displayedSort = true
       vm.points = {}
+      vm.details = {}
       angular.forEach($state.params.tags, (value) ->
         vm.points["tags#{value}"] = Number(value)
       )
+
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MASSAGE',link:''}]
       vm.filters ={
         limit: 10
@@ -18,23 +21,27 @@ angular.module 'bisyoujoZukanNight'
         order: if $state.params.order then $state.params.order else 'desc'
         job_type: 'massage'
         tags:if $state.params.tags then $state.params.tags else []
-        conditions: null
+        budget:if $state.params.budget then $state.params.budget else null
+        mama_tip:if $state.params.mama_tip then $state.params.mama_tip else null
+        tip:if $state.params.tip then $state.params.tip else null
+        japanese:if $state.params.japanese then true else null
+        english:if $state.params.english then true else null
       }
 
       vm.getShops()
       vm.tags()
-
     vm.onClickDisplayedPoint = ->
       vm.displayedPoint = !vm.displayedPoint
 
+    vm.onClickDisplayedDetail = ->
+      vm.displayedDetail = !vm.displayedDetail
+
     vm.onClickDisplayedSort = ->
       vm.displayedSort = !vm.displayedSort
-
     vm.tags = ->
       shopService.getTags().then((res) ->
         vm.tags = res.data.tags
       )
-
     vm.onSelectTag = (tag_id) ->
       flag = false
       vm.filters.tags = []
@@ -47,8 +54,11 @@ angular.module 'bisyoujoZukanNight'
       angular.forEach(vm.points, (value, key) ->
         vm.filters.tags.push(Number(value))
       )
-
+      console.log(vm.points)
     vm.submitTags = ->
+      vm.filters.page = 1
+      vm.changePageFunk()
+    vm.submitDetails = ->
       vm.filters.page = 1
       vm.changePageFunk()
 
@@ -61,13 +71,22 @@ angular.module 'bisyoujoZukanNight'
         vm.isLoading = false
       )
 
-    vm.onClickedFavorite = (opt_cast_id)->
-      vm.favoriteShopId = opt_cast_id
-      if customerService.isLogin()
-        vm.loginCustomer = customerService.getLoginCustomer()
-        vm.CountUpFavorite()
-      else
-        modalService.createCustomer(vm.setLoginCustomer)
+
+      #      shopService.getShopList(vm.filters).then((res) ->
+      #          vm.push_shops = res.data.push_shops
+      #          vm.shops = res.data.shops
+      #          vm.total = res.data.total
+      #          vm.favorites = res.data.favorites
+      #          vm.isLoading = false
+      #        )
+
+      vm.onClickedFavorite = (opt_cast_id)->
+        vm.favoriteShopId = opt_cast_id
+        if customerService.isLogin()
+          vm.loginCustomer = customerService.getLoginCustomer()
+          vm.CountUpFavorite()
+        else
+          modalService.createCustomer(vm.setLoginCustomer)
 
     vm.setLoginCustomer = (loginUser) ->
       customerService.setLoginCustomer(loginUser)
@@ -97,7 +116,21 @@ angular.module 'bisyoujoZukanNight'
       vm.changePageFunk()
 
     vm.changePageFunk = ->
-      $state.go('/shops/massage',{page:vm.filters.page, sort: vm.filters.sort, order: vm.filters.order,tags: vm.filters.tags})
+      console.log(vm.filters)
+      $state.go('/shops/massage',{
+        page:vm.filters.page
+        sort: vm.filters.sort
+        order: vm.filters.order
+        tags: vm.filters.tags
+        budget:vm.filters.budget
+        mama_tip:vm.filters.mama_tip
+        tip:vm.filters.tip
+        japanese:vm.filters.japanese
+        english:vm.filters.english
+      })
+
+
+
     vm.changeFilterSort = (sort) ->
       vm.casts = null
       vm.isLoading = true

@@ -5,11 +5,14 @@ angular.module 'bisyoujoZukanNight'
     vm.init = ->
       vm.isLoading = true
       vm.displayedPoint = false
+      vm.displayedDetail = false
       vm.displayedSort = true
       vm.points = {}
+      vm.details = {}
       angular.forEach($state.params.tags, (value) ->
         vm.points["tags#{value}"] = Number(value)
       )
+
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'BAR',link:''}]
       vm.filters ={
         limit: 10
@@ -18,16 +21,24 @@ angular.module 'bisyoujoZukanNight'
         order: if $state.params.order then $state.params.order else 'desc'
         job_type: 'bar'
         tags:if $state.params.tags then $state.params.tags else []
-        conditions: null
+        budget:if $state.params.budget then $state.params.budget else null
+        tip:if $state.params.tip then $state.params.tip else null
+        charge:if $state.params.charge then $state.params.charge else null
+        karaoke_machine:if $state.params.karaoke_machine then $state.params.karaoke_machine else null
+        japanese:if $state.params.japanese then true else null
+        english:if $state.params.english then true else null
       }
 
       vm.getShops()
       vm.tags()
     vm.onClickDisplayedPoint = ->
       vm.displayedPoint = !vm.displayedPoint
+
+    vm.onClickDisplayedDetail = ->
+      vm.displayedDetail = !vm.displayedDetail
+
     vm.onClickDisplayedSort = ->
       vm.displayedSort = !vm.displayedSort
-
     vm.tags = ->
       shopService.getTags().then((res) ->
         vm.tags = res.data.tags
@@ -48,6 +59,9 @@ angular.module 'bisyoujoZukanNight'
     vm.submitTags = ->
       vm.filters.page = 1
       vm.changePageFunk()
+    vm.submitDetails = ->
+      vm.filters.page = 1
+      vm.changePageFunk()
 
     vm.getShops = ->
       api.postPromise('/api/front/api12',vm.filters).then((res) ->
@@ -57,6 +71,15 @@ angular.module 'bisyoujoZukanNight'
         vm.favorites = res.data.favorites
         vm.isLoading = false
       )
+
+
+      #      shopService.getShopList(vm.filters).then((res) ->
+      #          vm.push_shops = res.data.push_shops
+      #          vm.shops = res.data.shops
+      #          vm.total = res.data.total
+      #          vm.favorites = res.data.favorites
+      #          vm.isLoading = false
+      #        )
 
       vm.onClickedFavorite = (opt_cast_id)->
         vm.favoriteShopId = opt_cast_id
@@ -94,7 +117,22 @@ angular.module 'bisyoujoZukanNight'
       vm.changePageFunk()
 
     vm.changePageFunk = ->
-      $state.go('/shops/bar',{page:vm.filters.page, sort: vm.filters.sort, order: vm.filters.order,tags: vm.filters.tags})
+      console.log(vm.filters)
+      $state.go('/shops/bar',{
+        page:vm.filters.page
+        sort: vm.filters.sort
+        order: vm.filters.order
+        tags: vm.filters.tags
+        budget:vm.filters.budget
+        tip:vm.filters.tip
+        charge:vm.filters.charge
+        karaoke_machine:vm.filters.karaoke_machine
+        japanese:vm.filters.japanese
+        english:vm.filters.english
+      })
+
+
+
     vm.changeFilterSort = (sort) ->
       vm.casts = null
       vm.isLoading = true

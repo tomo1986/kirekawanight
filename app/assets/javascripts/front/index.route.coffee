@@ -32,7 +32,7 @@ angular.module 'bisyoujoZukanNight'
         }
 
       .state '/shops/karaoke',
-        url: '/shops/karaoke?page&sort&order&tags'
+        url: '/shops/karaoke?page&sort&order&tags&budget&mama_tip&tip&karaoke_machine&japanese&english'
         active_menu: 'karaoke'
         active_tab: 'shop'
         templateUrl: '/front/tpl/shops/karaoke/index.html'
@@ -40,8 +40,13 @@ angular.module 'bisyoujoZukanNight'
           page: null
           sort: null
           order: null
-          conditions:null
           tags: null
+          budget: null
+          mama_tip: null
+          tip: null
+          karaoke_machine: null
+          japanese: null
+          english: null
         }
 
       .state '/casts/karaoke/:id',
@@ -185,15 +190,21 @@ angular.module 'bisyoujoZukanNight'
         }
 
       .state '/shops/bar',
-        url: '/shops/bar?page&sort&order&tags'
+        url: '/shops/bar?page&sort&order&tags&budget&mama_tip&tip&charge&karaoke_machine&japanese&english'
         active_menu: 'bar'
         templateUrl: '/front/tpl/shops/bar/index.html'
         params: {
           page: null
           sort: null
           order: null
-          conditions:null
           tags: null
+          budget: null
+          mama_tip: null
+          tip: null
+          charge: null
+          karaoke_machine: null
+          japanese: null
+          english: null
         }
 
       .state '/casts/bar/:id',
@@ -296,7 +307,7 @@ angular.module 'bisyoujoZukanNight'
         }
 
       .state '/shops/massage',
-        url: '/shops/massage?page&sort&order&tags'
+        url: '/shops/massage?page&sort&order&tags&budget&tip&japanese&english'
         active_menu: 'massage'
         templateUrl: '/front/tpl/shops/massage/index.html'
         params: {
@@ -305,6 +316,10 @@ angular.module 'bisyoujoZukanNight'
           order: null
           conditions:null
           tags: null
+          budget: null
+          tip: null
+          japanese: null
+          english: null
         }
 
       .state '/casts/massage/:id',
