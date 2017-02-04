@@ -21,7 +21,7 @@ main#main ng-if="vm.shop"
               .col-row-left.clearfix
                 .pickup-cast-line
                   span 店長おすすめ
-                .pickup-cast-item.clearfix ng-repeat="cast in vm.pickup_users"
+                .pickup-cast-item.clearfix ng-repeat="cast in vm.pickup_users" ng-if="vm.pickup_users.length > 0 && vm.isDisplayed_pickup_user"
                   .col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-4.clearfix
                     .row.clearfix
                       .clearfix ng-if="cast.face_images[0] && cast.face_images[0].url"
@@ -54,6 +54,8 @@ main#main ng-if="vm.shop"
                                 .tags-box
                                   a.btn href="javascript:void(0)" ng-repeat="tag in cast.tags"
                                     | {{tag}}
+                .pickup-usernon  ng-if="vm.pickup_users.length == 0 && vm.isDisplayed_pickup_user"
+                  | Coming Soon
           .col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5.clearfix
             .col-row-right.clearfix
               .col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12.clearfix

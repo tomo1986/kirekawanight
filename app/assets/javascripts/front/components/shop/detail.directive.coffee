@@ -7,6 +7,7 @@ angular.module 'bisyoujoZukanNight'
       vm.breadcrumb = [{name:'キレカワ',link:'/'}]
       vm.makeBreadCrumb()
       vm.page = 1
+      vm.isDisplayed_pickup_user = false
       vm.pageId = $state.params.id
       vm.selectCasts = []
       vm.isAttention = false
@@ -42,6 +43,7 @@ angular.module 'bisyoujoZukanNight'
           vm.discounts  = res.data.discounts
           vm.shops = res.data.shops
           vm.pickup_users = res.data.pickup_users
+          vm.isDisplayed_pickup_user = true
           vm.all_shop_count = res.data.all_shop_count
           vm.shopMainImg = vm.shop.images[0].url
           vm.reviewQuestion = shopService.setReaviewQuestion(vm.shop.job_type)
