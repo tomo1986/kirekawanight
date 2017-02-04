@@ -46,9 +46,9 @@
                         option value="3" ng-selected="vm.filters.budget == '3'" 900,000 〜 1,200,000VND
                         option value="4" ng-selected="vm.filters.budget == '4'" 1,300,000 〜 1,500,000VND
                     li
-                      label ng-class="{'active': vm.filters.mama_tip}"
-                        input.checkbox type="checkbox" name="mama_tip" ng-model='vm.filters.mama_tip'
-                          | ママチップなし
+                      label ng-class="{'active': vm.filters.charge}"
+                        input.checkbox type="checkbox" name="charge" ng-model='vm.filters.charge'
+                          | チャージなし
                     li
                       label ng-class="{'active': vm.filters.tip}"
                         input.checkbox type="checkbox" name="tip" ng-model='vm.filters.tip'

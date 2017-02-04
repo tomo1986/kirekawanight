@@ -61,6 +61,13 @@ angular.module 'bisyoujoZukanNight'
       vm.changePageFunk()
     vm.submitDetails = ->
       vm.filters.page = 1
+      vm.filters.mama_tip = null if vm.filters.mama_tip == false
+      vm.filters.tip = null if vm.filters.tip == false
+      vm.filters.charge = null if vm.filters.charge == false
+      vm.filters.karaoke_machine = null if vm.filters.karaoke_machine == false
+      vm.filters.japanese = null if vm.filters.japanese == false
+      vm.filters.english = null if vm.filters.english == false
+
       vm.changePageFunk()
 
     vm.getShops = ->
@@ -73,13 +80,6 @@ angular.module 'bisyoujoZukanNight'
       )
 
 
-      #      shopService.getShopList(vm.filters).then((res) ->
-      #          vm.push_shops = res.data.push_shops
-      #          vm.shops = res.data.shops
-      #          vm.total = res.data.total
-      #          vm.favorites = res.data.favorites
-      #          vm.isLoading = false
-      #        )
 
       vm.onClickedFavorite = (opt_cast_id)->
         vm.favoriteShopId = opt_cast_id
