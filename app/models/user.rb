@@ -153,6 +153,7 @@ class User < ApplicationRecord
         json.can_guided user.can_guided
         json.deleted_at user.deleted_at
         json.japanese_level user.japanese_level
+        json.is_pickuped user.is_pickuped
         json.one_point user.one_point
         json.dayly_count PageView.counts_period(user.page_views)
         json.weekly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_week,Time.zone.now.end_of_week)
@@ -181,6 +182,7 @@ class User < ApplicationRecord
         json.waist user.waist
         json.hip user.hip
         json.job_type user.job_type
+        json.is_pickuped user.is_pickuped
         json.ranking user.ranking
         json.total_score user.total_score
         json.can_guided user.can_guided
@@ -255,6 +257,7 @@ class User < ApplicationRecord
       json.is_english self.is_english
       json.is_chinese self.is_chinese
       json.is_korean self.is_korean
+      json.is_pickuped self.is_pickuped
       json.images self.abc
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
@@ -299,6 +302,7 @@ class User < ApplicationRecord
       json.is_chinese self.is_chinese
       json.is_korean self.is_korean
       json.one_point self.one_point
+      json.is_pickuped self.is_pickuped
       json.images self.abc
       json.face_images self.set_face_images
       json.support_count self.supports.count

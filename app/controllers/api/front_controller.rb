@@ -195,11 +195,13 @@ class Api::FrontController < ApiController
       end
     end
     shops = Shop.where(group_id: shop.group_id, deleted_at: nil).where.not(id: shop.id) if shop.group_id
+    pickup_users = users = shop.users.where(users:{is_pickuped: true})
     builder = Jbuilder.new do |json|
       json.code 1
       json.shop shop.to_jbuilder
       json.is_favorited is_favorited
       json.users users ? User.to_jbuilders(users) : nil
+      json.pickup_users pickup_users ? User.to_jbuilders_for_admin(pickup_users) : nil
       json.favorites favorites
       json.discounts Discount.to_jbuilders(shop.open_discounts)
       json.shops Shop.to_jbuilders(shops)

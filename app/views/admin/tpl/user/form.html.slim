@@ -27,6 +27,17 @@ section.main-container.map-form-page user-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
+              span.title ピックアップに設定しますか?(二人までです)
+            td.res-form-table__td.input-box
+              label.radio-inline
+                input type="radio" ng-model="vm.user.is_pickuped" value="1"
+                | はい
+              label.radio-inline
+                input type="radio" ng-model="vm.user.is_pickuped" value="0"
+                | いいえ
+
+          tr
+            th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.name}" shop select
             td.res-form-table__td.input-box
               select.form-control name="shop_id" ng-model="vm.user.shop_id" ng-options="shop.id as shop.name for shop in vm.shops"

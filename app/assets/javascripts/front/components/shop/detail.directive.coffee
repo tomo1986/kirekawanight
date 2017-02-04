@@ -41,6 +41,7 @@ angular.module 'bisyoujoZukanNight'
           vm.favorites = res.data.favorites
           vm.discounts  = res.data.discounts
           vm.shops = res.data.shops
+          vm.pickup_users = res.data.pickup_users
           vm.all_shop_count = res.data.all_shop_count
           vm.shopMainImg = vm.shop.images[0].url
           vm.reviewQuestion = shopService.setReaviewQuestion(vm.shop.job_type)
