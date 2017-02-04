@@ -123,16 +123,13 @@ class Shop < ApplicationRecord
     return self.order("shops.created_at #{order}")
   }
   scope :sort_support, -> (order= 'desc'){
-    return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Support' and posts.receiver_type = 'Shop'").group("shops.id")
-               .order("count(posts.receiver_id) #{order}, shops.id desc")
+    return self.order("(select count(posts.receiver_id) from posts where posts.receiver_id = shops.id and posts.type = 'PostType::Support' and posts.receiver_type = 'Shop' ) desc, shops.id")
   }
   scope :sort_favorite, -> (order= 'desc'){
-    return self.joins("left join posts on posts.receiver_id = shops.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'Shop'").group("shops.id")
-               .order("count(posts.receiver_id) #{order}, shops.id desc")
+    return self.order("(select count(posts.receiver_id) from posts where posts.receiver_id = shops.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'Shop' ) desc, shops.id")
   }
   scope :sort_review, -> (order= 'desc'){
-    return self.joins("left join reviews on reviews.receiver_id = shops.id and reviews.type = 'ReviewType::Shop' and reviews.receiver_type = 'Shop'").group("shops.id")
-               .order("count(reviews.receiver_id) #{order}, shops.id desc")
+    return self.order("(select count(reviews.receiver_id) from reviews where reviews.receiver_id = shops.id and reviews.type = 'ReviewType::Shop' and reviews.receiver_type = 'Shop' ) desc, shops.id")
   }
 
   scope :sort_ranking, -> (order= 'desc'){
