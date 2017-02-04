@@ -195,7 +195,7 @@ class Api::FrontController < ApiController
       end
     end
     shops = Shop.where(group_id: shop.group_id, deleted_at: nil).where.not(id: shop.id) if shop.group_id
-    pickup_users = users = shop.users.where(users:{is_pickuped: true})
+    pickup_users = shop.users.where(users:{is_pickuped: true}).limit(2) if shop.users
     builder = Jbuilder.new do |json|
       json.code 1
       json.shop shop.to_jbuilder
