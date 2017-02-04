@@ -189,6 +189,7 @@ class User < ApplicationRecord
         json.japanese_level user.japanese_level
         json.is_pickuped user.is_pickuped
         json.one_point user.one_point
+        json.blood_type user.blood_type
         json.dayly_count PageView.counts_period(user.page_views)
         json.weekly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_week,Time.zone.now.end_of_week)
         json.monthly_count PageView.counts_period(user.page_views,Time.zone.now.beginning_of_month,Time.zone.now.end_of_month)
