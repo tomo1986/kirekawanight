@@ -204,6 +204,33 @@ class User < ApplicationRecord
     end
   end
 
+  def self.to_jbuilders_for_user_list(users)
+    Jbuilder.new do |json|
+      json.array! users do |user|
+        json.id user.id
+        json.name user.name
+        json.nick_name user.nick_name
+        json.height user.height ? user.height : '-'
+        json.weight user.weight ? user.weight : '-'
+        json.bust user.bust
+        json.bust_size user.bust_size
+        json.waist user.waist
+        json.hip user.hip
+        json.job_type user.job_type
+        json.ranking user.ranking
+        json.total_score user.total_score
+        json.is_pickuped user.is_pickuped
+        json.favorite_count user.favorites.count
+        json.contact_count user.contacts.count
+        json.images user.abc
+        json.set! :shop do
+          json.id user.shop ? user.shop.id : nil
+          json.name user.shop ? user.shop.name : nil
+        end
+      end
+    end
+  end
+
   def self.to_jbuilders2(users)
     Jbuilder.new do |json|
       json.array! users do |user|

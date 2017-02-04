@@ -1,9 +1,9 @@
 main#main ng-if="vm.shop"
   .top-view-box
-    .shop-cover-wrap style="background-image:url({{vm.shopMainImg}});"
+    .shop-cover-wrap ng-style="{'background-image':url(vm.shopMainImg)}"
       .shopCover
       .container
-        img src="{{vm.shopMainImg}}"
+        img ng-src="{{vm.shopMainImg}}"
   .container
     .rank-box.shop-top-box
       .shop-button-box.clearfix
@@ -25,7 +25,7 @@ main#main ng-if="vm.shop"
                   .col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-4.clearfix
                     .row.clearfix
                       .clearfix ng-if="cast.face_images[0] && cast.face_images[0].url"
-                        img.img src="{{cast.face_images[0].url}}"
+                        img.img ng-src="{{cast.face_images[0].url}}"
                       .clearfix ng-if="!cast.face_images[0] && !cast.face_images[0].url"
                         = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
                   .col-xs-8.col-sm-8.col-md-8.col-lg-8.col-xl-8.clearfix

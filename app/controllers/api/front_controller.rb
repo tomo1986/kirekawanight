@@ -141,7 +141,7 @@ class Api::FrontController < ApiController
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
     users = users.page(page).per(limit) if users.present?
     now = Time.zone.now
-    push_users = User.joins("join pickups on users.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'User'").where("users.job_type = ? and (pickups.start_at <= ? and pickups.end_at > ?)",params[:job_type], now,now).order("pickups.number_place asc")
+    # push_users = User.joins("join pickups on users.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'User'").where("users.job_type = ? and (pickups.start_at <= ? and pickups.end_at > ?)",params[:job_type], now,now).order("pickups.number_place asc")
     supports = {}
     favorites = {}
     if customer_signed_in?
@@ -155,8 +155,8 @@ class Api::FrontController < ApiController
     end
 
     builders = Jbuilder.new do |json|
-      json.push_users User.to_jbuilders(push_users)
-      json.users User.to_jbuilders(users)
+      # json.push_users User.to_jbuilders_for_user_list(push_users)
+        json.users User.to_jbuilders_for_user_list(users)
       json.supports supports
       json.favorites favorites
       json.total total
@@ -705,8 +705,8 @@ class Api::FrontController < ApiController
 
     builders = Jbuilder.new do |json|
       json.code 1
-      json.users users ? User.to_jbuilders(users) : nil
-      json.new_users new_users ? User.to_jbuilders(new_users) : nil
+      json.users users ? User.to_jbuilders_for_user_list(users) : nil
+      json.new_users new_users ? User.to_jbuilders_for_user_list(new_users) : nil
       json.total total
     end
     render json: builders.target!
