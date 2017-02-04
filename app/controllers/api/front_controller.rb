@@ -173,7 +173,7 @@ class Api::FrontController < ApiController
     is_favorited = current_customer.favorites.exists?(receiver_type: 'User', receiver_id: params[:id]) if customer_signed_in?
 
     builder = Jbuilder.new do |json|
-      json.user user.to_jbuilder
+      json.user user.is_pickuped && user.is_pickuped == true ? user.to_jbuilder_for_admin : user.to_jbuilder
       json.profile user.ja_profile ?  user.ja_profile.to_jbuilder : nil
       json.users user.shop ? User.to_jbuilders(users) : nil
       json.is_favorited is_favorited

@@ -39,20 +39,20 @@
     <splitter split-orientation="vertical" split-proportion="0.5018496">
       <split-first>
         <leaf>
-          <file leaf-file-name="info.html.slim" pinned="false" current-in-tab="false">
+          <file leaf-file-name="info.html.slim" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-20.588236">
-                  <caret line="79" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.48916408">
+                  <caret line="52" column="116" selection-start-line="52" selection-start-column="116" selection-end-line="52" selection-end-column="116" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="shop.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="shop.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6749226">
+                <state vertical-scroll-proportion="-4.27451">
                   <caret line="1706" column="33" selection-start-line="1706" selection-start-column="33" selection-end-line="1706" selection-end-column="33" />
                   <folding />
                 </state>
@@ -103,11 +103,21 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="detail.directive.coffee" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/detail.directive.coffee">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.378882">
+                  <caret line="123" column="44" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="44" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="front_controller.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.3703704">
-                  <caret line="197" column="70" selection-start-line="197" selection-start-column="70" selection-end-line="197" selection-end-column="70" />
+                <state vertical-scroll-proportion="-1.4814814">
+                  <caret line="165" column="5" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -116,18 +126,18 @@
           <file leaf-file-name="info.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.6666667">
-                  <caret line="49" column="56" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="56" />
+                <state vertical-scroll-proportion="-1.9019607">
+                  <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/models/user.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.46242774">
-                  <caret line="183" column="39" selection-start-line="183" selection-start-column="39" selection-end-line="183" selection-end-column="39" />
+                <state vertical-scroll-proportion="-22.222221">
+                  <caret line="305" column="26" selection-start-line="305" selection-start-column="26" selection-end-line="305" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -160,7 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/models/hoge.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20170130145001_add_catch_copy_shops.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20170130150308_create_menus.rb" />
         <option value="$PROJECT_DIR$/app/models/menu_type/shop.rb" />
@@ -185,7 +194,6 @@
         <option value="$PROJECT_DIR$/app/views/admin/tpl/shop/form.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/cast.scss" />
         <option value="$PROJECT_DIR$/db/migrate/20170203143832_add_mama_tip_shops.rb" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/detail.html.slim" />
@@ -208,9 +216,11 @@
         <option value="$PROJECT_DIR$/app/controllers/api/admin_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/detail.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss" />
-        <option value="$PROJECT_DIR$/app/controllers/api/front_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api/front_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/detail.directive.coffee" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim" />
       </list>
     </option>
   </component>
@@ -505,6 +515,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="karaoke" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="casts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -544,10 +588,6 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -560,6 +600,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -578,6 +622,100 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bisyoujo_zukan_night" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cast" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -962,14 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/massage/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1170,14 +1300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/detail.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1174785">
-          <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/admin_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.3703704">
@@ -1202,14 +1324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/detail.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/user/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7285714">
@@ -1218,17 +1332,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.588236">
-          <caret line="79" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state vertical-scroll-proportion="-22.222221">
+          <caret line="305" column="26" selection-start-line="305" selection-start-column="26" selection-end-line="305" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6749226">
+        <state vertical-scroll-proportion="-4.27451">
           <caret line="1706" column="33" selection-start-line="1706" selection-start-column="33" selection-end-line="1706" selection-end-column="33" />
           <folding />
         </state>
@@ -1236,24 +1350,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3703704">
-          <caret line="197" column="70" selection-start-line="197" selection-start-column="70" selection-end-line="197" selection-end-column="70" />
+        <state vertical-scroll-proportion="-1.4814814">
+          <caret line="165" column="5" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6666667">
-          <caret line="49" column="56" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="56" />
+        <state vertical-scroll-proportion="-1.9019607">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/karaoke/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46242774">
-          <caret line="183" column="39" selection-start-line="183" selection-start-column="39" selection-end-line="183" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.12893982">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/shop/detail.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/detail.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.378882">
+          <caret line="123" column="44" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48916408">
+          <caret line="52" column="116" selection-start-line="52" selection-start-column="116" selection-end-line="52" selection-end-column="116" />
           <folding />
         </state>
       </provider>

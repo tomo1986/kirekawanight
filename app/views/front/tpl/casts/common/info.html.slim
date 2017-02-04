@@ -2,12 +2,23 @@ main#main
   .cast-detail-page.clearfix ng-if="vm.cast"
     .cast-detail.clearfix
       .photo-area
-        .fream
+        .fream ng-if="vm.cast.is_pickuped == true"
+          p.main-image ng-repeat="image in vm.cast.face_images track by $index" ng-if="vm.castMainImg"
+            img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像" ng-class="{'target': vm.castMainImg == image.url}"
+          p ng-if="!vm.castMainImg"
+            = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
+        .thumbnail.mobile-ondisplayed ng-if="vm.cast.is_pickuped == true"
+          ul.thumbnail--list
+            li ng-repeat="image in vm.cast.face_images track by $index"
+              a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
+                img.img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"
+
+        .fream ng-if="vm.cast.is_pickuped == false"
           p.main-image ng-repeat="image in vm.cast.images track by $index" ng-if="vm.castMainImg"
             img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像" ng-class="{'target': vm.castMainImg == image.url}"
           p ng-if="!vm.castMainImg"
             = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
-        .thumbnail.mobile-ondisplayed
+        .thumbnail.mobile-ondisplayed ng-if="vm.cast.is_pickuped == false"
           ul.thumbnail--list
             li ng-repeat="image in vm.cast.images track by $index"
               a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
@@ -39,6 +50,12 @@ main#main
             li ng-repeat="image in vm.cast.images track by $index"
               a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
                 img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"
+    .comment.info-box.clearfix ng-if="vm.cast && vm.cast.profile && vm.cast.profile.interview && vm.cast.is_pickuped == true"
+      .page-title
+        h2.title
+          | Introduction
+      .intoroduction-box ng-bind-html="vm.cast.profile.interview"
+
     .col-md-12.detail.clearfix.info-box
       .row
         .page-title
@@ -48,7 +65,12 @@ main#main
           h3
             | {{vm.cast.one_point}}
         .row
-          .col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-3.col-lg-offset-0.col-xl-3.col-xl-offset-0
+          .col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-3.col-lg-offset-0.col-xl-3.col-xl-offset-0 ng-if="vm.cast.is_pickuped == true"
+            .col-row-left.clearfix ng-if="vm.cast.face_images[0] && vm.cast.face_images[0].url"
+              img.img src="{{vm.cast.face_images[0].url}}"
+            .col-row-left.clearfix ng-if="!vm.cast.face_images[0] && !vm.cast.face_images[0].url"
+              = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
+          .col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-3.col-lg-offset-0.col-xl-3.col-xl-offset-0 ng-if="vm.cast.is_pickuped == false"
             .col-row-left.clearfix ng-if="vm.cast.images[0] && vm.cast.images[0].url"
               img.img src="{{vm.cast.images[0].url}}"
             .col-row-left.clearfix ng-if="!vm.cast.images[0] && !vm.cast.images[0].url"
