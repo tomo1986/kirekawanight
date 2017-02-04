@@ -16,6 +16,7 @@ section.main-container.notification-index-page shop-index-directive=""
           tr
             th ID
             th name
+            th genre
             th staff
             th member_count
             th edit
@@ -26,6 +27,8 @@ section.main-container.notification-index-page shop-index-directive=""
             td.clearfix data-label="name"
               a.btn.action-btn href="/admin/shops/{{shop.id}}/detail"
                 | {{shop.name}}
+            td.clearfix data-label="genre"
+              | {{shop.job_type}}
             td.clearfix data-label="staff"
               span  ng-if="shop.staff"
                 | {{shop.staff.name}}
