@@ -52,7 +52,7 @@ angular.module 'bisyoujoZukanNight'
       castService.getCast($state.params.id).then((res) ->
         vm.cast = res.data.user
         vm.breadcrumb.push({name:'CAST',link:"/casts/#{vm.cast.job_type}?page=1"}) if vm.cast
-        vm.breadcrumb.push({name:vm.cast.shop.name, link:"/shops/#{vm.cast}/#{vm.cast.shop.id}/info"}) if vm.cast.shop
+        vm.breadcrumb.push({name:vm.cast.shop.name, link:"/shops/#{vm.cast.job_type}/#{vm.cast.shop.id}/info"}) if vm.cast.shop
         vm.breadcrumb.push({name:vm.cast.name, link:''})
 
         vm.cast['profile'] = res.data.profile
