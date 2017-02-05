@@ -250,6 +250,67 @@ class Shop < ApplicationRecord
     end
   end
 
+  def self.to_jbuilders_user_list(shops)
+    Jbuilder.new do |json|
+      json.array! shops do |shop|
+        json.id shop.id
+        json.group_id shop.group_id
+        json.name shop.name
+        json.contract_person shop.contract_person
+        json.name_kana shop.name_kana
+        json.job_type shop.job_type
+        json.tel shop.tel
+        json.email shop.email
+        json.address shop.address
+        json.lat shop.lat
+        json.lon shop.lon
+        json.total_score shop.total_score
+        json.ranking shop.ranking
+        json.interview_ja shop.interview_ja
+        json.interview_vn shop.interview_vn
+        json.interview_en shop.interview_en
+        json.sns_line shop.sns_line
+        json.sns_zalo shop.sns_zalo
+        json.sns_wechat shop.sns_wechat
+        json.is_credit shop.is_credit
+        json.is_japanese shop.is_japanese
+        json.is_english shop.is_english
+        json.is_chinese shop.is_chinese
+        json.is_korean shop.is_korean
+        json.tip shop.tip
+        json.deleted_at shop.deleted_at
+        json.girls_count shop.girls_count
+        json.is_smoked shop.is_smoked
+        json.opened_at shop.opened_at
+        json.closed_at shop.closed_at
+        json.budget_yen shop.budget_yen
+        json.budget_vnd shop.budget_vnd
+        json.budget_usd shop.budget_usd
+        json.one_point shop.one_point
+        json.charge shop.charge
+        json.mama_tip shop.mama_tip
+        json.karaoke_machine shop.karaoke_machine
+        json.catch_copy shop.catch_copy
+        json.access shop.access
+        json.tip_avg shop.tip_avg
+        json.service shop.service
+        json.ranking shop.ranking
+        json.total_score shop.total_score
+        json.user_count shop.users.count
+        json.room_count shop.room_count
+        json.seat_count shop.seat_count
+        json.images shop.set_images
+        json.support_count shop.supports.count
+        json.favorite_count shop.favorites.count
+        json.review_count shop.reviews.where(reviews:{is_displayed: true}).count
+        json.is_new shop.new_shop?
+        json.tags shop.tags ? Tag.to_jbuilders(shop.tags) : nil
+      end
+    end
+  end
+
+
+
   def new_shop?
     now = Time.zone.now
     if self.created_at >= now - 1.months

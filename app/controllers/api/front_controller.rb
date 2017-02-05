@@ -445,7 +445,7 @@ class Api::FrontController < ApiController
     end
 
     builders = Jbuilder.new do |json|
-      json.shops Shop.to_jbuilders(shops)
+      json.shops Shop.to_jbuilders_user_list(shops)
       json.favorites favorites
       json.total total
     end
