@@ -6,7 +6,7 @@ angular.module 'bisyoujoZukanNight'
       $state.go '.info' if $state.current.default_url == 'base'
       vm.page = 1
 
-      vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE CAST',link:'/casts/karaoke'}]
+      vm.breadcrumb = [{name:'キレカワ',link:'/'}]
       vm.selectSns = 'Zalo'
       vm.active_language = 'ja'
       vm.loginCustomer = customerService.getLoginCustomer()
@@ -51,7 +51,10 @@ angular.module 'bisyoujoZukanNight'
     vm.getCast = ->
       castService.getCast($state.params.id).then((res) ->
         vm.cast = res.data.user
+        vm.breadcrumb.push({name:'CAST',link:"/casts/#{vm.cast.job_type}?page=1"}) if vm.cast
+        vm.breadcrumb.push({name:vm.cast.shop.name, link:"/shops/#{vm.cast}/#{vm.cast.shop.id}/info"}) if vm.cast.shop
         vm.breadcrumb.push({name:vm.cast.name, link:''})
+
         vm.cast['profile'] = res.data.profile
         vm.isFavorited = res.data.is_favorited
         if vm.cast.is_pickuped == true
