@@ -1,6 +1,6 @@
 main#main ng-if="vm.shop"
   .top-view-box
-    .shop-cover-wrap ng-style="{'background-image':url(vm.shopMainImg)}"
+    .shop-cover-wrap style="background-image:url({{vm.shopMainImg}});"
       .shopCover
       .container
         img ng-src="{{vm.shopMainImg}}"
