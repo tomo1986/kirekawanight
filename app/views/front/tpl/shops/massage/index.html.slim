@@ -151,6 +151,15 @@
                           .info-budget
                             span.title 予算：
                             | ${{shop.budget_usd | number}}
+                          .info-budget
+                            span.title チップ：
+                            span ng-if="shop.tip == 'no_need'"
+                              | なし
+                            span ng-if="shop.tip == 'need'"
+                              | あり
+                            span ng-if="shop.tip == 'up_to_you'"
+                              | 気持ちで
+
                           .info-address
                             span.title アクセス：
                             span
