@@ -132,16 +132,16 @@ angular.module 'bijyoZukanAdmin'
     my_color:{
       is_displayed: true
       ja:{
-        name: '自分を色で例えると？'
+        name: '好きな色は？'
         placeholder: '青'
 
       }
       vn:{
-        name: '自分を色で例えると？'
+        name: '好きな色は？'
         placeholder: '青'
       }
       en:{
-        name: '自分を色で例えると？'
+        name: '好きな色は？'
         placeholder: '青'
       }
 
@@ -335,17 +335,17 @@ angular.module 'bijyoZukanAdmin'
     like_place: {
       is_displayed: true
       ja:{
-        name: 'デートしたい場所は？'
+        name: '今一番行きたいところはどこですか？'
         placeholder: '自分の部屋'
 
       }
       vn:{
-        name: 'デートしたい場所は？'
+        name: '今一番行きたいところはどこですか？'
         placeholder: '自分の部屋'
 
       }
       en:{
-        name: 'デートしたい場所は？'
+        name: '今一番行きたいところはどこですか？'
         placeholder: '自分の部屋'
 
       }
@@ -457,7 +457,7 @@ angular.module 'bijyoZukanAdmin'
     skill: {
       is_displayed: true
       ja:{
-        name: 'お酒は強いですか？'
+        name: 'お酒を飲むとどうなりますか？'
         placeholder: 'お勉強中です。'
 
       }
@@ -700,7 +700,7 @@ angular.module 'bijyoZukanAdmin'
     dream: {
       is_displayed: true
       ja:{
-        name: '将来の夢は？'
+        name: 'どんな誘われ方をしたい？'
         placeholder: 'お金持ち'
 
       }

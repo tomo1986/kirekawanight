@@ -109,28 +109,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="system.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="system.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/system.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8632219">
+                <state vertical-scroll-proportion="-5.5686274">
                   <caret line="74" column="74" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
-                  <folding>
-                    <marker date="1486393132000" expanded="true" signature="12:3289" placeholder=".container" />
-                    <marker date="1486393132000" expanded="true" signature="27:3289" placeholder="#system.rank-box" />
-                    <marker date="1486393132000" expanded="true" signature="50:97" placeholder=".page-title" />
-                    <marker date="1486393132000" expanded="true" signature="1763:1841" placeholder=".page-title ng-if=&quot;vm.shop.basic_menus.length &gt; 0&quot;" />
-                    <marker date="1486393132000" expanded="true" signature="2275:2353" placeholder=".page-title ng-if=&quot;vm.shop.drink_menus.length &gt; 0&quot;" />
-                    <marker date="1486393132000" expanded="true" signature="2787:2863" placeholder=".page-title ng-if=&quot;vm.shop.food_menus.length &gt; 0&quot;" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/groups/karaoke/detail.html.slim">
+          <file leaf-file-name="user.service.coffee" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/user/user.service.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.2916667">
-                  <caret line="106" column="17" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="17" />
+                <state vertical-scroll-proportion="0.7082067">
+                  <caret line="713" column="27" selection-start-line="713" selection-start-column="27" selection-end-line="713" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -174,7 +167,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/shop/shop.service.coffee" />
         <option value="$PROJECT_DIR$/config/unicorn/production.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/user/user.service.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/cast.service.coffee" />
         <option value="$PROJECT_DIR$/app/views/admin/tpl/user/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/models/user_profile.rb" />
@@ -218,6 +210,7 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/massage/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/admin/tpl/shop/form.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/common/system.html.slim" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/user/user.service.coffee" />
       </list>
     </option>
   </component>
@@ -292,96 +285,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shops" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bisyoujo_zukan_night" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shops" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -715,13 +618,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/user_profile.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/cast.service.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1088,16 +984,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/system.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8632219">
+        <state vertical-scroll-proportion="-5.5686274">
           <caret line="74" column="74" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
-          <folding>
-            <marker date="1486393132000" expanded="true" signature="12:3289" placeholder=".container" />
-            <marker date="1486393132000" expanded="true" signature="27:3289" placeholder="#system.rank-box" />
-            <marker date="1486393132000" expanded="true" signature="50:97" placeholder=".page-title" />
-            <marker date="1486393132000" expanded="true" signature="1763:1841" placeholder=".page-title ng-if=&quot;vm.shop.basic_menus.length &gt; 0&quot;" />
-            <marker date="1486393132000" expanded="true" signature="2275:2353" placeholder=".page-title ng-if=&quot;vm.shop.drink_menus.length &gt; 0&quot;" />
-            <marker date="1486393132000" expanded="true" signature="2787:2863" placeholder=".page-title ng-if=&quot;vm.shop.food_menus.length &gt; 0&quot;" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/user/user.service.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7082067">
+          <caret line="713" column="27" selection-start-line="713" selection-start-column="27" selection-end-line="713" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

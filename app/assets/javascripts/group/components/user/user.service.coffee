@@ -108,16 +108,16 @@ angular.module 'bijyoZukanGroup'
     my_color:{
       is_displayed: false
       ja:{
-        name: '自分を色で例えると？'
+        name: '好きな色は？'
         placeholder: '青'
 
       }
       vn:{
-        name: '自分を色で例えると？'
+        name: '好きな色は？'
         placeholder: '青'
       }
       en:{
-        name: '自分を色で例えると？'
+        name: '好きな色は？'
         placeholder: '青'
       }
 
