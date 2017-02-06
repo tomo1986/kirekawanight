@@ -10,7 +10,7 @@ section.main-container.map-form-page user-form-directive=""
           caption Profile
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" name
+              span.title ng-class="{'is-text-danger': vm.errors.name}" 名前
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.user.name"
@@ -18,7 +18,7 @@ section.main-container.map-form-page user-form-directive=""
                 | {{vm.errors.name}}
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" nick name
+              span.title ng-class="{'is-text-danger': vm.errors.name}" ニックネーム(カナ)
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.user.nick_name"
@@ -38,13 +38,13 @@ section.main-container.map-form-page user-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" shop select
+              span.title ng-class="{'is-text-danger': vm.errors.name}" 所属するお店
             td.res-form-table__td.input-box
               select.form-control name="shop_id" ng-model="vm.user.shop_id" ng-options="shop.id as shop.name for shop in vm.shops"
                 option value=""  -- 選択してください --
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" Job type
+              span.title ng-class="{'is-text-danger': vm.errors.name}" 職種
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               select.form-control name="job_type" ng-model="vm.user.job_type"
@@ -74,23 +74,22 @@ section.main-container.map-form-page user-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" birthday
-              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+              span.title ng-class="{'is-text-danger': vm.errors.name}" 誕生日
             td.res-form-table__td.input-box
               date-picker-directive input-name="birthday" data="vm.user" options="vm.birthday_options" ng-model="vm.user.birthday"
               span.is-text-danger ng-if="vm.errors.birthday"
                 | {{vm.errors.birthday}}
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" sex
+              span.title ng-class="{'is-text-danger': vm.errors.name}" 性別
             td.res-form-table__td.input-box
               select.form-control name="business_type" ng-model="vm.user.sex"
                 option value=""  -- Please select --
-                option value="1" girl
-                option value="2" boy
+                option value="1" 女
+                option value="2" 男
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" blood_type
+              span.title ng-class="{'is-text-danger': vm.errors.name}" 血液型
             td.res-form-table__td.input-box
               select.form-control name="blood_type" ng-model="vm.user.blood_type"
                 option value=""  -- Please select --
@@ -138,37 +137,37 @@ section.main-container.map-form-page user-form-directive=""
                   input.form-control type="text" name="line" placeholder="aiueo" ng-model="vm.user.sns.line"
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" body
+              span.title ng-class="{'is-text-danger': vm.errors.name}" スタイル
             td.res-form-table__td.input-box
               dl
                 dt
-                  | height
+                  | 身長
                 dd
                   input.form-control type="text" name="height" placeholder="aiueo" ng-model="vm.user.height"
                 dt
-                  | weight
+                  | 体重
                 dd
                   input.form-control type="text" name="weight" placeholder="aiueo" ng-model="vm.user.weight"
 
                 dt
-                  | bust
+                  | バスト
                 dd
                   input.form-control type="text" name="bust" placeholder="aiueo" ng-model="vm.user.bust"
                 dt
-                  | bust_size
+                  | カップ数
                 dd
                   input.form-control type="text" name="bust_size" placeholder="aiueo" ng-model="vm.user.bust_size"
                 dt
-                  | waist
+                  | ウエスト
                 dd
                   input.form-control type="text" name="waist" placeholder="aiueo" ng-model="vm.user.waist"
                 dt
-                  | hip
+                  | ヒップ
                 dd
                   input.form-control type="text" name="hip" placeholder="aiueo" ng-model="vm.user.hip"
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title tags
+              span.title タグ
             td.res-form-table__td.input-box
               tags-input ng-model='vm.user.tags' display-property="name"
 
@@ -189,7 +188,7 @@ section.main-container.map-form-page user-form-directive=""
                       span
                         | 画像選択
               .button-center
-                button.btn.main-btn type="button" ng-click="vm.addImage()" add image
+                button.btn.main-btn type="button" ng-click="vm.addImage()" 画像追加
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.image_url}" 有料会員向け画像
@@ -204,10 +203,10 @@ section.main-container.map-form-page user-form-directive=""
                       span
                         | 画像選択
               .button-center
-                button.btn.main-btn type="button" ng-click="vm.addFaceImage()" add image
+                button.btn.main-btn type="button" ng-click="vm.addFaceImage()" 画像追加
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.description}" blog
+              span.title ng-class="{'is-text-danger': vm.errors.description}" ブログ
             td.res-form-table__td.input-box
               .form-group.clearfix
                 .col-xs-12
@@ -229,7 +228,7 @@ section.main-container.map-form-page user-form-directive=""
 
 
         table.res-form-table
-          caption Questionnaire
+          caption 質問
           tr ng-repeat="(key,val) in vm.user[vm.active_tab]" ng-if="vm.profile[key].is_displayed"
             th.res-form-table__th.title-box.clearfix
               span.title

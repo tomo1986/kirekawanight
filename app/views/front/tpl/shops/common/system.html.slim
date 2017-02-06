@@ -37,7 +37,7 @@ main#main
           td.res-form-table__td.parent-td.input-box
             | {{vm.shop.opened_at | date: 'HH時mm'}} から {{vm.shop.closed_at | date: 'HH時mm'}}まで
         tr
-          th.res-form-table__th.parent-th.title-box.clearfix card
+          th.res-form-table__th.parent-th.title-box.clearfix クレジットカード
           td.res-form-table__td.parent-td.input-box
             div ng-if="vm.shop.is_credit"
               = image_tag 'front/card.png', alt:"card list"

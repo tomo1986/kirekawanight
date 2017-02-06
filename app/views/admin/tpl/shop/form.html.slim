@@ -52,7 +52,7 @@ section.main-container.map-form-page shop-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name}" ショップ名
+              span.title ng-class="{'is-text-danger': vm.errors.name}" 店名
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               input.form-control type="text" name="name" required='' placeholder="Lounge kirekawa " ng-model="vm.shop.name"
@@ -60,7 +60,7 @@ section.main-container.map-form-page shop-form-directive=""
                 | {{vm.errors.name}}
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title ng-class="{'is-text-danger': vm.errors.name_kana}" ショップ名(カナ)
+              span.title ng-class="{'is-text-danger': vm.errors.name_kana}" 店名(カナ)
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               input.form-control type="text" name="name_kana" required='' placeholder="ラウンジ キレカワ" ng-model="vm.shop.name_kana"
@@ -69,7 +69,7 @@ section.main-container.map-form-page shop-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title Address
+              span.title 住所
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               .input-group
@@ -140,7 +140,7 @@ section.main-container.map-form-page shop-form-directive=""
                 | いいえ
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title チャージ料金は？
+              span.title チャージ料金は？(多分バーだけ)
             td.res-form-table__td.input-box
               label.radio-inline
                 input type="radio" ng-model="vm.shop.charge" value="1"
@@ -173,14 +173,14 @@ section.main-container.map-form-page shop-form-directive=""
 
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title オープン時間
+              span.title 開店時間(Open)
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               date-picker-directive input-name="opened_at" data="vm.shop" options="vm.open_options" ng-model="vm.shop.opened_at"
 
           tr
             th.res-form-table__th.title-box.clearfix
-              span.title クローズ時間
+              span.title 閉店時間(Close)
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
               date-picker-directive input-name="closed_at" data="vm.shop" options="vm.close_options" ng-model="vm.shop.closed_at"
@@ -250,7 +250,6 @@ section.main-container.map-form-page shop-form-directive=""
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.service}" 限定クーポン
-              span.btn.btn-danger.btn-xs.absolutely 必須
             td.res-form-table__td.input-box
               textarea.form-control row="6" ng-model="vm.shop.service"
 
