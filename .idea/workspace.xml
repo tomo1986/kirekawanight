@@ -42,44 +42,9 @@
           <file leaf-file-name="info.html.slim" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.37921348">
-                  <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-                  <folding>
-                    <marker date="1486401815000" expanded="true" signature="12:6415" placeholder=".cast-detail-page.clearfix ng-if=&quot;vm.cast&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="59:2824" placeholder=".cast-detail.clearfix" />
-                    <marker date="1486401815000" expanded="true" signature="87:1727" placeholder=".photo-area" />
-                    <marker date="1486401815000" expanded="true" signature="107:508" placeholder=".fream ng-if=&quot;vm.cast.is_pickuped == 'true'&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="517:877" placeholder=".thumbnail.mobile-ondisplayed ng-if=&quot;vm.cast.is_pickuped == true&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="887:1323" placeholder=".fream ng-if=&quot;vm.cast.is_pickuped == null || vm.cast.is_pickuped == false&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="1332:1727" placeholder=".thumbnail.mobile-ondisplayed ng-if=&quot;vm.cast.is_pickuped == null || vm.cast.is_pickuped == false&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="1734:2824" placeholder=".profile-area" />
-                    <marker date="1486401815000" expanded="true" signature="1756:2492" placeholder=".name-area" />
-                    <marker date="1486401815000" expanded="true" signature="2108:2268" placeholder=".feature" />
-                    <marker date="1486401815000" expanded="true" signature="2279:2397" placeholder=".feature" />
-                    <marker date="1486401815000" expanded="true" signature="2408:2492" placeholder=".shop-tags" />
-                    <marker date="1486401815000" expanded="true" signature="2501:2824" placeholder=".thumbnail.mobile-nodisplayed" />
-                    <marker date="1486401815000" expanded="true" signature="2829:3076" placeholder=".comment.info-box.clearfix ng-if=&quot;vm.cast &amp;&amp; vm.cast.profile &amp;&amp; vm.cast.profile.interview &amp;&amp; vm.cast.is_pickuped == true&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="2957:3010" placeholder=".page-title" />
-                    <marker date="1486401815000" expanded="true" signature="3017:3076" placeholder=".intoroduction-box ng-bind-html=&quot;vm.cast.profile.interview&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="3082:6415" placeholder=".col-md-12.detail.clearfix.info-box" />
-                    <marker date="1486401815000" expanded="true" signature="3124:6415" placeholder=".row" />
-                    <marker date="1486401815000" expanded="true" signature="3137:3189" placeholder=".page-title" />
-                    <marker date="1486401815000" expanded="true" signature="3198:3291" placeholder=".intoroduction-box ng-if=&quot;vm.cast.one_point&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="3300:6415" placeholder=".row" />
-                    <marker date="1486401815000" expanded="true" signature="3315:3832" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-3.col-lg-offset-0.col-xl-3.col-xl-offset-0 ng-if=&quot;vm.cast.is_pickuped == true&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="3474:3619" placeholder=".col-row-left.clearfix ng-if=&quot;vm.cast.face_images[0] &amp;&amp; vm.cast.face_images[0].url&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="3632:3832" placeholder=".col-row-left.clearfix ng-if=&quot;!vm.cast.face_images[0] &amp;&amp; !vm.cast.face_images[0].url&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="3844:4361" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-3.col-lg-offset-0.col-xl-3.col-xl-offset-0 ng-if=&quot;!vm.cast.is_pickuped || vm.cast.is_pickuped == false&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="4028:4158" placeholder=".col-row-left.clearfix ng-if=&quot;vm.cast.images[0] &amp;&amp; vm.cast.images[0].url&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="4171:4361" placeholder=".col-row-left.clearfix ng-if=&quot;!vm.cast.images[0] &amp;&amp; !vm.cast.images[0].url&quot;" />
-                    <marker date="1486401815000" expanded="true" signature="4373:6415" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-9.col-xl-9" />
-                    <marker date="1486401815000" expanded="true" signature="4432:6415" placeholder=".col-row-right.clearfix" />
-                    <marker date="1486401815000" expanded="true" signature="4470:5983" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-7.col-xl-7" />
-                    <marker date="1486401815000" expanded="true" signature="4535:5983" placeholder=".row" />
-                    <marker date="1486401815000" expanded="true" signature="5998:6415" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5" />
-                    <marker date="1486401815000" expanded="true" signature="6063:6415" placeholder=".row.clearfix" />
-                    <marker date="1486401815000" expanded="true" signature="6419:6546" placeholder=".cast-page--service ng-if=&quot;vm.cast.shop_id&quot;" />
-                  </folding>
+                <state vertical-scroll-proportion="0.16853933">
+                  <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -1452,44 +1417,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37921348">
-          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-          <folding>
-            <marker date="1486401815000" expanded="true" signature="12:6415" placeholder=".cast-detail-page.clearfix ng-if=&quot;vm.cast&quot;" />
-            <marker date="1486401815000" expanded="true" signature="59:2824" placeholder=".cast-detail.clearfix" />
-            <marker date="1486401815000" expanded="true" signature="87:1727" placeholder=".photo-area" />
-            <marker date="1486401815000" expanded="true" signature="107:508" placeholder=".fream ng-if=&quot;vm.cast.is_pickuped == 'true'&quot;" />
-            <marker date="1486401815000" expanded="true" signature="517:877" placeholder=".thumbnail.mobile-ondisplayed ng-if=&quot;vm.cast.is_pickuped == true&quot;" />
-            <marker date="1486401815000" expanded="true" signature="887:1323" placeholder=".fream ng-if=&quot;vm.cast.is_pickuped == null || vm.cast.is_pickuped == false&quot;" />
-            <marker date="1486401815000" expanded="true" signature="1332:1727" placeholder=".thumbnail.mobile-ondisplayed ng-if=&quot;vm.cast.is_pickuped == null || vm.cast.is_pickuped == false&quot;" />
-            <marker date="1486401815000" expanded="true" signature="1734:2824" placeholder=".profile-area" />
-            <marker date="1486401815000" expanded="true" signature="1756:2492" placeholder=".name-area" />
-            <marker date="1486401815000" expanded="true" signature="2108:2268" placeholder=".feature" />
-            <marker date="1486401815000" expanded="true" signature="2279:2397" placeholder=".feature" />
-            <marker date="1486401815000" expanded="true" signature="2408:2492" placeholder=".shop-tags" />
-            <marker date="1486401815000" expanded="true" signature="2501:2824" placeholder=".thumbnail.mobile-nodisplayed" />
-            <marker date="1486401815000" expanded="true" signature="2829:3076" placeholder=".comment.info-box.clearfix ng-if=&quot;vm.cast &amp;&amp; vm.cast.profile &amp;&amp; vm.cast.profile.interview &amp;&amp; vm.cast.is_pickuped == true&quot;" />
-            <marker date="1486401815000" expanded="true" signature="2957:3010" placeholder=".page-title" />
-            <marker date="1486401815000" expanded="true" signature="3017:3076" placeholder=".intoroduction-box ng-bind-html=&quot;vm.cast.profile.interview&quot;" />
-            <marker date="1486401815000" expanded="true" signature="3082:6415" placeholder=".col-md-12.detail.clearfix.info-box" />
-            <marker date="1486401815000" expanded="true" signature="3124:6415" placeholder=".row" />
-            <marker date="1486401815000" expanded="true" signature="3137:3189" placeholder=".page-title" />
-            <marker date="1486401815000" expanded="true" signature="3198:3291" placeholder=".intoroduction-box ng-if=&quot;vm.cast.one_point&quot;" />
-            <marker date="1486401815000" expanded="true" signature="3300:6415" placeholder=".row" />
-            <marker date="1486401815000" expanded="true" signature="3315:3832" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-3.col-lg-offset-0.col-xl-3.col-xl-offset-0 ng-if=&quot;vm.cast.is_pickuped == true&quot;" />
-            <marker date="1486401815000" expanded="true" signature="3474:3619" placeholder=".col-row-left.clearfix ng-if=&quot;vm.cast.face_images[0] &amp;&amp; vm.cast.face_images[0].url&quot;" />
-            <marker date="1486401815000" expanded="true" signature="3632:3832" placeholder=".col-row-left.clearfix ng-if=&quot;!vm.cast.face_images[0] &amp;&amp; !vm.cast.face_images[0].url&quot;" />
-            <marker date="1486401815000" expanded="true" signature="3844:4361" placeholder=".col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-3.col-lg-offset-0.col-xl-3.col-xl-offset-0 ng-if=&quot;!vm.cast.is_pickuped || vm.cast.is_pickuped == false&quot;" />
-            <marker date="1486401815000" expanded="true" signature="4028:4158" placeholder=".col-row-left.clearfix ng-if=&quot;vm.cast.images[0] &amp;&amp; vm.cast.images[0].url&quot;" />
-            <marker date="1486401815000" expanded="true" signature="4171:4361" placeholder=".col-row-left.clearfix ng-if=&quot;!vm.cast.images[0] &amp;&amp; !vm.cast.images[0].url&quot;" />
-            <marker date="1486401815000" expanded="true" signature="4373:6415" placeholder=".col-xs-12.col-sm-8.col-md-8.col-lg-9.col-xl-9" />
-            <marker date="1486401815000" expanded="true" signature="4432:6415" placeholder=".col-row-right.clearfix" />
-            <marker date="1486401815000" expanded="true" signature="4470:5983" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-7.col-xl-7" />
-            <marker date="1486401815000" expanded="true" signature="4535:5983" placeholder=".row" />
-            <marker date="1486401815000" expanded="true" signature="5998:6415" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5" />
-            <marker date="1486401815000" expanded="true" signature="6063:6415" placeholder=".row.clearfix" />
-            <marker date="1486401815000" expanded="true" signature="6419:6546" placeholder=".cast-page--service ng-if=&quot;vm.cast.shop_id&quot;" />
-          </folding>
+        <state vertical-scroll-proportion="0.16853933">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
