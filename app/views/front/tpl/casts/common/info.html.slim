@@ -13,12 +13,12 @@ main#main
               a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
                 img.img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"
 
-        .fream ng-if="!vm.cast.is_pickuped || vm.cast.is_pickuped == false"
+        .fream ng-if="vm.cast.is_pickuped == null || vm.cast.is_pickuped == false"
           p.main-image ng-repeat="image in vm.cast.images track by $index" ng-if="vm.castMainImg"
             img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像" ng-class="{'target': vm.castMainImg == image.url}"
           p ng-if="!vm.castMainImg"
             = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
-        .thumbnail.mobile-ondisplayed ng-if="!vm.cast.is_pickuped || vm.cast.is_pickuped == false"
+        .thumbnail.mobile-ondisplayed ng-if="vm.cast.is_pickuped == null || vm.cast.is_pickuped == false"
           ul.thumbnail--list
             li ng-repeat="image in vm.cast.images track by $index"
               a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
