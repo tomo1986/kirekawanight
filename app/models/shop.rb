@@ -198,11 +198,15 @@ class Shop < ApplicationRecord
         json.staff shop.admin_id ? Admin.find_by(id: shop.admin_id) : nil
         json.name shop.name
         json.contract_person shop.contract_person
+        json.tel shop.tel
+        json.contract_person2 shop.contract_person2
+        json.tel2 shop.tel2
         json.name_kana shop.name_kana
         json.job_type shop.job_type
-        json.tel shop.tel
         json.email shop.email
         json.address shop.address
+        json.write_adress shop.write_adress
+
         json.lat shop.lat
         json.lon shop.lon
         json.total_score shop.total_score
@@ -329,10 +333,13 @@ class Shop < ApplicationRecord
       json.name self.name
       json.name_kana self.name_kana
       json.contract_person self.contract_person
-      json.job_type self.job_type
       json.tel self.tel
+      json.contract_person2 self.contract_person2
+      json.tel2 self.tel2
+      json.job_type self.job_type
       json.email self.email
       json.address self.address
+      json.write_adress self.write_adress
       json.lat self.lat
       json.lon self.lon
       json.total_score self.total_score

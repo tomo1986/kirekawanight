@@ -81,6 +81,11 @@ section.main-container.map-form-page shop-form-directive=""
                   | {{vm.errors.address}}
           tr
             th.res-form-table__th.title-box.clearfix
+              span.title 表示用住所
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="write_adress" placeholder="アクセス方法入力" ng-model="vm.shop.write_adress"
+          tr
+            th.res-form-table__th.title-box.clearfix
               span.title アクセス
             td.res-form-table__td.input-box
               input.form-control type="text" name="access" placeholder="アクセス方法入力" ng-model="vm.shop.access"
@@ -102,6 +107,21 @@ section.main-container.map-form-page shop-form-directive=""
               input.form-control type="text" name="tel" required='' placeholder="090xxxxxxxxxx" ng-model="vm.shop.tel"
               span.is-text-danger ng-if="vm.errors.tel"
                 | {{vm.errors.tel}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.contract_person}" 担当者2(窓口)
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="contract_person2" placeholder="ラウンジ キレカワ" ng-model="vm.shop.contract_person2"
+              span.is-text-danger ng-if="vm.errors.contract_person2"
+                | {{vm.errors.contract_person2}}
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" tel2
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="tel2" required='' placeholder="090xxxxxxxxxx" ng-model="vm.shop.tel2"
+              span.is-text-danger ng-if="vm.errors.tel2"
+                | {{vm.errors.tel2}}
           tr
             th.res-form-table__th.title-box.clearfix
               span.title email

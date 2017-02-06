@@ -1020,7 +1020,7 @@ class Api::AdminController < ApiController
     render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    shops = Shop.all
+    shops = Shop.order("id desc")
     total = shops.count
     shops = shops.page(page).per(limit) if shops.present?
     builders = Jbuilder.new do |json|
@@ -1048,14 +1048,18 @@ class Api::AdminController < ApiController
         name: params[:name],
         name_kana: params[:name_kana],
         contract_person: params[:contract_person],
-        job_type: params[:job_type],
         tel: params[:tel],
+        contract_person2: params[:contract_person2],
+        tel2: params[:tel2],
+
+        job_type: params[:job_type],
         email: params[:email],
         password: params[:password],
         sns_line: params[:sns_line],
         sns_zalo: params[:sns_zalo],
         sns_wechat: params[:sns_wechat],
         address: params[:address],
+        write_adress: params[:write_adress],
         lat: params[:lat],
         lon: params[:lon],
         interview_ja: params[:interview_ja],
@@ -1127,14 +1131,17 @@ class Api::AdminController < ApiController
         name: params[:name],
         name_kana: params[:name_kana],
         contract_person: params[:contract_person],
-        job_type: params[:job_type],
         tel: params[:tel],
+        contract_person2: params[:contract_person2],
+        tel2: params[:tel2],
+        job_type: params[:job_type],
         email: params[:email],
         password: params[:password],
         sns_line: params[:sns_line],
         sns_zalo: params[:sns_zalo],
         sns_wechat: params[:sns_wechat],
         address: params[:address],
+        write_adress: params[:write_adress],
         lat: params[:lat],
         lon: params[:lon],
         interview_ja: params[:interview_ja],
