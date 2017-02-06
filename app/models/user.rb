@@ -222,6 +222,7 @@ class User < ApplicationRecord
         json.is_pickuped user.is_pickuped
         json.favorite_count user.favorites.count
         json.contact_count user.contacts.count
+        json.birthday user.birthday
         json.images user.abc
         json.set! :shop do
           json.id user.shop ? user.shop.id : nil
