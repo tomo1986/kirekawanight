@@ -79,10 +79,10 @@ main#main ng-if="vm.shop"
                           dt 在籍キャスト数
                           dd
                             | {{vm.shop.girls_count}}人
-                          dt ng-if="vm.shop.job_type == 'karaoke'" 日本のカラオケの機器
+                          dt ng-if="vm.shop.job_type == 'karaoke'" カラオケ機器
                           dd ng-if="vm.shop.job_type == 'karaoke'"
-                            span ng-if="vm.shop.karaoke_machine == 1" あり
-                            span ng-if="vm.shop.karaoke_machine == 0" なし
+                            span ng-if="vm.shop.karaoke_machine == 1" 日本製カラオケ機器
+                            span ng-if="vm.shop.karaoke_machine == 0" 日本製ではありません。
                           dt ng-if="vm.shop.job_type == 'bar'" チャージ
                           dd ng-if="vm.shop.job_type == 'bar'"
                             span ng-if="vm.shop.charge == 1" あり

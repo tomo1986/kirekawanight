@@ -217,24 +217,6 @@ section.main-container.map-form-page shop-form-directive=""
               span.title 平均チップ
             td.res-form-table__td.input-box
               input.form-control type="text" name="tip_avg" placeholder="平均チップ" ng-model="vm.shop.tip_avg"
-
-
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title 予算(円)
-              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="budget_yen" required='3000' placeholder="aiueo" ng-model="vm.shop.budget_yen"
-              span.is-text-danger ng-if="vm.errors.budget_yen"
-                | {{vm.errors.budget_yen}}
-          tr
-            th.res-form-table__th.title-box.clearfix
-              span.title 予算(VND)
-              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
-            td.res-form-table__td.input-box
-              input.form-control type="text" name="budget_vnd" required='850000' placeholder="aiueo" ng-model="vm.shop.budget_vnd"
-              span.is-text-danger ng-if="vm.errors.budget_vnd"
-                | {{vm.errors.budget_vnd}}
           tr
             th.res-form-table__th.title-box.clearfix
               span.title 予算(USD)
