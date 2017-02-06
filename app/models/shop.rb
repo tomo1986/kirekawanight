@@ -73,10 +73,10 @@ class Shop < ApplicationRecord
     end
 
     if budget
-      shops = shops.where("shops.budget_vnd >= 300000 and shops.budget_vnd < 500000") if budget.to_i == 1
-      shops = shops.where("shops.budget_vnd >= 600000 and shops.budget_vnd < 800000") if budget.to_i == 2
-      shops = shops.where("shops.budget_vnd >= 900000 and shops.budget_vnd < 1200000") if budget.to_i == 3
-      shops = shops.where("shops.budget_vnd >= 1300000 and shops.budget_vnd < 1500000") if budget.to_i == 4
+      shops = shops.where("shops.budget_vnd >= 30 and shops.budget_vnd < 41") if budget.to_i == 1
+      shops = shops.where("shops.budget_vnd >= 41 and shops.budget_vnd < 51") if budget.to_i == 2
+      shops = shops.where("shops.budget_vnd >= 51 and shops.budget_vnd < 61") if budget.to_i == 3
+      shops = shops.where("shops.budget_vnd >= 61 and shops.budget_vnd < 71") if budget.to_i == 4
     end
     shops = shops.where("shops.mama_tip = false") if mama_tip
     shops = shops.where("shops.tip = false") if tip
