@@ -20,22 +20,22 @@ main#main
           th.res-form-table__th.parent-th.title-box.clearfix チップ有無
           td.res-form-table__td.parent-td.input-box
             div ng-if="vm.shop.tip == 'no_need'"
-              | 無
+              | なし
             div ng-if="vm.shop.tip == 'need'"
-              | 有
+              | あり
             div ng-if="vm.shop.tip == 'up_to_you'"
-              | 気持ち
+              | 気持ちで
             div style="color:red;" ng-if="vm.shop.tip == 'no_need'"
               | ※キャストによってはチップを要求するキャストもいます。チップは自己責任でお願いいたします。
-        tr
+        tr ng-if="vm.shop.tip_avg"
           th.res-form-table__th.parent-th.title-box.clearfix チップ平均
           td.res-form-table__td.parent-td.input-box
-            div ng-if="vm.shop.tip_avg"
+            div
               | {{vm.shop.tip_avg | number}}VND
         tr
-          th.res-form-table__th.parent-th.title-box.clearfix OPEN時間
+          th.res-form-table__th.parent-th.title-box.clearfix 開店時間
           td.res-form-table__td.parent-td.input-box
-            | {{vm.shop.opened_at | date: 'HH:mm'}} 〜 {{vm.shop.closed_at | date: 'HH:mm'}}
+            | {{vm.shop.opened_at | date: 'HH時mm'}} から {{vm.shop.closed_at | date: 'HH時mm'}}まで
         tr
           th.res-form-table__th.parent-th.title-box.clearfix card
           td.res-form-table__td.parent-td.input-box
