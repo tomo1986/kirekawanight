@@ -48,7 +48,10 @@ main#main
       table.res-form-table ng-if="vm.shop.basic_menus.length > 0"
         tr ng-repeat="menu in vm.shop.basic_menus"
           th.res-form-table__th.parent-th.title-box.clearfix
-            | {{menu.title}}
+            div
+              | {{menu.title}}
+            div style="color:red;font-size:.8rem;padding-left:1rem;"
+              | ※{{menu.sub_title}}
           td.res-form-table__td.parent-td.input-box
             | ${{menu.price | number}}
       .page-title ng-if="vm.shop.drink_menus.length > 0"
@@ -56,7 +59,10 @@ main#main
       table.res-form-table ng-if="vm.shop.drink_menus.length > 0"
         tr ng-repeat="menu in vm.shop.drink_menus"
           th.res-form-table__th.parent-th.title-box.clearfix
-            | {{menu.title}}
+            div
+              | {{menu.title}}
+            div style="color:red;font-size:.8rem;padding-left:1rem;"
+              | ※{{menu.sub_title}}
           td.res-form-table__td.parent-td.input-box
             | ${{menu.price | number}}
       .page-title ng-if="vm.shop.food_menus.length > 0"
@@ -64,6 +70,9 @@ main#main
       table.res-form-table ng-if="vm.shop.food_menus.length > 0"
         tr ng-repeat="menu in vm.shop.food_menus"
           th.res-form-table__th.parent-th.title-box.clearfix
-            | {{menu.title}}
+            div
+              | {{menu.title}}
+            div style="color:red;font-size:.8rem;padding-left:1rem;"
+              | ※{{menu.sub_title}}
           td.res-form-table__td.parent-td.input-box
             | ${{menu.price | number}}
