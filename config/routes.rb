@@ -200,7 +200,7 @@ Rails.application.routes.draw do
 
 
     get 'system', to: 'home#index'
-    get 'comsept', to: 'home#index'
+    get 'comsept', to: 'home#comsept'
     get 'question', to: 'home#index'
     get 'visitor', to: 'home#index'
     get 'policy', to: 'home#index'

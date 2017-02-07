@@ -18,9 +18,9 @@ class Front::HomeController < ApplicationController
   end
 
   def index
-    @head_title = "ベトナム女性登録数#{User.count}名！ベトナムホーチミンの夜遊びと風俗の情報サイト | 見つかる出会える女の子数No.1「キレカワ」"
+    @head_title = "ベトナム・ホーチミンの女性#{User.count}名の素顔を公開！ホーチミンの夜遊びと風俗の情報サイト | あなた好みの美女と夜遊びするなら「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナム、ホーチミンの夜遊びと風俗の情報サイト。現在、ベトナム女性#{User.count}名が登録されています。ガイドも承ってます。あなた好みの美女をみつけるならキレカワ"
+    @head_description = "ベトナム・ホーチミンのカラオケ、ガールズバー、マッサージやスパなど、夜遊びと風俗の情報サイトです。現在、登録店舗#{Shop.count}店舗、ベトナム女性#{User.count}名が登録されています。観光や旅行に来られた際にはガイドも承ってます。あなた好みの美女と夜遊びするならキレカワ"
     @page_type = "website"
   end
   def login
@@ -36,9 +36,9 @@ class Front::HomeController < ApplicationController
 
   def mypage
     if customer_signed_in?
-      @head_title = "ベトナム女性登録数#{User.count}名！ベトナムホーチミンの夜遊びと風俗の情報サイト | 見つかる出会える女の子数No.1「キレカワ」マイページ"
+      @head_title = "ベトナム・ホーチミンの女性#{User.count}名の素顔を公開！ホーチミンの夜遊びと風俗の情報サイト | あなた好みの美女と夜遊びするなら「キレカワ」マイページ"
       @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-      @head_description = "ベトナム、ホーチミンの夜遊びと風俗の情報サイト。現在、ベトナム女性#{User.count}名が登録されています。ガイドも承ってます。キレカワのマイページ"
+      @head_description = "マイページではお気に入り登録した女の子を一覧で見ることができます。キレカワではベトナム・ホーチミンのカラオケ、ガールズバー、マッサージやスパなど、夜遊びと風俗の情報サイトです。現在、登録店舗#{Shop.count}店舗、ベトナム女性#{User.count}名が登録されています。"
       render action: :index
     else
       redirect_to root_path
@@ -46,7 +46,7 @@ class Front::HomeController < ApplicationController
   end
   def mypage_show
     if customer_signed_in?
-      @head_title = "ベトナム女性登録数#{User.count}名！ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」マイページ詳細"
+      @head_title = "ベトナム女性登録数#{User.count}名！ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」マイページ詳細"
       @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
       @head_description = "ベトナム、ホーチミン/ハノイで綺麗、可愛いカラオケの女の子がきっと見つかり、夜遊びできるサイト。カラオケ/マッサージ/バー/セクシー美女を探すなら、キレカワのマイページ詳細"
       render action: :index
@@ -90,79 +90,79 @@ class Front::HomeController < ApplicationController
 
 
   def shop_karaoke
-    @head_title = "ベトナムのホーチミンにあるカラオケ店#{Shop.where(job_type: 'karaoke').count}件を紹介！！ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」カラオケ店一覧"
+    @head_title = "ベトナム・ホーチミンにあるカラオケ店#{Shop.where(job_type: 'karaoke').count}件を紹介！！ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」カラオケ店一覧"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナム、ホーチミンのカラオケ#{Shop.where(job_type: 'karaoke').count}件掲載中。キレカワに掲載しているお店は自信を持って紹介できます！また、お店毎の色がありどこにいっても楽しめます！！あなた好みのお店をみつけるならキレカワ"
+    @head_description = "ベトナム、ホーチミンのカラオケ#{Shop.where(job_type: 'karaoke').count}件掲載中。キレカワに掲載しているお店は自信を持って紹介できます！あなた好みのカラオケ店がを見つけて夜遊びしてみませんか？"
     render action: :index
   end
 
   def shop_karaoke_detail
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」を紹介！！ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」を紹介！！ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」このお店のキャッチコピーは「#{shop.catch_copy}」。また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」このお店のキャッチコピーは「#{shop.catch_copy}」。また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
   def shop_karaoke_detail_system
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」の料金表。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」の料金表。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」このお店の料金表を見ることができます。また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」このお店の料金表を見ることができます。また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
 
   def shop_karaoke_detail_cast
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」では現在#{shop.users.count}人の女の子が登録されいています。他にも何人もいますよ！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」では現在#{shop.users.count}人の女の子の素顔を公開！！また、キレカワからの予約で「#{shop.service}」の割引があります。ちょっとエッチな夜を過ごしませんか？"
     render action: :index
   end
 
   def shop_karaoke_detail_contact
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」では現在#{shop.users.count}人の女の子が登録されいています。他にも何人もいますよ！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」では現在#{shop.users.count}人の女の子が登録されいています。こちらのページから#{shop.name}の予約が可能です。早めに予約をしてホーチミンの夜を美女と過ごしませんか？"
     render action: :index
   end
 
   def shop_karaoke_detail_reviews
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」の口コミ数#{shop.reviews.count}件。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」の口コミ数#{shop.reviews.count}件。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」では現在#{shop.reviews.count}件書かれています。！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」では現在#{shop.reviews.count}件書かれています。！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
 
   def shop_karaoke_detail_write_review
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」への口コミを書いてみませんか？。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」への口コミを書いてみませんか？。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるカラオケ店「#{shop.name}」に口コミを書いてみませんか？あなたの口コミでお店がもっとよくなる。また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるカラオケ店「#{shop.name}」に口コミを書いてみませんか？あなたの口コミでお店がもっとよくなる。また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
 
 
   def shop_bar
-    @head_title = "ベトナムのホーチミンにあるガールズバー#{Shop.where(job_type: 'bar').count}件を紹介！！ベトナムホーチミンの夜遊びと風俗の情報サイト | 「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるガールズバー#{Shop.where(job_type: 'bar').count}件を紹介！！ホーチミンの夜遊びと風俗の情報サイト | 「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるガールズバー#{Shop.where(job_type: 'bar').count}件掲載中。キレカワに掲載しているお店は自信を持って紹介できます！また、お店毎の色がありどこにいっても楽しめます！！あなた好みのお店をみつけるならキレカワ"
+    @head_description = "ベトナム・ホーチミンにあるガールズバー#{Shop.where(job_type: 'bar').count}件掲載中。キレカワに掲載しているお店は自信を持って紹介できます！また、お店毎の色がありどこにいっても楽しめます！！あなた好みのお店をみつけるならキレカワ"
     render action: :index
   end
 
   def shop_bar_detail
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるガールズバー「#{shop.name}」を紹介！！ベトナムホーチミンの夜遊びと風俗の情報サイト | 「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるガールズバー「#{shop.name}」を紹介！！ホーチミンの夜遊びと風俗の情報サイト | 「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるガールズバー「#{shop.name}」を紹介！！このお店のキャッチコピーは「#{shop.catch_copy}」。また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるガールズバー「#{shop.name}」を紹介！！このお店のキャッチコピーは「#{shop.catch_copy}」。また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
 
 
   def shop_bar_detail_system
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのガールズバー「#{shop.name}」の料金表。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナムのガールズバー「#{shop.name}」の料金表。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
     @head_description = "ベトナム、ホーチミンにあるガールズバー「#{shop.name}」このお店の料金表を見ることができます。また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
@@ -170,7 +170,7 @@ class Front::HomeController < ApplicationController
 
   def shop_bar_detail_cast
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのガールズバー「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナムのガールズバー「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
     @head_description = "ベトナム、ホーチミンにあるガールズバー「#{shop.name}」では現在#{shop.users.count}人の女の子が登録されいています。他にも何人もいますよ！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
@@ -178,7 +178,7 @@ class Front::HomeController < ApplicationController
 
   def shop_bar_detail_contact
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのガールズバー「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナムのガールズバー「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
     @head_description = "ベトナム、ホーチミンにあるガールズバー「#{shop.name}」では現在#{shop.users.count}人の女の子が登録されいています。他にも何人もいますよ！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
@@ -186,7 +186,7 @@ class Front::HomeController < ApplicationController
 
   def shop_bar_detail_reviews
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのガールズバー「#{shop.name}」の口コミ数#{shop.reviews.count}件。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナムのガールズバー「#{shop.name}」の口コミ数#{shop.reviews.count}件。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
     @head_description = "ベトナム、ホーチミンにあるガールズバー「#{shop.name}」では現在#{shop.reviews.count}件書かれています。！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
@@ -194,7 +194,7 @@ class Front::HomeController < ApplicationController
 
   def shop_bar_detail_write_review
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのガールズバー「#{shop.name}」への口コミを書いてみませんか？。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナムのガールズバー「#{shop.name}」への口コミを書いてみませんか？。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
     @head_description = "ベトナム、ホーチミンにあるガールズバー「#{shop.name}」に口コミを書いてみませんか？あなたの口コミでお店がもっとよくなる。また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
@@ -202,56 +202,56 @@ class Front::HomeController < ApplicationController
 
 
   def shop_massage
-    @head_title = "ベトナムのホーチミンにあるマッサージ店#{Shop.where(job_type: 'karaoke').count}件を紹介！！ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」カラオケ店一覧"
+    @head_title = "ベトナム・ホーチミンにあるマッサージ店#{Shop.where(job_type: 'karaoke').count}件を紹介！！ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」カラオケ店一覧"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるマッサージ店#{Shop.where(job_type: 'karaoke').count}件掲載中。キレカワに掲載しているお店は自信を持って紹介できます！また、お店毎の色がありどこにいっても楽しめます！！あなた好みのお店をみつけるならキレカワ"
+    @head_description = "ベトナム・ホーチミンにあるマッサージ店#{Shop.where(job_type: 'karaoke').count}件掲載中。キレカワに掲載しているお店は自信を持って紹介できます！また、お店毎の色がありどこにいっても楽しめます！！あなた好みのお店をみつけるならキレカワ"
     render action: :index
   end
 
   def shop_massage_detail
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」を紹介！！ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」を紹介！！ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」このお店のキャッチコピーは「#{shop.catch_copy}」。また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」このお店のキャッチコピーは「#{shop.catch_copy}」。また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
   def shop_massage_detail_system
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」の料金表。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」の料金表。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」このお店の料金表を見ることができます。また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」このお店の料金表を見ることができます。また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
 
   def shop_massage_detail_cast
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」では現在#{shop.users.count}人の女の子が登録されいています。他にも何人もいますよ！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」では現在#{shop.users.count}人の女の子が登録されいています。他にも何人もいますよ！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
 
   def shop_massage_detail_contact
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」で働く#{shop.users.count}人の女の子一覧。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」では現在#{shop.users.count}人の女の子が登録されいています。他にも何人もいますよ！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」では現在#{shop.users.count}人の女の子が登録されいています。他にも何人もいますよ！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
 
   def shop_massage_detail_reviews
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」の口コミ数#{shop.reviews.count}件。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」の口コミ数#{shop.reviews.count}件。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」では現在#{shop.reviews.count}件書かれています。！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」では現在#{shop.reviews.count}件書かれています。！！また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
 
   def shop_massage_detail_write_review
     shop = Shop.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」への口コミを書いてみませんか？。ベトナムホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」への口コミを書いてみませんか？。ホーチミンの夜遊びと風俗の情報サイト |「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにあるマッサージ店「#{shop.name}」に口コミを書いてみませんか？あなたの口コミでお店がもっとよくなる。また、キレカワからの予約で「#{shop.service}」の割引があります。"
+    @head_description = "ベトナム・ホーチミンにあるマッサージ店「#{shop.name}」に口コミを書いてみませんか？あなたの口コミでお店がもっとよくなる。また、キレカワからの予約で「#{shop.service}」の割引があります。"
     render action: :index
   end
 
@@ -261,159 +261,159 @@ class Front::HomeController < ApplicationController
   
   
   def cast_karaoke
-    @head_title = "ベトナムのホーチミンにある、カラオケで働く女性#{User.where(job_type: 'karaoke').count}名を紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、カラオケで働く女性#{User.where(job_type: 'karaoke').count}名を紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、カラオケで働く女性#{User.where(job_type: "karaoke").count}名を紹介！！お気に入りの女性を見つけて、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンにある、カラオケで働く女性#{User.where(job_type: "karaoke").count}名を紹介！！お気に入りの女性を見つけて、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
   def cast_karaoke_detail
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、カラオケで働く女性「#{user.name}」さんを紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、カラオケで働く女性「#{user.name}」さんを紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、カラオケで働く女性#{User.where(job_type: "karaoke").count}人の中から、#{user.name}さんの紹介ページです。#{user.name}さんと、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンにある、カラオケで働く女性#{User.where(job_type: "karaoke").count}人の中から、#{user.name}さんの紹介ページです。#{user.name}さんと、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
   def cast_karaoke_detail_cast
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、カラオケで働く女性「#{user.name}」さんと一緒に働いている女性を紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、カラオケで働く女性「#{user.name}」さんと一緒に働いている女性を紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、カラオケで働く女性#{user.name}さんと一緒に働いている女性を紹介します。#{user.name}さん達と、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンにある、カラオケで働く女性#{user.name}さんと一緒に働いている女性を紹介します。#{user.name}さん達と、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
   def cast_karaoke_detail_contact
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、カラオケで働く女性「#{user.name}」さんと連絡をとってみませんか？ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、カラオケで働く女性「#{user.name}」さんと連絡をとってみませんか？ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、カラオケで働く女性#{user.name}さんと連絡をとってみませんか？"
+    @head_description = "ベトナム・ホーチミンにある、カラオケで働く女性#{user.name}さんと連絡をとってみませんか？"
     render action: :index
   end
 
   def cast_karaoke_detail_reviews
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、カラオケで働く女性「#{user.name}」さんの口コミです。 |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、カラオケで働く女性「#{user.name}」さんの口コミです。 |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、カラオケで働く女性#{user.name}さんの口コミ一覧ページです。あなたも口コミを書いてもっと素敵な女性になってもらいませんか？"
+    @head_description = "ベトナム・ホーチミンにある、カラオケで働く女性#{user.name}さんの口コミ一覧ページです。あなたも口コミを書いてもっと素敵な女性になってもらいませんか？"
     render action: :index
   end
 
   def cast_bar
-    @head_title = "ベトナムのホーチミンにある、ガールズバーで働く女性#{User.where(job_type: 'karaoke').count}名を紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、ガールズバーで働く女性#{User.where(job_type: 'karaoke').count}名を紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、ガールズバーで働く女性#{User.where(job_type: "bar").count}名を紹介！！お気に入りの女性を見つけて、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンにある、ガールズバーで働く女性#{User.where(job_type: "bar").count}名を紹介！！お気に入りの女性を見つけて、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
   def cast_bar_detail
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、ガールズバーで働く女性「#{user.name}」さんを紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、ガールズバーで働く女性「#{user.name}」さんを紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、ガールズバーで働く女性#{User.where(job_type: "bar").count}人の中から、#{user.name}さんの紹介ページです。#{user.name}さんと、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンにある、ガールズバーで働く女性#{User.where(job_type: "bar").count}人の中から、#{user.name}さんの紹介ページです。#{user.name}さんと、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
   def cast_bar_detail_cast
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、ガールズバーで働く女性「#{user.name}」さんと一緒に働いている女性を紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、ガールズバーで働く女性「#{user.name}」さんと一緒に働いている女性を紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、ガールズバーで働く女性#{user.name}さんと一緒に働いている女性を紹介します。#{user.name}さん達と、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンにある、ガールズバーで働く女性#{user.name}さんと一緒に働いている女性を紹介します。#{user.name}さん達と、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
   def cast_bar_detail_contact
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、ガールズバーで働く女性「#{user.name}」さんと連絡をとってみませんか？ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、ガールズバーで働く女性「#{user.name}」さんと連絡をとってみませんか？ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、ガールズバーで働く女性#{user.name}さんと連絡をとってみませんか？"
+    @head_description = "ベトナム・ホーチミンにある、ガールズバーで働く女性#{user.name}さんと連絡をとってみませんか？"
     render action: :index
   end
 
   def cast_bar_detail_reviews
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、ガールズバーで働く女性「#{user.name}」さんの口コミです。 |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、ガールズバーで働く女性「#{user.name}」さんの口コミです。 |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、ガールズバーで働く女性#{user.name}さんの口コミ一覧ページです。あなたも口コミを書いてもっと素敵な女性になってもらいませんか？"
+    @head_description = "ベトナム・ホーチミンにある、ガールズバーで働く女性#{user.name}さんの口コミ一覧ページです。あなたも口コミを書いてもっと素敵な女性になってもらいませんか？"
     render action: :index
   end
 
 
   def cast_massage
-    @head_title = "ベトナムのホーチミンにある、マッサージ店で働く女性#{User.where(job_type: 'massage').count}名を紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、マッサージ店で働く女性#{User.where(job_type: 'massage').count}名を紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、マッサージ店で働く女性#{User.where(job_type: "massage").count}名を紹介！！お気に入りの女性を見つけて、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンにある、マッサージ店で働く女性#{User.where(job_type: "massage").count}名を紹介！！お気に入りの女性を見つけて、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
   def cast_massage_detail
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、マッサージ店で働く女性「#{user.name}」さんを紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、マッサージ店で働く女性「#{user.name}」さんを紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、マッサージ店で働く女性#{User.where(job_type: "massage").count}人の中から、#{user.name}さんの紹介ページです。#{user.name}さんと、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンにある、マッサージ店で働く女性#{User.where(job_type: "massage").count}人の中から、#{user.name}さんの紹介ページです。#{user.name}さんと、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
   def cast_massage_detail_cast
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、マッサージ店で働く女性「#{user.name}」さんと一緒に働いている女性を紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、マッサージ店で働く女性「#{user.name}」さんと一緒に働いている女性を紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、マッサージ店で働く女性#{user.name}さんと一緒に働いている女性を紹介します。#{user.name}さん達と、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンにある、マッサージ店で働く女性#{user.name}さんと一緒に働いている女性を紹介します。#{user.name}さん達と、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
   def cast_massage_detail_contact
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、マッサージ店で働く女性「#{user.name}」さんと連絡をとってみませんか？ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、マッサージ店で働く女性「#{user.name}」さんと連絡をとってみませんか？ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、マッサージ店で働く女性#{user.name}さんと連絡をとってみませんか？"
+    @head_description = "ベトナム・ホーチミンにある、マッサージ店で働く女性#{user.name}さんと連絡をとってみませんか？"
     render action: :index
   end
 
   def cast_massage_detail_reviews
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンにある、マッサージ店で働く女性「#{user.name}」さんの口コミです。 |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンにある、マッサージ店で働く女性「#{user.name}」さんの口コミです。 |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンにある、マッサージ店で働く女性#{user.name}さんの口コミ一覧ページです。あなたも口コミを書いてもっと素敵な女性になってもらいませんか？"
+    @head_description = "ベトナム・ホーチミンにある、マッサージ店で働く女性#{user.name}さんの口コミ一覧ページです。あなたも口コミを書いてもっと素敵な女性になってもらいませんか？"
     render action: :index
   end
 
   def cast_guide
-    @head_title = "ベトナムのホーチミンをガイドできる女性#{User.where(job_type: 'guide').count}名を紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンをガイドできる女性#{User.where(job_type: 'guide').count}名を紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンをガイドできる女性#{User.where(job_type: "guide").count}名を紹介！！お気に入りの女性を見つけて、ベトナムを満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンをガイドできる女性#{User.where(job_type: "guide").count}名を紹介！！お気に入りの女性を見つけて、ベトナムを満喫しませんか？"
     render action: :index
   end
 
   def cast_guide_detail
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンをガイドできる女性「#{user.name}」さんを紹介！！ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンをガイドできる女性「#{user.name}」さんを紹介！！ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンをガイドできる女性#{User.where(job_type: "guide").count}人の中から、#{user.name}さんの紹介ページです。#{user.name}さんと、ベトナムの夜を満喫しませんか？"
+    @head_description = "ベトナム・ホーチミンをガイドできる女性#{User.where(job_type: "guide").count}人の中から、#{user.name}さんの紹介ページです。#{user.name}さんと、ベトナムの夜を満喫しませんか？"
     render action: :index
   end
 
 
   def cast_guide_detail_contact
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンをガイドできる女性「#{user.name}」さんと連絡をとってみませんか？ |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンをガイドできる女性「#{user.name}」さんと連絡をとってみませんか？ |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンをガイドできる女性#{user.name}さんと連絡をとって、ベトナムを案内してもらいませんか？絶対に楽しい旅行になること間違いなし！！"
+    @head_description = "ベトナム・ホーチミンをガイドできる女性#{user.name}さんと連絡をとって、ベトナムを案内してもらいませんか？絶対に楽しい旅行になること間違いなし！！"
     render action: :index
   end
 
   def cast_guide_detail_reviews
     user = User.find_by(id: params[:id])
-    @head_title = "ベトナムのホーチミンをガイドできる女性「#{user.name}」さんの口コミです。 |　ベトナムホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
+    @head_title = "ベトナム・ホーチミンをガイドできる女性「#{user.name}」さんの口コミです。 |　ホーチミンの夜遊びと風俗の情報サイト「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、風俗、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナムのホーチミンをガイドできる女性#{user.name}さんの口コミ一覧ページです。あなたも口コミを書いてみませんか？"
+    @head_description = "ベトナム・ホーチミンをガイドできる女性#{user.name}さんの口コミ一覧ページです。あなたも口コミを書いてみませんか？"
     render action: :index
   end
 
   def comsept
-    @head_title = "キレカワとは? | キレカワ"
+    @head_title = "キレカワとはホーチミンのカラオケ、ガールズバー、マッサージ、スパの紹介と夜遊び、風俗専門の情報サイト | あなた好みの美女と夜遊びするなら「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナム、ホーチミン/ハノイのセクシーな子がきっと見つかり、夜遊びできるサイト。カラオケ/マッサージ/バーの女の子を探すキレカワってなに？"
+    @head_description = "キレカワとは、ホーチミンの「カラオケラウンジ」、「ガールズバー」、「クラブ＆ナイトバー」、「マッサージ、スパ」のナイトスポットと夜遊び、風俗の情報サイトです。。 ホーチミンの限られた滞在時間。お店選びに失敗はしたくありませんね。 当サイトでは、ホーチミン中心にあるおすすめ店を厳選し紹介します。"
     render action: :index
   end
 
@@ -429,7 +429,10 @@ class Front::HomeController < ApplicationController
 
   end
   def visitor
-
+    @head_title = "キレカワの使い方や使用法方の説明。ホーチミンの夜遊びと風俗の情報サイト | あなた好みの美女と夜遊びするなら「キレカワ」"
+    @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
+    @head_description = "キレカワをご覧いただきありがとうございます。キレカワを使って安心・安全にホーチミンの夜遊びや風俗を楽しんでいただくために、使用法方やどんなことができるかを説明します。"
+    render action: :index
   end
 
 end
