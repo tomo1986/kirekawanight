@@ -57,10 +57,7 @@ angular.module 'bisyoujoZukanNight'
 
         vm.cast['profile'] = res.data.profile
         vm.isFavorited = res.data.is_favorited
-        if vm.cast.is_pickuped == true
-          vm.castMainImg = vm.cast.face_images[0].url if vm.cast.face_images[0]
-        else
-          vm.castMainImg = vm.cast.images[0].url if vm.cast.images[0]
+        vm.castMainImg = vm.cast.images[0].url if vm.cast.images[0]
       )
 
 
@@ -123,10 +120,7 @@ angular.module 'bisyoujoZukanNight'
       )
 
     vm.onClickedImage = (opt_no) ->
-      if vm.cast.is_pickuped == true
-        vm.castMainImg = vm.cast.face_images[opt_no].url
-      else
-        vm.castMainImg = vm.cast.images[opt_no].url
+      vm.castMainImg = vm.cast.images[opt_no].url
 
 
     vm.submit = ->
