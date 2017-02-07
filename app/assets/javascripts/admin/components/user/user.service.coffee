@@ -335,17 +335,17 @@ angular.module 'bijyoZukanAdmin'
     like_place: {
       is_displayed: true
       ja:{
-        name: '今一番行きたいところはどこですか？'
+        name: 'よく遊びに行く場所がどこですか？'
         placeholder: '自分の部屋'
 
       }
       vn:{
-        name: '今一番行きたいところはどこですか？'
+        name: 'よく遊びに行く場所がどこですか？'
         placeholder: '自分の部屋'
 
       }
       en:{
-        name: '今一番行きたいところはどこですか？'
+        name: 'よく遊びに行く場所がどこですか？'
         placeholder: '自分の部屋'
 
       }
@@ -390,7 +390,7 @@ angular.module 'bijyoZukanAdmin'
 
     }
     like_drink: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: '好きなお酒は？'
         placeholder: 'ビール'
@@ -584,7 +584,7 @@ angular.module 'bijyoZukanAdmin'
 
     }
     want: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: '今一番欲しいものは？'
         placeholder: 'あなたの心'
