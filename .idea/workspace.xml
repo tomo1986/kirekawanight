@@ -146,8 +146,8 @@
           <file leaf-file-name="user.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/models/user.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5504087">
-                  <caret line="206" column="37" selection-start-line="206" selection-start-column="11" selection-end-line="206" selection-end-column="37" />
+                <state vertical-scroll-proportion="0.77656674">
+                  <caret line="225" column="47" selection-start-line="225" selection-start-column="47" selection-end-line="225" selection-end-column="47" />
                   <folding />
                 </state>
               </provider>
@@ -237,10 +237,10 @@
         <option value="$PROJECT_DIR$/app/controllers/api/admin_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim" />
         <option value="$PROJECT_DIR$/app/models/shop.rb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/detail.directive.coffee" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/common/info.html.slim" />
         <option value="$PROJECT_DIR$/app/controllers/api/front_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
       </list>
     </option>
   </component>
@@ -1135,18 +1135,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5504087">
-          <caret line="206" column="37" selection-start-line="206" selection-start-column="11" selection-end-line="206" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50141644">
           <caret line="161" column="22" selection-start-line="161" selection-start-column="22" selection-end-line="161" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77656674">
+          <caret line="225" column="47" selection-start-line="225" selection-start-column="47" selection-end-line="225" selection-end-column="47" />
           <folding />
         </state>
       </provider>
