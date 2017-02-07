@@ -1,4 +1,4 @@
-main#main
+main#main style="margin:2rem 0;"
   .cast-detail-page.clearfix
     .col-md-12.some-cast.detail
       .row
@@ -57,4 +57,4 @@ main#main
           loading-directive size="125"
         .button-center style="text-align: center;margin: 2rem 0;" ng-if="vm.total > vm.casts.length && !vm.isLoading"
           button.btn.btn-submit type="button" ng-click="vm.onAddCasts()" 読み込む
-        .nohave-box ng-if="vm.casts.length > 0 && !vm.isLoading" Coming Soon
+        .nohave-box ng-if="vm.casts.length == 0 && !vm.isLoading" Coming Soon
