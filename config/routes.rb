@@ -206,7 +206,7 @@ Rails.application.routes.draw do
     get 'policy', to: 'home#index'
     get 'contact', to: 'home#index'
     get 'reserve', to: 'home#index'
-    get 'sitemap', to: 'home#index'
+    get 'sitemap', to: 'home#sitemap'
     get 'blogs/', to: 'blogs#index'
     get 'blogs/:id', to: 'blogs#show'
 
