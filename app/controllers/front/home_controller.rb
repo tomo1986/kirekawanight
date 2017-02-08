@@ -432,7 +432,7 @@ class Front::HomeController < ApplicationController
     @head_title = "キレカワサイトマップ。ホーチミンの夜遊びの情報サイト | あなた好みの美女と夜遊びするなら「キレカワ」"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
     @head_description = "キレカワをご覧いただきありがとうございます。サイトマップです。キレカワを使って安心・安全にホーチミンの夜遊びを楽しみたいあなたに"
-
+    render action: :index
   end
 
   def visitor

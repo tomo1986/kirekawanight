@@ -82,8 +82,8 @@
           <file leaf-file-name="home_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/front/home_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.296875">
-                  <caret line="430" column="13" selection-start-line="430" selection-start-column="6" selection-end-line="430" selection-end-column="13" />
+                <state vertical-scroll-proportion="0.1796875">
+                  <caret line="434" column="25" selection-start-line="434" selection-start-column="25" selection-end-line="434" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -179,8 +179,8 @@
         <option value="$PROJECT_DIR$/app/views/front/tpl/policy/index_jp.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/sitemap/index_jp.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/home/sitemap.html.slim" />
-        <option value="$PROJECT_DIR$/app/controllers/front/home_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/front/home_controller.rb" />
       </list>
     </option>
   </component>
@@ -962,18 +962,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/front/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.296875">
-          <caret line="430" column="13" selection-start-line="430" selection-start-column="6" selection-end-line="430" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26363635">
           <caret line="208" column="36" selection-start-line="208" selection-start-column="36" selection-end-line="208" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/front/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1796875">
+          <caret line="434" column="25" selection-start-line="434" selection-start-column="25" selection-end-line="434" selection-end-column="25" />
           <folding />
         </state>
       </provider>
