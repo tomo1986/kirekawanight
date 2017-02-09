@@ -720,7 +720,7 @@ class Api::FrontController < ApiController
 
   def api28
     user = User.find_by(id: params[:id])
-    reviews = user.reviews.order("created_at desc") if user
+    reviews = user.reviews.where(reviews:{is_displayed: true}).order("created_at desc") if user
     total = reviews.count if reviews
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 1
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
