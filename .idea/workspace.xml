@@ -93,11 +93,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+          <file leaf-file-name="config.ru" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/config.ru">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-38.074074">
-                  <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.040871933">
+                  <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -116,8 +116,8 @@
           <file leaf-file-name="index.directive.coffee" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/bar/index.directive.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-12.5">
-                  <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                <state vertical-scroll-proportion="-2.0588236">
+                  <caret line="22" column="22" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -133,11 +133,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.directive.coffee" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.directive.coffee" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/massage/index.directive.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8250729">
-                  <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+                <state vertical-scroll-proportion="-0.0">
+                  <caret line="0" column="28" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -234,13 +234,13 @@
         <option value="$PROJECT_DIR$/app/controllers/front/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/block/header.html.slim" />
         <option value="$PROJECT_DIR$/config/sitemap.rb" />
-        <option value="$PROJECT_DIR$/config.ru" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/index.route.coffee" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/bar/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/casts/massage/index.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/karaoke/index.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/bar/index.directive.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/front/components/cast/massage/index.directive.coffee" />
+        <option value="$PROJECT_DIR$/config.ru" />
       </list>
     </option>
   </component>
@@ -735,6 +735,29 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method />
     </configuration>
+    <configuration default="true" type="RackRunConfigurationType" factoryName="Rack">
+      <module name="" />
+      <RACK_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RACK_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RACK_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RACK_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RACK_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RACK_CONFIG_SETTINGS_ID NAME="PORT" VALUE="9292" />
+      <RACK_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RACK_CONFIG_SETTINGS_ID NAME="CONFIG_FILE" VALUE="config.ru" />
+      <RACK_CONFIG_SETTINGS_ID NAME="RACK_SERVER_TYPE" VALUE="Default" />
+      <RACK_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="RailsRunConfigurationType" factoryName="Rails">
       <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
       <module name="" />
@@ -1210,26 +1233,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.ru">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/sitemap.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.4705882">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1290,18 +1297,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/bar/index.directive.coffee">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/massage/index.directive.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="28" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/massage/index.directive.coffee">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/front/components/cast/bar/index.directive.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8250729">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.0588236">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.ru">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.040871933">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
           <folding />
         </state>
       </provider>
