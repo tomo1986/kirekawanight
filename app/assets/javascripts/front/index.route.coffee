@@ -137,7 +137,7 @@ angular.module 'bisyoujoZukanNight'
         templateUrl: '/front/tpl/shops/common/write_review.html'
 
       .state '/casts/guide',
-        url: '/casts/guide?page&sort&orde'
+        url: '/casts/guide?page&sort&orde&tags&bust'
         active_menu: 'guide'
         active_tab: 'cast'
         templateUrl: '/front/tpl/casts/guide/index.html'
@@ -145,6 +145,8 @@ angular.module 'bisyoujoZukanNight'
           page: null
           sort: null
           order: null
+          tags: null
+          bust: null
         }
       .state '/casts/guide/:id',
         url: '/casts/guide/:id'
@@ -182,13 +184,15 @@ angular.module 'bisyoujoZukanNight'
         templateUrl: '/front/tpl/casts/common/reviews.html'
 
       .state '/casts/bar',
-        url: '/casts/bar?page&sort&order'
+        url: '/casts/bar?page&sort&order&tags&bust'
         active_menu: 'bar'
         templateUrl: '/front/tpl/casts/bar/index.html'
         params: {
           page: null
           sort: null
           order: null
+          tags: null
+          bust: null
         }
 
       .state '/shops/bar',
@@ -299,13 +303,15 @@ angular.module 'bisyoujoZukanNight'
 
 
       .state '/casts/massage',
-        url: '/casts/massage?page&sort&order'
+        url: '/casts/massage?page&sort&order&tags&bust'
         active_menu: 'massage'
         templateUrl: '/front/tpl/casts/massage/index.html'
         params: {
           page: null
           sort: null
           order: null
+          tags: null
+          bust: null
         }
 
       .state '/shops/massage',
