@@ -40,7 +40,8 @@ gem 'whenever'
 # gem 'capistrano-rails', group: :development
 gem 'ckeditor'
 gem "non-stupid-digest-assets"
-
+gem 'sitemap_generator'
+gem 'unicorn-worker-killer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

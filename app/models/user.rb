@@ -27,6 +27,47 @@ class User < ApplicationRecord
   acts_as_taggable_on :labels
   acts_as_taggable
 
+  scope :global_search, ->(sort=nil,job=nil,tags=nil,bust=nil){
+    now = Time.zone.now
+    users = User.joins(
+        "left join taggings on users.id = taggings.taggable_id and taggable_type = 'User' left join pickups on users.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'User' and users.deleted_at is null "
+    ).uniq
+    if sort == 'new'
+      users = users.where("(users.job_type = ? and (pickups.start_at <= ? and pickups.end_at > ?)) or (users.job_type = ?) ",job, now,now, job).order("pickups.number_place is null asc, pickups.number_place asc")
+    else
+      users = users.where(job_type: job,deleted_at: nil)
+    end
+
+    if sort == 'new'
+      users = users.sort_new('desc')
+    elsif sort == 'support'
+      users = users.sort_support('desc')
+    elsif sort == 'favorite'
+      users = users.sort_favorite('desc')
+    elsif sort == 'ranking'
+      users = users.sort_ranking('desc')
+    elsif sort == 'review'
+      users = users.sort_review('desc')
+    end
+
+    if tags && tags.length > 0
+      sql = ""
+      count = tags.length
+      if count > 1
+        tags.each.with_index(1) do |tag,i|
+          sql = sql + "taggings.tag_id = #{tag} "
+          sql = sql + "or " if count > i
+        end
+      else
+        sql = sql + "taggings.tag_id = #{tags.to_i}" if tags.to_i != 0
+      end
+      users = users.where(sql) if sql.present?
+    end
+
+    return users
+
+  }
+
 
 
   scope :keyword_filter, ->(keyword=nil,group_id=nil, shop_id=nil, job_type=nil) {
@@ -59,15 +100,13 @@ class User < ApplicationRecord
     return self.order("created_at #{order}")
   }
   scope :sort_support, -> (order= 'desc'){
-    return self.joins("left join posts on posts.receiver_id = users.id and posts.type = 'PostType::Support' and posts.receiver_type = 'User'").group("users.id")
-               .order("count(posts.receiver_id) #{order}, users.id desc")
+    return self.order("(select count(posts.receiver_id) from posts where posts.receiver_id = users.id and posts.type = 'PostType::Support' and posts.receiver_type = 'User' ) desc, users.id")
   }
   scope :sort_favorite, -> (order= 'desc'){
-    return self.joins("left join posts on posts.receiver_id = users.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'User'").group("users.id")
-               .order("count(posts.receiver_id) #{order}, users.id desc")
+    return self.order("(select count(posts.receiver_id) from posts where posts.receiver_id = users.id and posts.type = 'PostType::Favorite' and posts.receiver_type = 'User' ) desc, users.id")
   }
-  scope :sort_ranking, -> (order= 'desc'){
-    return self.order("total_score #{order}")
+  scope :sort_review, -> (order= 'desc'){
+    return self.order("(select count(reviews.receiver_id) from reviews where reviews.receiver_id = users.id and reviews.type = 'ReviewType::User' and reviews.receiver_type = 'User' ) desc, users.id")
   }
 
   scope :find_new_user, -> (){

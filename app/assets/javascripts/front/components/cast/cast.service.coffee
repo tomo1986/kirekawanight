@@ -16,7 +16,7 @@ angular.module 'bisyoujoZukanNight'
       return res
     )
   sm.getCastList = (opt_params) ->
-    api.getPromise('/api/front/api2',opt_params).then((res) ->
+    api.postPromise('/api/front/api2',opt_params).then((res) ->
       return res
     )
   sm.getGuideCastList = (opt_params) ->

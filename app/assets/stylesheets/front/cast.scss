@@ -1,4 +1,83 @@
 .cast-page {
+  .side--menu-inner {
+    border: 1px solid $_em_text;
+    margin-bottom: 0;
+    .title {
+      color: $_brand-basic;
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: block;
+      padding: $row-space-half-half;
+      background-color: #fff;
+    }
+    .searchSelect{
+      width:100%;
+      li {
+        width:50%;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 1rem;
+        cursor: pointer;
+        &.active{
+          background-color: #222 !important;
+          color:$_brand-basic !important;
+        }
+      }
+    }
+    .box {
+      .lists{
+        width:100%;
+        li{
+          a{
+            display: block;
+            padding:.5rem;
+            color:#ddd;
+            &:hover{
+              background-color: #222;
+              color:$_brand-basic;
+            }
+            &.active{
+              background-color: #222 !important;
+              color:$_brand-basic !important;
+            }
+          }
+          label{
+            display: block;
+            padding:.5rem;
+            color:#ddd;
+            margin-bottom:1px;
+            &.active{
+              background-color: #222 !important;
+              color:$_brand-basic !important;
+            }
+            input{
+              display: none;
+            }
+          }
+        }
+      }
+      .search-btn-box{
+        margin:0;
+        a{
+          background-color: #720e0a;
+          padding:1rem;
+          color: #ad9a58;
+          font-weight: bold;
+          border-radius: 0;
+          width: 100%;
+          display: block;
+          &:hover{
+            opacity: .7;
+          }
+        }
+      }
+
+    }
+    .beack-box{
+      padding:.5rem;
+    }
+  }
   .rank-box {
     margin-bottom: $row-space-biger;
     .filter-box {

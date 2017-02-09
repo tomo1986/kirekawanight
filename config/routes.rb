@@ -198,14 +198,11 @@ Rails.application.routes.draw do
     get 'feature/trip', to: 'home#index'
     get 'feature/rankinginfo', to: 'home#index'
 
-
-    get 'system', to: 'home#index'
     get 'comsept', to: 'home#comsept'
-    get 'question', to: 'home#index'
-    get 'visitor', to: 'home#index'
-    get 'policy', to: 'home#index'
-    get 'contact', to: 'home#index'
-    get 'reserve', to: 'home#index'
+    get 'question', to: 'home#question'
+    get 'visitor', to: 'home#visitor'
+    get 'policy', to: 'home#policy'
+    get 'contact', to: 'home#contact'
     get 'sitemap', to: 'home#sitemap'
     get 'blogs/', to: 'blogs#index'
     get 'blogs/:id', to: 'blogs#show'
@@ -230,7 +227,7 @@ Rails.application.routes.draw do
       post :api0
       post :api0_1
       get :api1
-      get :api2
+      post :api2
       get :api3
       get :api4
       post :api5

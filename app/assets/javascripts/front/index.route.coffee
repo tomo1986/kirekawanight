@@ -21,7 +21,7 @@ angular.module 'bisyoujoZukanNight'
         templateUrl: '/front/tpl/login/password.html'
 
       .state '/casts/karaoke',
-        url: '/casts/karaoke?page&sort&orde'
+        url: '/casts/karaoke?page&sort&orde&tags&bust'
         active_menu: 'karaoke'
         active_tab: 'cast'
         templateUrl: '/front/tpl/casts/karaoke/index.html'
@@ -29,6 +29,8 @@ angular.module 'bisyoujoZukanNight'
           page: null
           sort: null
           order: null
+          tags: null
+          bust: null
         }
 
       .state '/shops/karaoke',

@@ -1,19 +1,29 @@
 angular.module 'bisyoujoZukanNight'
 .directive 'castKaraokeIndexDirective', ($state) ->
-  CastKaraokeIndexController = (castService, customerService, modalService) ->
+  CastKaraokeIndexController = (castService, customerService, modalService, api) ->
     vm = this
     vm.init = ->
       vm.isLoading = true
+      vm.displayedSort = false
+      vm.displayedPoint = false
+      vm.points = {}
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'KARAOKE CAST',link:''}]
+      angular.forEach($state.params.tags, (value) ->
+        vm.points["tags#{value}"] = Number(value)
+      )
 
       vm.filters ={
-        limit: 10
+        limit: 1
         page: if $state.params.page then $state.params.page else 1
         sort: if $state.params.sort then $state.params.sort else 'new'
         order: if $state.params.order then $state.params.order else 'desc'
         job_type: 'karaoke'
+        tags:if $state.params.tags then $state.params.tags else []
+        bust:if $state.params.bust then $state.params.bust else null
+
       }
       vm.getCasts()
+      vm.tags()
     vm.getCasts = ->
       castService.getCastList(vm.filters).then((res) ->
         vm.push_casts = res.data.push_users
@@ -55,7 +65,46 @@ angular.module 'bisyoujoZukanNight'
       vm.changePageFunk()
 
     vm.changePageFunk = ->
-      $state.go('/casts/karaoke',{page:vm.filters.page, sort: vm.filters.sort, order: vm.filters.order})
+      $state.go('/casts/karaoke',{
+        page:vm.filters.page
+        sort: vm.filters.sort
+        order: vm.filters.order
+        tags: vm.filters.tags
+        bust: vm.filters.bust
+
+      })
+
+    vm.changeFilterSort = (sort) ->
+      vm.casts = null
+      vm.isLoading = true
+      vm.filters.sort = sort
+      vm.filters.page = 1
+      vm.changePageFunk()
+    vm.onClickDisplayedPoint = ->  vm.displayedPoint = !vm.displayedPoint
+
+    vm.tags = ->
+      api.getPromise('/api/front/user_tags',{}).then((res) ->
+        vm.tags = res.data.tags
+      )
+    vm.onSelectTag = (tag_id) ->
+      flag = false
+      vm.filters.tags = []
+      console.log(tag_id)
+      angular.forEach(vm.points, (value, key) ->
+        if Number(value) == Number(tag_id)
+          flag = true
+          delete vm.points[key]
+      )
+      vm.points["tags#{tag_id}"] = Number(tag_id) if !flag
+      angular.forEach(vm.points, (value, key) ->
+        vm.filters.tags.push(Number(value))
+      )
+      console.log(vm.filters.tags)
+
+    vm.submitTags = ->
+      vm.filters.page = 1
+      vm.changePageFunk()
+
 
     vm.init()
     return
@@ -69,6 +118,8 @@ angular.module 'bisyoujoZukanNight'
         scope.vm.changePageFunk()
 
     )
+    vm.onClickDisplayedSort = -> vm.displayedSort = !vm.displayedSort
+
     scope.$watch("vm.filters.order",(newVal,oldVal) ->
       if newVal != oldVal
         scope.vm.casts = null

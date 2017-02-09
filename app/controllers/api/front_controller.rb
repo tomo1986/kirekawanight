@@ -125,18 +125,9 @@ class Api::FrontController < ApiController
     elsif params[:job_type] == 'sexy'
       PageViewType::CastSexy.create
     end
-    users = User.where(job_type: params[:job_type])
+    users = User.global_search(params[:sort],params[:job_type],params[:tags],params[:bust])
     total = users.count
-    if params[:sort] == 'new'
-      users = users.sort_new(params[:order])
-    elsif params[:sort] == 'support'
-      users = users.sort_support(params[:order])
-    elsif params[:sort] == 'favorite'
-      users = users.sort_favorite(params[:order])
-    elsif params[:sort] == 'review'
-      users = users.sort_ranking(params[:order])
 
-    end
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
     users = users.page(page).per(limit) if users.present?

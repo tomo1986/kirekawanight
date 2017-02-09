@@ -7,7 +7,40 @@
           a href="/shops/karaoke?page=1" SHOP
         li
           a.active href="/casts/karaoke?page=1" CAST
-
+    .rank-box
+      .side--menu-inner
+        span.title.active ng-click="vm.onClickDisplayedSort()"
+          span 並び替え
+          span ng-if="vm.filters.sort == 'new'"　(新着順)
+          span ng-if="vm.filters.sort == 'ranking'"　(ランキング順)
+          span ng-if="vm.filters.sort == 'review'"　(レビューが多い順)
+          span ng-if="vm.filters.sort == 'support'"　(いいね順)
+        .box ng-show="vm.displayedSort"
+          ul.lists.reset--card
+            li
+              a href="javascript:void(0)" ng-click="vm.changeFilterSort('new')" ng-class="{'active': vm.filters.sort == 'new'}" 新着順
+            li
+              a href="javascript:void(0)" ng-click="vm.changeFilterSort('ranking')" ng-class="{'active': vm.filters.sort == 'ranking'}" ランキング順
+            li
+              a href="javascript:void(0)" ng-click="vm.changeFilterSort('review')" ng-class="{'active': vm.filters.sort == 'review'}" レビューが多い順
+            li
+              a href="javascript:void(0)" ng-click="vm.changeFilterSort('support')" ng-class="{'active': vm.filters.sort == 'support'}" いいね順
+            li
+              a href="javascript:void(0)" ng-click="vm.changeFilterSort('favorite')" ng-class="{'active': vm.filters.sort == 'favorite'}" お気に入り登録順
+      .side--menu-inner
+        span.title.active ng-click="vm.onClickDisplayedPoint()"
+          span ポイント検索
+          /span ng-repeat="tag in vm.points track by $index"
+          /  span ng-if="$index > 0" ,
+          /  span {{tag.}}
+        .box ng-show="vm.displayedPoint"
+          ul.lists.reset--card
+            li ng-repeat="tag in vm.tags"
+              label ng-class="{'active': vm.points['tags'+tag.id]}"
+                input ng-click="vm.onSelectTag(tag.id)" type="checkbox" name="checkbox" value="{{tag.id}}"
+                  | {{tag.name}}
+          .search-btn-box
+            a.btn.btn-review href="javascript:void(0)" ng-click="vm.submitTags()" 検索する
     .rank-box
       .page-title
         h2.title

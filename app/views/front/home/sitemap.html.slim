@@ -1,0 +1,116 @@
+.move-menu
+  header-directive
+  nav-directive
+.main-content.container
+  main#main
+    breadcrumb-directive data="[{name:'TOP',link:'/'},{name:'SITE MAP',link:''}]"
+    .comsept-page
+      .comsept-box
+        .page-title
+          h2.title
+            | SITE MAP
+        .comsept-box--detail
+          h3.sub-title CAST
+          .col-md-12
+            .col-md-4
+              .row
+                a href="/casts/karaoke?page=1" KARAOKE
+            .col-md-4
+              .row
+                a href="/casts/bar?page=1" bar
+            .col-md-4
+              .row
+                a href="/casts/massage?page=1" massage
+        .comsept-box--detail
+          h3.sub-title SHOP
+          .col-md-12
+            .col-md-4
+              .row
+                a href="/shops/karaoke?page=1" KARAOKE
+            .col-md-4
+              .row
+                a href="/shops/bar?page=1" bar
+            .col-md-4
+              .row
+                a href="/shops/massage?page=1" massage
+        .comsept-box--detail
+          h3.sub-title ANOTHER
+          .col-md-12
+            .col-md-3
+              .row
+                a href="/comsept" kirekawa collectioとは
+            .col-md-3
+              .row
+                a href="/visitor" 初めての方へ
+            .col-md-3
+              .row
+                a href="/question" よくある質問
+            .col-md-3
+              .row
+                a href="/blogs" target="_blank" BLOG
+            .col-md-3
+              .row
+                a href="/contact" CONTACT
+footer#footer.clearfix
+  .container.clearfix
+    .clearfix
+      aside.aside-box.col-md-7.clearfix
+        ul.aside--list.clearfix
+          li
+            dl.clearfix
+              dt CAST
+              dd
+                a href="/casts/karaoke?page=1&sort=new" KARAOKE
+              dd
+                a href="/casts/bar?page=1&sort=new" BAR
+              dd
+                a href="/casts/massage?page=1&sort=new" MASSAGE
+              dd
+                a href="/casts/guide?page=1&sort=new" GUIDE
+          li
+            dl.clearfix
+              dt SHOP
+              dd
+                a href="/shops/karaoke?page=1&sort=new" KARAOKE
+              dd
+                a href="/shops/bar?page=1&sort=new" BAR
+              dd
+                a href="/shops/massage?page=1&sort=new" MASSAGE
+          li
+            dl.clearfix
+              dt CONTACT
+              dd
+                a href="/contact?type=tie-up" TIE UP
+              dd
+                a href="/contact?type=contact" CONTACT
+              dd
+                a href="/contact?type=post" POST
+      .aside-box.col-md-5
+        .fb-page data-adapt-container-width="true" data-height="72px" data-hide-cover="false" data-href="https://www.facebook.com/KireKawa-231672127266670/" data-show-facepile="false" data-small-header="true"
+          blockquote.fb-xfbml-parse-ignore cite="https://www.facebook.com/KireKawa-231672127266670/"
+            a href="https://www.facebook.com/KireKawa-231672127266670/"  KireKawa
+        ul.site--list.clearfix
+          li
+            a href="/comsept" kirekawa collectioとは
+          li
+            a href="/blogs" target="_blank" BLOG
+          li
+            a href="/sitemap" サイトマップ
+          li
+            a href="/visitor" 初めての方へ
+          li
+            a href="/question" よくある質問
+
+          -if customer_signed_in?
+            li
+              a href="javascript:void(0)" ng-click="vm.onClickedLogout()"  Log out
+          - else
+            li
+              a href="/login" ログイン & new
+        .footer-logo
+          = image_tag 'front/logo.png', alt: "kirekawa collection"
+    p.copyright Copyright © 2012 KIREKAWA Inc. ALL RIGHTS RESERVED.
+.scroll-top
+  a href="javascript:void(0);"
+    i.fa.fa-angle-up aria-hidden="true"
+  p TOP
