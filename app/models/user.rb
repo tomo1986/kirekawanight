@@ -109,7 +109,7 @@ class User < ApplicationRecord
     return self.order("(select count(reviews.receiver_id) from reviews where reviews.receiver_id = users.id and reviews.type = 'ReviewType::User' and reviews.receiver_type = 'User' ) desc, users.id")
   }
   scope :sort_ranking, -> (order= 'desc'){
-    return self.order("users.total_score asc")
+    return self.order("users.total_score #{order}")
   }
 
   scope :find_new_user, -> (){
