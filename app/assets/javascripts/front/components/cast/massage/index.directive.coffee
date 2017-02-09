@@ -14,7 +14,7 @@ angular.module 'bisyoujoZukanNight'
       )
 
       vm.filters ={
-        limit: 20
+        limit: 10
         page: if $state.params.page then $state.params.page else 1
         sort: if $state.params.sort then $state.params.sort else 'new'
         order: if $state.params.order then $state.params.order else 'desc'
