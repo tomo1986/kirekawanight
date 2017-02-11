@@ -72,7 +72,7 @@ section.main-container.map-form-page blog-form-directive=""
               span.title ng-class="{'is-text-danger': vm.errors.description}" Interview 日本語
               span.btn.btn-danger.btn-xs.absolutely 必須
             td.res-form-table__td.input-box
-              textarea.form-control style="height:10rem;" required='' ng-model="vm.blog.article_ja"
+              div text-angular='' ng-model='vm.blog.article_ja'
         .button-center ng-show="vm.canSubmit"
           button.btn.main-btn type="submit" 登録する
         .button-center ng-hide="vm.canSubmit"
