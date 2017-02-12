@@ -52,8 +52,9 @@ class User < ApplicationRecord
 
     if tags && tags.length > 0
       sql = ""
+      tag_object = tags.kind_of?(String)
       count = tags.length
-      if count > 1
+      if count > 1 && !tag_object
         tags.each.with_index(1) do |tag,i|
           sql = sql + "taggings.tag_id = #{tag} "
           sql = sql + "or " if count > i

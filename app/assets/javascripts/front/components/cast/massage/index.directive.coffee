@@ -9,9 +9,13 @@ angular.module 'bisyoujoZukanNight'
       vm.displayedPoint = false
       vm.points = {}
       vm.breadcrumb = [{name:'キレカワ',link:'/'},{name:'MASSAGE CAST',link:''}]
-      angular.forEach($state.params.tags, (value) ->
-        vm.points["tags#{value}"] = Number(value)
-      )
+      if $state.params.tags && typeof $state.params.tags != "string"
+        angular.forEach($state.params.tags, (value) ->
+          console.log(value)
+          vm.points["tags#{value}"] = Number(value)
+        )
+      else
+        vm.points["tags#{Number($state.params.tags)}"] = Number($state.params.tags)
 
       vm.filters ={
         limit: 10
@@ -102,7 +106,7 @@ angular.module 'bisyoujoZukanNight'
       )
       vm.points["tags#{tag_id}"] = Number(tag_id) if !flag
       angular.forEach(vm.points, (value, key) ->
-        vm.filters.tags.push(Number(value))
+        vm.filters.tags.push(Number(value)) if value > 0
       )
       console.log(vm.filters.tags)
 
