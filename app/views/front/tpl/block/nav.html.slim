@@ -3,6 +3,8 @@ div
   nav#nav ng-class="{'sidebarPushRight': vm.isActive}"
     .container
       ul.nav--list.clearfix
+        li.google_search
+          = image_tag 'front/google_search.jpg', style:"width:250px;", alt: "kirekawa collection"
         li
           a href="/" ng-class="{'active': vm.active == 'home'}" ng-click="vm.eventCalled()"
             h2.main トップ

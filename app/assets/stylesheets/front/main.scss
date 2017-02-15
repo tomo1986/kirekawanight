@@ -775,7 +775,14 @@ a, button {
         width: 100%;
         text-align: left;
         border-right: none;
+        &.google_search{
+          display: block !important;
+        }
       }
+      &.google_search{
+        display: none;
+      }
+
       &:last-child {
         border-right: none;
       }

@@ -2,8 +2,18 @@ header#header
   .header--main
     .header-top.clearfix
       .container
-        h1.site-title ベトナム・ホーチミンの夜遊び情報サイト！！見つかる出会える女の子・店舗数No.1「キレカワ」
+        h1.site-title ベトナム・ホーチミンの夜遊び情報サイト！！kire kawa(キレカワ)
         ul.top-list
+          li style="font-size: .7rem;margin-top: .2rem;"
+            span.count--title 登録店舗数：
+            span.count--count
+              | {{vm.shopCount | number}}
+            | 件
+          li style="font-size: .7rem;margin-top: .2rem;"
+            span.count--title 登録女性数：
+            span.count--count
+              | {{vm.userCount | number}}
+            | 件
           li
             a href="/policy" 利用規約
           li
@@ -22,12 +32,4 @@ header#header
             = image_tag 'front/tel.png', alt: "コールセンター　+84938971366"
           ul.site--count-list
             li
-              span.count--title 登録店舗数：
-              span.count--count
-                | {{vm.shopCount | number}}
-              | 件
-            li
-              span.count--title 登録女性数：
-              span.count--count
-                | {{vm.userCount | number}}
-              | 件
+              = image_tag 'front/google_search.jpg',style:"width:192px;", alt:"kirekawa collection"

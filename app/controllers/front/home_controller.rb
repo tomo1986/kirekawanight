@@ -498,9 +498,9 @@ class Front::HomeController < ApplicationController
   end
 
   def question
-    @head_title = "ベトナムのカラオケについて　|　ホーチミンの夜遊びの情報サイト「キレカワ」"
+    @head_title = "ベトナムの風俗の種類って？　|　 ベトナム・ホーチミンの夜遊び情報サイトならKire Kawa(キレカワ)"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "ベトナムのカラオケについて。ベトナムのカラオケについて理解を深めてください。あなた好みの美女と夜遊びするなら「キレカワ」"
+    @head_description = "ベトナムの風俗の種類について。いろんな種類の夜遊びや、風俗があるので安心、安全に遊んでいただくために説明します。"
     render action: :index
   end
   def policy
