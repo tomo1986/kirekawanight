@@ -61,8 +61,6 @@ angular.module 'bijyoZukanAdmin'
       tel:{required: true}
       is_credit:{required: true}
       chip:{required: true}
-      budget_yen:{required: true,regexp:/^[0-9]+$/}
-      budget_vnd:{required: trueregexp:/^[0-9]+$/}
       budget_usd:{required: trueregexp:/^[0-9]+$/}
     }
     messages:{
@@ -73,8 +71,6 @@ angular.module 'bijyoZukanAdmin'
       tel:{required: 'TEL is required entry'}
       is_credit:{required: 'credit is required entry'}
       chip:{required: 'chip is required entry'}
-      budget_yen:{required: 'min budget yen is required entry',regexp:'半角数字のみ'}
-      budget_vnd:{required: 'address is required entry',regexp:'半角数字のみ'}
       budget_usd:{required: 'address is required entry',regexp:'半角数字のみ'}
 
     }
