@@ -68,29 +68,6 @@ main#main style="margin:2rem 0;"
                       span
                         | {{review.sender.name || '匿名'}} ({{review.sender_review_count || 0}}件の口コミ)
           p.review--body ng-bind-html="review.comment | noHTML | newlines"
-          p ng-if="review.info1"
-            | トイレは
-            span ng-if="review.info1 == 'yes'" 綺麗でした
-            span ng-if="review.info1 == 'no'" 綺麗ではありませんでした。
-            span ng-if="review.info1 == 'not'" 綺麗でもなければ、汚くもありません。
-          p ng-if="review.info2"
-            | スタッフの対応は
-            span ng-if="review.info2 == 'yes'" 良かったです。
-            span ng-if="review.info2 == 'no'" 良くありませんでした。
-            span ng-if="review.info2 == 'not'" どちらとも言えません。
-
-          p ng-if="review.info3"
-            | お店のカラオケ機器は
-            span ng-if="review.info3 == 'yes'" 良かったです。
-            span ng-if="review.info3 == 'no'" 良くありませんでした。
-            span ng-if="review.info3 == 'not'" どちらとも言えません。
-
-          p ng-if="review.info4"
-            | お店のキャストのTip要求は
-            span ng-if="review.info4 == 'yes'" あります。
-            span ng-if="review.info4 == 'no'" ありません。
-            span ng-if="review.info4 == 'not'" どちらとも言えません。
-
           p ng-if="review.info5"
             | このお店は他の方におすすめは
             span ng-if="review.info4 == 'yes'" できます。
