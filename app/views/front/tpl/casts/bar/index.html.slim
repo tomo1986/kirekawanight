@@ -10,7 +10,9 @@
     .rank-box
       .side--menu-inner
         span.title.active ng-click="vm.onClickDisplayedSort()"
-          span 並び替え
+          span
+            | 並び替え
+            i.fa ng-class="{'fa-chevron-down':!vm.displayedSort, 'fa-chevron-up':vm.displayedSort}"
           span ng-if="vm.filters.sort == 'new'"　(新着順)
           span ng-if="vm.filters.sort == 'ranking'"　(ランキング順)
           span ng-if="vm.filters.sort == 'review'"　(レビューが多い順)
@@ -29,7 +31,8 @@
               a href="javascript:void(0)" ng-click="vm.changeFilterSort('favorite')" ng-class="{'active': vm.filters.sort == 'favorite'}" お気に入り登録順
       .side--menu-inner
         span.title.active ng-click="vm.onClickDisplayedPoint()"
-          span ポイント検索
+          | ポイント検索
+          i.fa ng-class="{'fa-chevron-down':!vm.displayedPoint, 'fa-chevron-up':vm.displayedPoint}"
         /span ng-repeat="tag in vm.points track by $index"
         /  span ng-if="$index > 0" ,
         /  span {{tag.}}

@@ -20,7 +20,9 @@
           .side
             .side--menu-block
               .side--menu-inner
-                span.title.active ng-click="vm.onClickDisplayedSort()" 並び替え
+                span.title.active ng-click="vm.onClickDisplayedSort()"
+                  | 並び替え
+                  i.fa ng-class="{'fa-chevron-down':!vm.displayedSort, 'fa-chevron-up':vm.displayedSort}"
                 .box ng-show="vm.displayedSort"
                   ul.lists.reset--card
                     li
@@ -35,7 +37,9 @@
                       a href="javascript:void(0)" ng-click="vm.changeFilterSort('favorite')" ng-class="{'active': vm.filters.sort == 'favorite'}" お気に入り登録順
             .side--menu-block
               .side--menu-inner
-                span.title.active ng-click="vm.onClickDisplayedDetail()" 詳細検索
+                span.title.active ng-click="vm.onClickDisplayedDetail()"
+                  | 詳細検索
+                  i.fa ng-class="{'fa-chevron-down':!vm.displayedDetail, 'fa-chevron-up':vm.displayedDetail}"
                 .box ng-show="vm.displayedDetail"
                   ul.lists.reset--card
                     li style="padding:.5rem;"
@@ -70,7 +74,9 @@
 
             .side--menu-block
               .side--menu-inner
-                span.title.active ng-click="vm.onClickDisplayedPoint()" ポイント検索
+                span.title.active ng-click="vm.onClickDisplayedPoint()"
+                  | ポイント検索
+                  i.fa ng-class="{'fa-chevron-down':!vm.displayedPoint, 'fa-chevron-up':vm.displayedPoint}"
                 .box ng-show="vm.displayedPoint"
                   ul.lists.reset--card
                     li ng-repeat="tag in vm.tags"

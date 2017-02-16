@@ -128,6 +128,7 @@ angular.module 'bisyoujoZukanNight'
         scope.vm.changePageFunk()
 
     )
+    vm.onClickDisplayedSort = -> vm.displayedSort = !vm.displayedSort
     scope.$watch("vm.filters.order",(newVal,oldVal) ->
       if newVal != oldVal
         scope.vm.casts = null

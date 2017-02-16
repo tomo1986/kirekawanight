@@ -35,6 +35,12 @@
             display: block;
             padding: $row-space-half-half;
             background-color: #fff;
+            position: relative;
+            i {
+              position: absolute;
+              top:8px;
+              right: 8px;
+            }
           }
           .searchSelect{
             width:100%;
