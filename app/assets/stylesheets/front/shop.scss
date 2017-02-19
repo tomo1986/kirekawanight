@@ -846,9 +846,9 @@
 
   .genre-tag{
     width:100%;
-    margin:0.9375rem 0;
+    margin:2rem 0;
     @media screen and (min-width: 320px) and (max-width: 543px){
-      margin: 0 -0.9375rem 0.9375rem;
+      margin: 2rem -0.9375rem;
       width: calc(100% + 1.875rem);
     }
     border-bottom: 1px solid $_brand-basic;
