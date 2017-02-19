@@ -273,7 +273,7 @@ angular.module 'bijyoZukanShop'
     like_music: {
       is_displayed: false
       ja:{
-        name: '好きな音楽'
+        name: '好きな音楽は?'
         placeholder: 'exile'
 
       }

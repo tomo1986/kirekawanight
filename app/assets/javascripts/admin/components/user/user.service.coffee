@@ -164,7 +164,7 @@ angular.module 'bijyoZukanAdmin'
       }
     }
     love_situation: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: 'どんな誘われ方をしたい？'
         placeholder: '聞き逃しそうなくらい、さらっと言われる。'
@@ -297,7 +297,7 @@ angular.module 'bijyoZukanAdmin'
     like_music: {
       is_displayed: true
       ja:{
-        name: '好きな音は?'
+        name: '好きな音楽は?'
         placeholder: 'exile'
 
       }
@@ -333,7 +333,7 @@ angular.module 'bijyoZukanAdmin'
 
     }
     like_place: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: 'よく遊びに行く場所がどこですか？'
         placeholder: '自分の部屋'
