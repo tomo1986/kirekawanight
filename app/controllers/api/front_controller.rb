@@ -173,7 +173,7 @@ class Api::FrontController < ApiController
     PageViewType::ShopDetail.create(subject_type: 'Shop',subject_id: params[:id])
     shop = Shop.find_by(id: params[:id])
     render_failed(4, t('shop.error.not_find')) and return if shop.blank?
-    users = shop.users
+    users = shop.users.where(users:{deleted_at: nil})
     is_favorited = false
     is_favorited = current_customer.favorites.exists?(receiver_type: 'Shop', receiver_id: params[:id]) if customer_signed_in?
     favorites = {}
@@ -614,7 +614,7 @@ class Api::FrontController < ApiController
 
   def api22
     user = User.find_by(id: params[:id])
-    users = User.where( shop_id: user.shop_id).where.not(id: user.id) if user.shop_id.present?
+    users = User.where( shop_id: user.shop_id,deleted_at: nil).where.not(id: user.id) if user.shop_id.present?
     total = users ? users.count : 0
     if params[:sort] == 'new'
       users = users.sort_new(params[:order])
@@ -677,7 +677,7 @@ class Api::FrontController < ApiController
   end
 
   def api25
-    users = User.where(shop_id: params[:id]) if params[:id]
+    users = User.where(shop_id: params[:id],deleted_at: nil) if params[:id]
     new_users = users.find_new_user if users
     total = users.length
     if params[:sort] == 'new'
@@ -710,7 +710,7 @@ class Api::FrontController < ApiController
   end
 
   def api27
-    users = User.where(shop_id: params[:id]) if params[:id]
+    users = User.where(shop_id: params[:id],deleted_at: nil) if params[:id]
     builders = Jbuilder.new do |json|
       json.code 1
       json.users users ? User.to_jbuilders(users) : nil
