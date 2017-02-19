@@ -164,7 +164,7 @@ angular.module 'bijyoZukanAdmin'
       }
     }
     love_situation: {
-      is_displayed: false
+      is_displayed: true
       ja:{
         name: 'どんな誘われ方をしたい？'
         placeholder: '聞き逃しそうなくらい、さらっと言われる。'
@@ -698,7 +698,7 @@ angular.module 'bijyoZukanAdmin'
 
     }
     dream: {
-      is_displayed: true
+      is_displayed: false
       ja:{
         name: 'どんな誘われ方をしたい？'
         placeholder: 'お金持ち'
