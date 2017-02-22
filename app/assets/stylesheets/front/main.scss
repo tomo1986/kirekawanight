@@ -770,6 +770,7 @@ a, button {
       text-align: center;
       border-right: 1px solid $gray-dark;
       width: 12.2857143%;
+      position: relative;
       @media screen and (min-width: 320px) and (max-width: 767px){
         float: none;
         width: 100%;
@@ -812,6 +813,46 @@ a, button {
           text-decoration: none;
           color: $_em_text_hover;
           background-color: rgba(55,58,60,0.5)
+        }
+      }
+      &:hover > .sub-nav--list{
+        display: block;
+        height: auto;
+
+      }
+
+      .sub-nav--list {
+        display: none;
+        width:100%;
+        position: absolute;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        li {
+          display: block;
+          width: 100%;
+          border: none;
+          a {
+            padding:.5rem 0;
+          }
+        }
+        @media screen and (max-width: 767px) and (min-width: 320px){
+          display: block;
+          height: 0;
+          overflow: hidden;
+          position: relative;
+        }
+
+        @media screen and (max-width: 767px) and (min-width: 320px){
+          &.sub-active {
+            position: static;
+            overflow: hidden;
+            height: auto;
+            li{
+              a{
+                padding: .5rem 3.5rem;
+              }
+            }
+          }
         }
 
       }

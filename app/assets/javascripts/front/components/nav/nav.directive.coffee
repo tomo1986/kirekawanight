@@ -11,6 +11,8 @@ angular.module 'bisyoujoZukanNight'
         vm.userCount = res.data.user_count
         vm.shopCount = res.data.shop_count
       )
+    vm.onTapMain = (tab) ->
+      vm.subActived = tab
 
     vm.onClickedLogout = ->
       customerService.clear().then((res)->

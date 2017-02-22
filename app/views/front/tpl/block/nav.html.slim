@@ -10,25 +10,36 @@ div
             h2.main トップ
             span.sub TOP
         li
-          a href="/shops/karaoke?page=1" ng-class="{'active': vm.active == 'karaoke'}" ng-click="vm.eventCalled()"
+          a href="javascript:void(0);" ng-class="{'active': vm.active == 'karaoke'}" ng-click="vm.onTapMain('karaoke')"
             h2.main カラオケ
             span.sub KARAOKE
+          ul.sub-nav--list ng-class="{'sub-active': vm.subActived == 'karaoke'}"
+            li
+              a href="/shops/karaoke?page=1" ng-click="vm.eventCalled()" 店舗
+            li
+              a href="/casts/karaoke?page=1" ng-click="vm.eventCalled()" 女の子
         li
-          a href="/shops/bar?page=1" ng-class="{'active': vm.active == 'bar'}" ng-click="vm.eventCalled()"
+          a href="javascript:void(0);" ng-class="{'active': vm.active == 'bar'}" ng-click="vm.onTapMain('bar')"
             h2.main バー
             span.sub BAR
+          ul.sub-nav--list ng-class="{'sub-active': vm.subActived == 'bar'}"
+            li
+              a href="/shops/bar?page=1" ng-click="vm.eventCalled()" 店舗
+            li
+              a href="/casts/bar?page=1" ng-click="vm.eventCalled()" 女の子
         li
-          a href="/shops/massage?page=1" ng-class="{'active': vm.active == 'massage'}" ng-click="vm.eventCalled()"
+          a href="javascript:void(0);" ng-class="{'active': vm.active == 'massage'}" ng-click="vm.onTapMain('massage')"
             h2.main マッサージ
             span.sub MASSAGE
+          ul.sub-nav--list ng-class="{'active': vm.subActived == 'massage'}"
+            li
+              a href="/shops/massage?page=1" ng-click="vm.eventCalled()" 店舗
+            li
+              a href="/casts/massage?page=1" ng-click="vm.eventCalled()" 女の子
         li
           a href="/casts/guide?page=1" ng-class="{'active': vm.active == 'guide'}" ng-click="vm.eventCalled()"
             h2.main ガイド
             span.sub GUIDE
-        /li
-        /  a href="/casts/sexy?page=1" ng-class="{'active': vm.active == 'sexy'}" ng-click="vm.eventCalled()"
-        /    h2.main セクシー
-        /    span.sub SEXY GIRL
         li
           a href="/comsept" ng-class="{'active': vm.active == 'comsept'}" ng-click="vm.eventCalled()"
             h2.main キレカワ
