@@ -51,16 +51,22 @@ footer#footer.clearfix
             a href="/visitor" 初めての方へ
           li
             a href="/question" よくある質問
+          li
+            a href="/policy" プライバシーポリシー
+          li
+            a href="/terms" 利用規約
 
           -if customer_signed_in?
             li
               a href="javascript:void(0)" ng-click="vm.onClickedLogout()"  Log out
           - else
             li
-              a href="/login" ログイン & new
+              a href="/login" ログイン/新規登録
+        p
+          | ※18歳未満の(高校生を含む)方の閲覧はご遠慮ください
         .footer-logo
           = image_tag 'front/logo.png', alt: "kirekawa collection"
-    p.copyright Copyright © 2012 KIREKAWA Inc. ALL RIGHTS RESERVED.
+    p.copyright Copyright © 2016 KIREKAWA
 .scroll-top
   a href="javascript:void(0);"
     i.fa.fa-angle-up aria-hidden="true"

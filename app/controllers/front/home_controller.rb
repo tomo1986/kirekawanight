@@ -509,6 +509,14 @@ class Front::HomeController < ApplicationController
     @head_description = "ベトナム・ホーチミンの夜遊び情報サイトKire Kawa(キレカワ)のプライバシーポリシーについて。カラオケ、ガールズバー、マッサージなどを安心・安全に遊んでいただくために。"
     render action: :index
   end
+
+  def terms
+    @head_title = "キレカワの利用規約 | ベトナム・ホーチミンの夜遊び情報ならKire Kawa(キレカワ)"
+    @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
+    @head_description = "ベトナム・ホーチミンの夜遊び情報サイトKire Kawa(キレカワ)の利用規約について。カラオケ、ガールズバー、マッサージなどを安心・安全に遊んでいただくために。"
+    render action: :index
+  end
+
   def visitor
     @head_title = "キレカワの使い方 | ベトナム・ホーチミンの夜遊び情報ならKire Kawa(キレカワ)"
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"

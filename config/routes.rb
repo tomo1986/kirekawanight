@@ -202,6 +202,7 @@ Rails.application.routes.draw do
     get 'question', to: 'home#question'
     get 'visitor', to: 'home#visitor'
     get 'policy', to: 'home#policy'
+    get 'terms', to: 'home#terms'
     get 'contact', to: 'home#contact'
     get 'sitemap', to: 'home#sitemap'
     get 'blogs/', to: 'blogs#index'

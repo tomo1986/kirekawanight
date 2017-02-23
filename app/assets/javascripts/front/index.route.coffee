@@ -509,3 +509,7 @@ angular.module 'bisyoujoZukanNight'
       url: '/policy'
       active_menu: 'policy'
       templateUrl: '/front/tpl/policy/index_jp.html'
+    .state '/terms',
+      url: '/terms'
+      active_menu: 'terms'
+      templateUrl: '/front/tpl/terms/index_jp.html'
