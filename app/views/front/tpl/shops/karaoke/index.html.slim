@@ -119,15 +119,15 @@
                               = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
                             .clearfix
                               .sub-image-left
-                                span ng-if="shop.images[1]"
-                                  img ng-src="{{shop.images[1].url}}" alt="{{shop.name}}の画像"
-                                span ng-if="!shop.images[1]"
-                                  = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
+                                span ng-if="shop.pickup_users[0] && shop.pickup_users[0].images[0]"
+                                  img ng-src="{{shop.pickup_users[0].images[0].url}}" alt="{{shop.pickup_users[0].name}}の画像"
+                                span ng-if="!shop.pickup_users[0] && !shop.pickup_users[0].images[0]"
+                                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection shop no-image"
                               .sub-image-right
-                                span ng-if="shop.images[2]"
-                                  img ng-src="{{shop.images[2].url}}" alt="{{shop.name}}の画像"
-                                span ng-if="!shop.images[2]"
-                                  = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
+                                span ng-if="shop.pickup_users[1] && shop.pickup_users[1].images[0]"
+                                  img ng-src="{{shop.pickup_users[1] && shop.pickup_users[1].images[0].url}}" alt="{{shop.pickup_users[0].name}}の画像"
+                                span ng-if="!shop.pickup_users[1] && !shop.pickup_users[1].images[0]"
+                                  = image_tag 'front/cast-no-image.png', alt: "kirekawa collection shop no-image"
 
 
                     .col-xs-12.col-sm-7.col-md-8.col-xl-8

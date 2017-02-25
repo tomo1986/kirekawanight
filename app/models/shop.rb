@@ -305,6 +305,7 @@ class Shop < ApplicationRecord
         json.room_count shop.room_count
         json.seat_count shop.seat_count
         json.images shop.set_images
+        json.pickup_users User.to_jbuilders_for_user_list(shop.users.where(users:{is_pickuped: true}).limit(2))
         json.support_count shop.supports.count
         json.favorite_count shop.favorites.count
         json.review_count shop.reviews.where(reviews:{is_displayed: true}).count

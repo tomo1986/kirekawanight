@@ -100,7 +100,7 @@ main#main style="margin:2rem 0;"
             input.checkbox style="display: inline-block;margin: 1rem .5rem 0 0;" id="approval" type="checkbox" value="true" name="remember_me" required='' ng-model='vm.contact.approval' /
             label.label-checkbox for="approval" 利用規約に同意する
           div style="text-align:center;"
-            a href="/policy" target="_blank" 利用規約はこちら
+            a href="/terms" target="_blank" 利用規約はこちら
           .center-button style="text-align:center;margin-bottom:1rem;" ng-show="vm.canContactSubmited"
             button.btn.btn-submit type="submit" ng-disabled="contactForm.$invalid"  問合わせる
           .center-button style="text-align:center;margin-bottom:1rem;" ng-hide="vm.canContactSubmited"

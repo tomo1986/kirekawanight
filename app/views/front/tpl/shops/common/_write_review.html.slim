@@ -171,7 +171,7 @@ main#main style="margin:2rem 0;"
               input.checkbox style="display: inline-block;margin: 1rem .5rem 0 0;" id="approval" type="checkbox" value="true" name="remember_me" required='' ng-model='vm.review.approval' /
               label.label-checkbox for="approval" 利用規約に同意する
             div style="text-align:center;"
-              a href="/policy" target="_blank" 利用規約はこちら
+              a href="/terms" target="_blank" 利用規約はこちら
             .center-button  ng-show="vm.canReviewSubmited"
               button#submit.btn.btn-submit.left type="submit" ng-disabled="reviewForm.$invalid" ng-click="vm.reviewSubmit()" 口コミを投稿する
             .center-button ng-hide="vm.canReviewSubmited"
