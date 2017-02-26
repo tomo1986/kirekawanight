@@ -39,7 +39,7 @@ main#main
             li ng-repeat="image in vm.cast.images track by $index"
               a href="javascript:void(0)" ng-class="{'active': vm.castMainImg == image.url}" ng-click="vm.onClickedImage($index)"
                 img ng-src="{{image.url}}" alt="{{vm.cast.name}}画像"
-    .comment.info-box.clearfix ng-if="vm.cast && vm.cast.profile && vm.cast.profile.interview && vm.cast.is_pickuped"
+    .comment.info-box.clearfix ng-if="vm.cast && vm.cast.profile && vm.cast.profile.interview"
       .page-title
         h2.title
           | Introduction
