@@ -64,8 +64,10 @@ class Shop < ApplicationRecord
       count = tags.length
       if count > 1 && !tag_object
         tags.each.with_index(1) do |tag,i|
-          sql = sql + "taggings.tag_id = #{tag} "
-          sql = sql + "or " if count > i
+          # sql = sql + "taggings.tag_id = #{tag} "
+          # sql = sql + "or " if count > i
+          sql = sql + "shops.id in(select taggable_id from taggings where tag_id = #{tag} and taggable_type = 'Shop' ) "
+          sql = sql + "and " if count > i
         end
       else
         sql = sql + "taggings.tag_id = #{tags.to_i}" if tags.to_i != 0
