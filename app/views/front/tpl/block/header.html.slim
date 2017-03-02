@@ -13,8 +13,6 @@ header#header
             span.count--count
               | {{vm.userCount | number}}
             | 件
-          li
-            a href="/question" よくある質問
           -if customer_signed_in?
             li
               a href="/mypage/show" マイページ
