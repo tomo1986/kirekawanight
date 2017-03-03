@@ -1602,6 +1602,20 @@ class Api::AdminController < ApiController
     render json: builder.target!
   end
 
+  def api78
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    shop_ids = params["shop_ids"].to_s.split(',').sort
+    lat = Range.new(*[params["east"], params["west"]].sort)
+    lon = Range.new(*[params["north"], params["south"]].sort)
+    shops = Shop.where(lat: lat, lon: lon).where.not(id: shop_ids)
+    total = shops.count
+    builders = Jbuilder.new do |json|
+      json.shops Shop.to_jbuilders(shops)
+      json.total total
+    end
+    render json: builders.target!
+  end
+
 
 
 end

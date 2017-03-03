@@ -11,6 +11,21 @@ section.main-container.notification-index-page shop-index-directive=""
     .row
       hr
     .row
+      .col-md-6
+        #map_canvas data-shop-ids="" style="width:100%; height:200px;"
+      .col-md-6
+        table.res-separate-table
+          thead
+            tr
+              th ID
+              th name
+          tbody
+            tr(dir-paginate="shop in vm.mapShops | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page")
+              td.clearfix data-label="ID"  {{shop.id}}
+              td.clearfix data-label="name"
+                a.btn.action-btn href="/admin/shops/{{shop.id}}/detail"
+                  | {{shop.name}}
+
       table.res-separate-table
         thead
           tr

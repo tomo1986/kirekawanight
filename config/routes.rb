@@ -335,6 +335,7 @@ Rails.application.routes.draw do
       get :api75
       post :api76
       post :api77
+      get :api78
     end
     scope :group, module: 'group' do
       post :logout
