@@ -7,7 +7,7 @@ angular.module 'bijyoZukanAdmin'
       vm.filters ={limit: 20,page: if $state.params.page then $state.params.page else 1}
       vm.getShops()
 
-      vm.googleMapFnk()
+#      vm.googleMapFnk()
 
     vm.getShops = ->
       shopService.getShops(vm.filters).then((res) ->
