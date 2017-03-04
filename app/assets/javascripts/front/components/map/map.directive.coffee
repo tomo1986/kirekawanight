@@ -1,76 +1,49 @@
-angular.module 'bijyoZukanAdmin'
-.directive 'shopIndexDirective',  ->
-  ShopIndexController = ($state, shopService,modalService,api) ->
+angular.module 'bisyoujoZukanNight'
+.directive 'mapIndexDirective', (api, $state,$rootScope) ->
+  MapIndexController = () ->
     vm = this
     vm.init = ->
-      vm.breadcrumb = [{name:'Dashboard',link:'/admin'},{name:'Shop List',link:''}]
-      vm.filters ={limit: 20,page: if $state.params.page then $state.params.page else 1}
-      vm.getShops()
-
-      vm.googleMapFnk()
-
-    vm.getShops = ->
-      shopService.getShops(vm.filters).then((res) ->
-        vm.shops = res.data.shops
-        vm.total = res.data.total
-        window.scrollTo(0, 0)
-      )
-
-    vm.executeDeletion = (opt_id) ->
-      shopService.deleteShop({id: opt_id}).then((res) ->
-        if res.data.code == 1
-          modalService.alert('完了しました')
-          vm.getShops()
-        else
-          modalService.error("error",res.data.message)
-      )
-
-    vm.onPageChanged = (page) ->
-      $state.go('/shops',{page:page})
-      return
-
-    vm.googleMapFnk = ->
+      vm.breadcrumb = [{name:'キレカワ TOP',link:'/'},{name:'MAPから検索',link:''}]
       map_canvas = $('#map_canvas')
       vm.loading = true
       if $('#map_canvas').length
-        # ユーザーの現在位置取得を試みる
         if navigator.geolocation
           navigator.geolocation.getCurrentPosition ((position) ->
-            current_location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-            window.big_map = new google.maps.Map(
-              document.getElementById('map_canvas'),
-              {
-                center: current_location,
-                zoom: 20,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                scaleControl: true
-              }
-            )
-            big_map.setCenter(current_location)
-            vm.selectLocation()
-          ), ((error) ->
-            errorInfo = [
-              '原因不明のエラーが発生しました…。'
-              '位置情報の取得が許可されませんでした…。'
-              '電波状況などで位置情報が取得できませんでした…。'
-              '位置情報の取得に時間がかかり過ぎてタイムアウトしました…。'
-            ]
-            errorNo = error.code
-            errorMessage = '[エラー番号: ' + errorNo + ']\n' + errorInfo[errorNo]
-            alert errorMessage
-            default_point = new google.maps.LatLng(10.780465, 106.70478600000001)
-            window.big_map = new google.maps.Map(
-              document.getElementById('map_canvas'),
-              {
-                center: default_point, #設定しないとSafariで表示されなかった
-                zoom: 20,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                scaleControl: true
-              }
-            )
-            vm.selectLocation()
-            return
-          ),
+              current_location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+              window.big_map = new google.maps.Map(
+                document.getElementById('map_canvas'),
+                {
+                  center: current_location,
+                  zoom: 20,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP,
+                  scaleControl: true
+                }
+              )
+              big_map.setCenter(current_location)
+              vm.selectLocation()
+            ), ((error) ->
+              errorInfo = [
+                '原因不明のエラーが発生しました…。'
+                '位置情報の取得が許可されませんでした…。'
+                '電波状況などで位置情報が取得できませんでした…。'
+                '位置情報の取得に時間がかかり過ぎてタイムアウトしました…。'
+              ]
+              errorNo = error.code
+              errorMessage = '[エラー番号: ' + errorNo + ']\n' + errorInfo[errorNo]
+              alert errorMessage
+              default_point = new google.maps.LatLng(10.780465, 106.70478600000001)
+              window.big_map = new google.maps.Map(
+                document.getElementById('map_canvas'),
+                {
+                  center: default_point, #設定しないとSafariで表示されなかった
+                  zoom: 20,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP,
+                  scaleControl: true
+                }
+              )
+              vm.selectLocation()
+              return
+            ),
             'enableHighAccuracy': false
             'timeout': 8000
             'maximumAge': 2000
@@ -113,9 +86,9 @@ angular.module 'bijyoZukanAdmin'
           west = pos.getSouthWest().lng()
 
           api.getPromise('/api/admin/api78',{north:north,south:south,east:east,west:west}).then((res) ->
-            vm.mapShops = res.data.shops
+            vm.shops = res.data.shops
             vm.loading = false
-            angular.forEach(vm.mapShops,(shop) ->
+            angular.forEach(vm.shops,(shop) ->
 
               markerId = "marker#{shop.id}"
               infoWindowId = "infoWindow#{shop.id}"
@@ -147,8 +120,11 @@ angular.module 'bijyoZukanAdmin'
 
     vm.init()
     return
+  linkFunc = (scope, el, attr, vm) ->
+    return
   directive =
     restrict: 'A'
-    controller: ShopIndexController
+    controller: MapIndexController
     controllerAs: 'vm'
     bindToController: true
+    link: linkFunc

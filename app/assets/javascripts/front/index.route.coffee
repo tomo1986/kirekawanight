@@ -513,3 +513,7 @@ angular.module 'bisyoujoZukanNight'
       url: '/terms'
       active_menu: 'terms'
       templateUrl: '/front/tpl/terms/index_jp.html'
+    .state '/map',
+      url: '/map'
+      active_menu: 'map'
+      templateUrl: '/front/tpl/map/index.html'

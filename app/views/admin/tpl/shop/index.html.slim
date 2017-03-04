@@ -12,7 +12,9 @@ section.main-container.notification-index-page shop-index-directive=""
       hr
     .row
       .col-md-6
-        #map_canvas data-shop-ids="" style="width:100%; height:200px;"
+        #map_canvas style="width:100%; height:200px;position:relative;"
+          .button-center style="position:absolute;top:30%;width:100%;height100%;z-index:9999;" ng-if="vm.loading"
+            loading-directive size="125"
       .col-md-6
         table.res-separate-table
           thead

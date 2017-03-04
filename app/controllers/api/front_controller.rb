@@ -807,6 +807,18 @@ class Api::FrontController < ApiController
     render json: builders.target!
   end
 
+  def api34
+    lat = Range.new(*[params["east"], params["west"]].sort)
+    lon = Range.new(*[params["north"], params["south"]].sort)
+    shops = Shop.where(lat: lat, lon: lon, deleted_at: nil)
+    total = shops.count
+    builders = Jbuilder.new do |json|
+      json.shops Shop.to_jbuilders(shops)
+      json.total total
+    end
+    render json: builders.target!
+  end
+
 
 end
 
