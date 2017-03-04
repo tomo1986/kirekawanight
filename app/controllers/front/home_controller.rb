@@ -537,5 +537,11 @@ class Front::HomeController < ApplicationController
     @head_description = "キレカワをご覧いただきありがとうございます。キレカワを使って安心・安全にホーチミンの夜遊びを楽しんでいただくために、使用法方やどんなことができるかを説明します。"
     render action: :index
   end
+  def map
+    @head_title = "地図から店舗を検索　|　ベトナム・ホーチミンの夜遊び情報ならKireKawa(キレカワ)"
+    @head_keyword = "ベトナム、ホーチミン、夜遊び、カラオケ、ガールズバー、マッサージ、観光、ガイド"
+    @head_description = "ベトナム・ホーチミンのお店を地図から検索。現在地から近いお店の一覧を調べることができます。"
+    render action: :index
+  end
 
 end

@@ -205,7 +205,7 @@ Rails.application.routes.draw do
     get 'terms', to: 'home#terms'
     get 'contact', to: 'home#contact'
     get 'sitemap', to: 'home#sitemap'
-    get 'map', to: 'home#contact'
+    get 'map', to: 'home#map'
     get 'blogs/', to: 'blogs#index'
     get 'blogs/:id', to: 'blogs#show'
 
