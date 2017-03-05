@@ -45,7 +45,7 @@ angular.module 'bisyoujoZukanNight'
           vm.pickup_users = res.data.pickup_users
           vm.isDisplayed_pickup_user = true
           vm.all_shop_count = res.data.all_shop_count
-#          vm.shopMainImg = vm.shop.images[0].url
+          vm.shopMainImg = vm.shop.images[0].url
           vm.reviewQuestion = shopService.setReaviewQuestion(vm.shop.job_type)
           vm.shop.interview_ja = $sce.trustAsHtml(vm.shop.interview_ja)
         else

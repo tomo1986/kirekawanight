@@ -1,5 +1,5 @@
 angular.module 'bisyoujoZukanNight'
-.directive 'castDetailDirective', ($state,castService, modalService,customerService, NgMap, validationService) ->
+.directive 'castDetailDirective', ($state,$sce,castService, modalService,customerService, NgMap, validationService) ->
   CastDetailController = () ->
     vm = this
     vm.init = ->
@@ -58,6 +58,7 @@ angular.module 'bisyoujoZukanNight'
         vm.cast['profile'] = res.data.profile
         vm.isFavorited = res.data.is_favorited
         vm.castMainImg = vm.cast.images[0].url if vm.cast.images[0]
+        vm.cast.profile.interview = $sce.trustAsHtml(vm.cast.profile.interview)
       )
 
 
