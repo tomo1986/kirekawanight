@@ -85,7 +85,7 @@ angular.module 'bisyoujoZukanNight'
           east    = pos.getNorthEast().lng()
           west = pos.getSouthWest().lng()
 
-          api.getPromise('/api/admin/api78',{north:north,south:south,east:east,west:west}).then((res) ->
+          api.getPromise('/api/front/api34',{north:north,south:south,east:east,west:west}).then((res) ->
             vm.shops = res.data.shops
             vm.loading = false
             angular.forEach(vm.shops,(shop) ->
