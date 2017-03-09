@@ -34,7 +34,7 @@ angular.module 'bisyoujoZukanNight'
         }
 
       .state '/shops/karaoke',
-        url: '/shops/karaoke?page&sort&order&tags&budget&mama_tip&tip&karaoke_machine&japanese&english'
+        url: '/shops/karaoke?page&sort&order&tags&budget&mama_tip&tip&karaoke_machine&japanese&english&visa&master&jcb'
         active_menu: 'karaoke'
         active_tab: 'shop'
         templateUrl: '/front/tpl/shops/karaoke/index.html'
@@ -49,6 +49,10 @@ angular.module 'bisyoujoZukanNight'
           karaoke_machine: null
           japanese: null
           english: null
+          visa: null
+          master: null
+          jcb: null
+
         }
 
       .state '/casts/karaoke/:id',
@@ -211,6 +215,10 @@ angular.module 'bisyoujoZukanNight'
           karaoke_machine: null
           japanese: null
           english: null
+          visa: null
+          master: null
+          jcb: null
+
         }
 
       .state '/casts/bar/:id',
@@ -328,6 +336,9 @@ angular.module 'bisyoujoZukanNight'
           tip: null
           japanese: null
           english: null
+          visa: null
+          master: null
+          jcb: null
         }
 
       .state '/casts/massage/:id',

@@ -32,6 +32,9 @@ angular.module 'bisyoujoZukanNight'
         karaoke_machine:if $state.params.karaoke_machine then $state.params.karaoke_machine else null
         japanese:if $state.params.japanese then true else null
         english:if $state.params.english then true else null
+        visa:if $state.params.visa then true else null
+        master:if $state.params.master then true else null
+        jcb:if $state.params.jcb then true else null
       }
 
       vm.getShops()
@@ -73,6 +76,10 @@ angular.module 'bisyoujoZukanNight'
       vm.filters.karaoke_machine = null if vm.filters.karaoke_machine == false
       vm.filters.japanese = null if vm.filters.japanese == false
       vm.filters.english = null if vm.filters.english == false
+      vm.filters.visa = null if vm.filters.visa == false
+      vm.filters.master = null if vm.filters.master == false
+      vm.filters.jcb = null if vm.filters.jcb == false
+
 
       vm.changePageFunk()
 
@@ -136,6 +143,9 @@ angular.module 'bisyoujoZukanNight'
         karaoke_machine:vm.filters.karaoke_machine
         japanese:vm.filters.japanese
         english:vm.filters.english
+        jcb:vm.filters.jcb
+        master:vm.filters.master
+        visa:vm.filters.visa
       })
 
 

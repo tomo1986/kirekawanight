@@ -68,6 +68,16 @@
                       label ng-class="{'active': vm.filters.english}"
                         input.checkbox type="checkbox" name="english" ng-model='vm.filters.english'
                           | 英語
+                    /li
+                    /  label ng-class="{'active': vm.filters.visa}"
+                    /    input.checkbox type="checkbox" name="visa" ng-model='vm.filters.visa'
+                    /      | VISA
+                    /  label ng-class="{'active': vm.filters.master}"
+                    /    input.checkbox type="checkbox" name="master" ng-model='vm.filters.master'
+                    /      | MASTER
+                    /  label ng-class="{'active': vm.filters.jcb}"
+                    /    input.checkbox type="checkbox" name="jcb" ng-model='vm.filters.jcb'
+                    /      | JCB
 
                   .search-btn-box
                     a.btn.btn-review href="javascript:void(0)" ng-click="vm.submitDetails()" 検索する

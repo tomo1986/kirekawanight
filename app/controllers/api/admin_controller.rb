@@ -1100,6 +1100,11 @@ class Api::AdminController < ApiController
       end
     end
 
+    shop.cards << CardType::Jcb.new if params[:jcb] && shop.jcb.nil?
+    shop.cards << CardType::Visa.new if params[:visa] && shop.visa.nil?
+    shop.cards << CardType::Master.new if params[:master] && shop.master.nil?
+    shop.cards << CardType::Amex.new if params[:amex] && shop.amex.nil?
+
     if shop.save
       builder = Jbuilder.new do |json|
         json.shop shop.to_jbuilder
@@ -1172,6 +1177,11 @@ class Api::AdminController < ApiController
         access: params[:access],
         tip_avg: params[:tip_avg]
     }
+    shop.cards << CardType::Jcb.new if params[:jcb] && shop.jcb.nil?
+    shop.cards << CardType::Visa.new if params[:visa] && shop.visa.nil?
+    shop.cards << CardType::Master.new if params[:master] && shop.master.nil?
+    shop.cards << CardType::Amex.new if params[:amex] && shop.amex.nil?
+
     if params[:images].present?
       params[:images].values.each do |image|
         shop.images.where(id: image[:id]).first.update(image: image[:url]) and next if image.present? && image[:id].present? && image[:id] != 'null'

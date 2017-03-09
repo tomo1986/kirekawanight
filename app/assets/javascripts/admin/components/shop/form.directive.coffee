@@ -7,6 +7,11 @@ angular.module 'bijyoZukanAdmin'
     vm.init = ->
       vm.canSubmit = true
       vm.menus = []
+      vm.visa = null
+      vm.master = null
+      vm.jcb = null
+      vm.amex = null
+
       vm.breadcrumb = [{name:'Dashboard',link:'/admin'},{name:'Shop',link:''}]
       vm.open_options={
         from:{is_from:true,date:null}
@@ -139,7 +144,12 @@ angular.module 'bijyoZukanAdmin'
             options:{aspectRatio: 2 / 1.1,minCropBoxWidth:1920,minCropBoxHeight:1026,zoomable: true}
           })
         )
-
+        angular.forEach(vm.shop.cards, (card) ->
+          vm.visa = true if card.name == 'Visa'
+          vm.master = true if card.name == 'Master'
+          vm.jcb = true if card.name == 'JCB'
+          vm.amex = true if card.name == 'AMEX'
+        )
       )
     vm.newShop = ->
       shopService.newShop().then((res) ->
@@ -159,6 +169,12 @@ angular.module 'bijyoZukanAdmin'
           original_url: null
           options:{aspectRatio: "NaN",minCropBoxWidth:500,minCropBoxHeight:500,zoomable: true}
         })
+        angular.forEach(vm.shop.cards, (card) ->
+          vm.visa = true if card.name == 'Visa'
+          vm.master = true if card.name == 'Master'
+          vm.jcb = true if card.name == 'JCB'
+          vm.amex = true if card.name == 'AMEX'
+        )
 
       )
     vm.addImage = ->
@@ -205,6 +221,10 @@ angular.module 'bijyoZukanAdmin'
         )
       vm.shop['way_images'] = way_images
 
+      vm.shop['jcb'] = vm.jcb
+      vm.shop['master'] = vm.master
+      vm.shop['visa'] = vm.visa
+      vm.shop['amex'] = vm.amex
 
 
       title = "We saved finish "

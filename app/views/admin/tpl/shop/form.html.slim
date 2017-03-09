@@ -219,6 +219,26 @@ section.main-container.map-form-page shop-form-directive=""
                 | {{vm.errors.is_credit}}
           tr
             th.res-form-table__th.title-box.clearfix
+              span.title レクジットカード(使える種類)
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              label.form-check-inline
+                input.form-check-input type="checkbox" value="true" ng-model="vm.visa"
+                | Visa
+              label.form-check-inline
+                input.form-check-input type="checkbox" value="true" ng-model="vm.master"
+                | Master
+              label.form-check-inline
+                input.form-check-input type="checkbox" value="true" ng-model="vm.jcb"
+                | Jcb
+              label.form-check-inline
+                input.form-check-input type="checkbox" value="true" ng-model="vm.amex"
+                | AMEX
+
+
+
+          tr
+            th.res-form-table__th.title-box.clearfix
               span.title チップについて
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box
@@ -311,9 +331,6 @@ section.main-container.map-form-page shop-form-directive=""
                         | 画像選択
               .button-center
                 button.btn.main-btn type="button" ng-click="vm.addWayImage()" add image
-
-
-
           tr
             th.res-form-table__th.title-box.clearfix
               span.title ng-class="{'is-text-danger': vm.errors.description}" 紹介文(日本語)

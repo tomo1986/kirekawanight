@@ -39,10 +39,12 @@ main#main
         tr
           th.res-form-table__th.parent-th.title-box.clearfix クレジットカード
           td.res-form-table__td.parent-td.input-box
-            div ng-if="vm.shop.is_credit"
-              = image_tag 'front/card.png', alt:"card list"
-            div ng-if="!vm.shop.is_credit"
-              | 使用できません
+            span ng-repeat="card in vm.shop.cards"
+              spna ng-if="card.name == 'Visa'"  VISA /
+              spna ng-if="card.name == 'Master'"  MasterCard /
+              spna ng-if="card.name == 'JCB'"  JCB /
+              spna ng-if="card.name == 'AMEX'"  American Express /
+
       .page-title ng-if="vm.shop.basic_menus.length > 0"
         h2.title BASIC MENU
       table.res-form-table ng-if="vm.shop.basic_menus.length > 0"

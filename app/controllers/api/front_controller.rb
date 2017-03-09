@@ -396,10 +396,8 @@ class Api::FrontController < ApiController
       end
     end
 
-    reviews = Review.joins("join shops on reviews.receiver_id = shops.id and reviews.receiver_type = 'Shop'").where("reviews.is_displayed = 1 and shops.deleted_at is null").order("reviews.id desc").limit(5)
 
     builders = Jbuilder.new do |json|
-      json.reviews Review.to_jbuilders(reviews)
       json.favorites favorites
       json.new_karaoke_users User.to_jbuilders_for_user_list(users.where(job_type: 'karaoke').order("id desc").limit(4))
       json.new_bar_users User.to_jbuilders_for_user_list(users.where(job_type: 'bar').order("id desc").limit(4))
