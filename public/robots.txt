@@ -1,6 +1,0 @@
-User-Agent:*
-Disallow: /blogs/1
-Disallow: /blogs/2
-Disallow: /blogs/3
-Disallow: /blogs/4
-Disallow: /blogs/5
