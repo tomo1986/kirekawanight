@@ -14,7 +14,7 @@ angular.module 'bisyoujoZukanNight'
                 document.getElementById('map_canvas'),
                 {
                   center: current_location,
-                  zoom: 20,
+                  zoom: 18,
                   mapTypeId: google.maps.MapTypeId.ROADMAP,
                   scaleControl: true
                 }
@@ -36,7 +36,7 @@ angular.module 'bisyoujoZukanNight'
                 document.getElementById('map_canvas'),
                 {
                   center: default_point, #設定しないとSafariで表示されなかった
-                  zoom: 20,
+                  zoom: 18,
                   mapTypeId: google.maps.MapTypeId.ROADMAP,
                   scaleControl: true
                 }
@@ -55,7 +55,7 @@ angular.module 'bisyoujoZukanNight'
             document.getElementById('map_canvas'),
             {
               center: default_point, #設定しないとSafariで表示されなかった
-              zoom: 20,
+              zoom: 18,
               mapTypeId: google.maps.MapTypeId.ROADMAP,
               scaleControl: true
             }
@@ -69,7 +69,7 @@ angular.module 'bisyoujoZukanNight'
           document.getElementById('map_canvas'),
           {
             center: default_point, #設定しないとSafariで表示されなかった
-            zoom: 20,
+            zoom: 18,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             scaleControl: true
           }
