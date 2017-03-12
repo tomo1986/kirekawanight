@@ -110,6 +110,27 @@ angular.module 'bijyoZukanAdmin'
     )
 
 
+  sm.getCoupons = (opt_params) ->
+    api.getPromise('/api/admin/api79',opt_params).then((res) ->
+      return res
+    )
+
+  sm.getNewCoupon = () ->
+    api.getPromise('/api/admin/api80',{}).then((res) ->
+      return res
+    )
+
+  sm.getUpdateCoupon = (menu) ->
+    api.postPromise('/api/admin/api81',menu).then((res) ->
+      return res
+    )
+
+  sm.getDeleteCoupon = (menu) ->
+    api.postPromise('/api/admin/api82',menu).then((res) ->
+      return res
+    )
+
+
 
   service =
     newShop: sm.newShop
@@ -131,3 +152,8 @@ angular.module 'bijyoZukanAdmin'
     getNewMenu: sm.getNewMenu
     getUpdateMenu: sm.getUpdateMenu
     getDeleteMenu: sm.getDeleteMenu
+
+    getCoupons: sm.getCoupons
+    getNewCoupon: sm.getNewCoupon
+    getUpdateCoupon: sm.getUpdateCoupon
+    getDeleteCoupon: sm.getDeleteCoupon

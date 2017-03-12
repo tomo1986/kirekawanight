@@ -13,7 +13,7 @@ class Shop < ApplicationRecord
   has_many :cards
   has_many  :images, class_name: 'ImageType::Shop', as: :subject, dependent: :destroy, :autosave => true
   has_many  :way_images, class_name: 'ImageType::ShopWay', as: :subject, dependent: :destroy, :autosave => true
-
+  has_many  :coupons, class_name: 'CouponType::Shop', as: :subject, dependent: :destroy, :autosave => true
   has_many :users
 
   has_many :basic_menus, class_name: 'MenuType::Basic', dependent: :destroy, :autosave => true
@@ -314,7 +314,7 @@ class Shop < ApplicationRecord
         json.room_count shop.room_count
         json.seat_count shop.seat_count
         json.images shop.set_images
-        json.cards shop.cards ? Card.to_jbuilders(shop.cards) : nil
+        # json.cards shop.cards ? Card.to_jbuilders(shop.cards) : nil
         json.pickup_users User.to_jbuilders_for_user_list(shop.users.where(users:{is_pickuped: true}).limit(2))
         json.support_count shop.supports.count
         json.favorite_count shop.favorites.count
@@ -389,7 +389,6 @@ class Shop < ApplicationRecord
       json.user_count self.users.count
       json.deleted_at self.deleted_at
       # json.note self.note
-      json.cards self.cards ? Card.to_jbuilders(self.cards) : nil
       json.images self.set_images
       json.way_images self.set_way_images
       json.drink_menus self.drink_menus
@@ -398,7 +397,8 @@ class Shop < ApplicationRecord
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
       json.review_count self.reviews.where(reviews:{is_displayed: true}).count
-
+      json.cards self.cards ? Card.to_jbuilders(self.cards) : nil
+      json.coupons self.coupons ? Coupon.to_jbuilders(self.coupons.default_shop_coupons) : nil
       json.tags self.tags ? Tag.to_jbuilders(self.tags) : nil
     end
   end

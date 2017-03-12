@@ -349,6 +349,7 @@ section.main-container.map-form-page shop-form-directive=""
       table.res-separate-table style="margin:2rem 0;"
         thead
           tr
+            th id
             th type
             th menu
             th sub_title
@@ -358,6 +359,8 @@ section.main-container.map-form-page shop-form-directive=""
             th delete
         tbody
           tr ng-repeat="menu in vm.menus track by $index"
+            td.clearfix data-label="id"
+              | {{menu.id}}
             td.clearfix data-label="type"
               select.form-control name="type" ng-model="menu.type"
                 option value=""  -- 選択してください --
@@ -368,13 +371,69 @@ section.main-container.map-form-page shop-form-directive=""
               input.form-control type="text" name="menu" required='' placeholder="例）飲み放題" ng-model="menu.title"
             td.clearfix data-label="sub_title"
               input.form-control type="text" name="menu" required='' placeholder="例）混雑時はお時間頂きます" ng-model="menu.sub_title"
+
             td.clearfix data-label="price"
               input.form-control type="text" name="menu" required='' placeholder="例）200000" ng-model="menu.price" USD
+
             td.clearfix data-label="sort"
               input.form-control type="text" name="menu" required='' placeholder="例）1" ng-model="menu.sort_no"
+
             td.clearfix data-label="create"
               a.btn.action-btn href="javascript:void(0)" ng-click="vm.setMenu(menu,$index)" 保存
+
             td.clearfix data-label="delete"
               a.btn.action-btn href="javascript:void(0)" ng-click="vm.deleteMenu(menu,$index)" 削除
       .button-center
         button.btn.main-btn type="button" ng-click="vm.addMenu()"  Menu 追加
+
+
+    .row ng-if="vm.action == 'update'"
+      table.res-separate-table style="margin:2rem 0;"
+        thead
+          tr
+            th type
+            th subject_id
+            th description
+            th sub_description
+            th started_at
+            th end_at
+            th is_displayed
+            th sort_no
+            th create
+            th delete
+        tbody
+          tr ng-repeat="coupon in vm.coupons track by $index"
+            td.clearfix data-label="type"
+              select.form-control name="type" ng-model="coupon.type"
+                option value=""  -- 選択してください --
+                option value="shop" ng-selected="coupon.type == 'CouponType::Shop'" ショップ
+                option value="menu" ng-selected="coupon.type == 'CouponType::Menu'" メニュー
+
+            td.clearfix data-label="subject_id"
+              input.form-control type="text" name="coupon" required='' placeholder="例）飲み放題" ng-model="coupon.subject_id"
+
+            td.clearfix data-label="description"
+              textarea.form-control ng-model="coupon.description"
+
+            td.clearfix data-label="sub_description"
+              textarea.form-control ng-model="coupon.sub_description"
+
+            td.clearfix data-label="started_at"
+              input.form-control type="text" name="coupon" required='' placeholder="2016-08-10 15:00:00" ng-model="coupon.started_at"
+
+            td.clearfix data-label="end_at"
+              input.form-control type="text" name="coupon" required='' placeholder="2016-08-10 15:00:00" ng-model="coupon.end_at"
+
+            td.clearfix data-label="is_displayed"
+              input.form-control type="text" name="coupon" required='' placeholder="例）1" ng-model="coupon.is_displayed"
+
+            td.clearfix data-label="sort_no"
+              input.form-control type="text" name="coupon" required='' placeholder="例）1" ng-model="coupon.sort_no"
+
+            td.clearfix data-label="create"
+              a.btn.action-btn href="javascript:void(0)" ng-click="vm.setCoupon(coupon,$index)" 保存
+
+            td.clearfix data-label="delete"
+              a.btn.action-btn href="javascript:void(0)" ng-click="vm.deleteCoupon(coupon,$index)" 削除
+      .button-center
+        button.btn.main-btn type="button" ng-click="vm.addCoupon()"  クーポン 追加

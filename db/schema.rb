@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307142653) do
+ActiveRecord::Schema.define(version: 20170311183718) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -89,6 +89,21 @@ ActiveRecord::Schema.define(version: 20170307142653) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "return_way"
+  end
+
+  create_table "coupons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "type"
+    t.string   "subject_type"
+    t.integer  "subject_id"
+    t.string   "description"
+    t.string   "sub_description"
+    t.datetime "started_at",                     null: false
+    t.datetime "end_at"
+    t.boolean  "is_displayed",    default: true, null: false
+    t.integer  "sort_no"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["subject_id"], name: "index_coupons_on_subject_id", using: :btree
   end
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

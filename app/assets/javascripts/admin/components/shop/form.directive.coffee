@@ -7,6 +7,7 @@ angular.module 'bijyoZukanAdmin'
     vm.init = ->
       vm.canSubmit = true
       vm.menus = []
+      vm.coupons = []
       vm.visa = null
       vm.master = null
       vm.jcb = null
@@ -35,7 +36,9 @@ angular.module 'bijyoZukanAdmin'
         is_required:true
         placeholder:'必須'
       }
+      vm.copensDaterPicker ={
 
+      }
       vm.images = []
       vm.way_images = []
 
@@ -52,6 +55,7 @@ angular.module 'bijyoZukanAdmin'
       if vm.action == 'update'
         vm.getShop()
         vm.getMenus()
+        vm.getCoupons()
       else
         vm.newShop()
         vm.getNewMenu()
@@ -63,8 +67,52 @@ angular.module 'bijyoZukanAdmin'
             vm.menus.push(menu)
           )
           vm.getNewMenu() if vm.menus.length == 0
-
       )
+    vm.getCoupons = ->
+      shopService.getCoupons({id: $state.params.id }).then((res) ->
+        if res.data.code == 1
+          angular.forEach(res.data.coupons,(coupon)->
+            vm.coupons.push(coupon)
+          )
+          vm.getNewCoupon() if vm.coupons.length == 0
+      )
+    vm.getNewCoupon = ->
+      shopService.getNewCoupon().then((res) ->
+        if res.data.code == 1
+          vm.coupons.push(res.data.coupon)
+      )
+
+    vm.setCoupon = (coupon,index) ->
+      coupon.subject_id = if coupon.subject_id then coupon.subject_id else $state.params.id
+      params = {
+        id: if coupon.id then coupon.id else null
+        type: coupon.type
+        subject_id: coupon.subject_id
+        description: coupon.description
+        sub_description: coupon.sub_description
+        started_at: coupon.started_at
+        end_at: coupon.end_at
+        is_displayed: coupon.is_displayed
+        sort_no: coupon.sort_no
+      }
+      shopService.getUpdateCoupon(params).then((res) ->
+        if res.data.code == 1
+          vm.coupons[index] = res.data.coupon
+          modalService.error('保存しました。')
+      )
+    vm.deleteCoupon = (coupon,index) ->
+      if coupon.id
+        shopService.getDeleteCoupon(coupon).then((res) ->
+          if res.data.code == 1
+            vm.coupons.splice(index, 1)
+            modalService.error('削除しました。')
+        )
+      else
+        vm.coupons.splice(index, 1)
+    vm.addCoupon = ->
+      vm.getNewCoupon()
+
+
 
     vm.getNewMenu = ->
       shopService.getNewMenu().then((res) ->

@@ -1,6 +1,8 @@
 class Menu < ApplicationRecord
   belongs_to :shop, polymorphic: true
 
+  has_many  :coupons, class_name: 'CouponType::Menu', as: :subject, dependent: :destroy, :autosave => true
+
   def to_jbuilder
     Jbuilder.new do |json|
       json.id self.id

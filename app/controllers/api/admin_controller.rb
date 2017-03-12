@@ -1625,6 +1625,79 @@ class Api::AdminController < ApiController
     render json: builders.target!
   end
 
+  def api79
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    coupons = Coupon.where(subject_id: params[:id])
+    builders = Jbuilder.new do |json|
+      json.code 1
+      json.coupons Coupon.to_jbuilders(coupons)
+    end
+    render json: builders.target!
+  end
+
+  def api80
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    coupon = Coupon.new
+    builder = Jbuilder.new do |json|
+      json.code 1
+      json.coupon coupon.to_jbuilder
+    end
+    render json: builder.target!
+  end
+
+  def api81
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    if params[:type] == 'shop'
+      type = 'CouponType::Shop'
+      subject_type = 'Shop'
+      coupon = Coupon.find_by(type: type,subject_id: params[:id]) if params[:id].present?
+    else
+      type = 'CouponType::Menu'
+      subject_type = 'Menu'
+      coupon = Coupon.find_by(type: type, subject_id: params[:id]) if params[:id].present?
+    end
+    coupon = Coupon.new if coupon.blank?
+
+    coupon.type = type
+    coupon.subject_type = subject_type
+    coupon.subject_id = params[:id]
+    coupon.description = params[:description]
+    coupon.sub_description = params[:sub_description]
+    coupon.started_at = params[:started_at]
+    coupon.end_at = params[:end_at]
+    coupon.is_displayed = params[:is_displayed]
+    coupon.sort_no = params[:sort_no]
+
+    if coupon.save!
+      builder = Jbuilder.new do |json|
+        json.coupon coupon.to_jbuilder
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors coupon.errors.full_messages
+      end
+    end
+    render json: builder.target!
+  end
+  def api82
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    if params[:type] == 'shop'
+      type = 'CouponType::Shop'
+      subject_type = 'Shop'
+      coupon = Coupon.find_by(type: type,subject_id: params[:id]) if params[:id].present?
+    else
+      type = 'CouponType::Menu'
+      subject_type = 'Menu'
+      coupon = Coupon.find_by(type: type, subject_id: params[:id]) if params[:id].present?
+    end
+
+    coupon.destroy if coupon.present?
+    builder = Jbuilder.new do |json|
+      json.code 1
+    end
+    render json: builder.target!
+  end
 
 
 end
