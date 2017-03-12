@@ -112,6 +112,31 @@ main#main ng-if="vm.shop"
 
     .col-md-12.detail.clearfix.info-box
       .row.clearfix
+        .rank-box.shop-top-box
+          .page-title
+            h2.title
+              | クーポン
+          .coupon-box ng-repeat="coupon in vm.shop.coupons"
+            .coupon-body
+              .date-box
+                span ng-if="coupon.started_at && coupon.end_at"
+                  | 【有効期限：{{coupon.started_at | date: 'yyyy年MM月dd日' }}〜{{coupon.end_at | date: 'yyyy年MM月dd日' }}】
+                span ng-if="coupon.started_at && !coupon.end_at"
+                  | 【有効期限：{{coupon.started_at | date: 'yyyy年MM月dd日' }}〜】
+
+              p.coupon-description ng-bind-html="coupon.description | noHTML | newlines"
+              p.coupon-subdescription ng-bind-html="coupon.sub_description | noHTML | newlines"
+              .attention ng-if="vm.shop.service"
+                p
+                  | このページを見せると、上記クーポンが使用できます。
+                  br
+                  | ※他会社もしくはガイド者に送迎された場合、使用できません。
+                  br
+                  | ※他クーポンとの併用はできません。
+
+
+    .col-md-12.detail.clearfix.info-box
+      .row.clearfix
         .info-box.clearfix ng-if="vm.shop && vm.shop.interview_ja"
           .page-title
             h2.title
@@ -134,29 +159,6 @@ main#main ng-if="vm.shop"
               .col-xs-12.col-sm-6.col-md-4 ng-repeat="image in vm.shop.images" repeat-finished="carouselInitializer"
                 .slider-link
                   img.img ng-src="{{image.url}}" alt="{{vm.shop.name}}道順の画像"
-    .col-md-12.detail.clearfix.info-box
-      .row.clearfix
-        .rank-box.shop-top-box
-          .page-title
-            h2.title
-              | クーポン
-          .coupon-box ng-repeat="coupon in vm.shop.coupons"
-            .coupon-body
-              .date-box
-                span ng-if="coupon.started_at && coupon.end_at"
-                  | 【有効期限：{{coupon.started_at | date: 'yyyy年MM月dd日' }}〜{{coupon.end_at | date: 'yyyy年MM月dd日' }}】
-                span ng-if="coupon.started_at && !coupon.end_at"
-                  | 【有効期限：{{coupon.started_at | date: 'yyyy年MM月dd日' }}〜】
-
-              p.coupon-description ng-bind-html="coupon.description | noHTML | newlines"
-              p.coupon-subdescription ng-bind-html="coupon.sub_description | noHTML | newlines"
-              .attention ng-if="vm.shop.service"
-                p
-                  | このページを見せると、上記クーポンが使用できます。
-                  br
-                  | ※他会社もしくはガイド者に送迎された場合、使用できません。
-                  br
-                  | ※他クーポンとの併用はできません。
 
 
     .col-md-12.detail.clearfix.info-box
