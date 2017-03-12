@@ -12,6 +12,7 @@ angular.module 'bijyoZukanAdmin'
       vm.master = null
       vm.jcb = null
       vm.amex = null
+      vm.shopId = $state.params.id
 
       vm.breadcrumb = [{name:'Dashboard',link:'/admin'},{name:'Shop',link:''}]
       vm.open_options={
@@ -83,7 +84,7 @@ angular.module 'bijyoZukanAdmin'
       )
 
     vm.setCoupon = (coupon,index) ->
-      coupon.subject_id = if coupon.subject_id then coupon.subject_id else $state.params.id
+      coupon.subject_id = if coupon.type == "menu" then coupon.subject_id else $state.params.id
       params = {
         id: if coupon.id then coupon.id else null
         type: coupon.type

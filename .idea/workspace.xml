@@ -49,11 +49,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="form.directive.coffee" pinned="false" current-in-tab="false">
+          <file leaf-file-name="form.directive.coffee" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/form.directive.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-4.019608">
-                  <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.18">
+                  <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
@@ -79,56 +79,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index_jp.html.slim" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/comsept/index_jp.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.40433213">
-                  <caret line="175" column="16" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/routes.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="344" column="17" selection-start-line="344" selection-start-column="17" selection-end-line="344" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="20170311183718_create_coupons.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/db/migrate/20170311183718_create_coupons.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="menu.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/menu.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="30" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="coupon.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/coupon.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -146,8 +96,8 @@
           <file leaf-file-name="form.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/shop/form.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.3670886">
-                  <caret line="433" column="79" selection-start-line="433" selection-start-column="70" selection-end-line="433" selection-end-column="79" />
+                <state vertical-scroll-proportion="-1.607595">
+                  <caret line="412" column="73" selection-start-line="412" selection-start-column="73" selection-end-line="412" selection-end-column="73" />
                   <folding />
                 </state>
               </provider>
@@ -156,8 +106,8 @@
           <file leaf-file-name="admin_controller.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/api/admin_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.9454546">
-                  <caret line="1690" column="27" selection-start-line="1690" selection-start-column="27" selection-end-line="1690" selection-end-column="27" />
+                <state vertical-scroll-proportion="-2.4727273">
+                  <caret line="1692" column="7" selection-start-line="1692" selection-start-column="7" selection-end-line="1692" selection-end-column="7" />
                   <folding>
                     <element signature="e#2374#2399#0" expanded="true" />
                     <element signature="e#2889#2914#0" expanded="true" />
@@ -177,15 +127,12 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="shop.service.coffee" pinned="false" current-in-tab="false">
+          <file leaf-file-name="shop.service.coffee" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-6.45098">
+                <state vertical-scroll-proportion="0.8329114">
                   <caret line="128" column="37" selection-start-line="128" selection-start-column="37" selection-end-line="128" selection-end-column="37" />
-                  <folding>
-                    <marker date="1489288384000" expanded="true" signature="68:4050" placeholder="..." />
-                    <marker date="1489288384000" expanded="true" signature="3347:4050" placeholder="..." />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -195,122 +142,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-5.5185184">
                   <caret line="402" column="7" selection-start-line="402" selection-start-column="7" selection-end-line="402" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="info.html.slim" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.60900474">
-                  <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
-                  <folding>
-                    <marker date="1489302738000" expanded="true" signature="28:186" placeholder=".top-view-box" />
-                    <marker date="1489302738000" expanded="true" signature="46:186" placeholder=".shop-cover-wrap style=&quot;background-image:url({{vm.shopMainImg}});&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="119:129" placeholder=".shopCover" />
-                    <marker date="1489302738000" expanded="true" signature="136:186" placeholder=".container" />
-                    <marker date="1489302738000" expanded="true" signature="189:8946" placeholder=".container" />
-                    <marker date="1489302738000" expanded="true" signature="204:568" placeholder=".rank-box.shop-top-box" />
-                    <marker date="1489302738000" expanded="true" signature="233:496" placeholder=".shop-button-box.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="267:399" placeholder=".favorite" />
-                    <marker date="1489302738000" expanded="true" signature="408:496" placeholder=".support" />
-                    <marker date="1489302738000" expanded="true" signature="574:5590" placeholder=".col-md-12.detail.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="607:5590" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="629:5590" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="653:2964" placeholder=".pickup-cast" />
-                    <marker date="1489302738000" expanded="true" signature="678:2964" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-7.col-xl-7.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="750:2964" placeholder=".col-row-left.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="789:836" placeholder=".pickup-cast-line" />
-                    <marker date="1489302738000" expanded="true" signature="853:2832" placeholder=".pickup-cast-item.clearfix ng-repeat=&quot;cast in vm.pickup_users&quot; ng-if=&quot;vm.pickup_users.length &gt; 0 &amp;&amp; vm.isDisplayed_pickup_user&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="999:1457" placeholder=".col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-4.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="1074:1457" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="1110:1243" placeholder=".clearfix ng-if=&quot;cast.face_images[0] &amp;&amp; cast.face_images[0].url&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="1266:1457" placeholder=".clearfix ng-if=&quot;!cast.face_images[0] &amp;&amp; !cast.face_images[0].url&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="1476:2832" placeholder=".col-xs-8.col-sm-8.col-md-8.col-lg-8.col-xl-8.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="1551:2832" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="1587:2832" placeholder=".cast-box" />
-                    <marker date="1489302738000" expanded="true" signature="1621:1752" placeholder=".cast-name" />
-                    <marker date="1489302738000" expanded="true" signature="1777:2832" placeholder=".cast-profile" />
-                    <marker date="1489302738000" expanded="true" signature="2580:2832" placeholder=".tags" />
-                    <marker date="1489302738000" expanded="true" signature="2618:2649" placeholder=".keyword-title KIREKAWA KEYWORD" />
-                    <marker date="1489302738000" expanded="true" signature="2682:2832" placeholder=".tags-box" />
-                    <marker date="1489302738000" expanded="true" signature="2849:2964" placeholder=".pickup-usernon  ng-if=&quot;vm.pickup_users.length == 0 &amp;&amp; vm.isDisplayed_pickup_user&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="2975:5590" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="3045:5590" placeholder=".col-row-right.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="3083:5590" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="3159:5590" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="3191:5590" placeholder=".shop-map.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="3230:5590" placeholder=".shop-map--info-box" />
-                    <marker date="1489302738000" expanded="true" signature="3272:5590" placeholder=".shop-map--info-wrap" />
-                    <marker date="1489302738000" expanded="true" signature="3317:3427" placeholder=".shop-name-titlt" />
-                    <marker date="1489302738000" expanded="true" signature="3360:3427" placeholder=".shop-map--info-name" />
-                    <marker date="1489302738000" expanded="true" signature="5406:5590" placeholder=".shop-tags" />
-                    <marker date="1489302738000" expanded="true" signature="5595:6598" placeholder=".col-md-12.detail.clearfix.info-box" />
-                    <marker date="1489302738000" expanded="true" signature="5637:6598" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="5659:6598" placeholder=".rank-box.shop-top-box" />
-                    <marker date="1489302738000" expanded="true" signature="5692:5745" placeholder=".page-title" />
-                    <marker date="1489302738000" expanded="true" signature="5756:6598" placeholder=".coupon-box ng-repeat=&quot;coupon in vm.shop.coupons&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="5818:6598" placeholder=".coupon-body" />
-                    <marker date="1489302738000" expanded="true" signature="5845:6170" placeholder=".date-box" />
-                    <marker date="1489302738000" expanded="true" signature="6370:6598" placeholder=".attention ng-if=&quot;vm.shop.service&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="6579:6598" placeholder="| ※他クーポンとの併用はできません。    " />
-                    <marker date="1489302738000" expanded="true" signature="6605:6865" placeholder=".col-md-12.detail.clearfix.info-box" />
-                    <marker date="1489302738000" expanded="true" signature="6647:6865" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="6669:6865" placeholder=".info-box.clearfix ng-if=&quot;vm.shop &amp;&amp; vm.shop.interview_ja&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="6738:6800" placeholder=".page-title" />
-                    <marker date="1489302738000" expanded="true" signature="6811:6865" placeholder=".intoroduction-box ng-bind-html=&quot;vm.shop.interview_ja&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="6871:7207" placeholder=".col-md-12.detail.clearfix.info-box" />
-                    <marker date="1489302738000" expanded="true" signature="6913:7207" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="6935:7207" placeholder="#map.rank-box.shop-map.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="7212:7670" placeholder=".col-md-12.detail.clearfix.info-box" />
-                    <marker date="1489302738000" expanded="true" signature="7254:7670" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="7276:7670" placeholder=".rank-box.clearfix style=&quot;margin-bottom:2rem;&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="7333:7392" placeholder=".page-title" />
-                    <marker date="1489302738000" expanded="true" signature="7403:7670" placeholder=".clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="7425:7670" placeholder=".half-row.slick-slider" />
-                    <marker date="1489302738000" expanded="true" signature="7462:7670" placeholder=".col-xs-12.col-sm-6.col-md-4 ng-repeat=&quot;image in vm.shop.images&quot; repeat-finished=&quot;carouselInitializer&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="7581:7670" placeholder=".slider-link" />
-                    <marker date="1489302738000" expanded="true" signature="7677:8946" placeholder=".col-md-12.detail.clearfix.info-box" />
-                    <marker date="1489302738000" expanded="true" signature="7719:8946" placeholder=".row.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="7741:8946" placeholder=".rank-box.rank-box-last style=&quot;margin-bottom:2rem;&quot; ng-if=&quot;vm.shops.length &gt; 0&quot;" />
-                    <marker date="1489302738000" expanded="true" signature="7831:7891" placeholder=".page-title" />
-                    <marker date="1489302738000" expanded="true" signature="7902:8946" placeholder=".shop-list.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="8294:8946" placeholder=".shop-info" />
-                    <marker date="1489302738000" expanded="true" signature="8400:8946" placeholder=".body" />
-                    <marker date="1489302738000" expanded="true" signature="8424:8584" placeholder=".has-girls.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="8603:8762" placeholder=".support.clearfix" />
-                    <marker date="1489302738000" expanded="true" signature="8781:8946" placeholder=".favorid.clearfix" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-6.3333335">
-                  <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="nav.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/block/nav.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.5833333">
-                  <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="header.html.slim" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/front/tpl/block/header.html.slim">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.958333">
-                  <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -364,9 +195,6 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee" />
         <option value="$PROJECT_DIR$/db/migrate/20170311183718_create_coupons.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/api/admin_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/admin/tpl/shop/form.html.slim" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/form.directive.coffee" />
         <option value="$PROJECT_DIR$/app/models/shop.rb" />
         <option value="$PROJECT_DIR$/app/models/coupon.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim" />
@@ -374,6 +202,9 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/comsept/index_jp.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/admin/tpl/shop/form.html.slim" />
+        <option value="$PROJECT_DIR$/app/controllers/api/admin_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/form.directive.coffee" />
       </list>
     </option>
   </component>
@@ -1157,59 +988,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.45098">
-          <caret line="128" column="37" selection-start-line="128" selection-start-column="37" selection-end-line="128" selection-end-column="37" />
-          <folding>
-            <marker date="1489288384000" expanded="true" signature="68:4050" placeholder="..." />
-            <marker date="1489288384000" expanded="true" signature="3347:4050" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="189" column="32" selection-start-line="189" selection-start-column="21" selection-end-line="189" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/admin_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9454546">
-          <caret line="1690" column="27" selection-start-line="1690" selection-start-column="27" selection-end-line="1690" selection-end-column="27" />
-          <folding>
-            <element signature="e#2374#2399#0" expanded="true" />
-            <element signature="e#2889#2914#0" expanded="true" />
-            <element signature="e#3125#3150#0" expanded="true" />
-            <element signature="e#3785#3810#0" expanded="true" />
-            <element signature="e#6301#6325#0" expanded="true" />
-            <element signature="e#17334#17358#0" expanded="true" />
-            <element signature="e#35622#35647#0" expanded="true" />
-            <element signature="e#36123#36148#0" expanded="true" />
-            <element signature="e#38959#38984#0" expanded="true" />
-            <element signature="e#51109#51134#0" expanded="true" />
-            <element signature="e#51785#51810#0" expanded="true" />
-            <element signature="e#55628#55653#0" expanded="true" />
-            <element signature="e#55887#55912#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/shop/form.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3670886">
-          <caret line="433" column="79" selection-start-line="433" selection-start-column="70" selection-end-line="433" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/form.directive.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.019608">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1262,22 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/shop.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5185184">
-          <caret line="402" column="7" selection-start-line="402" selection-start-column="7" selection-end-line="402" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3333335">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/block/nav.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.5833333">
@@ -1294,14 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.372549">
-          <caret line="700" column="18" selection-start-line="700" selection-start-column="18" selection-end-line="700" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/comsept/index_jp.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40433213">
@@ -1312,85 +1070,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60900474">
-          <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.46682465">
+          <caret line="131" column="4" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3601896">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/shop.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5185184">
+          <caret line="402" column="7" selection-start-line="402" selection-start-column="7" selection-end-line="402" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/front/shop.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.372549">
+          <caret line="700" column="18" selection-start-line="700" selection-start-column="18" selection-end-line="700" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/tpl/shop/form.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.607595">
+          <caret line="412" column="73" selection-start-line="412" selection-start-column="73" selection-end-line="412" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/admin_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4727273">
+          <caret line="1692" column="7" selection-start-line="1692" selection-start-column="7" selection-end-line="1692" selection-end-column="7" />
           <folding>
-            <marker date="1489302738000" expanded="true" signature="28:186" placeholder=".top-view-box" />
-            <marker date="1489302738000" expanded="true" signature="46:186" placeholder=".shop-cover-wrap style=&quot;background-image:url({{vm.shopMainImg}});&quot;" />
-            <marker date="1489302738000" expanded="true" signature="119:129" placeholder=".shopCover" />
-            <marker date="1489302738000" expanded="true" signature="136:186" placeholder=".container" />
-            <marker date="1489302738000" expanded="true" signature="189:8946" placeholder=".container" />
-            <marker date="1489302738000" expanded="true" signature="204:568" placeholder=".rank-box.shop-top-box" />
-            <marker date="1489302738000" expanded="true" signature="233:496" placeholder=".shop-button-box.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="267:399" placeholder=".favorite" />
-            <marker date="1489302738000" expanded="true" signature="408:496" placeholder=".support" />
-            <marker date="1489302738000" expanded="true" signature="574:5590" placeholder=".col-md-12.detail.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="607:5590" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="629:5590" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="653:2964" placeholder=".pickup-cast" />
-            <marker date="1489302738000" expanded="true" signature="678:2964" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-7.col-xl-7.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="750:2964" placeholder=".col-row-left.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="789:836" placeholder=".pickup-cast-line" />
-            <marker date="1489302738000" expanded="true" signature="853:2832" placeholder=".pickup-cast-item.clearfix ng-repeat=&quot;cast in vm.pickup_users&quot; ng-if=&quot;vm.pickup_users.length &gt; 0 &amp;&amp; vm.isDisplayed_pickup_user&quot;" />
-            <marker date="1489302738000" expanded="true" signature="999:1457" placeholder=".col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-4.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="1074:1457" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="1110:1243" placeholder=".clearfix ng-if=&quot;cast.face_images[0] &amp;&amp; cast.face_images[0].url&quot;" />
-            <marker date="1489302738000" expanded="true" signature="1266:1457" placeholder=".clearfix ng-if=&quot;!cast.face_images[0] &amp;&amp; !cast.face_images[0].url&quot;" />
-            <marker date="1489302738000" expanded="true" signature="1476:2832" placeholder=".col-xs-8.col-sm-8.col-md-8.col-lg-8.col-xl-8.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="1551:2832" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="1587:2832" placeholder=".cast-box" />
-            <marker date="1489302738000" expanded="true" signature="1621:1752" placeholder=".cast-name" />
-            <marker date="1489302738000" expanded="true" signature="1777:2832" placeholder=".cast-profile" />
-            <marker date="1489302738000" expanded="true" signature="2580:2832" placeholder=".tags" />
-            <marker date="1489302738000" expanded="true" signature="2618:2649" placeholder=".keyword-title KIREKAWA KEYWORD" />
-            <marker date="1489302738000" expanded="true" signature="2682:2832" placeholder=".tags-box" />
-            <marker date="1489302738000" expanded="true" signature="2849:2964" placeholder=".pickup-usernon  ng-if=&quot;vm.pickup_users.length == 0 &amp;&amp; vm.isDisplayed_pickup_user&quot;" />
-            <marker date="1489302738000" expanded="true" signature="2975:5590" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="3045:5590" placeholder=".col-row-right.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="3083:5590" placeholder=".col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="3159:5590" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="3191:5590" placeholder=".shop-map.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="3230:5590" placeholder=".shop-map--info-box" />
-            <marker date="1489302738000" expanded="true" signature="3272:5590" placeholder=".shop-map--info-wrap" />
-            <marker date="1489302738000" expanded="true" signature="3317:3427" placeholder=".shop-name-titlt" />
-            <marker date="1489302738000" expanded="true" signature="3360:3427" placeholder=".shop-map--info-name" />
-            <marker date="1489302738000" expanded="true" signature="5406:5590" placeholder=".shop-tags" />
-            <marker date="1489302738000" expanded="true" signature="5595:6598" placeholder=".col-md-12.detail.clearfix.info-box" />
-            <marker date="1489302738000" expanded="true" signature="5637:6598" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="5659:6598" placeholder=".rank-box.shop-top-box" />
-            <marker date="1489302738000" expanded="true" signature="5692:5745" placeholder=".page-title" />
-            <marker date="1489302738000" expanded="true" signature="5756:6598" placeholder=".coupon-box ng-repeat=&quot;coupon in vm.shop.coupons&quot;" />
-            <marker date="1489302738000" expanded="true" signature="5818:6598" placeholder=".coupon-body" />
-            <marker date="1489302738000" expanded="true" signature="5845:6170" placeholder=".date-box" />
-            <marker date="1489302738000" expanded="true" signature="6370:6598" placeholder=".attention ng-if=&quot;vm.shop.service&quot;" />
-            <marker date="1489302738000" expanded="true" signature="6579:6598" placeholder="| ※他クーポンとの併用はできません。    " />
-            <marker date="1489302738000" expanded="true" signature="6605:6865" placeholder=".col-md-12.detail.clearfix.info-box" />
-            <marker date="1489302738000" expanded="true" signature="6647:6865" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="6669:6865" placeholder=".info-box.clearfix ng-if=&quot;vm.shop &amp;&amp; vm.shop.interview_ja&quot;" />
-            <marker date="1489302738000" expanded="true" signature="6738:6800" placeholder=".page-title" />
-            <marker date="1489302738000" expanded="true" signature="6811:6865" placeholder=".intoroduction-box ng-bind-html=&quot;vm.shop.interview_ja&quot;" />
-            <marker date="1489302738000" expanded="true" signature="6871:7207" placeholder=".col-md-12.detail.clearfix.info-box" />
-            <marker date="1489302738000" expanded="true" signature="6913:7207" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="6935:7207" placeholder="#map.rank-box.shop-map.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="7212:7670" placeholder=".col-md-12.detail.clearfix.info-box" />
-            <marker date="1489302738000" expanded="true" signature="7254:7670" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="7276:7670" placeholder=".rank-box.clearfix style=&quot;margin-bottom:2rem;&quot;" />
-            <marker date="1489302738000" expanded="true" signature="7333:7392" placeholder=".page-title" />
-            <marker date="1489302738000" expanded="true" signature="7403:7670" placeholder=".clearfix" />
-            <marker date="1489302738000" expanded="true" signature="7425:7670" placeholder=".half-row.slick-slider" />
-            <marker date="1489302738000" expanded="true" signature="7462:7670" placeholder=".col-xs-12.col-sm-6.col-md-4 ng-repeat=&quot;image in vm.shop.images&quot; repeat-finished=&quot;carouselInitializer&quot;" />
-            <marker date="1489302738000" expanded="true" signature="7581:7670" placeholder=".slider-link" />
-            <marker date="1489302738000" expanded="true" signature="7677:8946" placeholder=".col-md-12.detail.clearfix.info-box" />
-            <marker date="1489302738000" expanded="true" signature="7719:8946" placeholder=".row.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="7741:8946" placeholder=".rank-box.rank-box-last style=&quot;margin-bottom:2rem;&quot; ng-if=&quot;vm.shops.length &gt; 0&quot;" />
-            <marker date="1489302738000" expanded="true" signature="7831:7891" placeholder=".page-title" />
-            <marker date="1489302738000" expanded="true" signature="7902:8946" placeholder=".shop-list.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="8294:8946" placeholder=".shop-info" />
-            <marker date="1489302738000" expanded="true" signature="8400:8946" placeholder=".body" />
-            <marker date="1489302738000" expanded="true" signature="8424:8584" placeholder=".has-girls.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="8603:8762" placeholder=".support.clearfix" />
-            <marker date="1489302738000" expanded="true" signature="8781:8946" placeholder=".favorid.clearfix" />
+            <element signature="e#2374#2399#0" expanded="true" />
+            <element signature="e#2889#2914#0" expanded="true" />
+            <element signature="e#3125#3150#0" expanded="true" />
+            <element signature="e#3785#3810#0" expanded="true" />
+            <element signature="e#6301#6325#0" expanded="true" />
+            <element signature="e#17334#17358#0" expanded="true" />
+            <element signature="e#35622#35647#0" expanded="true" />
+            <element signature="e#36123#36148#0" expanded="true" />
+            <element signature="e#38959#38984#0" expanded="true" />
+            <element signature="e#51109#51134#0" expanded="true" />
+            <element signature="e#51785#51810#0" expanded="true" />
+            <element signature="e#55628#55653#0" expanded="true" />
+            <element signature="e#55887#55912#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/shop.service.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8329114">
+          <caret line="128" column="37" selection-start-line="128" selection-start-column="37" selection-end-line="128" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/admin/components/shop/form.directive.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18">
+          <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>

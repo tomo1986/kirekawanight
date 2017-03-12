@@ -1660,7 +1660,7 @@ class Api::AdminController < ApiController
 
     coupon.type = type
     coupon.subject_type = subject_type
-    coupon.subject_id = params[:id]
+    coupon.subject_id = params[:subject_id]
     coupon.description = params[:description]
     coupon.sub_description = params[:sub_description]
     coupon.started_at = params[:started_at]
