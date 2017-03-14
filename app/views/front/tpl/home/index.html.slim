@@ -36,6 +36,36 @@
           = image_tag "front/maptext.jpg", alt: "地図から検索", class: "img"
 
       .content-box
+        h3.sub-title 新着イベント
+        .top-box style="margin: 1rem 0;"
+          ul.event-list
+            li
+              .event-content-box
+                .row
+                  .col-xs-12.col-sm-12.col-md-12.col-xl-12
+                      h3.event-title.clearfix
+                        | あああああああああああああああ
+                  .col-xs-12.col-sm-12.col-md-12.col-xl-12
+                    .event-main-content.clearfix
+                      .col-xs-3.col-sm-3.col-md-3.col-xl-3
+                        .col-row-left.clearfix
+                          .event-image
+                            a href="/shops/karaoke/{{shop.id}}/info"
+                              span ng-if="shop.images[0]"
+                                img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像" style="width:100%;"
+                              span
+                                = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
+                      .col-xs-9.col-sm-9.col-md-9.col-xl-9
+                        .col-row-right
+                          h2.shop-name
+                            | あああああああああああああああああ
+                          .term-event
+                            | 2017-01-01 〜 2017-01-01
+            .event-more
+              a.event-more-button href="" 一覧を見る
+
+
+      .content-box
         p style="border: 1px solid #720e0a;padding: .5rem;font-size: .9rem;"
           | キレカワとは完全日本人向け、ベトナム・ホーチミンの夜遊び情報サイトです！
           br

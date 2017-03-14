@@ -44,7 +44,7 @@ angular.module 'bisyoujoZukanNight'
       shopService.sendReview(vm.review).then((res) ->
         vm.canReviewSubmited = true
         title = '受け付けました。'
-        message = '貴重なレビューありがとうございました。'
+        message = '貴重なレビューありがとうございました。事務局チェック終了次第掲載させていただきます。'
         modalService.alert(title,message)
         vm.review = {
           type: 'shop'

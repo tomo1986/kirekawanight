@@ -509,4 +509,49 @@
       }
     }
   }
+  .event-list{
+    width:100%;
+    .event-content-box{
+      .event-title{
+        font-size: .9rem;
+        margin:0 0 .5rem;
+      }
+      .event-main-content{
+        margin-bottom:.5rem;
+        padding-bottom:.5rem;
+        border-bottom: 1px solid #fff;
+        .event-image{
+          img{width:100%;}
+        }
+        .shop-name{
+          font-size: .8rem;
+          line-height: 1rem;
+          margin:0;
+        }
+        .content-title{
+          font-size: .9rem;
+        }
+        .content-body{
+          .description{
+            font-size: .8rem;
+            line-height: 1rem;
+          }
+        }
+        .term-event{
+          padding-top:.2rem;
+          font-size: .8rem;
+          text-align: right;
+        }
+      }
+    }
+  }
+  .event-more{
+    text-align: right;
+    .event-more-button{
+      background-color: none;
+      padding:.2rem 1rem;
+      color:#fff;
+      border:1px solid #fff;
+    }
+  }
 }
