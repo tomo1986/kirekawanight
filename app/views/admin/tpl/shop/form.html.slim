@@ -124,6 +124,17 @@ section.main-container.map-form-page shop-form-directive=""
                 | {{vm.errors.tel2}}
           tr
             th.res-form-table__th.title-box.clearfix
+              span.title 電話番号は載せるか
+            td.res-form-table__td.input-box
+              label.radio-inline
+                input type="radio" ng-model="vm.shop.is_displayed_phone" value="true"
+                | する
+              label.radio-inline
+                input type="radio" ng-model="vm.shop.is_displayed_phone" value="false"
+                | しない
+
+          tr
+            th.res-form-table__th.title-box.clearfix
               span.title email
               span.btn.btn-danger.btn-xs.absolutely.absolutely Required
             td.res-form-table__td.input-box

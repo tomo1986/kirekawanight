@@ -388,6 +388,7 @@ class Shop < ApplicationRecord
       json.service self.service
       json.user_count self.users.count
       json.deleted_at self.deleted_at
+      json.is_displayed_phone self.is_displayed_phone
       # json.note self.note
       json.images self.set_images
       json.way_images self.set_way_images

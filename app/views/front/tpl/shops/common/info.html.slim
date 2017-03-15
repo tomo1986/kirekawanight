@@ -73,6 +73,14 @@ main#main ng-if="vm.shop"
                           dt 住所
                           dd
                             | {{vm.shop.write_adress}}
+                          dt ng-if="vm.shop.is_displayed_phone" 電話番号1
+                          dd ng-if="vm.shop.is_displayed_phone"
+                            | {{vm.shop.contract_person}}　
+                            a href="tel:{{vm.shop.tel}}" {{vm.shop.tel}}
+                          dt ng-if="vm.shop.is_displayed_phone && vm.shop.te2" 電話番号2
+                          dd ng-if="vm.shop.is_displayed_phone && vm.shop.te2"
+                            | {{vm.shop.contract_person2}}　
+                            a href="tel:{{vm.shop.te2}}" {{vm.shop.te2}}
                           dt アクセス
                           dd
                             | {{vm.shop.access}}

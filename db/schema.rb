@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311183718) do
+ActiveRecord::Schema.define(version: 20170315083611) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -144,6 +144,21 @@ ActiveRecord::Schema.define(version: 20170311183718) do
     t.datetime "updated_at",   null: false
     t.string   "subject_type"
     t.string   "subject_id"
+  end
+
+  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "type"
+    t.string   "subject_type"
+    t.integer  "subject_id"
+    t.string   "title"
+    t.string   "sub_title"
+    t.text     "description",  limit: 65535
+    t.datetime "started_at",                                null: false
+    t.datetime "end_at"
+    t.boolean  "is_displayed",               default: true, null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.index ["subject_id"], name: "index_events_on_subject_id", using: :btree
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -364,8 +379,8 @@ ActiveRecord::Schema.define(version: 20170311183718) do
 
   create_table "shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.string   "email",                                     default: "", null: false
-    t.string   "encrypted_password",                        default: "", null: false
+    t.string   "email",                                     default: "",    null: false
+    t.string   "encrypted_password",                        default: "",    null: false
     t.integer  "group_id"
     t.string   "job_type",                                  default: ""
     t.string   "tel",                                       default: ""
@@ -390,13 +405,13 @@ ActiveRecord::Schema.define(version: 20170311183718) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                             default: 0,  null: false
+    t.integer  "sign_in_count",                             default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
     t.string   "name_kana"
     t.boolean  "is_smoked"
     t.datetime "opened_at"
@@ -432,6 +447,7 @@ ActiveRecord::Schema.define(version: 20170311183718) do
     t.string   "contract_person2"
     t.string   "tel2"
     t.string   "write_adress"
+    t.boolean  "is_displayed_phone",                        default: false
     t.index ["admin_id"], name: "index_shops_on_admin_id", using: :btree
     t.index ["email"], name: "index_shops_on_email", unique: true, using: :btree
     t.index ["group_id"], name: "index_shops_on_group_id", using: :btree

@@ -275,7 +275,6 @@ angular.module 'bijyoZukanAdmin'
       vm.shop['visa'] = vm.visa
       vm.shop['amex'] = vm.amex
 
-
       title = "We saved finish "
       buttons = [
         {name:'一覧へ戻る',link:"/admin/shops"}
