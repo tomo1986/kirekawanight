@@ -185,6 +185,8 @@ class Api::FrontController < ApiController
     end
     shops = Shop.where(group_id: shop.group_id, deleted_at: nil).where.not(id: shop.id) if shop.group_id
     pickup_users = shop.users.where(users:{is_pickuped: true}).limit(2) if shop.users
+    now = Time.zone.now
+    events = shop.events.where("events.started_at <= ? and events.end_at > ?",now,now)
     builder = Jbuilder.new do |json|
       json.code 1
       json.shop shop.to_jbuilder
@@ -195,6 +197,7 @@ class Api::FrontController < ApiController
       json.discounts Discount.to_jbuilders(shop.open_discounts)
       json.shops Shop.to_jbuilders(shops)
       json.all_shop_count Shop.where(job_type: shop.job_type,deleted_at:nil).count
+      json.events Event.to_shop_events_jbuilders(events)
     end
     render json: builder.target!
   end
@@ -406,6 +409,8 @@ class Api::FrontController < ApiController
       json.new_bar_shops Shop.to_jbuilders_user_list(shops.where(job_type: 'bar').order("id desc").limit(4))
       json.new_massage_shops Shop.to_jbuilders_user_list(shops.where(job_type: 'massage').order("id desc").limit(4))
       json.time_services Discount.to_jbuilders(Discount.open_time_discounts)
+      json.events Event.to_front_jbuilders(Event.limit(5))
+
     end
     render json: builders.target!
   end
@@ -817,6 +822,16 @@ class Api::FrontController < ApiController
     render json: builders.target!
   end
 
+  def api35
+    event = Event.find_by(id: params[:id])
+    render_failed(4, t('shop.error.not_find')) and return if event.blank?
+    builder = Jbuilder.new do |json|
+      json.code 1
+      json.event event.to_jbuilder
+      json.events event.subject.shop_events
+    end
+    render json: builder.target!
+  end
 
 end
 

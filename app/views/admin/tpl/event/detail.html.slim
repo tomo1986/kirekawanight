@@ -1,0 +1,71 @@
+section.main-container.map-form-page event-form-directive=""
+  .container-fluid
+    form role="form" ng-submit='vm.submit()' name="mapForm" novalidate=''
+      .row
+        breadcrumb-directive data="vm.breadcrumb"
+        h2.page-header
+          | 会社新規登録
+      .row
+        table.res-form-table style="margin-bottom: 4rem;"
+          caption aaaaaa
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 住所
+              span.btn.btn-danger.btn-xs.absolutely.absolutely 必須
+            td.res-form-table__td.input-box
+              .input-group
+                input.form-control type="text" name="address" required='' disabled="true" placeholder="東京都品川区 xx-xx" ng-model="vm.group.address"
+                span.input-group-btn
+                  button.btn.btn-default.main-btn-color ng-click="vm.getAddressFromMap()" type="button"
+                    i.fa.fa-map-marker
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" name
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="name" required='' placeholder="aiueo" ng-model="vm.group.name"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" tel
+            td.res-form-table__td.input-box
+              input.form-control type="text" name="tel" required='' placeholder="aiueo" ng-model="vm.group.tel"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title email
+            td.res-form-table__td.input-box
+              input.form-control type="email" name="email" required='' placeholder="aiueo" ng-model="vm.group.email"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.image_url}" MAP画像
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              .row
+                .col-md-4
+                  .pic
+                    image-directive parent-class="pic" img-url="{{vm.map.image_url}}" ng-class="{'is-input-danger': vm.errors.image_url}"
+                    .hover-img
+                      input#fileInput.change-img-file type="file" name="image_url" required='' ng-model="vm.group.image_url" options="vm.imageCropOptions" image-cropper=""
+                      span
+                        | 画像選択
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" Interview 日本語
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control ckeditor="vm.options" ng-model="vm.content"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" Interview vietnamese
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control ckeditor="vm.options" ng-model="vm.content"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" Interview english
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control ckeditor="vm.options" ng-model="vm.content"
+
+        .button-center ng-show="vm.canSubmit"
+          button.btn.main-btn type="submit" ng-disabled="mapForm.$invalid" 登録する
+        .button-center ng-hide="vm.canSubmit"
+          loading-directive size="125"

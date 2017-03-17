@@ -1,0 +1,54 @@
+.main-content.event-detail-page.clearfix event-detail-directive=""
+  .container
+    breadcrumb-directive data="vm.breadcrumb"
+    .event-content
+      .row
+        .col-xs-12.col-sm-12.col-md-8.col-xl-8
+          .col-row-left.clearfix
+            article.event-box
+              .event-header
+                h2.event-title
+                  | {{vm.event.title}}
+                .term-event
+                  span ng-if="vm.event.started_at && vm.event.end_at"
+                    | 【期間：{{vm.event.started_at | date: 'yyyy年MM月dd日' }}〜{{vm.event.end_at | date: 'yyyy年MM月dd日' }}】
+                  span ng-if="vm.event.started_at && !vm.event.end_at"
+                    | 【期間：{{vm.event.started_at | vm.date: 'yyyy年MM月dd日' }}〜】
+              .event-body ng-bind-html="vm.event.description"
+            aside.aside-event-box
+              h3.sub-title 過去イベント
+              ul.event-list
+                li ng-repeat="event in vm.events"
+                  .event-content-box
+                    .row
+                      .col-xs-12.col-sm-12.col-md-12.col-xl-12
+                        .term-event
+                          span ng-if="event.started_at && event.end_at"
+                            | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜{{event.end_at | date: 'yyyy年MM月dd日' }}】
+                          span ng-if="event.started_at && !event.end_at"
+                            | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜】
+                        .event-main-content.clearfix
+                          .event-content-box
+                            h3.event-title.clearfix
+                              | {{event.title}}
+                            p.event-discription
+                              | {{event.sub_title}}
+
+        aside.col-xs-12.col-sm-12.col-md-4.col-xl-4.side
+          .col-row-right.clearfix
+            section.shop-info
+              p.shop-job-type
+                | {{vm.event.subject.job_type}}
+              p.shop-image
+                a href="/shops/{{vm.event.subject.job_type}}/{{vm.event.subject.id}}/info"
+                  img ng-src="{{vm.event.subject.images[0].url}}" alt="{{vm.event.subject.name}}の画像" style="width:100%;"
+              p.shop-name
+                a href="/shops/{{vm.event.subject.job_type}}/{{vm.event.subject.id}}/info"
+                  | {{vm.event.subject.name}}
+              p.shop-address
+                | 住所：{{vm.event.subject.write_adress}}
+              p.shop-tel
+                | 電話番号：{{vm.event.subject.tel}}
+              p.shop-term ng-if="vm.event.subject.opened_at"
+                | 営業時間：{{vm.event.subject.opened_at | date: 'HH：mm'}} 〜 {{vm.event.subject.closed_at | date: 'HH：mm'}}
+

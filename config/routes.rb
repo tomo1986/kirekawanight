@@ -112,6 +112,11 @@ Rails.application.routes.draw do
     get 'pickups/:id/edit',to: 'pages#index'
     get 'pickups/new',to: 'pages#index'
 
+    get 'events',to: 'pages#index'
+    get 'events/:id/detail',to: 'pages#index'
+    get 'events/:id/edit',to: 'pages#index'
+    get 'events/new',to: 'pages#index'
+
     get 'invoices',to: 'pages#index'
     get 'invoices/:id/detail',to: 'pages#index'
     get 'invoices/:id/edit',to: 'pages#index'
@@ -206,8 +211,12 @@ Rails.application.routes.draw do
     get 'contact', to: 'home#contact'
     get 'sitemap', to: 'home#sitemap'
     get 'map', to: 'home#map'
+    get 'events',to: 'home#index'
+    get 'events/:id/detail',to: 'home#index'
+
     get 'blogs/', to: 'blogs#index'
     get 'blogs/:id', to: 'blogs#show'
+
 
   end
   namespace :front do
@@ -258,6 +267,7 @@ Rails.application.routes.draw do
       get :api32
       post :api33
       get :api34
+      get :api35
     end
 
     scope :admin, module: 'admin' do
@@ -343,6 +353,12 @@ Rails.application.routes.draw do
       get :api80
       post :api81
       post :api82
+
+      get :api83
+      get :api84
+      post :api85
+      get :api86
+      post :api87
 
     end
     scope :group, module: 'group' do

@@ -48,6 +48,7 @@ angular.module 'bisyoujoZukanNight'
           vm.shopMainImg = vm.shop.images[0].url
           vm.reviewQuestion = shopService.setReaviewQuestion(vm.shop.job_type)
           vm.shop.interview_ja = $sce.trustAsHtml(vm.shop.interview_ja)
+          vm.events = res.data.events
         else
           modalService.error('エラー',res.data.message)
       )

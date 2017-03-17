@@ -29,6 +29,7 @@ class Shop < ApplicationRecord
 
   has_many  :top_pickups, class_name: 'PickupType::Top', as: :subject, dependent: :destroy, :autosave => true
   has_many  :puth_pickups, class_name: 'PickupType::Push', as: :subject, dependent: :destroy, :autosave => true
+  has_many  :events, class_name: 'EventType::Shop', as: :subject, dependent: :destroy, :autosave => true
 
   has_many  :top_banners, class_name: 'BannerType::Top', as: :subject, dependent: :destroy, :autosave => true
   has_many  :top_side_pickups, class_name: 'BannerType::TopSide', as: :subject, dependent: :destroy, :autosave => true
@@ -403,6 +404,37 @@ class Shop < ApplicationRecord
       json.tags self.tags ? Tag.to_jbuilders(self.tags) : nil
     end
   end
+
+  def to_event_jbuilder
+    Jbuilder.new do |json|
+      json.id self.id
+      json.name self.name
+      json.name_kana self.name_kana
+      json.contract_person self.contract_person
+      json.tel self.tel
+      json.contract_person2 self.contract_person2
+      json.tel2 self.tel2
+      json.is_displayed_phone self.is_displayed_phone
+      json.job_type self.job_type
+      json.access self.access
+      json.address self.address
+
+      json.opened_at self.opened_at
+      json.closed_at self.closed_at
+
+      json.write_adress self.write_adress
+      json.lat self.lat
+      json.lon self.lon
+      json.images self.set_images
+      json.cards self.cards ? Card.to_jbuilders(self.cards) : nil
+      json.tags self.tags ? Tag.to_jbuilders(self.tags) : nil
+    end
+  end
+
+  def shop_events
+    return Event.to_shop_events_jbuilders(self.events)
+  end
+
 
   def images=(images_base64)
     if !images_base64.nil?

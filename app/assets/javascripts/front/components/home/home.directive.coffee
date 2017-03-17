@@ -16,6 +16,7 @@ angular.module 'bisyoujoZukanNight'
         vm.newKaraokeShops = res.data.new_karaoke_shops
         vm.newBarShops = res.data.new_bar_shops
         vm.newMassageShops = res.data.new_massage_shops
+        vm.newEvents = res.data.events
       )
 
 

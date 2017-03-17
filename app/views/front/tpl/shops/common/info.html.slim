@@ -141,7 +141,33 @@ main#main ng-if="vm.shop"
                   | ※他会社もしくはガイド者に送迎された場合、使用できません。
                   br
                   | ※他クーポンとの併用はできません。
-
+    .col-md-12.detail.clearfix.info-box ng-if="vm.events"
+      .row.clearfix
+        .rank-box.shop-top-box
+          .page-title
+            h2.title イベント
+          ul.event-list
+            li ng-repeat="event in vm.events"
+              .event-content-box
+                .row
+                  .col-xs-12.col-sm-12.col-md-12.col-xl-12
+                    .term-event
+                      span ng-if="event.started_at && event.end_at"
+                        | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜{{event.end_at | date: 'yyyy年MM月dd日' }}】
+                      span ng-if="event.started_at && !event.end_at"
+                        | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜】
+                    .event-main-content.clearfix
+                      .event-img-box
+                        .event-image
+                          a href="/events/{{event.id}}/detail"
+                            span ng-if="vm.shop.images[0]"
+                              img ng-src="{{vm.shop.images[0].url}}" alt="{{vm.shop.name}}の画像" style="width:100%;"
+                      .event-content-boxs
+                        a href="/events/{{event.id}}/detail"
+                          h3.event-title.clearfix
+                            | {{event.title}}
+                          p.event-discription
+                            | {{event.sub_title}}
 
     .col-md-12.detail.clearfix.info-box
       .row.clearfix

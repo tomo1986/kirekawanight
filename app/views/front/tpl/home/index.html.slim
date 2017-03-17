@@ -35,34 +35,35 @@
         a href="/map"
           = image_tag "front/maptext.jpg", alt: "地図から検索", class: "img"
 
-      /.content-box
+      .content-box ng-if="vm.newEvents"
         h3.sub-title 新着イベント
         .top-box style="margin: 1rem 0;"
           ul.event-list
-            li
+            li ng-repeat="event in vm.newEvents"
               .event-content-box
                 .row
                   .col-xs-12.col-sm-12.col-md-12.col-xl-12
-                      h3.event-title.clearfix
-                        | あああああああああああああああ
-                  .col-xs-12.col-sm-12.col-md-12.col-xl-12
+                    .term-event
+                      span ng-if="event.started_at && event.end_at"
+                        | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜{{event.end_at | date: 'yyyy年MM月dd日' }}】
+                      span ng-if="event.started_at && !event.end_at"
+                        | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜】
                     .event-main-content.clearfix
-                      .col-xs-3.col-sm-3.col-md-3.col-xl-3
-                        .col-row-left.clearfix
-                          .event-image
-                            a href="/shops/karaoke/{{shop.id}}/info"
-                              span ng-if="shop.images[0]"
-                                img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像" style="width:100%;"
-                              span
-                                = image_tag 'front/cast-no-image.png', alt: "kirekawa collection cast no-image"
-                      .col-xs-9.col-sm-9.col-md-9.col-xl-9
-                        .col-row-right
-                          h2.shop-name
-                            | あああああああああああああああああ
-                          .term-event
-                            | 2017-01-01 〜 2017-01-01
-            .event-more
-              a.event-more-button href="" 一覧を見る
+                      .event-img-box
+                        .event-image
+                          a href="/events/{{event.id}}/detail"
+                            span ng-if="event.subject.images[0]"
+                              img ng-src="{{event.subject.images[0].url}}" alt="{{event.subject.name}}の画像" style="width:100%;"
+                      .event-content-box
+                        h3.event-title.clearfix
+                          | {{event.title}}
+                        p.event-discription
+                          | {{event.sub_title}}
+                        h4.shop-name
+                          a href="/shops/{{event.subject.job_type}}/{{event.subject.id}}/info"
+                            | {{event.subject.name}}
+            /.event-more
+            /  a.event-more-button href="" 一覧を見る
 
 
       .content-box

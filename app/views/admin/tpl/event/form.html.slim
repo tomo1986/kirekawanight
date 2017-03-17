@@ -1,0 +1,80 @@
+section.main-container.map-form-page event-form-directive=""
+  .container-fluid
+    .row
+      breadcrumb-directive data="vm.breadcrumb"
+      h2.page-header
+        | 会社新規登録
+    .row
+      form role="form" ng-submit='vm.submit()' name="mapForm" novalidate=''
+        table.res-form-table
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title setting place
+              span.btn.btn-danger.btn-xs.absolutely.absolutely 必須
+            td.res-form-table__td.input-box
+              select.form-control name="type" ng-model="vm.event.type"
+                option value=""  -- Please select --
+                option value="push" ng-selected="vm.event.type == 'PickupType::Push'" TODAY'S POWER PUSH
+                option value="introduction" ng-selected="vm.event.type == 'PickupType::Introduction'" 紹介
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 内容
+            td.res-form-table__td.input-box
+              select.form-control name="subject_type" ng-model="vm.event.subject_type" required=''
+                option value=""  -- Please select --
+                option value="Shop" Shop
+                option value="User" User
+          
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title お店 or キャスト
+            td.res-form-table__td.input-box
+              select.form-control name="subject_id" ng-model="vm.event.subject_id" required=''
+                option value=""  -- Please select --
+                option value="{{item.id}}" ng-selected="item.id == vm.event.subject_id" ng-repeat="item in vm.subjectList"
+                  | {{item.name}}
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" タイトル
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              input.form-control type="text" required='' ng-model="vm.event.title"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" サブタイトル
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              input.form-control type="text" required='' ng-model="vm.event.sub_title"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" started_at
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="started_at" data="vm.event" options="vm.started_at_options" ng-model="vm.event.started_at"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.name}" end_at
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="end_at" data="vm.event" options="vm.end_at_options" ng-model="vm.event.end_at"
+
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 表示・非表示
+            td.res-form-table__td.input-box
+              label.radio-inline
+                input type="radio" ng-model="vm.event.is_displayed" value="true"
+                |　はい
+              label.radio-inline
+                input type="radio" ng-model="vm.event.is_displayed" value="false"
+                | いいえ
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" 説明
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              div text-angular='' ng-model='vm.event.description'
+
+
+        .button-center ng-show="vm.canSubmit"
+          button.btn.main-btn type="submit" ng-disabled="mapForm.$invalid" 登録する
+        .button-center ng-hide="vm.canSubmit"
+          loading-directive size="125"

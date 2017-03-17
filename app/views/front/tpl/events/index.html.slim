@@ -1,0 +1,195 @@
+.main-content.container shop-karaoke-index-directive=""
+  main#main.shop-page
+    breadcrumb-directive data="vm.breadcrumb"
+    .rank-box
+      ul.genre-tag
+        li
+          a.active href="/shops/karaoke"
+            | 店舗
+        li
+          a href="/casts/karaoke"
+            | 女の子
+    .row.shop-list-box
+      .col-xs-12.col-sm-12.col-md-3.col-xl-3.side
+        .col-row-left.clearfix
+          .total-count-box
+            | 対象店舗：
+            span
+              | {{vm.total | number}}
+            | 件
+          .side
+            .side--menu-block
+              .side--menu-inner
+                span.title.active ng-click="vm.onClickDisplayedSort()"
+                  | 並び替え
+                  i.fa ng-class="{'fa-chevron-down':!vm.displayedSort, 'fa-chevron-up':vm.displayedSort}"
+                .box ng-show="vm.displayedSort"
+                  ul.lists.reset--card
+                    li
+                      a href="javascript:void(0)" ng-click="vm.changeFilterSort('new')" ng-class="{'active': vm.filters.sort == 'new'}" 標準【広告優先】
+                    li
+                      a href="javascript:void(0)" ng-click="vm.changeFilterSort('ranking')" ng-class="{'active': vm.filters.sort == 'ranking'}" ランキング順
+                    li
+                      a href="javascript:void(0)" ng-click="vm.changeFilterSort('review')" ng-class="{'active': vm.filters.sort == 'review'}" レビューが多い順
+                    li
+                      a href="javascript:void(0)" ng-click="vm.changeFilterSort('support')" ng-class="{'active': vm.filters.sort == 'support'}" いいね順
+                    li
+                      a href="javascript:void(0)" ng-click="vm.changeFilterSort('favorite')" ng-class="{'active': vm.filters.sort == 'favorite'}" お気に入り登録順
+            .side--menu-block
+              .side--menu-inner
+                span.title.active ng-click="vm.onClickDisplayedDetail()"
+                  | 詳細検索
+                  i.fa ng-class="{'fa-chevron-down':!vm.displayedDetail, 'fa-chevron-up':vm.displayedDetail}"
+                .box ng-show="vm.displayedDetail"
+                  ul.lists.reset--card
+                    li style="padding:.5rem;"
+                      select.form-control name="type" ng-model="vm.filters.budget"
+                        option value=""  -- 予算 --
+                        option value="1" ng-selected="vm.filters.budget == '1'" $30 〜 $40
+                        option value="2" ng-selected="vm.filters.budget == '2'" $41 〜 $50
+                        option value="3" ng-selected="vm.filters.budget == '3'" $51 〜 $60
+                        option value="4" ng-selected="vm.filters.budget == '4'" $61 〜 $70
+                    li
+                      label ng-class="{'active': vm.filters.mama_tip}"
+                        input.checkbox type="checkbox" name="mama_tip" ng-model='vm.filters.mama_tip'
+                          | ママチップなし
+                    li
+                      label ng-class="{'active': vm.filters.tip}"
+                        input.checkbox type="checkbox" name="tip" ng-model='vm.filters.tip'
+                          | キャストチップなし
+                    li
+                      label ng-class="{'active': vm.filters.karaoke_machine}"
+                        input.checkbox type="checkbox" name="karaoke_machine" ng-model='vm.filters.karaoke_machine'
+                          | 日本のカラオケ機器有り
+                    li
+                      label ng-class="{'active': vm.filters.japanese}"
+                        input.checkbox type="checkbox" name="japanese" ng-model='vm.filters.japanese'
+                          | 日本語
+                      label ng-class="{'active': vm.filters.english}"
+                        input.checkbox type="checkbox" name="english" ng-model='vm.filters.english'
+                          | 英語
+                    /li
+                    /  label ng-class="{'active': vm.filters.visa}"
+                    /    input.checkbox type="checkbox" name="visa" ng-model='vm.filters.visa'
+                    /      | VISA
+                    /  label ng-class="{'active': vm.filters.master}"
+                    /    input.checkbox type="checkbox" name="master" ng-model='vm.filters.master'
+                    /      | MASTER
+                    /  label ng-class="{'active': vm.filters.jcb}"
+                    /    input.checkbox type="checkbox" name="jcb" ng-model='vm.filters.jcb'
+                    /      | JCB
+
+                  .search-btn-box
+                    a.btn.btn-review href="javascript:void(0)" ng-click="vm.submitDetails()" 検索する
+
+            .side--menu-block
+              .side--menu-inner
+                span.title.active ng-click="vm.onClickDisplayedPoint()"
+                  | ポイント検索
+                  i.fa ng-class="{'fa-chevron-down':!vm.displayedPoint, 'fa-chevron-up':vm.displayedPoint}"
+                .box ng-show="vm.displayedPoint"
+                  ul.lists.reset--card
+                    li ng-repeat="tag in vm.tags"
+                      label ng-class="{'active': vm.points['tags'+tag.id]}"
+                        input ng-click="vm.onSelectTag(tag.id)" type="checkbox" name="checkbox" value="{{tag.id}}"
+                          | {{tag.name}}
+                  .search-btn-box
+                    a.btn.btn-review href="javascript:void(0)" ng-click="vm.submitTags()" 検索する
+
+      .col-xs-12.col-sm-12.col-md-9.col-xl-9
+        .col-row-right
+          /.search-result-text-box
+          /  span ng-repeat="tag in vm.filters.tags"
+          /    | {{tag}}
+          .shop-list--main
+            ul.shop-list
+              li dir-paginate="shop in vm.shops | itemsPerPage: vm.filters.limit" total-items="vm.total" current-page="vm.filters.page"
+                .shop-header.clearfix
+                  .shop-header--wrap
+                    .shop-name
+                      a href="/shops/karaoke/{{shop.id}}/info"
+                        img src="/assets/front/ran{{shop.ranking}}.png" ng-if="vm.filters.sort == 'ranking' && shop.ranking < 4"
+                        span.rank  ng-if="vm.filters.sort == 'ranking' && shop.ranking > 3"
+                          | {{shop.ranking}}
+                        | {{shop.name}}
+                        span style="font-size:.7rem;margin-left:.5rem;"
+                          | {{shop.name_kana}}
+                .shop-content-box
+                  .row
+                    .col-xs-12.col-sm-5.col-md-4.col-xl-4
+                      .col-row-left.clearfix
+                        .shop-image
+                          span.favorite-btn
+                            i.fa.fa-heart ng-class="{'active': vm.favorites[shop.id]}" aria-hidden="true" ng-click="vm.onClickedFavorite(shop.id)"
+                          a href="/shops/karaoke/{{shop.id}}/info"
+                            .is-new ng-if="shop.is_new" NEW
+                            .main-image ng-if="shop.images[0]"
+                              img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
+                            .main-image ng-if="!shop.images[0]"
+                              = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
+                            .clearfix
+                              .sub-image-left
+                                span ng-if="shop.pickup_users[0] && shop.pickup_users[0].images[0]"
+                                  img ng-src="{{shop.pickup_users[0].images[0].url}}" alt="{{shop.pickup_users[0].name}}の画像"
+                              .sub-image-right
+                                span ng-if="shop.pickup_users[1] && shop.pickup_users[1].images[0]"
+                                  img ng-src="{{shop.pickup_users[1] && shop.pickup_users[1].images[0].url}}" alt="{{shop.pickup_users[0].name}}の画像"
+
+
+                    .col-xs-12.col-sm-7.col-md-8.col-xl-8
+                      .col-row-right
+                        .content-header.clearfix
+                          .star-box
+                            .head--star
+                              i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 0" ng-class="{'fa-star-half': shop.total_score > 0 && shop.total_score <= 10,'fa-star': shop.total_score > 10 && shop.total_score <= 20,'active': shop.total_score > 0 }"
+                              i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 20" ng-class="{'fa-star-half': shop.total_score > 20 && shop.total_score <= 30,'fa-star': shop.total_score > 30 && shop.total_score <= 40,'active': shop.total_score > 20 }"
+                              i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 40" ng-class="{'fa-star-half': shop.total_score > 40 && shop.total_score <= 50,'fa-star': shop.total_score > 50 && shop.total_score <= 60,'active': shop.total_score > 40 }"
+                              i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 60" ng-class="{'fa-star-half': shop.total_score > 60 && shop.total_score <= 70,'fa-star': shop.total_score > 70 && shop.total_score <= 80,'active': shop.total_score > 60 }"
+                              i.fa.fa-star aria-hidden="true" ng-if="shop.total_score > 80" ng-class="{'fa-star-half': shop.total_score > 80 && shop.total_score <= 90,'fa-star': shop.total_score > 90 && shop.total_score <= 100,'active': shop.total_score > 80 }"
+                            .head--score
+                              span ng-class="{'active': vm.filters.sort == 'ranking'}" {{shop.total_score}}点
+                          .count-box.clearfix
+                            .review-count-box
+                              a.header-review-count href="/shops/karaoke/{{shop.id}}/reviews"
+                                i.fa.fa-commenting aria-hidden="true"
+                                span ng-class="{'active': vm.filters.sort == 'review'}" {{shop.review_count}}件
+                            .support-count-box
+                              span.header-review-count
+                                i.fa.fa-thumbs-o-up aria-hidden="true"
+                                span ng-class="{'active': vm.filters.sort == 'support'}" {{shop.support_count}}件
+                            .favorite-count-box
+                              span.header-review-count
+                                i.fa.fa-star-o aria-hidden="true"
+                                span ng-class="{'active': vm.filters.sort == 'favorite'}" {{shop.favorite_count}}件
+                        .content-info
+                          h3.info-catch-copy ng-bind-html="shop.catch_copy | noHTML | newlines"
+
+                          .info-budget
+                            span.title 予算：
+                            | ${{shop.budget_usd | number}}
+                          .info-budget
+                            span.title チップ：
+                            span ng-if="shop.tip == 'no_need'"
+                              | なし
+                            span ng-if="shop.tip == 'need'"
+                              | あり
+                            span ng-if="shop.tip == 'up_to_you'"
+                              | 気持ちで
+
+                          .info-address
+                            span.title アクセス：
+                            span
+                              | {{shop.access}}
+                          .info-girls-count
+                            span.title キャスト：
+                            span ng-if="shop.girls_count"
+                              | {{shop.girls_count}}人
+                        .content-point style="margin-bottom:.3rem;"
+                          .shop-tags
+                            span.title ポイント：
+                            a.btn href="/shops/{{shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in shop.tags"
+                              | {{tag.name}}
+                        p.content-service ng-if="shop.service"
+                          | {{shop.service}}
+            dir-pagination-controls boundary-links="true" template-url="/front/tpl/block/pagination.html" on-page-change="vm.onPageChanged(newPageNumber)" ng-if="vm.shops.length > 0"
+

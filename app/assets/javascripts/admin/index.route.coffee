@@ -191,6 +191,28 @@ angular.module 'bijyoZukanAdmin'
       action: 'update'
       templateUrl: '/admin/tpl/pickup/form.html'
 
+    .state '/events',
+      url: '/admin/events?page'
+      active_menu: 'event'
+      templateUrl: '/admin/tpl/event/index.html'
+
+    .state '/events/:id/detail',
+      url: '/admin/events/:id/detail'
+      active_menu: 'event'
+      templateUrl: '/admin/tpl/event/detail.html'
+
+    .state '/events/new',
+      url: '/admin/events/new'
+      active_menu: 'event'
+      action: 'create'
+      templateUrl: '/admin/tpl/event/form.html'
+
+    .state '/events/:id/edit',
+      url: '/admin/events/:id/edit'
+      active_menu: 'event'
+      action: 'update'
+      templateUrl: '/admin/tpl/event/form.html'
+
 
 
     .state '/blogs',

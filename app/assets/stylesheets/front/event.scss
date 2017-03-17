@@ -1,0 +1,126 @@
+.event-detail-page{
+  .event-content{
+    margin-bottom:2rem;
+  }
+
+  .side{
+    .shop-info{
+      margin-bottom:1rem;
+      .shop-image{
+        width: 100%;
+        display: block;
+        position: relative;
+        border: 1px solid #E2D39F;
+        margin-bottom:.3rem;
+        a:hover{
+          opacity: .7;
+        }
+        img{
+          width: 100%;
+          padding: 3px;
+        }
+      }
+      .shop-job-type{
+        padding:.2rem 1rem;
+        background-color: #720e0a;
+        color:#ad9a58;
+        text-align: center;
+        margin-bottom: .2rem;
+      }
+      .shop-name{
+        margin-bottom:0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        a{
+          color:#ad9a58;
+        }
+      }
+      .shop-address, .shop-tel, .shop-term{
+        margin: 0;
+      }
+    }
+  }
+  .event-box{
+    margin-bottom:2rem;
+    .event-header{
+      padding:.5rem;
+      background-color: #222;
+      margin-bottom:2rem;
+      .event-title{
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom:.5rem;
+      }
+      .term-event{
+        text-align: right;
+        font-size: .9rem;
+      }
+    }
+    .event-body{
+      img{
+        width:100%;
+      }
+    }
+
+  }
+  .aside-event-box{
+    .event-list{
+      width:100%;
+      li{
+        margin-bottom:.5rem;
+        padding-bottom:.5rem;
+        border-bottom: 1px solid #fff;
+      }
+      .event-content-box{
+        .event-title{
+          font-size: .9rem;
+          margin:0 0 .5rem;
+        }
+        .event-main-content{
+          .event-img-box{
+            width:18%;
+            float:left;
+          }
+          .event-image{
+            img{width:100%;}
+          }
+          .event-content-box{
+            width:100%;
+            .shop-name{
+              font-size: .8rem;
+              line-height: 1rem;
+              margin:0;
+              width: 100%;
+              border: 2px solid #ad9a58;
+              padding:.3rem;
+              text-align: center;
+              a{
+                color:#ad9a58;
+              }
+            }
+            .event-title{
+              font-size: 1.2rem;
+              font-weight: bold;
+              margin: 0 0 .5rem;
+              white-space: nowrap;
+              overflow: hidden;
+              -ms-text-overflow: ellipsis;
+              text-overflow: ellipsis;
+            }
+            .event-discription{
+              font-size: .8rem;
+              line-height: 1rem;
+              margin:0 0 .5rem;
+            }
+          }
+        }
+        .term-event{
+          padding-bottom:.2rem;
+          font-size: .7rem;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+}

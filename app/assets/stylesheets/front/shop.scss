@@ -1797,4 +1797,65 @@
       }
     }
   }
+  .event-list{
+    width:100%;
+    li{
+      margin-bottom:.5rem;
+      padding-bottom:.5rem;
+      border-bottom: 1px solid #fff;
+    }
+    .event-content-box{
+      .event-title{
+        font-size: .9rem;
+        margin:0 0 .5rem;
+        text-align: left;
+      }
+      .event-main-content{
+        .event-img-box{
+          width:18%;
+          float:left;
+        }
+        .event-image{
+          img{width:100%;}
+        }
+        .event-content-boxs{
+          width:80%;
+          float:right;
+          a{color:#aaa;}
+          .shop-name{
+            font-size: .8rem;
+            line-height: 1rem;
+            margin:0;
+            width: 100%;
+            border: 2px solid #ad9a58;
+            padding:.3rem;
+            text-align: center;
+            a{
+              color:#ad9a58;
+            }
+          }
+          .event-title{
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 0 .5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+          }
+          .event-discription{
+            font-size: .8rem;
+            line-height: 1rem;
+            margin:0 0 .5rem;
+            text-align: left;
+          }
+        }
+      }
+      .term-event{
+        padding-bottom:.2rem;
+        font-size: .7rem;
+        text-align: right;
+      }
+    }
+  }
 }

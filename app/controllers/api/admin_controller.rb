@@ -1702,4 +1702,119 @@ class Api::AdminController < ApiController
   end
 
 
+
+
+  def api83
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
+    page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
+    total = Event.count
+    events = Event.all
+    events = events.page(page).per(limit) if events.present?
+    builders = Jbuilder.new do |json|
+      json.events Event.to_front_jbuilders(events)
+      json.total total
+    end
+    render json: builders.target!
+  end
+
+  def api84
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    event = Event.new
+    builders = Jbuilder.new do |json|
+      json.event event.to_jbuilder
+    end
+    render json: builders.target!
+  end
+
+
+  def api85
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    # if params[:type] == 'top'
+    #   event = EventType::Top.new
+    # elsif params[:type] == 'push'
+    #   event = EventType::Push.new
+    # elsif params[:type] == 'introduction'
+    #   event = EventType::Introduction.new
+    # end
+
+    event =  EventType::Shop.new
+
+    event.attributes = {
+        subject_type: 'Shop',
+        subject_id: params[:subject_id],
+        title: params[:title],
+        sub_title: params[:sub_title],
+        description: params[:description],
+        started_at: params[:started_at],
+        end_at: params[:end_at],
+        is_displayed: params[:is_displayed]
+
+    }
+    if event.save!
+      builder = Jbuilder.new do |json|
+        json.event event.to_jbuilder
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors event.errors.full_messages
+        json.code 0
+      end
+    end
+    render json: builder.target!
+  end
+
+  def api86
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    event = Event.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_login')) and return unless event
+
+    builder = Jbuilder.new do |json|
+      json.event event.to_jbuilder
+      json.code 1
+    end
+    render json: builder.target!
+  end
+
+  def api87
+    render_failed(4, t('admin.error.no_login')) and return unless admin_signed_in?
+    event = Event.find_by(id: params[:id])
+    render_failed(4, t('admin.error.no_login')) and return unless event
+
+    event.attributes = {
+        subject_type: 'Shop',
+        subject_id: params[:subject_id],
+        title: params[:title],
+        sub_title: params[:sub_title],
+        description: params[:description],
+        started_at: params[:started_at],
+        end_at: params[:end_at],
+        is_displayed: params[:is_displayed]
+    }
+    # if params[:type] == 'top'
+    #   event.type = 'EventType::Top'
+    # elsif params[:type] == 'push'
+    #   event.type = 'EventType::Push'
+    # elsif params[:type] == 'introduction'
+    #   event = 'EventType::Introduction'
+    # end
+    event =  EventType::Shop.new
+
+    if event.save!
+      builder = Jbuilder.new do |json|
+        json.event event.to_jbuilder
+        json.code 1
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.errors event.errors.full_messages
+        json.code 0
+      end
+    end
+    render json: builder.target!
+
+  end
+
+
 end

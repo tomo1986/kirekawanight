@@ -321,7 +321,7 @@ ActiveRecord::Schema.define(version: 20170315083611) do
     t.datetime "end_at"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "number_place"
+    is_displayedt.integer  "number_place"
     t.integer  "quantilty"
   end
 

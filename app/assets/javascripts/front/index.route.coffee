@@ -528,3 +528,11 @@ angular.module 'bisyoujoZukanNight'
       url: '/map'
       active_menu: 'map'
       templateUrl: '/front/tpl/map/index.html'
+
+    .state '/events',
+      url: '/events'
+      templateUrl: '/front/tpl/events/index.html'
+
+    .state '/events/:id/detail',
+      url: '/events/:id/detail'
+      templateUrl: '/front/tpl/events/detail.html'

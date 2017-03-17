@@ -34,6 +34,11 @@ nav.sidebar ng-class="{'sidebarPushRight': vm.isActive}"
           i.fa.fa-fw.fa-plus
         span.menu-text Pickups
     li
+      a.list-group-item ng-class="{'router-link-active': vm.active == 'event'}" href="/admin/events" ng-click="vm.eventCalled()"
+        .menu-icon
+          i.fa.fa-fw.fa-plus
+        span.menu-text Events
+    li
       a.list-group-item ng-class="{'router-link-active': vm.active == 'contact'}" href="/admin/contacts" ng-click="vm.eventCalled()"
         .menu-icon
           i.fa.fa-fw.fa-envelope
