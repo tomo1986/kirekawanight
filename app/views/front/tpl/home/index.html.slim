@@ -35,7 +35,7 @@
         a href="/map"
           = image_tag "front/maptext.jpg", alt: "地図から検索", class: "img"
 
-      .content-box ng-if="vm.newEvents"
+      .content-box ng-if="vm.newEvents.length > 0"
         h3.sub-title 新着イベント
         .top-box style="margin: 1rem 0;"
           ul.event-list

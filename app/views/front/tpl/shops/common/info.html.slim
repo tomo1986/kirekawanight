@@ -141,7 +141,7 @@ main#main ng-if="vm.shop"
                   | ※他会社もしくはガイド者に送迎された場合、使用できません。
                   br
                   | ※他クーポンとの併用はできません。
-    .col-md-12.detail.clearfix.info-box ng-if="vm.events"
+    .col-md-12.detail.clearfix.info-box ng-if="vm.events.length > 0"
       .row.clearfix
         .rank-box.shop-top-box
           .page-title
