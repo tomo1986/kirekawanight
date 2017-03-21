@@ -26,23 +26,23 @@ SitemapGenerator::Sitemap.create do
       add "/shops/karaoke/#{shop.id}/info", :lastmod => shop.updated_at
       add "/shops/karaoke/#{shop.id}/system", :lastmod => shop.updated_at
       add "/shops/karaoke/#{shop.id}/cast", :lastmod => shop.updated_at
-      add "/shops/karaoke/#{shop.id}/contact", :lastmod => shop.updated_at
       add "/shops/karaoke/#{shop.id}/reviews", :lastmod => shop.updated_at
       add "/shops/karaoke/#{shop.id}/write_review", :lastmod => shop.updated_at
     elsif shop.job_type == 'bar'
       add "/shops/bar/#{shop.id}/info", :lastmod => shop.updated_at
       add "/shops/bar/#{shop.id}/system", :lastmod => shop.updated_at
       add "/shops/bar/#{shop.id}/cast", :lastmod => shop.updated_at
-      add "/shops/bar/#{shop.id}/contact", :lastmod => shop.updated_at
       add "/shops/bar/#{shop.id}/reviews", :lastmod => shop.updated_at
       add "/shops/bar/#{shop.id}/write_review", :lastmod => shop.updated_at
     elsif shop.job_type == 'massage'
       add "/shops/massage/#{shop.id}/info", :lastmod => shop.updated_at
       add "/shops/massage/#{shop.id}/system", :lastmod => shop.updated_at
       add "/shops/massage/#{shop.id}/cast", :lastmod => shop.updated_at
-      add "/shops/massage/#{shop.id}/contact", :lastmod => shop.updated_at
       add "/shops/massage/#{shop.id}/reviews", :lastmod => shop.updated_at
       add "/shops/massage/#{shop.id}/write_review", :lastmod => shop.updated_at
+    end
+    shop.events.each do |event|
+      add "/events/#{event.id}/detail", :lastmod => event.updated_at
     end
   end
 
@@ -51,17 +51,14 @@ SitemapGenerator::Sitemap.create do
     if user.job_type == 'karaoke'
       add "/casts/karaoke/#{user.id}/info", :lastmod => user.updated_at
       add "/casts/karaoke/#{user.id}/cast", :lastmod => user.updated_at
-      add "/casts/karaoke/#{user.id}/contact", :lastmod => user.updated_at
       add "/casts/karaoke/#{user.id}/reviews", :lastmod => user.updated_at
     elsif user.job_type == 'bar'
       add "/casts/bar/#{user.id}/info", :lastmod => user.updated_at
       add "/casts/bar/#{user.id}/cast", :lastmod => user.updated_at
-      add "/casts/bar/#{user.id}/contact", :lastmod => user.updated_at
       add "/casts/bar/#{user.id}/reviews", :lastmod => user.updated_at
     elsif user.job_type == 'massage'
       add "/casts/massage/#{user.id}/info", :lastmod => user.updated_at
       add "/casts/massage/#{user.id}/cast", :lastmod => user.updated_at
-      add "/casts/massage/#{user.id}/contact", :lastmod => user.updated_at
       add "/casts/massage/#{user.id}/reviews", :lastmod => user.updated_at
     end
 

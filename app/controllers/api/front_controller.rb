@@ -189,7 +189,7 @@ class Api::FrontController < ApiController
     events = shop.events.where("events.started_at <= ? and events.end_at > ?",now,now)
     builder = Jbuilder.new do |json|
       json.code 1
-      json.shop shop.to_jbuilder
+      json.shop shop.to_front_jbuilder
       json.is_favorited is_favorited
       json.users users ? User.to_jbuilders(users) : nil
       json.pickup_users pickup_users ? User.to_jbuilders_for_admin(pickup_users) : nil

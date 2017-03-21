@@ -404,6 +404,61 @@ class Shop < ApplicationRecord
       json.tags self.tags ? Tag.to_jbuilders(self.tags) : nil
     end
   end
+  def to_front_jbuilder
+    Jbuilder.new do |json|
+      json.id self.id
+      json.group_id self.group_id
+      json.name self.name
+      json.name_kana self.name_kana
+      json.contract_person self.contract_person
+      json.tel self.tel
+      json.contract_person2 self.contract_person2
+      json.tel2 self.tel2
+      json.job_type self.job_type
+      json.email self.email
+      json.address self.address
+      json.write_adress self.write_adress
+      json.lat self.lat
+      json.lon self.lon
+      json.total_score self.total_score
+      json.ranking self.ranking
+      json.interview_ja self.interview_ja
+      json.is_credit self.is_credit
+      json.is_japanese self.is_japanese
+      json.is_english self.is_english
+      json.is_chinese self.is_chinese
+      json.is_korean self.is_korean
+      json.tip self.tip
+      json.girls_count self.girls_count
+      json.is_smoked self.is_smoked
+      json.opened_at self.opened_at
+      json.closed_at self.closed_at
+      json.budget_usd self.budget_usd
+      json.one_point self.one_point
+      json.charge self.charge
+      json.mama_tip self.mama_tip
+      json.karaoke_machine self.karaoke_machine
+      json.room_count self.room_count
+      json.seat_count self.seat_count
+      json.catch_copy self.catch_copy
+      json.access self.access
+      json.tip_avg self.tip_avg
+      json.service self.service
+      json.user_count self.users.count
+      json.deleted_at self.deleted_at
+      json.is_displayed_phone self.is_displayed_phone
+      json.images self.set_images
+      json.way_images self.set_way_images
+      json.food_menus self.food_menus
+      json.basic_menus self.basic_menus
+      json.support_count self.supports.count
+      json.favorite_count self.favorites.count
+      json.review_count self.reviews.where(reviews:{is_displayed: true}).count
+      json.cards self.cards ? Card.to_jbuilders(self.cards) : nil
+      json.coupons self.coupons ? Coupon.to_jbuilders(self.coupons.default_shop_coupons) : nil
+      json.tags self.tags ? Tag.to_jbuilders(self.tags) : nil
+    end
+  end
 
   def to_event_jbuilder
     Jbuilder.new do |json|
