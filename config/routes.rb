@@ -192,6 +192,7 @@ Rails.application.routes.draw do
     get 'casts/bar/:id/info', to: 'home#cast_bar_detail'
     get 'casts/bar/:id/contact', to: 'home#cast_bar_detail_contact'
     get 'casts/bar/:id/reviews', to: 'home#cast_bar_detail_reviews'
+    get 'casts/bar/:id/cast', to: 'home#cast_bar_detail_cast'
 
     get 'casts/massage', to: 'home#cast_massage'
     get 'casts/massage/:id', to: 'home#cast_massage_detail'
