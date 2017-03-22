@@ -90,9 +90,15 @@ class Front::HomeController < ApplicationController
 
 
   def shop_karaoke
-    @head_title = "全てのカラオケ店舗一覧　|　ベトナム・ホーチミンの夜遊び情報ならKireKawa(キレカワ)"
     @head_keyword = "ベトナム、ホーチミン、夜遊び、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "KireKawaに掲載中の全てのカラオケ店舗一覧です♪ベトナム、ホーチミンのカラオケ#{Shop.where(job_type: 'karaoke').count}件掲載中。キレカワに掲載しているお店は自信を持って紹介できます！あなた好みのカラオケ店がを見つけて夜遊びしてみませんか？"
+    page = params[:page]
+    if page.present?
+      @head_title = "全てのカラオケ店舗一覧(#{page}ページ目)　|　ベトナム・ホーチミンの夜遊び情報ならKireKawa(キレカワ)"
+      @head_description = "キレカワに掲載中の全てのカラオケ店舗一覧の#{page}ページ目です。ベトナム、ホーチミンのカラオケ#{Shop.where(job_type: 'karaoke').count}件掲載中。キレカワに掲載しているお店は自信を持って紹介できます！あなた好みのカラオケ店がを見つけて夜遊びしてみませんか？"
+    else
+      @head_title = "全てのカラオケ店舗一覧　|　ベトナム・ホーチミンの夜遊び情報ならKireKawa(キレカワ)"
+      @head_description = "キレカワに掲載中の全てのカラオケ店舗一覧です。ベトナム、ホーチミンのカラオケ#{Shop.where(job_type: 'karaoke').count}件掲載中。キレカワに掲載しているお店は自信を持って紹介できます！あなた好みのカラオケ店がを見つけて夜遊びしてみませんか？"
+    end
     render action: :index
   end
 
@@ -434,9 +440,15 @@ class Front::HomeController < ApplicationController
   end
 
   def cast_guide
-    @head_title = "ガイドができる女の子情報一覧　|　ベトナム・ホーチミンの夜遊び情報ならKireKawa(キレカワ)"
+    page = params[:page]
     @head_keyword = "ベトナム、ホーチミン、夜遊び、カラオケ、ガールズバー、マッサージ、観光、ガイド"
-    @head_description = "ベトナム・ホーチミンのガイドができる女の子情報一覧ページです。#{User.where(can_guided: true).count}名の中からお気に入りの女の子を見つけて、ベトナムの夜を満喫しませんか？"
+    if page.present?
+      @head_title = "ガイドができる女の子情報一覧(#{page}ページ目)　|　ベトナム・ホーチミンの夜遊び情報ならKireKawa(キレカワ)"
+      @head_description = "ベトナム・ホーチミンのガイドができる女の子情報一覧の#{page}ページ目です。#{User.where(can_guided: true).count}名の中からお気に入りの女の子を見つけて、ベトナムの夜を満喫しませんか？"
+    else
+      @head_title = "ガイドができる女の子情報一覧　|　ベトナム・ホーチミンの夜遊び情報ならKireKawa(キレカワ)"
+      @head_description = "ベトナム・ホーチミンのガイドができる女の子情報一覧ページです。#{User.where(can_guided: true).count}名の中からお気に入りの女の子を見つけて、ベトナムの夜を満喫しませんか？"
+    end
     render action: :index
   end
 
@@ -491,9 +503,20 @@ class Front::HomeController < ApplicationController
   end
 
   def contact
-    @head_title = "お問い合わせ　|　ホーチミンの夜遊びの情報サイト「キレカワ」"
+
     @head_keyword = "ベトナム、ホーチミン、ハノイ、夜遊び、カラオケ、マッサージ、バー、観光"
-    @head_description = "質問、ガイド予約、お店予約。まずはこちらからお問い合わせ。あなた好みの美女と夜遊びするなら「キレカワ」"
+    info = params[:type]
+    if info == 'post'
+      @head_title = "広告掲載のお問い合わせ　|　ホーチミンの夜遊びの情報サイト「キレカワ」"
+      @head_description = "広告掲載のお問い合わせ、質問、ガイド予約。まずはこちらからお問い合わせ。あなた好みの美女と夜遊びするなら「キレカワ」"
+    elsif info == 'tie-up'
+      @head_title = "タイアップのお問い合わせ　|　ホーチミンの夜遊びの情報サイト「キレカワ」"
+      @head_description = "タイアップのお問い合わせ、質問、ガイド予約。まずはこちらからお問い合わせ。あなた好みの美女と夜遊びするなら「キレカワ」"
+    else
+      @head_title = "お問い合わせ　|　ホーチミンの夜遊びの情報サイト「キレカワ」"
+      @head_description = "質問、ガイド予約。まずはこちらからお問い合わせ。あなた好みの美女と夜遊びするなら「キレカワ」"
+    end
+
     render action: :index
   end
 
