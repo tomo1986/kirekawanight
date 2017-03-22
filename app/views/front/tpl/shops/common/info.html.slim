@@ -3,7 +3,7 @@ main#main ng-if="vm.shop"
     .shop-cover-wrap style="background-image:url({{vm.shopMainImg}});"
       .shopCover
       .container
-        img ng-src="{{vm.shopMainImg}}"
+        img itemprop="image" ng-src="{{vm.shopMainImg}}"
   .container
     .rank-box.shop-top-box
       .shop-button-box.clearfix
@@ -64,7 +64,7 @@ main#main ng-if="vm.shop"
                     .shop-map--info-box
                       .shop-map--info-wrap
                         .shop-name-titlt
-                          .shop-map--info-name
+                          .shop-map--info-name itemprop="name"
                             | {{vm.shop.name}}
                         dl.profile.clearfix
                           dt ショップ番号
@@ -72,14 +72,19 @@ main#main ng-if="vm.shop"
                             | {{vm.shop.id}}
                           dt 住所
                           dd
-                            | {{vm.shop.write_adress}}
-                          dt ng-if="vm.shop.is_displayed_phone"予約番号
+                            span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"
+                              | {{vm.shop.write_adress}}
+                          dt ng-if="vm.shop.is_displayed_phone" 電話番号
                           dd ng-if="vm.shop.is_displayed_phone"
-                            a href="tel:{{vm.shop.tel}}" {{vm.shop.tel}}
+                            a href="tel:{{vm.shop.tel}}"
+                              span itemprop="telephone"
+                                | {{vm.shop.tel}}
                             | （{{vm.shop.contract_person}}）
-                          dt ng-if="vm.shop.is_displayed_phone && vm.shop.te2" 予約番号
+                          dt ng-if="vm.shop.is_displayed_phone && vm.shop.te2" 電話番号
                           dd ng-if="vm.shop.is_displayed_phone && vm.shop.te2"
-                            a href="tel:{{vm.shop.tel2}}" {{vm.shop.tel2}}
+                            a href="tel:{{vm.shop.tel2}}"
+                              span itemprop="telephone"
+                                | {{vm.shop.tel2}}
                             | （{{vm.shop.contract_person2}}）
                           dt アクセス
                           dd

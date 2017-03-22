@@ -17,8 +17,10 @@ main#main style="margin:2rem 0;"
                   i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 40" ng-class="{'fa-star-half': review.total_score > 40 && review.total_score <= 50,'fa-star': review.total_score > 50 && review.total_score <= 60,'active': review.total_score > 40 }"
                   i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 60" ng-class="{'fa-star-half': review.total_score > 60 && review.total_score <= 70,'fa-star': review.total_score > 70 && review.total_score <= 80,'active': review.total_score > 60 }"
                   i.fa.fa-star aria-hidden="true" ng-if="review.total_score > 80" ng-class="{'fa-star-half': review.total_score > 80 && review.total_score <= 90,'fa-star': review.total_score > 90 && review.total_score <= 100,'active': review.total_score > 80 }"
-                .head--score
-                  | {{review.total_score}}点
+                .head--score itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating"
+                  span itemprop="ratingValue"
+                    | {{review.total_score}}
+                  | 点
 
                 table.score-table
                   tr
@@ -60,14 +62,17 @@ main#main style="margin:2rem 0;"
 
 
               .user--review_date
-                div　{{review.created_at | date: 'yyyy年M月d日' }}
+                div itemprop="datePublished" content="{{review.created_at | date: 'yyyy-M-d' }}"
+                  | {{review.created_at | date: 'yyyy年M月d日' }}
                 .review--user
                   h3.user--name.clearfix
                     a href="#"
                       i.fa.fa-user-secret aria-hidden="true"
-                      span
-                        | {{review.sender.name || '匿名'}} ({{review.sender_review_count || 0}}件の口コミ)
-          p.review--body ng-bind-html="review.comment | noHTML | newlines"
+                      span itemprop="author" itemscope="" itemtype="http://schema.org/Person"
+                        span style="display:inline;" itemprop="name"
+                          | {{review.sender.name || '匿名'}}
+                        | ({{review.sender_review_count || 0}}件の口コミ)
+          p.review--body itemprop="reviewBody" ng-bind-html="review.comment | noHTML | newlines"
           p ng-if="review.info5"
             | このお店は他の方におすすめは
             span ng-if="review.info4 == 'yes'" できます。

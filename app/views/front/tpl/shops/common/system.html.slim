@@ -34,8 +34,10 @@ main#main
               | ${{vm.shop.tip_avg | number}}
         tr
           th.res-form-table__th.parent-th.title-box.clearfix 開店時間
-          td.res-form-table__td.parent-td.input-box
-            | {{vm.shop.opened_at | date: 'HH時mm'}} から {{vm.shop.closed_at | date: 'HH時mm'}}まで
+          td.res-form-table__td.parent-td.input-box itemprop="openingHoursSpecification" itemscope="" itemtype="http://schema.org/OpeningHoursSpecification"
+            meta itemprop="opens" content="{{vm.shop.opened_at | date: 'HH:mm'}}"
+            meta itemprop="closes" content="{{vm.shop.closed_at | date: 'HH:mm'}}"
+            | {{vm.shop.opened_at | date: 'HH時mm'}} から {{vm.shop.closed_at | date: 'HH時mm'}} まで
         tr
           th.res-form-table__th.parent-th.title-box.clearfix クレジットカード
           td.res-form-table__td.parent-td.input-box
