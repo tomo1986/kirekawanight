@@ -69,22 +69,40 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="true">
+          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.39657855">
-                  <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+                <state vertical-scroll-proportion="-7.0588236">
+                  <caret line="24" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
+          <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.625">
-                  <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-                  <folding />
+                <state vertical-scroll-proportion="0.51492536">
+                  <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+                  <folding>
+                    <marker date="1490196894000" expanded="true" signature="0:2987" placeholder=".main-content.shop-detail-page.clearfix shop-detail-directive=&quot;&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/LocalBusiness&quot;" />
+                    <marker date="1490196894000" expanded="true" signature="123:179" placeholder=".container" />
+                    <marker date="1490196894000" expanded="true" signature="182:2477" placeholder=".container ng-if=&quot;vm.shop&quot;" />
+                    <marker date="1490196894000" expanded="true" signature="213:2477" placeholder=".shop-header.clearfix" />
+                    <marker date="1490196894000" expanded="true" signature="241:2057" placeholder=".ranking ng-if=&quot;vm.shop.review_count &gt; 0&quot;" />
+                    <marker date="1490196894000" expanded="true" signature="291:1941" placeholder=".clearfix" />
+                    <marker date="1490196894000" expanded="true" signature="311:1941" placeholder=".head-star-box" />
+                    <marker date="1490196894000" expanded="true" signature="338:1662" placeholder=".head--star" />
+                    <marker date="1490196894000" expanded="true" signature="1675:1941" placeholder=".head--score itemprop=&quot;aggregateRating&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/AggregateRating&quot;" />
+                    <marker date="1490196894000" expanded="true" signature="2064:2291" placeholder=".col-xs-12.col-sm-12.col-md-4.col-lg-5.col-xl-5" />
+                    <marker date="1490196894000" expanded="true" signature="2120:2291" placeholder=".col-row-left.clearfix" />
+                    <marker date="1490196894000" expanded="true" signature="2182:2235" placeholder=".shop-name-kana" />
+                    <marker date="1490196894000" expanded="true" signature="2248:2291" placeholder=".shop-name" />
+                    <marker date="1490196894000" expanded="true" signature="2298:2477" placeholder=".col-xs-12.col-sm-12.col-md-8.col-lg-7.col-xl-7" />
+                    <marker date="1490196894000" expanded="true" signature="2354:2477" placeholder=".row.clearfix" />
+                    <marker date="1490196894000" expanded="true" signature="2378:2477" placeholder=".review-btn-box" />
+                    <marker date="1490196894000" expanded="true" signature="2480:2974" placeholder=".container ng-if=&quot;vm.shop&quot;" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -92,8 +110,8 @@
           <file leaf-file-name="detail.html.slim" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0">
-                  <caret line="0" column="120" selection-start-line="0" selection-start-column="120" selection-end-line="0" selection-end-column="120" />
+                <state vertical-scroll-proportion="-15.0">
+                  <caret line="24" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -227,10 +245,10 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/common/_reviews.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/common/system.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim" />
         <option value="$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim" />
       </list>
     </option>
   </component>
@@ -1173,14 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="120" selection-start-line="0" selection-start-column="120" selection-end-line="0" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/common/info.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.125">
@@ -1197,19 +1207,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/massage/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="24" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/karaoke/detail.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39657855">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state vertical-scroll-proportion="-7.0588236">
+          <caret line="24" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/tpl/shops/bar/detail.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51492536">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding>
+            <marker date="1490196894000" expanded="true" signature="0:2987" placeholder=".main-content.shop-detail-page.clearfix shop-detail-directive=&quot;&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/LocalBusiness&quot;" />
+            <marker date="1490196894000" expanded="true" signature="123:179" placeholder=".container" />
+            <marker date="1490196894000" expanded="true" signature="182:2477" placeholder=".container ng-if=&quot;vm.shop&quot;" />
+            <marker date="1490196894000" expanded="true" signature="213:2477" placeholder=".shop-header.clearfix" />
+            <marker date="1490196894000" expanded="true" signature="241:2057" placeholder=".ranking ng-if=&quot;vm.shop.review_count &gt; 0&quot;" />
+            <marker date="1490196894000" expanded="true" signature="291:1941" placeholder=".clearfix" />
+            <marker date="1490196894000" expanded="true" signature="311:1941" placeholder=".head-star-box" />
+            <marker date="1490196894000" expanded="true" signature="338:1662" placeholder=".head--star" />
+            <marker date="1490196894000" expanded="true" signature="1675:1941" placeholder=".head--score itemprop=&quot;aggregateRating&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/AggregateRating&quot;" />
+            <marker date="1490196894000" expanded="true" signature="2064:2291" placeholder=".col-xs-12.col-sm-12.col-md-4.col-lg-5.col-xl-5" />
+            <marker date="1490196894000" expanded="true" signature="2120:2291" placeholder=".col-row-left.clearfix" />
+            <marker date="1490196894000" expanded="true" signature="2182:2235" placeholder=".shop-name-kana" />
+            <marker date="1490196894000" expanded="true" signature="2248:2291" placeholder=".shop-name" />
+            <marker date="1490196894000" expanded="true" signature="2298:2477" placeholder=".col-xs-12.col-sm-12.col-md-8.col-lg-7.col-xl-7" />
+            <marker date="1490196894000" expanded="true" signature="2354:2477" placeholder=".row.clearfix" />
+            <marker date="1490196894000" expanded="true" signature="2378:2477" placeholder=".review-btn-box" />
+            <marker date="1490196894000" expanded="true" signature="2480:2974" placeholder=".container ng-if=&quot;vm.shop&quot;" />
+          </folding>
         </state>
       </provider>
     </entry>

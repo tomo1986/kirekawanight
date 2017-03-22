@@ -15,10 +15,13 @@
             .head--score itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating"
               span itemprop="ratingValue"
                 | {{vm.shop.total_score}}
-                | /100
+              span
+                | /
+              span itemprop="bestRating" 100
 
-        span.ranking-no
-          | {{vm.shop.review_count}}Reviews
+        span.ranking-no itemprop="ratingCount"
+          | {{vm.shop.review_count}}
+        span.ranking-no Reviews
       .col-xs-12.col-sm-12.col-md-4.col-lg-5.col-xl-5
         .col-row-left.clearfix
           h2.shop-name-box
