@@ -15,12 +15,10 @@
             .head--score itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating"
               span itemprop="ratingValue"
                 | {{vm.shop.total_score}}
-              | 点
+                | /100
 
-        span.score
-        | {{vm.all_shop_count}}店舗中
         span.ranking-no
-          | {{vm.shop.ranking}}位
+          | {{vm.shop.review_count}}Reviews
       .col-xs-12.col-sm-12.col-md-4.col-lg-5.col-xl-5
         .col-row-left.clearfix
           h2.shop-name-box
