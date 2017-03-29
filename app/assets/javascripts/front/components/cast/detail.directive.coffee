@@ -54,11 +54,11 @@ angular.module 'bisyoujoZukanNight'
         vm.breadcrumb.push({name:'CAST',link:"/casts/#{vm.cast.job_type}?page=1"}) if vm.cast
         vm.breadcrumb.push({name:vm.cast.shop.name, link:"/shops/#{vm.cast.job_type}/#{vm.cast.shop.id}/info"}) if vm.cast.shop
         vm.breadcrumb.push({name:vm.cast.name, link:''})
-
-        vm.cast['profile'] = res.data.profile
         vm.isFavorited = res.data.is_favorited
         vm.castMainImg = vm.cast.images[0].url if vm.cast.images[0]
         vm.cast.profile.interview = $sce.trustAsHtml(vm.cast.profile.interview)
+        vm.cast.twitter.script = $sce.trustAsHtml(vm.cast.twitter.script) if vm.cast.twitter
+        vm.cast.youtube.script = $sce.trustAsHtml(vm.cast.youtube.script) if vm.cast.youtube
       )
 
 

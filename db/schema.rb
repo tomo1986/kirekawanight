@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315083611) do
+ActiveRecord::Schema.define(version: 20170327153342) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -152,12 +152,12 @@ ActiveRecord::Schema.define(version: 20170315083611) do
     t.integer  "subject_id"
     t.string   "title"
     t.string   "sub_title"
-    t.text     "description",  limit: 65535
-    t.datetime "started_at",                                null: false
+    t.text     "description",  limit: 4294967295
+    t.datetime "started_at",                                     null: false
     t.datetime "end_at"
-    t.boolean  "is_displayed",               default: true, null: false
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.boolean  "is_displayed",                    default: true, null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.index ["subject_id"], name: "index_events_on_subject_id", using: :btree
   end
 
@@ -293,6 +293,20 @@ ActiveRecord::Schema.define(version: 20170315083611) do
     t.integer  "admin_id"
   end
 
+  create_table "media", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "type"
+    t.string   "subject_type"
+    t.integer  "subject_id"
+    t.text     "script",       limit: 65535
+    t.string   "account"
+    t.string   "password"
+    t.boolean  "is_displayed"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["is_displayed"], name: "index_media_on_is_displayed", using: :btree
+    t.index ["subject_id"], name: "index_media_on_subject_id", using: :btree
+  end
+
   create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "type"
     t.string   "shop_id"
@@ -321,7 +335,7 @@ ActiveRecord::Schema.define(version: 20170315083611) do
     t.datetime "end_at"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    is_displayedt.integer  "number_place"
+    t.integer  "number_place"
     t.integer  "quantilty"
   end
 

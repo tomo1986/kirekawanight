@@ -222,24 +222,18 @@ class Shop < ApplicationRecord
         json.total_score shop.total_score
         json.ranking shop.ranking
         json.interview_ja shop.interview_ja
-        json.interview_vn shop.interview_vn
-        json.interview_en shop.interview_en
         json.sns_line shop.sns_line
         json.sns_zalo shop.sns_zalo
         json.sns_wechat shop.sns_wechat
         json.is_credit shop.is_credit
         json.is_japanese shop.is_japanese
         json.is_english shop.is_english
-        json.is_chinese shop.is_chinese
-        json.is_korean shop.is_korean
         json.tip shop.tip
         json.deleted_at shop.deleted_at
         json.girls_count shop.girls_count
         json.is_smoked shop.is_smoked
         json.opened_at shop.opened_at
         json.closed_at shop.closed_at
-        json.budget_yen shop.budget_yen
-        json.budget_vnd shop.budget_vnd
         json.budget_usd shop.budget_usd
         json.one_point shop.one_point
         json.charge shop.charge
@@ -282,24 +276,15 @@ class Shop < ApplicationRecord
         json.total_score shop.total_score
         json.ranking shop.ranking
         json.interview_ja shop.interview_ja
-        json.interview_vn shop.interview_vn
-        json.interview_en shop.interview_en
-        json.sns_line shop.sns_line
-        json.sns_zalo shop.sns_zalo
-        json.sns_wechat shop.sns_wechat
         json.is_credit shop.is_credit
         json.is_japanese shop.is_japanese
         json.is_english shop.is_english
-        json.is_chinese shop.is_chinese
-        json.is_korean shop.is_korean
         json.tip shop.tip
         json.deleted_at shop.deleted_at
         json.girls_count shop.girls_count
         json.is_smoked shop.is_smoked
         json.opened_at shop.opened_at
         json.closed_at shop.closed_at
-        json.budget_yen shop.budget_yen
-        json.budget_vnd shop.budget_vnd
         json.budget_usd shop.budget_usd
         json.one_point shop.one_point
         json.charge shop.charge

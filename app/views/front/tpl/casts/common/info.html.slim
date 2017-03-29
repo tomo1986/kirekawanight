@@ -44,7 +44,6 @@ main#main
         h2.title
           | Introduction
       .intoroduction-box ng-bind-html="vm.cast.profile.interview"
-
     .col-md-12.detail.clearfix.info-box
       .row
         .page-title
@@ -54,13 +53,16 @@ main#main
           h3
             | {{vm.cast.one_point}}
         .row
-          .col-xs-12.col-sm-4.col-sm-offset-0.col-md-4.col-md-offset-0.col-lg-3.col-lg-offset-0.col-xl-3.col-xl-offset-0
-            .col-row-left.clearfix ng-if="vm.cast.images[0] && vm.cast.images[0].url"
-              img.img ng-src="{{vm.cast.images[0].url}}"
-            .col-row-left.clearfix ng-if="!vm.cast.images[0] && !vm.cast.images[0].url"
-              = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
-
-          .col-xs-12.col-sm-8.col-md-8.col-lg-9.col-xl-9
+          .col-xs-12.col-sm-6.col-md-4.col-lg-4.col-xl-4
+            .col-row-left.clearfix
+              .info-box
+                .intoroduction-box ng-bind-html="vm.cast.youtube.script" ng-if="vm.cast.youtube"
+                img.img ng-src="{{vm.cast.images[0].url}}" ng-if="!vm.cast.youtube && (vm.cast.images[0] && vm.cast.images[0].url)"
+                div ng-if="!vm.cast.youtube && (!vm.cast.images[0] && !vm.cast.images[0].url)"
+                  = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
+              .info-box ng-if="vm.cast.twitter"
+                .intoroduction-box ng-bind-html="vm.cast.twitter.script"
+          .col-xs-12.col-sm-6.col-md-8.col-lg-8.col-xl-8
             .col-row-right.clearfix
               .col-xs-12.col-sm-12.col-md-12.col-lg-7.col-xl-7
                 .row
@@ -100,11 +102,10 @@ main#main
                     dd
                       | {{vm.cast.support_count}}件
 
-
               .col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5
                 .row.clearfix
                   ul.interview-list
-                    li ng-if="vm.profile[key].is_displayed" ng-repeat="(key, val) in vm.cast.ja"
+                    li ng-if="vm.profile[key].is_displayed" ng-repeat="(key, val) in vm.cast.profile"
                       h3
                         | {{vm.profile[key][vm.active_language].name}}
                       p

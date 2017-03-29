@@ -39,17 +39,17 @@ main#main
             span
               | {{vm.total | number}}
             | 件のキャストが見つかりました。
-          ul.filter-list
-            li.sort
-              select.form-control name="constellation" ng-model="vm.filters.sort"
-                option value="new" ng-selected="vm.filters.sort == 'new'" 新着順
-                option value="support" ng-selected="vm.filters.sort == 'support'" 応援されている順
-                option value="favorite" ng-selected="vm.filters.sort == 'favorite'" お気に入り登録されている順
-                option value="review" ng-selected="vm.filters.sort == 'review'" スコアが高い順
-            li.order
-              select.form-control name="constellation" ng-model="vm.filters.order"
-                option value="asc" ng-selected="vm.filters.order == 'asc'" 昇順
-                option value="desc" ng-selected="vm.filters.order == 'desc'" 降順
+          /ul.filter-list
+          /  li.sort
+          /    select.form-control name="constellation" ng-model="vm.filters.sort"
+          /      option value="new" ng-selected="vm.filters.sort == 'new'" 新着順
+          /      option value="support" ng-selected="vm.filters.sort == 'support'" 応援されている順
+          /      option value="favorite" ng-selected="vm.filters.sort == 'favorite'" お気に入り登録されている順
+          /      option value="review" ng-selected="vm.filters.sort == 'review'" スコアが高い順
+          /  li.order
+          /    select.form-control name="constellation" ng-model="vm.filters.order"
+          /      option value="asc" ng-selected="vm.filters.order == 'asc'" 昇順
+          /      option value="desc" ng-selected="vm.filters.order == 'desc'" 降順
         .queen-list.clearfix ng-if="vm.casts.length > 0"
           li ng-repeat="cast in vm.casts"
             .fream

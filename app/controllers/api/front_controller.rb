@@ -147,8 +147,7 @@ class Api::FrontController < ApiController
     end
 
     builders = Jbuilder.new do |json|
-      # json.push_users User.to_jbuilders_for_user_list(push_users)
-        json.users User.to_jbuilders_for_user_list(users)
+      json.users User.to_jbuilders_for_user_list(users)
       json.supports supports
       json.favorites favorites
       json.total total
@@ -161,11 +160,16 @@ class Api::FrontController < ApiController
     user = User.find_by(id: params[:id])
     is_favorited = false
     is_favorited = current_customer.favorites.exists?(receiver_type: 'User', receiver_id: params[:id]) if customer_signed_in?
-
-    builder = Jbuilder.new do |json|
-      json.user user.to_jbuilder
-      json.profile user.ja_profile ?  user.ja_profile.to_jbuilder : nil
-      json.is_favorited is_favorited
+    if user
+      builder = Jbuilder.new do |json|
+        json.code 1
+        json.user user.to_jbuilder
+        json.is_favorited is_favorited
+      end
+    else
+      builder = Jbuilder.new do |json|
+        json.error "キャストが存在しません"
+      end
     end
     render json: builder.target!
 
@@ -191,10 +195,8 @@ class Api::FrontController < ApiController
       json.code 1
       json.shop shop.to_front_jbuilder
       json.is_favorited is_favorited
-      json.users users ? User.to_jbuilders(users) : nil
       json.pickup_users pickup_users ? User.to_jbuilders_for_admin(pickup_users) : nil
       json.favorites favorites
-      json.discounts Discount.to_jbuilders(shop.open_discounts)
       json.shops Shop.to_jbuilders(shops)
       json.all_shop_count Shop.where(job_type: shop.job_type,deleted_at:nil).count
       json.events Event.to_shop_events_jbuilders(events)
@@ -622,13 +624,13 @@ class Api::FrontController < ApiController
     user = User.find_by(id: params[:id])
     users = User.where( shop_id: user.shop_id,deleted_at: nil).where.not(id: user.id) if user.shop_id.present?
     total = users ? users.count : 0
-    if params[:sort] == 'new'
-      users = users.sort_new(params[:order])
-    elsif params[:sort] == 'support'
-      users = users.sort_support(params[:order])
-    elsif params[:sort] == 'favorite'
-      users = users.sort_favorite(params[:order])
-    end
+    # if params[:sort] == 'new'
+    #   users = users.sort_new(params[:order])
+    # elsif params[:sort] == 'support'
+    #   users = users.sort_support(params[:order])
+    # elsif params[:sort] == 'favorite'
+    #   users = users.sort_favorite(params[:order])
+    # end
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 1
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
     users = users.page(page).per(limit) if users.present?

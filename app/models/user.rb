@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_one :ja_profile, class_name: 'ProfileType::Ja', dependent: :destroy, :autosave => true
   has_one :vn_profile, class_name: 'ProfileType::Vn', dependent: :destroy, :autosave => true
   has_one :en_profile, class_name: 'ProfileType::En', dependent: :destroy, :autosave => true
-
+  has_one :twitter, class_name: 'MediaType::Twitter', as: :subject, dependent: :destroy, :autosave => true
+  has_one :youtube, class_name: 'MediaType::Youtube', as: :subject, dependent: :destroy, :autosave => true
   has_many :user_profiles
   has_many  :images, class_name: 'ImageType::User', as: :subject, dependent: :destroy, :autosave => true
   has_many  :face_images, class_name: 'ImageType::UserAll', as: :subject, dependent: :destroy, :autosave => true
@@ -23,6 +24,8 @@ class User < ApplicationRecord
   has_many  :karaoke_banners, class_name: 'BannerType::Karaoke', as: :subject, dependent: :destroy, :autosave => true
   has_many  :massage_pickups, class_name: 'BannerType::Massage', as: :subject, dependent: :destroy, :autosave => true
   has_many  :bar_pickups, class_name: 'BannerType::Bar', as: :subject, dependent: :destroy, :autosave => true
+
+
 
   acts_as_taggable_on :labels
   acts_as_taggable
@@ -311,9 +314,6 @@ class User < ApplicationRecord
       json.job_type self.job_type
       json.blood_type self.blood_type
       json.sex self.sex
-      json.sns_line self.sns_line
-      json.sns_zalo self.sns_zalo
-      json.sns_wechat self.sns_wechat
       json.height self.height
       json.weight self.weight
       json.bust self.bust
@@ -321,24 +321,21 @@ class User < ApplicationRecord
       json.waist self.waist
       json.hip self.hip
       json.ranking self.ranking
-      json.deleted_at self.deleted_at
       json.total_score self.total_score
       json.can_guided self.can_guided
       json.one_point self.one_point
       json.japanese_level self.japanese_level
       json.is_japanese self.is_japanese
       json.is_english self.is_english
-      json.is_chinese self.is_chinese
-      json.is_korean self.is_korean
       json.is_pickuped self.is_pickuped
       json.images self.is_pickuped ?  self.set_face_images : self.abc
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
       json.contact_count self.contacts.count
       json.shop self.shop ? self.shop.to_jbuilder : nil
-      json.ja self.ja_profile ? self.ja_profile.to_jbuilder : UserProfile.new.to_jbuilder
-      json.vn self.vn_profile ? self.vn_profile.to_jbuilder : UserProfile.new.to_jbuilder
-      json.en self.en_profile ? self.en_profile.to_jbuilder : UserProfile.new.to_jbuilder
+      json.profile self.ja_profile ? self.ja_profile.to_jbuilder : UserProfile.new.to_jbuilder
+      json.twitter self.twitter ? self.twitter.to_jbuilder : nil
+      json.youtube self.youtube ? self.youtube.to_jbuilder : nil
       json.tags self.tag_list ? self.tag_list : nil
     end
   end
@@ -383,8 +380,7 @@ class User < ApplicationRecord
       json.contact_count self.contacts.count
       json.shop self.shop ? self.shop.to_jbuilder : nil
       json.ja self.ja_profile ? self.ja_profile.to_jbuilder : UserProfile.new.to_jbuilder
-      json.vn self.vn_profile ? self.vn_profile.to_jbuilder : UserProfile.new.to_jbuilder
-      json.en self.en_profile ? self.en_profile.to_jbuilder : UserProfile.new.to_jbuilder
+      json.twitter self.twitter ? self.twitter.to_jbuilder : Media.new.to_jbuilder
       json.tags self.tag_list ? self.tag_list : nil
     end
   end
