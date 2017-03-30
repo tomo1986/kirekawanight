@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327153342) do
+ActiveRecord::Schema.define(version: 20170330053021) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.datetime "end_at"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.index ["subject_id", "subject_type"], name: "index_banners_on_subject_id_and_subject_type", using: :btree
+    t.index ["type", "subject_id", "subject_type"], name: "index_banners_on_type_and_subject_id_and_subject_type", using: :btree
   end
 
   create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -73,6 +75,7 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.string   "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["type", "shop_id"], name: "index_cards_on_type_and_shop_id", using: :btree
   end
 
   create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -89,6 +92,8 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "return_way"
+    t.index ["subject_id", "subject_type"], name: "index_contacts_on_subject_id_and_subject_type", using: :btree
+    t.index ["type", "subject_id", "subject_type"], name: "index_contacts_on_type_and_subject_id_and_subject_type", using: :btree
   end
 
   create_table "coupons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -103,7 +108,9 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.integer  "sort_no"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.index ["subject_id", "subject_type"], name: "index_coupons_on_subject_id_and_subject_type", using: :btree
     t.index ["subject_id"], name: "index_coupons_on_subject_id", using: :btree
+    t.index ["type", "subject_id", "subject_type"], name: "index_coupons_on_type_and_subject_id_and_subject_type", using: :btree
   end
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -144,6 +151,8 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.datetime "updated_at",   null: false
     t.string   "subject_type"
     t.string   "subject_id"
+    t.index ["subject_id", "subject_type"], name: "index_discounts_on_subject_id_and_subject_type", using: :btree
+    t.index ["type", "subject_id", "subject_type"], name: "index_discounts_on_type_and_subject_id_and_subject_type", using: :btree
   end
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -158,7 +167,9 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.boolean  "is_displayed",                    default: true, null: false
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
+    t.index ["subject_id", "subject_type"], name: "index_events_on_subject_id_and_subject_type", using: :btree
     t.index ["subject_id"], name: "index_events_on_subject_id", using: :btree
+    t.index ["type", "subject_id", "subject_type"], name: "index_events_on_type_and_subject_id_and_subject_type", using: :btree
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -291,6 +302,7 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.string   "sales_person"
     t.text     "note",            limit: 65535
     t.integer  "admin_id"
+    t.index ["shop_id"], name: "index_invoices_on_shop_id", using: :btree
   end
 
   create_table "media", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -304,7 +316,9 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["is_displayed"], name: "index_media_on_is_displayed", using: :btree
+    t.index ["subject_id", "subject_type"], name: "index_media_on_subject_id_and_subject_type", using: :btree
     t.index ["subject_id"], name: "index_media_on_subject_id", using: :btree
+    t.index ["type", "subject_id", "subject_type"], name: "index_media_on_type_and_subject_id_and_subject_type", using: :btree
   end
 
   create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -316,6 +330,7 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.integer  "sort_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["type", "shop_id"], name: "index_menus_on_type_and_shop_id", using: :btree
   end
 
   create_table "page_views", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -324,6 +339,8 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.string   "subject_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["subject_id", "subject_type"], name: "index_page_views_on_subject_id_and_subject_type", using: :btree
+    t.index ["type", "subject_id", "subject_type"], name: "index_page_views_on_type_and_subject_id_and_subject_type", using: :btree
   end
 
   create_table "pickups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -337,6 +354,8 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.datetime "updated_at",   null: false
     t.integer  "number_place"
     t.integer  "quantilty"
+    t.index ["subject_id", "subject_type"], name: "index_pickups_on_subject_id_and_subject_type", using: :btree
+    t.index ["type", "subject_id", "subject_type"], name: "index_pickups_on_type_and_subject_id_and_subject_type", using: :btree
   end
 
   create_table "plans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -359,6 +378,8 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.datetime "updated_at",                  null: false
     t.index ["receiver_id"], name: "index_posts_on_receiver_id", using: :btree
     t.index ["sender_id"], name: "index_posts_on_sender_id", using: :btree
+    t.index ["type", "receiver_id", "receiver_type"], name: "index_posts_on_type_and_receiver_id_and_receiver_type", using: :btree
+    t.index ["type", "sender_id", "sender_type"], name: "index_posts_on_type_and_sender_id_and_sender_type", using: :btree
   end
 
   create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -389,6 +410,8 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.datetime "deleted_at"
     t.index ["receiver_id"], name: "index_reviews_on_receiver_id", using: :btree
     t.index ["sender_id"], name: "index_reviews_on_sender_id", using: :btree
+    t.index ["type", "receiver_id", "receiver_type"], name: "index_reviews_on_type_and_receiver_id_and_receiver_type", using: :btree
+    t.index ["type", "sender_id", "sender_type"], name: "index_reviews_on_type_and_sender_id_and_sender_type", using: :btree
   end
 
   create_table "shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -479,6 +502,8 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.string   "subject_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["subject_id", "subject_type"], name: "index_supports_on_subject_id_and_subject_type", using: :btree
+    t.index ["type", "subject_id", "subject_type"], name: "index_supports_on_type_and_subject_id_and_subject_type", using: :btree
   end
 
   create_table "taggings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -549,6 +574,7 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.text     "interview",       limit: 65535
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
+    t.index ["type", "user_id"], name: "index_user_profiles_on_type_and_user_id", using: :btree
     t.index ["user_id"], name: "index_user_profiles_on_user_id", using: :btree
   end
 
@@ -598,6 +624,7 @@ ActiveRecord::Schema.define(version: 20170327153342) do
     t.index ["is_english"], name: "index_users_on_is_english", using: :btree
     t.index ["is_japanese"], name: "index_users_on_is_japanese", using: :btree
     t.index ["is_korean"], name: "index_users_on_is_korean", using: :btree
+    t.index ["shop_id"], name: "index_users_on_shop_id", using: :btree
   end
 
 end
