@@ -270,7 +270,7 @@ class User < ApplicationRecord
         json.contact_count user.contacts.count
         json.birthday user.birthday
         json.age user.birthday ? user.age : '-'
-        json.images user.is_pickuped ?  user.set_face_images : user.abc
+        json.images user.abc
         json.set! :shop do
           json.id user.shop ? user.shop.id : nil
           json.name user.shop ? user.shop.name : nil
@@ -328,7 +328,7 @@ class User < ApplicationRecord
       json.is_japanese self.is_japanese
       json.is_english self.is_english
       json.is_pickuped self.is_pickuped
-      json.images self.is_pickuped ?  self.set_face_images : self.abc
+      json.images self.abc
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
       json.contact_count self.contacts.count
