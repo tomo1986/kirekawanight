@@ -24,9 +24,9 @@ main#main ng-if="vm.shop"
                 .pickup-cast-item.clearfix ng-repeat="cast in vm.pickup_users" ng-if="vm.pickup_users.length > 0 && vm.isDisplayed_pickup_user"
                   .col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-4.clearfix
                     .row.clearfix
-                      .clearfix ng-if="cast.face_images[0] && cast.face_images[0].url"
-                        img.img ng-src="{{cast.face_images[0].url}}"
-                      .clearfix ng-if="!cast.face_images[0] && !cast.face_images[0].url"
+                      .clearfix ng-if="cast.images[0] && cast.images[0].url"
+                        img.img ng-src="{{cast.images[0].url}}"
+                      .clearfix ng-if="!cast.images[0] && !cast.images[0].url"
                         = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
                   .col-xs-8.col-sm-8.col-md-8.col-lg-8.col-xl-8.clearfix
                     .row.clearfix

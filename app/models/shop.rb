@@ -435,6 +435,7 @@ class Shop < ApplicationRecord
       json.images self.set_images
       json.way_images self.set_way_images
       json.food_menus self.food_menus
+      json.drink_menus self.drink_menus
       json.basic_menus self.basic_menus
       json.support_count self.supports.count
       json.favorite_count self.favorites.count
