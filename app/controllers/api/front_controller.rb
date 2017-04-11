@@ -188,7 +188,7 @@ class Api::FrontController < ApiController
       end
     end
     shops = Shop.where(group_id: shop.group_id, deleted_at: nil).where.not(id: shop.id) if shop.group_id
-    pickup_users = shop.users.where(users:{is_pickuped: true}).limit(2) if shop.users
+    pickup_users = shop.users.where(users:{is_pickuped: true}).limit(3) if shop.users
     now = Time.zone.now
     events = shop.events.where("events.started_at <= ? and events.end_at > ?",now,now)
     builder = Jbuilder.new do |json|
