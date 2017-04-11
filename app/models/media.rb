@@ -1,5 +1,6 @@
 class Media < ApplicationRecord
   belongs_to :user
+  belongs_to :shop
 
   def to_jbuilder
     Jbuilder.new do |json|

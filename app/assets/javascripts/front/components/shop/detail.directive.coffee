@@ -45,9 +45,11 @@ angular.module 'bisyoujoZukanNight'
           vm.pickup_users = res.data.pickup_users
           vm.isDisplayed_pickup_user = true
           vm.all_shop_count = res.data.all_shop_count
-          vm.shopMainImg = vm.shop.images[0].url
+          vm.shopMainImg = vm.shop.images[0].url if vm.shop.images && vm.shop.images.length > 0
           vm.reviewQuestion = shopService.setReaviewQuestion(vm.shop.job_type)
           vm.shop.interview_ja = $sce.trustAsHtml(vm.shop.interview_ja)
+          vm.shop.twitter.script = $sce.trustAsHtml(vm.shop.twitter.script) if vm.shop.twitter
+          vm.shop.youtube.script = $sce.trustAsHtml(vm.shop.youtube.script) if vm.shop.youtube
           vm.events = res.data.events
         else
           modalService.error('エラー',res.data.message)

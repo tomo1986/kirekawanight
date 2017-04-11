@@ -122,6 +122,8 @@ main#main ng-if="vm.shop"
                             .shop-tags
                               a.btn href="/shops/{{vm.shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in vm.shop.tags"
                                 | {{tag.name}}
+                        .info-box ng-if="vm.shop.twitter"
+                          .intoroduction-box ng-bind-html="vm.shop.twitter.script"
 
     .col-md-12.detail.clearfix.info-box
       .row.clearfix
