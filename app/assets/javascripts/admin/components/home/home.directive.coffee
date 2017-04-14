@@ -32,6 +32,7 @@ angular.module 'bijyoZukanAdmin'
           vm.todays_contact_count = res.data.todays_contact_count
           vm.last_month_review_count = res.data.last_month_review_count
           vm.last_month_contact_count = res.data.last_month_contact_count
+          vm.fee_shops = res.data.fee_shops
         else
           modalService.error(res.data.message)
       )

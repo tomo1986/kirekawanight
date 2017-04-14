@@ -49,6 +49,21 @@ section.main-container.home-page home-directive=""
     .row
       table.res-separate-table
         caption
+          | 来月有料化する店舗
+        thead
+          tr
+            th ショップ名
+            th 有料化日
+        tbody
+          tr ng-repeat="shop in vm.fee_shops"
+            td.clearfix data-label="ショップ名"
+              a href="/admin/shops/{{shop.id}}/detail"
+                | {{shop.name}}
+            td.clearfix data-label="有料化日"
+              | {{shop.fee_at | date: 'yyyy-M-d'}}
+    .row
+      table.res-separate-table
+        caption
           | 新着レビュー一覧
         thead
           tr

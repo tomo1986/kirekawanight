@@ -37,6 +37,13 @@ angular.module 'bijyoZukanAdmin'
         is_required:true
         placeholder:'必須'
       }
+      vm.fee_options={
+        from:{is_from:true,date:null}
+        enable_time: false
+        format: 'yyyy-MM-dd'
+        is_required:false
+        placeholder:'任意'
+      }
       vm.copensDaterPicker ={
 
       }

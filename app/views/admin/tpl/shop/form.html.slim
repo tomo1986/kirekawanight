@@ -349,7 +349,18 @@ section.main-container.map-form-page shop-form-directive=""
             td.res-form-table__td.input-box
               div text-angular='' ng-model='vm.shop.interview_ja'
               /textarea.form-control ng-model="vm.shop.interview_ja"
-
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title 有料化日
+              span.btn.btn-danger.btn-xs.absolutely.absolutely Required
+            td.res-form-table__td.input-box
+              date-picker-directive input-name="fee_at" data="vm.shop" options="vm.fee_options" ng-model="vm.shop.fee_at"
+          tr
+            th.res-form-table__th.title-box.clearfix
+              span.title ng-class="{'is-text-danger': vm.errors.description}" 備考
+              span.btn.btn-danger.btn-xs.absolutely 必須
+            td.res-form-table__td.input-box
+              textarea.form-control style="height:150px;" ng-model="vm.shop.note"
 
         .button-center ng-show="vm.canSubmit"
           button.btn.main-btn type="submit" 登録する

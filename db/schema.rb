@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330053021) do
+ActiveRecord::Schema.define(version: 20170414083455) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -485,6 +485,8 @@ ActiveRecord::Schema.define(version: 20170330053021) do
     t.string   "tel2"
     t.string   "write_adress"
     t.boolean  "is_displayed_phone",                        default: false
+    t.datetime "fee_at"
+    t.text     "note",                   limit: 65535
     t.index ["admin_id"], name: "index_shops_on_admin_id", using: :btree
     t.index ["email"], name: "index_shops_on_email", unique: true, using: :btree
     t.index ["group_id"], name: "index_shops_on_group_id", using: :btree

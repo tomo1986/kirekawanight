@@ -237,6 +237,7 @@ class Shop < ApplicationRecord
         json.is_smoked shop.is_smoked
         json.opened_at shop.opened_at
         json.closed_at shop.closed_at
+        json.fee_at shop.fee_at
         json.budget_usd shop.budget_usd
         json.one_point shop.one_point
         json.charge shop.charge
@@ -361,6 +362,7 @@ class Shop < ApplicationRecord
       json.is_smoked self.is_smoked
       json.opened_at self.opened_at
       json.closed_at self.closed_at
+      json.fee_at self.fee_at
       json.budget_yen self.budget_yen
       json.budget_vnd self.budget_vnd
       json.budget_usd self.budget_usd
@@ -378,7 +380,7 @@ class Shop < ApplicationRecord
       json.user_count self.users.count
       json.deleted_at self.deleted_at
       json.is_displayed_phone self.is_displayed_phone
-      # json.note self.note
+      json.note self.note
       json.images self.set_images
       json.way_images self.set_way_images
       json.drink_menus self.drink_menus

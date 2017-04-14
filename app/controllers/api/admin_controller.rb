@@ -1076,13 +1076,14 @@ class Api::AdminController < ApiController
         is_smoked: params[:is_smoked],
         opened_at: params[:opened_at],
         closed_at: params[:closed_at],
+        fee_at: params[:fee_at],
+        note: params[:note],
         budget_yen: params[:budget_yen],
         budget_vnd: params[:budget_vnd],
         budget_usd: params[:budget_usd],
         service: params[:service],
         room_count: params[:room_count],
         seat_count: params[:seat_count],
-
         mama_tip: params[:mama_tip],
         charge: params[:charge],
         karaoke_machine: params[:karaoke_machine],
@@ -1170,6 +1171,8 @@ class Api::AdminController < ApiController
         service: params[:service],
         opened_at: params[:opened_at],
         closed_at: params[:closed_at],
+        fee_at: params[:fee_at],
+        note: params[:note],
         room_count: params[:room_count],
         seat_count: params[:seat_count],
         budget_yen: params[:budget_yen],
@@ -1247,6 +1250,7 @@ class Api::AdminController < ApiController
     now = Time.zone.now
     from = now.beginning_of_day
     to = now.end_of_day
+    fee_shops = Shop.where("fee_at >= ? and fee_at < ?",now, now.next_month)
     last_month = now.prev_month
     last_month_from = last_month.beginning_of_month
     last_month_to = last_month.end_of_month
@@ -1262,6 +1266,7 @@ class Api::AdminController < ApiController
       json.contacts Contact.to_jbuilders(contacts)
       json.shop_count shop_count
       json.user_count user_count
+      json.fee_shops Shop.to_jbuilders(fee_shops)
       json.todays_review_count todays_review_count
       json.todays_contact_count todays_contact_count
       json.last_month_review_count last_month_review_count

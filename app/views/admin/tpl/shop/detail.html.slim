@@ -119,14 +119,15 @@ section.main-container.map-form-page shop-detail-directive=""
             p ng-bind-html="vm.shop.interview_ja | noHTML | newlines"
         tr
           th.res-form-table__th.title-box.clearfix
-            span.title Interview vietnamese
+            span.title 有料化日
           td.res-form-table__td.input-box
-            p ng-bind-html="vm.shop.interview_vn | noHTML | newlines"
+            | {{vm.shop.fee_at | date: 'yyyy-M-d'}}
         tr
           th.res-form-table__th.title-box.clearfix
-            span.title Interview english
+            span.title 備考
           td.res-form-table__td.input-box
-            p ng-bind-html="vm.shop.interview_en | noHTML | newlines"
+            p ng-bind-html="vm.shop.note | noHTML | newlines"
+
     .row
       table.res-separate-table
         thead
