@@ -22,3 +22,5 @@ production:
   encoding: utf8
   port: 3306
   collation: utf8_general_ci
+  variables:
+      sql_mode: ONLY_FULL_GROUP_BY
