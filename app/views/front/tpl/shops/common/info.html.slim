@@ -1,129 +1,117 @@
 main#main ng-if="vm.shop"
-  .top-view-box
-    .shop-cover-wrap style="background-image:url({{vm.shopMainImg}});"
-      .shopCover
-      .container
-        img itemprop="image" ng-src="{{vm.shopMainImg}}"
   .container
-    .rank-box.shop-top-box
-      .shop-button-box.clearfix
-        .favorite
-          a.btn ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()" お気に入り登録
-        .support
-          a.btn href="javascript:void(0)" ng-click="vm.onClickedSupport()" 応援する
-      p.shop-copy ng-bind-html="vm.shop.catch_copy | noHTML | newlines"
-
     .col-md-12.detail.clearfix
       .row.clearfix
         .row.clearfix
-          .pickup-cast
-            .col-xs-12.col-sm-12.col-md-12.col-lg-7.col-xl-7.clearfix
-              .col-row-left.clearfix
-                .pickup-cast-line
-                  span 店長おすすめ
-                .pickup-cast-item.clearfix ng-repeat="cast in vm.pickup_users" ng-if="vm.pickup_users.length > 0 && vm.isDisplayed_pickup_user"
-                  .col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-4.clearfix
-                    .row.clearfix
-                      .clearfix ng-if="cast.images[0] && cast.images[0].url"
-                        img.img ng-src="{{cast.images[0].url}}"
-                      .clearfix ng-if="!cast.images[0] && !cast.images[0].url"
-                        = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
-                  .col-xs-8.col-sm-8.col-md-8.col-lg-8.col-xl-8.clearfix
-                    .row.clearfix
-                      .cast-box
-                        .cast-name
-                          a href="/casts/{{cast.job_type}}/{{cast.id}}/info"
-                            | {{cast.name}}
-                        .cast-profile
-                          ul.profiles
-                            li
-                              p.item
-                                - if customer_signed_in?
-                                  | T{{cast.height || '-'}} W{{cast.weight || '-'}} B{{cast.bust || '-'}}({{cast.bust_size || '-'}}) W{{cast.waist || '-'}} H{{cast.hip || '-'}}
-                                - else
-                                  | スタイルはログイン後閲覧可能
-                            li
-                              p.item
-                                | 誕生日： {{cast.birthday | date: 'yyyy年MM月dd日' }}（{{cast.age || '-'}}歳）
-                            li
-                              p.item
-                                | 血液型： {{cast.blood_type}}型
-                            li
-                              .tags
-                                .keyword-title KIREKAWA KEYWORD
-                                .tags-box
-                                  a.btn href="javascript:void(0)" ng-repeat="tag in cast.tags"
-                                    | {{tag}}
-                .pickup-usernon  ng-if="vm.pickup_users.length == 0 && vm.isDisplayed_pickup_user"
-                  | Coming Soon
-          .col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5.clearfix
-            .col-row-right.clearfix
-              .col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12.clearfix
-                .row.clearfix
-                  .shop-map.clearfix
-                    .shop-map--info-box
-                      .shop-map--info-wrap
-                        .shop-name-titlt
-                          .shop-map--info-name itemprop="name"
-                            | {{vm.shop.name}}
-                        dl.profile.clearfix
-                          dt ショップ番号
-                          dd
-                            | {{vm.shop.id}}
-                          dt 住所
-                          dd
-                            span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"
-                              | {{vm.shop.write_adress}}
-                          dt ng-if="vm.shop.is_displayed_phone" 電話番号
-                          dd ng-if="vm.shop.is_displayed_phone"
-                            a href="tel:{{vm.shop.tel}}"
-                              span itemprop="telephone"
-                                | {{vm.shop.tel}}
-                            | （{{vm.shop.contract_person}}）
-                          dt ng-if="vm.shop.is_displayed_phone && vm.shop.te2" 電話番号
-                          dd ng-if="vm.shop.is_displayed_phone && vm.shop.te2"
-                            a href="tel:{{vm.shop.tel2}}"
-                              span itemprop="telephone"
-                                | {{vm.shop.tel2}}
-                            | （{{vm.shop.contract_person2}}）
-                          dt アクセス
-                          dd
-                            | {{vm.shop.access}}
-                          dt 在籍キャスト数
-                          dd
-                            | {{vm.shop.girls_count}}人
-                          dt ng-if="vm.shop.job_type == 'karaoke'" カラオケ機器
-                          dd ng-if="vm.shop.job_type == 'karaoke'"
-                            span ng-if="vm.shop.karaoke_machine == 1" 日本製カラオケ機器
-                            span ng-if="vm.shop.karaoke_machine == 0" 日本製ではありません。
-                          dt ng-if="vm.shop.job_type == 'bar'" チャージ
-                          dd ng-if="vm.shop.job_type == 'bar'"
-                            span ng-if="vm.shop.charge == 1" あり
-                            span ng-if="vm.shop.charge == 0" なし
-                          dt ng-if="vm.shop.job_type == 'karaoke'" ママにチップ
-                          dd ng-if="vm.shop.job_type == 'karaoke'"
-                            span ng-if="vm.shop.mama_tip == 1" あり
-                            span ng-if="vm.shop.mama_tip == 0" なし
+          .col-xs-12.col-sm-12.col-md-12.col-lg-8.col-xl-8.clearfix
+            .col-row-left.clearfix
+              .slick-slider style="margin-left:-1.1rem;margin-right:-1.1rem;"
+                div ng-repeat="image in vm.shop.images" repeat-finished="carouselInitializer"
+                  .slider-link
+                    img.img data-lazy="{{image.url}}" alt="{{vm.shop.name}}"
 
-                          dt 部屋数
-                          dd
-                            | {{vm.shop.room_count}}部屋
-                          dt 最大収容人数
-                          dd
-                            | {{vm.shop.seat_count}}人
-                          dt 使用可言語
-                          dd
-                            span style="margin-right:.5rem;" ng-if="vm.shop.is_japanese"
-                              | 日本語
-                            span style="margin-right:.5rem;" ng-if="vm.shop.is_english"
-                              | 英語
-                          dt ポイント
-                          dd
-                            .shop-tags
-                              a.btn href="/shops/{{vm.shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in vm.shop.tags"
-                                | {{tag.name}}
-                    .info-box ng-if="vm.shop.twitter"
-                      .intoroduction-box ng-bind-html="vm.shop.twitter.script"
+              .pickup-cast style="margin:1rem 0;"
+                .col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12.clearfix
+                  .row.clearfix
+                    .pickup-cast-line
+                      span 店長おすすめ
+                    .pickup-cast-item.clearfix
+                      .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xl-6 style="margin-bottom:1rem;" ng-repeat="cast in vm.pickup_users" ng-if="vm.pickup_users.length > 0 && vm.isDisplayed_pickup_user"
+                        .row
+                          .col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-4.clearfix
+                            .row.clearfix
+                              .clearfix ng-if="cast.images[0] && cast.images[0].url"
+                                img.img ng-src="{{cast.images[0].url}}"
+                              .clearfix ng-if="!cast.images[0] && !cast.images[0].url"
+                                = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
+                          .col-xs-8.col-sm-8.col-md-8.col-lg-8.col-xl-8.clearfix
+                            .row.clearfix
+                              .cast-box
+                                .cast-name
+                                  a href="/casts/{{cast.job_type}}/{{cast.id}}/info"
+                                    | {{cast.name}}
+                                .cast-profile
+                                  ul.profiles
+                                    li
+                                      p.item
+                                        - if customer_signed_in?
+                                          | T{{cast.height || '-'}} W{{cast.weight || '-'}} B{{cast.bust || '-'}}({{cast.bust_size || '-'}}) W{{cast.waist || '-'}} H{{cast.hip || '-'}}
+                                        - else
+                                          | スタイルはログイン後閲覧可能
+                                    li
+                                      p.item
+                                        | 誕生日： {{cast.birthday | date: 'yyyy年MM月dd日' }}（{{cast.age || '-'}}歳）
+                                    li
+                                      p.item
+                                        | 血液型： {{cast.blood_type}}型
+              .info-box ng-if="vm.shop.twitter"
+                .intoroduction-box ng-bind-html="vm.shop.twitter.script"
+
+          .col-xs-12.col-sm-12.col-md-12.col-lg-4.col-xl-4.clearfix
+            .col-row-right.clearfix
+              .shop-map.clearfix
+                .shop-map--info-box
+                  .shop-map--info-wrap
+                    .rank-box.shop-top-box
+                      .shop-button-box.clearfix style="margin-top:0;"
+                        .favorite
+                          a.btn ng-class="{'active': vm.isFavorited }" href="javascript:void(0)" ng-click="vm.onClickedFavorite()" お気入り
+                        .support
+                          a.btn href="javascript:void(0)" ng-click="vm.onClickedSupport()" 応援
+                      p.shop-copy ng-bind-html="vm.shop.catch_copy | noHTML | newlines"
+                    dl.profile.clearfix
+                      dt 住所
+                      dd
+                        span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"
+                          | {{vm.shop.write_adress}}
+                      dt ng-if="vm.shop.is_displayed_phone" 電話番号
+                      dd ng-if="vm.shop.is_displayed_phone"
+                        a href="tel:{{vm.shop.tel}}"
+                          span itemprop="telephone"
+                            | {{vm.shop.tel}}
+                        | （{{vm.shop.contract_person}}）
+                      dt ng-if="vm.shop.is_displayed_phone && vm.shop.te2" 電話番号
+                      dd ng-if="vm.shop.is_displayed_phone && vm.shop.te2"
+                        a href="tel:{{vm.shop.tel2}}"
+                          span itemprop="telephone"
+                            | {{vm.shop.tel2}}
+                        | （{{vm.shop.contract_person2}}）
+                      dt アクセス
+                      dd
+                        | {{vm.shop.access}}
+                      dt 在籍キャスト数
+                      dd
+                        | {{vm.shop.girls_count}}人
+                      dt ng-if="vm.shop.job_type == 'karaoke'" カラオケ機器
+                      dd ng-if="vm.shop.job_type == 'karaoke'"
+                        span ng-if="vm.shop.karaoke_machine == 1" 日本製カラオケ機器
+                        span ng-if="vm.shop.karaoke_machine == 0" 日本製ではありません。
+                      dt ng-if="vm.shop.job_type == 'bar'" チャージ
+                      dd ng-if="vm.shop.job_type == 'bar'"
+                        span ng-if="vm.shop.charge == 1" あり
+                        span ng-if="vm.shop.charge == 0" なし
+                      dt ng-if="vm.shop.job_type == 'karaoke'" ママにチップ
+                      dd ng-if="vm.shop.job_type == 'karaoke'"
+                        span ng-if="vm.shop.mama_tip == 1" あり
+                        span ng-if="vm.shop.mama_tip == 0" なし
+
+                      dt 部屋数
+                      dd
+                        | {{vm.shop.room_count}}部屋
+                      dt 最大収容人数
+                      dd
+                        | {{vm.shop.seat_count}}人
+                      dt 使用可言語
+                      dd
+                        span style="margin-right:.5rem;" ng-if="vm.shop.is_japanese"
+                          | 日本語
+                        span style="margin-right:.5rem;" ng-if="vm.shop.is_english"
+                          | 英語
+                      dt ポイント
+                      dd
+                        .shop-tags
+                          a.btn href="/shops/{{vm.shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in vm.shop.tags"
+                            | {{tag.name}}
 
     .col-md-12.detail.clearfix.info-box
       .row.clearfix
