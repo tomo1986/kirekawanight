@@ -1853,3 +1853,11 @@
     }
   }
 }
+.slick-dots li button:before{
+  font-size: 50px !important;
+  color: #fff !important;
+}
+.slick-dots li.slick-active button:before{
+  color: #ad9a58 !important;
+
+}
