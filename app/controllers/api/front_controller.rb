@@ -125,9 +125,9 @@ class Api::FrontController < ApiController
     elsif params[:job_type] == 'sexy'
       PageViewType::CastSexy.create
     end
-    # users = User.global_search(params[:sort],params[:job_type],params[:tags],params[:bust])
+    users = User.global_search(params[:sort],params[:job_type],params[:tags],params[:bust])
 
-    users = User.where(job_type: params[:job_type])
+    # users = User.where(job_type: params[:job_type])
     users = users.where(users:{deleted_at: nil})
     total = users.count
 
@@ -431,8 +431,8 @@ class Api::FrontController < ApiController
     end
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
-    # shops = Shop.global_search(params[:sort],params[:job_type],params[:tags],params[:budget],params[:mama_tip],params[:tip],params[:charge],params[:karaoke_machine],params[:japanese],params[:english])
-    shops = Shop.where(job_type: params[:job_type])
+    shops = Shop.global_search(params[:sort],params[:job_type],params[:tags],params[:budget],params[:mama_tip],params[:tip],params[:charge],params[:karaoke_machine],params[:japanese],params[:english])
+    # shops = Shop.where(job_type: params[:job_type])
     shops = shops.where(shops:{deleted_at: nil})
     total = shops.length
 
