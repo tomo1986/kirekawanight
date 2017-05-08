@@ -1,5 +1,7 @@
 require 'net/https'
+require 'net/http'
 require 'uri'
+
 class Api::FrontController < ApiController
 
   def logout
@@ -177,6 +179,8 @@ class Api::FrontController < ApiController
 
   end
   def api4
+    instagram_iamges = []
+
     PageViewType::ShopDetail.create(subject_type: 'Shop',subject_id: params[:id])
     shop = Shop.find_by(id: params[:id])
     render_failed(4, t('shop.error.not_find')) and return if shop.blank?
@@ -193,6 +197,24 @@ class Api::FrontController < ApiController
     pickup_users = shop.users.where(users:{is_pickuped: true}).limit(3) if shop.users
     now = Time.zone.now
     events = shop.events.where("events.started_at <= ? and events.end_at > ?",now,now)
+    if shop.instagram
+      begin
+        uri = URI("https://api.instagram.com/v1/users/self/media/recent/")
+        params = { :access_token => "#{shop.instagram.script}"}
+        uri.query = URI.encode_www_form(params)
+        res = Net::HTTP.get_response(uri)
+        if res
+          instagrams = YAML::load(res.body)
+          instagrams["data"].each do |data|
+            instagram_iamges << {
+                url: data["images"]["standard_resolution"]["url"],
+                link: data["link"]
+            }
+          end
+        end
+      end
+    end
+
     builder = Jbuilder.new do |json|
       json.code 1
       json.shop shop.to_front_jbuilder
@@ -202,6 +224,7 @@ class Api::FrontController < ApiController
       json.shops Shop.to_jbuilders(shops)
       json.all_shop_count Shop.where(job_type: shop.job_type,deleted_at:nil).count
       json.events Event.to_shop_events_jbuilders(events)
+      json.instagrams instagram_iamges
     end
     render json: builder.target!
   end

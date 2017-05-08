@@ -5,15 +5,15 @@ main#main ng-if="vm.shop"
         .row.clearfix
           .col-xs-12.col-sm-12.col-md-12.col-lg-8.col-xl-8.clearfix
             .col-row-left.clearfix
-              .slick-slider style="margin-left:-1.1rem;margin-right:-1.1rem;"
+              #shopImage.slick-slider
                 div ng-repeat="image in vm.shop.images" repeat-finished="carouselInitializer"
                   .slider-link
                     img.img data-lazy="{{image.url}}" alt="{{vm.shop.name}}"
 
-              .pickup-cast style="margin:1rem 0;"
+              .pickup-cast.clearfix style="margin:1rem 0;" ng-if="vm.pickup_users.length > 0 && vm.isDisplayed_pickup_user"
                 .col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12.clearfix
                   .row.clearfix
-                    .pickup-cast-line
+                    .pickup-cast-line style="margin-top:1rem;"
                       span 店長おすすめ
                     .pickup-cast-item.clearfix
                       .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xl-6 style="margin-bottom:1rem;" ng-repeat="cast in vm.pickup_users" ng-if="vm.pickup_users.length > 0 && vm.isDisplayed_pickup_user"
@@ -21,7 +21,8 @@ main#main ng-if="vm.shop"
                           .col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-4.clearfix
                             .row.clearfix
                               .clearfix ng-if="cast.images[0] && cast.images[0].url"
-                                img.img ng-src="{{cast.images[0].url}}"
+                                a href="/casts/{{cast.job_type}}/{{cast.id}}/info"
+                                  img.img ng-src="{{cast.images[0].url}}"
                               .clearfix ng-if="!cast.images[0] && !cast.images[0].url"
                                 = image_tag 'front/cast-no-image.png', class: "target img", alt: "kirekawa collection cast no-image"
                           .col-xs-8.col-sm-8.col-md-8.col-lg-8.col-xl-8.clearfix
@@ -29,7 +30,7 @@ main#main ng-if="vm.shop"
                               .cast-box
                                 .cast-name
                                   a href="/casts/{{cast.job_type}}/{{cast.id}}/info"
-                                    | {{cast.name}}
+                                    | {{cast.name}}（{{cast.age || '-'}}歳）
                                 .cast-profile
                                   ul.profiles
                                     li
@@ -40,12 +41,85 @@ main#main ng-if="vm.shop"
                                           | スタイルはログイン後閲覧可能
                                     li
                                       p.item
-                                        | 誕生日： {{cast.birthday | date: 'yyyy年MM月dd日' }}（{{cast.age || '-'}}歳）
+                                        | 誕生日： {{cast.birthday | date: 'yyyy年MM月dd日' }}
                                     li
                                       p.item
                                         | 血液型： {{cast.blood_type}}型
-              .info-box ng-if="vm.shop.twitter"
-                .intoroduction-box ng-bind-html="vm.shop.twitter.script"
+
+              .col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12.clearfix.insta-title ng-if="vm.instagrams"
+                .row.clearfix
+                  .pickup-cast-line style="margin-top:1rem;"
+                    span Instagram
+                  .info-box.clearfix
+                    #insta.slick-slider
+                      div ng-repeat="instagram in vm.instagrams" repeat-finished="instaCarouselInitializer"
+                        a.slider-link href="{{instagram.link}}" target="_blank"
+                          img.img data-lazy="{{instagram.url}}"
+              .col-md-12.detail.clearfix.info-box
+                .row.clearfix
+                  .rank-box.shop-top-box
+                    .page-title
+                      h2.title
+                        | クーポン
+                    .coupon-box ng-repeat="coupon in vm.shop.coupons"
+                      .coupon-body
+                        .date-box
+                          span ng-if="coupon.started_at && coupon.end_at"
+                            | 【有効期限：{{coupon.started_at | date: 'yyyy年MM月dd日' }}〜{{coupon.end_at | date: 'yyyy年MM月dd日' }}】
+                          span ng-if="coupon.started_at && !coupon.end_at"
+                            | 【有効期限：{{coupon.started_at | date: 'yyyy年MM月dd日' }}〜】
+
+                        p.coupon-description ng-bind-html="coupon.description | noHTML | newlines"
+                        p.coupon-subdescription ng-bind-html="coupon.sub_description | noHTML | newlines"
+                        .attention ng-if="vm.shop.service"
+                          p
+                            | このページを見せると、上記クーポンが使用できます。
+                            br
+                            | ※他会社もしくはガイド者に送迎された場合、使用できません。
+                            br
+                            | ※他クーポンとの併用はできません。
+
+              .col-md-12.detail.clearfix.info-box ng-if="vm.events.length > 0"
+                .row.clearfix
+                  .rank-box.shop-top-box
+                    .page-title
+                      h2.title イベント
+                    ul.event-list
+                      li ng-repeat="event in vm.events"
+                        .event-content-box
+                          .row
+                            .col-xs-12.col-sm-12.col-md-12.col-xl-12
+                              .term-event
+                                span ng-if="event.started_at && event.end_at"
+                                  | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜{{event.end_at | date: 'yyyy年MM月dd日' }}】
+                                span ng-if="event.started_at && !event.end_at"
+                                  | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜】
+                              .event-main-content.clearfix
+                                .event-img-box
+                                  .event-image
+                                    a href="/events/{{event.id}}/detail"
+                                      span ng-if="vm.shop.images[0]"
+                                        img ng-src="{{vm.shop.images[0].url}}" alt="{{vm.shop.name}}の画像" style="width:100%;"
+                                .event-content-boxs
+                                  a href="/events/{{event.id}}/detail"
+                                    h3.event-title.clearfix
+                                      | {{event.title}}
+                                    p.event-discription
+                                      | {{event.sub_title}}
+
+              .col-md-12.detail.clearfix.info-box
+                .row.clearfix
+                  .info-box.clearfix ng-if="vm.shop && vm.shop.interview_ja"
+                    .page-title
+                      h2.title
+                        | INTRODUCTION
+                    .intoroduction-box ng-bind-html="vm.shop.interview_ja"
+              .col-md-12.detail.clearfix.info-box
+                .row.clearfix
+                  #map.rank-box.shop-map.clearfix
+                    ng-map zoom="18" center="{{vm.shop.lon}},{{vm.shop.lat}}" styles="{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
+                      marker id='{{vm.shop.id}} ' title="{{vm.shop.address}}" position=" {{vm.shop.lon}}, {{vm.shop.lat}}"
+
 
           .col-xs-12.col-sm-12.col-md-12.col-lg-4.col-xl-4.clearfix
             .col-row-right.clearfix
@@ -112,113 +186,29 @@ main#main ng-if="vm.shop"
                         .shop-tags
                           a.btn href="/shops/{{vm.shop.job_type}}?page=1&tags={{tag.id}}" ng-repeat="tag in vm.shop.tags"
                             | {{tag.name}}
+                .info-box ng-if="vm.shop.facebook"
+                  #fb_page_plugin_area.intoroduction-box.iframe-content ng-bind-html="vm.shop.facebook.script"
 
-    .col-md-12.detail.clearfix.info-box
-      .row.clearfix
-        .rank-box.shop-top-box
-          .page-title
-            h2.title
-              | クーポン
-          .coupon-box ng-repeat="coupon in vm.shop.coupons"
-            .coupon-body
-              .date-box
-                span ng-if="coupon.started_at && coupon.end_at"
-                  | 【有効期限：{{coupon.started_at | date: 'yyyy年MM月dd日' }}〜{{coupon.end_at | date: 'yyyy年MM月dd日' }}】
-                span ng-if="coupon.started_at && !coupon.end_at"
-                  | 【有効期限：{{coupon.started_at | date: 'yyyy年MM月dd日' }}〜】
+                .info-box ng-if="vm.shop.twitter"
+                  .intoroduction-box.iframe-content ng-bind-html="vm.shop.twitter.script"
 
-              p.coupon-description ng-bind-html="coupon.description | noHTML | newlines"
-              p.coupon-subdescription ng-bind-html="coupon.sub_description | noHTML | newlines"
-              .attention ng-if="vm.shop.service"
-                p
-                  | このページを見せると、上記クーポンが使用できます。
-                  br
-                  | ※他会社もしくはガイド者に送迎された場合、使用できません。
-                  br
-                  | ※他クーポンとの併用はできません。
-    .col-md-12.detail.clearfix.info-box ng-if="vm.events.length > 0"
-      .row.clearfix
-        .rank-box.shop-top-box
-          .page-title
-            h2.title イベント
-          ul.event-list
-            li ng-repeat="event in vm.events"
-              .event-content-box
-                .row
-                  .col-xs-12.col-sm-12.col-md-12.col-xl-12
-                    .term-event
-                      span ng-if="event.started_at && event.end_at"
-                        | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜{{event.end_at | date: 'yyyy年MM月dd日' }}】
-                      span ng-if="event.started_at && !event.end_at"
-                        | 【期間：{{event.started_at | date: 'yyyy年MM月dd日' }}〜】
-                    .event-main-content.clearfix
-                      .event-img-box
-                        .event-image
-                          a href="/events/{{event.id}}/detail"
-                            span ng-if="vm.shop.images[0]"
-                              img ng-src="{{vm.shop.images[0].url}}" alt="{{vm.shop.name}}の画像" style="width:100%;"
-                      .event-content-boxs
-                        a href="/events/{{event.id}}/detail"
-                          h3.event-title.clearfix
-                            | {{event.title}}
-                          p.event-discription
-                            | {{event.sub_title}}
+                aside.sister-shop.col-xs-12.col-sm-6.col-md-6.col-lg-12 ng-if="vm.shops" style="margin-top:1rem;"
+                  .row.clearfix
+                    h3.sub-title SISTER SHOPS
+                    section.shop-info ng-repeat="shop in vm.shops"
 
-    .col-md-12.detail.clearfix.info-box
-      .row.clearfix
-        .info-box.clearfix ng-if="vm.shop && vm.shop.interview_ja"
-          .page-title
-            h2.title
-              | INTRODUCTION
-          .intoroduction-box ng-bind-html="vm.shop.interview_ja"
-
-    .col-md-12.detail.clearfix.info-box
-      .row.clearfix
-        #map.rank-box.shop-map.clearfix
-          ng-map zoom="18" center="{{vm.shop.lon}},{{vm.shop.lat}}" styles="{featureType:'water',stylers:[{color:'#ad9a58'}]}]"
-            marker id='{{vm.shop.id}} ' title="{{vm.shop.address}}" position=" {{vm.shop.lon}}, {{vm.shop.lat}}"
-    .col-md-12.detail.clearfix.info-box
-      .row.clearfix
-        .rank-box.clearfix style="margin-bottom:2rem;"
-          .page-title
-            h2.title
-              | SHOP IMAGE
-          .clearfix
-            .half-row.slick-slider
-              .col-xs-12.col-sm-6.col-md-4 ng-repeat="image in vm.shop.images" repeat-finished="carouselInitializer"
-                .slider-link
-                  img.img ng-src="{{image.url}}" alt="{{vm.shop.name}}道順の画像"
-
-
-    .col-md-12.detail.clearfix.info-box
-      .row.clearfix
-        .rank-box.rank-box-last style="margin-bottom:2rem;" ng-if="vm.shops.length > 0"
-          .page-title
-            h2.title
-              | SISTER SHOP
-          .shop-list.clearfix
-            li ng-repeat="shop in vm.shops"
-              a href="/shops/karaoke/{{shop.id}}"
-                span ng-if="shop.images[0]"
-                  img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
-                span ng-if="!shop.images[0]"
-                  = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
-              .shop-info
-                h3.name
-                  | {{shop.name}} ({{shop.name_kana}})
-                .body
-                  .has-girls.clearfix
-                    h5.title
-                      | 在籍女性
-                    p.count
-                      | {{shop.girls_count | number}}人
-                  .support.clearfix
-                    h5.title
-                      | 応援数
-                    p.count
-                      | {{shop.support_count | number}}件
-                  .favorid.clearfix
-                    h5.title
-                      | お気入り登録数
-                    p.count
-                      |  {{shop.favorite_count | number}}件
+                      p.shop-image
+                        a href="/shops/{{shop.job_type}}/{{shop.id}}"
+                          span ng-if="shop.images[0]"
+                            img ng-src="{{shop.images[0].url}}" alt="{{shop.name}}の画像"
+                          span ng-if="!shop.images[0]"
+                            = image_tag 'front/shop-no-image.png', alt: "kirekawa collection shop no-image"
+                      p.shop-name
+                        a href="/shops/{{vm.event.subject.job_type}}/{{vm.event.subject.id}}/info"
+                          | {{shop.name}}
+                      p.shop-address
+                        | 住所：{{shop.write_adress}}
+                      p.shop-tel
+                        | 電話番号：{{shop.tel}}
+                      p.shop-term ng-if="vm.event.subject.opened_at"
+                        | 営業時間：{{shop.opened_at | date: 'HH：mm'}} 〜 {{shop.closed_at | date: 'HH：mm'}}

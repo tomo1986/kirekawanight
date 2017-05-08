@@ -13,6 +13,10 @@ class Shop < ApplicationRecord
   has_one :twitter, class_name: 'MediaType::Twitter', as: :subject, dependent: :destroy, :autosave => true
   has_one :youtube, class_name: 'MediaType::Youtube', as: :subject, dependent: :destroy, :autosave => true
 
+  has_one :facebook, class_name: 'MediaType::Facebook', as: :subject, dependent: :destroy, :autosave => true
+  has_one :instagram, class_name: 'MediaType::Instagram', as: :subject, dependent: :destroy, :autosave => true
+
+
   has_many :cards
   has_many  :images, class_name: 'ImageType::Shop', as: :subject, dependent: :destroy, :autosave => true
   has_many  :way_images, class_name: 'ImageType::ShopWay', as: :subject, dependent: :destroy, :autosave => true
@@ -390,6 +394,10 @@ class Shop < ApplicationRecord
       json.favorite_count self.favorites.count
       json.twitter self.twitter ? self.twitter.to_jbuilder : nil
       json.youtube self.youtube ? self.youtube.to_jbuilder : nil
+      json.facebook self.facebook ? self.facebook.to_jbuilder : nil
+      json.instagram self.instagram ? self.instagram.to_jbuilder : nil
+
+
       json.review_count self.reviews.where(reviews:{is_displayed: true}).count
       json.cards self.cards ? Card.to_jbuilders(self.cards) : nil
       json.coupons self.coupons ? Coupon.to_jbuilders(self.coupons.default_shop_coupons) : nil
@@ -448,6 +456,10 @@ class Shop < ApplicationRecord
       json.favorite_count self.favorites.count
       json.twitter self.twitter ? self.twitter.to_jbuilder : nil
       json.youtube self.youtube ? self.youtube.to_jbuilder : nil
+
+      json.facebook self.facebook ? self.facebook.to_jbuilder : nil
+      json.instagram self.instagram ? self.instagram.to_jbuilder : nil
+
       json.review_count self.reviews.where(reviews:{is_displayed: true}).count
       json.cards self.cards ? Card.to_jbuilders(self.cards) : nil
       json.coupons self.coupons ? Coupon.to_jbuilders(self.coupons.default_shop_coupons) : nil

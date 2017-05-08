@@ -48,9 +48,16 @@ angular.module 'bisyoujoZukanNight'
           vm.shopMainImg = vm.shop.images[0].url if vm.shop.images && vm.shop.images.length > 0
           vm.reviewQuestion = shopService.setReaviewQuestion(vm.shop.job_type)
           vm.shop.interview_ja = $sce.trustAsHtml(vm.shop.interview_ja)
-          vm.shop.twitter.script = $sce.trustAsHtml(vm.shop.twitter.script) if vm.shop.twitter
+          vm.test = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKireKawa-231672127266670%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+#          vm.shop.twitter.script = vm.shop.twitter.script if vm.shop.twitter
+          console.log("soeyasoeyasoeya",vm.shop.twitter.script)
           vm.shop.youtube.script = $sce.trustAsHtml(vm.shop.youtube.script) if vm.shop.youtube
+          vm.shop.twitter.script = $sce.trustAsHtml(vm.shop.twitter.script) if vm.shop.twitter
+          vm.shop.facebook.script = $sce.trustAsHtml(vm.shop.facebook.script) if vm.shop.facebook
           vm.events = res.data.events
+          vm.instagrams = res.data.instagrams
+
+
         else
           modalService.error('エラー',res.data.message)
       )
@@ -112,7 +119,7 @@ angular.module 'bisyoujoZukanNight'
       vm.isAttention = !vm.isAttention
 
     vm.carouselInitializer = ->
-      $('.slick-slider').slick
+      $('#shopImage').slick
         dots: true
         accessibility: true
         infinite: true
@@ -122,13 +129,22 @@ angular.module 'bisyoujoZukanNight'
         slidesToShow: 1
         slidesToScroll: 1
         arrows: false
+    vm.instaCarouselInitializer = ->
+      $('#insta').slick
+        dots: true
+        accessibility: true
+        infinite: true
+        autoplay: true,
+        autoplaySpeed: 4000
+        slidesToShow: 4
+        slidesToScroll: 4
+        arrows: false
     vm.init()
     return
   linkFunc = (scope, el, attr, vm) ->
     scope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->
       scope.vm.activeTab = toState.active_tab
     )
-
     return
   directive =
     restrict: 'A'

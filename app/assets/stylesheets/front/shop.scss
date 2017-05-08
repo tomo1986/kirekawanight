@@ -1245,8 +1245,73 @@
 
   }
   ng-map{
-    height:500px !important;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      height:300px !important;
+    }
+
+    /* Smartphones (landscape) ----------- */
+    @media only screen and (min-width : 321px) {
+      height:300px !important;
+    }
+
+    /* Smartphones (portrait) ----------- */
+    @media only screen and (max-width : 320px) {
+      height:300px !important;
+
+    }
+
+    /* iPads (portrait and landscape) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+      height:400px !important;
+
+    }
+
+    /* iPads (landscape) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+      height:400px !important;
+
+    }
+
+    /* iPads (portrait) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+      /* Styles */
+    }
+    /**********
+    iPad 3
+    **********/
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+      height:400px !important;
+
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+      height:300px !important;
+
+    }
+    /* Desktops and laptops ----------- */
+    @media only screen  and (min-width : 1224px) {
+      height:300px !important;
+
+    }
+
+    /* Large screens ----------- */
+    @media only screen  and (min-width : 1824px) {
+      height:300px !important;
+
+    }
+
+    /* iPhone 4 ----------- */
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+      height:300px !important;
+    }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+      height:300px !important;
+
+    }
+
   }
+
   .shop-new-face, .shop-cast, .shop-system{
     margin-top: $row-space;
   }
@@ -1721,7 +1786,7 @@
     text-align: center;
     font-size: 2rem;
   }
-  .pickup-cast{
+  .pickup-cast,.insta-title{
     .pickup-cast-line{
       position: relative;
       text-align: center;
@@ -1746,7 +1811,6 @@
       }
     }
     .pickup-cast-item{
-      margin-bottom:1rem;
       .cast-box{
         margin-left:.5rem;
         .cast-name{
@@ -1860,4 +1924,49 @@
 .slick-dots li.slick-active button:before{
   color: #ad9a58 !important;
 
+}
+.sister-shop {
+  .shop-info{
+    margin-bottom:1rem;
+    .shop-image{
+      width: 100%;
+      display: block;
+      position: relative;
+      border: 1px solid #E2D39F;
+      margin-bottom:.3rem;
+      a:hover{
+        opacity: .7;
+      }
+      img{
+        width: 100%;
+        padding: 3px;
+      }
+    }
+    .shop-job-type{
+      padding:.2rem 1rem;
+      background-color: #720e0a;
+      color:#ad9a58;
+      text-align: center;
+      margin-bottom: .2rem;
+    }
+    .shop-name{
+      margin-bottom:0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      a{
+        color:#ad9a58;
+      }
+    }
+    .shop-address, .shop-tel, .shop-term{
+      margin: 0;
+    }
+  }
+}
+.iframe-content {
+text-align: center;}
+#fb_page_plugin_area{
+  width:100%;
+}
+#fb_page_plugin_area iframe {
+  width:100% !important;
 }
