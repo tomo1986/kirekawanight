@@ -34,7 +34,7 @@ class User < ApplicationRecord
     now = Time.zone.now
     users = User.joins(
         "left join taggings on users.id = taggings.taggable_id and taggable_type = 'User' left join pickups on users.id = pickups.subject_id and pickups.type = 'PickupType::Push' and pickups.subject_type = 'User' and users.deleted_at is null "
-    ).uniq
+    ).distinct
     if sort == 'new'
       users = users.where("(users.job_type = ? and (pickups.start_at <= ? and pickups.end_at > ?)) or (users.job_type = ?) ",job, now,now, job).order("pickups.number_place is null asc, pickups.number_place asc")
     else

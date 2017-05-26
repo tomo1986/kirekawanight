@@ -127,9 +127,8 @@ class Api::FrontController < ApiController
     elsif params[:job_type] == 'sexy'
       PageViewType::CastSexy.create
     end
-    # users = User.global_search(params[:sort],params[:job_type],params[:tags],params[:bust])
+    users = User.global_search(params[:sort],params[:job_type],params[:tags],params[:bust])
 
-    users = User.where(job_type: params[:job_type]).order("id desc")
     users = users.where(users:{deleted_at: nil})
     total = users.count
 
