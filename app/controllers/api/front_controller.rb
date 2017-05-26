@@ -455,7 +455,6 @@ class Api::FrontController < ApiController
     limit = params[:limit].to_i.abs > 0 ? params[:limit].to_i.abs : 20
     page = params[:page].to_i.abs > 0 ? params[:page].to_i.abs : 1
     shops = Shop.global_search(params[:sort],params[:job_type],params[:tags],params[:budget],params[:mama_tip],params[:tip],params[:charge],params[:karaoke_machine],params[:japanese],params[:english])
-    shops = Shop.where(job_type: params[:job_type]).order("id desc")
     shops = shops.where(shops:{deleted_at: nil})
     total = shops.length
 
