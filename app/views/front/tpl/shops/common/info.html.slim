@@ -46,7 +46,7 @@ main#main ng-if="vm.shop"
                                       p.item
                                         | 血液型： {{cast.blood_type}}型
 
-              .col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12.clearfix.insta-title ng-if="vm.instagrams"
+              .col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12.clearfix.insta-title ng-if="vm.instagrams.length > 0"
                 .row.clearfix
                   .pickup-cast-line style="margin-top:1rem;"
                     span Instagram
@@ -192,7 +192,7 @@ main#main ng-if="vm.shop"
                 .info-box ng-if="vm.shop.twitter"
                   .intoroduction-box.iframe-content ng-bind-html="vm.shop.twitter.script"
 
-                aside.sister-shop.col-xs-12.col-sm-6.col-md-6.col-lg-12 ng-if="vm.shops" style="margin-top:1rem;"
+                aside.sister-shop.col-xs-12.col-sm-6.col-md-6.col-lg-12 ng-if="vm.shops.length > 0" style="margin-top:1rem;"
                   .row.clearfix
                     h3.sub-title SISTER SHOPS
                     section.shop-info ng-repeat="shop in vm.shops"

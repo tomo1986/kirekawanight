@@ -49,8 +49,6 @@ angular.module 'bisyoujoZukanNight'
           vm.reviewQuestion = shopService.setReaviewQuestion(vm.shop.job_type)
           vm.shop.interview_ja = $sce.trustAsHtml(vm.shop.interview_ja)
           vm.test = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKireKawa-231672127266670%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-#          vm.shop.twitter.script = vm.shop.twitter.script if vm.shop.twitter
-          console.log("soeyasoeyasoeya",vm.shop.twitter.script)
           vm.shop.youtube.script = $sce.trustAsHtml(vm.shop.youtube.script) if vm.shop.youtube
           vm.shop.twitter.script = $sce.trustAsHtml(vm.shop.twitter.script) if vm.shop.twitter
           vm.shop.facebook.script = $sce.trustAsHtml(vm.shop.facebook.script) if vm.shop.facebook
