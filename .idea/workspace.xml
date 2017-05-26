@@ -52,8 +52,8 @@
           <file leaf-file-name="front_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.33333334">
-                  <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.5">
+                  <caret line="449" column="21" selection-start-line="449" selection-start-column="21" selection-end-line="449" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -96,8 +96,8 @@
           <file leaf-file-name="user.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/models/user.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.34615386">
-                  <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+                <state vertical-scroll-proportion="0.6923077">
+                  <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -987,6 +987,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6923077">
+          <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/shop.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8518518">
@@ -995,18 +1003,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34615386">
-          <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/front_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5">
+          <caret line="449" column="21" selection-start-line="449" selection-start-column="21" selection-end-line="449" selection-end-column="21" />
           <folding />
         </state>
       </provider>
